@@ -1,1 +1,73 @@
-<!doctype html><html><head><meta charset='utf-8'><meta name='viewport' content='width=device-width, initial-scale=1'><title>RBIS — Behavioural & Intelligence Services</title><link rel='stylesheet' href='styles.css'></head><body><h1>RBIS — Behavioural & Intelligence Services</h1><p>Clarity in Chaos. The Operating System for Decision-Making.</p><script src='script.js'></script></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>RBIS — Behavioural & Intelligence Services</title>
+  <meta name="description" content="Clarity in Chaos. The Operating System for Decision-Making." />
+  <link rel="canonical" href="https://www.rbisintelligence.com/" />
+
+  <!-- Social cards -->
+  <meta property="og:title" content="RBIS — Behavioural & Intelligence Services" />
+  <meta property="og:description" content="Foresight, not hindsight. Behavioural science + intelligence analysis for decisive leaders." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.rbisintelligence.com/" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="icon" href="/favicon.ico" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="container">
+    <h1>RBIS — Behavioural & Intelligence Services</h1>
+    <p class="tagline">Clarity in Chaos. The Operating System for Decision-Making.</p>
+    <nav aria-label="Primary">
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section id="hero" class="card">
+      <h2>Foresight, not hindsight.</h2>
+      <p>We blend behavioural science, intelligence analysis, and live dashboards to give leaders an unfair advantage.</p>
+      <a class="btn" href="mailto:hello@rbisintelligence.com">Book a Strategy Call</a>
+    </section>
+
+    <section id="services" class="grid">
+      <div class="card">
+        <h3>Consulting</h3>
+        <p>Behavioural, operational, and strategic clarity.</p>
+      </div>
+      <div class="card">
+        <h3>RBIS Intelligence</h3>
+        <p>Live risk & opportunity dashboards.</p>
+      </div>
+      <div class="card">
+        <h3>Training</h3>
+        <p>Decision-making frameworks for high-stakes environments.</p>
+      </div>
+    </section>
+
+    <section id="about" class="card">
+      <h3>About RBIS</h3>
+      <p>RBIS delivers elite consulting and intelligence-grade insights for decisive leaders.</p>
+    </section>
+
+    <section id="contact" class="card">
+      <h3>Contact</h3>
+      <p>Email: <a href="mailto:hello@rbisintelligence.com">hello@rbisintelligence.com</a></p>
+    </section>
+  </main>
+
+  <footer class="container">
+    <small>© <span id="year"></span> RBIS — Behavioural & Intelligence Services</small>
+  </footer>
+
+  <script>
+    const y = document.getElementById('year');
+    if (y) y.textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
