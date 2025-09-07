@@ -1,52 +1,40 @@
-// Mobile menu toggle (accessible)
-const burger = document.getElementById('burger');
-const mobileMenu = document.getElementById('mobileMenu');
-
-if (burger && mobileMenu) {
-  burger.addEventListener('click', () => {
-    const willOpen = mobileMenu.hasAttribute('hidden');
-    mobileMenu.toggleAttribute('hidden', !willOpen);
-    burger.setAttribute('aria-expanded', String(willOpen));
-
-    // Focus the first link when opening on keyboard
-    if (willOpen) {
-      const firstLink = mobileMenu.querySelector('a');
-      firstLink && firstLink.focus();
-    }
+// Mobile nav
+const toggle = document.querySelector('.nav-toggle');
+const menu = document.getElementById('primary-menu');
+if (toggle && menu) {
+  toggle.addEventListener('click', () => {
+    const open = menu.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', String(open));
   });
 }
 
-// Current year
-const y = document.getElementById('year');
-if (y) y.textContent = new Date().getFullYear();
+// Intersection fade-in
+const observer = new IntersectionObserver(
+  entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); }),
+  { threshold: 0.12 }
+);
+document.querySelectorAll('.fade').forEach(el => observer.observe(el));
 
-// Reveal-on-scroll, respecting reduced motion
-const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-if (!reduceMotion && 'IntersectionObserver' in window) {
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach((e) => {
-      if (e.isIntersecting) {
-        e.target.classList.add('show');
-        io.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0.15 });
-
-  document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
-} else {
-  document.querySelectorAll('.reveal').forEach((el) => el.classList.add('show'));
+// Count-up stat
+const countEl = document.querySelector('.stat-num[data-count]');
+if (countEl) {
+  const target = Number(countEl.getAttribute('data-count')) || 0;
+  const duration = 900;
+  const start = performance.now();
+  const step = now => {
+    const p = Math.min((now - start) / duration, 1);
+    countEl.textContent = Math.floor(p * target);
+    if (p < 1) requestAnimationFrame(step);
+  };
+  requestAnimationFrame(step);
 }
 
-// Smooth in-page scroll (respects reduced motion)
-document.querySelectorAll('a[href^="#"]').forEach((a) => {
-  a.addEventListener('click', (e) => {
-    const id = a.getAttribute('href') || '';
-    if (id.length > 1) {
-      const target = document.querySelector(id);
-      if (target) {
-        e.preventDefault();
-        target.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' });
-      }
-    }
-  });
+// Smooth anchor scroll (if any internal anchors later)
+document.addEventListener('click', (e) => {
+  const a = e.target.closest('a[href^="#"]');
+  if (!a) return;
+  const el = document.querySelector(a.getAttribute('href'));
+  if (!el) return;
+  e.preventDefault();
+  el.scrollIntoView({ behavior: 'smooth', block: 'start' });
 });
