@@ -3,11 +3,12 @@
 <head>
   <meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>Contact — RBIS</title>
-  <meta name="description" content="Confidential consultation with RBIS. Secure contact form and emergency cases."/>
+  <meta name="description" content="Request a confidential consultation with RBIS. Smart multi-step form with secure options and rapid triage."/>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css"/><link rel="icon" href="favicon.ico"/>
 </head>
 <body data-page="contact">
+  <div class="progressbar" aria-hidden="true"></div>
   <header class="site-header">
     <a class="skip-link" href="#main">Skip to content</a>
     <div class="container nav-wrap">
@@ -15,10 +16,14 @@
       <nav class="nav" aria-label="Primary">
         <button class="nav-toggle" aria-expanded="false" aria-controls="primary-menu"><span class="sr-only">Toggle navigation</span><div class="hamburger"></div></button>
         <ul id="primary-menu" class="nav-list">
-          <li><a class="nav-link" href="index.html">Home</a></li><li><a class="nav-link" href="about.html">About</a></li>
-          <li><a class="nav-link" href="services.html">Services</a></li><li><a class="nav-link" href="rbis-system.html">RBIS System</a></li>
-          <li><a class="nav-link" href="workflow.html">Workflow</a></li><li><a class="nav-link" href="sectors.html">Sectors</a></li>
-          <li><a class="nav-link active" aria-current="page" href="contact.html">Contact</a></li><li><a class="nav-link" href="insights.html">Insights</a></li>
+          <li><a class="nav-link" href="index.html">Home</a></li>
+          <li><a class="nav-link" href="about.html">About</a></li>
+          <li><a class="nav-link" href="services.html">Services</a></li>
+          <li><a class="nav-link" href="rbis-system.html">RBIS System</a></li>
+          <li><a class="nav-link" href="workflow.html">Workflow</a></li>
+          <li><a class="nav-link" href="sectors.html">Sectors</a></li>
+          <li><a class="nav-link active" aria-current="page" href="contact.html">Contact</a></li>
+          <li><a class="nav-link" href="insights.html">Insights</a></li>
         </ul>
       </nav>
       <div class="nav-cta"><a class="btn btn-primary" href="contact.html">Get Consultation</a></div>
@@ -29,35 +34,182 @@
     <section class="section hero">
       <div class="container prose">
         <h1 class="display">Confidential Consultation</h1>
-        <p class="lead max-900">We respond within 24 hours on business days. For urgent matters, request an emergency consultation.</p>
+        <p class="lead max-900">Tell us what’s happening. We’ll triage quickly, protect your information, and come back with a clear plan. Standard responses within 24 hours — urgent options available.</p>
       </div>
     </section>
 
     <section class="section">
-      <div class="container grid-2">
-        <form class="card form" id="contact-form" action="https://formspree.io/f/meolvrdy" method="POST">
-          <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off"/>
-          <input type="hidden" name="_next" value="thank-you.html"/>
-          <input type="hidden" name="_subject" value="RBIS Contact Form"/>
+      <div class="container">
+        <form id="contact-form-smart" class="formpro fade" action="https://formspree.io/f/meolvrdy" method="POST" enctype="multipart/form-data" novalidate>
+          <div class="bar-top" aria-hidden="true"></div>
+          <ol class="stepper" aria-label="Progress">
+            <li class="active"><span class="idx">1</span> Your details</li>
+            <li><span class="idx">2</span> Matter</li>
+            <li><span class="idx">3</span> Security</li>
+            <li><span class="idx">4</span> Review & Send</li>
+          </ol>
 
-          <label>Full Name<input required type="text" name="name" placeholder="Jane Doe" autocomplete="name"/></label>
-          <label>Email<input required type="email" name="_replyto" placeholder="jane@firm.co.uk" autocomplete="email"/></label>
-          <label>Organisation<input type="text" name="organisation" placeholder="Firm / Council / Company"/></label>
-          <label>Subject<input required type="text" name="subject" placeholder="Brief description"/></label>
-          <label>Message<textarea required name="message" rows="6" placeholder="How can we help?"></textarea></label>
-          <label>Urgency
-            <select name="urgency"><option>Standard (24h response)</option><option>Urgent (same day, surcharge)</option></select>
-          </label>
+          <div class="inner">
+            <!-- Honeypot + telemetry -->
+            <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="display:none"/>
+            <input type="hidden" name="_subject" value="RBIS Contact Form"/>
+            <input type="hidden" name="_next" value="thank-you.html"/>
+            <input type="hidden" name="ttc" value=""/>
 
-          <div class="row"><button class="btn btn-primary" type="submit">Send Securely</button></div>
-          <p class="muted small">By submitting this form you agree to confidential processing of your data for consultation.</p>
-          <p id="form-status" class="small muted" role="status" aria-live="polite"></p>
+            <!-- STEP 1 -->
+            <section data-step="1">
+              <div class="grid">
+                <div class="field" data-required="true">
+                  <input type="text" name="name" id="name" autocomplete="name" required/>
+                  <label for="name">Full name</label>
+                  <div class="error">Please enter your name.</div>
+                </div>
+                <div class="field" data-required="true">
+                  <input type="email" name="_replyto" id="email" autocomplete="email" inputmode="email" required/>
+                  <label for="email">Work email</label>
+                  <div class="error">Enter a valid email.</div>
+                </div>
+
+                <div class="field">
+                  <input type="text" name="organisation" id="org" autocomplete="organization"/>
+                  <label for="org">Organisation</label>
+                </div>
+                <div class="field">
+                  <input type="text" name="role" id="role" autocomplete="organization-title"/>
+                  <label for="role">Role / Title</label>
+                </div>
+
+                <div class="field">
+                  <input type="tel" name="phone" id="phone" inputmode="tel" autocomplete="tel"/>
+                  <label for="phone">Phone (optional)</label>
+                  <div class="help">Useful if urgent.</div>
+                </div>
+                <div class="field">
+                  <select name="pref_contact" id="pref_contact">
+                    <option value="">No preference</option>
+                    <option>Email">Email</option>
+                    <option>Phone</option>
+                    <option>Secure portal</option>
+                  </select>
+                  <label for="pref_contact">Preferred contact method</label>
+                </div>
+              </div>
+
+              <div class="actions">
+                <span class="small muted">Step 1 of 4</span>
+                <button type="button" class="btn btn-primary" id="next1">Next</button>
+              </div>
+            </section>
+
+            <!-- STEP 2 -->
+            <section data-step="2" style="display:none">
+              <div class="grid">
+                <div class="field" data-required="true">
+                  <input type="text" name="subject" id="subject" maxlength="120" required/>
+                  <label for="subject">Subject (short)</label>
+                  <div class="error">Please add a brief subject.</div>
+                </div>
+                <div class="field">
+                  <div class="chips" aria-label="Quick topic tags">
+                    <span class="chip" data-target="topics" data-val="Forensic Document Review" data-fill-subject="Forensic document review">Doc Review</span>
+                    <span class="chip" data-target="topics" data-val="Audio Analysis" data-fill-subject="Audio analysis & authentication">Audio</span>
+                    <span class="chip" data-target="topics" data-val="Behavioural Profiling" data-fill-subject="Behavioural profiling">Behaviour</span>
+                    <span class="chip" data-target="topics" data-val="Financial & Fraud">Financial</span>
+                    <span class="chip" data-target="topics" data-val="Expert Witness">Expert Witness</span>
+                    <span class="chip" data-target="topics" data-val="Regulatory Compliance">Regulatory</span>
+                  </div>
+                  <input type="hidden" name="topics" />
+                  <div class="help">Tap to add/remove focus areas.</div>
+                </div>
+
+                <div class="field" data-required="true">
+                  <textarea name="message" id="message" minlength="20" placeholder="What happened? What’s the objective? Any dates/deadlines?" required></textarea>
+                  <label for="message">How can we help?</label>
+                  <div class="error">Please provide a short description (20+ characters).</div>
+                  <div class="help"><span id="wc">0 words</span></div>
+                </div>
+
+                <div class="field">
+                  <select name="urgency" id="urgency">
+                    <option>Standard (reply within 24h)</option>
+                    <option>Urgent (same day, surcharge)</option>
+                  </select>
+                  <label for="urgency">Urgency</label>
+                </div>
+
+                <div id="urgent-extra" class="field" style="display:none">
+                  <input type="text" name="urgent_window" id="urgent_window" placeholder="Best callback window (e.g., today 14:00–16:00)"/>
+                  <label for="urgent_window">Callback window (if urgent)</label>
+                  <div class="help">We’ll prioritise this slot if available.</div>
+                </div>
+              </div>
+
+              <div class="actions">
+                <button type="button" class="btn btn-ghost" id="back2">Back</button>
+                <span class="small muted">Step 2 of 4</span>
+                <button type="button" class="btn btn-primary" id="next2">Next</button>
+              </div>
+            </section>
+
+            <!-- STEP 3 -->
+            <section data-step="3" style="display:none">
+              <div class="grid">
+                <div class="kitem">
+                  <label class="switch">
+                    <input type="checkbox" name="nda" id="nda"/>
+                    <span></span><strong> NDA required</strong>
+                  </label>
+                  <div class="small muted">We can issue a mutual NDA on request.</div>
+                </div>
+
+                <div class="kitem">
+                  <label class="switch">
+                    <input type="checkbox" name="secure" id="secure"/>
+                    <span></span><strong> Secure upload required</strong>
+                  </label>
+                  <div class="small muted">If checked, we’ll provision a private upload portal.</div>
+                </div>
+
+                <div class="field">
+                  <input type="file" name="attachments" id="attachments" multiple accept=".pdf,.doc,.docx,.txt,.csv,.zip,.wav,.mp3,.mp4"/>
+                  <label for="attachments">Optional: attach up to 3 files</label>
+                  <div class="help">For sensitive files, leave unchecked and request secure upload.</div>
+                </div>
+
+                <div class="field" data-required="true">
+                  <select name="consent" id="consent" required>
+                    <option value="">Select</option>
+                    <option value="agree">I agree to confidential processing of my data for consultation</option>
+                  </select>
+                  <label for="consent">Consent</label>
+                  <div class="error">Consent is required to proceed.</div>
+                </div>
+              </div>
+
+              <div class="actions">
+                <button type="button" class="btn btn-ghost" id="back3">Back</button>
+                <span class="small muted">Step 3 of 4</span>
+                <button type="button" class="btn btn-primary" id="next3">Next</button>
+              </div>
+            </section>
+
+            <!-- STEP 4 (Review) -->
+            <section data-step="4" style="display:none">
+              <div class="review" id="review-body">Review will appear here.</div>
+              <div class="actions">
+                <button type="button" class="btn btn-ghost" id="back4">Back</button>
+                <span class="small muted">Step 4 of 4</span>
+                <button type="submit" class="btn btn-primary">Send Securely</button>
+              </div>
+              <p id="form-status" class="small muted" role="status" aria-live="polite" style="margin-top:8px"></p>
+            </section>
+          </div>
         </form>
 
-        <div class="stack gap-16">
-          <div class="card"><h3>Emergency Cases</h3><p>Request an emergency consultation; additional charges may apply.</p></div>
-          <div class="card"><h3>Security &amp; Confidentiality</h3><p>All communications are encrypted and handled with strict confidentiality.</p></div>
-          <div class="card"><h3>Legal Position</h3><p>RBIS provides independent analysis and court-ready reporting; we do not offer legal advice or representation.</p></div>
+        <div class="trust" style="margin-top:18px">
+          <div class="card"><strong>Confidential by default</strong><p class="small muted">We use secure channels and strict chain-of-custody from intake to reporting.</p></div>
+          <div class="card"><strong>Legally defensible</strong><p class="small muted">Methodology and outputs aligned to evidentiary standards.</p></div>
+          <div class="card"><strong>Rapid triage</strong><p class="small muted">Clear next steps and timelines, no runaround.</p></div>
         </div>
       </div>
     </section>
@@ -66,7 +218,7 @@
   <footer class="site-footer">
     <div class="container grid-footer">
       <div class="stack gap-12"><div class="brand">Ryan Roberts Behavioural &amp; Intelligence Services</div>
-        <p class="muted small max-640">Specialising in forensic behavioural and intelligence analysis with precision, confidentiality, and legal defensibility.</p></div>
+        <p class="muted small max-640">Evidence-led behavioural and intelligence analysis with precision, confidentiality, and legal defensibility.</p></div>
       <nav class="stack gap-8" aria-label="Quick Links"><strong>Quick Links</strong>
         <a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a><a href="rbis-system.html">RBIS System</a>
         <a href="workflow.html">Workflow</a><a href="sectors.html">Sectors</a><a href="contact.html">Contact</a><a href="insights.html">Insights</a>
@@ -77,6 +229,7 @@
     </div>
     <div class="container footer-base"><small>© 2024 Ryan Roberts Behavioural &amp; Intelligence Services. All rights reserved.</small></div>
   </footer>
+
   <script src="script.js"></script>
 </body>
 </html>
