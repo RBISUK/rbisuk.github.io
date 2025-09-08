@@ -1,99 +1,63 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>Contact — RBIS</title>
-  <meta name="description" content="Confidential consultation with RBIS. Secure contact form, emergency cases, and secure document upload options." />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="icon" href="favicon.ico" />
+  <meta name="description" content="Confidential consultation with RBIS. Secure contact form and emergency cases."/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css"/><link rel="icon" href="favicon.ico"/>
 </head>
-<body>
+<body data-page="contact">
   <header class="site-header">
+    <a class="skip-link" href="#main">Skip to content</a>
     <div class="container nav-wrap">
-      <a class="brand" href="index.html">RBIS</a>
+      <a class="brand" href="index.html" aria-label="RBIS Home">RBIS</a>
       <nav class="nav" aria-label="Primary">
-        <button class="nav-toggle" aria-expanded="false" aria-controls="primary-menu">
-          <span class="sr-only">Toggle navigation</span>
-          <div class="hamburger"></div>
-        </button>
+        <button class="nav-toggle" aria-expanded="false" aria-controls="primary-menu"><span class="sr-only">Toggle navigation</span><div class="hamburger"></div></button>
         <ul id="primary-menu" class="nav-list">
-          <li><a class="nav-link" href="index.html">Home</a></li>
-          <li><a class="nav-link" href="about.html">About</a></li>
-          <li><a class="nav-link" href="services.html">Services</a></li>
-          <li><a class="nav-link" href="workflow.html">Workflow</a></li>
-          <li><a class="nav-link" href="sectors.html">Sectors</a></li>
-          <li><a class="nav-link active" aria-current="page" href="contact.html">Contact</a></li>
+          <li><a class="nav-link" href="index.html">Home</a></li><li><a class="nav-link" href="about.html">About</a></li>
+          <li><a class="nav-link" href="services.html">Services</a></li><li><a class="nav-link" href="rbis-system.html">RBIS System</a></li>
+          <li><a class="nav-link" href="workflow.html">Workflow</a></li><li><a class="nav-link" href="sectors.html">Sectors</a></li>
+          <li><a class="nav-link active" aria-current="page" href="contact.html">Contact</a></li><li><a class="nav-link" href="insights.html">Insights</a></li>
         </ul>
       </nav>
       <div class="nav-cta"><a class="btn btn-primary" href="contact.html">Get Consultation</a></div>
     </div>
   </header>
 
-  <main>
-    <section class="section hero sub-hero">
-      <div class="container stack gap-16">
+  <main id="main">
+    <section class="section hero">
+      <div class="container prose">
         <h1 class="display">Confidential Consultation</h1>
-        <p class="lead max-800">We respond within 24 hours on business days. For urgent matters, request an emergency consultation.</p>
+        <p class="lead max-900">We respond within 24 hours on business days. For urgent matters, request an emergency consultation.</p>
       </div>
     </section>
 
     <section class="section">
       <div class="container grid-2">
-        <form class="card form" name="contact" method="post" data-netlify="true" netlify-honeypot="bot-field">
-          <input type="hidden" name="form-name" value="contact" />
-          <p class="sr-only">
-            <label>Don’t fill this out if you’re human: <input name="bot-field" /></label>
-          </p>
+        <form class="card form" id="contact-form" action="https://formspree.io/f/meolvrdy" method="POST">
+          <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off"/>
+          <input type="hidden" name="_next" value="thank-you.html"/>
+          <input type="hidden" name="_subject" value="RBIS Contact Form"/>
 
-          <label>Full Name
-            <input required type="text" name="name" placeholder="Jane Doe" />
-          </label>
-
-          <label>Email
-            <input required type="email" name="email" placeholder="jane@firm.co.uk" />
-          </label>
-
-          <label>Organisation
-            <input type="text" name="org" placeholder="Firm / Council / Company" />
-          </label>
-
-          <label>Subject
-            <input required type="text" name="subject" placeholder="Brief description" />
-          </label>
-
-          <label>Message
-            <textarea required name="message" rows="6" placeholder="How can we help?"></textarea>
-          </label>
-
+          <label>Full Name<input required type="text" name="name" placeholder="Jane Doe" autocomplete="name"/></label>
+          <label>Email<input required type="email" name="_replyto" placeholder="jane@firm.co.uk" autocomplete="email"/></label>
+          <label>Organisation<input type="text" name="organisation" placeholder="Firm / Council / Company"/></label>
+          <label>Subject<input required type="text" name="subject" placeholder="Brief description"/></label>
+          <label>Message<textarea required name="message" rows="6" placeholder="How can we help?"></textarea></label>
           <label>Urgency
-            <select name="urgency">
-              <option>Standard (24h response)</option>
-              <option>Urgent (same day, surcharge)</option>
-            </select>
+            <select name="urgency"><option>Standard (24h response)</option><option>Urgent (same day, surcharge)</option></select>
           </label>
 
-          <div class="row gap-12">
-            <button class="btn btn-primary" type="submit">Send Securely</button>
-            <a class="btn btn-ghost" href="#" aria-disabled="true">Arrange Secure Upload</a>
-          </div>
-          <p class="muted small">By submitting this form you agree to confidential processing of your data for the purpose of consultation.</p>
+          <div class="row"><button class="btn btn-primary" type="submit">Send Securely</button></div>
+          <p class="muted small">By submitting this form you agree to confidential processing of your data for consultation.</p>
+          <p id="form-status" class="small muted" role="status" aria-live="polite"></p>
         </form>
 
         <div class="stack gap-16">
-          <div class="card">
-            <h3>Emergency Cases</h3>
-            <p>For urgent matters requiring immediate attention, request an emergency consultation. Additional charges may apply for expedited services.</p>
-          </div>
-          <div class="card">
-            <h3>Security &amp; Confidentiality</h3>
-            <p>All communications are encrypted and handled with strict confidentiality protocols.</p>
-          </div>
-          <div class="card">
-            <h3>Legal Position</h3>
-            <p>RBIS does not provide legal advice or representation. We deliver independent analysis and court-ready reporting to support your legal strategy.</p>
-          </div>
+          <div class="card"><h3>Emergency Cases</h3><p>Request an emergency consultation; additional charges may apply.</p></div>
+          <div class="card"><h3>Security &amp; Confidentiality</h3><p>All communications are encrypted and handled with strict confidentiality.</p></div>
+          <div class="card"><h3>Legal Position</h3><p>RBIS provides independent analysis and court-ready reporting; we do not offer legal advice or representation.</p></div>
         </div>
       </div>
     </section>
@@ -101,68 +65,18 @@
 
   <footer class="site-footer">
     <div class="container grid-footer">
-      <div class="brand brand-footer">Ryan Roberts Behavioural &amp; Intelligence Services</div>
-      <nav class="stack gap-8" aria-label="Quick Links">
-        <strong>Quick Links</strong>
-        <a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a>
-        <a href="workflow.html">Workflow</a><a href="sectors.html">Sectors</a><a href="contact.html">Contact</a>
+      <div class="stack gap-12"><div class="brand">Ryan Roberts Behavioural &amp; Intelligence Services</div>
+        <p class="muted small max-640">Specialising in forensic behavioural and intelligence analysis with precision, confidentiality, and legal defensibility.</p></div>
+      <nav class="stack gap-8" aria-label="Quick Links"><strong>Quick Links</strong>
+        <a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a><a href="rbis-system.html">RBIS System</a>
+        <a href="workflow.html">Workflow</a><a href="sectors.html">Sectors</a><a href="contact.html">Contact</a><a href="insights.html">Insights</a>
       </nav>
-      <nav class="stack gap-8" aria-label="Legal">
-        <strong>Legal</strong>
-        <a href="#" aria-disabled="true">Privacy Policy</a>
-        <a href="#" aria-disabled="true">Terms of Service</a>
-        <a href="#" aria-disabled="true">Confidentiality Agreement</a>
+      <nav class="stack gap-8" aria-label="Legal"><strong>Legal</strong>
+        <a href="#" aria-disabled="true">Privacy Policy</a><a href="#" aria-disabled="true">Terms of Service</a><a href="#" aria-disabled="true">Confidentiality Agreement</a>
       </nav>
     </div>
-    <div class="container footer-base"><small>© 2024 Ryan Roberts Behavioural &amp; Intelligence Services.</small></div>
+    <div class="container footer-base"><small>© 2024 Ryan Roberts Behavioural &amp; Intelligence Services. All rights reserved.</small></div>
   </footer>
-
   <script src="script.js"></script>
 </body>
 </html>
-<header class="site-header">
-  <a class="skip-link" href="#main">Skip to content</a>
-  <div class="container nav-wrap">
-    <a class="brand" href="index.html" aria-label="RBIS Home">RBIS</a>
-    <nav class="nav" aria-label="Primary">
-      <button class="nav-toggle" aria-expanded="false" aria-controls="primary-menu">
-        <span class="sr-only">Toggle navigation</span>
-        <div class="hamburger"></div>
-      </button>
-      <ul id="primary-menu" class="nav-list">
-        <li><a class="nav-link" href="index.html">Home</a></li>
-        <li><a class="nav-link" href="about.html">About</a></li>
-        <li><a class="nav-link" href="services.html">Services</a></li>
-        <li><a class="nav-link" href="workflow.html">Workflow</a></li>
-        <li><a class="nav-link" href="sectors.html">Sectors</a></li>
-        <li><a class="nav-link" href="contact.html">Contact</a></li>
-        <li><a class="nav-link" href="insights.html">Insights</a></li>
-      </ul>
-    </nav>
-    <div class="nav-cta">
-      <a class="btn btn-primary" href="contact.html">Get Consultation</a>
-    </div>
-  </div>
-</header>
-<footer class="site-footer">
-  <div class="container grid-footer">
-    <div class="stack gap-12">
-      <div class="brand">Ryan Roberts Behavioural &amp; Intelligence Services</div>
-      <p class="muted small max-640">Specialising in forensic behavioural and intelligence analysis with precision, confidentiality, and legal defensibility.</p>
-    </div>
-    <nav class="stack gap-8" aria-label="Quick Links">
-      <strong>Quick Links</strong>
-      <a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a>
-      <a href="workflow.html">Workflow</a><a href="sectors.html">Sectors</a><a href="contact.html">Contact</a><a href="insights.html">Insights</a>
-    </nav>
-    <nav class="stack gap-8" aria-label="Legal">
-      <strong>Legal</strong>
-      <a href="#" aria-disabled="true">Privacy Policy</a>
-      <a href="#" aria-disabled="true">Terms of Service</a>
-      <a href="#" aria-disabled="true">Confidentiality Agreement</a>
-    </nav>
-  </div>
-  <div class="container footer-base">
-    <small>© 2024 Ryan Roberts Behavioural &amp; Intelligence Services. All rights reserved.</small>
-  </div>
-</footer>
