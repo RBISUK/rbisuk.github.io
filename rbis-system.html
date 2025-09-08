@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>RBIS System — Intelligence Dashboard</title>
+  <meta name="description" content="Live demo of the RBIS System: credibility, anomaly, and access integrity dashboards."/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body data-page="rbis-system">
+  <header class="site-header">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="container nav-wrap">
+      <a class="brand" href="index.html">RBIS</a>
+      <nav class="nav" aria-label="Primary">
+        <button class="nav-toggle" aria-expanded="false" aria-controls="primary-menu"><span class="sr-only">Toggle navigation</span><div class="hamburger"></div></button>
+        <ul id="primary-menu" class="nav-list">
+          <li><a class="nav-link" href="index.html">Home</a></li><li><a class="nav-link" href="about.html">About</a></li>
+          <li><a class="nav-link" href="services.html">Services</a></li><li><a class="nav-link" href="rbis-system.html">RBIS System</a></li>
+          <li><a class="nav-link" href="workflow.html">Workflow</a></li><li><a class="nav-link" href="sectors.html">Sectors</a></li>
+          <li><a class="nav-link" href="contact.html">Contact</a></li><li><a class="nav-link" href="insights.html">Insights</a></li>
+        </ul>
+      </nav>
+      <div class="nav-cta"><a class="btn btn-primary" href="contact.html">Get Consultation</a></div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="section hero">
+      <div class="container grid-2">
+        <div class="prose">
+          <h1 class="display">RBIS System</h1>
+          <p class="lead max-900">A secure intelligence dashboard combining AI signal detection with expert review. Below are interactive samples showing the feel of live monitoring.</p>
+          <div class="tabbar">
+            <button class="tab" aria-selected="true" data-mode="cred">Credibility</button>
+            <button class="tab" aria-selected="false" data-mode="fraud">Fraud Risk</button>
+            <button class="tab" aria-selected="false" data-mode="access">Access Integrity</button>
+          </div>
+        </div>
+        <div class="placeholder fade" aria-hidden="true">Secure dashboard placeholder</div>
+      </div>
+    </section>
+
+    <!-- KPIs (sparks + donut) -->
+    <section class="section">
+      <div class="container kpis">
+        <div class="kpi"><div class="label">Credibility Index</div><div class="value">84</div><div id="spark-cred" class="spark"></div></div>
+        <div class="kpi"><div class="label">Fraud Signals</div><div class="value">16</div><div id="spark-fraud" class="spark"></div></div>
+        <div class="kpi"><div class="label">Auth. Confidence</div><div class="value">86%</div><div id="donut-auth"></div></div>
+        <div class="kpi"><div class="label">Chain-of-Custody</div><div class="value">100%</div><div class="small muted">No breaks detected</div></div>
+      </div>
+    </section>
+
+    <!-- Panels -->
+    <section class="section">
+      <div class="container grid-3">
+        <div class="panel fade">
+          <h3>Comms Integrity Monitor</h3>
+          <p class="small muted">Detects late edits, timestamp anomalies, and tone shifts.</p>
+          <div class="heatmap" id="heat">
+            <!-- 6x4 grid -->
+            <div class="cell" data-i="20"></div><div class="cell" data-i="25"></div><div class="cell" data-i="40"></div><div class="cell" data-i="62"></div><div class="cell" data-i="81"></div><div class="cell" data-i="90"></div>
+            <div class="cell" data-i="18"></div><div class="cell" data-i="30"></div><div class="cell" data-i="45"></div><div class="cell" data-i="63"></div><div class="cell" data-i="78"></div><div class="cell" data-i="84"></div>
+            <div class="cell" data-i="15"></div><div class="cell" data-i="26"></div><div class="cell" data-i="39"></div><div class="cell" data-i="55"></div><div class="cell" data-i="72"></div><div class="cell" data-i="82"></div>
+            <div class="cell" data-i="10"></div><div class="cell" data-i="22"></div><div class="cell" data-i="34"></div><div class="cell" data-i="51"></div><div class="cell" data-i="69"></div><div class="cell" data-i="80"></div>
+          </div>
+          <div class="legend" style="margin-top:10px"><i class="g"></i>Low&nbsp;&nbsp;<i class="y"></i>Elevated&nbsp;&nbsp;<i class="r"></i>High</div>
+        </div>
+
+        <div class="panel fade">
+          <h3>Audio Authenticity</h3>
+          <p class="small muted">Voice match confidence, compression anomalies, and splice likelihood.</p>
+          <ul class="dot">
+            <li>Voice match: <strong>0.92</strong> (high confidence)</li>
+            <li>Compression artifacts: <strong>low</strong></li>
+            <li>Splice probability: <strong>0.08</strong></li>
+          </ul>
+          <a class="btn btn-ghost" href="services.html#audio-analysis">Methodology</a>
+        </div>
+
+        <div class="panel fade">
+          <h3>Case Risk Feed</h3>
+          <p class="small muted">Latest signals ranked by severity.</p>
+          <ul class="dot">
+            <li><span style="color:var(--bad)">High</span> — Timestamp drift (email chain)</li>
+            <li><span style="color:var(--warn)">Elevated</span> — Tone shift (deposition B)</li>
+            <li><span style="color:var(--ok)">Low</span> — Repeated lexical n-grams</li>
+          </ul>
+          <a class="btn btn-ghost" href="workflow.html">Review Protocol</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt">
+      <div class="container grid-2">
+        <div class="prose">
+          <h2 class="h2">Why it matters</h2>
+          <p>In law, credibility is everything. The RBIS System surfaces subtle behavioural and technical signals—then pairs them with expert interpretation for a report that stands up in court.</p>
+        </div>
+        <div class="prose">
+          <h2 class="h2">Next steps</h2>
+          <p>We can tailor dashboards to your evidentiary needs and access controls. Book a confidential demo.</p>
+          <a class="btn btn-primary" href="contact.html">Request a Private Demo</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container grid-footer">
+      <div class="stack gap-12"><div class="brand">Ryan Roberts Behavioural &amp; Intelligence Services</div>
+        <p class="muted small max-640">Specialising in forensic behavioural and intelligence analysis with precision, confidentiality, and legal defensibility.</p></div>
+      <nav class="stack gap-8" aria-label="Quick Links"><strong>Quick Links</strong>
+        <a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a><a href="rbis-system.html">RBIS System</a>
+        <a href="workflow.html">Workflow</a><a href="sectors.html">Sectors</a><a href="contact.html">Contact</a><a href="insights.html">Insights</a>
+      </nav>
+      <nav class="stack gap-8" aria-label="Legal"><strong>Legal</strong>
+        <a href="#" aria-disabled="true">Privacy Policy</a><a href="#" aria-disabled="true">Terms of Service</a><a href="#" aria-disabled="true">Confidentiality Agreement</a>
+      </nav>
+    </div>
+    <div class="container footer-base"><small>© 2024 Ryan Roberts Behavioural &amp; Intelligence Services. All rights reserved.</small></div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
