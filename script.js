@@ -26,7 +26,7 @@ document.querySelectorAll('.fade').forEach(el=>io.observe(el));
 
   // Autosave
   const KEY='rbis_contact_draft_v1';
-  const saveDraft=()=>{const data=Object.fromEntries(new FormData(form)); localStorage.setItem(KEY,JSON.stringify(data));};
+  const saveDraft=()=>{const fd=new FormData(form);const data={};fd.forEach((v,k)=>{const el=form.elements[k];if((el&&el.type==='file')||v instanceof File)return;if(k in data){Array.isArray(data[k])?data[k].push(v):data[k]=[data[k],v];}else data[k]=v;});localStorage.setItem(KEY,JSON.stringify(data));};
   const loadDraft=()=>{try{const d=JSON.parse(localStorage.getItem(KEY)||'{}'); for(const k in d){const el=form.elements[k]; if(!el) continue; if(el.type==='checkbox' || el.type==='radio'){if(Array.isArray(d[k])){[...form.elements[k]].forEach(opt=>{opt.checked=d[k].includes(opt.value);});}else{el.checked=!!d[k];}} else el.value=d[k];} }catch{}
   const clearDraft=()=>localStorage.removeItem(KEY);
 
