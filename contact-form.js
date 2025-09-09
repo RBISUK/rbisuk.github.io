@@ -1,25 +1,5 @@
-// Mobile nav
-const toggle=document.querySelector('.nav-toggle');
-const menu=document.getElementById('primary-menu');
-if(toggle&&menu){toggle.addEventListener('click',()=>{const open=menu.classList.toggle('open');toggle.setAttribute('aria-expanded',String(open));});}
+'use strict';
 
-// Fade-in on scroll
-const io=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')}),{threshold:.14});
-document.querySelectorAll('.fade').forEach(el=>io.observe(el));
-
-// Active nav
-(function(){const page=document.body.dataset.page;if(!page)return;
-  const link=document.querySelector(`.nav-list a[href="${page}.html"], .nav-list a[href="${page}"]`);
-  if(link){link.classList.add('active');link.setAttribute('aria-current','page');}
-})();
-
-// Reading progress (for long pages)
-(function(){const bar=document.querySelector('.progressbar');if(!bar)return;
-  const onScroll=()=>{const h=document.documentElement;const max=h.scrollHeight-h.clientHeight;const pct=max?(h.scrollTop/max)*100:0;bar.style.width=pct+'%';};
-  document.addEventListener('scroll',onScroll,{passive:true});onScroll();
-})();
-
-// ===== SMART FORM WIZARD =====
 (function(){
   const form = document.getElementById('contact-form-smart');
   if(!form) return;
@@ -27,7 +7,7 @@ document.querySelectorAll('.fade').forEach(el=>io.observe(el));
   // Autosave
   const KEY='rbis_contact_draft_v1';
   const saveDraft=()=>{const data=Object.fromEntries(new FormData(form)); localStorage.setItem(KEY,JSON.stringify(data));};
-  const loadDraft=()=>{try{const d=JSON.parse(localStorage.getItem(KEY)||'{}'); for(const k in d){const el=form.elements[k]; if(!el) continue; if(el.type==='checkbox' || el.type==='radio'){if(Array.isArray(d[k])){[...form.elements[k]].forEach(opt=>{opt.checked=d[k].includes(opt.value);});}else{el.checked=!!d[k];}} else el.value=d[k];} }catch{}
+  const loadDraft=()=>{try{const d=JSON.parse(localStorage.getItem(KEY)||'{}'); for(const k in d){const el=form.elements[k]; if(!el) continue; if(el.type==='checkbox' || el.type==='radio'){if(Array.isArray(d[k])){[...form.elements[k]].forEach(opt=>{opt.checked=d[k].includes(opt.value);});}else{el.checked=!!d[k];}} else el.value=d[k];}}catch(e){}};
   const clearDraft=()=>localStorage.removeItem(KEY);
 
   loadDraft();
@@ -158,3 +138,4 @@ document.querySelectorAll('.fade').forEach(el=>io.observe(el));
   });
 
 })();
+
