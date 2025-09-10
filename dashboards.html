@@ -56,6 +56,8 @@
   <h1>Executive Dashboards</h1>
   <div id="nodata" class="muted" style="display:none">No data available for selected period.</div>
   <div class="evc-banner">Evidence Mode is ON — charts and KPIs are optimised for print and citation.</div>
+
+  <!-- CEO Section -->
   <section class="section grid grid-2">
     <div class="card">
       <h2>CEO Command — Revenue & Decisions</h2>
@@ -72,6 +74,8 @@
       <canvas id="spark1" height="60"></canvas>
     </div>
   </section>
+
+  <!-- Board & Crisis -->
   <section class="section grid grid-2">
     <div class="card">
       <h2>Board — Risk Heatmap</h2>
@@ -85,6 +89,8 @@
       <ol id="incidents" style="padding-left:18px;margin:0"></ol>
     </div>
   </section>
+
+  <!-- Live Ops -->
   <section class="section grid grid-2">
     <div class="card">
       <h2>Live Ops — Kanban</h2>
@@ -100,6 +106,8 @@
       <div class="muted" style="font-size:12px;margin-top:6px">SLA: rapid triage ≤24h for verified uploads.</div>
     </div>
   </section>
+
+  <!-- Investor -->
   <section class="section grid grid-2">
     <div class="card">
       <h2>Investor Flight Deck — Growth</h2>
@@ -120,11 +128,13 @@
     </div>
   </section>
 </div>
+
 <footer style="border-top:1px solid var(--line);margin-top:26px">
   <div class="wrap" style="text-align:center;color:var(--muted);padding:20px 0">
     © <span id="year"></span> RBIS — Behavioural & Intelligence Services • <a href="trust.html">Trust</a> • <a href="legal.html">Legal</a>
   </div>
 </footer>
+
 <script>
   const data={
     months:['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'],
@@ -176,7 +186,7 @@ function render(){
   barChart("chartOps", d.months, d.opsThroughput, "#1c2541");
   sparkline("spark1", data.revenue);
 }
-  
+
   function toggleEvidenceMode(){const on=document.getElementById('evc').checked;document.body.classList.toggle('evidence-mode',on);localStorage.setItem('rbis_evc',JSON.stringify(!!on));}
   (function(){try{const st=JSON.parse(localStorage.getItem('rbis_evc')||'false');document.getElementById('evc').checked=!!st;document.body.classList.toggle('evidence-mode',!!st);}catch{}})();
   document.getElementById('year').textContent=new Date().getFullYear();

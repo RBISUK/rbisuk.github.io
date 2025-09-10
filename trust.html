@@ -102,6 +102,7 @@
   }
   (function(){try{const st=JSON.parse(localStorage.getItem('rbis_evc')||'false'); document.getElementById('evc').checked=!!st; document.body.classList.toggle('evidence-mode', !!st);}catch{}})();
   document.getElementById('year').textContent = new Date().getFullYear();
+
   function generateExtract(){
     const now=new Date().toISOString();
     const ids=['legal-privacy','legal-terms','legal-nda','legal-retention','legal-security','legal-cookies','legal-claims','legal-dpa'];
@@ -111,13 +112,18 @@
     html+='<hr><p class="small">Generated client-side without third-party libraries. For signed snapshots, email Contact@RBISIntelligence.com.</p></body></html>';
     const w=window.open('about:blank'); w.document.write(html); w.document.close();
   }
+
   function exportMatrixCSV(){
     const table=document.getElementById('cmx');
     const rows=[...table.querySelectorAll('tr')];
-    const data=rows.map(tr=>[...tr.children].map(td=>{const a=td.querySelector('a');return a?(a.textContent.trim()+" — "+a.href).replaceAll(',', ';'):(td.textContent||'').trim().replaceAll(',', ';');}));
+    const data=rows.map(tr=>[...tr.children].map(td=>{
+      const a=td.querySelector('a');
+      return a?(a.textContent.trim()+" — "+a.href).replaceAll(',', ';'):(td.textContent||'').trim().replaceAll(',', ';');
+    }));
     const blob=new Blob([data.map(r=>r.join(',')).join('\n')],{type:'text/csv'});
     const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='RBIS_Compliance_Matrix.csv';document.body.appendChild(a);a.click();URL.revokeObjectURL(url);a.remove();
   }
+
   function printTrustDossier(){
     const now=new Date().toISOString();
     const matrixHTML=document.getElementById('cmx').outerHTML;
