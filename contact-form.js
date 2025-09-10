@@ -29,7 +29,8 @@
     idx = Math.max(0, Math.min(steps.length-1, i));
     steps.forEach((s,j)=>{s.style.display = j===idx?'block':'none';});
     bullets.forEach((b,j)=>{b.classList.toggle('active', j<=idx);});
-    form.scrollIntoView({behavior:'smooth', block:'start'});
+    // scrollIntoView is not implemented in jsdom used for tests
+    form.scrollIntoView?.({behavior:'smooth', block:'start'});
   }
 
   setStep(0);
