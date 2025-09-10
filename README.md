@@ -2,11 +2,7 @@
 
 Push to `main` → auto-deploys to **GitHub Pages** via Actions.
 
-## Local setup
+## Local preview
 
-```sh
-npm install
-npm run build
-```
-
-The project has no test suite; building is sufficient before publishing.
+Open `index.html` directly in a browser or serve this repository with any static file server.
+No build step or runtime dependencies are required.
