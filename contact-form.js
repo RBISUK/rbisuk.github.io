@@ -83,13 +83,6 @@
     return ok;
   }
 
-  // NDA toggle hook
-  form.elements['nda']?.addEventListener('change', e=>{
-    if(e.target.checked){
-      console.log('NDA requested - trigger DocuSign envelope');
-    }
-  });
-
   // Word count
   const msg = form.elements['message'];
   const wc = q('#wc');
