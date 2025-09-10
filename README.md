@@ -2,11 +2,10 @@
 
 Push to `main` → auto-deploys to **GitHub Pages** via Actions.
 
-## Local setup
+## Local editing
 
-```sh
-npm install
-npm run build
-```
+No build tooling is required. Edit the HTML, CSS, or JS files directly and commit your changes.
 
-The project has no test suite; building is sufficient before publishing.
+## Testing
+
+The project has no automated test suite.
