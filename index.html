@@ -21,9 +21,11 @@
   .nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
   .nav .wrap{display:flex;align-items:center;justify-content:space-between;padding:10px 0}
   .brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:20px;color:var(--brand)}
+  .brand img{height:34px;width:auto}
   .menu{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
   .menu a{padding:8px 10px;border-radius:10px;text-decoration:none;color:var(--ink)}
   .menu a:hover{background:var(--soft)}
+  .btn,.btn-ghost{cursor:pointer}
   .btn{display:inline-block;background:var(--brand3);color:#fff;border-radius:12px;padding:10px 14px;text-decoration:none;border:1px solid #0f233b;box-shadow:var(--shadow);font-weight:600}
   .btn:hover{filter:brightness(1.05)}
   .btn-ghost{display:inline-block;background:#fff;color:var(--ink);border:1px solid var(--line);border-radius:12px;padding:8px 12px}
@@ -70,7 +72,7 @@
 </div>
 <nav class="nav" aria-label="Top">
   <div class="wrap">
-    <div class="brand">RBIS</div>
+    <div class="brand"><img src="logo.svg" alt="RBIS logo"/></div>
     <div class="menu">
       <a href="index.html">Home</a>
       <a href="dashboards.html">Dashboards</a>

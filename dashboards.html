@@ -13,8 +13,10 @@
   .nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
   .nav .wrap{display:flex;align-items:center;justify-content:space-between;padding:10px 0}
   .brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:20px;color:var(--brand)}
+  .brand img{height:34px;width:auto}
   .menu{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
   .menu a{padding:8px 10px;border-radius:10px;text-decoration:none;color:var(--ink)} .menu a:hover{background:var(--soft)}
+  .btn,.btn-ghost{cursor:pointer}
   .btn{display:inline-block;background:var(--brand3);color:#fff;border-radius:12px;padding:10px 14px;text-decoration:none;border:1px solid #0f233b;box-shadow:var(--shadow);font-weight:600}
   .btn-ghost{display:inline-block;background:#fff;color:var(--ink);border:1px solid var(--line);border-radius:12px;padding:8px 12px}
   h1{font-size:clamp(26px,4vw,40px);margin:22px 0 12px} h2{font-size:clamp(22px,2.6vw,32px);margin:22px 0 10px} h3{font-size:20px;margin:14px 0 8px}
@@ -31,7 +33,7 @@
 <body>
 <nav class="nav">
   <div class="wrap">
-    <div class="brand">RBIS</div>
+    <div class="brand"><img src="logo.svg" alt="RBIS logo"/></div>
     <div class="menu">
       <a href="index.html">Home</a>
       <a href="dashboards.html">Dashboards</a>
@@ -52,7 +54,10 @@
 </nav>
 <div class="wrap">
   <h1>Executive Dashboards</h1>
+  <div id="nodata" class="muted" style="display:none">No data available for selected period.</div>
   <div class="evc-banner">Evidence Mode is ON — charts and KPIs are optimised for print and citation.</div>
+
+  <!-- CEO Section -->
   <section class="section grid grid-2">
     <div class="card">
       <h2>CEO Command — Revenue & Decisions</h2>
@@ -69,6 +74,8 @@
       <canvas id="spark1" height="60"></canvas>
     </div>
   </section>
+
+  <!-- Board & Crisis -->
   <section class="section grid grid-2">
     <div class="card">
       <h2>Board — Risk Heatmap</h2>
@@ -82,6 +89,8 @@
       <ol id="incidents" style="padding-left:18px;margin:0"></ol>
     </div>
   </section>
+
+  <!-- Live Ops -->
   <section class="section grid grid-2">
     <div class="card">
       <h2>Live Ops — Kanban</h2>
@@ -97,6 +106,8 @@
       <div class="muted" style="font-size:12px;margin-top:6px">SLA: rapid triage ≤24h for verified uploads.</div>
     </div>
   </section>
+
+  <!-- Investor -->
   <section class="section grid grid-2">
     <div class="card">
       <h2>Investor Flight Deck — Growth</h2>
@@ -117,11 +128,13 @@
     </div>
   </section>
 </div>
+
 <footer style="border-top:1px solid var(--line);margin-top:26px">
   <div class="wrap" style="text-align:center;color:var(--muted);padding:20px 0">
     © <span id="year"></span> RBIS — Behavioural & Intelligence Services • <a href="trust.html">Trust</a> • <a href="legal.html">Legal</a>
   </div>
 </footer>
+
 <script>
   const data={
     months:['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'],
@@ -146,13 +159,39 @@
   let currentPeriod='YTD';
   function sliceFor(p){const idx={Q1:[0,3],Q2:[3,6],Q3:[6,9],Q4:[9,12],YTD:[0,new Date().getMonth()+1]};const [s,e]=idx[p];return{months:data.months.slice(s,e),revenue:data.revenue.slice(s,e),arr:data.arr.slice(s,e),winRate:data.winRate.slice(s,e),opsThroughput:data.opsThroughput.slice(s,e)};}
   function setPeriod(p){currentPeriod=p;render();} window.setPeriod=setPeriod;
-  function render(){const d=sliceFor(currentPeriod);const revK=sum(d.revenue)*1000,arrK=d.arr[d.arr.length-1]*1000,winK=avg(d.winRate);document.getElementById('kpiRevenue').textContent=£(revK);document.getElementById('kpiARR').textContent=£(arrK);document.getElementById('kpiWin').textContent=Math.round(winK)+'%';document.getElementById('gRevenue').style.width=clamp((revK/(sum(data.revenue)*1000))*100,5,100)+'%';document.getElementById('gARR').style.width=clamp((arrK/(data.arr[data.arr.length-1]*1000))*100,5,100)+'%';document.getElementById('gWin').style.width=clamp(winK,5,100)+'%';const arrGrowth=((d.arr[d.arr.length-1]-d.arr[0])/Math.max(d.arr[0],1))*100;document.getElementById('kARRg').textContent=(arrGrowth>0?'+':'')+Math.round(arrGrowth)+'%';document.getElementById('kMargin').textContent=data.finance.marginPct+'%';document.getElementById('kRunway').textContent=data.finance.runwayMonths+' mo';lineChart('chartRevenue',d.months,d.revenue);barChart('chartARR',d.months,d.arr);barChart('chartOps',d.months,d.opsThroughput,'#1c2541');sparkline('spark1',data.revenue);}
+
+function render(){
+  const d = sliceFor(currentPeriod);
+  if(!d.months.length){
+    document.getElementById("nodata").style.display="block";
+    document.querySelectorAll(".section").forEach(s=>s.style.display="none");
+    return;
+  } else {
+    document.getElementById("nodata").style.display="none";
+    document.querySelectorAll(".section").forEach(s=>s.style.display="");
+  }
+  const revK=sum(d.revenue)*1000, arrK=d.arr[d.arr.length-1]*1000, winK=avg(d.winRate);
+  document.getElementById("kpiRevenue").textContent=£(revK);
+  document.getElementById("kpiARR").textContent=£(arrK);
+  document.getElementById("kpiWin").textContent=Math.round(winK)+"%";
+  document.getElementById("gRevenue").style.width=clamp((revK/(sum(data.revenue)*1000))*100,5,100)+"%";
+  document.getElementById("gARR").style.width=clamp((arrK/(data.arr[data.arr.length-1]*1000))*100,5,100)+"%";
+  document.getElementById("gWin").style.width=clamp(winK,5,100)+"%";
+  const arrGrowth=((d.arr[d.arr.length-1]-d.arr[0])/Math.max(d.arr[0],1))*100;
+  document.getElementById("kARRg").textContent=(arrGrowth>0?"+":"")+Math.round(arrGrowth)+"%";
+  document.getElementById("kMargin").textContent=data.finance.marginPct+"%";
+  document.getElementById("kRunway").textContent=data.finance.runwayMonths+" mo";
+  lineChart("chartRevenue", d.months, d.revenue);
+  barChart("chartARR", d.months, d.arr);
+  barChart("chartOps", d.months, d.opsThroughput, "#1c2541");
+  sparkline("spark1", data.revenue);
+}
+
   function toggleEvidenceMode(){const on=document.getElementById('evc').checked;document.body.classList.toggle('evidence-mode',on);localStorage.setItem('rbis_evc',JSON.stringify(!!on));}
   (function(){try{const st=JSON.parse(localStorage.getItem('rbis_evc')||'false');document.getElementById('evc').checked=!!st;document.body.classList.toggle('evidence-mode',!!st);}catch{}})();
   document.getElementById('year').textContent=new Date().getFullYear();
   function exportCSV(){const d=sliceFor(currentPeriod);const lines=[];const now=new Date().toISOString();const pushTable=(title,headers,rows)=>{lines.push('# '+title);lines.push(headers.join(','));rows.forEach(r=>lines.push(r.map(x=>(''+x).replaceAll(',', ';')).join(',')));lines.push('');};pushTable(`Revenue (£k) — Period ${currentPeriod} — Issued ${now}`,['Month','Revenue_k'],d.months.map((m,i)=>[m,d.revenue[i]]));pushTable(`ARR (£k) — Period ${currentPeriod} — Issued ${now}`,['Month','ARR_k'],d.months.map((m,i)=>[m,d.arr[i]]));pushTable(`WinRate (%) — Period ${currentPeriod} — Issued ${now}`,['Month','WinRate_pct'],d.months.map((m,i)=>[m,d.winRate[i]]));pushTable(`Ops Throughput (cases closed) — Period ${currentPeriod} — Issued ${now}`,['Month','Closed'],d.months.map((m,i)=>[m,d.opsThroughput[i]]));pushTable('Risk Register (LxI score)',['Risk','Likelihood_1to5','Impact_1to5','Score'],data.risks.map(r=>[r.name,r.L,r.I,r.L*r.I]));pushTable('Incidents Timeline',['Date','Severity','Summary'],data.incidents.map(i=>[i.date,i.sev,i.text]));const blob=new Blob([lines.join('\n')],{type:'text/csv'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download=`RBIS_Dashboard_${currentPeriod}_${now.substring(0,10)}.csv`;document.body.appendChild(a);a.click();URL.revokeObjectURL(url);a.remove();}
   function printEvidencePack(){render();function snap(id){const c=document.getElementById(id);return c?c.toDataURL('image/png'):'';}const imgRevenue=snap('chartRevenue'),imgARR=snap('chartARR'),imgOps=snap('chartOps'),imgSpark=snap('spark1');const now=new Date().toISOString();const html=`<!doctype html><html><head><meta charset="utf-8"/><title>RBIS Evidence Pack — ${currentPeriod} — ${now}</title><style>body{font-family:ui-sans-serif,system-ui;margin:24px;color:#0f172a}h1{margin:0 0 6px}h2{margin:18px 0 8px}h3{margin:12px 0 6px}.muted{color:#475569}.kpis{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}.kpi{border:1px solid #e5e7eb;border-radius:12px;padding:10px}img{max-width:100%;height:auto;border:1px solid #e5e7eb;border-radius:8px}table{width:100%;border-collapse:collapse;margin-top:8px}th,td{border:1px solid #e5e7eb;padding:8px;text-align:left;vertical-align:top}@media print{.page{page-break-after:always}a:after{content:" (" attr(href) ")";font-size:11px;color:#64748b}}</style></head><body><h1>RBIS Evidence Pack</h1><p class="muted">Period: <b>${currentPeriod}</b> • Issued: ${now} • Source: dashboards.html</p><div class="kpis"><div class="kpi"><div class="muted">Revenue (YTD)</div><div style="font-weight:700;font-size:20px">${document.getElementById('kpiRevenue').textContent}</div></div><div class="kpi"><div class="muted">ARR</div><div style="font-weight:700;font-size:20px">${document.getElementById('kpiARR').textContent}</div></div><div class="kpi"><div class="muted">Win Rate</div><div style="font-weight:700;font-size:20px">${document.getElementById('kpiWin').textContent}</div></div></div><div class="page"><h2>Charts</h2><h3>Revenue</h3><img alt="Revenue chart" src="${imgRevenue}"/><h3>ARR</h3><img alt="ARR chart" src="${imgARR}"/><h3>Ops Throughput</h3><img alt="Ops chart" src="${imgOps}"/><h3>CEO Sparkline</h3><img alt="Sparkline" src="${imgSpark}"/></div><div class="page"><h2>Risk Register</h2><table><thead><tr><th>Risk</th><th>Likelihood</th><th>Impact</th><th>Score</th></tr></thead><tbody>${data.risks.map(r=>`<tr><td>${r.name}</td><td>${r.L}/5</td><td>${r.I}/5</td><td><b>${r.L*r.I}</b></td></tr>`).join('')}</tbody></table><h2>Incidents</h2><table><thead><tr><th>Date</th><th>Severity</th><th>Summary</th></tr></thead><tbody>${data.incidents.map(i=>`<tr><td>${i.date}</td><td>${i.sev}</td><td>${i.text}</td></tr>`).join('')}</tbody></table></div><div><h2>Statement</h2><p>RBIS applies court-ready standards to intake, chain of custody, and analyst review. See <a href="trust.html">Trust Centre</a> and <a href="legal.html">Legal Hub</a>. This pack is a representation of current dashboards for the chosen period and is intended to support— not substitute—qualified legal advice.</p></div></body></html>`;const w=window.open('about:blank');w.document.write(html);w.document.close();}
-  function exportCSVWrapper(){exportCSV();}
   paintRisk();paintKanban();setPeriod('YTD');
 </script>
 </body>
