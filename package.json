@@ -1,8 +1,7 @@
 {
   "name": "rbisuk.github.io",
   "version": "1.0.0",
-  "description": "RBIS UK site",
-  "main": "main.js",
+  "description": "RBIS website",
   "scripts": {
     "build": "echo \"build\""
   },
