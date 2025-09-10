@@ -46,3 +46,42 @@
   onScroll();
 })();
 
+(() => {
+  const cta = document.querySelector('.sticky-cta');
+  const footer = document.querySelector('.site-footer');
+  if (!cta || !footer) return;
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      cta.style.opacity = e.isIntersecting ? '0' : '1';
+    });
+  });
+  io.observe(footer);
+})();
+
+(() => {
+  document.querySelectorAll('.stat-num[data-count]').forEach(el => {
+    const target = parseInt(el.dataset.count, 10);
+    el.textContent = '0';
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          let curr = 0;
+          const step = target / 40;
+          const tick = () => {
+            curr += step;
+            if (curr < target) {
+              el.textContent = Math.floor(curr);
+              requestAnimationFrame(tick);
+            } else {
+              el.textContent = target;
+            }
+          };
+          tick();
+          io.disconnect();
+        }
+      });
+    }, { threshold: 0.6 });
+    io.observe(el);
+  });
+})();
+

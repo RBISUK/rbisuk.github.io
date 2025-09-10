@@ -59,35 +59,41 @@
             <!-- STEP 1 -->
             <section data-step="1">
               <div class="grid">
-                <div class="field" data-required="true">
+                <div class="field with-icon" data-required="true">
+                  <svg aria-hidden="true"><use href="icons.svg#i-profile"/></svg>
                   <input type="text" name="name" id="name" autocomplete="name" required/>
                   <label for="name">Full name</label>
                   <div class="error">Please enter your name.</div>
                 </div>
-                <div class="field" data-required="true">
+                <div class="field with-icon" data-required="true">
+                  <svg aria-hidden="true"><use href="icons.svg#i-mail"/></svg>
                   <input type="email" name="_replyto" id="email" autocomplete="email" inputmode="email" required/>
                   <label for="email">Work email</label>
                   <div class="error">Enter a valid email.</div>
                 </div>
 
-                <div class="field">
+                <div class="field with-icon">
+                  <svg aria-hidden="true"><use href="icons.svg#i-office"/></svg>
                   <input type="text" name="organisation" id="org" autocomplete="organization"/>
                   <label for="org">Organisation</label>
                 </div>
-                <div class="field">
+                <div class="field with-icon">
+                  <svg aria-hidden="true"><use href="icons.svg#i-profile"/></svg>
                   <input type="text" name="role" id="role" autocomplete="organization-title"/>
                   <label for="role">Role / Title</label>
                 </div>
 
-                <div class="field">
+                <div class="field with-icon">
+                  <svg aria-hidden="true"><use href="icons.svg#i-headset"/></svg>
                   <input type="tel" name="phone" id="phone" inputmode="tel" autocomplete="tel"/>
                   <label for="phone">Phone (optional)</label>
                   <div class="help">Useful if urgent.</div>
                 </div>
-                <div class="field">
+                <div class="field with-icon">
+                  <svg aria-hidden="true"><use href="icons.svg#i-headset"/></svg>
                   <select name="pref_contact" id="pref_contact">
                     <option value="">No preference</option>
-                    <option>Email">Email</option>
+                    <option>Email</option>
                     <option>Phone</option>
                     <option>Secure portal</option>
                   </select>
@@ -157,9 +163,9 @@
                 <div class="kitem">
                   <label class="switch">
                     <input type="checkbox" name="nda" id="nda"/>
-                    <span></span><strong> NDA required</strong>
+                    <span></span><strong> Request mutual NDA</strong>
                   </label>
-                  <div class="small muted">We can issue a mutual NDA on request.</div>
+                  <div class="small muted">We'll send a DocuSign link if checked.</div>
                 </div>
 
                 <div class="kitem">
@@ -177,11 +183,10 @@
                 </div>
 
                 <div class="field" data-required="true">
-                  <select name="consent" id="consent" required>
-                    <option value="">Select</option>
-                    <option value="agree">I agree to confidential processing of my data for consultation</option>
-                  </select>
-                  <label for="consent">Consent</label>
+                  <label class="check-line">
+                    <input type="checkbox" name="consent" id="consent" required/>
+                    <span>I agree to the <a href="/legal#privacy" target="_blank" rel="noopener">Privacy Policy</a> and <a href="/legal#terms" target="_blank" rel="noopener">Terms of Service</a>.</span>
+                  </label>
                   <div class="error">Consent is required to proceed.</div>
                 </div>
               </div>
@@ -224,12 +229,12 @@
         <a href="workflow.html">Workflow</a><a href="sectors.html">Sectors</a><a href="contact.html">Contact</a><a href="insights.html">Insights</a>
       </nav>
       <nav class="stack gap-8" aria-label="Legal"><strong>Legal</strong>
-        <a href="#" aria-disabled="true">Privacy Policy</a><a href="#" aria-disabled="true">Terms of Service</a><a href="#" aria-disabled="true">Confidentiality Agreement</a>
+        <a href="/legal#privacy">Privacy Policy</a><a href="/legal#terms">Terms of Service</a><a href="/legal#nda">Confidentiality Agreement</a>
       </nav>
     </div>
     <div class="container footer-base"><small>© 2024 Ryan Roberts Behavioural &amp; Intelligence Services. All rights reserved.</small></div>
   </footer>
-
+  <div class="sticky-cta"><svg aria-hidden="true"><use href="icons.svg#i-headset"/></svg><span>Need rapid support?</span><a class="btn btn-primary" href="mailto:contact@rbisintelligence.com">Email Now</a></div>
   <script src="main.js" defer></script>
   <script src="contact-form.js" defer></script>
 </body>
