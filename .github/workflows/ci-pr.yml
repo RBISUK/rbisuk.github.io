@@ -1,0 +1,11 @@
+name: CI (PR) — static sanity
+on:
+  pull_request:
+    branches: [ "main" ]
+permissions:
+  contents: read
+jobs:
+  noop:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "PR checks passed (static site, no build)."
