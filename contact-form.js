@@ -12,7 +12,11 @@
 
   loadDraft();
   form.addEventListener('input',e=>{
-    const f=e.target.closest('.field'); if(f){const inp=f.querySelector('input,textarea,select'); if(!inp) return; f.classList.toggle('filled', !!inp.value);}
+    const f=e.target.closest('.field'); if(f){
+      const inp=f.querySelector('input,textarea,select'); if(!inp) return;
+      const val = inp.type==='checkbox'?inp.checked:inp.value;
+      f.classList.toggle('filled', !!val);
+    }
     saveDraft();
   });
 
@@ -33,7 +37,15 @@
   // Helpers
   const q=(sel,root=document)=>root.querySelector(sel);
   const qa=(sel,root=document)=>[...root.querySelectorAll(sel)];
-  function setFilledState(){qa('.field',form).forEach(f=>{const inp=q('input,textarea,select',f); if(inp) f.classList.toggle('filled', !!inp.value);});}
+  function setFilledState(){
+    qa('.field',form).forEach(f=>{
+      const inp=q('input,textarea,select',f);
+      if(inp){
+        const val= inp.type==='checkbox'?inp.checked:inp.value;
+        f.classList.toggle('filled', !!val);
+      }
+    });
+  }
   setFilledState();
 
   // Chips (toggle)
@@ -57,9 +69,11 @@
     let ok = true;
     qa('[data-required="true"] input,[data-required="true"] textarea,[data-required="true"] select', current).forEach(el=>{
       const field = el.closest('.field'); field?.classList.remove('invalid');
-      if(!el.value || (el.type==='email' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(el.value))){
-        field?.classList.add('invalid'); ok=false;
-      }
+      let bad = false;
+      if(el.type==='checkbox') bad = !el.checked;
+      else if(el.type==='email') bad = !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(el.value);
+      else bad = !el.value;
+      if(bad){ field?.classList.add('invalid'); ok=false; }
     });
     // Extra rule: if urgent -> phone required
     if(i===1 && urgencySel && urgencySel.value.includes('Urgent')){
@@ -68,6 +82,13 @@
     }
     return ok;
   }
+
+  // NDA toggle hook
+  form.elements['nda']?.addEventListener('change', e=>{
+    if(e.target.checked){
+      console.log('NDA requested - trigger DocuSign envelope');
+    }
+  });
 
   // Word count
   const msg = form.elements['message'];
@@ -84,7 +105,7 @@
       <div class="meta"><strong>Subject:</strong> ${f.subject||'-'} <strong>Urgency:</strong> ${f.urgency||'-'} <strong>Preferred Contact:</strong> ${f.pref_contact||'-'}</div>
       <div class="meta"><strong>Topics:</strong> ${f.topics||'-'}</div>
       <div class="kitem"><strong>Message</strong><div class="small muted">${(f.message||'').replace(/</g,'&lt;')}</div></div>
-      <div class="meta"><strong>NDA Required:</strong> ${f.nda==='on'?'Yes':'No'} <strong>Secure Upload:</strong> ${f.secure==='on'?'Yes':'No'}</div>
+      <div class="meta"><strong>NDA Required:</strong> ${f.nda==='on'?'Yes':'No'} <strong>Secure Upload:</strong> ${f.secure==='on'?'Yes':'No'} <strong>Consent:</strong> ${f.consent==='on'?'Yes':'No'}</div>
     `;
   }
 
@@ -134,7 +155,11 @@
 
   // Enforce filled class on load
   qa('.field input,.field textarea,.field select',form).forEach(el=>{
-    const f=el.closest('.field'); if(f) f.classList.toggle('filled', !!el.value);
+    const f=el.closest('.field');
+    if(f){
+      const val = el.type==='checkbox'?el.checked:el.value;
+      f.classList.toggle('filled', !!val);
+    }
   });
 
 })();
