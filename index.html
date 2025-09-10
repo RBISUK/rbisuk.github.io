@@ -314,8 +314,9 @@
         </div>
         <div class="card">
           <h3>Certified Policy Extract</h3>
-          <p>Create a timestamped summary of key policies with hashes for procurement and tribunals.</p>
-          <p><a class="btn" href="mailto:compliance@RBISIntelligence.com?subject=Policy%20Extract%20Request">Request Certified Policy Extract</a></p>
+          <p>Create a timestamped summary of key policies with SHA-256 hashes for procurement and tribunals.</p>
+          <button class="btn" onclick="generateExtract()">Generate Certified Policy Extract</button>
+          <p class="muted" style="font-size:12px;margin-top:6px">Includes policy titles, versions, hashes, and issuance timestamp.</p>
         </div>
       </div>
     </div>
@@ -429,10 +430,10 @@
       <div>
 
         <!-- Privacy -->
-        <article id="legal-privacy" class="card">
+        <article id="legal-privacy" class="card" data-hash-target="true">
           <button class="copy-btn" onclick="copySection(this.parentElement)">Copy</button>
           <h2>Privacy Policy (UK GDPR)</h2>
-          <p><b>Effective:</b> <span>2025-09-10</span></p>
+          <p><b>Effective:</b> <span>2025-09-10</span> • <b>Reference hash:</b> <code class="policy-hash">pending…</code></p>
           <p><b>Controller:</b> Ryan Roberts: Behavioural & Intelligence Services ("RBIS"). Contact: <a href="mailto:Contact@RBISIntelligence.com">Contact@RBISIntelligence.com</a>. Address: PO Box, Bournemouth, Dorset, BH2 5RR, England.</p>
           <p>This Privacy Policy explains how we process personal data under UK GDPR and the Data Protection Act 2018. It works with our <a href="#legal-terms">Terms of Service</a>, <a href="#legal-cookies">Cookie Policy</a>, <a href="#legal-retention">Data Retention</a>, and <a href="#legal-security">Security Statement</a>.</p>
           <h3>1) What we collect</h3>
@@ -477,10 +478,10 @@
         </article>
 
         <!-- Terms -->
-        <article id="legal-terms" class="card">
+        <article id="legal-terms" class="card" data-hash-target="true">
           <button class="copy-btn" onclick="copySection(this.parentElement)">Copy</button>
           <h2>Terms of Service</h2>
-          <p><b>Effective:</b> <span>2025-09-10</span></p>
+          <p><b>Effective:</b> <span>2025-09-10</span> • <b>Reference hash:</b> <code class="policy-hash" id="tos-hash">pending…</code></p>
           <p>By using this site or our services, you agree to these Terms. See also our <a href="#legal-privacy">Privacy Policy</a> and <a href="#legal-cookies">Cookie Policy</a>.</p>
           <h3>1) Services & No Legal Advice</h3>
           <p>We provide information, automation, and document-generation tools. We are <b>not a law firm</b> and do not provide legal advice. All outputs are intended to support — not substitute — qualified legal advice. We encourage clients to consult with a solicitor before relying on any report or document in proceedings.</p>
@@ -514,10 +515,10 @@
         </article>
 
         <!-- NDA -->
-        <article id="legal-nda" class="card">
+        <article id="legal-nda" class="card" data-hash-target="true">
           <button class="copy-btn" onclick="copySection(this.parentElement)">Copy</button>
           <h2>Mutual Confidentiality Agreement (Short Form)</h2>
-          <p><b>Effective:</b> <span>2025-09-10</span></p>
+          <p><b>Effective:</b> <span>2025-09-10</span> • <b>Reference hash:</b> <code class="policy-hash">pending…</code></p>
           <p><b>Parties:</b> Ryan Roberts: Behavioural & Intelligence Services ("RBIS") and the counterparty ("Recipient").</p>
           <h3>1) Definition</h3>
           <p>“Confidential Information” means non-public information disclosed by either party, including plans, data, documents, models, prompts, customer information, and any personal data, marked or reasonably understood as confidential.</p>
@@ -544,10 +545,10 @@
         </article>
 
         <!-- Retention -->
-        <article id="legal-retention" class="card">
+        <article id="legal-retention" class="card" data-hash-target="true">
           <button class="copy-btn" onclick="copySection(this.parentElement)">Copy</button>
           <h2>Data Retention & Deletion Policy</h2>
-          <p><b>Effective:</b> <span>2025-09-10</span></p>
+          <p><b>Effective:</b> <span>2025-09-10</span> • <b>Reference hash:</b> <code class="policy-hash">pending…</code></p>
           <h3>Retention Schedule (default)</h3>
           <table class="table">
             <thead><tr><th>Data category</th><th>Default retention</th><th>Notes</th></tr></thead>
@@ -570,10 +571,10 @@
         </article>
 
         <!-- Security -->
-        <article id="legal-security" class="card">
+        <article id="legal-security" class="card" data-hash-target="true">
           <button class="copy-btn" onclick="copySection(this.parentElement)">Copy</button>
           <h2>Security Statement & Chain of Custody</h2>
-          <p><b>Effective:</b> <span>2025-09-10</span></p>
+          <p><b>Effective:</b> <span>2025-09-10</span> • <b>Reference hash:</b> <code class="policy-hash">pending…</code></p>
           <h3>Chain of Custody</h3>
           <ul class="list">
             <li>TLS-only ingress; malware scanning</li>
@@ -598,10 +599,10 @@
         </article>
 
         <!-- Cookies -->
-        <article id="legal-cookies" class="card">
+        <article id="legal-cookies" class="card" data-hash-target="true">
           <button class="copy-btn" onclick="copySection(this.parentElement)">Copy</button>
           <h2>Cookie Policy</h2>
-          <p><b>Effective:</b> <span>2025-09-10</span></p>
+          <p><b>Effective:</b> <span>2025-09-10</span> • <b>Reference hash:</b> <code class="policy-hash">pending…</code></p>
           <p>This policy forms part of the <a href="#legal-privacy">Privacy Policy</a> and <a href="#legal-terms">Terms</a>. Non-essential cookies run only with your consent.</p>
           <h3>Types</h3>
           <ul class="list">
@@ -615,10 +616,10 @@
         </article>
 
         <!-- Claims -->
-        <article id="legal-claims" class="card">
+        <article id="legal-claims" class="card" data-hash-target="true">
           <button class="copy-btn" onclick="copySection(this.parentElement)">Copy</button>
           <h2>Claims, Testimonials & Marketing Accuracy</h2>
-          <p><b>Effective:</b> <span>2025-09-10</span></p>
+          <p><b>Effective:</b> <span>2025-09-10</span> • <b>Reference hash:</b> <code class="policy-hash">pending…</code></p>
           <h3>Substantiation</h3>
           <ul class="list">
             <li>Claims include footnotes on scope, assumptions, and limitations.</li>
@@ -634,10 +635,10 @@
         </article>
 
         <!-- DPA -->
-        <article id="legal-dpa" class="card">
+        <article id="legal-dpa" class="card" data-hash-target="true">
           <button class="copy-btn" onclick="copySection(this.parentElement)">Copy</button>
           <h2>Data Processing Addendum (Controller ↔ Processor)</h2>
-          <p><b>Effective:</b> <span>2025-09-10</span></p>
+          <p><b>Effective:</b> <span>2025-09-10</span> • <b>Reference hash:</b> <code class="policy-hash">pending…</code></p>
           <h3>1) Subject Matter & Duration</h3>
           <p>Processing personal data submitted to the services for the term of the underlying agreement.</p>
           <h3>2) Nature & Purpose</h3>
@@ -699,6 +700,45 @@
       if(!saved){document.getElementById('cookie').style.display='block'}
       window.cookieSet=function(mode){localStorage.setItem(key, JSON.stringify({necessary:true, analytics: mode==='analytics'}));document.getElementById('cookie').style.display='none'}
 
+      // Compute hashes for policy articles (client-side SHA-256)
+      var targets = document.querySelectorAll('[data-hash-target]');
+      function sha256(str){
+        const enc=new TextEncoder().encode(str);
+        return crypto.subtle.digest('SHA-256', enc).then(buf=>{
+          const b=new Uint8Array(buf);return Array.from(b).map(x=>x.toString(16).padStart(2,'0')).join('')
+        });
+      }
+      targets.forEach(function(node){
+        sha256(node.innerText.trim()).then(function(h){
+          var ref = node.querySelector('.policy-hash');
+          if(!ref){
+            ref=document.createElement('code');
+            ref.className='policy-hash';
+            var p=document.createElement('p');p.innerHTML='<b>Reference hash:</b> ';p.appendChild(ref);
+            node.insertBefore(p, node.children[2] || null);
+          }
+          ref.textContent = h.slice(0,16)+'…';
+          if(node.id==='legal-terms'){
+            var th=document.getElementById('tos-hash'); if(th) th.textContent=h.slice(0,16)+'…';
+          }
+        });
+      });
+
+      // Certified Extract generator
+      window.generateExtract = function(){
+        var now = new Date().toISOString();
+        var blocks = [];
+        targets.forEach(function(node){
+          blocks.push({id:node.id,title:node.querySelector('h2')?node.querySelector('h2').innerText:node.id, text:node.innerText.slice(0,700)+'…'});
+        });
+        Promise.all(Array.from(targets).map(n=>sha256(n.innerText.trim()))).then(function(hashes){
+          var html = '<!doctype html><html><head><meta charset="utf-8"><title>RBIS Certified Policy Extract</title><style>body{font-family:ui-sans-serif,system-ui;padding:20px;color:#0f172a}h1{margin:0 0 10px}h2{margin:20px 0 6px}code{background:#eef;padding:2px 4px;border-radius:6px}hr{border:none;border-top:1px solid #ddd;margin:16px 0}p.small{font-size:12px;color:#475569}</style></head><body>'+ 
+            '<h1>RBIS Certified Policy Extract</h1><p>Issued: '+now+'</p><p>This extract summarises current policy versions with content hashes (SHA-256, first 16 hex chars shown). For authoritative text, see the live site.</p><hr>';
+          blocks.forEach(function(b, i){ html += '<h2>'+b.title+'</h2><p><b>Hash:</b> <code>'+hashes[i].slice(0,16)+'…</code></p><p>'+b.text+'</p>'; });
+          html += '<hr><p class="small">Generated client-side without third-party libraries. For signed snapshots, email <a href="mailto:compliance@RBISIntelligence.com">compliance@RBISIntelligence.com</a>. This extract is informational; binding terms are those published on the live site at time of reliance.</p></body></html>';
+          var w = window.open('about:blank'); w.document.write(html); w.document.close();
+        });
+      }
     })();
 
     // Copy helper
