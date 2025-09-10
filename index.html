@@ -1,725 +1,197 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>RBIS — Behavioural & Intelligence Services</title>
-  <meta name="description" content="RBIS equips leaders with foresight, clarity, and behavioural advantage — through independent analysis and intelligence-grade, court-ready reports." />
-  <meta name="theme-color" content="#0a0a0a" />
-  <meta property="og:title" content="RBIS — Behavioural & Intelligence Services" />
-  <meta property="og:description" content="Independent insights. Evidence-based decisions. Conflict resolved." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://rbis.example" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <style>
-    :root{
-      --bg:#ffffff;--ink:#0f172a;--muted:#475569;--line:#e2e8f0;--soft:#f8fafc;--brand:#0b132b;--brand-2:#1c2541;--brand-3:#3a506b;--accent:#118ab2;
-      --radius:16px;--pad:18px;--shadow:0 20px 30px -20px rgba(0,0,0,.25)
-    }
-    *{box-sizing:border-box}
-    html,body{margin:0;height:100%;scroll-behavior:smooth;color:var(--ink);background:var(--bg);font:16px/1.6 ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,Helvetica Neue,Arial,"Apple Color Emoji","Segoe UI Emoji"}
-    a{color:var(--accent);text-decoration:underline}
-    img{max-width:100%;height:auto}
-    .wrap{max-width:1200px;margin-inline:auto;padding:0 20px}
-    .nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.85);backdrop-filter:saturate(120%) blur(8px);border-bottom:1px solid var(--line)}
-    .nav .wrap{display:flex;gap:16px;align-items:center;justify-content:space-between;padding:10px 20px}
-    .brand{display:flex;align-items:center;gap:12px}
-    .menu{display:flex;gap:14px;flex-wrap:wrap}
-    .menu a{color:var(--ink);text-decoration:none;padding:8px 10px;border-radius:10px}
-    .menu a:hover{background:var(--soft)}
-    .btn{display:inline-block;background:var(--brand-3);color:#fff;border-radius:12px;padding:10px 14px;text-decoration:none;font-weight:600;border:1px solid #0f233b;box-shadow:var(--shadow)}
-    .btn:hover{filter:brightness(1.05)}
-    .hero{background:linear-gradient(180deg,#fff, #f4f7fb 45%, #fff);border-bottom:1px solid var(--line)}
-    .hero .wrap{display:grid;grid-template-columns:1.2fr 0.8fr;gap:30px;padding:60px 20px}
-    .card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:var(--pad);box-shadow:var(--shadow)}
-    h1{font-size:clamp(28px,4vw,44px);line-height:1.15;margin:0 0 10px}
-    h2{font-size:clamp(22px,2.6vw,32px);line-height:1.2;margin:30px 0 12px}
-    h3{font-size:20px;margin:24px 0 10px}
-    p{margin:0 0 12px;color:var(--muted)}
-    .grid{display:grid;gap:16px}
-    .grid-3{grid-template-columns:repeat(3,minmax(0,1fr))}
-    .grid-2{grid-template-columns:repeat(2,minmax(0,1fr))}
-    @media (max-width:900px){.hero .wrap{grid-template-columns:1fr}.grid-3,.grid-2{grid-template-columns:1fr}}
-    .kpi{display:flex;gap:10px;align-items:center}
-    .kpi b{font-size:22px}
-    .muted{color:var(--muted)}
-    .badge{display:inline-block;padding:4px 8px;border-radius:999px;border:1px solid var(--line);background:var(--soft);font-size:12px}
-    .section{padding:48px 0}
-    .cols{display:grid;gap:18px;grid-template-columns:1fr 1fr}
-    @media (max-width:900px){.cols{grid-template-columns:1fr}}
-    .list{padding-left:18px}.list li{margin:6px 0}
-    .footer{border-top:1px solid var(--line);padding:28px 0;background:#fff}
-    .legal-links{display:flex;flex-wrap:wrap;gap:12px}
-    .table{width:100%;border-collapse:collapse}.table th,.table td{border:1px solid var(--line);padding:10px;text-align:left;vertical-align:top}
-    .notice{background:#f1f5f9;border:1px solid var(--line);border-radius:12px;padding:14px}
-    .copy-btn{float:right;font-size:12px;border:1px solid var(--line);padding:4px 8px;border-radius:8px;background:#fff}
-    .toc{position:sticky;top:80px}
-    .toast{position:fixed;right:20px;bottom:20px;background:#0f172a;color:#fff;padding:10px 14px;border-radius:10px;display:none}
-    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
-    .control-line{margin-top:6px;font-size:12px;border-top:1px dashed var(--line);padding-top:6px;color:var(--muted)}
-  </style>
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"Organization",
-    "name":"RBIS — Behavioural & Intelligence Services",
-    "alternateName":"RBIS",
-    "url":"https://rbis.example",
-    "contactPoint": [{"@type":"ContactPoint","email":"Contact@RBISIntelligence.com","contactType":"customer service","areaServed":"GB","availableLanguage":["en"]}]
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>RBIS — Behavioural & Intelligence Services</title>
+<meta name="description" content="RBIS equips leaders with foresight, clarity, and behavioural advantage — through independent analysis and intelligence-grade, court-ready reports."/>
+<meta name="theme-color" content="#0b132b"/>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%230b132b'/%3E%3Ctext x='50' y='70' font-size='70' text-anchor='middle' fill='white'%3ER%3C/text%3E%3C/svg%3E"/>
+<style>
+  :root{
+    --bg:#ffffff;--ink:#0f172a;--muted:#475569;--line:#e2e8f0;--soft:#f8fafc;
+    --brand:#0b132b;--brand2:#1c2541;--brand3:#3a506b;--accent:#118ab2;
+    --ok:#16a34a;--warn:#d97706;--bad:#dc2626;
+    --r:16px;--p:18px;--shadow:0 18px 30px -20px rgba(0,0,0,.25)
   }
-  </script>
+  *{box-sizing:border-box}
+  html,body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial}
+  a{color:var(--accent)} img{max-width:100%;height:auto}
+  .wrap{max-width:1200px;margin-inline:auto;padding:0 20px}
+  .nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  .nav .wrap{display:flex;align-items:center;justify-content:space-between;padding:10px 0}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:20px;color:var(--brand)}
+  .menu{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+  .menu a{padding:8px 10px;border-radius:10px;text-decoration:none;color:var(--ink)}
+  .menu a:hover{background:var(--soft)}
+  .btn{display:inline-block;background:var(--brand3);color:#fff;border-radius:12px;padding:10px 14px;text-decoration:none;border:1px solid #0f233b;box-shadow:var(--shadow);font-weight:600}
+  .btn:hover{filter:brightness(1.05)}
+  .btn-ghost{display:inline-block;background:#fff;color:var(--ink);border:1px solid var(--line);border-radius:12px;padding:8px 12px}
+  .badge{display:inline-block;border:1px solid var(--line);background:var(--soft);border-radius:999px;padding:4px 8px;font-size:12px}
+  header.hero{background:linear-gradient(180deg,#fff,#f3f6fb 56%,#fff);border-bottom:1px solid var(--line)}
+  header.hero .wrap{display:grid;grid-template-columns:1.2fr .8fr;gap:26px;padding:56px 0}
+  h1{font-size:clamp(28px,4vw,44px);line-height:1.2;margin:8px 0 10px}
+  h2{font-size:clamp(22px,2.6vw,32px);line-height:1.2;margin:30px 0 12px}
+  h3{font-size:20px;margin:16px 0 8px}
+  p{margin:0 0 12px;color:var(--muted)}
+  .section{padding:44px 0}
+  .card{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:var(--p);box-shadow:var(--shadow)}
+  .grid{display:grid;gap:16px}
+  .grid-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .grid-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+  @media (max-width:980px){header.hero .wrap{grid-template-columns:1fr}.grid-3,.grid-2{grid-template-columns:1fr}}
+  .kpi{display:flex;flex-direction:column;gap:2px;border:1px solid var(--line);border-radius:14px;padding:12px;background:#fff}
+  .kpi b{font-size:22px}
+  .muted{color:var(--muted)}
+  .notice{background:#eef4ff;border:1px solid var(--line);border-radius:12px;padding:12px}
+  .control{margin-top:6px;border-top:1px dashed var(--line);padding-top:6px;color:var(--muted);font-size:12px}
+  footer{border-top:1px solid var(--line);padding:26px 0;background:#fff;color:var(--muted)}
+  #cookie{display:none;position:sticky;bottom:0;background:#fff;border-top:1px solid var(--line);padding:10px 0;z-index:60}
+  .evc-badge{display:none}
+  body.evidence-mode .marketing{display:none}
+  body.evidence-mode .evc-badge{display:inline-block}
+  body.evidence-mode .card{box-shadow:none}
+  @media print{
+    nav, #cookie, .marketing {display:none !important}
+    .card{page-break-inside:avoid}
+    a:after{content:" (" attr(href) ")";font-size:11px;color:#64748b}
+  }
+</style>
 </head>
 <body>
-  <!-- Cookie Consent -->
-  <div id="cookie" class="notice" style="display:none;position:sticky;bottom:0;margin:0;z-index:60">
-    <div class="wrap" style="display:flex;gap:12px;align-items:center;justify-content:space-between">
-      <div>We use necessary cookies. Enable analytics only if you consent. <a href="#legal-cookies">Cookie Policy</a></div>
-      <div style="display:flex;gap:8px">
-        <button class="copy-btn" onclick="cookieSet('necessary')">Decline non-essential</button>
-        <button class="btn" onclick="cookieSet('analytics')">Allow analytics</button>
+<div id="cookie">
+  <div class="wrap" style="display:flex;gap:10px;align-items:center;justify-content:space-between">
+    <div>We use necessary cookies. Analytics only with consent. See <a href="legal.html#legal-cookies">Cookie Policy</a>.</div>
+    <div style="display:flex;gap:8px">
+      <button onclick="cookieSet('necessary')" class="btn-ghost">Decline non-essential</button>
+      <button onclick="cookieSet('analytics')" class="btn">Allow analytics</button>
+    </div>
+  </div>
+</div>
+<nav class="nav" aria-label="Top">
+  <div class="wrap">
+    <div class="brand">RBIS</div>
+    <div class="menu">
+      <a href="index.html">Home</a>
+      <a href="dashboards.html">Dashboards</a>
+      <a href="trust.html">Trust</a>
+      <a href="legal.html">Legal</a>
+      <a href="#contact" class="btn marketing">Contact</a>
+      <label class="btn-ghost" style="cursor:pointer">
+        <input id="evc" type="checkbox" style="accent-color:#1c2541" onchange="toggleEvidenceMode()"> Evidence Mode
+      </label>
+    </div>
+  </div>
+</nav>
+<header class="hero marketing">
+  <div class="wrap">
+    <div>
+      <span class="badge">Authority • Confidentiality • Precision</span>
+      <h1>RBIS equips leaders with foresight, clarity, and behavioural advantage — through independent analysis and intelligence-grade, court-ready reports.</h1>
+      <div style="display:flex;gap:10px;margin-top:10px">
+        <a class="btn" href="#contact">Engage RBIS</a>
+        <a class="btn" style="background:#1c2541" href="legal.html">Legal Hub</a>
+      </div>
+      <div class="control">RBIS applies court-ready standards to intake, chain of custody, and analyst review. See <a href="trust.html">Trust Centre</a>.</div>
+      <div class="grid grid-3" style="margin-top:14px">
+        <div class="kpi"><span class="muted">Client Sectors</span><b>Gov • Finance • Health</b></div>
+        <div class="kpi"><span class="muted">Posture</span><b>GDPR-First</b></div>
+        <div class="kpi"><span class="muted">Outputs</span><b>Evidence-Ready</b></div>
+      </div>
+    </div>
+    <div class="card">
+      <h3 class="sr-only">Overview</h3>
+      <ul style="margin:0;padding-left:18px">
+        <li>Model: Consulting • RBIS Intelligence SaaS • Hybrid</li>
+        <li>Values: Confidentiality • Integrity • Precision • Behavioural Advantage</li>
+        <li>Engagements: high-stakes, time-bound, audit-ready</li>
+      </ul>
+    </div>
+  </div>
+</header>
+<section class="section">
+  <div class="wrap">
+    <div class="card">
+      <h2>Dual-Method Analysis Disclosure <span class="evc-badge">§DM-1</span></h2>
+      <p>RBIS uses dual-method analysis: proprietary AI models surface behavioural and linguistic patterns; trained human analysts verify findings and produce court-ready reports. <b>No automated decision-making</b> is applied to client outcomes (UK GDPR Art. 22 aligned).</p>
+    </div>
+  </div>
+</section>
+<section class="section marketing">
+  <div class="wrap grid grid-2">
+    <div>
+      <h2>RBIS in Brief</h2>
+      <p><b>Vision:</b> Become the global operating system for intelligent decision-making.</p>
+      <p><b>Model:</b> High-ticket consulting + SaaS subscriptions + hybrid engagements.</p>
+      <p><b>Differentiator:</b> Behavioural science + forensic rigour + live dashboards.</p>
+      <div class="notice">RBIS is not a law firm. Outputs support — not substitute — qualified legal advice.</div>
+    </div>
+    <div class="card">
+      <h3>Operational Snapshot</h3>
+      <ul style="margin:0;padding-left:18px">
+        <li>Org: CEO • Consulting • Intelligence Tech • Finance/Compliance • Ops/HR</li>
+        <li>Governance: SOPs, risk register, ethics & integrity framework</li>
+        <li>Client Docs: onboarding pack, NDA, evidence guides, report access policy</li>
+        <li>Security: encryption, MFA, RBAC, audit logs</li>
+      </ul>
+    </div>
+  </div>
+</section>
+<section class="section marketing">
+  <div class="wrap">
+    <h2>Services & Solutions</h2>
+    <div class="grid grid-3">
+      <div class="card"><h3>Evidence Handling & Verification</h3><ul style="padding-left:18px"><li>Secure intake • encrypted submission • GDPR consent</li><li>Forensic normalisation & integrity checks</li></ul><div class="control">UK GDPR-compliant controls apply.</div></div>
+      <div class="card"><h3>AI-Assisted Behavioural Analysis</h3><ul style="padding-left:18px"><li>Sentiment/tone • pattern recognition</li><li>Timeline mapping • anomaly detection</li></ul><div class="control">Analyst validation required before reporting.</div></div>
+      <div class="card"><h3>Human Forensic Review</h3><ul style="padding-left:18px"><li>Independent verification</li><li>Cross-source corroboration</li><li>Defensible methodology</li></ul></div>
+    </div>
+    <h3 style="margin-top:18px">Bespoke Software</h3>
+    <div class="grid grid-3">
+      <div class="card"><h3>Repairs & Compliance Copilot</h3><p>Multi-tenant copilot for housing providers: SLA timers, automated comms, evidence packs.</p></div>
+      <div class="card"><h3>PACT Ledger</h3><p>Promise OS converting commitments into evidence-backed objects; court-ready exports.</p></div>
+      <div class="card"><h3>OmniAssist Platform</h3><p>Config-driven, modular workflows across repairs, compliance, and sales. Role-based control.</p></div>
+    </div>
+  </div>
+</section>
+<section id="contact" class="section">
+  <div class="wrap grid grid-2">
+    <div>
+      <h2>Contact RBIS</h2>
+      <p>Email: <a href="mailto:Contact@RBISIntelligence.com">Contact@RBISIntelligence.com</a></p>
+      <form id="contactForm" class="card" method="post" action="mailto:Contact@RBISIntelligence.com" enctype="text/plain" onsubmit="return contactSubmit(event)">
+        <p><label>Name<br><input name="name" required type="text" style="width:100%;padding:10px;border:1px solid var(--line);border-radius:10px"></label></p>
+        <p><label>Email<br><input name="email" required type="email" style="width:100%;padding:10px;border:1px solid var(--line);border-radius:10px"></label></p>
+        <p><label>Message<br><textarea name="message" rows="5" required style="width:100%;padding:10px;border:1px solid var(--line);border-radius:10px"></textarea></label></p>
+        <p style="font-size:13px" class="control">I agree to confidential processing per the <a href="legal.html#legal-privacy">Privacy</a> and <a href="legal.html#legal-terms">Terms</a>. Mark for legal review <input type="checkbox" name="legal_review"></p>
+        <p><button class="btn" type="submit">Send</button></p>
+        <p class="control">Avoid submitting unnecessary special category data. Email is not end-to-end encrypted.</p>
+      </form>
+    </div>
+    <div>
+      <div class="card">
+        <h3>Address</h3><p>PO Box, Bournemouth, Dorset, BH2 5RR, England</p>
+        <h3>Operating Region</h3><p>England & Wales (UK GDPR)</p>
       </div>
     </div>
   </div>
-
-  <!-- Navigation -->
-  <nav class="nav" aria-label="Top Navigation">
-    <div class="wrap">
-        <div class="brand"><div><b>RBIS</b><div class="muted" style="font-size:12px">Clarity in Chaos</div></div></div>
-      <div class="menu">
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
-        <a href="#dashboards">Dashboards</a>
-        <a href="#products">Products</a>
-        <a href="#methods">Methods</a>
-        <a href="#evidence">Evidence</a>
-        <a href="#trust">Trust</a>
-        <a href="#founder">Founder</a>
-        <a href="#news">Insights</a>
-        <a href="#contact" class="btn">Contact</a>
-      </div>
+</section>
+<footer>
+  <div class="wrap" style="text-align:center">
+    <div>© <span id="year"></span> RBIS — Behavioural & Intelligence Services</div>
+    <div style="margin-top:8px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+      <a href="legal.html#legal-privacy">Privacy</a><a href="legal.html#legal-cookies">Cookies</a><a href="legal.html#legal-terms">Terms</a><a href="legal.html#legal-security">Security</a><a href="legal.html#legal-retention">Data Retention</a><a href="legal.html#legal-nda">NDA</a><a href="legal.html#legal-claims">Claims</a><a href="legal.html#legal-dpa">DPA</a>
     </div>
-  </nav>
-
-  <!-- Hero -->
-  <header class="hero" id="home">
-    <div class="wrap">
-      <div>
-        <span class="badge">Authority • Confidentiality • Precision</span>
-        <h1>RBIS equips leaders with foresight, clarity, and behavioural advantage — through independent analysis and intelligence-grade, court-ready reports.</h1>
-        <div style="display:flex;gap:10px;margin-top:14px">
-          <a class="btn" href="#contact">Engage RBIS</a>
-          <a class="btn" style="background:#1c2541" href="#legal">Legal Hub</a>
-        </div>
-        <div class="control-line">RBIS applies court-ready standards to intake, chain of custody, and analyst review. See <a href="#trust">Trust Centre</a>.</div>
-        <div style="display:flex;gap:22px;margin-top:20px">
-          <div class="kpi"><b>GDPR-first</b><span class="muted">UK-ready</span></div>
-          <div class="kpi"><b>Court-ready</b><span class="muted">reports</span></div>
-          <div class="kpi"><b>Discrete</b><span class="muted">and secure</span></div>
-        </div>
-      </div>
-      <div>
-        <div class="card">
-          <h3 class="sr-only">Quick Overview</h3>
-          <ul class="list">
-            <li><b>Mission:</b> Equip leaders with foresight, clarity, and behavioural advantage.</li>
-            <li><b>Clients:</b> Government, finance, healthcare, councils, housing associations, law firms, corporate HR.</li>
-            <li><b>Engagements:</b> Consulting, RBIS Intelligence SaaS, or hybrid.</li>
-            <li><b>Values:</b> Confidentiality • Integrity • Precision • Behavioural Advantage.</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </header>
-
-  <!-- Dual-Method Disclosure -->
-  <section id="dual" class="section" aria-label="Dual-Method Disclosure">
-    <div class="wrap">
-      <div class="card">
-        <h2>Dual-Method Analysis Disclosure</h2>
-        <p>RBIS uses dual-method analysis: proprietary AI models surface behavioural and linguistic patterns; trained human analysts verify findings and produce court-ready reports. <b>No automated decision-making</b> is applied to client outcomes (UK GDPR Art. 22 compliant).</p>
-        <p>This hybrid model enables scalable insight without sacrificing credibility, defensibility, or due process.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- About -->
-  <section id="about" class="section">
-    <div class="wrap cols">
-      <div>
-        <h2>RBIS in Brief</h2>
-        <p><b>Vision:</b> Become the global operating system for intelligent decision-making.</p>
-        <p><b>Model:</b> High-ticket consulting + SaaS subscriptions + hybrid engagements.</p>
-        <p><b>Edge:</b> We blend behavioural science, forensic rigor, and live dashboards. No fluff. Just clarity.</p>
-        <div class="notice">We are not a law firm and do not provide legal advice. We deliver independent analysis and court-ready reporting to support your legal team.</div>
-      </div>
-      <div class="card">
-        <h3>Operations Snapshot</h3>
-        <ul class="list">
-          <li>Org: CEO • Consulting • Intelligence Tech • Finance/Compliance • Ops/HR</li>
-          <li>Governance: SOPs, risk register, ethics & integrity framework.</li>
-          <li>Client Docs: Onboarding pack, NDA, intake, evidence guides, report access policy.</li>
-          <li>Security: MFA, least privilege, encrypted storage, audit logs.</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- Services -->
-  <section id="services" class="section" aria-label="Services & Solutions">
-    <div class="wrap">
-      <h2>Services & Solutions</h2>
-      <div class="grid grid-3">
-        <div class="card"><h3>Evidence Handling & Verification</h3>
-          <ul class="list">
-            <li>Secure intake • encrypted submission</li>
-            <li>GDPR consent & NDAs</li>
-            <li>Forensic file normalisation & integrity checks</li>
-          </ul>
-          <div class="control-line">All data is handled under UK GDPR-compliant controls. Confidentiality, deletion, and security policies apply.</div>
-        </div>
-        <div class="card"><h3>AI-Assisted Behavioural Analysis</h3>
-          <ul class="list">
-            <li>Sentiment, tone, and pattern recognition</li>
-            <li>Timeline mapping & anomaly detection</li>
-            <li>Keyword/topic clustering</li>
-          </ul>
-          <div class="control-line">Analyst validation required before any reporting or recommendations.</div>
-        </div>
-        <div class="card"><h3>Human Forensic Review</h3>
-          <ul class="list">
-            <li>Independent analyst verification</li>
-            <li>Cross-source corroboration</li>
-            <li>Defensible methodology</li>
-          </ul>
-          <div class="control-line">Court-ready structure with disclosure index and chain-of-custody notes.</div>
-        </div>
-        <div class="card"><h3>Forensic-Style Reporting</h3>
-          <ul class="list">
-            <li>Court/tribunal-ready structures</li>
-            <li>Timestamps, cross-refs, chain of custody</li>
-            <li>Compliance statements</li>
-          </ul>
-        </div>
-        <div class="card"><h3>Financial & Document Analysis</h3>
-          <ul class="list">
-            <li>Transaction verification & irregularities</li>
-            <li>Document authenticity & consistency</li>
-            <li>Behaviour-finance linkage</li>
-          </ul>
-        </div>
-        <div class="card"><h3>Risk & Compliance</h3>
-          <ul class="list">
-            <li>GDPR-compliant handling & retention</li>
-            <li>Ethical assurance & audit logs</li>
-            <li>Oversight: AI assistive only</li>
-          </ul>
-        </div>
-      </div>
-
-      <h3 style="margin-top:20px">Specialist Applications</h3>
-      <p>Housing & tenancy disputes • Workplace & HR • Legal disputes • Financial disputes • Consumer/public complaints.</p>
-
-      <h3>Advisory & Training</h3>
-      <p>Strategy support for legal teams, councils, HR; training on evidence handling and report structuring; policy development; tribunal preparation.</p>
-
-      <div class="card" style="margin-top:16px">
-        <b>The Intelligence Audit™ — 30 days to absolute clarity.</b>
-        <p>Exposes hidden risks and decision patterns; delivers a Strategic Playbook with immediate actions.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Dashboards -->
-  <section id="dashboards" class="section" aria-label="Executive Dashboards">
-    <div class="wrap">
-      <h2>Executive Dashboards</h2>
-      <div class="grid grid-2">
-        <div class="card">
-          <h3>CEO Command</h3>
-          <ul class="list">
-            <li>Strategic roadmap • Engagement tracker</li>
-            <li>Risk heatmap • Finance KPIs • People performance</li>
-            <li>Notes & decisions log (export-ready)</li>
-          </ul>
-        </div>
-        <div class="card">
-          <h3>Board & Crisis</h3>
-          <ul class="list">
-            <li>Milestones • ARR & cash • Top risks</li>
-            <li>Incident log • Containment • Recovery plan</li>
-            <li>Post-crisis review</li>
-          </ul>
-        </div>
-        <div class="card">
-          <h3>Live Ops</h3>
-          <ul class="list">
-            <li>Kanban by stage • Active risks</li>
-            <li>Financial pulse • Team focus & blockers</li>
-            <li>Signals feed • Daily brief</li>
-          </ul>
-        </div>
-        <div class="card">
-          <h3>Investor Flight Deck</h3>
-          <ul class="list">
-            <li>Revenue YTD • ARR • Growth % • Margin</li>
-            <li>SaaS adoption • Roadmap • Growth risks</li>
-            <li>Quarterly briefs (redacted audit snapshot)</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Products -->
-  <section id="products" class="section" aria-label="RBIS Products">
-    <div class="wrap">
-      <h2>RBIS Products</h2>
-      <div class="grid grid-3">
-        <div class="card"><h3>Repairs & Compliance Copilot</h3><p>Multi-tenant copilot for housing providers handling repair reports, compliance timers, automated comms, and evidence packs.</p></div>
-        <div class="card"><h3>PACT Ledger</h3><p>Promise OS turning commitments into enforceable, evidence-backed objects with timers, nudges, and court-ready exports.</p></div>
-        <div class="card"><h3>OmniAssist Platform</h3><p>License-based, modular workflows across repairs, compliance, sales. Config-driven, worker-backed, secure uploads.</p></div>
-        <div class="card"><h3>RBIS Intelligence Platform</h3><p>Live, predictive dashboard integrating behavioural models, intelligence feeds, and foresight simulations. <b>Exclusive to RBIS clients first.</b></p></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Methods -->
-  <section id="methods" class="section" aria-label="Methods">
-    <div class="wrap">
-      <h2>Methods & Controls</h2>
-      <div class="grid grid-3">
-        <div class="card"><h3>Behavioural Science</h3><ul class="list"><li>Pattern analysis & tone shifts</li><li>Bias checks & human override</li><li>Peer review on high-risk flags</li></ul></div>
-        <div class="card"><h3>Forensic Practice</h3><ul class="list"><li>Document authentication</li><li>Audio examination</li><li>Timeline reconstruction</li></ul></div>
-        <div class="card"><h3>Governance</h3><ul class="list"><li>Ethics & integrity framework</li><li>Audit logs & version control</li><li>Processor due diligence</li></ul></div>
-      </div>
-      <div class="notice" style="margin-top:12px">All outputs are intended to support — not substitute — qualified legal advice. Clients should consult a solicitor before relying on any report or document in proceedings.</div>
-    </div>
-  </section>
-
-  <!-- Evidence -->
-  <section id="evidence" class="section" aria-label="Evidence">
-    <div class="wrap">
-      <h2>Evidence Handling & Courtroom Readiness</h2>
-      <div class="grid grid-2">
-        <div class="card">
-          <h3>Chain of Custody Summary</h3>
-          <ul class="list"><li>TLS-only ingress; malware scanning</li><li>Encrypted storage; RBAC; MFA</li><li>Administrative access logging</li></ul>
-          <h3>Exportable Formats</h3>
-          <p>Reports: PDF/HTML with disclosure index, references, and version hash.</p>
-          <div class="control-line">Rapid Disclosure Protocol available via email. See Trust Centre.</div>
-        </div>
-        <div class="card">
-          <h3>Certified Policy Extract</h3>
-          <p>Create a timestamped summary of key policies with hashes for procurement and tribunals.</p>
-          <p><a class="btn" href="mailto:compliance@RBISIntelligence.com?subject=Policy%20Extract%20Request">Request Certified Policy Extract</a></p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Founder & Team -->
-  <section id="founder" class="section" aria-label="Founder">
-    <div class="wrap cols">
-      <div>
-        <h2>About the Founder</h2>
-        <p><b>Ryan Roberts</b> — entrepreneur, AI automation specialist, and digital strategist focused on clarity, action, and measurable outcomes. He has led workflow modernisation for legal firms, deployed AI-powered marketing, and developed product solutions in emerging markets.</p>
-        <p>At RBIS, Ryan combines AI-driven behavioural analysis with expert human insight. When situations demand it, RBIS can assemble a panel of psychological, behavioural, and intelligence specialists on a 24/7 basis.</p>
-      </div>
-      <div class="card">
-        <h3>Team</h3>
-        <p>Discreet, multidisciplinary team including intelligence analysts, consultants, and client support. No public directory; assigned on need-to-know basis.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Insight / News -->
-  <section id="news" class="section" aria-label="Insights">
-    <div class="wrap">
-      <h2>Insight: Why Behavioural Cues Could Be the Strongest Evidence in Your Case</h2>
-      <div class="grid grid-2">
-        <div class="card">
-          <p>In law, credibility is everything. Subtle cues—hesitations, language shifts, or inconsistencies—often reveal more than the words themselves. RBIS analyses behaviour and communications to produce independent, forensic-style reports for solicitors, individuals, and organisations.</p>
-          <h3>Case Example</h3>
-          <p>A housing dispute’s email trail looked straightforward, but our review found anomalies: irregular formatting, unusual timestamps, and tonal shifts indicating retrospective edits. Our report helped the court distinguish genuine communication from reconstructed narrative.</p>
-          <h3>The Legal Position</h3>
-          <p>RBIS does not provide legal advice or representation. We deliver independent analysis and reports that can be submitted as part of legal proceedings. We act as independent analysts, not advocates.</p>
-        </div>
-        <div class="card">
-          <h3>Why This Matters</h3>
-          <p>Disciplinary tribunals show even minor cover-ups can lead to findings of dishonesty and career-changing sanctions. Behavioural analysis surfaces risks before they damage credibility, protecting outcomes and reputations.</p>
-          <h3>Proven Methodologies</h3>
-          <ul class="list">
-            <li>Behavioural pattern analysis • Document authentication • Audio forensics</li>
-            <li>Financial transaction analysis • Cross-reference verification • Statistical methods</li>
-            <li>Timeline reconstruction • Evidence correlation mapping</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact -->
-  <section id="contact" class="section" aria-label="Contact">
-    <div class="wrap cols">
-      <div>
-        <h2>Contact RBIS</h2>
-        <p>For confidential enquiries, use the form or email <a href="mailto:Contact@RBISIntelligence.com">Contact@RBISIntelligence.com</a>.</p>
-        <form id="contactForm" class="card" method="post" action="mailto:Contact@RBISIntelligence.com" enctype="text/plain" onsubmit="return contactSubmit(event)">
-          <label>Name<br><input required name="name" type="text" style="width:100%;padding:10px;border:1px solid var(--line);border-radius:10px"></label><br><br>
-          <label>Email<br><input required name="email" type="email" style="width:100%;padding:10px;border:1px solid var(--line);border-radius:10px"></label><br><br>
-          <label>Message<br><textarea required name="message" rows="5" style="width:100%;padding:10px;border:1px solid var(--line);border-radius:10px"></textarea></label><br><br>
-          <label style="display:flex;gap:8px;align-items:flex-start"><input required type="checkbox"><span>I agree to confidential processing of my data per the <a href="#legal-privacy">Privacy Policy</a> and <a href="#legal-terms">Terms</a>. <b>Mark for legal review</b> <input type="checkbox" name="legal_review" style="margin-left:6px"></span></label><br>
-          <button class="btn" type="submit">Send Securely</button>
-          <div class="muted" style="font-size:12px;margin-top:8px">Avoid uploading special category data unless necessary. Email is not end-to-end encrypted.</div>
-          <div class="control-line">“Copy for your solicitor” is available on delivered reports.</div>
-        </form>
-      </div>
-      <div>
-        <div class="card">
-          <h3>Address</h3>
-          <p>PO Box, Bournemouth, Dorset, BH2 5RR, England</p>
-          <h3>Operating Region</h3>
-          <p>England & Wales (UK GDPR)</p>
-          <h3>Security</h3>
-          <p>Encryption in transit & at rest, least-privilege access, MFA, audit logging where supported.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Trust Centre -->
-  <section id="trust" class="section" aria-label="Trust Centre">
-    <div class="wrap">
-      <h2>Trust & Assurance Centre</h2>
-      <div class="grid grid-3">
-        <div class="card"><h3>Commitments</h3><ul class="list"><li>Confidentiality, integrity, precision</li><li>Human-validated analysis</li><li>No automated decisions</li></ul></div>
-        <div class="card"><h3>Compliance Matrix</h3><p>UK GDPR ↔ policy references; SCC/IDTA as applicable; ICO complaint route.</p></div>
-        <div class="card"><h3>Policy Ledger</h3><p>Versioned documents with hashes and changelog. Signed snapshots available on request.</p></div>
-      </div>
-      <div class="card" style="margin-top:12px">
-        <h3>Regulatory & Auditor Access</h3>
-        <p>RBIS welcomes regulatory scrutiny. Accredited auditors or supervisory authorities may request read-only access to our live audit snapshot and policy ledger. Contact <a href="mailto:compliance@RBISIntelligence.com">compliance@RBISIntelligence.com</a>.</p>
-        <p class="muted" style="font-size:12px">Rapid Disclosure Protocol: request a certified chain-of-custody statement, intake record, or data deletion confirmation via the above email (verification applies).</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- LEGAL HUB -->
-  <section id="legal" class="section" aria-label="Legal Hub">
-    <div class="wrap" style="display:grid;grid-template-columns:280px 1fr;gap:18px">
-      <aside class="toc">
-        <div class="card">
-          <b>Legal Hub</b>
-          <ul class="list">
-            <li><a href="#legal-privacy">Privacy Policy (UK GDPR)</a></li>
-            <li><a href="#legal-terms">Terms of Service</a></li>
-            <li><a href="#legal-nda">Mutual NDA</a></li>
-            <li><a href="#legal-retention">Data Retention & Deletion</a></li>
-            <li><a href="#legal-security">Security & Chain of Custody</a></li>
-            <li><a href="#legal-cookies">Cookie Policy</a></li>
-            <li><a href="#legal-claims">Claims & Testimonials</a></li>
-            <li><a href="#legal-dpa">Data Processing Addendum</a></li>
-          </ul>
-        </div>
-      </aside>
-      <div>
-
-        <!-- Privacy -->
-        <article id="legal-privacy" class="card">
-          <button class="copy-btn" onclick="copySection(this.parentElement)">Copy</button>
-          <h2>Privacy Policy (UK GDPR)</h2>
-          <p><b>Effective:</b> <span>2025-09-10</span></p>
-          <p><b>Controller:</b> Ryan Roberts: Behavioural & Intelligence Services ("RBIS"). Contact: <a href="mailto:Contact@RBISIntelligence.com">Contact@RBISIntelligence.com</a>. Address: PO Box, Bournemouth, Dorset, BH2 5RR, England.</p>
-          <p>This Privacy Policy explains how we process personal data under UK GDPR and the Data Protection Act 2018. It works with our <a href="#legal-terms">Terms of Service</a>, <a href="#legal-cookies">Cookie Policy</a>, <a href="#legal-retention">Data Retention</a>, and <a href="#legal-security">Security Statement</a>.</p>
-          <h3>1) What we collect</h3>
-          <ul class="list">
-            <li><b>Identity & contact:</b> name, email, phone, organisation, role.</li>
-            <li><b>Content you submit:</b> descriptions, attachments/files (may include special category or criminal-offence data if you choose to upload).</li>
-            <li><b>Usage & telemetry:</b> pages visited, device/browser, IP address, session identifiers.</li>
-            <li><b>Comms:</b> email, messages, support notes and metadata.</li>
-            <li><b>Marketing preferences:</b> opt-ins and unsubscribe choices.</li>
-          </ul>
-          <h3>2) Sources</h3>
-          <p>Directly from you (forms/uploads/emails), automatically via cookies, and from third parties where lawful (partners, public records).</p>
-          <h3>3) Purposes & lawful bases</h3>
-          <table class="table">
-            <thead><tr><th>Purpose</th><th>Examples</th><th>Lawful basis</th></tr></thead>
-            <tbody>
-              <tr><td>Provide & improve services</td><td>Intake, triage, generate documents, quality assurance</td><td>Contract; Legitimate interests</td></tr>
-              <tr><td>Comms</td><td>Service messages, updates, support</td><td>Contract; Legitimate interests</td></tr>
-              <tr><td>Marketing</td><td>Newsletters/case studies (with consent)</td><td>Consent; Legitimate interests (B2B where appropriate)</td></tr>
-              <tr><td>Security & fraud</td><td>MFA, RBAC, audit logs, incident response</td><td>Legitimate interests; Legal obligation</td></tr>
-              <tr><td>Legal/regulatory</td><td>Complaints, enforcing terms, litigation</td><td>Legal obligation; Legitimate interests</td></tr>
-            </tbody>
-          </table>
-          <h4>Special category data</h4>
-          <p>If you submit sensitive data, we process it only where you <b>explicitly provide it</b> and it is necessary to your request (UK GDPR Art. 9(2)(a)/(g)). Avoid unnecessary sensitive uploads.</p>
-          <h3>4) Sharing & processors</h3>
-          <p>We use vetted providers under written terms acting on our instructions (e.g., form backend, analytics, font delivery). We may share data with professional advisers, courts, regulators, or law enforcement as required by law.</p>
-          <h3>5) International transfers</h3>
-          <p>Where data leaves the UK/EEA, we use adequacy decisions or safeguards (IDTA/SCCs).</p>
-          <h3>6) Security</h3>
-          <p>Encryption in transit, encryption at rest on secure cloud storage, least-privilege access, MFA, and audit logging where supported. See <a href="#legal-security">Security Statement</a>.</p>
-          <h3>7) Retention</h3>
-          <p>Defaults: enquiries & documents 24 months; telemetry 18 months; statutory records up to 6 years. See <a href="#legal-retention">Data Retention</a>.</p>
-          <h3>8) Your rights</h3>
-          <p>Access, rectification, erasure, restriction, portability, objection, and consent withdrawal. Contact <a href="mailto:Contact@RBISIntelligence.com">Contact@RBISIntelligence.com</a>. You can complain to the ICO: <a href="https://ico.org.uk">ico.org.uk</a>.</p>
-          <h3>9) Cookies & similar tech</h3>
-          <p>See <a href="#legal-cookies">Cookie Policy</a>. Non-essential tools run only after consent.</p>
-          <h3>10) Contact & DPO</h3>
-          <p>We do not require a DPO. For privacy matters, email us or write to the address above.</p>
-          <h3>11) Changes</h3>
-          <p>We may update this policy and will post the new effective date here.</p>
-        </article>
-
-        <!-- Terms -->
-        <article id="legal-terms" class="card">
-          <button class="copy-btn" onclick="copySection(this.parentElement)">Copy</button>
-          <h2>Terms of Service</h2>
-          <p><b>Effective:</b> <span>2025-09-10</span></p>
-          <p>By using this site or our services, you agree to these Terms. See also our <a href="#legal-privacy">Privacy Policy</a> and <a href="#legal-cookies">Cookie Policy</a>.</p>
-          <h3>1) Services & No Legal Advice</h3>
-          <p>We provide information, automation, and document-generation tools. We are <b>not a law firm</b> and do not provide legal advice. All outputs are intended to support — not substitute — qualified legal advice. We encourage clients to consult with a solicitor before relying on any report or document in proceedings.</p>
-          <h3>2) Accounts & Acceptable Use</h3>
-          <ul class="list">
-            <li>Provide accurate information and keep credentials secure.</li>
-            <li>No unlawful content or third-party personal data without lawful authority.</li>
-            <li>No reverse engineering, scraping, or security testing without written consent.</li>
-            <li>No misuse, spam, or interference with the service.</li>
-          </ul>
-          <h3>3) Fees, Refunds & Changes</h3>
-          <p>Fees (if any) are due in advance unless stated otherwise. Prices may change on notice. Refunds are at our discretion unless required by law.</p>
-          <h3>4) Intellectual Property</h3>
-          <p>Site, software, and content are owned by RBIS or licensors. You retain ownership of your content; you grant us a licence to process it solely to provide and improve the services.</p>
-          <h3>5) Confidentiality</h3>
-          <p>We treat non-public information as confidential and use it only to provide services, subject to disclosures to vetted processors under written terms. For stricter terms, use our <a href="#legal-nda">Mutual NDA</a>.</p>
-          <h3>6) Data Protection</h3>
-          <p>Our processing of personal data is described in the <a href="#legal-privacy">Privacy Policy</a>. If we act as a processor for you, our <a href="#legal-dpa">Data Processing Addendum</a> applies.</p>
-          <h3>7) Warranties & Disclaimers</h3>
-          <p>Services are provided on an <b>“as is”</b> and <b>“as available”</b> basis. We disclaim all implied warranties to the fullest extent permitted by law.</p>
-          <h3>8) Limitation of Liability</h3>
-          <p>Nothing excludes liability where unlawful to do so. Subject thereto, we are not liable for indirect or consequential loss or loss of profits/revenue/data; aggregate liability is capped at the greater of £500 or fees paid in the prior 12 months.</p>
-          <h3>9) Indemnity</h3>
-          <p>You indemnify us for losses arising from your unlawful content, misuse, or breach of these Terms.</p>
-          <h3>10) Suspension & Termination</h3>
-          <p>We may suspend or terminate access for breach, risk, or legal obligation. You may stop using the services at any time.</p>
-          <h3>11) Governing Law & Notices</h3>
-          <p>England & Wales law; courts of England & Wales. Notices may be sent to Contact@RBISIntelligence.com or our postal address.</p>
-          <h3>12) Changes; Entire Agreement</h3>
-          <p>Updates may occur; continued use constitutes acceptance. These Terms form the entire agreement regarding the services.</p>
-        </article>
-
-        <!-- NDA -->
-        <article id="legal-nda" class="card">
-          <button class="copy-btn" onclick="copySection(this.parentElement)">Copy</button>
-          <h2>Mutual Confidentiality Agreement (Short Form)</h2>
-          <p><b>Effective:</b> <span>2025-09-10</span></p>
-          <p><b>Parties:</b> Ryan Roberts: Behavioural & Intelligence Services ("RBIS") and the counterparty ("Recipient").</p>
-          <h3>1) Definition</h3>
-          <p>“Confidential Information” means non-public information disclosed by either party, including plans, data, documents, models, prompts, customer information, and any personal data, marked or reasonably understood as confidential.</p>
-          <h3>2) Obligations</h3>
-          <ul class="list">
-            <li>Use only to evaluate or perform the purpose discussed.</li>
-            <li>Protect with reasonable care; restrict access to those under confidentiality obligations.</li>
-            <li>No disclosure to third parties without consent, except processors under written terms.</li>
-          </ul>
-          <h3>3) Exclusions</h3>
-          <p>Public without breach; already known; independently developed; or rightfully received without duty of confidentiality.</p>
-          <h3>4) Compelled Disclosure</h3>
-          <p>Notify promptly (unless unlawful) and disclose only what is necessary, seeking protective orders where possible.</p>
-          <h3>5) Return/Deletion</h3>
-          <p>On request or termination, return or securely destroy Confidential Information, subject to backups and legal retention.</p>
-          <h3>6) No Licence</h3>
-          <p>No rights granted other than expressly stated. All IP remains with the discloser.</p>
-          <h3>7) Term</h3>
-          <p>Obligations apply for 5 years; trade secrets survive while secret.</p>
-          <h3>8) Remedies</h3>
-          <p>Injunctive relief available in addition to damages.</p>
-          <h3>9) Governing Law</h3>
-          <p>England & Wales.</p>
-        </article>
-
-        <!-- Retention -->
-        <article id="legal-retention" class="card">
-          <button class="copy-btn" onclick="copySection(this.parentElement)">Copy</button>
-          <h2>Data Retention & Deletion Policy</h2>
-          <p><b>Effective:</b> <span>2025-09-10</span></p>
-          <h3>Retention Schedule (default)</h3>
-          <table class="table">
-            <thead><tr><th>Data category</th><th>Default retention</th><th>Notes</th></tr></thead>
-            <tbody>
-              <tr><td>Enquiries, cases, generated documents</td><td>24 months</td><td>Extended if an active matter, dispute, or legal hold</td></tr>
-              <tr><td>Uploaded files (including sensitive)</td><td>24 months</td><td>Securely stored; early deletion on verified request where feasible</td></tr>
-              <tr><td>Telemetry & analytics</td><td>18 months</td><td>Aggregated/anonymous metrics may be kept longer</td></tr>
-              <tr><td>Contracts, invoices, corporate records</td><td>6 years</td><td>Tax, accounting, limitation periods</td></tr>
-              <tr><td>Support tickets & emails</td><td>24 months</td><td>Continuity and traceability</td></tr>
-            </tbody>
-          </table>
-          <h3>Deletion Methods</h3>
-          <ul class="list">
-            <li>App-level delete for live stores; queued purge for derived indices/caches.</li>
-            <li>Processor deletion via API or vendor tickets per SLA.</li>
-            <li>Cryptographic erasure where supported on encrypted storage.</li>
-          </ul>
-          <h3>Requests</h3>
-          <p>Submit deletion or access requests to <a href="mailto:Contact@RBISIntelligence.com">Contact@RBISIntelligence.com</a>. We verify identity and respond within statutory timeframes.</p>
-        </article>
-
-        <!-- Security -->
-        <article id="legal-security" class="card">
-          <button class="copy-btn" onclick="copySection(this.parentElement)">Copy</button>
-          <h2>Security Statement & Chain of Custody</h2>
-          <p><b>Effective:</b> <span>2025-09-10</span></p>
-          <h3>Chain of Custody</h3>
-          <ul class="list">
-            <li>TLS-only ingress; malware scanning</li>
-            <li>Secure cloud storage; encryption at rest; RBAC; MFA</li>
-            <li>Least-privilege access; administrative action logs</li>
-          </ul>
-          <h3>Operational Security</h3>
-          <ul class="list">
-            <li>Vendor due diligence; DPAs/IDTA/SCCs as required</li>
-            <li>Dependency updates and patching cadence</li>
-            <li>Secrets in secure vaults; periodic rotation</li>
-            <li>Secure development practices; code review on critical paths</li>
-          </ul>
-          <h3>Incident Response</h3>
-          <ul class="list">
-            <li>Detect, contain, and remediate promptly; documented post-mortems</li>
-            <li>Notify affected users and regulators where required (ICO within 72 hours where feasible)</li>
-          </ul>
-          <div class="notice">Zero-Day Risk Clause: In the event of a zero-day or upstream processor breach, RBIS executes a documented incident response plan including user notification, data integrity verification, and coordinated remediation.</div>
-          <h3>Business Continuity</h3>
-          <ul class="list"><li>Restorable backups; monitored uptime; provider SLAs.</li></ul>
-        </article>
-
-        <!-- Cookies -->
-        <article id="legal-cookies" class="card">
-          <button class="copy-btn" onclick="copySection(this.parentElement)">Copy</button>
-          <h2>Cookie Policy</h2>
-          <p><b>Effective:</b> <span>2025-09-10</span></p>
-          <p>This policy forms part of the <a href="#legal-privacy">Privacy Policy</a> and <a href="#legal-terms">Terms</a>. Non-essential cookies run only with your consent.</p>
-          <h3>Types</h3>
-          <ul class="list">
-            <li><b>Strictly necessary:</b> core functionality and security.</li>
-            <li><b>Analytics:</b> performance measurement (only if you opt-in).</li>
-            <li><b>Functional:</b> preferences such as saved inputs.</li>
-            <li><b>Marketing:</b> only if explicitly enabled.</li>
-          </ul>
-          <h3>Managing Cookies</h3>
-          <p>Use your browser settings to block or delete cookies. Blocking some cookies may impact functionality. You can update consent anytime via the banner (clear localStorage key <code>rbis_consent</code>).</p>
-        </article>
-
-        <!-- Claims -->
-        <article id="legal-claims" class="card">
-          <button class="copy-btn" onclick="copySection(this.parentElement)">Copy</button>
-          <h2>Claims, Testimonials & Marketing Accuracy</h2>
-          <p><b>Effective:</b> <span>2025-09-10</span></p>
-          <h3>Substantiation</h3>
-          <ul class="list">
-            <li>Claims include footnotes on scope, assumptions, and limitations.</li>
-            <li>Usage counts (e.g., cases analysed) are supported by internal records and dated.</li>
-          </ul>
-          <h3>Testimonials</h3>
-          <ul class="list">
-            <li>Individual experiences; results vary; material connections disclosed.</li>
-            <li>Permission obtained before publishing identifiable testimonials.</li>
-          </ul>
-          <h3>Accuracy & Updates</h3>
-          <p>Published claims reviewed periodically; errors or outdated statements corrected promptly.</p>
-        </article>
-
-        <!-- DPA -->
-        <article id="legal-dpa" class="card">
-          <button class="copy-btn" onclick="copySection(this.parentElement)">Copy</button>
-          <h2>Data Processing Addendum (Controller ↔ Processor)</h2>
-          <p><b>Effective:</b> <span>2025-09-10</span></p>
-          <h3>1) Subject Matter & Duration</h3>
-          <p>Processing personal data submitted to the services for the term of the underlying agreement.</p>
-          <h3>2) Nature & Purpose</h3>
-          <p>Hosting, storage, transmission, transformation and output generation per client instructions.</p>
-          <h3>3) Data & Subjects</h3>
-          <p>As provided by Controller; may include contact data and documents related to cases or workflows.</p>
-          <h3>4) Processor Obligations</h3>
-          <ul class="list">
-            <li>Process only on documented instructions (including transfers).</li>
-            <li>Confidential personnel; least-privilege access; MFA.</li>
-            <li>Appropriate technical and organisational measures (see Security Statement).</li>
-            <li>Assist with data-subject requests and DPIAs where proportionate.</li>
-            <li>Delete or return data at termination, subject to legal retention.</li>
-            <li>Provide information for compliance and allow audits on reasonable notice.</li>
-          </ul>
-          <h3>5) Sub-processors</h3>
-          <p>We may engage providers consistent with our Privacy Policy; we maintain materially similar protections.</p>
-          <h3>6) Transfers</h3>
-          <p>Appropriate safeguards (IDTA/SCCs) for transfers outside the UK/EEA.</p>
-          <h3>7) Incident Notification</h3>
-          <p>Notify Controller without undue delay after becoming aware of a breach; provide information reasonably required.</p>
-          <h3>8) Liability</h3>
-          <p>As per underlying agreement and Terms. Nothing limits liability where unlawful.</p>
-        </article>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="footer" aria-label="Footer">
-    <div class="wrap">
-      <div style="display:flex;gap:16px;align-items:center;justify-content:space-between;flex-wrap:wrap">
-        <div class="muted">© <span id="year"></span> RBIS — Behavioural & Intelligence Services. All rights reserved.</div>
-        <div class="legal-links">
-          <a href="#legal-privacy">Privacy</a>
-          <a href="#legal-cookies">Cookies</a>
-          <a href="#legal-terms">Terms</a>
-          <a href="#legal-security">Security</a>
-          <a href="#legal-retention">Data Retention</a>
-          <a href="#legal-nda">NDA</a>
-          <a href="#legal-claims">Claims</a>
-          <a href="#legal-dpa">DPA</a>
-        </div>
-      </div>
-      <p class="muted" style="margin-top:10px;font-size:13px">These documents support compliance but do not replace tailored legal advice. RBIS is not a law firm. Consult a solicitor for specific matters.</p>
-    </div>
-  </footer>
-
-  <div id="toast" class="toast" role="status" aria-live="polite">Copied ✓</div>
-
-  <script>
-    // Minimal, dependency-free JS (no NPM)
-    (function(){
-      document.getElementById('year').textContent = new Date().getFullYear();
-      // Cookie banner
-      var key='rbis_consent';
-      var saved=localStorage.getItem(key);
-      if(!saved){document.getElementById('cookie').style.display='block'}
-      window.cookieSet=function(mode){localStorage.setItem(key, JSON.stringify({necessary:true, analytics: mode==='analytics'}));document.getElementById('cookie').style.display='none'}
-
-    })();
-
-    // Copy helper
-    function copySection(el){
-      try{
-        var range=document.createRange();range.selectNode(el);
-        var sel=window.getSelection();sel.removeAllRanges();sel.addRange(range);
-        document.execCommand('copy');sel.removeAllRanges();
-        var t=document.getElementById('toast');t.textContent='Copied ✓';t.style.display='block';
-        setTimeout(function(){t.style.display='none'},1500)
-      }catch(e){console.warn(e)}
-    }
-
-    // Contact form graceful handling
-    function contactSubmit(e){
-      e.preventDefault();
-      var f=e.target; var data=new FormData(f);
-      window.location.href = 'mailto:Contact@RBISIntelligence.com?subject=RBIS%20Enquiry&body='+encodeURIComponent(
-        'Name: '+(data.get('name')||'')+'\nEmail: '+(data.get('email')||'')+'\nLegal review requested: '+(data.get('legal_review')?'Yes':'No')+'\n\n'+(data.get('message')||'')
-      );
-      var t=document.getElementById('toast');t.textContent='Opening your email client…';t.style.display='block';
-      setTimeout(function(){t.style.display='none'},1800);
-      f.reset();
-      return false;
-    }
-  </script>
+  </div>
+</footer>
+<script>
+  (function(){const k='rbis_consent'; if(!localStorage.getItem(k)) document.getElementById('cookie').style.display='block';
+    window.cookieSet=function(mode){localStorage.setItem(k, JSON.stringify({necessary:true, analytics: mode==='analytics'})); document.getElementById('cookie').style.display='none';};})();
+  function contactSubmit(e){e.preventDefault(); const f=e.target, d=new FormData(f);
+    const body='Name: '+(d.get('name')||'')+'\nEmail: '+(d.get('email')||'')+'\nLegal review requested: '+(d.get('legal_review')?'Yes':'No')+'\n\n'+(d.get('message')||'');
+    window.location.href='mailto:Contact@RBISIntelligence.com?subject=RBIS%20Enquiry&body='+encodeURIComponent(body); f.reset(); return false;}
+  function toggleEvidenceMode(){const on=document.getElementById('evc').checked; document.body.classList.toggle('evidence-mode', on); localStorage.setItem('rbis_evc', JSON.stringify(!!on));}
+  (function(){try{const st=JSON.parse(localStorage.getItem('rbis_evc')||'false'); document.getElementById('evc').checked=!!st; document.body.classList.toggle('evidence-mode', !!st);}catch{}})();
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
 </body>
 </html>
