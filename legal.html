@@ -1,71 +1,19 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>Legal — RBIS</title>
   <meta name="description" content="Privacy policy, terms of service, and confidentiality agreement."/>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css"/><link rel="icon" href="favicon.ico"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="icon" href="favicon.ico"/>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
 </head>
-<body data-page="legal">
-  <header class="site-header">
-    <a class="skip-link" href="#main">Skip to content</a>
-    <div class="container nav-wrap">
-      <a class="brand" href="index.html">RBIS</a>
-      <nav class="nav" aria-label="Primary">
-        <button class="nav-toggle" aria-expanded="false" aria-controls="primary-menu"><span class="sr-only">Toggle navigation</span><div class="hamburger"></div></button>
-        <ul id="primary-menu" class="nav-list">
-          <li><a class="nav-link" href="index.html">Home</a></li>
-          <li><a class="nav-link" href="about.html">About</a></li>
-          <li><a class="nav-link" href="services.html">Services</a></li>
-          <li><a class="nav-link" href="rbis-system.html">RBIS System</a></li>
-          <li><a class="nav-link" href="workflow.html">Workflow</a></li>
-          <li><a class="nav-link" href="sectors.html">Sectors</a></li>
-          <li><a class="nav-link" href="contact.html">Contact</a></li>
-          <li><a class="nav-link" href="insights.html">Insights</a></li>
-        </ul>
-      </nav>
-      <div class="nav-cta"><a class="btn btn-primary" href="contact.html">Get Consultation</a></div>
-    </div>
-  </header>
-
-  <main id="main">
-    <section class="section">
-      <div class="container prose stack gap-32">
-        <h1 class="display">Legal Information</h1>
-
-        <section id="privacy" class="stack gap-12">
-          <h2 class="h2">Privacy Policy</h2>
-          <p>We collect and process personal data only to respond to enquiries and deliver services. Information is stored securely and never shared with third parties without consent.</p>
-        </section>
-
-        <section id="terms" class="stack gap-12">
-          <h2 class="h2">Terms of Service</h2>
-          <p>Use of this website signifies agreement to use the provided information responsibly and not to reproduce content without permission.</p>
-        </section>
-
-        <section id="nda" class="stack gap-12">
-          <h2 class="h2">Confidentiality Agreement</h2>
-          <p>All communications and materials provided to RBIS are treated as confidential. Non-disclosure agreements are available on request for sensitive engagements.</p>
-        </section>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container grid-footer">
-      <div class="stack gap-12"><div class="brand">Ryan Roberts Behavioural &amp; Intelligence Services</div>
-        <p class="muted small max-640">Specialising in forensic behavioural and intelligence analysis with precision, confidentiality, and legal defensibility.</p></div>
-      <nav class="stack gap-8" aria-label="Quick Links"><strong>Quick Links</strong>
-        <a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a><a href="rbis-system.html">RBIS System</a>
-        <a href="workflow.html">Workflow</a><a href="sectors.html">Sectors</a><a href="contact.html">Contact</a><a href="insights.html">Insights</a>
-      </nav>
-      <nav class="stack gap-8" aria-label="Legal"><strong>Legal</strong>
-        <a href="legal.html#privacy">Privacy Policy</a><a href="legal.html#terms">Terms of Service</a><a href="legal.html#nda">Confidentiality Agreement</a>
-      </nav>
-    </div>
-    <div class="container footer-base"><small>© 2024 Ryan Roberts Behavioural &amp; Intelligence Services. All rights reserved.</small></div>
-  </footer>
-  <script src="main.js" defer></script>
+<body>
+  <div id="root"></div>
+  <script type="text/babel" src="LegalHub.jsx"></script>
 </body>
 </html>

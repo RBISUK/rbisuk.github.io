@@ -1,4 +1,4 @@
-import React, { useMemo, useState, useEffect, useRef } from "react";
+const { useMemo, useState, useEffect, useRef } = React;
 
 /**
  * RBIS Legal Hub — WATERTIGHT EDITION (single-file)
@@ -67,8 +67,10 @@ function Section({ id, title, children, onCopy }) {
   );
 }
 
+ReactDOM.createRoot(document.getElementById("root")).render(<LegalHub />);
 
-export default function LegalHub() {
+
+function LegalHub() {
   const [active, setActive] = useState("privacy");
   const [copied, setCopied] = useState(null);
 
@@ -578,8 +580,10 @@ function DPA() {
       <h3>8) Liability</h3>
       <p>Liability is as set out in the underlying agreement and our <a href="#terms">Terms</a>. Nothing limits liability where unlawful to do so.</p>
 
-      <h3>9) Contact</h3>
+  <h3>9) Contact</h3>
       <p>Controller may contact us at <a href={`mailto:${ORG_EMAIL}`}>{ORG_EMAIL}</a> (subject “DPA”).</p>
     </div>
   );
 }
+
+ReactDOM.createRoot(document.getElementById("root")).render(<LegalHub />);
