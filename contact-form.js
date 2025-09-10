@@ -99,7 +99,7 @@
       <div class="meta"><strong>Subject:</strong> ${f.subject||'-'} <strong>Urgency:</strong> ${f.urgency||'-'} <strong>Preferred Contact:</strong> ${f.pref_contact||'-'}</div>
       <div class="meta"><strong>Topics:</strong> ${f.topics||'-'}</div>
       <div class="kitem"><strong>Message</strong><div class="small muted">${(f.message||'').replace(/</g,'&lt;')}</div></div>
-      <div class="meta"><strong>NDA Required:</strong> ${f.nda==='on'?'Yes':'No'} <strong>Secure Upload:</strong> ${f.secure==='on'?'Yes':'No'} <strong>Consent:</strong> ${f.consent==='on'?'Yes':'No'}</div>
+      <div class="meta"><strong>NDA Required:</strong> ${f.nda==='on'?'Yes':'No'} <strong>Consent:</strong> ${f.consent==='on'?'Yes':'No'}</div>
     `;
   }
 

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>Contact — RBIS</title>
-  <meta name="description" content="Request a confidential consultation with RBIS. Smart multi-step form with secure options and rapid triage."/>
+  <meta name="description" content="Request a confidential consultation with RBIS. Smart multi-step form with rapid triage."/>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css"/><link rel="icon" href="favicon.ico"/>
 </head>
@@ -95,7 +95,7 @@
                     <option value="">No preference</option>
                     <option>Email</option>
                     <option>Phone</option>
-                    <option>Secure portal</option>
+                    <option>Secure channel (we'll arrange separately)</option>
                   </select>
                   <label for="pref_contact">Preferred contact method</label>
                 </div>
@@ -168,18 +168,10 @@
                   <div class="small muted">We'll send a DocuSign link if checked.</div>
                 </div>
 
-                <div class="kitem">
-                  <label class="switch">
-                    <input type="checkbox" name="secure" id="secure"/>
-                    <span></span><strong> Secure upload required</strong>
-                  </label>
-                  <div class="small muted">If checked, we’ll provision a private upload portal.</div>
-                </div>
-
                 <div class="field">
                   <input type="file" name="attachments" id="attachments" multiple accept=".pdf,.doc,.docx,.txt,.csv,.zip,.wav,.mp3,.mp4"/>
                   <label for="attachments">Optional: attach up to 3 files</label>
-                  <div class="help">For sensitive files, leave unchecked and request secure upload.</div>
+                  <div class="help">For sensitive files, leave this blank and we'll arrange a secure transfer.</div>
                 </div>
 
                 <div class="field" data-required="true">
@@ -204,7 +196,7 @@
               <div class="actions">
                 <button type="button" class="btn btn-ghost" id="back4">Back</button>
                 <span class="small muted">Step 4 of 4</span>
-                <button type="submit" class="btn btn-primary">Send Securely</button>
+                <button type="submit" class="btn btn-primary">Send</button>
               </div>
               <p id="form-status" class="small muted" role="status" aria-live="polite" style="margin-top:8px"></p>
             </section>
