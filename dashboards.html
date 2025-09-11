@@ -25,6 +25,7 @@
   .kpi{display:flex;flex-direction:column;gap:2px;border:1px solid var(--line);border-radius:14px;padding:12px;background:#fff}
   .kpi b{font-size:22px} .gauge{height:10px;border-radius:999px;background:#e5e7eb;overflow:hidden} .gauge>i{display:block;height:100%;background:linear-gradient(90deg,#60a5fa,#34d399)}
   .table{width:100%;border-collapse:collapse}.table th,.table td{border:1px solid var(--line);padding:10px;text-align:left;vertical-align:top}
+  .list-tight{padding-left:18px;margin:0}
   .evc-banner{display:none;border:1px dashed var(--line);border-radius:12px;padding:10px;background:#f8fafc}
   body.evidence-mode .evc-banner{display:block}
   @media print{.section{page-break-after:always} nav, .menu .btn-ghost, .menu .btn{display:none !important} a:after{content:" (" attr(href) ")";font-size:11px;color:#64748b}}
@@ -86,7 +87,7 @@
     </div>
     <div class="card">
       <h2>Crisis Timeline</h2>
-      <ol id="incidents" style="padding-left:18px;margin:0"></ol>
+      <ol id="incidents" class="list-tight"></ol>
     </div>
   </section>
 
@@ -120,7 +121,7 @@
     </div>
     <div class="card">
       <h2>Compliance Snapshot</h2>
-      <ul style="padding-left:18px;margin:0">
+      <ul class="list-tight">
         <li>Policy ledger current (v3) — ✔</li>
         <li>Processor DPAs on file — ✔</li>
         <li>Deletion audit (sampled) — ✔</li>

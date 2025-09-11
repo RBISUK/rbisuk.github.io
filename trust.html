@@ -23,6 +23,7 @@
   .section{padding:34px 0} .card{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:var(--p);box-shadow:var(--shadow)}
   .grid{display:grid;gap:16px} .grid-3{grid-template-columns:repeat(3,minmax(0,1fr))} @media (max-width:980px){.grid-3{grid-template-columns:1fr}}
   .table{width:100%;border-collapse:collapse}.table th,.table td{border:1px solid var(--line);padding:10px;text-align:left;vertical-align:top}
+  .list-tight{padding-left:18px;margin:0}
   .muted{color:var(--muted)} .notice{background:#eef4ff;border:1px solid var(--line);border-radius:12px;padding:12px}
   .evc-banner{display:none;border:1px dashed var(--line);border-radius:12px;padding:10px;background:#f8fafc}
   body.evidence-mode .evc-banner{display:block}
@@ -51,7 +52,7 @@
     <div class="grid grid-3">
       <div class="card">
         <h2>Commitments <span class="muted">§TC-1</span></h2>
-        <ul style="padding-left:18px;margin:0">
+        <ul class="list-tight">
           <li>Confidentiality • Integrity • Precision</li>
           <li>Human-validated analysis; <b>no automated decisions</b></li>
           <li>Audit-ready disclosures and version notes</li>
