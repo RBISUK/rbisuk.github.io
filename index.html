@@ -71,10 +71,12 @@
     <div class="brand"><img src="logo.svg" alt="RBIS logo"/></div>
     <div class="menu">
       <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="software.html">Software</a>
       <a href="dashboards.html">Dashboards</a>
       <a href="trust.html">Trust</a>
       <a href="legal.html">Legal</a>
-      <a href="#contact" class="btn marketing">Contact</a>
+      <a href="contact.html" class="btn marketing">Contact</a>
       <label class="btn-ghost">
         <input id="evc" type="checkbox" style="accent-color:#1c2541" onchange="toggleEvidenceMode()"> Evidence Mode
       </label>
@@ -87,7 +89,7 @@
       <span class="badge">Authority • Confidentiality • Precision</span>
       <h1>RBIS equips leaders with foresight, clarity, and behavioural advantage — through independent analysis and intelligence-grade, court-ready reports.</h1>
       <div style="display:flex;gap:10px;margin-top:10px">
-        <a class="btn" href="#contact">Engage RBIS</a>
+        <a class="btn" href="contact.html">Engage RBIS</a>
         <a class="btn" style="background:#1c2541" href="legal.html">Legal Hub</a>
       </div>
       <div class="control">RBIS applies court-ready standards to intake, chain of custody, and analyst review. See <a href="trust.html">Trust Centre</a>.</div>
@@ -134,42 +136,23 @@
       </ul>
     </div>
   </div>
-</section>
+ </section>
 <section class="section marketing">
-  <div class="wrap">
-    <h2>Services & Solutions</h2>
-    <div class="grid grid-3">
-      <div class="card"><h3>Evidence Handling & Verification</h3><ul style="padding-left:18px"><li>Secure intake • encrypted submission • GDPR consent</li><li>Forensic normalisation & integrity checks</li></ul><div class="control">UK GDPR-compliant controls apply.</div></div>
-      <div class="card"><h3>AI-Assisted Behavioural Analysis</h3><ul style="padding-left:18px"><li>Sentiment/tone • pattern recognition</li><li>Timeline mapping • anomaly detection</li></ul><div class="control">Analyst validation required before reporting.</div></div>
-      <div class="card"><h3>Human Forensic Review</h3><ul style="padding-left:18px"><li>Independent verification</li><li>Cross-source corroboration</li><li>Defensible methodology</li></ul></div>
+  <div class="wrap grid grid-3">
+    <div class="card">
+      <h2>Services & Solutions</h2>
+      <p>Evidence handling, AI-assisted analysis, and human forensic review.</p>
+      <p><a href="services.html">Explore services →</a></p>
     </div>
-    <h3 style="margin-top:18px">Bespoke Software</h3>
-    <div class="grid grid-3">
-      <div class="card"><h3>Repairs & Compliance Copilot</h3><p>Multi-tenant copilot for housing providers: SLA timers, automated comms, evidence packs.</p></div>
-      <div class="card"><h3>PACT Ledger</h3><p>Promise OS converting commitments into evidence-backed objects; court-ready exports.</p></div>
-      <div class="card"><h3>OmniAssist Platform</h3><p>Config-driven, modular workflows across repairs, compliance, and sales. Role-based control.</p></div>
+    <div class="card">
+      <h2>Bespoke Software</h2>
+      <p>Copilots and platforms built for compliance and operations.</p>
+      <p><a href="software.html">Explore software →</a></p>
     </div>
-  </div>
-</section>
-<section id="contact" class="section">
-  <div class="wrap grid grid-2">
-    <div>
+    <div class="card">
       <h2>Contact RBIS</h2>
-      <p>Email: <a href="mailto:Contact@RBISIntelligence.com">Contact@RBISIntelligence.com</a></p>
-      <form id="contactForm" class="card" method="post" action="mailto:Contact@RBISIntelligence.com" enctype="text/plain" onsubmit="return contactSubmit(event)">
-        <p><label>Name<br><input name="name" required type="text" style="width:100%;padding:10px;border:1px solid var(--line);border-radius:10px"></label></p>
-        <p><label>Email<br><input name="email" required type="email" style="width:100%;padding:10px;border:1px solid var(--line);border-radius:10px"></label></p>
-        <p><label>Message<br><textarea name="message" rows="5" required style="width:100%;padding:10px;border:1px solid var(--line);border-radius:10px"></textarea></label></p>
-        <p style="font-size:13px" class="control">I agree to confidential processing per the <a href="legal.html#legal-privacy">Privacy</a> and <a href="legal.html#legal-terms">Terms</a>. Mark for legal review <input type="checkbox" name="legal_review"></p>
-        <p><button class="btn" type="submit">Send</button></p>
-        <p class="control">Avoid submitting unnecessary special category data. Email is not end-to-end encrypted.</p>
-      </form>
-    </div>
-    <div>
-      <div class="card">
-        <h3>Address</h3><p>PO Box, Bournemouth, Dorset, BH2 5RR, England</p>
-        <h3>Operating Region</h3><p>England & Wales (UK GDPR)</p>
-      </div>
+      <p>Engage our team for confidential consulting and intelligence.</p>
+      <p><a href="contact.html">Get in touch →</a></p>
     </div>
   </div>
 </section>
@@ -184,11 +167,6 @@
 <script>
   (function(){const k='rbis_consent'; if(!localStorage.getItem(k)) document.getElementById('cookie').style.display='block';
     window.cookieSet=function(mode){localStorage.setItem(k, JSON.stringify({necessary:true, analytics: mode==='analytics'})); document.getElementById('cookie').style.display='none';};})();
-  function sanitizeEmailField(str){return (str||'').replace(/[\r\n]/g,'').replace(/[&<>"']/g,c=>'&#'+c.charCodeAt(0)+';');}
-  function contactSubmit(e){e.preventDefault(); const f=e.target, d=new FormData(f);
-    const name=sanitizeEmailField(d.get('name')), email=sanitizeEmailField(d.get('email')), message=sanitizeEmailField(d.get('message'));
-    const body='Name: '+name+'\nEmail: '+email+'\nLegal review requested: '+(d.get('legal_review')?'Yes':'No')+'\n\n'+message;
-    window.location.href='mailto:Contact@RBISIntelligence.com?subject=RBIS%20Enquiry&body='+encodeURIComponent(body); f.reset(); return false;}
   function toggleEvidenceMode(){const on=document.getElementById('evc').checked; document.body.classList.toggle('evidence-mode', on); localStorage.setItem('rbis_evc', JSON.stringify(!!on));}
   (function(){try{const st=JSON.parse(localStorage.getItem('rbis_evc')||'false'); document.getElementById('evc').checked=!!st; document.body.classList.toggle('evidence-mode', !!st);}catch{}})();
   document.getElementById('year').textContent = new Date().getFullYear();
