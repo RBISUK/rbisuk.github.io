@@ -21,5 +21,18 @@
     <p>RBIS reviewers operate under confidentiality agreements and apply documented quality‑assurance steps. Evidence is handled in line with retention schedules and access controls to satisfy UK GDPR and criminal procedure rules.</p>
     <p><a href="../index.html#services">Back to services</a></p>
   </main>
+  <footer>
+    <div class="wrap">
+      <div>© <span id="year"></span> RBIS — Behavioural & Intelligence Services</div>
+      <div class="footer-links">
+        <a href="../legal.html#legal-privacy">Privacy</a><a href="../legal.html#legal-cookies">Cookies</a><a href="../legal.html#legal-terms">Terms</a><a href="../legal.html#legal-security">Security</a><a href="../legal.html#legal-retention">Data Retention</a><a href="../legal.html#legal-nda">NDA</a><a href="../legal.html#legal-claims">Claims</a><a href="../legal.html#legal-dpa">DPA</a>
+      </div>
+    </div>
+  </footer>
+  <script>
+    function toggleEvidenceMode(){const on=document.getElementById('evc').checked; document.body.classList.toggle('evidence-mode', on); localStorage.setItem('rbis_evc', JSON.stringify(!!on));}
+    (function(){try{const st=JSON.parse(localStorage.getItem('rbis_evc')||'false'); document.getElementById('evc').checked=!!st; document.body.classList.toggle('evidence-mode', !!st);}catch{}})();
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
