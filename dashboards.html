@@ -17,9 +17,6 @@
   .brand img{height:34px;width:auto}
   .menu{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
   .menu a{padding:8px 10px;border-radius:10px;text-decoration:none;color:var(--ink)} .menu a:hover{background:var(--soft)}
-  .btn,.btn-ghost{cursor:pointer}
-  .btn{display:inline-block;background:var(--brand3);color:#fff;border-radius:12px;padding:10px 14px;text-decoration:none;border:1px solid #0f233b;box-shadow:var(--shadow);font-weight:600}
-  .btn-ghost{display:inline-block;background:#fff;color:var(--ink);border:1px solid var(--line);border-radius:12px;padding:8px 12px}
   h1{font-size:clamp(26px,4vw,40px);margin:22px 0 12px} h2{font-size:clamp(22px,2.6vw,32px);margin:22px 0 10px} h3{font-size:20px;margin:14px 0 8px}
   .section{padding:30px 0} .card{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:var(--p);box-shadow:var(--shadow)}
   .grid{display:grid;gap:16px} .grid-2{grid-template-columns:repeat(2,minmax(0,1fr))} .grid-3{grid-template-columns:repeat(3,minmax(0,1fr))} @media (max-width:980px){.grid-3,.grid-2{grid-template-columns:1fr}}
@@ -40,7 +37,7 @@
       <a href="dashboards.html">Dashboards</a>
       <a href="trust.html">Trust</a>
       <a href="legal.html">Legal</a>
-      <label class="btn-ghost" style="cursor:pointer">
+      <label class="btn-ghost">
         <input id="evc" type="checkbox" style="accent-color:#1c2541" onchange="toggleEvidenceMode()"> Evidence Mode
       </label>
       <button class="btn-ghost" onclick="setPeriod('Q1')">Q1</button>
@@ -148,7 +145,7 @@
     kanban:{intake:['Tenant case: damp/mould','HR dispute: comms audit','Council enquiry: timeline'],analysis:['Audio review: tone markers','Doc auth: timestamp variance'],reporting:['Forensic report: Housing (v1.2)','Compliance memo: Processor review']},
     finance:{marginPct:32,runwayMonths:14}
   };
-  const £=n=>'£'+n.toLocaleString('en-GB');
+  const formatGBP = n => '£' + n.toLocaleString('en-GB');
   function clamp(n,min,max){return Math.max(min,Math.min(max,n))}
   function sum(a){return a.reduce((x,y)=>x+y,0)}
   function avg(a){return a.length?sum(a)/a.length:0}
@@ -173,8 +170,8 @@ function render(){
     document.querySelectorAll(".section").forEach(s=>s.style.display="");
   }
   const revK=sum(d.revenue)*1000, arrK=d.arr[d.arr.length-1]*1000, winK=avg(d.winRate);
-  document.getElementById("kpiRevenue").textContent=£(revK);
-  document.getElementById("kpiARR").textContent=£(arrK);
+  document.getElementById("kpiRevenue").textContent=formatGBP(revK);
+  document.getElementById("kpiARR").textContent=formatGBP(arrK);
   document.getElementById("kpiWin").textContent=Math.round(winK)+"%";
   document.getElementById("gRevenue").style.width=clamp((revK/(sum(data.revenue)*1000))*100,5,100)+"%";
   document.getElementById("gARR").style.width=clamp((arrK/(data.arr[data.arr.length-1]*1000))*100,5,100)+"%";

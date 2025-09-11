@@ -26,10 +26,6 @@
   .menu{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
   .menu a{padding:8px 10px;border-radius:10px;text-decoration:none;color:var(--ink)}
   .menu a:hover{background:var(--soft)}
-  .btn,.btn-ghost{cursor:pointer}
-  .btn{display:inline-block;background:var(--brand3);color:#fff;border-radius:12px;padding:10px 14px;text-decoration:none;border:1px solid #0f233b;box-shadow:var(--shadow);font-weight:600}
-  .btn:hover{filter:brightness(1.05)}
-  .btn-ghost{display:inline-block;background:#fff;color:var(--ink);border:1px solid var(--line);border-radius:12px;padding:8px 12px}
   .badge{display:inline-block;border:1px solid var(--line);background:var(--soft);border-radius:999px;padding:4px 8px;font-size:12px}
   header.hero{background:linear-gradient(180deg,#fff,#f3f6fb 56%,#fff);border-bottom:1px solid var(--line)}
   header.hero .wrap{display:grid;grid-template-columns:1.2fr .8fr;gap:26px;padding:56px 0}
@@ -79,7 +75,7 @@
       <a href="trust.html">Trust</a>
       <a href="legal.html">Legal</a>
       <a href="#contact" class="btn marketing">Contact</a>
-      <label class="btn-ghost" style="cursor:pointer">
+      <label class="btn-ghost">
         <input id="evc" type="checkbox" style="accent-color:#1c2541" onchange="toggleEvidenceMode()"> Evidence Mode
       </label>
     </div>
