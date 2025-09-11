@@ -38,6 +38,7 @@
 html,body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial}
 a{color:var(--accent)}
 img{max-width:100%;height:auto}
+:target{scroll-margin-top:80px}
 .wrap{max-width:1200px;margin-inline:auto;padding:0 20px}
 
 /* Navigation */
