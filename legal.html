@@ -102,7 +102,10 @@ function openHash(){
     const el = document.querySelector(location.hash);
     if(el){
       if(el.tagName.toLowerCase()==='details'){ el.open = true; }
-      setTimeout(() => el.scrollIntoView({behavior:'smooth', block:'start'}), 0);
+      requestAnimationFrame(()=>{
+        const top = el.getBoundingClientRect().top + window.scrollY - 80;
+        window.scrollTo({top,behavior:'smooth'});
+      });
     }
   }
 }

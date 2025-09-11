@@ -6,6 +6,7 @@ assert(
   index.includes('Confidence') && index.includes('Clarity') && index.includes('Compliance'),
   'Home page missing feature cards',
 );
+assert(index.includes('Explore Services'), 'Home page missing call to action');
 ['Services','Software','Dashboards','Trust','Legal'].forEach(link=>{
   assert(index.includes(`>${link}<`), `Nav missing ${link} link`);
 });
