@@ -43,6 +43,7 @@
       <a href="trust.html">Trust</a>
       <a href="legal.html">Legal</a>
       <a href="contact.html" class="btn marketing">Contact</a>
+      <button id="themeToggle" class="btn-ghost">Dark Mode</button>
       <label class="btn-ghost">
         <input id="evc" type="checkbox" style="accent-color:#1c2541" onchange="toggleEvidenceMode()"> Evidence Mode
       </label>
@@ -69,9 +70,10 @@
 </footer>
 <script>
   function toggleEvidenceMode(){const on=document.getElementById('evc').checked; document.body.classList.toggle('evidence-mode', on); localStorage.setItem('rbis_evc', JSON.stringify(!!on));}
-  (function(){try{const st=JSON.parse(localStorage.getItem('rbis_evc')||'false'); document.getElementById('evc').checked=!!st; document.body.classList.toggle('evidence-mode', !!st);}catch{}})();
-  document.getElementById('year').textContent = new Date().getFullYear();
-</script>
+    (function(){try{const st=JSON.parse(localStorage.getItem('rbis_evc')||'false'); document.getElementById('evc').checked=!!st; document.body.classList.toggle('evidence-mode', !!st);}catch{}})();
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+  <script src="js/theme-toggle.js"></script>
 </body>
 </html>
 
