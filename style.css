@@ -38,16 +38,18 @@
 html,body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial}
 a{color:var(--accent)}
 img{max-width:100%;height:auto}
+:target{scroll-margin-top:80px}
 .wrap{max-width:1200px;margin-inline:auto;padding:0 20px}
 
 /* Navigation */
 .nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
-.nav .wrap{display:flex;align-items:center;justify-content:space-between;padding:10px 0}
+.nav .wrap{display:flex;align-items:center;gap:40px;flex-wrap:wrap;padding:12px 0}
 .brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:20px;color:var(--brand);text-decoration:none}
-.brand img{height:34px;width:auto}
-.menu{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.brand img{height:40px;width:auto}
+.menu{display:flex;list-style:none;margin:0;padding:0;gap:24px;flex:1;justify-content:center}
 .menu a{padding:8px 10px;border-radius:10px;text-decoration:none;color:var(--ink)}
 .menu a:hover{background:var(--soft)}
+.actions{display:flex;gap:12px;align-items:center}
 
 /* Buttons */
 .btn,
@@ -113,6 +115,9 @@ p{margin:0 0 12px;color:var(--muted)}
   .section{padding:30px 0}
   h1,h2{margin-top:20px;margin-bottom:10px}
   .card{max-height:400px;overflow:auto}
+  .nav .wrap{flex-direction:column;align-items:flex-start}
+  .menu{flex-wrap:wrap;justify-content:flex-start}
+  .actions{flex-wrap:wrap}
 }
 
 /* KPI / table helpers */
