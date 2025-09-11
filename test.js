@@ -13,6 +13,9 @@ assert(index.includes('Explore Services'), 'Home page missing call to action');
 });
 
 const dashboards = fs.readFileSync('dashboards.html', 'utf8');
+['Energy','Cybersecurity','Finance','Retail','Healthcare','Manufacturing'].forEach(ind=>{
+  assert(dashboards.includes(ind), `Dashboards page missing ${ind} data`);
+});
 assert(/\d/.test(dashboards), 'Dashboards page should include numeric industry data');
 
 const legal = fs.readFileSync('legal.html', 'utf8');
