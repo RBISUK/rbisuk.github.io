@@ -61,6 +61,17 @@ footer .footer-links{
   justify-content:center;
   flex-wrap:wrap;
 }
+
+.breadcrumb{
+  font-size:14px;
+  margin:10px 0;
+  color:var(--muted);
+}
+.breadcrumb a{
+  color:var(--accent);
+  text-decoration:none;
+}
+
 /* Layout utilities */
 .grid{display:grid;gap:16px;}
 .grid-2{grid-template-columns:repeat(2,minmax(0,1fr));}
