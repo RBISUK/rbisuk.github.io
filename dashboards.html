@@ -11,7 +11,7 @@
 <body>
 <nav class="nav">
   <div class="wrap">
-    <a href="index.html" class="brand"><img src="logo.svg" alt="RBIS logo"/></a>
+    <a href="index.html" class="brand">rbis</a>
     <ul class="menu">
       <li><a href="services.html">Services</a></li>
       <li><a href="software.html">Software</a></li>
@@ -40,6 +40,7 @@
 
   <section class="section">
     <h2>Industry Benchmarks</h2>
+    <canvas id="industryChart" width="400" height="200"></canvas>
     <table class="table">
       <thead>
         <tr><th>Industry</th><th>Metric</th><th>Value</th><th>Source</th></tr>
@@ -66,6 +67,9 @@
 
 <script src="js/evidence.js"></script>
 <script defer src="js/theme-toggle.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script defer src="js/dashboard.js"></script>
+<script defer src="js/support.js"></script>
 </body>
 </html>
 

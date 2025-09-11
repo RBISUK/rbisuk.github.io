@@ -44,11 +44,12 @@ img{max-width:100%;height:auto}
 /* Navigation */
 .nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
 .nav .wrap{display:flex;align-items:center;gap:40px;flex-wrap:wrap;padding:12px 0}
-.brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:20px;color:var(--brand);text-decoration:none}
-.brand img{height:40px;width:auto}
+.brand{font-weight:700;font-size:24px;color:var(--brand);text-decoration:none}
 .menu{display:flex;list-style:none;margin:0;padding:0;gap:24px;flex:1;justify-content:center}
-.menu a{padding:8px 10px;border-radius:10px;text-decoration:none;color:var(--ink)}
-.menu a:hover{background:var(--soft)}
+.menu a{position:relative;padding:8px 10px;border-radius:10px;text-decoration:none;color:var(--ink);transition:color .2s}
+.menu a::after{content:"";position:absolute;left:50%;bottom:0;width:0;height:2px;background:var(--brand3);transition:width .2s,left .2s}
+.menu a:hover{color:var(--brand3)}
+.menu a:hover::after{left:0;width:100%}
 .actions{display:flex;gap:12px;align-items:center}
 
 /* Buttons */
@@ -107,10 +108,12 @@ p{margin:0 0 12px;color:var(--muted)}
 .grid-2{grid-template-columns:repeat(2,minmax(0,1fr))}
 .grid-3{grid-template-columns:repeat(3,minmax(0,1fr))}
 .navcol{grid-template-columns:260px 1fr}
+.navcol aside{background:var(--soft);border-right:1px solid var(--line);padding:20px;position:sticky;top:80px;height:calc(100vh - 120px);overflow:auto}
 
 @media (max-width:980px){
   .grid-2,.grid-3{grid-template-columns:1fr}
   .navcol{grid-template-columns:1fr}
+  .navcol aside{position:static;height:auto;border-right:none;padding:0;overflow:visible}
   .wrap{padding:0 16px}
   .section{padding:30px 0}
   h1,h2{margin-top:20px;margin-bottom:10px}
@@ -129,6 +132,10 @@ p{margin:0 0 12px;color:var(--muted)}
 .table th,.table td{border:1px solid var(--line);padding:10px;text-align:left;vertical-align:top}
 .evc-banner{display:none;border:1px dashed var(--line);border-radius:12px;padding:10px;background:var(--soft)}
 body.evidence-mode .evc-banner{display:block}
+
+/* Floating support button */
+.support-btn{position:fixed;bottom:20px;right:20px;background:var(--brand3);color:#fff;padding:12px 20px;border-radius:30px;text-decoration:none;box-shadow:0 4px 6px rgba(0,0,0,.2);z-index:1000}
+.support-btn:hover{background:var(--brand2)}
 
 /* Footer */
 footer{margin-top:20px;padding:20px 0;border-top:1px solid var(--line);background:var(--bg);color:var(--muted);text-align:center}
