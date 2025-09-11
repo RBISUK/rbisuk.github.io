@@ -61,3 +61,12 @@ footer .footer-links{
   justify-content:center;
   flex-wrap:wrap;
 }
+.breadcrumb{
+  font-size:14px;
+  margin:10px 0;
+  color:var(--muted);
+}
+.breadcrumb a{
+  color:var(--accent);
+  text-decoration:none;
+}
