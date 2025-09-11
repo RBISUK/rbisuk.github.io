@@ -1,0 +1,11 @@
+{
+  "name": "rbisuk.github.io",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "minify": "html-minifier-terser --collapse-whitespace --remove-comments --minify-js true --minify-css true --input-dir . --output-dir dist --file-ext html,css"
+  },
+  "devDependencies": {
+    "html-minifier-terser": "^7.2.0"
+  }
+}
