@@ -21,4 +21,3 @@ const style = fs.readFileSync('style.css', 'utf8');
 assert(style.includes(':target{scroll-margin-top'), 'Missing scroll-margin for anchored sections');
 
 console.log('All tests passed.');
-
