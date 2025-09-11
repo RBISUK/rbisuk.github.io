@@ -10,4 +10,4 @@ Push to `main` → auto-deploys to **GitHub Pages** via Actions.
 
 ## Local preview
 
-Open any HTML file directly in a browser or serve this repository with any static file server. No build step or runtime dependencies are required.
+Run `npm install` to fetch dependencies, then `npm start` to launch the Express server with the `/api/contact` endpoint. The server expects SMTP configuration via environment variables (`SMTP_HOST`, `SMTP_PORT`, `SMTP_USER`, `SMTP_PASS`).
