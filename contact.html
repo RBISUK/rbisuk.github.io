@@ -14,17 +14,18 @@
 <nav class="nav">
   <div class="wrap">
     <a href="index.html" class="brand"><img src="logo.svg" alt="RBIS logo"/></a>
-    <div class="menu">
-      <a href="index.html">Home</a>
-      <a href="services.html">Services</a>
-      <a href="software.html">Software</a>
-      <a href="dashboards.html">Dashboards</a>
-      <a href="trust.html">Trust</a>
-      <a href="legal.html">Legal</a>
+    <ul class="menu">
+      <li><a href="services.html">Services</a></li>
+      <li><a href="software.html">Software</a></li>
+      <li><a href="dashboards.html">Dashboards</a></li>
+      <li><a href="trust.html">Trust</a></li>
+      <li><a href="legal.html">Legal</a></li>
+    </ul>
+    <div class="actions">
       <a href="contact.html" class="btn marketing">Contact</a>
+      <button id="themeToggle" class="btn-ghost">Dark Mode</button>
       <label class="btn-ghost">
-        <input id="evc" type="checkbox" style="accent-color:#1c2541"
-               onchange="toggleEvidenceMode()"> Evidence Mode
+        <input id="evc" type="checkbox" style="accent-color:#1c2541" onchange="toggleEvidenceMode()"> Evidence Mode
       </label>
     </div>
   </div>
@@ -109,19 +110,8 @@ function contactSubmit(e) {
   f.reset();
   return false;
 }
-function toggleEvidenceMode() {
-  const on = document.getElementById('evc').checked;
-  document.body.classList.toggle('evidence-mode', on);
-  localStorage.setItem('rbis_evc', JSON.stringify(!!on));
-}
-(function () {
-  try {
-    const st = JSON.parse(localStorage.getItem('rbis_evc') || 'false');
-    document.getElementById('evc').checked = !!st;
-    document.body.classList.toggle('evidence-mode', !!st);
-  } catch {}
-})();
-document.getElementById('year').textContent = new Date().getFullYear();
 </script>
+<script src="js/evidence.js"></script>
+<script defer src="js/theme-toggle.js"></script>
 </body>
 </html>
