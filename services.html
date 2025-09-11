@@ -69,11 +69,7 @@
     </div>
   </div>
 </footer>
-<script>
-  function toggleEvidenceMode(){const on=document.getElementById('evc').checked; document.body.classList.toggle('evidence-mode', on); localStorage.setItem('rbis_evc', JSON.stringify(!!on));}
-  (function(){try{const st=JSON.parse(localStorage.getItem('rbis_evc')||'false'); document.getElementById('evc').checked=!!st; document.body.classList.toggle('evidence-mode', !!st);}catch{}})();
-  document.getElementById('year').textContent = new Date().getFullYear();
-</script>
+<script src="js/evidence.js"></script>
 </body>
 </html>
 
