@@ -148,7 +148,7 @@
     kanban:{intake:['Tenant case: damp/mould','HR dispute: comms audit','Council enquiry: timeline'],analysis:['Audio review: tone markers','Doc auth: timestamp variance'],reporting:['Forensic report: Housing (v1.2)','Compliance memo: Processor review']},
     finance:{marginPct:32,runwayMonths:14}
   };
-  const £=n=>'£'+n.toLocaleString('en-GB');
+  const formatGBP = n => '£' + n.toLocaleString('en-GB');
   function clamp(n,min,max){return Math.max(min,Math.min(max,n))}
   function sum(a){return a.reduce((x,y)=>x+y,0)}
   function avg(a){return a.length?sum(a)/a.length:0}
@@ -173,8 +173,8 @@ function render(){
     document.querySelectorAll(".section").forEach(s=>s.style.display="");
   }
   const revK=sum(d.revenue)*1000, arrK=d.arr[d.arr.length-1]*1000, winK=avg(d.winRate);
-  document.getElementById("kpiRevenue").textContent=£(revK);
-  document.getElementById("kpiARR").textContent=£(arrK);
+  document.getElementById("kpiRevenue").textContent=formatGBP(revK);
+  document.getElementById("kpiARR").textContent=formatGBP(arrK);
   document.getElementById("kpiWin").textContent=Math.round(winK)+"%";
   document.getElementById("gRevenue").style.width=clamp((revK/(sum(data.revenue)*1000))*100,5,100)+"%";
   document.getElementById("gARR").style.width=clamp((arrK/(data.arr[data.arr.length-1]*1000))*100,5,100)+"%";
