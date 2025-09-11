@@ -106,9 +106,10 @@
   function generateExtract(){
     const now=new Date().toISOString();
     const ids=['legal-privacy','legal-terms','legal-nda','legal-retention','legal-security','legal-cookies','legal-claims','legal-dpa'];
+    const domain=location.origin;
     let html='<!doctype html><html><head><meta charset="utf-8"><title>RBIS Certified Policy Extract</title><style>body{font-family:ui-sans-serif,system-ui;padding:20px;color:#0f172a}h1{margin:0 0 10px}h2{margin:18px 0 6px}hr{border:none;border-top:1px solid #ddd;margin:16px 0}p.small{font-size:12px;color:#475569}</style></head><body>'+
       '<h1>RBIS Certified Policy Extract</h1><p>Issued: '+now+'</p><p>This extract summarises current policy sections for procurement and tribunal use. For authoritative text, see the live site.</p><hr>';
-    ids.forEach(id=>{html+='<h2>'+id.replace('legal-','').toUpperCase()+'</h2><p>See: https://YOUR_DOMAIN/legal.html#'+id+'</p>';});
+    ids.forEach(id=>{html+='<h2>'+id.replace('legal-','').toUpperCase()+'</h2><p>See: '+domain+'/legal.html#'+id+'</p>';});
     html+='<hr><p class="small">Generated client-side without third-party libraries. For signed snapshots, email Contact@RBISIntelligence.com.</p></body></html>';
     const w=window.open('about:blank'); w.document.write(html); w.document.close();
   }
