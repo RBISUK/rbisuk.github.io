@@ -43,9 +43,9 @@ img{max-width:100%;height:auto}
 
 /* Navigation */
 .nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
-.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;padding:12px 0}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap;padding:12px 0}
 .brand{font-weight:700;font-size:20px;color:var(--brand);text-decoration:none}
-.menu{display:flex;list-style:none;margin:0;padding:0;gap:24px;flex:1;justify-content:center}
+.menu{display:flex;list-style:none;margin:0;padding:0;gap:32px;flex:1;justify-content:center}
 .menu a{padding:8px 10px;border-radius:10px;text-decoration:none;color:var(--ink)}
 .menu a:hover{background:var(--soft)}
 .actions{display:flex;gap:12px;align-items:center}
