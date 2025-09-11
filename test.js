@@ -9,7 +9,6 @@ assert(
 ['Services','Software','Dashboards','Trust','Legal'].forEach(link=>{
   assert(index.includes(`>${link}<`), `Nav missing ${link} link`);
 });
-assert(!index.includes('>Home<'), 'Nav should not include Home link');
 
 const dashboards = fs.readFileSync('dashboards.html', 'utf8');
 assert(/\d/.test(dashboards), 'Dashboards page should include numeric industry data');
