@@ -100,7 +100,10 @@
 function openHash(){
   if(location.hash){
     const el = document.querySelector(location.hash);
-    if(el && el.tagName.toLowerCase()==='details'){ el.open = true; }
+    if(el){
+      if(el.tagName.toLowerCase()==='details'){ el.open = true; }
+      setTimeout(()=>el.scrollIntoView(),0);
+    }
   }
 }
 window.addEventListener('hashchange', openHash);
