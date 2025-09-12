@@ -1,24 +1,36 @@
-# RBIS Website — GitHub Pages Template
+# RBIS UK Website
 
-Push to `main` → auto-deploys to **GitHub Pages** via Actions.
+Modern information hub built with **Next.js**, **TypeScript**, and **Tailwind CSS**.
 
-## Pages
-- `index.html` — overview and contact
-- `trust.html` — Trust & Assurance Centre (CSV export and print-ready dossier)
-- `legal.html` — Legal Hub
-- `dashboards.html` — interactive executive dashboards (CSV export and Evidence Pack)
+> **Note:** GitHub Pages serves the static `index.html` found at the repository root. It is compiled from TypeScript and styled with Tailwind via CDN so the site remains accessible even without a Next.js build step.
 
-## Optional build
+## Getting Started
 
-Install dependencies and minify HTML/CSS into `dist/` for a production build:
+Install dependencies and run the development server:
 
 ```bash
 npm install
-npm run minify
+npm run dev
 ```
 
-The `dist/` directory will contain the optimized site output.
+## Production Build
 
-## Local preview
+```bash
+npm run build
+npm start
+```
 
-Open any HTML file directly in a browser or serve this repository with any static file server. Local preview works without running the optional build step or installing dependencies.
+## Technologies
+
+- [Next.js](https://nextjs.org/) for framework
+- [Tailwind CSS](https://tailwindcss.com/) for styling
+- [Framer Motion](https://www.framer.com/motion/) for animation
+- [three.js](https://threejs.org/) via [react-three-fiber](https://github.com/pmndrs/react-three-fiber) for 3D
+
+## Testing
+
+Simple file-structure checks run with:
+
+```bash
+npm test
+```

@@ -1,23 +1,17 @@
 const fs = require('fs');
 const assert = require('assert');
 
-const index = fs.readFileSync('index.html', 'utf8');
-assert(
-  index.includes('Confidence') && index.includes('Clarity') && index.includes('Compliance'),
-  'Home page missing feature cards',
-);
-assert(index.includes('Explore Services'), 'Home page missing call to action');
-['Services','Software','Dashboards','Trust','Legal'].forEach(link=>{
-  assert(index.includes(`>${link}<`), `Nav missing ${link} link`);
+const pkg = JSON.parse(fs.readFileSync('package.json', 'utf8'));
+['next', 'react', 'react-dom', 'typescript', 'tailwindcss'].forEach(dep => {
+  const present = (pkg.dependencies && pkg.dependencies[dep]) || (pkg.devDependencies && pkg.devDependencies[dep]);
+  assert(present, `${dep} not listed in package.json`);
 });
 
-const dashboards = fs.readFileSync('dashboards.html', 'utf8');
-assert(/\d/.test(dashboards), 'Dashboards page should include numeric industry data');
+['tsconfig.json', 'next.config.mjs', 'tailwind.config.ts', 'app/page.tsx', 'app/layout.tsx'].forEach(file => {
+  assert(fs.existsSync(file), `${file} is missing`);
+});
 
-const legal = fs.readFileSync('legal.html', 'utf8');
-assert(legal.includes('openHash'), 'Legal page missing hash anchor handler');
-
-const style = fs.readFileSync('style.css', 'utf8');
-assert(style.includes(':target{scroll-margin-top'), 'Missing scroll-margin for anchored sections');
+const page = fs.readFileSync('app/page.tsx', 'utf8');
+assert(page.includes('RBIS UK'), 'Landing page missing heading');
 
 console.log('All tests passed.');
