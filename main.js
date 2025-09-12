@@ -10,3 +10,14 @@ function animate() {
 if (cube) {
     animate();
 }
+// smooth scrolling for navigation links
+document.querySelectorAll('nav a').forEach(link => {
+    link.addEventListener('click', e => {
+        var _a;
+        e.preventDefault();
+        const target = link.getAttribute('href');
+        if (target) {
+            (_a = document.querySelector(target)) === null || _a === void 0 ? void 0 : _a.scrollIntoView({ behavior: 'smooth' });
+        }
+    });
+});
