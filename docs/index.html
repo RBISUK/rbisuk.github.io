@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RBIS UK - Elite Investigative Solutions</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    #cube {
+      width: 150px;
+      height: 150px;
+      position: relative;
+      transform-style: preserve-3d;
+    }
+    #cube div {
+      position: absolute;
+      width: 150px;
+      height: 150px;
+      background: rgba(59,130,246,0.6);
+      border: 2px solid white;
+    }
+    #cube .front { transform: translateZ(75px); }
+    #cube .back { transform: rotateY(180deg) translateZ(75px); }
+    #cube .right { transform: rotateY(90deg) translateZ(75px); }
+    #cube .left { transform: rotateY(-90deg) translateZ(75px); }
+    #cube .top { transform: rotateX(90deg) translateZ(75px); }
+    #cube .bottom { transform: rotateX(-90deg) translateZ(75px); }
+  </style>
+</head>
+<body class="bg-gray-900 text-white">
+  <nav class="bg-gray-800 fixed w-full z-10">
+    <div class="max-w-5xl mx-auto flex justify-between items-center p-4">
+      <span class="font-bold">RBIS UK</span>
+      <div class="space-x-4">
+        <a href="#services" class="hover:text-blue-400">Services</a>
+        <a href="#solutions" class="hover:text-blue-400">Solutions</a>
+        <a href="#contact" class="hover:text-blue-400">Contact</a>
+      </div>
+    </div>
+  </nav>
+  <main class="pt-20">
+    <section id="home" class="flex flex-col items-center text-center min-h-screen justify-center">
+      <h1 class="text-5xl font-extrabold mb-4">Elite Investigative Insights</h1>
+      <p class="max-w-2xl text-lg">RBIS UK delivers research-driven intelligence and forensic expertise for organizations worldwide.</p>
+      <div id="cube" class="mt-8">
+        <div class="front"></div>
+        <div class="back"></div>
+        <div class="right"></div>
+        <div class="left"></div>
+        <div class="top"></div>
+        <div class="bottom"></div>
+      </div>
+    </section>
+    <section id="services" class="py-20 bg-gray-800 text-center">
+      <h2 class="text-3xl font-bold mb-6">Services</h2>
+      <p class="max-w-3xl mx-auto mb-8">Comprehensive offerings that blend cutting-edge AI with seasoned forensic analysts.</p>
+      <ul class="max-w-3xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
+        <li class="bg-gray-700 p-4 rounded">AI-Assisted Behavioural Analysis</li>
+        <li class="bg-gray-700 p-4 rounded">Evidence Handling</li>
+        <li class="bg-gray-700 p-4 rounded">Human Forensic Review</li>
+      </ul>
+    </section>
+    <section id="solutions" class="py-20 text-center">
+      <h2 class="text-3xl font-bold mb-6">Solutions</h2>
+      <p class="max-w-3xl mx-auto mb-8">Platforms engineered to streamline investigations and strengthen compliance.</p>
+      <ul class="max-w-3xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
+        <li class="bg-gray-800 p-4 rounded">OmniAssist Platform</li>
+        <li class="bg-gray-800 p-4 rounded">Pact Ledger</li>
+        <li class="bg-gray-800 p-4 rounded">Repairs Copilot</li>
+      </ul>
+    </section>
+    <section id="contact" class="py-20 bg-gray-800 text-center">
+      <h2 class="text-3xl font-bold mb-6">Contact</h2>
+      <p>Reach us at <a href="mailto:info@example.com" class="text-blue-400">info@example.com</a></p>
+    </section>
+  </main>
+  <script type="module" src="main.js"></script>
+</body>
+</html>

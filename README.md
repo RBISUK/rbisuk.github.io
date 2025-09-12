@@ -12,6 +12,8 @@ npm run build
 
 Open `index.html` in any modern browser to view the site.
 
+GitHub Pages is configured to serve from the `docs/` directory, so the built assets are duplicated there to prevent 404s in production.
+
 ## Testing
 
 Run simple structural checks:
