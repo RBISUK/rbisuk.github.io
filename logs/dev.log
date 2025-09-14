@@ -1,0 +1,26 @@
+
+> rbisuk-website@1.0.0 dev
+> next dev
+
+  ▲ Next.js 14.2.3
+  - Local:        http://localhost:3000
+
+ ✓ Starting...
+ ✓ Ready in 3.8s
+ ○ Compiling /api/health ...
+ ✓ Compiled /api/health in 763ms (53 modules)
+ GET /api/health 200 in 932ms
+ GET /api/health 200 in 11ms
+ GET /api/health 200 in 12ms
+ ○ Compiling / ...
+ ✓ Compiled / in 1955ms (452 modules)
+ GET / 200 in 2077ms
+ ○ Compiling /form ...
+ ✓ Compiled /form in 664ms (464 modules)
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ GET /form 200 in 778ms
+ GET / 200 in 24ms
+ GET / 200 in 24ms
+ ✓ Compiled in 880ms (458 modules)
+ ✓ Compiled in 803ms (458 modules)
+ ✓ Compiled in 433ms (458 modules)
