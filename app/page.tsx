@@ -1,1 +1,2 @@
-export default function Root(){ return null; }
+import { redirect } from 'next/navigation';
+export default function Root() { redirect('/main'); }

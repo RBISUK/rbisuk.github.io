@@ -3,20 +3,24 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "next dev -H 0.0.0.0 -p 3000",
+    "dev": "node scripts/dev.mjs",
     "build": "next build",
-    "start": "next start -H 0.0.0.0 -p 3000",
+    "start": "next start -p 3000",
     "lint": "next lint",
-    "typecheck": "tsc -v >/dev/null 2>&1 && tsc --noEmit || echo 'tsc ok/skipped'",
+    "typecheck": "tsc --noEmit",
     "dev:hdr": "next dev app/hdr -p 3000",
     "dev:main": "next dev app/main -p 3001",
     "build:hdr": "next build app/hdr",
     "build:main": "next build app/main",
     "start:hdr": "next start app/hdr -p 3000",
     "start:main": "next start app/main -p 3001",
-    "prepare": "husky",
     "check:split": "node tests/smoke.mjs",
-    "check:all": "npm run build && next start -H 0.0.0.0 -p 3000 & sleep 8 && BASE_URL=http://127.0.0.1:3000 npm run check:split; code=0; kill  >/dev/null 2>&1 || true; exit "
+    "check:all": "npm run build && next start -H 0.0.0.0 -p 3000 & sleep 8 && BASE_URL=http://127.0.0.1:3000 npm run check:split; code=0; kill  >/dev/null 2>&1 || true; exit ",
+    "dev:alt": "next dev -p 3001",
+    "dev:port": "node scripts/dev.mjs",
+    "smoke": "node --experimental-fetch scripts/smoke.mjs",
+    "smoke:node": "node --experimental-fetch scripts/smoke.mjs",
+    "test:all": "PORT=3001 npm run smoke && PORT=3100 npx playwright test"
   },
   "dependencies": {
     "@react-three/fiber": "^8.15.15",
@@ -24,19 +28,25 @@
     "next": "14.2.3",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "scheduler": "^0.26.0",
     "three": "0.159.0",
     "zod": "^3.23.8"
   },
   "devDependencies": {
+    "@playwright/test": "^1.55.0",
     "@types/node": "20.11.0",
-    "@types/react": "18.2.0",
+    "@types/offscreencanvas": "^2019.7.3",
+    "@types/react": "^18.3.24",
+    "@types/react-dom": "^18.3.7",
     "@types/three": "^0.160.0",
     "autoprefixer": "10.4.19",
+    "broken-link-checker-local": "^0.2.1",
     "eslint": "8.57.0",
     "eslint-config-next": "14.2.3",
+    "husky": "^9.1.7",
     "postcss": "8.4.31",
     "tailwindcss": "3.4.11",
-    "typescript": "5.6.3"
+    "typescript": "^5.9.2"
   },
   "lint-staged": {
     "**/*.{ts,tsx,js,jsx}": [
