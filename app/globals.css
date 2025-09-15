@@ -2,46 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Brand palette */
-:root {
-  --rbis-emerald: #0bb37b;
-  --rbis-blue: #0b1220;
-  --rbis-ink: #2c3344;
-  --rbis-warn: #f59e0b;
-  --rbis-danger: #dc2626;
-}
-
-/* Base typography + readability */
-body {
-  @apply bg-white text-[var(--rbis-ink)] antialiased leading-relaxed;
-}
-
-a {
-  @apply text-[var(--rbis-emerald)] underline-offset-4 hover:underline transition-colors;
-}
-
-/* Buttons */
-.btn-primary {
-  @apply bg-[var(--rbis-emerald)] text-white font-semibold px-5 py-2 rounded-lg shadow-md hover:bg-green-600 transition;
-}
-
-.btn-secondary {
-  @apply bg-[var(--rbis-blue)] text-white font-semibold px-5 py-2 rounded-lg shadow-md hover:bg-gray-800 transition;
-}
-
-/* Cards */
-.card {
-  @apply border rounded-xl p-6 shadow-sm hover:shadow-lg transition;
-}
-
-/* Floating support bubble */
-.rbis-float {
-  @apply fixed bottom-6 right-6 bg-[var(--rbis-emerald)] text-white px-4 py-3 rounded-full shadow-lg cursor-pointer;
-  animation: float 3s ease-in-out infinite;
-}
-
-/* Floating animation */
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-6px); }
+/* Optimisations */
+html, body {
+  @apply antialiased scroll-smooth bg-gray-50 text-gray-900;
 }

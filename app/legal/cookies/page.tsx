@@ -1,8 +1,8 @@
-export default function CookiePolicy() {
+export default function Cookies() {
   return (
-    <div className="max-w-3xl mx-auto p-8 space-y-4">
-      <h1 className="text-3xl font-bold mb-4">Cookie Policy</h1>
-      <p>Information about the cookies used on the RBIS website and options for managing preferences.</p>
-    </div>
+    <main className="prose max-w-3xl mx-auto p-6">
+      <h1>Cookie Policy</h1>
+      <p>We only use cookies where necessary. No analytics/ads without consent.</p>
+    </main>
   );
 }
