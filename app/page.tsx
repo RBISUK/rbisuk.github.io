@@ -1,1 +1,1 @@
-export default function Root() { return null }
+export default function Root(){ return null; }

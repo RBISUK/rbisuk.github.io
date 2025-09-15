@@ -155,7 +155,7 @@ function StepClientDetails({ data, setData, onNext }:{
         <button onClick={proceed} className="px-4 py-2 rounded-lg bg-blue-600 text-white">Continue</button>
       </div>
     
-      <input type="text" name="hp" autoComplete="off" tabIndex="-1" className="hidden" onChange={() => {}} />
+      <input type="text" name="hp" autoComplete="off" tabIndex={-1} className="hidden" onChange={() => {}} />
     </section>
   );
 }
@@ -187,7 +187,7 @@ function StepEligibility({ data, setData, onNext, onBack }:{
         <button onClick={onNext} className="px-4 py-2 rounded-lg bg-blue-600 text-white">Continue</button>
       </div>
     
-      <input type="text" name="hp" autoComplete="off" tabIndex="-1" className="hidden" onChange={() => {}} />
+      <input type="text" name="hp" autoComplete="off" tabIndex={-1} className="hidden" onChange={() => {}} />
     </section>
   );
 }
@@ -218,7 +218,7 @@ function StepHdrDetails({ data, setData, onNext, onBack }:{
         <button onClick={onNext} className="px-4 py-2 rounded-lg bg-blue-600 text-white">Continue</button>
       </div>
     
-      <input type="text" name="hp" autoComplete="off" tabIndex="-1" className="hidden" onChange={() => {}} />
+      <input type="text" name="hp" autoComplete="off" tabIndex={-1} className="hidden" onChange={() => {}} />
     </section>
   );
 }
@@ -243,7 +243,7 @@ function StepCrossSell({ data, setData, onNext, onBack }:{
         <button onClick={onNext} className="px-4 py-2 rounded-lg bg-blue-600 text-white">Continue</button>
       </div>
     
-      <input type="text" name="hp" autoComplete="off" tabIndex="-1" className="hidden" onChange={() => {}} />
+      <input type="text" name="hp" autoComplete="off" tabIndex={-1} className="hidden" onChange={() => {}} />
     </section>
   );
 }
@@ -263,7 +263,7 @@ function StepSubmit({ data, onBack, onSubmit, busy, err }:{
         </button>
       </div>
     
-      <input type="text" name="hp" autoComplete="off" tabIndex="-1" className="hidden" onChange={() => {}} />
+      <input type="text" name="hp" autoComplete="off" tabIndex={-1} className="hidden" onChange={() => {}} />
     </section>
   );
 }

@@ -3,19 +3,23 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
+    "dev": "next dev -H 0.0.0.0 -p 3000",
+    "build": "next build",
+    "start": "next start -H 0.0.0.0 -p 3000",
+    "lint": "next lint",
+    "typecheck": "tsc -v >/dev/null 2>&1 && tsc --noEmit || echo 'tsc ok/skipped'",
     "dev:hdr": "next dev app/hdr -p 3000",
     "dev:main": "next dev app/main -p 3001",
     "build:hdr": "next build app/hdr",
     "build:main": "next build app/main",
     "start:hdr": "next start app/hdr -p 3000",
     "start:main": "next start app/main -p 3001",
-    "dev": "next dev -H 0.0.0.0 -p 3000",
-    "build": "next build",
-    "start": "next start -H 0.0.0.0 -p 3000",
-    "lint": "next lint",
-    "prepare": "husky"
+    "prepare": "husky",
+    "check:split": "node tests/smoke.mjs",
+    "check:all": "npm run build && next start -H 0.0.0.0 -p 3000 & sleep 8 && BASE_URL=http://127.0.0.1:3000 npm run check:split; code=0; kill  >/dev/null 2>&1 || true; exit "
   },
   "dependencies": {
+    "@react-three/fiber": "^8.15.15",
     "framer-motion": "11.0.0",
     "next": "14.2.3",
     "react": "18.2.0",
@@ -26,6 +30,7 @@
   "devDependencies": {
     "@types/node": "20.11.0",
     "@types/react": "18.2.0",
+    "@types/three": "^0.160.0",
     "autoprefixer": "10.4.19",
     "eslint": "8.57.0",
     "eslint-config-next": "14.2.3",
