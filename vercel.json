@@ -1,10 +1,8 @@
 {
-  "headers": [
-    {
-      "source": "/(.*)",
-      "headers": [
-        { "key": "X-Robots-Tag", "value": "noindex, nofollow" }
-      ]
-    }
+  "rewrites": [
+    { "source": "/hdr", "destination": "/hdr" },
+    { "source": "/hdr/(.*)", "destination": "/hdr/$1" },
+    { "source": "/", "destination": "/main" },
+    { "source": "/(.*)", "destination": "/main/$1" }
   ]
 }
