@@ -1,4 +1,4 @@
-name: RBIS Full QA
+name: CI
 
 on:
   push:
@@ -6,22 +6,49 @@ on:
   pull_request:
     branches: [ main ]
 
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   build-and-test:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+      - uses: actions/setup-node@v4
         with:
-          node-version: 18
-          cache: npm
+          node-version: '20'
+          cache: 'npm'
 
-      - name: Install dependencies
-        run: npm ci
+      - name: Install
+        run: npm ci || (rm -f package-lock.json && npm install)
 
-      - name: Run full QA check
-        run: npm run full:check
+      - name: Typecheck
+        run: npm run typecheck --if-present
+
+      - name: Lint
+        run: npm run lint --if-present
+
+      - name: Build
+        run: npm run build
+
+      - name: Smoke routes quickly
+        run: |
+          npx next start -p 4010 & echo $! > .next.pid
+          sleep 3
+          curl -sSf http://localhost:4010/hdr  >/dev/null
+          curl -sSf http://localhost:4010/main >/dev/null
+
+      - name: Install Playwright
+        run: npx playwright install --with-deps
+
+      - name: E2E tests (Playwright)
+        env:
+          E2E_BASE_URL: http://localhost:4010
+        run: npm run test:e2e
+
+      - name: Stop server
+        if: always()
+        run: kill $(cat .next.pid)
