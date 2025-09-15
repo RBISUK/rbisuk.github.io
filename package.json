@@ -12,7 +12,8 @@
     "dev": "next dev -H 0.0.0.0 -p 3000",
     "build": "next build",
     "start": "next start -H 0.0.0.0 -p 3000",
-    "lint": "next lint"
+    "lint": "next lint",
+    "prepare": "husky"
   },
   "dependencies": {
     "framer-motion": "11.0.0",
@@ -31,5 +32,11 @@
     "postcss": "8.4.31",
     "tailwindcss": "3.4.11",
     "typescript": "5.6.3"
+  },
+  "lint-staged": {
+    "**/*.{ts,tsx,js,jsx}": [
+      "eslint --fix",
+      "git add"
+    ]
   }
 }
