@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-const BASE = process.env.E2E_BASE_URL || 'http://localhost:4010';
+const BASE = process.env.E2E_BASE_URL || 'http://localhost:3000';
 
 test('HDR landing loads', async ({ page }) => {
   const res = await page.goto(`${BASE}/hdr`, { waitUntil: 'networkidle' });
