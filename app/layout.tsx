@@ -1,18 +1,19 @@
-export const metadata = { title: "RBIS UK", description: "Housing Disrepair Intake" };
+import "./globals.css";
+import Nav from "./components/Nav";
+import SupportBubble from "./components/SupportBubble";
+
+export const metadata = {
+  title: "RBIS — Intelligence & HDR",
+  description: "RBIS Intelligence — compliance-first, AI-native services and HDR Claim-Fix-AI funnel.",
+};
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className="min-h-screen flex flex-col">
-        <nav className="w-full bg-blue-600 text-white py-3">
-          <div className="max-w-5xl mx-auto px-4 flex justify-between">
-            <a href="/" className="font-bold">RBIS UK</a>
-            <a href="/form" className="underline">Start claim</a>
-          </div>
-        </nav>
-        <main className="flex-1 w-full">{children}</main>
-        <footer className="bg-gray-100 text-gray-700 text-xs text-center py-6">
-          We comply with GDPR; forms are reviewed by humans (no automated decisions).
-        </footer>
+      <body className="min-h-screen antialiased bg-gradient-to-b from-slate-50 to-white text-slate-900">
+        <Nav />
+        <main className="mx-auto max-w-7xl px-4 py-10">{children}</main>
+        <SupportBubble/>
       </body>
     </html>
   );

@@ -1,0 +1,36 @@
+{
+  "name": "rbisuk-website",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "dev:hdr": "next dev app/hdr -p 3000",
+    "dev:main": "next dev app/main -p 3001",
+    "build": "next build",
+    "build:hdr": "next build app/hdr",
+    "build:main": "next build app/main",
+    "start": "next start"
+  },
+  "dependencies": {
+    "@react-three/drei": "^9.103.0",
+    "@react-three/fiber": "^8.15.0",
+    "cookie": "^1.0.2",
+    "framer-motion": "^11.0.0",
+    "nanoid": "^5.1.5",
+    "next": "14.2.3",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "three": "^0.159.0",
+    "zod": "^4.4.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "@types/react": "^18.2.0",
+    "autoprefixer": "^10.4.20",
+    "eslint": "8.57.0",
+    "eslint-config-next": "15.0.0",
+    "postcss": "^8.4.31",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5.4.0"
+  }
+}

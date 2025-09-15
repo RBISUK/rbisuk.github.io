@@ -1,22 +1,12 @@
-export const metadata = {
-  title: "Value & flexible models",
-  description: "Worth, not price: fair models without lock-in.",
-};
-export default function Page() {
+export default function HDRValue(){
   return (
-    <article className="prose max-w-none">
-      <h1>Value, not price</h1>
-      <p>
-        Clients typically report the system is worth <strong>£800–£1,000 per qualified case</strong> in combined
-        staff-time savings, faster triage, and improved evidence outcomes. We keep pricing flexible and fair to
-        match volume, sector, and integration complexity — without lock-ins.
-      </p>
-      <ul>
-        <li><strong>Flat SaaS:</strong> predictable monthly to run the full pipeline.</li>
-        <li><strong>Hybrid:</strong> lower base + modest per-case to align incentives.</li>
-        <li><strong>Rev-share:</strong> CMC-friendly, tied to solicitor outcomes.</li>
+    <section className="space-y-4">
+      <h1 className="text-3xl font-bold">Value & Outcomes</h1>
+      <ul className="list-disc ml-5 text-sm">
+        <li>Time-to-evidence 12–25 minutes (typical)</li>
+        <li>Throughput 3–6× per handler</li>
+        <li>SEO robots refresh long-tail pages weekly</li>
       </ul>
-      <p><a className="btn btn-primary" href="/main/contact">Talk to us</a> — we’ll size it transparently and keep it fair.</p>
-    </article>
+    </section>
   );
 }
