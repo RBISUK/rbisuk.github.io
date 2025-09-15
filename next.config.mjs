@@ -1,10 +1,4 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  reactStrictMode: true,
-  // Uncomment if you want static export for GitHub Pages
-  // output: 'export',
-  experimental: {
-    optimizePackageImports: ['lucide-react', 'framer-motion'],
-  },
-};
-export default nextConfig;
+{
+  source: '/(hdr|main|faqs|how|legal|thank-you)(.*)',
+  headers: [{ key: 'Cache-Control', value: 'public, max-age=600, s-maxage=86400, stale-while-revalidate=604800' }]
+}

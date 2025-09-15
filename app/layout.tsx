@@ -1,9 +1,4 @@
-import { metadata } from "./layout.metadata";
-export { metadata };
-export default function RootLayout({ children }: { children: React.ReactNode }) {
-  return (
-    <html lang="en">
-      <body>{children}</body>
-    </html>
-  );
-}
+// at top
+import { Analytics } from '@vercel/analytics/react';
+// inside body
+<Analytics />
