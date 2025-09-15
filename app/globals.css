@@ -2,6 +2,30 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  @apply bg-gray-50 text-gray-900;
+/* Brand + readability */
+:root{
+  --rbis-ink:#0B1220;        /* body text */
+  --rbis-emerald:#0EA5A3;    /* primary (emerald) */
+  --rbis-emerald-ink:#ECFEFF;/* on-primary text */
+  --rbis-blue:#1F3A8A;       /* calm link blue */
+  --rbis-muted:#F8FAFC;      /* page background */
 }
+
+html,body{ @apply bg-[var(--rbis-muted)] text-[var(--rbis-ink)] antialiased scroll-smooth; }
+a{ @apply underline-offset-4 hover:underline text-[var(--rbis-blue)]; }
+
+/* Buttons */
+.btn{ @apply inline-flex items-center justify-center rounded-md px-4 py-2 font-medium shadow-sm transition; }
+.btn-primary{ background:var(--rbis-emerald); color:var(--rbis-emerald-ink); }
+.btn-primary:hover{ filter:brightness(0.95); }
+.btn-outline{ @apply border border-gray-300 text-[var(--rbis-ink)] bg-white; }
+.btn-muted{ @apply bg-gray-100; }
+
+/* Cards */
+.card{ @apply bg-white rounded-lg shadow-sm border border-gray-200; }
+.card-body{ @apply p-6 space-y-3; }
+
+/* Support “bubble” */
+.rbis-bubble{ @apply fixed bottom-5 right-5 z-50; }
+.rbis-ping{ @apply absolute inset-0 rounded-full animate-ping opacity-20; }
+.rbis-bubble-btn{ @apply relative btn btn-primary rounded-full h-14 w-14 p-0 text-base; }

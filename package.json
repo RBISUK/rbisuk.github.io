@@ -3,18 +3,13 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "smoke": "node scripts/smoke.mjs",
     "dev": "next dev",
+    "dev:hdr": "next dev app/hdr -p 3000",
+    "dev:main": "next dev app/main -p 3001",
     "build": "next build",
-    "start": "next start",
-    "lint": "next lint",
-    "test": "node test.js",
-    "health": "curl -sS localhost:3000/api/health || true",
-    "diagnostic": "node scripts/diagnostic.mjs",
-    "typecheck": "tsc --noEmit",
-    "qa": "npm run smoke",
-    "smoke:intake": "node scripts/smoke-intake.mjs",
-    "full:check": "node scripts/full-check.mjs"
+    "build:hdr": "next build app/hdr",
+    "build:main": "next build app/main",
+    "start": "next start"
   },
   "dependencies": {
     "@react-three/drei": "^9.103.0",
@@ -26,14 +21,14 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "three": "^0.159.0",
-    "zod": "^4.1.8"
+    "zod": "^4.4.1"
   },
   "devDependencies": {
-    "@types/node": "^20.11.30",
-    "@types/react": "^18.2.21",
-    "autoprefixer": "^10.4.16",
-    "eslint": "8.57.1",
-    "eslint-config-next": "15.5.3",
+    "@types/node": "^20.11.0",
+    "@types/react": "^18.2.0",
+    "autoprefixer": "^10.4.20",
+    "eslint": "8.57.0",
+    "eslint-config-next": "15.0.0",
     "postcss": "^8.4.31",
     "tailwindcss": "^3.4.1",
     "typescript": "^5.4.0"
