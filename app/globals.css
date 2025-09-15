@@ -8,3 +8,23 @@
 h1,h2,h3 { @apply text-slate-900; }
 a { @apply text-[color:var(--brand)] hover:underline; }
 nav a { @apply text-slate-700 hover:text-[color:var(--brand)]; }
+.bubbles { 
+  position: absolute; inset: 0; 
+  overflow: hidden; 
+  pointer-events: none; 
+}
+.bubbles .bubble {
+  position:absolute; 
+  bottom:-10vh; 
+  width:16vmin; height:16vmin; 
+  border-radius:9999px;
+  background: radial-gradient(closest-side, rgba(56,189,248,.25), rgba(16,185,129,.2) 60%, transparent 70%);
+  filter: blur(8px) saturate(1.1);
+  animation: rise linear infinite;
+  will-change: transform;
+}
+@keyframes rise {
+  0%   { transform: translateY(0) translateX(-10%); opacity:.0; }
+  10%  { opacity:.8; }
+  100% { transform: translateY(-120vh) translateX(10%); opacity:0; }
+}
