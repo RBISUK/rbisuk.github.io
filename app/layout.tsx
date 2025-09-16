@@ -1,18 +1,34 @@
 import "./globals.css";
-import type { ReactNode } from "react";
+import type { Metadata } from "next";
 
-export const metadata = {
-  title: "RBIS — Repairs & Compliance Copilot",
-  description: "Claim-Fix-AI and RBIS modules for housing providers."
+export const metadata: Metadata = {
+  metadataBase: new URL("https://www.rbisintelligence.com"),
+  title: "RBIS Intelligence",
+  description: "Repairs & Compliance Copilot – Ryan Roberts: Behavioural & Intelligence Services",
+  themeColor: "#111827",
+  manifest: "/manifest.json",
+  icons: {
+    icon: "/favicon.ico",
+    apple: "/icons/icon-192.png",
+  },
+  openGraph: {
+    type: "website",
+    url: "https://www.rbisintelligence.com/",
+    title: "RBIS Intelligence",
+    description: "Repairs & Compliance Copilot – Ryan Roberts: Behavioural & Intelligence Services",
+    images: [{ url: "/og-image.png", width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "RBIS Intelligence",
+    description: "Repairs & Compliance Copilot – Ryan Roberts: Behavioural & Intelligence Services",
+    images: ["/og-image.png"],
+  },
 };
 
-export default function RootLayout({ children }: { children: ReactNode }) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <head>
-        <link rel="stylesheet" href="/styles/global.css" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-      </head>
       <body>{children}</body>
     </html>
   );
