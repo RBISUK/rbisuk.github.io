@@ -2,5 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* your custom globals below */
-html,body { min-height: 100%; }
+/* sanity styles so you can see something even if TW failed */
+:root { --bg: #f8fafc; }
+html, body { min-height: 100%; }
