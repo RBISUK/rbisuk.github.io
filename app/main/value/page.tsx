@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 export default function MainValue(){
   return (
     <section className="space-y-4">
@@ -10,3 +11,6 @@ export default function MainValue(){
     </section>
   );
 }
+=======
+export default function RbisValue(){ return <main><h1>RBIS Value</h1></main>; }
+>>>>>>> e9bbbeda81632fe34d9beba4ebacffe242ef73ef

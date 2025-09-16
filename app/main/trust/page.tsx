@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 export default function MainTrust(){
   return (
     <section className="space-y-4">
@@ -9,4 +10,8 @@ export default function MainTrust(){
       </ul>
     </section>
   );
+=======
+export default function RBISTrust() {
+  return <main className="p-8"><h1>Compliance & Trust</h1><p data-smoke="main/trust">OK</p></main>;
+>>>>>>> e9bbbeda81632fe34d9beba4ebacffe242ef73ef
 }

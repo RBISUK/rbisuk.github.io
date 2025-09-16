@@ -2,3 +2,9 @@ node_modules/
 dist/
 .next/
 out/
+logs/
+.vercel
+.env.local
+
+# Sentry Config File
+.env.sentry-build-plugin

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 export default function RBISHome(){
   return (
     <section className="space-y-6">
@@ -11,5 +12,13 @@ export default function RBISHome(){
         <a href="/main/contact" className="rounded-md border px-4 py-2">Contact</a>
       </div>
     </section>
+=======
+export default function MainHome() {
+  return (
+    <main>
+      <h1>RBIS — Main</h1>
+      <p>Home for RBIS content.</p>
+    </main>
+>>>>>>> e9bbbeda81632fe34d9beba4ebacffe242ef73ef
   );
 }

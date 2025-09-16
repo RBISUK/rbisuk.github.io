@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+<<<<<<< HEAD
 :root { --brand:#046A63; --brand-ink:#06322F; }
 .btn { @apply inline-flex items-center rounded-md bg-[color:var(--brand)] px-4 py-2 text-white font-medium transition hover:brightness-110; }
 .card { @apply rounded-xl border border-slate-200 bg-white/90 backdrop-blur p-4 shadow-sm; }
@@ -27,4 +28,9 @@ nav a { @apply text-slate-700 hover:text-[color:var(--brand)]; }
   0%   { transform: translateY(0) translateX(-10%); opacity:.0; }
   10%  { opacity:.8; }
   100% { transform: translateY(-120vh) translateX(10%); opacity:0; }
+=======
+/* Optimisations */
+html, body {
+  @apply antialiased scroll-smooth bg-gray-50 text-gray-900;
+>>>>>>> e9bbbeda81632fe34d9beba4ebacffe242ef73ef
 }

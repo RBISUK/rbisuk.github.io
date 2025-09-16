@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import FloatBubbles from '@/app/components/FloatBubbles';
 
 export default function HDRHome() {
@@ -10,6 +11,13 @@ export default function HDRHome() {
           Audit-ready housing disrepair funnel.
         </p>
       </div>
+=======
+export default function HdrHome() {
+  return (
+    <main>
+      <h1>HDR Funnel</h1>
+      <p>Intake, pricing, evidence, exports.</p>
+>>>>>>> e9bbbeda81632fe34d9beba4ebacffe242ef73ef
     </main>
   );
 }

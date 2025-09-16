@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 export default function HDRTrust(){
   return (
     <section className="space-y-4">
@@ -10,3 +11,6 @@ export default function HDRTrust(){
     </section>
   );
 }
+=======
+export default function Trust(){ return <main><h1>Trust</h1></main>; }
+>>>>>>> e9bbbeda81632fe34d9beba4ebacffe242ef73ef

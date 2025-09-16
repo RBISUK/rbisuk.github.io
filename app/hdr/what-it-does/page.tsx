@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 export const metadata = {
   title: "What Claim-Fix-AI does (plain English)",
   description: "Everything a handler needs from click to case; 12 interlocking elements mapped.",
@@ -31,3 +32,6 @@ export default function Page() {
     </article>
   );
 }
+=======
+export default function WhatItDoes(){ return <main><h1>What it does</h1></main>; }
+>>>>>>> e9bbbeda81632fe34d9beba4ebacffe242ef73ef

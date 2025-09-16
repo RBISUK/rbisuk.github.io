@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import FloatBubbles from '@/app/components/FloatBubbles';
 
 export default function RBISHome() {
@@ -13,3 +14,7 @@ export default function RBISHome() {
     </main>
   );
 }
+=======
+import { redirect } from 'next/navigation';
+export default function Root() { redirect('/main'); }
+>>>>>>> e9bbbeda81632fe34d9beba4ebacffe242ef73ef

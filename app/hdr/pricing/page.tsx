@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 export default function HDRPricing(){
   return (
     <section className="space-y-6">
@@ -18,3 +19,6 @@ export default function HDRPricing(){
     </section>
   );
 }
+=======
+export default function Pricing(){ return <main><h1>Pricing</h1></main>; }
+>>>>>>> e9bbbeda81632fe34d9beba4ebacffe242ef73ef

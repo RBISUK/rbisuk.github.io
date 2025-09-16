@@ -1,10 +1,6 @@
 {
-  "headers": [
-    {
-      "source": "/(.*)",
-      "headers": [
-        { "key": "X-Robots-Tag", "value": "noindex, nofollow" }
-      ]
-    }
+  "rewrites": [
+    { "source": "/",         "destination": "/main" },
+    { "source": "/(.*)",     "has": [{ "type": "host", "value": "hdr.rbisintelligence.com" }], "destination": "/hdr/$1" }
   ]
 }

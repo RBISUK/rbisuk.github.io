@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 export default function RBISDashboards(){
   return (
     <section className="space-y-6">
@@ -12,4 +13,8 @@ export default function RBISDashboards(){
       </div>
     </section>
   );
+=======
+export default function RBISDashboards() {
+  return <main className="p-8"><h1>RBIS Dashboards</h1><p data-smoke="main/dashboards">OK</p></main>;
+>>>>>>> e9bbbeda81632fe34d9beba4ebacffe242ef73ef
 }

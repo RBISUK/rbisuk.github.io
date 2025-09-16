@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import "./../globals.css";
 import type { Metadata } from "next";
 import Link from "next/link";
@@ -30,4 +31,8 @@ export default function HDRLayout({ children }: { children: React.ReactNode }) {
       <SupportBubble/>
     </body></html>
   );
+=======
+export default function HdrLayout({ children }: { children: React.ReactNode }) {
+  return <section>{children}</section>;
+>>>>>>> e9bbbeda81632fe34d9beba4ebacffe242ef73ef
 }

@@ -1,4 +1,4 @@
-name: RBIS Full QA
+name: CI
 
 on:
   push:
@@ -11,17 +11,29 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
+      - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Node.js
+      - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version: 20
           cache: npm
 
-      - name: Install dependencies
+      - name: Install deps (clean)
         run: npm ci
 
-      - name: Run full QA check
-        run: npm run full:check
+      - name: Typecheck
+        run: npm run typecheck
+
+      - name: Build
+        run: npm run build
+
+      - name: Smoke test (routes up)
+        run: PORT=3001 npm run smoke
+
+      - name: Install Playwright (browsers + deps)
+        run: npx playwright install --with-deps
+
+      - name: E2E + API tests (Playwright)
+        run: PORT=3100 npx playwright test

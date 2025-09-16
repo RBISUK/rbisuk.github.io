@@ -1,8 +1,8 @@
 export default function DataRetention() {
   return (
-    <div className="max-w-3xl mx-auto p-8 space-y-4">
-      <h1 className="text-3xl font-bold mb-4">Data Retention & Deletion Policy</h1>
-      <p>Details on how long RBIS retains data and procedures for deletion.</p>
-    </div>
+    <main className="prose max-w-3xl mx-auto p-6">
+      <h1>Data Retention & Deletion</h1>
+      <p>We keep data only as long as needed for triage and compliance, then delete or anonymise.</p>
+    </main>
   );
 }
