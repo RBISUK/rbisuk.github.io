@@ -1,16 +1,13 @@
 "use client";
 import { useState } from "react";
-
 export default function SimpleForm() {
   const [msg, setMsg] = useState("");
-
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const data = new FormData(e.currentTarget);
     const r = await fetch("/api/submit", { method: "POST", body: data });
     setMsg(JSON.stringify(await r.json(), null, 2));
   }
-
   return (
     <main className="p-8 space-y-4">
       <h1>Contact</h1>
