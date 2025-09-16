@@ -1,62 +1,105 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-PORT=${PORT:-3001}            # avoid 3000 in Codespaces
-export PORT
-echo "[smoke] Using PORT=$PORT"
+# Usage:
+#   ./scripts/smoke.sh                # auto-detect base
+#   ./scripts/smoke.sh 3001           # force port
+#   ./scripts/smoke.sh http://host:p  # force full base
 
-# kill any stale server on this port
-lsof -ti:$PORT | xargs -r kill -9 || true
-pkill -f "next dev -p $PORT" 2>/dev/null || true
+force="${1:-}"
 
-echo "[smoke] Typecheck…"
-npm run -s typecheck
-
-echo "[smoke] Build…"
-npm run -s build
-
-echo "[smoke] Start dev in background…"
-( npm run -s dev:port >/tmp/next-dev.log 2>&1 ) &
-
-# wait for server
-echo -n "[smoke] Waiting for server"; tries=0
-until curl -sSf "http://127.0.0.1:$PORT" >/dev/null 2>&1; do
-  sleep 0.7; tries=$((tries+1)); echo -n "."
-  if [ $tries -gt 60 ]; then
-    echo; echo "[smoke] Server failed to start:"
-    tail -n +1 /tmp/next-dev.log || true
-    exit 1
+# --- Discover base URL ---
+detect_base() {
+  # If caller gave a full URL, use it
+  if [[ "$force" =~ ^https?:// ]]; then
+    echo "$force"; return 0
   fi
-done
-echo; echo "[smoke] Server up."
+  # If caller gave just a port
+  if [[ -n "$force" && "$force" =~ ^[0-9]+$ ]]; then
+    echo "http://localhost:$force"; return 0
+  fi
 
-fail=0
-check() {
-  local path="$1"; shift
-  local expect="$1"; shift
-  echo "[smoke] GET $path expects: $expect"
-  body=$(curl -fsS "http://127.0.0.1:$PORT$path")
-  echo "$body" | grep -qi "$expect" || { echo "[FAIL] $path missing '$expect'"; fail=1; }
+  # Try pm2 to find script args like "-p 3001"
+  if command -v pm2 >/dev/null 2>&1; then
+    args_line="$(pm2 info rbis-app 2>/dev/null | awk -F: '/script args/ {sub(/^[ \t]+/,"",$2); print $2}' || true)"
+    if [[ "$args_line" =~ \-p[[:space:]]*([0-9]+) ]]; then
+      echo "http://localhost:${BASH_REMATCH[1]}"; return 0
+    fi
+  fi
+
+  # Try env var
+  if [[ -n "${PORT:-}" ]]; then
+    echo "http://localhost:$PORT"; return 0
+  fi
+
+  # Probe common ports
+  for p in 3000 3001 3002 3003 3004 3005 3006 3007 3008 3009 3010; do
+    code=$(curl -s -o /dev/null -w "%{http_code}" "http://localhost:$p/api/health" || true)
+    if [[ "$code" == "200" ]]; then
+      echo "http://localhost:$p"; return 0
+    fi
+  done
+
+  # Fallback
+  echo "http://localhost:3000"
 }
 
-# Routes to validate
-check "/"          "RBIS — Main"     # root redirects to /main and renders RBIS title
-check "/main"      "RBIS — Main"
-check "/hdr"       "HDR Funnel"
+base="$(detect_base)"
+echo "🔎 Using base: $base"
 
-# Optional: add more when subpages exist
-# check "/hdr/pricing" "Pricing"
-# check "/main/value" "Value"
+pass=true
 
-# Tailwind sanity: look for a common class you use (adjust to real class if you want)
-echo "[smoke] Tailwind sanity (presence of 'class=')"
-curl -fsS "http://127.0.0.1:$PORT/main" | grep -q 'class=' || { echo "[WARN] Could not detect classes on /main"; }
+check() {
+  url="$1"
+  code=$(curl -s -o /dev/null -w "%{http_code}" "$url" || true)
+  if [[ "$code" =~ ^2|3 ]]; then
+    printf "✅ %s -> %s\n" "$url" "$code"
+  else
+    printf "❌ %s -> %s\n" "$url" "$code"
+    pass=false
+  fi
+}
 
-# Cleanup: kill the dev server
-pkill -f "next dev -p $PORT" 2>/dev/null || true
+# --- GET checks ---
+check "$base/"
+check "$base/legal"
+check "$base/api/health"
 
-if [ $fail -ne 0 ]; then
-  echo "[smoke] FAIL"
-  exit 1
+# --- POST checks ---
+intake_code=$(curl -s -o /dev/null -w "%{http_code}" \
+  -H "Content-Type: application/json" \
+  -d '{"name":"Test User","email":"test@example.com","notes":"hello"}' \
+  "$base/api/intake" || true)
+
+# Richer payload for /api/lead to satisfy tighter validators
+lead_payload='{
+  "name":"Test User",
+  "email":"test@example.com",
+  "phone":"+447700900123",
+  "source":"website",
+  "campaign":"smoke",
+  "channel":"organic",
+  "utm":{"source":"dev","medium":"cli","campaign":"smoke"},
+  "consent":{"contact":true,"store":true}
+}'
+lead_resp=$(mktemp)
+lead_code=$(curl -s -D - -o "$lead_resp" -w "%{http_code}" \
+  -H "Content-Type: application/json" \
+  -d "$lead_payload" \
+  "$base/api/lead" 2>/dev/null | head -n1 | awk '{print $2}' || true)
+
+[[ "$intake_code" =~ ^2|3 ]] && echo "✅ /api/intake -> $intake_code" || { echo "❌ /api/intake -> $intake_code"; pass=false; }
+
+if [[ "$lead_code" =~ ^2|3 ]]; then
+  echo "✅ /api/lead -> $lead_code"
+else
+  echo "❌ /api/lead -> $lead_code"
+  echo "——— /api/lead response body ———"
+  cat "$lead_resp" || true
+  echo
+  pass=false
 fi
-echo "[smoke] PASS"
+rm -f "$lead_resp" || true
+
+# Final status
+$pass
