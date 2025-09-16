@@ -2,55 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
-/* === RBIS Global Styles === */
-:root {
-  --rbis-brand: #0f172a; /* slate-900 */
-  --rbis-accent: #2563eb; /* blue-600 */
-  --rbis-accent-hover: #1d4ed8; /* blue-700 */
-  --rbis-bg: #f9fafb; /* gray-50 */
-  --rbis-text: #111827; /* gray-900 */
+/* RBIS global styles */
+html, body {
+  @apply bg-white text-gray-900 antialiased;
 }
 
-html, body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  background-color: var(--rbis-bg);
-  color: var(--rbis-text);
-  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 
-               "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+h1, h2, h3, h4 {
+  @apply font-bold tracking-tight;
 }
 
 a {
-  color: var(--rbis-accent);
-  text-decoration: none;
-}
-a:hover {
-  color: var(--rbis-accent-hover);
-}
-
-/* Buttons */
-.btn {
-  @apply inline-flex items-center justify-center px-4 py-2 rounded-lg font-medium transition;
-  background-color: var(--rbis-accent);
-  color: white;
-}
-.btn:hover {
-  background-color: var(--rbis-accent-hover);
-}
-
-/* Headings */
-h1, h2, h3, h4, h5 {
-  @apply font-bold tracking-tight;
-  color: var(--rbis-brand);
-}
-
-/* Cards */
-.card {
-  @apply bg-white rounded-2xl shadow p-6;
-}
-
-/* Layout helpers */
-.container {
-  @apply max-w-6xl mx-auto px-4;
+  @apply text-blue-600 hover:underline;
 }
