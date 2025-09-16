@@ -1,31 +1,31 @@
 'use client';
 
-import { Canvas } from '@react-three/fiber';
-import { useFrame } from '@react-three/fiber';
+import { Canvas, useFrame } from '@react-three/fiber';
 import { useRef } from 'react';
 import type { Mesh } from 'three';
 
 function Box() {
   const ref = useRef<Mesh>(null!);
-  useFrame(() => {
-    ref.current.rotation.x += 0.01;
-    ref.current.rotation.y += 0.01;
+  useFrame((_, delta) => {
+    if (ref.current) {
+      ref.current.rotation.x += delta;
+      ref.current.rotation.y += delta;
+    }
   });
   return (
     <mesh ref={ref}>
       <boxGeometry args={[1, 1, 1]} />
-      <meshStandardMaterial color="royalblue" />
+      <meshStandardMaterial color="orange" />
     </mesh>
   );
 }
 
 export default function SpinningCube() {
   return (
-    <div className="h-64 w-64">
-      <Canvas>
-        <ambientLight />
-        <Box />
-      </Canvas>
-    </div>
+    <Canvas style={{ height: "300px", width: "100%" }}>
+      <ambientLight />
+      <pointLight position={[10, 10, 10]} />
+      <Box />
+    </Canvas>
   );
 }

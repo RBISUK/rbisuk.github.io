@@ -1,22 +1,17 @@
-export default function Faqs(){
+export default function FAQs() {
   return (
-    <div className="container py-16">
-      <h1 className="text-3xl font-bold">FAQs</h1>
-      <div className="mt-6 grid gap-4">
-        <div className="card p-5">
-          <div className="font-semibold">What counts as disrepair?</div>
-          <p className="text-gray-300 mt-2">Damp/mould, leaks, heating failures, unsafe electrics, pests, structural issues and similar defects.</p>
+    <section className="max-w-4xl mx-auto py-16 px-6">
+      <h1 className="text-3xl font-bold mb-8">Frequently Asked Questions</h1>
+      <div className="space-y-6">
+        <div>
+          <h2 className="font-semibold">What is RBIS?</h2>
+          <p className="text-gray-700">RBIS delivers compliance-first automation and analytics for housing providers and legal teams.</p>
         </div>
-        <div className="card p-5">
-          <div className="font-semibold">Will you sell my data?</div>
-          <p className="text-gray-300 mt-2">No. We never sell personal data. We use it only to handle your enquiry, per our Privacy Policy.</p>
-        </div>
-        <div className="card p-5">
-          <div className="font-semibold">Is this legal advice?</div>
-          <p className="text-gray-300 mt-2">No. We triage and introduce to regulated partners where appropriate. Always read engagement terms.</p>
+        <div>
+          <h2 className="font-semibold">How does Claim-Fix-AI work?</h2>
+          <p className="text-gray-700">It captures tenant disrepair claims, applies audit-ready workflows, and ensures SLA compliance.</p>
         </div>
       </div>
-      <a className="btn btn-primary mt-8" href="/form">Start your claim</a>
-    </div>
+    </section>
   );
 }

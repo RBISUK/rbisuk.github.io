@@ -1,28 +1,13 @@
-import Link from 'next/link';
-
-export default function LegalHub() {
-  const links = [
-    { href: '/legal/privacy', label: 'Privacy Policy' },
-    { href: '/legal/cookies', label: 'Cookie Policy' },
-    { href: '/legal/terms', label: 'Terms of Service' },
-    { href: '/legal/nda', label: 'Mutual NDA' },
-    { href: '/legal/data-retention', label: 'Data Retention & Deletion Policy' },
-    { href: '/legal/ai-ethics', label: 'AI Ethics Statement' },
-    { href: '/legal/claims-policy', label: 'Claims & Testimonials Accuracy Policy' },
-    { href: '/legal/dpa', label: 'Data Processing Addendum' }
-  ];
+export default function Legal() {
   return (
-    <div className="max-w-3xl mx-auto p-8 space-y-4">
-      <h1 className="text-3xl font-bold mb-4">Legal Hub</h1>
-      <ul className="list-disc pl-5 space-y-2">
-        {links.map(link => (
-          <li key={link.href}>
-            <Link href={link.href} className="text-blue-600 hover:underline">
-              {link.label}
-            </Link>
-          </li>
-        ))}
+    <section className="max-w-3xl mx-auto py-16 px-6">
+      <h1 className="text-3xl font-bold mb-8">Legal & Compliance</h1>
+      <ul className="list-disc pl-6 space-y-2 text-blue-600">
+        <li><a href="/legal/privacy">Privacy Policy</a></li>
+        <li><a href="/legal/terms">Terms of Service</a></li>
+        <li><a href="/legal/cookies">Cookies Policy</a></li>
+        <li><a href="/legal/dpa">Data Processing Agreement</a></li>
       </ul>
-    </div>
+    </section>
   );
 }
