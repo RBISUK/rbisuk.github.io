@@ -1,70 +1,98 @@
-export const metadata = {
-  title: "RBIS — Main",
-  description: "Behavioural & Intelligence Services",
-};
-
-export default function MainPage() {
+// app/main/page.tsx
+export default function RBISMain() {
   return (
-    <main>
-      {/* Hero Section */}
-      <section className="bg-white py-24">
-        <div className="container text-center">
-          <h1 className="text-5xl font-bold text-slate-900">
-            Behavioural & Intelligence
+    <section className="py-16">
+      <div className="grid gap-10">
+        <div className="text-center">
+          <h1 className="text-4xl font-bold tracking-tight">
+            RBIS — Repairs & Compliance Copilot
           </h1>
-          <p className="mt-6 text-lg text-slate-600 max-w-2xl mx-auto">
-            RBIS delivers compliance-ready AI, automation, and intelligence 
-            systems designed to help housing providers, law firms, and 
-            enterprises stay one step ahead.
+          <p className="mt-4 text-lg text-slate-700">
+            Audit-ready AI for housing providers: tenant repair intake,
+            compliance timers, automated comms, and court-ready evidence packs.
           </p>
-          <div className="mt-8 flex justify-center gap-4">
-            <a href="/form" className="btn">Get Started</a>
-            <a href="/hdr" className="btn bg-slate-700 hover:bg-slate-900">Explore HDR Funnel</a>
+          <div className="mt-6 flex justify-center gap-3">
+            <a
+              href="#contact"
+              className="rounded-xl border px-5 py-2.5 text-sm font-medium hover:bg-slate-50"
+            >
+              Book a demo
+            </a>
+            <a
+              href="#products"
+              className="rounded-xl bg-black px-5 py-2.5 text-sm font-medium text-white hover:opacity-90"
+            >
+              Explore products
+            </a>
           </div>
         </div>
-      </section>
 
-      {/* Features */}
-      <section className="bg-gray-50 py-16">
-        <div className="container grid md:grid-cols-3 gap-8">
-          <div className="card">
-            <h3 className="text-xl font-semibold">Compliance First</h3>
-            <p className="mt-2 text-slate-600">
-              Every product is audit-ready with GDPR, FCA, and SRA safeguards built in.
+        <div id="products" className="grid gap-6 md:grid-cols-2">
+          <div className="rounded-2xl border p-6 shadow-sm">
+            <h2 className="text-xl font-semibold">Claim-Fix-AI (HDR Funnel)</h2>
+            <p className="mt-2 text-sm text-slate-700">
+              Intake funnel for housing disrepair: captures evidence, validates issues,
+              sets SLA timers, and generates exportable packs.
             </p>
+            <a className="mt-3 inline-block text-sm underline" href="/claim-fix-ai">
+              View details →
+            </a>
           </div>
-          <div className="card">
-            <h3 className="text-xl font-semibold">Automation Copilots</h3>
-            <p className="mt-2 text-slate-600">
-              From intake funnels to dashboards, we streamline workflows with precision.
+
+          <div className="rounded-2xl border p-6 shadow-sm">
+            <h2 className="text-xl font-semibold">RBIS OmniAssist</h2>
+            <p className="mt-2 text-sm text-slate-700">
+              Modular automation assistant for repetitive workflows with guardrails
+              and compliance overlays.
             </p>
+            <a className="mt-3 inline-block text-sm underline" href="/omniassist">
+              View details →
+            </a>
           </div>
-          <div className="card">
-            <h3 className="text-xl font-semibold">Trusted Insights</h3>
-            <p className="mt-2 text-slate-600">
-              Delivering intelligence dashboards and compliance alerts to protect your organisation.
+
+          <div className="rounded-2xl border p-6 shadow-sm">
+            <h2 className="text-xl font-semibold">RBIS Dashboard</h2>
+            <p className="mt-2 text-sm text-slate-700">
+              Executive insights, compliance alerts, and KPI rollups.
             </p>
+            <a className="mt-3 inline-block text-sm underline" href="/dashboard">
+              View details →
+            </a>
+          </div>
+
+          <div className="rounded-2xl border p-6 shadow-sm">
+            <h2 className="text-xl font-semibold">NextusOne CRM</h2>
+            <p className="mt-2 text-sm text-slate-700">
+              AI-native CRM with GDPR/FCA/SRA overlays and audit trails.
+            </p>
+            <a className="mt-3 inline-block text-sm underline" href="/nextusone">
+              View details →
+            </a>
           </div>
         </div>
-      </section>
 
-      {/* CTA */}
-      <section className="bg-blue-600 text-white py-20">
-        <div className="container text-center">
-          <h2 className="text-3xl font-bold">Ready to transform compliance?</h2>
-          <p className="mt-4 text-lg">
-            Book a free consultation with RBIS today and see how we can help.
+        <div id="pricing" className="rounded-2xl border p-6 shadow-sm">
+          <h2 className="text-xl font-semibold">Pricing</h2>
+          <ul className="mt-3 list-disc pl-6 text-sm text-slate-700">
+            <li>Starter: core intake + basic exports</li>
+            <li>Pro: SLA timers, automated comms, advanced exports</li>
+            <li>Enterprise: multi-tenant, RBAC, custom compliance overlays</li>
+          </ul>
+          <p className="mt-3 text-sm text-slate-600">
+            Full pricing available on request while we onboard pilot partners.
           </p>
-          <a href="/form" className="btn mt-6">Book Consultation</a>
         </div>
-      </section>
 
-      {/* Footer */}
-      <footer className="bg-slate-900 text-white py-12">
-        <div className="container text-center">
-          <p className="text-sm">&copy; {new Date().getFullYear()} RBIS — Behavioural & Intelligence Services. All rights reserved.</p>
+        <div id="contact" className="rounded-2xl border p-6 shadow-sm">
+          <h2 className="text-xl font-semibold">Contact</h2>
+          <p className="mt-2 text-sm text-slate-700">
+            Ready to trial the Repairs & Compliance Copilot?
+          </p>
+          <a className="mt-3 inline-block text-sm underline" href="mailto:hello@rbisintelligence.com">
+            hello@rbisintelligence.com
+          </a>
         </div>
-      </footer>
-    </main>
+      </div>
+    </section>
   );
 }
