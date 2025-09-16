@@ -32,3 +32,7 @@ Simple file-structure checks run with:
 ```bash
 npm test
 ```
+
+## Production Health
+![Prod Verify](https://github.com/RBISUK/rbisuk.github.io/actions/workflows/prod-verify.yml/badge.svg)
+
