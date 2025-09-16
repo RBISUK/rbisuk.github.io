@@ -9,9 +9,7 @@
     "lint": "next lint",
     "smoke": "node --experimental-fetch scripts/smoke.mjs",
     "test": "playwright test",
-    "typecheck": "tsc --noEmit",
-    "build:css": "tailwindcss -i ./app/globals.css -o ./public/styles/global.css --minify",
-    "prebuild": "npm run build:css"
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "@aws-sdk/client-s3": "^3.888.0",

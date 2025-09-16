@@ -2,6 +2,5 @@
 @tailwind components;
 @tailwind utilities;
 
-html, body { @apply bg-white text-gray-900 antialiased; }
-h1, h2, h3, h4 { @apply font-bold tracking-tight; }
-a { @apply text-blue-600 hover:underline; }
+/* your custom globals below */
+html,body { min-height: 100%; }
