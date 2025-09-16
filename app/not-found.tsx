@@ -1,17 +1,9 @@
-<<<<<<< HEAD
 import Link from "next/link";
-export default function NotFound(){
-  return (
-    <div className="prose">
-      <h1>Not found</h1>
-      <p>Try <Link href="/hdr">HDR</Link> or <Link href="/main">RBIS main</Link>.</p>
-    </div>
-=======
 export default function NotFound() {
   return (
-    <main>
-      <h1>Page not found</h1>
+    <main className="p-10 space-y-4">
+      <h1 className="text-2xl font-bold">Page not found</h1>
+      <p>Try <Link href="/hdr" className="underline">HDR</Link> or <Link href="/main" className="underline">RBIS main</Link>.</p>
     </main>
->>>>>>> e9bbbeda81632fe34d9beba4ebacffe242ef73ef
   );
 }
