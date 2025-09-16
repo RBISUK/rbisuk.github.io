@@ -4,3 +4,4 @@ dist/
 out/
 logs/
 .vercel
+.env.local

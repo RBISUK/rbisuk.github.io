@@ -1,4 +1,5 @@
 import "./globals.css";
+import GA from "@/components/GA";
 import type { ReactNode } from "react";
 import { metadata as exportedMetadata } from "./layout.metadata";
 import { Analytics } from "@vercel/analytics/react";
@@ -11,6 +12,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       <body>
         {children}
         <Analytics />
+        <GA />
       </body>
     </html>
   );
