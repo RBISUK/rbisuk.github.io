@@ -1,5 +1,9 @@
-import { NextResponse } from "next/server";
-export const runtime = "nodejs";
+export const runtime = 'nodejs'; // or 'edge' if appropriate
+
 export async function GET() {
-  return NextResponse.json({ ok: true, service: "rbisuk", time: new Date().toISOString() });
+  return Response.json({
+    status: 'ok',
+    buildId: process.env.VERCEL_GIT_COMMIT_SHA ?? 'local',
+    ts: new Date().toISOString(),
+  });
 }
