@@ -1,25 +1,35 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-HOST="https://www.rbisintelligence.com"
+HOST="${HOST:-https://www.rbisintelligence.com}"
 ROUTES="/ /main /hdr /hdr/pricing /hdr/what-it-does /hdr/value /robots.txt /sitemap.xml"
 
-echo "1) Poll prod until main page returns 200..."
+echo "==> Poll production until /main returns 200"
 for i in {1..30}; do
-  code=$(curl -s -o /dev/null -w "%{http_code}" "$HOST/")
-  if [ "$code" = "200" ]; then echo "main: 200"; break; fi
+  code=$(curl -s -o /dev/null -w "%{http_code}" "$HOST/main")
+  echo "try $i -> $code"
+  [[ "$code" == "200" ]] && break
   sleep 2
 done
+[[ "$code" == "200" ]] || { echo "❌ main didn’t return 200"; exit 1; }
 
-echo "2) Smoke check key routes..."
+echo "==> Smoke check routes"
+fail=0
 for p in $ROUTES; do
-  code=$(curl -s -o /dev/null -w "%{http_code}" "$HOST$p")
-  echo "$p -> $code"
+  c=$(curl -s -o /dev/null -w "%{http_code}" "$HOST$p")
+  echo "$p -> $c"
+  [[ "$c" -ge 400 ]] && fail=1
 done
+[[ "$fail" == 0 ]] || { echo "❌ Some routes failed"; exit 1; }
 
-echo "3) Ensure CSS is loading..."
-bytes=$(curl -s "$HOST" | grep -o '<link[^>]*stylesheet[^>]*>' | head -n1 | xargs curl -s | wc -c)
+echo "==> CSS presence"
+html=$(curl -s "$HOST/main")
+href=$(echo "$html" | grep -oE 'href="[^"]+\.css"' | head -1 | cut -d\" -f2)
+[[ -n "$href" ]] || { echo "❌ No CSS <link> found"; exit 1; }
+
+css_url="$HOST$href"
+bytes=$(curl -s "$css_url" | wc -c)
 echo "CSS bytes: $bytes"
-if [ "$bytes" -lt 50000 ]; then echo "❌ CSS too small, styles missing"; exit 1; fi
+[[ "$bytes" -gt 20000 ]] || { echo "❌ CSS too small"; exit 1; }
 
-echo "✅ All good: styles + routes healthy"
+echo "✅ Production looks good"

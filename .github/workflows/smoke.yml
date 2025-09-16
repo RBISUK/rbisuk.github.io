@@ -1,14 +1,21 @@
 name: Smoke
-on: [push, pull_request]
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+  schedule:
+    - cron: "*/30 * * * *"
+
 jobs:
   smoke:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
-        with: { node-version: '20' }
-      - run: npm ci
-      - run: npm run build
-      - run: nohup npm run start -- -p 3000 >/dev/null 2>&1 &
-      - run: sleep 3
-      - run: ./scripts/smoke.sh 3000
+        with:
+          node-version: '20'
+          cache: npm
+      - run: npm ci && npm run build
+      - run: ./scripts/verify-prod.sh
+        env:
+          HOST: https://www.rbisintelligence.com
