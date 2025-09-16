@@ -1,37 +1,52 @@
-<<<<<<< HEAD
 export const metadata = {
-  title: "What Claim-Fix-AI does (plain English)",
-  description: "Everything a handler needs from click to case; 12 interlocking elements mapped.",
+  title: "HDR — What it Does",
+  description: "How the RBIS HDR Funnel works.",
 };
-export default function Page() {
+
+export default function WhatItDoes() {
   return (
-    <article className="prose max-w-none">
-      <h1>What it does — in plain English</h1>
-      <ul>
-        <li>Captures tenancy details, chronology, media, vulnerability flags, expenses.</li>
-        <li>Auto-triage with severity scoring, de-dupe, and missing-evidence prompts.</li>
-        <li>Builds an evidence pack (PDF/ZIP + JSON) ready for CRM/DMS.</li>
-        <li>Starts SLAs with letters, nudges, escalations, and audit-ready timelines.</li>
-      </ul>
+    <main className="py-16">
+      <div className="container mx-auto px-6 max-w-4xl">
+        <h1 className="text-4xl font-bold">What it Does</h1>
+        <p className="mt-6 text-slate-600">
+          The HDR Funnel orchestrates consent-compliant intake, progressive profiling,
+          and qualification scoring. Each submission is validated server-side, logged to
+          append-only JSONL, and optionally posted to your CRM or webhook.
+        </p>
 
-      <h2>One form, many claim types</h2>
-      <p>Smart branching for Damp & Mould • Leaks/Plumbing • Heating/Boiler • Electrical Hazards • Structural Issues • Infestation • Injury.</p>
-      <ul>
-        <li><strong>Mould-related illness:</strong> request NHS proof, GP dates, medication; Art. 9(2)(f) basis applied.</li>
-        <li><strong>Boiler failure:</strong> capture outage duration, coldest temp, vulnerable persons, emergency costs.</li>
-        <li>Room-by-room capture with severity sliders + guided photo prompts.</li>
-      </ul>
+        <div className="mt-10 grid md:grid-cols-2 gap-6">
+          <div className="rounded-2xl bg-white p-6 shadow-sm border">
+            <h3 className="font-semibold">Intake & UTM</h3>
+            <p className="mt-2 text-slate-600">
+              Captures UTM parameters, consent, and contact data with pattern checks.
+            </p>
+          </div>
+          <div className="rounded-2xl bg-white p-6 shadow-sm border">
+            <h3 className="font-semibold">Routing</h3>
+            <p className="mt-2 text-slate-600">
+              Sends to /api/lead with structured payloads; webhooks for downstream CRMs.
+            </p>
+          </div>
+          <div className="rounded-2xl bg-white p-6 shadow-sm border">
+            <h3 className="font-semibold">Audit Trail</h3>
+            <p className="mt-2 text-slate-600">
+              JSONL logs + optional nightly rotation and CSV exports for audits.
+            </p>
+          </div>
+          <div className="rounded-2xl bg-white p-6 shadow-sm border">
+            <h3 className="font-semibold">Performance</h3>
+            <p className="mt-2 text-slate-600">
+              Prerendered pages, shared JS under 110KB first load, and fast TTFB.
+            </p>
+          </div>
+        </div>
 
-      <h2>12 elements from click to case</h2>
-      <ol>
-        <li>Frontend Intake (React/Framer, CDN)</li><li>Consent Ledger (PECR-compliant)</li><li>Direct Media Uploader</li>
-        <li>Case DB</li><li>Session/De-dupe Cache</li><li>AI Triage Engine</li><li>SLA Timers</li>
-        <li>Notifier (SMS/WhatsApp/email)</li><li>Evidence-Pack Builder</li><li>Audit Logger</li>
-        <li>CRM/DMS Webhook</li><li>Dashboards</li>
-      </ol>
-    </article>
+        <div className="mt-10">
+          <a href="/form" className="inline-flex items-center rounded-md bg-blue-600 px-5 py-3 text-white font-medium hover:bg-blue-700 transition">
+            Try the Intake Form
+          </a>
+        </div>
+      </div>
+    </main>
   );
 }
-=======
-export default function WhatItDoes(){ return <main><h1>What it does</h1></main>; }
->>>>>>> e9bbbeda81632fe34d9beba4ebacffe242ef73ef

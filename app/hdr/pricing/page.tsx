@@ -1,24 +1,38 @@
-<<<<<<< HEAD
-export default function HDRPricing(){
+export const metadata = {
+  title: "HDR — Pricing",
+  description: "Transparent pricing for the RBIS HDR Funnel.",
+};
+
+const tiers = [
+  { name: "Starter", price: "£0/mo", features: ["Static HDR pages", "Email lead delivery", "Basic consent capture"] },
+  { name: "Growth", price: "£299/mo", features: ["Webhook & CRM sync", "JSONL logging & rotation", "Custom domains & GA4"] },
+  { name: "Scale", price: "£899/mo", features: ["Priority SLAs", "Custom scoring logic", "Multi-region deployments"] },
+];
+
+export default function Pricing() {
   return (
-    <section className="space-y-6">
-      <h1 className="text-3xl font-bold">Claim-Fix-AI — Pricing</h1>
-      <p className="text-slate-600 max-w-3xl">
-        Fair vs typical CACs (£800–£1,000). Choose SaaS, Rev-share, or Hybrid.
-      </p>
-      <div className="grid md:grid-cols-3 gap-5">
-        <article className="card"><h2 className="font-semibold">Flat SaaS</h2><ul className="list-disc ml-5 text-sm mt-2">
-          <li><b>Setup:</b> £1,200</li><li><b>License:</b> £600/mo</li><li>All 12 elements + SEO robots</li></ul></article>
-        <article className="card"><h2 className="font-semibold">Per-Case Rev-share</h2><ul className="list-disc ml-5 text-sm mt-2">
-          <li><b>Setup:</b> £0</li><li><b>License:</b> £200/mo</li><li><b>Rev-share:</b> 2–3% of solicitor fee</li></ul></article>
-        <article className="card"><h2 className="font-semibold">Hybrid</h2><ul className="list-disc ml-5 text-sm mt-2">
-          <li><b>Setup:</b> £750</li><li><b>License:</b> £350/mo</li><li><b>Per-case:</b> £10 per qualified forward</li></ul></article>
+    <main className="py-16">
+      <div className="container mx-auto px-6 text-center">
+        <h1 className="text-4xl font-bold">Pricing</h1>
+        <p className="mt-4 text-slate-600 max-w-2xl mx-auto">
+          Pick the plan that matches your funnel maturity. All plans include compliance-ready defaults.
+        </p>
+
+        <div className="mt-10 grid md:grid-cols-3 gap-6">
+          {tiers.map((t) => (
+            <div key={t.name} className="rounded-2xl bg-white p-6 shadow-sm border text-left">
+              <h3 className="text-xl font-semibold">{t.name}</h3>
+              <p className="mt-2 text-3xl font-bold">{t.price}</p>
+              <ul className="mt-4 space-y-2 text-slate-600">
+                {t.features.map((f) => <li key={f}>• {f}</li>)}
+              </ul>
+              <a href="/form" className="mt-6 inline-flex items-center rounded-md bg-blue-600 px-4 py-2 text-white font-medium hover:bg-blue-700 transition">
+                Choose {t.name}
+              </a>
+            </div>
+          ))}
+        </div>
       </div>
-      <div className="card"><h3 className="font-semibold mb-1">Value snapshot</h3>
-        <p className="text-sm">45–70 minutes saved per case; 3–6× intake/handler (traffic-dependent).</p></div>
-    </section>
+    </main>
   );
 }
-=======
-export default function Pricing(){ return <main><h1>Pricing</h1></main>; }
->>>>>>> e9bbbeda81632fe34d9beba4ebacffe242ef73ef
