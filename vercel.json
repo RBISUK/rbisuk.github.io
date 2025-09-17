@@ -1,6 +1,0 @@
-{
-  "rewrites": [
-    { "source": "/",         "destination": "/main" },
-    { "source": "/(.*)",     "has": [{ "type": "host", "value": "hdr.rbisintelligence.com" }], "destination": "/hdr/$1" }
-  ]
-}
