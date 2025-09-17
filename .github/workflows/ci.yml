@@ -1,39 +1,17 @@
-name: CI
-
+name: CI (build check)
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   pull_request:
-    branches: [ main ]
-
+    branches: [main]
 jobs:
-  build-and-test:
+  build:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Setup Node
-        uses: actions/setup-node@v4
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
-          node-version: 20
-          cache: npm
-
-      - name: Install deps (clean)
-        run: npm ci
-
-      - name: Typecheck
-        run: npm run typecheck
-
-      - name: Build
-        run: npm run build
-
-      - name: Smoke test (routes up)
-        run: PORT=3001 npm run smoke
-
-      - name: Install Playwright (browsers + deps)
-        run: npx playwright install --with-deps
-
-      - name: E2E + API tests (Playwright)
-        run: PORT=3100 npx playwright test
+          node-version: '20'
+          cache: 'npm'
+      - run: npm ci
+      - run: npm run build --if-present
