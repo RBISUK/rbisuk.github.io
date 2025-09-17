@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 /* Minimal global CSS (no Tailwind) */
 :root { color-scheme: light dark; }
 * { box-sizing: border-box; }
