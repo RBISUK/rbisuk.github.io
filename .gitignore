@@ -11,3 +11,11 @@ logs/
 .vercel
 .vercel
 *.log
+
+# HDR sub-app
+hdr/node_modules/
+hdr/.next/
+hdr/dist/
+hdr/out/
+hdr/.env*
+hdr/.vercel/
