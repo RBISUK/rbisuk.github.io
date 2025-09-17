@@ -1,3 +1,4 @@
+import './globals.css';
 export const metadata = {
   title: 'RBIS — Repairs & Compliance Copilot',
   description: 'Claim-Fix-AI and RBIS modules for housing providers.',
