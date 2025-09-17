@@ -10,3 +10,4 @@ logs/
 .env.sentry-build-plugin
 .vercel
 .vercel
+*.log
