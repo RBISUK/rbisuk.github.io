@@ -1,3 +1,4 @@
+import './globals.css';
 // app/layout.tsx
 import type { Metadata } from "next";
 import "./globals.css";
