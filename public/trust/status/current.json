@@ -1,0 +1,9 @@
+{
+  "overall": "operational",
+  "services": [
+    {"name": "Main Site", "status": "operational"},
+    {"name": "Veridex Intake", "status": "operational"},
+    {"name": "PACT Ledger", "status": "operational"}
+  ],
+  "lastUpdated": "2025-09-18T12:00:00Z"
+}

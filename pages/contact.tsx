@@ -10,6 +10,7 @@ export default function Contact(){
           <option>Consulting</option>
           <option>Veridex</option>
           <option>PACT Ledger</option>
+          <option>HDR</option>
           <option>Other</option>
         </select>
         <textarea required placeholder="Message" name="message" rows={5} style={{padding:10, border:"1px solid #ccc", borderRadius:8}} />
