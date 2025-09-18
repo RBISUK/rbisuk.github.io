@@ -1,16 +1,4 @@
-[
-  {
-    "name": "Google Workspace",
-    "purpose": "Email, document storage (encrypted at rest)",
-    "dataCategories": ["Contact data","Attachments"],
-    "region": "EU/US",
-    "dpa": "https://workspace.google.com/terms/dpa_terms.html"
-  },
-  {
-    "name": "Vercel",
-    "purpose": "Hosting and deployments",
-    "dataCategories": ["Website telemetry (non-PII)"],
-    "region": "EU/US",
-    "dpa": "https://vercel.com/legal/dpa"
-  }
-]
+{"generatedAt":"2025-09-18T00:00:00Z","subprocessors":[
+  {"name":"Vercel","purpose":"hosting/CDN","region":"EU/Global"},
+  {"name":"GitHub","purpose":"source control","region":"EU/US"},
+  {"name":"Google Workspace","purpose":"email/docs","region":"EU"}]}

@@ -1,9 +1,3 @@
-{
-  "overall": "operational",
-  "services": [
-    {"name": "Main Site", "status": "operational"},
-    {"name": "Veridex Intake", "status": "operational"},
-    {"name": "PACT Ledger", "status": "operational"}
-  ],
-  "lastUpdated": "2025-09-18T12:00:00Z"
-}
+{"service":"RBIS Intelligence","status":"operational","uptime90d":"99.95%",
+ "lastAudit":"2025-09-15","version":"2025.09.18",
+ "evidencePack":"/trust/evidence/2025-Q4/Compliance_Evidence_Pack.txt"}

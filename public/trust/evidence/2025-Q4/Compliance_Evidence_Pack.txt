@@ -1,2 +1,6 @@
-RBIS Compliance Evidence Pack — Q4 2025
-(Replace with the generated PDF pack.)
+RBIS Compliance Evidence Pack — 2025 Q4
+- Data minimisation map v2025.09.18
+- Retention rules (Zapier/Make)
+- TLS screenshots archived
+- WCAG Lighthouse runs
+- Consent logs (timestamped)
