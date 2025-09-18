@@ -1,5 +1,4 @@
 node_modules/
-.npmrc
 .next/
 out/
 *.swp
