@@ -19,3 +19,16 @@ hdr/dist/
 hdr/out/
 hdr/.env*
 hdr/.vercel/
+# node
+node_modules/
+.npmrc
+
+# editors
+*.swp
+*.save
+*.tmp
+.DS_Store
+
+# next
+.next/
+out/
