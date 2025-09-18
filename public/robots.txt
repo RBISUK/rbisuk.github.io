@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://rbisintelligence.com/sitemap.xml
