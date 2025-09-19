@@ -1,10 +1,1 @@
-export default function StickyCTA() {
-  return (
-    <div className="fixed inset-x-0 bottom-0 z-40 border-t border-neutral-200 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/70" role="region" aria-label="Quick actions">
-      <div className="mx-auto max-w-5xl px-4 py-3 flex items-center justify-between gap-3">
-        <span className="text-sm font-medium">Ready to see RBIS in action?</span>
-        <a href="/contact" className="rounded-lg px-4 py-2 text-white bg-black hover:bg-neutral-800 focus:outline-none focus:ring-2 focus:ring-black/40">Book a Demo</a>
-      </div>
-    </div>
-  );
-}
+export default function StickyCTA(){return(<div className="fixed inset-x-0 bottom-0 z-40 border-t border-neutral-200 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/70" role="region" aria-label="Quick actions"><div className="mx-auto max-w-5xl px-4 py-3 flex items-center justify-between gap-3"><span className="text-sm font-medium">Ready to see RBIS in action?</span><a href="/contact" className="rounded-lg px-4 py-2 text-white bg-black hover:bg-neutral-800 focus:outline-none focus:ring-2 focus:ring-black/40">Book a Demo</a></div></div>);}
