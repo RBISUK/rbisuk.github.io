@@ -1,0 +1,58 @@
+import { rbisContent } from "./config/rbisContent";
+import { flags } from "./config/flags";
+import ProductCard from "@/components/ProductCard";
+import ExpressPricing from "@/components/ExpressPricing";
+import StickyCTA from "@/components/StickyCTA";
+
+export default function Home() {
+  const c = rbisContent;
+  return (
+    <main>
+      {/* Hero */}
+      <section className="px-4 pt-10 pb-8 mx-auto max-w-6xl">
+        <h1 className="text-4xl md:text-6xl font-bold">{c.hero.title}</h1>
+        <p className="mt-3 text-neutral-700 max-w-2xl">{c.hero.subtitle}</p>
+        <div className="mt-6 flex flex-col sm:flex-row gap-3" role="group" aria-label="Primary actions">
+          {c.hero.ctas.map((cta:any)=>(
+            <a key={cta.href} href={cta.href} className="rounded-lg px-5 py-3 text-white bg-black hover:bg-neutral-800 text-center focus:outline-none focus:ring-2 focus:ring-black/40">{cta.label}</a>
+          ))}
+        </div>
+      </section>
+
+      {/* Product Grid */}
+      <section className="px-4 py-8 mx-auto max-w-6xl">
+        <h2 className="text-2xl md:text-3xl font-bold">The RBIS Suite: One Ecosystem, Infinite Scale</h2>
+        <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          {c.products.map(p => <ProductCard key={p.name} {...p} />)}
+        </div>
+      </section>
+
+      {/* Express Offer */}
+      {flags.rbis.expressOffer && <ExpressPricing content={c.express} />}
+
+      {/* Why RBIS */}
+      <section className="px-4 py-8 mx-auto max-w-6xl">
+        <h2 className="text-2xl md:text-3xl font-bold">Why Nobody Can Keep Up</h2>
+        <div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4">
+          {c.why.map((w,i)=>(
+            <div key={i} className="rounded-lg border border-neutral-200 p-5 bg-white">
+              <div className="text-3xl">{w.icon}</div>
+              <h3 className="mt-2 font-semibold">{w.title}</h3>
+              <p className="text-sm text-neutral-700 mt-1">{w.body}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Trust */}
+      <section className="px-4 pb-24 mx-auto max-w-6xl">
+        <h2 className="text-2xl md:text-3xl font-bold">Audit-Proof. Regulator-Ready. Client-Approved.</h2>
+        <ul className="mt-4 space-y-2">
+          {c.trust.map((t,i)=>(<li key={i} className="text-sm text-neutral-700">• {t}</li>))}
+        </ul>
+      </section>
+
+      {flags.rbis.stickyCTA && <StickyCTA/>}
+    </main>
+  );
+}

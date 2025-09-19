@@ -1,0 +1,41 @@
+export const rbisContent = {
+  hero: {
+    title: "RBIS: Behavioural & Intelligence Services",
+    subtitle: "Live robots. AI at the edge. Compliance-first systems. No static competitor can keep up.",
+    ctas: [
+      { label: "Book a Demo", href: "/contact" },
+      { label: "Explore the RBIS Suite", href: "/products" }
+    ]
+  },
+  express: {
+    priceSetup: "£4,995 setup",
+    priceMonthly: "£995/month",
+    bullets: [
+      "24-hour rollout — branded, integrated, live tomorrow",
+      "AI-native funnel — not a static form",
+      "SEO-AI optimisation — rank + convert, regulator-safe",
+      "Compliance armour — GDPR, ASA, FCA, SRA overlays",
+      "Evidence-first lead gen — packs, SLAs, timelines",
+      "Ongoing updates & support"
+    ],
+    lockIn: "Lock in this price as an RBIS Express early partner"
+  },
+  products: [
+    { name: "Claim-Fix-AI", tagline: "Turn tenant complaints into audit-ready cases", href: "/products/claim-fix-ai" },
+    { name: "OmniAssist", tagline: "AI colleague who never cuts corners", href: "/products/omniassist" },
+    { name: "RBIS Dashboard", tagline: "Ops lit up, not buried in spreadsheets", href: "/products/dashboard" },
+    { name: "NextusOne CRM", tagline: "The CRM that speaks regulator + client", href: "/products/nextusone" },
+    { name: "Custom Sites & SEO-AI", tagline: "Websites & SEO that survive audits", href: "/products/websites" },
+    { name: "PACT Ledger", tagline: "Every promise made, kept, or called to account", href: "/products/pact-ledger" }
+  ],
+  why: [
+    { icon: "🤖", title: "Live Robots", body: "Conversational AI, instant evidence, 24/7" },
+    { icon: "🛡", title: "Compliance Armour", body: "Audit-ready by design (FCA, SRA, GDPR, ASA)" },
+    { icon: "⚡", title: "Licensable Speed", body: "White-label rollouts in under 24 hours" }
+  ],
+  trust: [
+    "Housing provider cut SLA breaches by 70%",
+    "Law firm onboarded 200+ disrepair claims with zero rejected evidence",
+    "Tenant group generated a full Ombudsman pack in 5 minutes"
+  ]
+};

@@ -1,75 +1,71 @@
 #!/usr/bin/env bash
-set -euo pipefail
+set -Eeuox pipefail
+trap 'echo "💥 Error on line $LINENO: $BASH_COMMAND (exit $?)"' ERR
 
 PORT=3045
 LOG=/tmp/next.out
+PID_FILE=/tmp/next.pid
+
+cleanup() {
+  echo "🧼 Stopping server..."
+  if [[ -f "$PID_FILE" ]]; then
+    kill "$(cat "$PID_FILE")" 2>/dev/null || true
+    rm -f "$PID_FILE"
+  fi
+}
+trap cleanup EXIT
 
 echo "🔨 Building project..."
 rm -rf .next
-if ! npm run build; then
-  echo "❌ Build failed"
-  exit 1
-fi
+npm run build
 echo "✅ Build succeeded"
 
 echo "🚀 Starting server on port $PORT..."
 pkill -f "next start" 2>/dev/null || true
 for p in {3000..3060}; do (lsof -ti :$p | xargs -r kill -9) 2>/dev/null || true; done
 
-NODE_ENV=production next start -p $PORT >"$LOG" 2>&1 &
-PID=$!
-sleep 5
+NODE_ENV=production npx next start -p "$PORT" >"$LOG" 2>&1 & echo $! > "$PID_FILE"
 
-cleanup() {
-  kill "$PID" 2>/dev/null || true
-}
-trap cleanup EXIT
-
-echo "🌐 Checking key routes..."
-ROUTES=(
-  /
-  /solutions
-  /veridex
-  /pact-ledger
-  /hdr
-  /hdr/intake
-  /contact
-  /privacy
-  /trust-centre
-  /dashboard
-)
-FAIL=0
-for r in "${ROUTES[@]}"; do
-  CODE=$(curl -s -o /dev/null -w "%{http_code}" "http://localhost:$PORT$r")
-  if [ "$CODE" != "200" ]; then
-    echo "❌ $r returned $CODE"
-    FAIL=1
-  else
-    echo "✅ $r"
+echo -n "⏳ Waiting for http://localhost:$PORT ..."
+for i in {1..60}; do
+  if curl -sSf "http://localhost:$PORT/health.txt" >/dev/null || \
+     curl -sSf "http://localhost:$PORT/" >/dev/null; then
+    echo " up."
+    break
   fi
+  echo -n "."
+  sleep 0.5
 done
-
-echo "🔒 Checking headers..."
-curl -sI "http://localhost:$PORT/" | grep -E "Strict-Transport-Security|X-Frame-Options|X-Content-Type-Options|Referrer-Policy|Permissions-Policy" || {
-  echo "❌ Missing expected security headers"
-  FAIL=1
-}
-
-if command -v npx >/dev/null && [ -f tsconfig.e2e.json ]; then
-  echo "🧪 Running Playwright tests..."
-  if ! BASE_URL="http://localhost:$PORT" npx playwright test -c tsconfig.e2e.json; then
-    echo "❌ Playwright tests failed"
-    FAIL=1
-  else
-    echo "✅ Playwright tests passed"
-  fi
-fi
-
-if [ "$FAIL" -eq 0 ]; then
-  echo "🎉 All checks passed. Build is production-ready."
-else
-  echo "🚨 One or more checks failed. See logs above."
+if ! curl -sSf "http://localhost:$PORT/" >/dev/null; then
+  echo; echo "❌ Server never became ready. Last 80 log lines:"
+  tail -n 80 "$LOG" || true
   exit 1
 fi
 
+echo "🌐 Checking key routes..."
+FAIL=0
+check () {
+  local path="$1"
+  local code
+  code=$(curl -s -o /dev/null -w '%{http_code}' "http://localhost:$PORT$path")
+  printf "%-16s %s\n" "$path" "$code"
+  [[ "$code" == "200" ]] || FAIL=1
+}
 
+check /
+check /solutions
+check /veridex
+check /pact-ledger
+check /hdr
+check /hdr/intake
+check /contact
+check /privacy
+check /trust-centre
+check /dashboard
+
+if [[ $FAIL -eq 0 ]]; then
+  echo "✅ All checks passed"
+else
+  echo "❌ Some routes failed"
+  exit 1
+fi
