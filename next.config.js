@@ -13,6 +13,18 @@ const nextConfig = {
         ]
       }
     ];
+  },
+
+  async rewrites() {
+    return [
+      // If the request Host is hdr.rbisintelligence.com, serve the /hdr app
+      {
+        source: "/:path*",
+        has: [{ type: "host", value: "hdr.rbisintelligence.com" }],
+        destination: "/hdr/:path*"
+      }
+    ];
   }
 };
+
 module.exports = nextConfig;
