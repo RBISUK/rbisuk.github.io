@@ -12,5 +12,11 @@
       { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" }
     ]}
   ],
-  "ignoreCommand": "echo 'Vercel will always build. Predeploy runs in CI/local.'"
+  "rewrites": [
+    {
+      "source": "/",
+      "has": [{ "type": "host", "value": "hdr.rbisintelligence.com" }],
+      "destination": "/hdr"
+    }
+  ]
 }
