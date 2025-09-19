@@ -2,13 +2,13 @@
 const nextConfig = {
   async rewrites() {
     return [
-      // On HDR subdomain, "/" → "/hdr"
+      // hdr subdomain: / -> /hdr
       {
         source: '/',
         has: [{ type: 'host', value: 'hdr.rbisintelligence.com' }],
         destination: '/hdr',
       },
-      // On HDR subdomain, "/apply" → "/hdr/intake"
+      // hdr subdomain: /apply -> /hdr/intake
       {
         source: '/apply',
         has: [{ type: 'host', value: 'hdr.rbisintelligence.com' }],
@@ -18,12 +18,8 @@ const nextConfig = {
   },
   async redirects() {
     return [
-      // Global: "/intake" → "/hdr/intake"
-      {
-        source: '/intake',
-        destination: '/hdr/intake',
-        permanent: true,
-      },
+      // global: /intake -> /hdr/intake
+      { source: '/intake', destination: '/hdr/intake', permanent: true },
     ];
   },
 };
