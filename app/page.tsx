@@ -1,1 +1,26 @@
-import { rbisContent } from "./config/rbisContent";import { flags } from "./config/flags";import ProductCard from "@/components/ProductCard";import ExpressPricing from "@/components/ExpressPricing";import StickyCTA from "@/components/StickyCTA";export default function Home(){const c=rbisContent;return(<main><section className="px-4 pt-10 pb-8 mx-auto max-w-6xl"><h1 className="text-4xl md:text-6xl font-bold">{c.hero.title}</h1><p className="mt-3 text-neutral-700 max-w-2xl">{c.hero.subtitle}</p><div className="mt-6 flex flex-col sm:flex-row gap-3" role="group" aria-label="Primary actions">{c.hero.ctas.map((cta:any)=>(<a key={cta.href} href={cta.href} className="rounded-lg px-5 py-3 text-white bg-black hover:bg-neutral-800 text-center focus:outline-none focus:ring-2 focus:ring-black/40">{cta.label}</a>))}</div></section><section className="px-4 py-8 mx-auto max-w-6xl"><h2 className="text-2xl md:text-3xl font-bold">The RBIS Suite: One Ecosystem, Infinite Scale</h2><div className="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">{c.products.map((p:any)=><ProductCard key={p.name} {...p}/>)}</div></section>{flags.rbis.expressOffer&&<ExpressPricing content={c.express}/>}<section className="px-4 py-8 mx-auto max-w-6xl"><h2 className="text-2xl md:text-3xl font-bold">Why Nobody Can Keep Up</h2><div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4">{c.why.map((w:any,i:number)=>(<div key={i} className="rounded-lg border border-neutral-200 p-5 bg-white"><div className="text-3xl">{w.icon}</div><h3 className="mt-2 font-semibold">{w.title}</h3><p className="text-sm text-neutral-700 mt-1">{w.body}</p></div>))}</div></section><section className="px-4 pb-24 mx-auto max-w-6xl"><h2 className="text-2xl md:text-3xl font-bold">Audit-Proof. Regulator-Ready. Client-Approved.</h2><ul className="mt-4 space-y-2">{c.trust.map((t:any,i:number)=>(<li key={i} className="text-sm text-neutral-700">• {t}</li>))}</ul></section>{flags.rbis.stickyCTA&&<StickyCTA/>}</main>);}
+import Header from "@/components/Header";
+import Link from "next/link";
+
+export const metadata = {
+  title: "RBIS: Behavioural & Intelligence Services",
+  description: "Live robots. AI at the edge. Compliance-first systems. No static competitor can keep up."
+};
+
+export default function Home() {
+  return (
+    <>
+      <Header />
+      <main className="pb-28">
+        <section className="container pt-12">
+          <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight">
+            Live robots. AI at the edge. Compliance-first systems. No static competitor can keep up.
+          </h1>
+          <div className="mt-6 flex flex-wrap gap-3">
+            <Link href="/contact" className="btn-primary">Book a Demo</Link>
+            <Link href="/products" className="btn border border-neutral-300 hover:bg-neutral-100">Explore the RBIS Suite</Link>
+          </div>
+        </section>
+      </main>
+    </>
+  );
+}

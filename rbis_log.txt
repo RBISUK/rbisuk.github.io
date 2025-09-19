@@ -137,3 +137,13 @@ M	pages/dashboard.tsx
 ✅ wrote app/products/pact-ledger/page.tsx
 + printf '%s\n' NEXT_PUBLIC_ENV=staging
 + git add -A
++ git commit -m 'feat(rbis): drop-in components, config, flags, pages'
+[feature/rbis-site-upgrade b744cfd] feat(rbis): drop-in components, config, flags, pages
+ Author: RBISUK <rbr.01@outlook.com>
+ 18 files changed, 293 insertions(+), 221 deletions(-)
+ create mode 100755 ci/full-test.sh
+ create mode 100755 rbis_dropin.sh
+ create mode 100644 rbis_log.txt
++ log '🎉 Done. Now run: npm install && npm run dev'
++ printf '%b\n' '🎉 Done. Now run: npm install && npm run dev'
+🎉 Done. Now run: npm install && npm run dev

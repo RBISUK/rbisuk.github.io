@@ -1,3 +1,9 @@
+# *
 User-agent: *
 Allow: /
-Sitemap: https://rbisintelligence.com/sitemap.xml
+
+# Host
+Host: https://your-domain.example
+
+# Sitemaps
+Sitemap: https://your-domain.example/sitemap.xml
