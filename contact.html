@@ -105,3 +105,24 @@
   <script src="assets/rbis.nav.js" defer></script>
 </body>
 </html>
+<script>
+/* RBIS_CONTACT_INTENT */
+(function(){
+  const qs = new URLSearchParams(location.search);
+  const want = (n)=>qs.get(n)||"";
+  function ensureHidden(name){
+    let el=document.querySelector(`#rbis-contact [name="${name}"]`);
+    if(!el){ el=document.createElement("input"); el.type="hidden"; el.name=name;
+      document.getElementById("rbis-contact")?.appendChild(el); }
+    return el;
+  }
+  const product = want("product"), report = want("report"), topic = want("topic");
+  ensureHidden("product").value = product;
+  ensureHidden("report").value  = report;
+  ensureHidden("topic").value   = topic;
+  const parts = [product && `Product: ${product}`, report && `Report: ${report}`, topic && `Topic: ${topic}`].filter(Boolean);
+  ensureHidden("intent").value = parts.join(" | ");
+  // UTM already present on page, just ensure they exist:
+  ["utm_source","utm_medium","utm_campaign"].forEach(n=>ensureHidden(n));
+})();
+</script>

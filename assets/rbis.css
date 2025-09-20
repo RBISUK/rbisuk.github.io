@@ -213,3 +213,11 @@ footer{max-width:1180px;margin:40px auto 32px;padding:0 16px;color:#97a6c9}
 .drawer .inner{max-width:980px;margin:0 auto;padding:20px 16px}
 .drawer h3{margin:.2em 0}
 @keyframes floaty{0%,100%{transform:translate(-50%,-52%) rotate(45deg)}50%{transform:translate(-50%,-48%) rotate(45deg)}}
+
+/* === Crest (SVG) + spin animation === */
+.crest{width:160px;height:160px;display:block;margin:28px auto 0;filter:drop-shadow(0 20px 48px rgba(120,160,255,.25))}
+.spin{animation:rbis-spin 14s linear infinite}
+@keyframes rbis-spin{to{transform:rotate(360deg)}}
+
+/* SVG icons inside cards */
+.card .icon svg{width:26px;height:26px;display:inline-block;vertical-align:-3px;opacity:.95}
