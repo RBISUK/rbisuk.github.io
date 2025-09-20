@@ -153,3 +153,63 @@ ul.clean li{margin:4px 0}
 .card h3{margin:.2em 0}
 .badges{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0}
 .badge{font-size:12px;padding:3px 8px;border-radius:999px;background:#1a2040;border:1px solid rgba(255,255,255,.08)}
+
+/* === RBIS v2 palette (bright modern official) === */
+:root{
+  --bg:#0a0f1f; --panel:#101731; --panel-2:#0f152b;
+  --ink:#eef3ff; --muted:#b9c4dc;
+  --brand:#88aaff; --brand2:#7cf; --accent:#92ff72; --accent-2:#ffd27a;
+  --radius:16px; --shadow:0 16px 60px rgba(0,0,0,.35);
+}
+body{background:linear-gradient(180deg,#0a0f1f,#0e1430 55%,#0a0f1f); color:var(--ink)}
+.section{max-width:1180px;margin:0 auto;padding:28px 16px}
+footer{max-width:1180px;margin:40px auto 32px;padding:0 16px;color:#97a6c9}
+
+.kicker{letter-spacing:.14em;text-transform:uppercase;font-size:12px;color:#9fb0d0}
+.sub{color:#b9c4dc}
+
+/* Subtle “legit” orbs */
+.bg-orbs::before,.bg-orbs::after{
+  content:""; position:absolute; inset:auto auto 10% 60%; width:200px; height:200px;
+  background:radial-gradient(closest-side, rgba(124,255,246,.18), rgba(124,255,246,0));
+  filter:blur(6px); border-radius:50%;
+}
+.bg-orbs::after{left:auto; right:60%; bottom:16%; background:radial-gradient(closest-side, rgba(136,170,255,.18), rgba(136,170,255,0))}
+
+/* Nav refresh */
+.rbis-nav{max-width:1180px;margin:12px auto;padding:12px 16px;display:flex;align-items:center;justify-content:space-between}
+.rbis-nav .brand{font-weight:900;font-size:20px;color:#fff}
+.rbis-nav .links{display:flex;gap:16px;flex-wrap:wrap}
+.rbis-nav a{color:#dfe7ff}
+.rbis-nav .cta{padding:10px 16px;border-radius:12px;background:linear-gradient(90deg,#88aaff,#7cf);color:#0b0e14;font-weight:800}
+
+/* Hero polish */
+.hero{max-width:1180px;margin:20px auto;padding:28px 16px;display:grid;grid-template-columns:1.15fr .85fr;gap:24px}
+@media (max-width:900px){.hero{grid-template-columns:1fr}}
+.hero h1{font-size:46px;line-height:1.04;margin:.2em 0}
+.hero p.lead{color:#bdd0ff;font-size:18px;margin:12px 0 16px}
+.btn{display:inline-block;padding:12px 16px;border-radius:12px;background:linear-gradient(90deg,#88aaff,#7cf);color:#0b0e14;font-weight:800;box-shadow:0 6px 18px rgba(103,136,255,.35)}
+.btn-ghost{padding:10px 14px;border-radius:12px;border:1px solid rgba(255,255,255,.12)}
+.pill{display:inline-flex;gap:8px;align-items:center;background:#121726;border:1px solid rgba(255,255,255,.08);padding:8px 12px;border-radius:999px}
+.hero-side{position:relative;min-height:280px;border-radius:18px;background:linear-gradient(180deg,#131a2e,#0f1424);border:1px solid rgba(255,255,255,.06);box-shadow:0 12px 40px rgba(0,0,0,.35);overflow:hidden}
+.crystal-hero{position:absolute;left:55%;top:45%;transform:translate(-50%,-50%) rotate(45deg);width:145px;height:145px;border-radius:22px;background:conic-gradient(from 210deg,#7cf,#92ff72,#88aaff,#7cf);box-shadow:0 26px 64px rgba(124,255,246,.25), inset 0 0 44px rgba(255,255,255,.22);animation:floaty 7s ease-in-out infinite}
+
+/* Cards */
+.grid.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;margin:20px 0}
+.card{background:linear-gradient(180deg,var(--panel),var(--panel-2));border-radius:16px;padding:18px;box-shadow:0 10px 30px rgba(0,0,0,.25);border:1px solid rgba(255,255,255,.06)}
+.card .icon{font-size:28px;margin-bottom:8px}
+.card h3{margin:.2em 0}
+.badges{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0}
+.badge{font-size:12px;padding:3px 8px;border-radius:999px;background:#1a2040;border:1px solid rgba(255,255,255,.08)}
+
+/* Reports grid + price */
+.report-card h3{font-size:18px}
+.price{margin-top:8px;font-weight:900;background:linear-gradient(90deg,#92ff72,#7cf);-webkit-background-clip:text;background-clip:text;color:transparent}
+.mini{font-size:12px;color:#9ab0d9}
+
+/* Drawer (product/report details) */
+.drawer{position:fixed;inset:auto 0 0 0;background:linear-gradient(180deg,#0f1424,#0b0f1e);border-top:1px solid rgba(255,255,255,.08);box-shadow:0 -14px 40px rgba(0,0,0,.5);transform:translateY(110%);transition:.35s;z-index:9999}
+.drawer.open{transform:translateY(0)}
+.drawer .inner{max-width:980px;margin:0 auto;padding:20px 16px}
+.drawer h3{margin:.2em 0}
+@keyframes floaty{0%,100%{transform:translate(-50%,-52%) rotate(45deg)}50%{transform:translate(-50%,-48%) rotate(45deg)}}
