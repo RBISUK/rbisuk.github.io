@@ -485,3 +485,32 @@ h3{font-size:clamp(18px,2.6vw,22px);line-height:1.25;margin:8px 0}
   box-shadow: inset 0 0 0 1px #ffffff10, 0 2px 8px rgba(0,0,0,.35);
 }
 .form button:hover{ background:var(--btn-hover); transform:translateY(-1px); }
+
+/* === RBIS 2025 matte buttons override === */
+:root{
+  --btn-surface: #CFE0FF; /* light matte, accessible on dark */
+  --btn-ink: #0a0f1a;
+  --btn-border: rgba(8,16,26,.25);
+  --btn-shadow: 0 8px 24px rgba(100,150,255,.18);
+  --btn-shadow-active: 0 4px 14px rgba(100,150,255,.12);
+  --focus: #9ad3ff;
+}
+/* Replace glossy gradient with matte, rounded, subtle elevation */
+.cta,
+.btn {
+  display:inline-flex; align-items:center; justify-content:center;
+  padding:12px 16px; border-radius:999px; font-weight:800; letter-spacing:.2px;
+  background:var(--btn-surface); color:var(--btn-ink);
+  border:1px solid var(--btn-border); box-shadow: inset 0 0 0 0 rgba(255,255,255,0), var(--btn-shadow);
+  text-decoration:none; transition: transform .08s ease, box-shadow .2s ease, filter .15s ease, background .2s ease;
+}
+.cta:hover, .btn:hover { transform: translateY(-1px); filter: brightness(1.02); }
+.cta:active, .btn:active { transform: translateY(0); box-shadow: var(--btn-shadow-active); }
+.cta:focus-visible, .btn:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+/* Secondary on dark panels */
+.btn-secondary { background:#1b2236; color:#e8ecf1; border-color: rgba(255,255,255,.08); }
+/* Make inline links still look premium */
+a:not(.btn):not(.cta){ border-bottom:1px solid transparent }
+a:not(.btn):not(.cta):hover{ border-bottom-color: currentColor }
+/* Ensure card footers have space for the chunkier buttons */
+.card footer{ gap:10px; flex-wrap:wrap }
