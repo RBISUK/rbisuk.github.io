@@ -151,3 +151,52 @@ document.addEventListener('DOMContentLoaded', RBIS.renderNav);
     });
   });
 })();
+
+/* RBIS Reports drawer */
+(() => {
+  const $ = (s, r=document) => r.querySelector(s);
+  const $$= (s, r=document) => [...r.querySelectorAll(s)];
+  const backdrop = document.getElementById('report-backdrop');
+  const drawer   = document.getElementById('report-drawer');
+  const titleEl  = document.getElementById('rd-title');
+  const priceEl  = document.getElementById('rd-price');
+  const timeEl   = document.getElementById('rd-time');
+  const copyEl   = document.getElementById('rd-copy');
+  const listEl   = document.getElementById('rd-list');
+
+  function openDrawer(data){
+    if(!drawer) return;
+    titleEl.textContent = data.title || 'Report';
+    priceEl.textContent = data.price || '';
+    timeEl.textContent  = data.time  || '';
+    copyEl.textContent  = data.summary || '';
+    listEl.innerHTML = '';
+    (data.bullets||[]).forEach(b=>{
+      const li = document.createElement('li'); li.textContent = b; listEl.appendChild(li);
+    });
+    backdrop.classList.add('open');
+    drawer.classList.add('open');
+  }
+  function closeDrawer(){
+    backdrop.classList.remove('open');
+    drawer.classList.remove('open');
+  }
+
+  document.addEventListener('click', (e)=>{
+    const btn = e.target.closest('.r-open');
+    if(btn){
+      const card = btn.closest('.r-card');
+      const data = {
+        title:   card?.dataset.title,
+        price:   card?.dataset.price,
+        time:    card?.dataset.time,
+        summary: card?.dataset.summary,
+        bullets: (card?.dataset.bullets || '').split('|').filter(Boolean)
+      };
+      openDrawer(data);
+    }
+    if(e.target.closest('.r-close') || e.target === backdrop){ closeDrawer(); }
+  });
+
+  window.addEventListener('keydown', (e)=>{ if(e.key === 'Escape') closeDrawer() });
+})();

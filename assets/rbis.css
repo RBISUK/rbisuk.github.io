@@ -262,3 +262,34 @@ footer{max-width:1180px;margin:40px auto 32px;padding:0 16px;color:#97a6c9}
 .crest-spin{width:84px;height:84px;filter:drop-shadow(0 12px 40px rgba(124,196,255,.35));
   animation:spin 10s linear infinite}
 @keyframes spin{to{transform:rotate(360deg)}}
+
+/* RBIS Reports grid */
+.rbis-wrap{max-width:1160px;margin:0 auto;padding:0 20px}
+.r-headline{display:flex;justify-content:space-between;align-items:end;gap:16px;margin:10px 0 18px}
+.r-headline h2{font-size:28px;margin:0}
+.r-headline p{margin:0;color:var(--muted)}
+.rgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+.r-card{background:var(--panel);border:1px solid rgba(255,255,255,.07);border-radius:16px;box-shadow:var(--shadow);padding:18px;display:flex;flex-direction:column;gap:10px}
+.r-card h3{margin:8px 0 2px;font-size:18px}
+.r-copy{color:var(--muted);margin:0}
+.r-top{display:flex;align-items:center;gap:10px}
+.r-ico{width:28px;height:28px;display:inline-grid;place-items:center;background:linear-gradient(180deg,#9ae7ff,#7cc4ff);border-radius:10px;box-shadow:0 4px 16px rgba(124,196,255,.35)}
+.r-price{font-weight:600}
+.r-tags{display:flex;gap:8px;flex-wrap:wrap}
+.r-tag{font-size:12px;padding:4px 8px;border-radius:999px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08)}
+.r-foot{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:auto}
+.r-foot .btn{padding:10px 12px;border-radius:12px;background:#6bf;color:#071018;font-weight:700;border:none;cursor:pointer}
+.r-foot .btn:hover{filter:brightness(1.05)}
+/* Drawer */
+.r-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.5);backdrop-filter:blur(6px);opacity:0;pointer-events:none;transition:opacity .2s ease}
+.r-backdrop.open{opacity:1;pointer-events:auto}
+.r-drawer{position:fixed;left:50%;bottom:-100%;transform:translateX(-50%);width:min(920px,94vw);max-height:80vh;overflow:auto;background:var(--panel);border:1px solid rgba(255,255,255,.08);border-radius:20px 20px 12px 12px;box-shadow:0 18px 60px rgba(0,0,0,.45);transition:bottom .22s ease}
+.r-drawer.open{bottom:22px}
+.r-dw-head{display:flex;justify-content:space-between;align-items:center;padding:16px 18px;border-bottom:1px solid rgba(255,255,255,.08)}
+.r-dw-body{padding:18px}
+.r-dw-meta{display:flex;gap:14px;flex-wrap:wrap;margin:6px 0 12px}
+.r-kv{font-size:14px;color:var(--muted)}
+.r-kv strong{color:var(--ink)}
+.r-bullets{margin:0 0 10px 18px}
+.r-close{background:none;border:none;color:var(--ink);font-size:20px;cursor:pointer;opacity:.85}
+.r-close:hover{opacity:1}
