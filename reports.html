@@ -1,113 +1,157 @@
 <!doctype html><html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>RBIS • Professional Reports</title>
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'none'; object-src 'none'; frame-ancestors 'none'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; connect-src 'self' https://hooks.zapier.com; form-action 'self' https://hooks.zapier.com">
-<link rel="stylesheet" href="/assets/rbis.min.css">
+<link rel="stylesheet" href="/assets/rbis.css">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; connect-src 'self' https://hooks.zapier.com">
 </head><body>
 <header id="rbis-nav"></header>
 
 <section class="section">
   <h2>Professional Reports</h2>
-  <p class="sub">Concise, audit-ready intelligence. Fixed prices. Delivered fast.</p>
+  <p class="sub">Evidence-first, regulator-ready. Designed with behavioural psychology for clarity & authority.</p>
 
-  <div class="metrics" id="metrics">
-    <div class="metric"><div class="k" id="m-count">31</div><div class="l">Report titles</div></div>
-    <div class="metric"><div class="k">2–5 days</div><div class="l">Typical turnaround</div></div>
-    <div class="metric"><div class="k">AA</div><div class="l">Accessibility level</div></div>
+  <div class="grid cards">
+    <article class="card">
+      <div class="icon">✅</div>
+      <h3>Compliance Audit (Ops)</h3>
+      <p>End-to-end compliance picture with receipts.</p>
+      <div class="badges"><span class="badge">£1.5–4k</span><span class="badge">Authority</span></div>
+      <a href="#" class="btn-ghost" data-report="compliance-audit">View details</a>
+    </article>
+
+    <article class="card">
+      <div class="icon">🧠</div>
+      <h3>Behavioural Diagnostics</h3>
+      <p>Bias & friction mapping to lower breach risk.</p>
+      <div class="badges"><span class="badge">£2–6k</span><span class="badge">Clarity</span></div>
+      <a href="#" class="btn-ghost" data-report="behavioural-dx">View details</a>
+    </article>
+
+    <article class="card">
+      <div class="icon">📈</div>
+      <h3>Market / Competitor Intel</h3>
+      <p>Signal over noise for decisions & board packs.</p>
+      <div class="badges"><span class="badge">£1–3k</span><span class="badge">Salience</span></div>
+      <a href="#" class="btn-ghost" data-report="market-intel">View details</a>
+    </article>
+
+    <article class="card">
+      <div class="icon">🔎</div>
+      <h3>Digital Forensics (Light)</h3>
+      <p>Collection, chain-of-custody, triage summary.</p>
+      <div class="badges"><span class="badge">£2–5k</span><span class="badge">Integrity</span></div>
+      <a href="#" class="btn-ghost" data-report="forensics">View details</a>
+    </article>
+
+    <article class="card">
+      <div class="icon">🤝</div>
+      <h3>Vendor Due Diligence</h3>
+      <p>Policy, security, and operational real-world checks.</p>
+      <div class="badges"><span class="badge">£1–3k</span><span class="badge">Trust</span></div>
+      <a href="#" class="btn-ghost" data-report="vendor-dd">View details</a>
+    </article>
+
+    <article class="card">
+      <div class="icon">🧩</div>
+      <h3>Policy Gap Analysis</h3>
+      <p>What’s missing, what to fix, proofs included.</p>
+      <div class="badges"><span class="badge">£1–2.5k</span><span class="badge">Credibility</span></div>
+      <a href="#" class="btn-ghost" data-report="policy-gap">View details</a>
+    </article>
+
+    <article class="card">
+      <div class="icon">⏱️</div>
+      <h3>Workflow Time & Motion</h3>
+      <p>Throughput, blockers, and improvement ROI.</p>
+      <div class="badges"><span class="badge">£1–2.5k</span><span class="badge">Momentum</span></div>
+      <a href="#" class="btn-ghost" data-report="time-motion">View details</a>
+    </article>
+
+    <article class="card">
+      <div class="icon">🗂️</div>
+      <h3>Complaint Root Cause</h3>
+      <p>Taxonomy, evidence gaps, and fix playbook.</p>
+      <div class="badges"><span class="badge">£1–2k</span><span class="badge">Transparency</span></div>
+      <a href="#" class="btn-ghost" data-report="complaint-rca">View details</a>
+    </article>
+
+    <article class="card">
+      <div class="icon">📘</div>
+      <h3>Board Risk Pack</h3>
+      <p>Concise risks, mitigations, and trend lines.</p>
+      <div class="badges"><span class="badge">£1–2k</span><span class="badge">Authority</span></div>
+      <a href="#" class="btn-ghost" data-report="board-risk">View details</a>
+    </article>
+
+    <article class="card">
+      <div class="icon">🧪</div>
+      <h3>Post-Incident Review</h3>
+      <p>Neutral analysis with actionable fixes.</p>
+      <div class="badges"><span class="badge">£1.5–3k</span><span class="badge">Learning</span></div>
+      <a href="#" class="btn-ghost" data-report="post-incident">View details</a>
+    </article>
+
+    <article class="card">
+      <div class="icon">♿</div>
+      <h3>Accessibility & Web Vitals</h3>
+      <p>WCAG 2.2 AA & Core Web Vitals evidence.</p>
+      <div class="badges"><span class="badge">£1–2k</span><span class="badge">Credibility</span></div>
+      <a href="#" class="btn-ghost" data-report="a11y-vitals">View details</a>
+    </article>
+
+    <article class="card">
+      <div class="icon">🔐</div>
+      <h3>DPIA (Pragmatic)</h3>
+      <p>Practical DPIA with proofs and redaction guidance.</p>
+      <div class="badges"><span class="badge">£1–2k</span><span class="badge">Compliance</span></div>
+      <a href="#" class="btn-ghost" data-report="dpia">View details</a>
+    </article>
   </div>
 
-  <div class="filters" id="filters"></div>
-  <div class="grid" id="grid" aria-live="polite"></div>
+  <p id="catalogue" class="sub">Need something specific? <a class="btn" href="/contact.html?topic=reports">Talk to us</a></p>
 </section>
 
-<dialog class="rbis-drawer" id="drawer" aria-label="Report details">
-  <div class="drawer-h">
-    <h3 id="d-title">Title</h3>
-    <button class="close-x" onclick="document.getElementById('drawer').close()">Close</button>
-  </div>
-  <div class="drawer-b">
-    <p id="d-blurb"></p>
-    <p><strong>Category:</strong> <span id="d-cat"></span></p>
-    <p><strong>Price:</strong> <span id="d-price"></span></p>
-    <p style="color:#a9b2c3">Each report includes a summary, appendix evidence, and a clear decision log.</p>
-  </div>
-</dialog>
-
 <footer>© RBIS — Evidence-first software & intelligence.</footer>
-<script src="/assets/rbis.nav.js" defer></script>
-<script>
-const CATS = ["Compliance","Operations","Risk","Web/SEO","Privacy/GDPR"];
-const REPORTS = [
-  {id:"r1",  t:"Repairs Compliance Audit",               p:"£1,250",  c:"Compliance", i:"🛠️", b:"Map obligations vs. practice; highlight breach vectors with quick wins."},
-  {id:"r2",  t:"SLA Breach Early-Warning Review",        p:"£950",    c:"Operations",  i:"⏱️", b:"Model breach countdowns and escalation ladders with sample thresholds."},
-  {id:"r3",  t:"Ombudsman Risk Forecast",                p:"£1,400",  c:"Risk",        i:"📈", b:"Severity × duration × vulnerability scoring; show likely uphold scenarios."},
-  {id:"r4",  t:"Evidence Completeness Check",            p:"£850",    c:"Compliance",  i:"📂", b:"Are your cases audit-ready? Coverage, gaps, and remediation plan."},
-  {id:"r5",  t:"Contractor Performance & SLA Fit",       p:"£1,150",  c:"Operations",  i:"🤝", b:"Compare actuals vs. contract; find friction, slippage, and incentives."},
-  {id:"r6",  t:"Disrepair Heatmap",                      p:"£1,250",  c:"Risk",        i:"🔥", b:"Identify hotspots by severity and time; prioritise interventions."},
-  {id:"r7",  t:"Board Pack — Operations",                p:"£1,200",  c:"Operations",  i:"📋", b:"One-click board narrative with appendix links and decisions."},
-  {id:"r8",  t:"Data Retention Sanity Check",            p:"£900",    c:"Privacy/GDPR",i:"🗄️", b:"Clocks, schedules, and legitimate interest notes that stand scrutiny."},
-  {id:"r9",  t:"Consent & PECR Posture",                 p:"£1,050",  c:"Privacy/GDPR",i:"✅", b:"Lawful basis, consent capture, preference centre, and audit trails."},
-  {id:"r10", t:"DSR (Access/Erase) Process Trial",       p:"£1,050",  c:"Privacy/GDPR",i:"🧾", b:"Dry-run your DSRs; receipts, deadlines, redactions, and exports."},
-  {id:"r11", t:"Website Core Web Vitals",                p:"£850",    c:"Web/SEO",     i:"⚡", b:"LCP, CLS, INP with a practical fix list and monitoring plan."},
-  {id:"r12", t:"Accessibility (WCAG 2.2 AA) Snapshot",   p:"£950",    c:"Web/SEO",     i:"♿", b:"Patterns, colour contrast, focus order; quick, measurable gains."},
-  {id:"r13", t:"Schema/Entities SEO Readiness",          p:"£900",    c:"Web/SEO",     i:"🔎", b:"Entity coverage, schema, sitemaps, robots and crawl sanity."},
-  {id:"r14", t:"Contractor Chasing Proofs Trial",        p:"£900",    c:"Operations",  i:"📮", b:"Run sample chases with proof receipts and rate-limit governance."},
-  {id:"r15", t:"Complaint Chronology Quality",           p:"£900",    c:"Compliance",  i:"🕰️", b:"Are timelines coherent, complete, and regulator-ready?"},
-  {id:"r16", t:"Redaction & Export Hygiene",             p:"£800",    c:"Privacy/GDPR",i:"🖤", b:"PII minimisation, safe exports, and shareable packs."},
-  {id:"r17", t:"Risk Register Tune-Up",                  p:"£1,050",  c:"Risk",        i:"🧭", b:"Sharper statements, signals, countermeasures, and owners."},
-  {id:"r18", t:"Escalation Ladder Design",               p:"£950",    c:"Operations",  i:"🪜", b:"Triggers, tone, timing: reduce uphold risk without friction."},
-  {id:"r19", t:"Promise / Appointment Reliability",      p:"£1,150",  c:"Operations",  i:"📅", b:"Missed appointments root-cause and playbooks (PACT-ready)."},
-  {id:"r20", t:"Security Change-Log Review",             p:"£900",    c:"Risk",        i:"🔐", b:"What changed, who approved, how quickly can we prove it?"},
-  {id:"r21", t:"Email Template & Tone Review",           p:"£750",    c:"Operations",  i:"✉️", b:"Clarity, commitment devices, and regulator-friendly wording."},
-  {id:"r22", t:"Channel Intake Quality (Phone/Web)",     p:"£950",    c:"Operations",  i:"📞", b:"Capture fields, prompts, and evidential nudges that cut uphold."},
-  {id:"r23", t:"KPI & Alert Contract",                   p:"£1,000",  c:"Operations",  i:"🧩", b:"Data contracts for stable dashboards; alert fatigue prevention."},
-  {id:"r24", t:"Case Export Pack Fitness",               p:"£800",    c:"Compliance",  i:"📦", b:"Is your ‘pack’ complete, legible, and machine-verifiable?"},
-  {id:"r25", t:"CRM Lawful Basis & Notes",               p:"£1,050",  c:"Privacy/GDPR",i:"🧠", b:"Default-safe capture with purpose notes and retention clocks."},
-  {id:"r26", t:"Vulnerability Signals Review",           p:"£950",    c:"Risk",        i:"🫶", b:"Flag, weigh, and protect — without bias or noise."},
-  {id:"r27", t:"Backlog Triage & ETA Policy",            p:"£950",    c:"Operations",  i:"📊", b:"Fair ordering, ETA comms, and breach trade-offs."},
-  {id:"r28", t:"Search Console & Index Health",          p:"£750",    c:"Web/SEO",     i:"🧭", b:"Index coverage, crawl budget, and content intent map."},
-  {id:"r29", t:"Third-Party Tag Governance",             p:"£800",    c:"Web/SEO",     i:"🏷️", b:"Consent-respecting analytics and tag minimisation."},
-  {id:"r30", t:"Incident Post-Mortem Coaching",          p:"£1,150",  c:"Risk",        i:"🧯", b:"Blameless timelines that teach and prevent repeat errors."},
-  {id:"r31", t:"Board Readiness: Evidence Story",        p:"£1,400",  c:"Compliance",  i:"🏛️", b:"Turn raw activity into a credible, inspectable story."},
-];
 
-const grid = document.getElementById('grid');
-const filters = document.getElementById('filters');
-const drawer = document.getElementById('drawer');
-const open = (r)=>{
-  document.getElementById('d-title').textContent = `${r.i} ${r.t}`;
-  document.getElementById('d-blurb').textContent = r.b;
-  document.getElementById('d-cat').textContent = r.c;
-  document.getElementById('d-price').textContent = r.p;
-  drawer.showModal();
-};
-let cat = 'All';
-function paint(){
-  grid.innerHTML = '';
-  (cat==='All'?REPORTS:REPORTS.filter(r=>r.c===cat)).forEach(r=>{
-    const el = document.createElement('article');
-    el.className='card';
-    el.innerHTML = `
-      <div class="icon">${r.i}</div>
-      <h3>${r.t}</h3>
-      <p>${r.b}</p>
-      <div class="meta">
-        <span>${r.p}</span>
-        <a href="#" class="btn-mini" data-id="${r.id}">View details</a>
-      </div>`;
-    grid.appendChild(el);
-  });
-  grid.querySelectorAll('.btn-mini').forEach(a=>{
-    a.onclick=(e)=>{e.preventDefault(); open(REPORTS.find(x=>x.id===a.dataset.id));};
-  });
-}
-function paintFilters(){
-  filters.innerHTML = '';
-  ['All',...CATS].forEach(c=>{
-    const b=document.createElement('button'); b.className='chip'+(c===cat?' active':''); b.textContent=c;
-    b.onclick=()=>{cat=c; paint(); paintFilters();}; filters.appendChild(b);
-  });
-}
-paintFilters(); paint();
+<script src="/assets/rbis.js" defer></script>
+<script>
+window.REPORTS = [
+  { id:'compliance-audit', name:'Compliance Audit (Ops)', group:'Operations', price:'£1.5–4k',
+    desc:'End-to-end view spanning policies, process, proofs, and outcomes.',
+    points:['Receipts & traceability','High-risk areas highlighted','Clear fixes with owners & dates'] },
+  { id:'behavioural-dx', name:'Behavioural Diagnostics', group:'Behavioural', price:'£2–6k',
+    desc:'Bias/friction mapping to lower breach rates and improve follow-through.',
+    points:['Cognitive walkthroughs','Choice architecture review','Nudge playbook'] },
+  { id:'market-intel', name:'Market / Competitor Intelligence', group:'Intelligence', price:'£1–3k',
+    desc:'Condensed, decision-grade summary of what matters.',
+    points:['Competitor signals','Opportunity/Threats','Actionable next steps'] },
+  { id:'forensics', name:'Digital Forensics (Light)', group:'Security', price:'£2–5k',
+    desc:'Chain-of-custody capture, triage and executive summary.',
+    points:['Structured artefact log','Integrity checksums','Follow-on options'] },
+  { id:'vendor-dd', name:'Vendor Due Diligence', group:'Security & Legal', price:'£1–3k',
+    desc:'Practical assurance for real-world operations.',
+    points:['Policy & control checks','Operational spot-tests','Recommendations'] },
+  { id:'policy-gap', name:'Policy Gap Analysis', group:'Governance', price:'£1–2.5k',
+    desc:'Map of what’s missing and what to prioritise.',
+    points:['Gap list by risk','Minimum viable fixes','Templates included'] },
+  { id:'time-motion', name:'Workflow Time & Motion', group:'Operations', price:'£1–2.5k',
+    desc:'Throughput mapping to find quick wins & ROI.',
+    points:['Step timing & waste','Bottlenecks visualised','Fix sequence'] },
+  { id:'complaint-rca', name:'Complaint Root Cause', group:'Ops/Legal', price:'£1–2k',
+    desc:'Where issues originate and how to prevent repeats.',
+    points:['Taxonomy & data quality','Top 5 recurring causes','Guardrail changes'] },
+  { id:'board-risk', name:'Board Risk Pack', group:'Exec', price:'£1–2k',
+    desc:'Concise risks, mitigations, and evidence pointers.',
+    points:['Traffic-light status','Trend lines','Mitigation owners'] },
+  { id:'post-incident', name:'Post-Incident Review', group:'Ops/Sec', price:'£1.5–3k',
+    desc:'Neutral analysis with clear actions and owners.',
+    points:['Timeline & findings','Root causes','Preventative actions'] },
+  { id:'a11y-vitals', name:'Accessibility & Web Vitals', group:'Web', price:'£1–2k',
+    desc:'WCAG and Core Web Vitals with repro steps.',
+    points:['Issue list + severity','Fix guidance','Follow-up checks'] },
+  { id:'dpia', name:'DPIA (Pragmatic)', group:'Privacy', price:'£1–2k',
+    desc:'DPIA done practically, with exportable proofs.',
+    points:['Data flow map','Risk eval','Redaction recommendations'] }
+];
 </script>
 </body></html>

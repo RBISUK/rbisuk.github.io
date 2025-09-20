@@ -1,52 +1,59 @@
 <!doctype html><html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>RBIS • Trust Centre</title>
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'none'; object-src 'none'; frame-ancestors 'none'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'">
-<link rel="stylesheet" href="/assets/rbis.min.css">
+<link rel="stylesheet" href="/assets/rbis.css">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; connect-src 'self'">
 </head><body>
 <header id="rbis-nav"></header>
 
 <section class="section">
+  <div class="crystal-wrap"><div class="crystal" aria-hidden="true"></div></div>
   <h2>Trust Centre</h2>
-  <p class="sub">Our posture: minimum data, maximum transparency. Everything linkable.</p>
+  <p class="sub">Transparent by default. Minimal data, maximum evidence.</p>
 
-  <div class="crystal-wrap" style="margin:10px 0 24px">
-    <div class="crystal" style="width:220px;height:220px"></div>
+  <div class="metrics">
+    <div class="metric"><div class="k" id="t-status">—</div><div class="l">Status</div></div>
+    <div class="metric"><div class="k"><a href="/trust/status/current.json">JSON</a></div><div class="l">Current Status Doc</div></div>
+    <div class="metric"><div class="k"><a href="/version.json">version.json</a></div><div class="l">Last Deploy</div></div>
   </div>
 
-  <div class="grid" style="grid-template-columns:repeat(2,minmax(260px,1fr))">
+  <div class="grid cards">
     <article class="card">
+      <div class="icon">📜</div>
       <h3>Policies</h3>
-      <ul>
-        <li><a href="/trust/policies/privacy.html">Privacy Policy</a></li>
-        <li><a href="/trust/policies/cookies.html">Cookie Policy</a></li>
-        <li><a href="/trust/policies/retention.html">Data Retention</a></li>
+      <ul class="clean">
+        <li><a href="/trust/policies/privacy.html">Privacy</a></li>
+        <li><a href="/trust/policies/cookies.html">Cookies</a></li>
+        <li><a href="/trust/policies/retention.html">Retention</a></li>
       </ul>
     </article>
     <article class="card">
+      <div class="icon">🔐</div>
       <h3>Security</h3>
-      <ul>
+      <ul class="clean">
         <li><a href="/trust/security/overview.html">Security Overview</a></li>
-        <li><a href="/trust/status/current.json">Status JSON</a></li>
-        <li><a href="/trust/subprocessors/list.json">Sub-processors</a></li>
-      </ul>
-    </article>
-    <article class="card">
-      <h3>Accessibility</h3>
-      <ul>
-        <li><a href="/trust/accessibility/statement.html">Accessibility Statement</a></li>
-      </ul>
-    </article>
-    <article class="card">
-      <h3>Evidence (Q4)</h3>
-      <ul>
         <li><a href="/trust/evidence/2025-Q4/Compliance_Evidence_Pack.txt">Compliance Evidence Pack</a></li>
-        <li><a href="/trust/evidence/2025-Q4/RBIS_Certified_Certificate.txt">Certification</a></li>
+        <li><a href="/trust/evidence/2025-Q4/RBIS_Certified_Certificate.txt">Certificate</a></li>
+      </ul>
+    </article>
+    <article class="card">
+      <div class="icon">♿</div>
+      <h3>Accessibility</h3>
+      <ul class="clean">
+        <li><a href="/trust/accessibility/statement.html">Accessibility Statement</a></li>
       </ul>
     </article>
   </div>
 </section>
 
-<footer>© RBIS — transparent by default.</footer>
-<script src="/assets/rbis.nav.js" defer></script>
+<footer>© RBIS — Evidence-first software & intelligence.</footer>
+<script src="/assets/rbis.js" defer></script>
+<script>
+(async()=>{
+  try{
+    const s = await fetch('/trust/status/current.json').then(r=>r.json());
+    document.getElementById('t-status').textContent = (s.status||'—').toUpperCase();
+  }catch(_){ document.getElementById('t-status').textContent='—'; }
+})();
+</script>
 </body></html>
