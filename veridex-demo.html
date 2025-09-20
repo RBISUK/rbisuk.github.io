@@ -10,7 +10,6 @@
   <div class="row"><label>Phone <input name="phone"></label></div>
   <div class="row"><label>Use case / notes <textarea name="message" required></textarea></label></div>
 
-  <!-- keep it simple; still include context + honeypot -->
   <input type="hidden" name="page" id="page">
   <input type="hidden" name="user_agent" id="user_agent">
   <input type="text" name="website" id="website" style="display:none">
@@ -20,7 +19,7 @@
 </form>
 
 <script>
-const ZAP_HOOK_URL = "https://hooks.zapier.com/hooks/catch/14012873/umj0v05/";  // replaced by bash
+const ZAP_HOOK_URL = "https://hooks.zapier.com/hooks/catch/14012873/umj0v05/";
 
 (function(){
   const qs = new URLSearchParams(location.search);
@@ -33,12 +32,10 @@ const ZAP_HOOK_URL = "https://hooks.zapier.com/hooks/catch/14012873/umj0v05/";  
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
     status.textContent = "Sending…";
-
     const data = Object.fromEntries(new FormData(form).entries());
     try {
       const r = await fetch(ZAP_HOOK_URL, {
-        method:"POST",
-        headers:{"Content-Type":"application/json"},
+        method:"POST", headers:{"Content-Type":"application/json"},
         body: JSON.stringify(data)
       });
       if (!r.ok) throw new Error("HTTP " + r.status);
