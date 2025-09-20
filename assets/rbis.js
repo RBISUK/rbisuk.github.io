@@ -54,3 +54,24 @@ document.addEventListener('click', (e)=>{
     </div>
   `);
 });
+
+// === RBIS Nav ===
+RBIS = window.RBIS || {};
+RBIS.renderNav = () => {
+  const host = location.hostname.includes('rbisintelligence.com') ? '' : '';
+  const html = `
+  <nav class="rbis-nav">
+    <a class="brand" href="/">RBIS</a>
+    <div class="links">
+      <a href="/products.html">Products</a>
+      <a href="/solutions.html">Solutions</a>
+      <a href="/trust.html">Trust Centre</a>
+      <a href="/reports.html">Professional Reports</a>
+      <a href="/about.html">About</a>
+    </div>
+    <a class="cta" href="/contact.html">Contact Us</a>
+  </nav>`;
+  const t = document.getElementById('rbis-nav');
+  if (t && !t.dataset.rendered){ t.innerHTML = html; t.dataset.rendered = "1"; }
+};
+document.addEventListener('DOMContentLoaded', RBIS.renderNav);
