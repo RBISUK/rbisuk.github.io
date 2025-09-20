@@ -1,123 +1,55 @@
-<!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<title>RBIS • Product Dashboard</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-  :root { --fg:#0b1020; --muted:#5b647a; --bg:#f6f8fb; --card:#fff; --ring:#e6ecf7; }
-  *{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.45 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,"Helvetica Neue",Arial}
-  header{position:sticky;top:0;background:linear-gradient(180deg,#fff,rgba(255,255,255,0.85));backdrop-filter:blur(6px);border-bottom:1px solid var(--ring);padding:14px 18px;display:flex;gap:12px;align-items:center}
-  header h1{margin:0;font-size:18px}
-  main{max-width:1100px;margin:28px auto;padding:0 18px}
-  .toolbar{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
-  input[type=search]{flex:1 1 240px;padding:10px 12px;border:1px solid var(--ring);border-radius:12px;background:#fff}
-  select{padding:10px 12px;border:1px solid var(--ring);border-radius:12px;background:#fff}
-  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px}
-  .card{display:block;background:var(--card);border:1px solid var(--ring);border-radius:16px;padding:16px 14px;text-decoration:none;color:inherit;box-shadow:0 1px 0 rgba(16,24,40,.02)}
-  .card:hover{transform:translateY(-1px);box-shadow:0 6px 18px rgba(16,24,40,.08)}
-  .icon{font-size:28px;margin-bottom:6px}
-  .name{font-weight:700;font-size:18px;margin-bottom:6px}
-  .meta{color:var(--muted);font-size:13px}
-  footer{max-width:1100px;margin:24px auto 40px;padding:0 18px;color:var(--muted);font-size:13px}
-</style>
-</head>
-<body>
-<header>
-  <h1>RBIS • Product Dashboard</h1>
-</header>
-<main>
-  <div class="toolbar">
-    <input id="q" type="search" placeholder="Search products, tags…">
-    <select id="cat">
-      <option value="">All categories</option>
-    </select>
-    <select id="status">
-      <option value="">All statuses</option>
-      <option>Live</option><option>Beta</option><option>Planned</option>
-    </select>
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>RBIS • Ops Dashboard</title>
+<link rel="stylesheet" href="/assets/rbis.min.css">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; connect-src 'self'">
+</head><body>
+<header id="rbis-nav"></header>
+
+<section class="section">
+  <h2>Operational Metrics</h2>
+  <p class="sub">Static site, live signals. Everything inspectable.</p>
+
+  <div class="metrics">
+    <div class="metric"><div class="k" id="m-deployed">—</div><div class="l">Last deploy (UTC)</div></div>
+    <div class="metric"><div class="k" id="m-status">—</div><div class="l">Site status</div></div>
+    <div class="metric"><div class="k">31</div><div class="l">Report titles</div></div>
   </div>
-  <div id="grid" class="grid" aria-live="polite"></div>
-</main>
-<footer>
-  Data source: <code>/rbis.products.json</code>. Links open sections pages.
-</footer>
 
+  <div class="grid" style="grid-template-columns:repeat(2,minmax(260px,1fr))">
+    <article class="card">
+      <h3>Evidence</h3>
+      <p class="sub">We publish proofs wherever possible.</p>
+      <ul>
+        <li><a href="/version.json">version.json</a> (deploy stamp)</li>
+        <li><a href="/trust/status/current.json">status JSON</a></li>
+        <li><a href="/trust/evidence/2025-Q4/Compliance_Evidence_Pack.txt">compliance pack</a></li>
+      </ul>
+    </article>
+    <article class="card">
+      <h3>Forms</h3>
+      <p class="sub">Endpoints use Zapier webhooks. No secrets on site.</p>
+      <ul>
+        <li>Contact form — <strong>active</strong> (<a href="/contact.html">open</a>)</li>
+        <li>Veridex demo — <strong>active</strong> (<a href="/veridex-demo.html">open</a>)</li>
+      </ul>
+    </article>
+  </div>
+</section>
+
+<footer>© RBIS — transparent by default.</footer>
+<script src="/assets/rbis.nav.js" defer></script>
 <script>
-(async function(){
-  const grid = document.getElementById('grid');
-  const q = document.getElementById('q');
-  const cat = document.getElementById('cat');
-  const status = document.getElementById('status');
-
-  async function loadData(){
-    try{
-      const res = await fetch('/rbis.products.json?v=' + Date.now());
-      if(!res.ok) throw new Error('rbis.products.json not found');
-      const json = await res.json();
-      // Accept either {items:[...]} or your longer {products:[...]}
-      let items = [];
-      if (Array.isArray(json.items)) {
-        items = json.items;
-      } else if (Array.isArray(json.products)) {
-        items = json.products.map(p => ({
-          id: (p.name||'').toLowerCase().replace(/\s+/g,'-'),
-          name: p.name,
-          category: p.category || 'Product',
-          status: p.status || '—',
-          icon: '🧩',
-          // If you left spaces in file names, encode them for the link:
-          url: p.url ? p.url.replace(/ /g,'%20') : '/sections/' + encodeURIComponent(p.name) + '.html',
-          tags: p.tags || (p.kpis||[]).slice(0,2),
-          summary: p.tagline || p.problem || ''
-        }));
-      }
-      return items;
-    }catch(e){
-      grid.innerHTML = '<div class="meta">Cannot load <code>rbis.products.json</code>: '+e.message+'</div>';
-      return [];
-    }
-  }
-
-  const items = await loadData();
-
-  // Populate category filter
-  [...new Set(items.map(i=>i.category).filter(Boolean))].sort().forEach(c=>{
-    const o = document.createElement('option'); o.value=c; o.textContent=c; cat.appendChild(o);
-  });
-
-  function render(){
-    const term = q.value.trim().toLowerCase();
-    const c = cat.value;
-    const s = status.value;
-    const filtered = items.filter(it=>{
-      const hay = [it.name, it.summary, ...(it.tags||[])].join(' ').toLowerCase();
-      return (!term || hay.includes(term))
-          && (!c || it.category===c)
-          && (!s || it.status===s);
-    });
-    grid.innerHTML = '';
-    filtered.forEach(it=>{
-      const a = document.createElement('a');
-      a.className='card';
-      a.href = it.url || '#';
-      a.innerHTML = `
-        <div class="icon">${it.icon || '🔗'}</div>
-        <div class="name">${it.name}</div>
-        <div class="meta">${[it.category, it.status].filter(Boolean).join(' • ')}</div>
-        <div class="meta">${(it.tags||[]).slice(0,3).join(' • ')}</div>`;
-      grid.appendChild(a);
-    });
-    if (!filtered.length){
-      grid.innerHTML = '<div class="meta">No matches.</div>';
-    }
-  }
-
-  q.addEventListener('input', render);
-  cat.addEventListener('change', render);
-  status.addEventListener('change', render);
-  render();
+(async()=>{
+  const set=(id,v)=>{const el=document.getElementById(id); if(el) el.textContent=v;}
+  try {
+    const v=await fetch('/version.json').then(r=>r.json());
+    set('m-deployed', v.deployed || '—');
+  } catch(e){ set('m-deployed','—'); }
+  try {
+    const s=await fetch('/trust/status/current.json').then(r=>r.json());
+    set('m-status', (s.status||'—').toUpperCase());
+  } catch(e){ set('m-status','—'); }
 })();
 </script>
-</body>
-</html>
+</body></html>
