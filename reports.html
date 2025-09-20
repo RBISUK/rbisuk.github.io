@@ -1,51 +1,43 @@
-<script id="rbis-detail-enhancer">(function(){
- fetch("/assets/report_details.json").then(r=>r.json()).then(map=>{
-  document.querySelectorAll("#rbis-price-grid .card").forEach(card=>{
-    const name=card.querySelector("h3").textContent.trim();
-    const id=Object.keys(map).find(k=>name.toLowerCase().includes(k.split("-")[0]));
-    if(!id) return;
-    const btn=document.createElement("a"); btn.className="btn ghost"; btn.textContent="View details"; btn.style.marginLeft="8px";
-    btn.onclick=(e)=>{e.preventDefault(); const bullets=(map[id]||[]).map(x=>`<li>${x}</li>`).join(""), html=`<h3>${name}</h3><ul class=\"price-row\">${bullets}</ul>`; RBIS.drawer.show(html); };
-    const cta=card.querySelector("a.btn.primary"); cta && cta.after(btn);
-  });
- });
-})();</script>
-<script type="application/ld+json">
-{
-  "@context":"https://schema.org",
-  "@type":"ItemList",
-  "itemListElement":[
-    { "@type":"ListItem","position":1,"item":{"@type":"Service","name":"Housing Disrepair Claim Review","url":"https://www.rbisintelligence.com/reports.html#housing-disrepair-claim-review","offers":{"@type":"Offer","priceCurrency":"GBP","price":"495"}}},
-    { "@type":"ListItem","position":2,"item":{"@type":"Service","name":"Damp & Mould Causation Analysis","url":"https://www.rbisintelligence.com/reports.html#damp-mould-causation-analysis","offers":{"@type":"Offer","priceCurrency":"GBP","price":"595"}}},
-    { "@type":"ListItem","position":3,"item":{"@type":"Service","name":"Repair Chronology & SLA Breach Audit","url":"https://www.rbisintelligence.com/reports.html#repair-chronology-sla-breach-audit","offers":{"@type":"Offer","priceCurrency":"GBP","price":"495"}}},
-    { "@type":"ListItem","position":4,"item":{"@type":"Service","name":"Tenant Tone & Credibility Assessment","url":"https://www.rbisintelligence.com/reports.html#tenant-tone-credibility-assessment","offers":{"@type":"Offer","priceCurrency":"GBP","price":"395"}}},
-    { "@type":"ListItem","position":5,"item":{"@type":"Service","name":"Evidence Completeness & Gap Analysis","url":"https://www.rbisintelligence.com/reports.html#evidence-completeness-gap-analysis","offers":{"@type":"Offer","priceCurrency":"GBP","price":"375"}}},
-    { "@type":"ListItem","position":6,"item":{"@type":"Service","name":"Contractor Performance & Missed Appointments Audit","url":"https://www.rbisintelligence.com/reports.html#contractor-performance-missed-appointments","offers":{"@type":"Offer","priceCurrency":"GBP","price":"425"}}},
-    { "@type":"ListItem","position":7,"item":{"@type":"Service","name":"Vulnerability & Risk Scoring Report","url":"https://www.rbisintelligence.com/reports.html#vulnerability-risk-scoring","offers":{"@type":"Offer","priceCurrency":"GBP","price":"450"}}},
-    { "@type":"ListItem","position":8,"item":{"@type":"Service","name":"Disrepair Risk Heatmap (Estate/Block)","url":"https://www.rbisintelligence.com/reports.html#disrepair-risk-heatmap","offers":{"@type":"Offer","priceCurrency":"GBP","price":"650"}}},
-    { "@type":"ListItem","position":9,"item":{"@type":"Service","name":"Board Pack: Disrepair KPIs & Trends","url":"https://www.rbisintelligence.com/reports.html#board-pack-kpis-trends","offers":{"@type":"Offer","priceCurrency":"GBP","price":"1200"}}},
-    { "@type":"ListItem","position":10,"item":{"@type":"Service","name":"Ombudsman Case Readiness Pack","url":"https://www.rbisintelligence.com/reports.html#ombudsman-case-readiness","offers":{"@type":"Offer","priceCurrency":"GBP","price":"850"}}},
-    { "@type":"ListItem","position":11,"item":{"@type":"Service","name":"Data Minimisation & Privacy Posture Review","url":"https://www.rbisintelligence.com/reports.html#data-minimisation-privacy-posture","offers":{"@type":"Offer","priceCurrency":"GBP","price":"600"}}},
-    { "@type":"ListItem","position":12,"item":{"@type":"Service","name":"GDPR DSAR Workflow Readiness Audit","url":"https://www.rbisintelligence.com/reports.html#gdpr-dsar-workflow-readiness","offers":{"@type":"Offer","priceCurrency":"GBP","price":"550"}}},
-    { "@type":"ListItem","position":13,"item":{"@type":"Service","name":"Consent & PECR Compliance Review","url":"https://www.rbisintelligence.com/reports.html#consent-pecr-compliance","offers":{"@type":"Offer","priceCurrency":"GBP","price":"500"}}},
-    { "@type":"ListItem","position":14,"item":{"@type":"Service","name":"Retention Schedule Fitness Check","url":"https://www.rbisintelligence.com/reports.html#retention-schedule-fitness","offers":{"@type":"Offer","priceCurrency":"GBP","price":"450"}}},
-    { "@type":"ListItem","position":15,"item":{"@type":"Service","name":"Web Accessibility WCAG 2.2 AA Snapshot","url":"https://www.rbisintelligence.com/reports.html#web-accessibility-wcag-22","offers":{"@type":"Offer","priceCurrency":"GBP","price":"400"}}},
-    { "@type":"ListItem","position":16,"item":{"@type":"Service","name":"Core Web Vitals Performance Snapshot","url":"https://www.rbisintelligence.com/reports.html#core-web-vitals-snapshot","offers":{"@type":"Offer","priceCurrency":"GBP","price":"350"}}},
-    { "@type":"ListItem","position":17,"item":{"@type":"Service","name":"Search & Entity Coverage Audit","url":"https://www.rbisintelligence.com/reports.html#search-entity-coverage","offers":{"@type":"Offer","priceCurrency":"GBP","price":"600"}}},
-    { "@type":"ListItem","position":18,"item":{"@type":"Service","name":"Reputation & Risk Monitoring Baseline","url":"https://www.rbisintelligence.com/reports.html#reputation-risk-baseline","offers":{"@type":"Offer","priceCurrency":"GBP","price":"500"}}},
-    { "@type":"ListItem","position":19,"item":{"@type":"Service","name":"Behavioural Pattern Analysis (Comms & Actions)","url":"https://www.rbisintelligence.com/reports.html#behavioural-pattern-analysis","offers":{"@type":"Offer","priceCurrency":"GBP","price":"700"}}},
-    { "@type":"ListItem","position":20,"item":{"@type":"Service","name":"Image & Document Authenticity Screening","url":"https://www.rbisintelligence.com/reports.html#image-document-authenticity","offers":{"@type":"Offer","priceCurrency":"GBP","price":"650"}}},
-    { "@type":"ListItem","position":21,"item":{"@type":"Service","name":"Audio Forensics Screening (Voice/Tone)","url":"https://www.rbisintelligence.com/reports.html#audio-forensics-screening","offers":{"@type":"Offer","priceCurrency":"GBP","price":"700"}}},
-    { "@type":"ListItem","position":22,"item":{"@type":"Service","name":"Timeline Reconstruction & Consistency Check","url":"https://www.rbisintelligence.com/reports.html#timeline-reconstruction","offers":{"@type":"Offer","priceCurrency":"GBP","price":"550"}}},
-    { "@type":"ListItem","position":23,"item":{"@type":"Service","name":"Financial Irregularity Signal Scan","url":"https://www.rbisintelligence.com/reports.html#financial-irregularity-scan","offers":{"@type":"Offer","priceCurrency":"GBP","price":"750"}}},
-    { "@type":"ListItem","position":24,"item":{"@type":"Service","name":"Workplace Dispute Credibility Assessment","url":"https://www.rbisintelligence.com/reports.html#workplace-dispute-credibility","offers":{"@type":"Offer","priceCurrency":"GBP","price":"600"}}},
-    { "@type":"ListItem","position":25,"item":{"@type":"Service","name":"HR Investigation Evidence Pack","url":"https://www.rbisintelligence.com/reports.html#hr-investigation-evidence-pack","offers":{"@type":"Offer","priceCurrency":"GBP","price":"900"}}},
-    { "@type":"ListItem","position":26,"item":{"@type":"Service","name":"Litigation Readiness Assessment","url":"https://www.rbisintelligence.com/reports.html#litigation-readiness","offers":{"@type":"Offer","priceCurrency":"GBP","price":"1100"}}},
-    { "@type":"ListItem","position":27,"item":{"@type":"Service","name":"Promise & Commitment Compliance Audit (PACT)","url":"https://www.rbisintelligence.com/reports.html#promise-commitment-audit","offers":{"@type":"Offer","priceCurrency":"GBP","price":"500"}}},
-    { "@type":"ListItem","position":28,"item":{"@type":"Service","name":"Automation Runbook Proof Coverage Audit (OmniAssist)","url":"https://www.rbisintelligence.com/reports.html#automation-proof-coverage","offers":{"@type":"Offer","priceCurrency":"GBP","price":"550"}}},
-    { "@type":"ListItem","position":29,"item":{"@type":"Service","name":"CRM Lawful Basis & Retention Audit (NextusOne)","url":"https://www.rbisintelligence.com/reports.html#crm-lawful-basis-retention","offers":{"@type":"Offer","priceCurrency":"GBP","price":"600"}}},
-    { "@type":"ListItem","position":30,"item":{"@type":"Service","name":"Intelligence Dashboard KPI Design Workshop","url":"https://www.rbisintelligence.com/reports.html#dashboard-kpi-design","offers":{"@type":"Offer","priceCurrency":"GBP","price":"1500"}}},
-    { "@type":"ListItem","position":31,"item":{"@type":"Service","name":"Executive Rapid Risk Assessment (48h)","url":"https://www.rbisintelligence.com/reports.html#executive-rapid-risk","offers":{"@type":"Offer","priceCurrency":"GBP","price":"1800"}}}
-  ]
-}
-</script>
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><title>Professional Reports • RBIS</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="canonical" href="https://www.rbisintelligence.com/reports.html">
+<link rel="stylesheet" href="/assets/rbis.css">
+<meta name="description" content="Court-ready, evidence-led reports: credibility, timeline, authenticity, tone & intent, workplace review, triage.">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ItemList","name":"RBIS Professional Reports","itemListElement":[
+{"@type":"ListItem","position":1,"item":{"@type":"Service","name":"Disrepair Intelligence Report","offers":{"@type":"Offer","priceCurrency":"GBP","price":"395"}}},
+{"@type":"ListItem","position":2,"item":{"@type":"Service","name":"Claim Credibility & Behaviour","offers":{"@type":"Offer","priceCurrency":"GBP","price":"325"}}},
+{"@type":"ListItem","position":3,"item":{"@type":"Service","name":"Timeline Verification","offers":{"@type":"Offer","priceCurrency":"GBP","price":"285"}}},
+{"@type":"ListItem","position":4,"item":{"@type":"Service","name":"Image/Document Authenticity","offers":{"@type":"Offer","priceCurrency":"GBP","price":"245"}}},
+{"@type":"ListItem","position":5,"item":{"@type":"Service","name":"Tone & Intent Analysis","offers":{"@type":"Offer","priceCurrency":"GBP","price":"245"}}},
+{"@type":"ListItem","position":6,"item":{"@type":"Service","name":"Workplace Behavioural Review","offers":{"@type":"Offer","priceCurrency":"GBP","price":"345"}}},
+{"@type":"ListItem","position":7,"item":{"@type":"Service","name":"Executive Summary (Board)","offers":{"@type":"Offer","priceCurrency":"GBP","price":"195"}}},
+{"@type":"ListItem","position":8,"item":{"@type":"Service","name":"DSR Evidence Pack","offers":{"@type":"Offer","priceCurrency":"GBP","price":"245"}}},
+{"@type":"ListItem","position":9,"item":{"@type":"Service","name":"Rapid Triage (48h)","offers":{"@type":"Offer","priceCurrency":"GBP","price":"150"}}}]}</script>
+</head><body>
+<header class="site-header"><nav class="nav container">
+  <a class="brand" href="/"><span>RBIS</span></a>
+  <div class="right">
+    <a href="/offerings.html">Products & Services</a>
+    <a class="active" href="/reports.html">Professional Reports</a>
+    <a href="/solutions.html">Solutions</a>
+    <a href="/trust.html">Trust Centre</a>
+    <a href="/about.html">About</a>
+    <a class="cta" href="/contact.html">Contact us</a>
+  </div>
+</nav></header>
+<main class="container" style="padding:32px 16px 72px">
+  <section class="hero"><h1>Professional Reports</h1><p class="muted">Evidence you can defend. Behaviour you can read.</p></section>
+  <section class="cards">
+    <article class="card"><h3>Disrepair Intelligence</h3><p>Chronology + evidence map + behavioural signals.</p><footer><span class="price">£395</span><a class="cta" href="/contact.html?report=disrepair-intel">Order</a></footer></article>
+    <article class="card"><h3>Claim Credibility & Behaviour</h3><p>Consistency & intent across communications.</p><footer><span class="price">£325</span><a class="cta" href="/contact.html?report=credibility">Order</a></footer></article>
+    <article class="card"><h3>Timeline Verification</h3><p>Causal map + date checks + cross-validation.</p><footer><span class="price">£285</span><a class="cta" href="/contact.html?report=timeline">Order</a></footer></article>
+    <article class="card"><h3>Authenticity Check</h3><p>Tamper assessment + provenance notes.</p><footer><span class="price">£245</span><a class="cta" href="/contact.html?report=authenticity">Order</a></footer></article>
+    <article class="card"><h3>Tone & Intent</h3><p>Behavioural read of emails/letters/transcripts.</p><footer><span class="price">£245</span><a class="cta" href="/contact.html?report=tone-intent">Order</a></footer></article>
+    <article class="card"><h3>Workplace Behavioural Review</h3><p>Independent behavioural read with HR-safe notes.</p><footer><span class="price">£345</span><a class="cta" href="/contact.html?report=workplace">Order</a></footer></article>
+    <article class="card"><h3>Executive Summary</h3><p>Two-page TL;DR for boards.</p><footer><span class="price">£195</span><a class="cta" href="/contact.html?report=board-summary">Order</a></footer></article>
+    <article class="card"><h3>DSR Evidence Pack</h3><p>Compliant export with receipts & redactions.</p><footer><span class="price">£245</span><a class="cta" href="/contact.html?report=dsr-pack">Order</a></footer></article>
+    <article class="card"><h3>Rapid Triage (48h)</h3><p>Quick risk read + recommended path.</p><footer><span class="price">£150</span><a class="cta" href="/contact.html?report=triage">Order</a></footer></article>
+  </section>
+  <section class="section"><p class="muted">Need custom scope? <a href="/contact.html?report=custom">Contact us</a> for a fixed, defensible deliverable.</p></section>
+</main></body></html>
