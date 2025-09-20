@@ -1,9 +1,0 @@
-name = "rbis-seo-cron"
-main = "workers/seo-cron.js"
-compatibility_date = "2025-09-01"
-
-[triggers]
-crons = [ "0 3 * * *" ] # daily at 03:00 UTC
-
-[vars]
-SITE_URL = "https://your-domain.example"

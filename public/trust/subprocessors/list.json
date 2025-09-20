@@ -1,4 +1,0 @@
-{"generatedAt":"2025-09-18T00:00:00Z","subprocessors":[
-  {"name":"Vercel","purpose":"hosting/CDN","region":"EU/Global"},
-  {"name":"GitHub","purpose":"source control","region":"EU/US"},
-  {"name":"Google Workspace","purpose":"email/docs","region":"EU"}]}
