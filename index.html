@@ -1,86 +1,74 @@
-<!doctype html><html lang="en">
-<head>
-  <meta name="description" content="Verdiex AI Funnel, RBIS Dashboard, OmniAssist, NextusOne CRM, PACT Ledger.">
-
-  <link rel="canonical" href="https://www.rbisintelligence.com/">
-
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self' https://api.ipify.org https://hooks.zapier.com; form-action 'self' https://hooks.zapier.com; base-uri 'self'; frame-ancestors 'none'; upgrade-insecure-requests">
-
-  <link rel="icon" href="/favicon.svg">
-
-<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>RBIS Intelligence • Veridex AI Funnel, Dashboard & more</title>
-<link rel="stylesheet" href="style.css">
-</head>
+<!doctype html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>RBIS • Behavioural Intelligence, Software & Reports</title>
+<link rel="stylesheet" href="assets/rbis.css">
 <body>
-<nav>
-  <div class="container navbar">
-    <span class="badge">RBIS</span><span class="brand">RBIS Intelligence</span>
-    <div class="navspacer"></div>
-    <div class="nav">
-      <a href="index.html">Home</a>
-      <a href="veridex-demo.html">Veridex Demo</a>
-      <a href="contact.html">Contact</a>
+
+  <div class="nav"><div class="container bar">
+    <div class="brand"><div class="logo"></div> <span>RBIS Intelligence</span></div>
+    <button class="mobile btn" id="nav-toggle" aria-label="Toggle menu">☰ Menu</button>
+    <ul>
+      <li><a class="link" href="products.html">Products</a></li>
+      <li><a class="link" href="solutions.html">Solutions</a></li>
+      <li><a class="link" href="websites.html">Website Development</a></li>
+      <li><a class="link" href="reports.html">Professional Reports</a></li>
+      <li><a class="link" href="trust.html">Trust Centre</a></li>
+      <li><a class="link" href="about.html">About</a></li>
+    </ul>
+    <div class="cta">
+      <a class="btn" href="veridex-demo.html">Veridex Demo</a>
+      <a class="btn primary" href="contact.html">Contact Us</a>
+    </div>
+  </div></div>
+
+<section class="hero">
+  <div class="container grid" style="gap:24px">
+    <div class="panel">
+      <div class="kicker">Behavioural Intelligence</div>
+      <h1>Verdiex AI Funnel — convert interest into <span class="badge">compliant</span> revenue</h1>
+      <p class="muted">A smart, industry-aware sales funnel with pre-programmed compliance. Built to win trust, capture the right evidence, and escalate qualified opportunities automatically.</p>
+      <div style="display:flex;gap:10px;margin-top:10px">
+        <a class="btn primary" href="veridex-demo.html">Try the demo</a>
+        <a class="btn" href="products.html">Explore products</a>
+      </div>
+    </div>
+    <div class="panel">
+      <div class="kicker">Principles</div>
+      <h2 style="margin:.3em 0">Ryan Roberts — Behavioural & Intelligence</h2>
+      <p>We design systems that use psychology ethically: clarity defaults, commitment devices, transparent nudges, and proof-of-work. The result: fewer breaches, faster resolutions, higher trust.</p>
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        <span class="tag">Clarity by design</span>
+        <span class="tag">Commitment & receipts</span>
+        <span class="tag">Trust through transparency</span>
+      </div>
     </div>
   </div>
-</nav>
-
-<header class="container hero">
-  <h1>Verdiex AI Funnel — <span style="background:linear-gradient(90deg,#6ddcff,#7f53ff);-webkit-background-clip:text;background-clip:text;color:transparent">smart, compliant intake</span> for real-world ops</h1>
-  <p>Turn messy enquiries into clean, audit-ready cases. Pair with RBIS Dashboard, NextusOne CRM, OmniAssist, and PACT Ledger.</p>
-  <div class="cta">
-    <a class="btn primary" href="veridex-demo.html">Try Veridex Demo</a>
-    <a class="btn" href="contact.html">Talk to us</a>
-  </div>
-</header>
-
-<section class="container">
-  <h2 style="margin:0 0 12px">Products</h2>
-  <div id="product-grid" class="grid"></div>
 </section>
 
-<footer>
-  <div class="container">
-    <div>© <span id="yr"></span> RBIS Intelligence • <a href="mailto:contact@rbisintelligence.com">contact@rbisintelligence.com</a></div>
-    <div class="notice">Static, privacy-clean site. Forms post to Zapier; no trackers.</div>
+<div class="container">
+  <h2>What we ship</h2>
+  <div class="grid cols-3">
+    <div class="card">
+      <h3>Verdiex AI Funnel</h3>
+      <p>Smart intake + compliant logic for public funnels or B2B forms.</p>
+      <a href="veridex-demo.html">Try it →</a>
+    </div>
+    <div class="card">
+      <h3>Website Development</h3>
+      <p>High-performance static sites with WCAG 2.2 AA patterns baked-in.</p>
+      <a href="websites.html">View bundles →</a>
+    </div>
+    <div class="card">
+      <h3>Professional Reports</h3>
+      <p>31 state-of-the-art, board-ready reports with evidence links.</p>
+      <a href="reports.html">Browse titles →</a>
+    </div>
   </div>
-</footer>
+  <hr>
+  <p style="color:var(--muted)">Draft deployed at <code>2025-09-20T17:55:25Z</code>. When happy, rename <code>home.new.html</code> → <code>index.html</code>.</p>
+</div>
 
-<script>
-document.getElementById('yr').textContent = new Date().getFullYear();
-
-const fallback = [
-  {icon:"🧭", name:"Verdiex AI Funnel", tagline:"Sales → compliant intake", url:"veridex-demo.html"},
-  {icon:"📊", name:"RBIS Dashboard", tagline:"Breaches & KPIs in one view", url:"dashboard.html"},
-  {icon:"🤝", name:"PACT Ledger", tagline:"Promises captured and kept", url:"#"},
-  {icon:"��", name:"NextusOne CRM", tagline:"Consent + retention built-in", url:"#"}
-];
-
-async function loadProducts(){
-  try{
-    const r = await fetch('rbis.products.json',{cache:'no-store'});
-    if(!r.ok) throw new Error('no json');
-    const j = await r.json();
-    return (j.products||[]).map(p=>({
-      icon: p.icon || "⭐",
-      name: p.name,
-      tagline: p.tagline || "",
-      url: p.url || "#"
-    }));
-  }catch(e){ return fallback; }
-}
-
-function card(p){
-  return `
-  <a class="card" href="${p.url}">
-    <div class="kv"><div class="icon">${p.icon||"⭐"}</div><h3>${p.name}</h3></div>
-    <p>${p.tagline||""}</p>
-    <div class="cta" style="margin-top:10px"><span class="btn">Explore</span></div>
-  </a>`;
-}
-
-loadProducts().then(items=>{
-  document.getElementById('product-grid').innerHTML = items.map(card).join('');
-});
-</script>
-</body></html>
+<footer class="footer">© RBIS Intelligence. Built for audits, speed, and trust.</footer>
+<script src="assets/rbis.js" defer></script>
+</body>
