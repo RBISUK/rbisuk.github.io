@@ -1,26 +1,78 @@
-<!doctype html>
-<html lang="en">
+<!doctype html><html lang="en">
 <head>
-  <meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>RBIS Surfaces</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RBIS Intelligence • Veridex AI Funnel, Dashboard & more</title>
+<link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-slate-950 text-slate-100">
-  <div class="max-w-4xl mx-auto px-4 py-12">
-    <h1 class="text-3xl font-extrabold">RBIS • One JSON → Many Surfaces</h1>
-    <p class="text-slate-300 mt-2">Edit <code class="text-xs bg-white/10 px-2 py-1 rounded">rbis.products.json</code>. Everything else reads it.</p>
-    <ul class="mt-6 space-y-2 list-disc pl-5">
-      <li><a class="text-sky-300 hover:underline" href="deep.html">Deep Product Book</a></li>
-      <li><a class="text-sky-300 hover:underline" href="landing.minimal.html">Landing — Minimal</a></li>
-      <li><a class="text-sky-300 hover:underline" href="landing.story.html">Landing — Story</a></li>
-      <li><a class="text-sky-300 hover:underline" href="landing.enterprise.html">Landing — Enterprise</a></li>
-      <li><a class="text-sky-300 hover:underline" href="embed/product.html?name=Claim-Fix-AI">Embed: Single Product (param)</a></li>
-    </ul>
-    <h2 class="text-xl font-bold mt-8">Markdown (for Notion/docs)</h2>
-    <div id="mdLinks" class="mt-2 text-slate-300 text-sm">Run script once to generate .md files.</div>
+<body>
+<nav>
+  <div class="container navbar">
+    <span class="badge">RBIS</span><span class="brand">RBIS Intelligence</span>
+    <div class="navspacer"></div>
+    <div class="nav">
+      <a href="index.html">Home</a>
+      <a href="veridex-demo.html">Veridex Demo</a>
+      <a href="contact.html">Contact</a>
+    </div>
   </div>
-  <script>
-    fetch('markdown/').then(()=>{}).catch(()=>{});
-  </script>
-</body>
-</html>
+</nav>
+
+<header class="container hero">
+  <h1>Verdiex AI Funnel — <span style="background:linear-gradient(90deg,#6ddcff,#7f53ff);-webkit-background-clip:text;background-clip:text;color:transparent">smart, compliant intake</span> for real-world ops</h1>
+  <p>Turn messy enquiries into clean, audit-ready cases. Pair with RBIS Dashboard, NextusOne CRM, OmniAssist, and PACT Ledger.</p>
+  <div class="cta">
+    <a class="btn primary" href="veridex-demo.html">Try Veridex Demo</a>
+    <a class="btn" href="contact.html">Talk to us</a>
+  </div>
+</header>
+
+<section class="container">
+  <h2 style="margin:0 0 12px">Products</h2>
+  <div id="product-grid" class="grid"></div>
+</section>
+
+<footer>
+  <div class="container">
+    <div>© <span id="yr"></span> RBIS Intelligence • <a href="mailto:contact@rbisintelligence.com">contact@rbisintelligence.com</a></div>
+    <div class="notice">Static, privacy-clean site. Forms post to Zapier; no trackers.</div>
+  </div>
+</footer>
+
+<script>
+document.getElementById('yr').textContent = new Date().getFullYear();
+
+const fallback = [
+  {icon:"🧭", name:"Verdiex AI Funnel", tagline:"Sales → compliant intake", url:"veridex-demo.html"},
+  {icon:"📊", name:"RBIS Dashboard", tagline:"Breaches & KPIs in one view", url:"dashboard.html"},
+  {icon:"🤝", name:"PACT Ledger", tagline:"Promises captured and kept", url:"#"},
+  {icon:"��", name:"NextusOne CRM", tagline:"Consent + retention built-in", url:"#"}
+];
+
+async function loadProducts(){
+  try{
+    const r = await fetch('rbis.products.json',{cache:'no-store'});
+    if(!r.ok) throw new Error('no json');
+    const j = await r.json();
+    return (j.products||[]).map(p=>({
+      icon: p.icon || "⭐",
+      name: p.name,
+      tagline: p.tagline || "",
+      url: p.url || "#"
+    }));
+  }catch(e){ return fallback; }
+}
+
+function card(p){
+  return `
+  <a class="card" href="${p.url}">
+    <div class="kv"><div class="icon">${p.icon||"⭐"}</div><h3>${p.name}</h3></div>
+    <p>${p.tagline||""}</p>
+    <div class="cta" style="margin-top:10px"><span class="btn">Explore</span></div>
+  </a>`;
+}
+
+loadProducts().then(items=>{
+  document.getElementById('product-grid').innerHTML = items.map(card).join('');
+});
+</script>
+</body></html>

@@ -1,0 +1,35 @@
+:root{
+  --bg:#0b0d12; --panel:#121622; --muted:#9aa4b2; --text:#eef3fb; --brand:#6ddcff; --brand2:#7f53ff;
+  --card:#141a28; --accent:#1b2336; --ok:#21c997; --warn:#ffcc00; --bad:#ff5d5d;
+  --radius:16px; --shadow:0 10px 30px rgba(0,0,0,.25);
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:linear-gradient(180deg,#0b0d12 0%,#0b0d12 40%,#0e1220 100%);color:var(--text);font:16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial}
+a{color:var(--brand);text-decoration:none}
+.container{max-width:1080px;margin:0 auto;padding:24px}
+nav{position:sticky;top:0;background:rgba(11,13,18,.6);backdrop-filter:blur(12px);border-bottom:1px solid #1e2433}
+.navbar{display:flex;align-items:center;gap:18px;padding:14px 0}
+.brand{font-weight:700;letter-spacing:.3px}
+.badge{padding:2px 10px;border-radius:999px;background:linear-gradient(90deg,var(--brand),var(--brand2));color:#0a0d14;font-size:12px}
+.navspacer{flex:1}
+.nav a{padding:8px 10px;border-radius:10px}
+.nav a:hover{background:#111827}
+.hero{padding:60px 0}
+.hero h1{font-size:42px;line-height:1.12;margin:0 0 12px}
+.hero p{color:var(--muted);max-width:760px;margin:0}
+.cta{margin-top:20px;display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;padding:12px 16px;border-radius:12px;border:1px solid #243044;background:#141a28;color:var(--text)}
+.btn.primary{border:0;background:linear-gradient(90deg,var(--brand),var(--brand2));color:#0b0d12;font-weight:700}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px}
+.card{background:var(--card);border:1px solid #1b2437;border-radius:var(--radius);padding:16px;box-shadow:var(--shadow)}
+.card h3{margin:0 0 6px;font-size:18px}
+.card p{margin:0;color:var(--muted);min-height:48px}
+.kv{display:flex;align-items:center;gap:10px}
+.kv .icon{font-size:24px}
+footer{margin-top:48px;padding:32px 0;border-top:1px solid #1f2a3b;color:var(--muted)}
+form{background:var(--panel);border:1px solid #1b2437;border-radius:var(--radius);padding:16px}
+label{display:block;margin:10px 0 4px}
+input,textarea{width:100%;padding:10px;border-radius:10px;border:1px solid #27324a;background:#0f1522;color:var(--text)}
+small.muted{color:var(--muted)}
+.notice{margin-top:10px;color:var(--muted)}
+.success{color:var(--ok)} .error{color:var(--bad)}

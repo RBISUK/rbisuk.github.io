@@ -1,50 +1,70 @@
-<!doctype html><html lang="en"><meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Contact • RBIS</title>
-<style>body{font:16px/1.4 system-ui;margin:2rem;max-width:720px}.row{margin:.6rem 0}label{display:block;margin:.2rem 0}.hint{color:#666;font-size:.9rem}</style>
-<h1>Contact RBIS</h1>
-<form id="rbis-contact">
-  <div class="row"><label>Name <input name="name" required></label></div>
-  <div class="row"><label>Email <input name="email" type="email" required></label></div>
-  <div class="row"><label>Company <input name="company"></label></div>
-  <div class="row"><label>Phone <input name="phone"></label></div>
-  <div class="row"><label>Message <textarea name="message" required></textarea></label></div>
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact • RBIS Intelligence</title>
+<link rel="stylesheet" href="style.css"></head><body>
+<nav><div class="container navbar">
+  <span class="badge">RBIS</span><span class="brand">RBIS Intelligence</span>
+  <div class="navspacer"></div><div class="nav">
+    <a href="index.html">Home</a><a href="veridex-demo.html">Veridex Demo</a><a href="contact.html">Contact</a>
+  </div>
+</div></nav>
 
-  <input type="hidden" name="page" id="page">
-  <input type="hidden" name="user_agent" id="user_agent">
-  <input type="text" name="website" id="website" style="display:none">
+<main class="container">
+  <h1>Contact us</h1>
+  <p class="notice">We’ll reply within 1 business day.</p>
 
-  <button type="submit">Send</button>
-  <div id="status" class="hint" aria-live="polite"></div>
-</form>
+  <form id="rbis-contact" style="max-width:580px">
+    <label>Name <input name="name" required></label>
+    <label>Email <input name="email" type="email" required></label>
+    <label>Company <input name="company"></label>
+    <label>Phone <input name="phone"></label>
+    <label>Message <textarea name="message" required></textarea></label>
+
+    <input type="hidden" name="page" id="page">
+    <input type="hidden" name="utm_source" id="utm_source">
+    <input type="hidden" name="utm_medium" id="utm_medium">
+    <input type="hidden" name="utm_campaign" id="utm_campaign">
+    <input type="hidden" name="ip" id="ip">
+    <input type="hidden" name="user_agent" id="user_agent">
+    <input type="text" name="website" id="website" style="display:none">
+
+    <button class="btn primary" type="submit">Send</button>
+    <div id="rbis-contact-status" class="notice" aria-live="polite"></div>
+  </form>
+</main>
+
+<footer><div class="container"><small class="muted">RBIS • Static site • No trackers</small></div></footer>
 
 <script>
-const ZAP_HOOK_URL = "https://hooks.zapier.com/hooks/catch/14012873/umjfdcf/";
-
-(function(){
+(async function(){
   const qs = new URLSearchParams(location.search);
-  document.getElementById("page").value = location.pathname + (qs.toString() ? "?" + qs.toString():"");
-  document.getElementById("user_agent").value = navigator.userAgent;
+  const set = (id, v) => { const el = document.getElementById(id); if (el) el.value = v || ""; };
+  set("page", location.pathname + location.search);
+  set("utm_source", qs.get("utm_source")); set("utm_medium", qs.get("utm_medium")); set("utm_campaign", qs.get("utm_campaign"));
+  set("user_agent", navigator.userAgent);
+
+  try{ const r = await fetch("https://api.ipify.org?format=json"); const j = await r.json(); set("ip", j.ip) }catch(e){}
 
   const form = document.getElementById("rbis-contact");
-  const status = document.getElementById("status");
+  const status = document.getElementById("rbis-contact-status");
 
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
+    if (document.getElementById("website").value) { status.textContent="Thanks!"; return; } // honeypot
     status.textContent = "Sending…";
+
     const data = Object.fromEntries(new FormData(form).entries());
-    try {
-      const r = await fetch(ZAP_HOOK_URL, {
-        method:"POST", headers:{"Content-Type":"application/json"},
-        body: JSON.stringify(data)
-      });
-      if (!r.ok) throw new Error("HTTP " + r.status);
-      status.textContent = "Thanks — we’ll be in touch soon.";
-      form.reset();
-    } catch(err) {
-      console.error(err);
+    const ZAP_HOOK_URL = "https://hooks.zapier.com/hooks/catch/14012873/umjfdcf/";
+
+    try{
+      const res = await fetch(ZAP_HOOK_URL, { method:"POST", headers:{ "Content-Type":"application/json" }, body: JSON.stringify(data) });
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      status.textContent = "Thanks — we’ll be in touch soon."; status.className="notice success"; form.reset();
+    }catch(err){
       status.textContent = "Sorry, something went wrong. Please email contact@rbisintelligence.com.";
+      status.className="notice error"; console.error(err);
     }
   });
 })();
 </script>
+</body></html>
