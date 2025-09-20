@@ -335,3 +335,87 @@ body{background:radial-gradient(1100px 600px at 20% -10%,#142044,transparent 60%
 .rbis-drawer .panel{width:100%;max-height:70vh;overflow:auto;background:#0f1528;border-top-left-radius:16px;border-top-right-radius:16px;border:1px solid #1a2b55;padding:18px 18px 26px}
 .rbis-drawer h3{margin:.5rem 0 0.25rem}
 .rbis-drawer.show{display:flex}
+
+/* === RBIS responsive polish (phones-first) === */
+:root{
+  --bg:#0b0e14; --panel:#101526; --ink:#eaf1ff; --muted:#a8b1c3;
+  --brand:#78a6ff; --brand2:#8fe1ff; --accent:#9dff71; --outline:#2b3552;
+  --radius:16px; --shadow:0 10px 40px rgba(0,0,0,.35);
+  --maxw:1140px;
+  --tap:44px; /* min touch target per Apple HIG/Web */
+}
+html{scroll-behavior:smooth}
+body{margin:0}
+.container{max-width:var(--maxw);margin:0 auto;padding:16px}
+.hero{padding:48px 16px 16px}
+.nav{gap:8px;flex-wrap:wrap}
+.nav a{min-height:var(--tap);line-height:var(--tap);padding:0 14px}
+.brand{padding:8px 10px}
+.brand .mark{width:28px;height:28px}
+
+.grid{display:grid;grid-template-columns:1fr;gap:14px}
+.card{padding:16px;border-radius:16px;background:var(--panel);border:1px solid #11193a}
+.card h3{font-size:18px;margin:.2rem 0 .4rem}
+.badge{font-size:12px}
+
+.btn{min-height:var(--tap);line-height:calc(var(--tap) - 2px);padding:0 16px;border-radius:14px}
+.btn svg{width:20px;height:20px}
+
+/* icon sizes (for inline SVGs or <img> with class) */
+.icon-16{width:16px;height:16px}
+.icon-20{width:20px;height:20px}
+.icon-24{width:24px;height:24px}
+.icon-32{width:32px;height:32px}
+
+/* Contact form 2025 — card, focus rings, inline validation */
+.form-wrap{max-width:720px;margin:0 auto}
+.form-card{background:var(--panel);border:1px solid #11193a;border-radius:20px;padding:18px;box-shadow:var(--shadow)}
+.form-row{display:grid;grid-template-columns:1fr;gap:12px;margin:10px 0}
+label{display:block;font-weight:600;margin:6px 0 6px}
+input[type=text],input[type=email],input[type=tel],textarea{
+  width:100%;padding:14px 14px;border-radius:12px;border:1px solid #243055;background:#0d1222;color:var(--ink);
+  font:16px/1.5 ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial;
+}
+textarea{min-height:140px;resize:vertical}
+input:focus,textarea:focus{outline:3px solid #2a3d7f; outline-offset:0; border-color:#3652a5}
+.input-hint{color:var(--muted);font-size:13px;margin-top:4px}
+.input-error{color:#ffb4b4;font-size:13px;margin-top:4px;display:none}
+.is-invalid + .input-error{display:block}
+.form-actions{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.form-status{min-height:1.5em;color:var(--muted)}
+button[type=submit]{cursor:pointer}
+
+/* Larger screens */
+@media (min-width:640px){
+  .container{padding:20px}
+  .grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+  .hero{padding:64px 20px 24px}
+}
+@media (min-width:900px){
+  .grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+  .hero h1{font-size:56px}
+}
+@media (min-width:1200px){
+  .hero h1{font-size:64px}
+}
+
+/* === Premium crest motion (subtle, hover-only, motion-aware) === */
+@media (prefers-reduced-motion: no-preference){
+  .brand .mark{transition:transform .6s cubic-bezier(.2,.6,.3,1); transform-origin:50% 50%}
+  @keyframes rbisSpin { to { transform: rotate(360deg) } }
+  .brand:hover .mark{ animation: rbisSpin 9s linear infinite; transform: scale(1.02); }
+}
+
+/* === Report cards grid === */
+.cards{display:grid;gap:18px}
+@media(min-width:640px){.cards{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1024px){.cards{grid-template-columns:repeat(3,1fr)}}
+.card{background:#101526;border:1px solid #11193a;border-radius:20px;padding:18px;}
+.card h3{margin:4px 0 8px}
+.card p{margin:0 0 10px;color:#a9b2c3}
+.price{display:inline-block;background:linear-gradient(90deg,#7cf,#92ff72);color:#0b0e14;
+  border-radius:999px;padding:6px 10px;font-weight:700}
+.card footer{display:flex;justify-content:space-between;align-items:center;margin-top:10px}
+.card a.cta{color:#88aaff;text-decoration:none;font-weight:600}
+.card a.cta:hover{text-decoration:underline}
+details summary{cursor:pointer;color:#cfe1ff;margin:.3rem 0}
