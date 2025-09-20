@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Veridex • Business Demo</title>
+  <style>
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; margin: 0; padding: 2rem; background:#0b0f14; color:#e6edf3; }
+    .wrap { max-width: 720px; margin: 0 auto; }
+    h1 { margin: 0 0 0.25rem; font-weight: 700; }
+    p.lede { margin: 0 0 1.5rem; color:#9fb0c3 }
+    form { background:#0f1621; border:1px solid #1f2a37; border-radius: 14px; padding: 1.25rem; }
+    label { display:block; margin: 0.75rem 0 0.25rem; font-size: 0.95rem; color:#cbd5e1 }
+    input, textarea, select {
+      width: 100%; padding: 10px 12px; border-radius: 10px; border:1px solid #243244; background:#0b121c; color:#e6edf3;
+    }
+    textarea { min-height: 110px; resize: vertical; }
+    small.hint { color:#8aa0b6 }
+    .row { display:grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    button {
+      margin-top: 1rem; background:#2563eb; color:white; border:0; padding: 10px 14px; border-radius: 10px; cursor: pointer; font-weight: 600;
+    }
+    #status { margin-top: .75rem; font-size:.95rem; }
+    a { color:#7dd3fc; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Veridex • Business Demo</h1>
+    <p class="lede">Tell us your use-case. We’ll show the funnel with the right guardrails (consent, retention, lawful basis) and smart branching.</p>
+
+    <form id="veridex-demo" novalidate>
+      <div class="row">
+        <div>
+          <label>Your name</label>
+          <input name="name" required>
+        </div>
+        <div>
+          <label>Work email</label>
+          <input name="email" type="email" required>
+        </div>
+      </div>
+
+      <div class="row">
+        <div>
+          <label>Company</label>
+          <input name="company">
+        </div>
+        <div>
+          <label>Phone</label>
+          <input name="phone">
+        </div>
+      </div>
+
+      <label>Industry</label>
+      <select name="industry">
+        <option value="">Select…</option>
+        <option>Social Housing</option>
+        <option>Utilities</option>
+        <option>Local Gov</option>
+        <option>Legal Services</option>
+        <option>Other</option>
+      </select>
+
+      <label>Use case / notes</label>
+      <textarea name="message" placeholder="e.g. Repairs triage + evidence pack; PECR-safe recontact; SLA timers"></textarea>
+      <small class="hint">We’ll tailor the demo (fields, retention timers, consent copy, and export receipts).</small>
+
+      <!-- Upsell checkboxes (so your sales routing can branch) -->
+      <fieldset style="border:0; margin-top: .75rem; padding:0">
+        <label><input type="checkbox" name="needs_pact" value="1"> Promises / appointments tracking (PACT Ledger)</label>
+        <label><input type="checkbox" name="needs_omniassist" value="1"> Portal chasing / bulk evidence collation (OmniAssist)</label>
+        <label><input type="checkbox" name="needs_crm" value="1"> Consent + retention governance (NextusOne CRM)</label>
+        <label><input type="checkbox" name="needs_dashboard" value="1"> Breach countdowns / board widgets (RBIS Dashboard)</label>
+      </fieldset>
+
+      <!-- Hidden context -->
+      <input type="hidden" name="page" id="page">
+      <input type="hidden" name="utm_source" id="utm_source">
+      <input type="hidden" name="utm_medium" id="utm_medium">
+      <input type="hidden" name="utm_campaign" id="utm_campaign">
+      <input type="hidden" name="ip" id="ip">
+      <input type="hidden" name="user_agent" id="user_agent">
+      <!-- Honeypot -->
+      <input type="text" name="website" id="website" style="display:none">
+
+      <button type="submit">Request demo</button>
+      <div id="status" aria-live="polite"></div>
+    </form>
+
+    <p style="margin-top: 1rem"><a href="/">← Back to site</a></p>
+  </div>
+
+<script>
+(function(){
+  // ⬇️ REPLACED BY SCRIPT BELOW
+  const ZAP_HOOK_URL = "https://hooks.zapier.com/hooks/catch/14012873/umj0v05/";
+
+  const qs = new URLSearchParams(location.search);
+  const set = (id, v) => { const el = document.getElementById(id); if (el) el.value = v || ""; };
+  set("page", location.pathname + location.search);
+  set("utm_source", qs.get("utm_source"));
+  set("utm_medium", qs.get("utm_medium"));
+  set("utm_campaign", qs.get("utm_campaign"));
+  set("user_agent", navigator.userAgent);
+
+  // Best-effort IP (if blocked, we still submit fine)
+  fetch("https://api.ipify.org?format=json").then(r => r.json()).then(j => {
+    const ip = document.getElementById("ip"); if (ip) ip.value = j.ip || "";
+  }).catch(()=>{});
+
+  const form = document.getElementById("veridex-demo");
+  const status = document.getElementById("status");
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    if (document.getElementById("website").value) { return; } // bot
+    status.textContent = "Sending…";
+
+    const data = Object.fromEntries(new FormData(form).entries());
+    try {
+      const res = await fetch(ZAP_HOOK_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data)
+      });
+      if (!res.ok) throw new Error("HTTP " + res.status);
+      status.textContent = "Thanks — we’ll get you booked in.";
+      form.reset();
+    } catch (err) {
+      console.error(err);
+      status.textContent = "Sorry, something went wrong. Email contact@rbisintelligence.com.";
+    }
+  });
+})();
+</script>
+</body>
+</html>
