@@ -452,3 +452,36 @@ h3{font-size:clamp(18px,2.6vw,22px);line-height:1.25;margin:8px 0}
 .form input,.form textarea{width:100%;padding:12px 14px;border-radius:12px;border:1px solid #253050;background:#0b0f1d;color:var(--ink)}
 .form button{margin-top:10px}
 .badge{font-size:.8rem;padding:.2rem .55rem;border:1px solid #213; border-radius:999px;opacity:.85}
+/* RBIS matte buttons */
+:root{
+  --btn-bg:#d8dee9;           /* soft matte */
+  --btn-bg-2:#cfd6e3;         /* slight satin bottom */
+  --btn-hover:#e5eaf3;
+  --btn-ink:#0b0e14;          /* dark text for contrast */
+  --btn-border:#ffffff22;     /* subtle edge */
+}
+.btn,.cta{
+  appearance:none; -webkit-appearance:none;
+  display:inline-block; padding:10px 16px; border-radius:14px;
+  background:linear-gradient(180deg,var(--btn-bg),var(--btn-bg-2));
+  color:var(--btn-ink); border:1px solid var(--btn-border);
+  font-weight:800; letter-spacing:.2px;
+  box-shadow: inset 0 0 0 1px #ffffff10, 0 2px 8px rgba(0,0,0,.35);
+  transition:transform .15s ease, box-shadow .2s ease, background .2s ease, border-color .2s ease;
+}
+.btn:hover,.cta:hover{
+  background:var(--btn-hover);
+  transform:translateY(-1px);
+  border-color:#ffffff33;
+  box-shadow: inset 0 0 0 1px #ffffff14, 0 6px 18px rgba(0,0,0,.45);
+}
+.btn:active,.cta:active{ transform:translateY(0); box-shadow: inset 0 0 0 1px #ffffff20, 0 1px 6px rgba(0,0,0,.5); }
+.form button{ all:unset; } .form button{ /* upgrade form button */
+  cursor:pointer; display:inline-block;
+  padding:10px 16px; border-radius:14px;
+  background:linear-gradient(180deg,var(--btn-bg),var(--btn-bg-2));
+  color:var(--btn-ink); border:1px solid var(--btn-border);
+  font-weight:800; letter-spacing:.2px;
+  box-shadow: inset 0 0 0 1px #ffffff10, 0 2px 8px rgba(0,0,0,.35);
+}
+.form button:hover{ background:var(--btn-hover); transform:translateY(-1px); }
