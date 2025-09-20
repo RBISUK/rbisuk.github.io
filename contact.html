@@ -1,77 +1,82 @@
 <!doctype html><html lang="en"><head>
-  <meta name="description" content="Contact RBIS Intelligence — we reply within 1 business day.">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self' https://api.ipify.org; form-action 'self' https://hooks.zapier.com; base-uri 'self'; frame-ancestors 'none'; upgrade-insecure-requests">
 
-  <link rel="canonical" href="https://www.rbisintelligence.com/contact.html">
-
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self' https://api.ipify.org https://hooks.zapier.com; form-action 'self' https://hooks.zapier.com; base-uri 'self'; frame-ancestors 'none'; upgrade-insecure-requests">
-
-  <link rel="icon" href="/favicon.svg">
-
-<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Contact • RBIS Intelligence</title>
-<link rel="stylesheet" href="style.css"></head><body>
+<link rel="icon" href="/favicon.svg">
+<link rel="stylesheet" href="style.css">
+</head><body>
 <nav><div class="container navbar">
   <span class="badge">RBIS</span><span class="brand">RBIS Intelligence</span>
-  <div class="navspacer"></div><div class="nav">
-    <a href="index.html">Home</a><a href="veridex-demo.html">Veridex Demo</a><a href="contact.html">Contact</a>
-  </div>
+  <div class="navspacer"></div>
+  <div class="nav"><a href="index.html">Home</a><a href="veridex-demo.html">Veridex Demo</a><a aria-current="page">Contact</a></div>
 </div></nav>
 
-<main class="container">
+<main class="container section">
   <h1>Contact us</h1>
-  <p class="notice">We’ll reply within 1 business day.</p>
+  <p>Tell us a little about your use case—we’ll reply within one business day.</p>
 
-  <form id="rbis-contact" style="max-width:580px">
-    <label>Name <input name="name" required></label>
-    <label>Email <input name="email" type="email" required></label>
-    <label>Company <input name="company"></label>
-    <label>Phone <input name="phone"></label>
+  <!-- Hidden target to avoid navigation and bypass CORS -->
+  <iframe name="zapier_iframe_contact" id="zapier_iframe_contact" style="display:none"></iframe>
+
+  <form id="rbis-contact" action="" method="POST" target="zapier_iframe_contact" style="max-width:640px">
+    <label>Name <input name="name" required></label><br>
+    <label>Email <input name="email" type="email" required></label><br>
+    <label>Company <input name="company"></label><br>
+    <label>Phone <input name="phone"></label><br>
     <label>Message <textarea name="message" required></textarea></label>
 
-    <input type="hidden" name="page" id="page">
-    <input type="hidden" name="utm_source" id="utm_source">
-    <input type="hidden" name="utm_medium" id="utm_medium">
-    <input type="hidden" name="utm_campaign" id="utm_campaign">
-    <input type="hidden" name="ip" id="ip">
-    <input type="hidden" name="user_agent" id="user_agent">
-    <input type="text" name="website" id="website" style="display:none">
+    <!-- Hidden context -->
+    <input type="hidden" name="page" id="c_page">
+    <input type="hidden" name="utm_source" id="c_utm_source">
+    <input type="hidden" name="utm_medium" id="c_utm_medium">
+    <input type="hidden" name="utm_campaign" id="c_utm_campaign">
+    <input type="hidden" name="ip" id="c_ip">
+    <input type="hidden" name="user_agent" id="c_user_agent">
+    <!-- Honeypot -->
+    <input type="text" name="website" id="c_website" style="display:none">
 
-    <button class="btn primary" type="submit">Send</button>
-    <div id="rbis-contact-status" class="notice" aria-live="polite"></div>
+    <button type="submit">Send</button>
+    <div id="c_status" class="notice" aria-live="polite"></div>
   </form>
 </main>
 
-<footer><div class="container"><small class="muted">RBIS • Static site • No trackers</small></div></footer>
-
 <script>
-(async function(){
+(function(){
+  // Hook URL injected below by bash
+  const ZAP_HOOK_URL = "https://hooks.zapier.com/hooks/catch/14012873/umjfdcf/";
+
   const qs = new URLSearchParams(location.search);
   const set = (id, v) => { const el = document.getElementById(id); if (el) el.value = v || ""; };
-  set("page", location.pathname + location.search);
-  set("utm_source", qs.get("utm_source")); set("utm_medium", qs.get("utm_medium")); set("utm_campaign", qs.get("utm_campaign"));
-  set("user_agent", navigator.userAgent);
+  set("c_page", location.pathname + location.search);
+  set("c_utm_source", qs.get("utm_source"));
+  set("c_utm_medium", qs.get("utm_medium"));
+  set("c_utm_campaign", qs.get("utm_campaign"));
+  set("c_user_agent", navigator.userAgent);
 
-  try{ const r = await fetch("https://api.ipify.org?format=json"); const j = await r.json(); set("ip", j.ip) }catch(e){}
+  // IP is nice-to-have; failure shouldn’t block submit
+  (async () => {
+    try { const r = await fetch("https://api.ipify.org?format=json"); const j = await r.json(); set("c_ip", j.ip); } catch(e){}
+  })();
 
   const form = document.getElementById("rbis-contact");
-  const status = document.getElementById("rbis-contact-status");
+  const status = document.getElementById("c_status");
+  const iframe = document.getElementById("zapier_iframe_contact");
 
-  form.addEventListener("submit", async (e) => {
-    e.preventDefault();
-    if (document.getElementById("website").value) { status.textContent="Thanks!"; return; } // honeypot
+  form.action = ZAP_HOOK_URL;
+
+  let submitting = false;
+  form.addEventListener("submit", () => {
+    submitting = true;
     status.textContent = "Sending…";
+  });
 
-    const data = Object.fromEntries(new FormData(form).entries());
-    const ZAP_HOOK_URL = "https://hooks.zapier.com/hooks/catch/14012873/umjfdcf/";
-
-    try{
-      const res = await fetch(ZAP_HOOK_URL, { method:"POST", headers:{ "Content-Type":"application/json" }, body: JSON.stringify(data) });
-      if (!res.ok) throw new Error(`HTTP ${res.status}`);
-      status.textContent = "Thanks — we’ll be in touch soon."; status.className="notice success"; form.reset();
-    }catch(err){
-      status.textContent = "Sorry, something went wrong. Please email contact@rbisintelligence.com.";
-      status.className="notice error"; console.error(err);
-    }
+  // When the iframe finishes loading (Zap received the POST), show success
+  iframe.addEventListener("load", () => {
+    if (!submitting) return;
+    submitting = false;
+    status.textContent = "Thanks — we’ll be in touch soon.";
+    form.reset();
   });
 })();
 </script>

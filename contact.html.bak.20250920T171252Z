@@ -1,0 +1,78 @@
+<!doctype html><html lang="en"><head>
+  <meta name="description" content="Contact RBIS Intelligence — we reply within 1 business day.">
+
+  <link rel="canonical" href="https://www.rbisintelligence.com/contact.html">
+
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self' https://api.ipify.org https://hooks.zapier.com; form-action 'self' https://hooks.zapier.com; base-uri 'self'; frame-ancestors 'none'; upgrade-insecure-requests">
+
+  <link rel="icon" href="/favicon.svg">
+
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact • RBIS Intelligence</title>
+<link rel="stylesheet" href="style.css"></head><body>
+<nav><div class="container navbar">
+  <span class="badge">RBIS</span><span class="brand">RBIS Intelligence</span>
+  <div class="navspacer"></div><div class="nav">
+    <a href="index.html">Home</a><a href="veridex-demo.html">Veridex Demo</a><a href="contact.html">Contact</a>
+  </div>
+</div></nav>
+
+<main class="container">
+  <h1>Contact us</h1>
+  <p class="notice">We’ll reply within 1 business day.</p>
+
+  <form id="rbis-contact" style="max-width:580px">
+    <label>Name <input name="name" required></label>
+    <label>Email <input name="email" type="email" required></label>
+    <label>Company <input name="company"></label>
+    <label>Phone <input name="phone"></label>
+    <label>Message <textarea name="message" required></textarea></label>
+
+    <input type="hidden" name="page" id="page">
+    <input type="hidden" name="utm_source" id="utm_source">
+    <input type="hidden" name="utm_medium" id="utm_medium">
+    <input type="hidden" name="utm_campaign" id="utm_campaign">
+    <input type="hidden" name="ip" id="ip">
+    <input type="hidden" name="user_agent" id="user_agent">
+    <input type="text" name="website" id="website" style="display:none">
+
+    <button class="btn primary" type="submit">Send</button>
+    <div id="rbis-contact-status" class="notice" aria-live="polite"></div>
+  </form>
+</main>
+
+<footer><div class="container"><small class="muted">RBIS • Static site • No trackers</small></div></footer>
+
+<script>
+(async function(){
+  const qs = new URLSearchParams(location.search);
+  const set = (id, v) => { const el = document.getElementById(id); if (el) el.value = v || ""; };
+  set("page", location.pathname + location.search);
+  set("utm_source", qs.get("utm_source")); set("utm_medium", qs.get("utm_medium")); set("utm_campaign", qs.get("utm_campaign"));
+  set("user_agent", navigator.userAgent);
+
+  try{ const r = await fetch("https://api.ipify.org?format=json"); const j = await r.json(); set("ip", j.ip) }catch(e){}
+
+  const form = document.getElementById("rbis-contact");
+  const status = document.getElementById("rbis-contact-status");
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    if (document.getElementById("website").value) { status.textContent="Thanks!"; return; } // honeypot
+    status.textContent = "Sending…";
+
+    const data = Object.fromEntries(new FormData(form).entries());
+    const ZAP_HOOK_URL = "https://hooks.zapier.com/hooks/catch/14012873/umjfdcf/";
+
+    try{
+      const res = await fetch(ZAP_HOOK_URL, { method:"POST", headers:{ "Content-Type":"application/json" }, body: JSON.stringify(data) });
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      status.textContent = "Thanks — we’ll be in touch soon."; status.className="notice success"; form.reset();
+    }catch(err){
+      status.textContent = "Sorry, something went wrong. Please email contact@rbisintelligence.com.";
+      status.className="notice error"; console.error(err);
+    }
+  });
+})();
+</script>
+</body></html>

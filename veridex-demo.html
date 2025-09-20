@@ -1,123 +1,78 @@
 <!doctype html><html lang="en"><head>
-  <meta name="description" content="Try the Veridex AI Funnel demo — guided, compliant intake.">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self' https://api.ipify.org; form-action 'self' https://hooks.zapier.com; base-uri 'self'; frame-ancestors 'none'; upgrade-insecure-requests">
 
-  <link rel="canonical" href="https://www.rbisintelligence.com/veridex-demo.html">
-
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self' https://api.ipify.org https://hooks.zapier.com; form-action 'self' https://hooks.zapier.com; base-uri 'self'; frame-ancestors 'none'; upgrade-insecure-requests">
-
-  <link rel="icon" href="/favicon.svg">
-
-<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Veridex Demo • RBIS Intelligence</title>
-<link rel="stylesheet" href="style.css"></head><body>
+<link rel="icon" href="/favicon.svg">
+<link rel="stylesheet" href="style.css">
+</head><body>
 <nav><div class="container navbar">
   <span class="badge">RBIS</span><span class="brand">RBIS Intelligence</span>
-  <div class="navspacer"></div><div class="nav">
-    <a href="index.html">Home</a><a href="veridex-demo.html">Veridex Demo</a><a href="contact.html">Contact</a>
-  </div>
+  <div class="navspacer"></div>
+  <div class="nav"><a href="index.html">Home</a><a aria-current="page">Veridex Demo</a><a href="contact.html">Contact</a></div>
 </div></nav>
 
-<main class="container">
-  <h1>Veridex — guided, compliant intake</h1>
-  <p class="notice">This demo collects enough detail to show how Veridex routes by severity and suggests add-ons.</p>
+<main class="container section">
+  <h1>Request a Veridex AI Funnel demo</h1>
+  <p>We’ll tailor the run-through to your industry and compliance needs.</p>
 
-  <form id="veridex-form" style="max-width:680px">
-    <label>Your name <input name="name" required></label>
-    <label>Email <input name="email" type="email" required></label>
-    <label>Organisation <input name="company"></label>
-    <label>Phone <input name="phone"></label>
+  <iframe name="zapier_iframe_veridex" id="zapier_iframe_veridex" style="display:none"></iframe>
 
-    <div class="card" style="margin:12px 0">
-      <h3 style="margin:0 0 4px">Scenario (disrepair example)</h3>
-      <label>Issue type
-        <select name="issue">
-          <option>Heating / hot water</option>
-          <option>Damp / mould</option>
-          <option>Electrics</option>
-          <option>Leaks / plumbing</option>
-          <option>Other</option>
-        </select>
-      </label>
-      <label>Severity
-        <select name="severity">
-          <option>Low</option><option>Medium</option><option>High</option>
-        </select>
-      </label>
-      <label>Days without heat/hot water <input name="days_no_heat" type="number" min="0" value="0"></label>
-      <label><input type="checkbox" name="repeat_issue"> Repeat issue</label>
-      <label><input type="checkbox" name="missed_appointments"> Missed appointments / broken promises</label>
-      <label><input type="checkbox" name="portal_chasing"> Need regular portal chasing / bulk evidence collation</label>
-      <label><input type="checkbox" name="consent_governance"> Need consent / retention governance</label>
-      <label>Notes <textarea name="notes" rows="4" placeholder="What happened?"></textarea></label>
-    </div>
+  <form id="veridex-form" action="" method="POST" target="zapier_iframe_veridex" style="max-width:640px">
+    <label>Name <input name="name" required></label><br>
+    <label>Email <input name="email" type="email" required></label><br>
+    <label>Company <input name="company"></label><br>
+    <label>Phone <input name="phone"></label><br>
+    <label>Use case / notes <textarea name="message" required></textarea></label>
 
-    <input type="hidden" name="page" id="page">
-    <input type="hidden" name="utm_source" id="utm_source">
-    <input type="hidden" name="utm_medium" id="utm_medium">
-    <input type="hidden" name="utm_campaign" id="utm_campaign">
-    <input type="hidden" name="ip" id="ip">
-    <input type="hidden" name="user_agent" id="user_agent">
-    <input type="text" name="website" id="website" style="display:none">
+    <!-- Hidden context -->
+    <input type="hidden" name="page" id="v_page">
+    <input type="hidden" name="utm_source" id="v_utm_source">
+    <input type="hidden" name="utm_medium" id="v_utm_medium">
+    <input type="hidden" name="utm_campaign" id="v_utm_campaign">
+    <input type="hidden" name="ip" id="v_ip">
+    <input type="hidden" name="user_agent" id="v_user_agent">
+    <!-- Honeypot -->
+    <input type="text" name="website" id="v_website" style="display:none">
 
-    <button class="btn primary" type="submit">Request demo</button>
-    <div id="veridex-status" class="notice" aria-live="polite"></div>
+    <button type="submit">Request demo</button>
+    <div id="v_status" class="notice" aria-live="polite"></div>
   </form>
-
-  <div id="smart-suggestions" class="grid" style="margin-top:16px"></div>
 </main>
 
-<footer><div class="container"><small class="muted">Demo only — no personal data please.</small></div></footer>
-
 <script>
-(async function(){
-  // context
+(function(){
+  const ZAP_HOOK_URL = "https://hooks.zapier.com/hooks/catch/14012873/umj0v05/";
+
   const qs = new URLSearchParams(location.search);
   const set = (id, v) => { const el = document.getElementById(id); if (el) el.value = v || ""; };
-  set("page", location.pathname + location.search);
-  set("utm_source", qs.get("utm_source")); set("utm_medium", qs.get("utm_medium")); set("utm_campaign", qs.get("utm_campaign"));
-  set("user_agent", navigator.userAgent);
-  try{ const r = await fetch("https://api.ipify.org?format=json"); const j = await r.json(); set("ip", j.ip) }catch(e){}
+  set("v_page", location.pathname + location.search);
+  set("v_utm_source", qs.get("utm_source"));
+  set("v_utm_medium", qs.get("utm_medium"));
+  set("v_utm_campaign", qs.get("utm_campaign"));
+  set("v_user_agent", navigator.userAgent);
+
+  (async () => {
+    try { const r = await fetch("https://api.ipify.org?format=json"); const j = await r.json(); set("v_ip", j.ip); } catch(e){}
+  })();
 
   const form = document.getElementById("veridex-form");
-  const status = document.getElementById("veridex-status");
-  const suggest = document.getElementById("smart-suggestions");
+  const status = document.getElementById("v_status");
+  const iframe = document.getElementById("zapier_iframe_veridex");
 
-  function renderSuggestions(data){
-    const sev = (data.severity||"").toLowerCase();
-    const days = parseInt(data.days_no_heat||"0",10)||0;
-    const tiles = [];
-    if (sev==="high" || days>=3 || data.repeat_issue==="on") tiles.push({icon:"📊", name:"RBIS Dashboard", why:"Severity high / repeated / 3+ days — watch timers & KPIs", url:"dashboard.html"});
-    if (data.missed_appointments==="on") tiles.push({icon:"🤝", name:"PACT Ledger", why:"Track promises, escalations, receipts", url:"#"});
-    if (data.portal_chasing==="on") tiles.push({icon:"🛠️", name:"OmniAssist", why:"Portal chasing + bulk evidence with proofs", url:"#"});
-    if (data.consent_governance==="on") tiles.push({icon:"📬", name:"NextusOne CRM", why:"Consent + retention governance", url:"#"});
-    suggest.innerHTML = tiles.map(t=>`
-      <a class="card" href="${t.url}">
-        <div class="kv"><div class="icon">${t.icon}</div><h3>${t.name}</h3></div>
-        <p>${t.why}</p><div class="cta" style="margin-top:10px"><span class="btn">Learn more</span></div>
-      </a>`).join('');
-  }
+  form.action = ZAP_HOOK_URL;
 
-  form.addEventListener("change", () => {
-    const data = Object.fromEntries(new FormData(form).entries());
-    renderSuggestions(data);
+  let submitting = false;
+  form.addEventListener("submit", () => {
+    submitting = true;
+    status.textContent = "Sending…";
   });
 
-  form.addEventListener("submit", async (e) => {
-    e.preventDefault();
-    if (document.getElementById("website").value) { status.textContent="Thanks!"; return; } // honeypot
-    status.textContent = "Sending…";
-
-    const data = Object.fromEntries(new FormData(form).entries());
-    renderSuggestions(data);
-
-    const ZAP_HOOK_URL = "https://hooks.zapier.com/hooks/catch/14012873/umj0v05/";
-    try{
-      const res = await fetch(ZAP_HOOK_URL, { method:"POST", headers:{ "Content-Type":"application/json" }, body: JSON.stringify(data) });
-      if (!res.ok) throw new Error(`HTTP ${res.status}`);
-      status.textContent = "Request received — we’ll email you shortly."; status.className="notice success"; form.reset();
-    }catch(err){
-      status.textContent = "Sorry, couldn’t send. Please email contact@rbisintelligence.com."; status.className="notice error"; console.error(err);
-    }
+  iframe.addEventListener("load", () => {
+    if (!submitting) return;
+    submitting = false;
+    status.textContent = "Thanks — we’ll email you to schedule your demo.";
+    form.reset();
   });
 })();
 </script>
