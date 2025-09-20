@@ -45,3 +45,34 @@ hr{border:0;border-top:1px solid #202744;margin:28px 0}
   .nav.open ul{display:flex;flex-direction:column;width:100%}
   .cta{margin-left:0}
 }
+
+/* --- RBIS Reports (Light / Apple-ish) --- */
+body.light{ background:#fff; color:#0b0e14; }
+.light .nav{ background:#fff6; -webkit-backdrop-filter:saturate(180%) blur(16px); backdrop-filter:saturate(180%) blur(16px); border-bottom:1px solid #e7e7ea;}
+.light .nav .link, .light .brand span{ color:#111; }
+.light .btn.primary{ background:#111; color:#fff; }
+.light .btn.ghost{ background:#f2f3f6; color:#111; border:1px solid #e7e7ea; }
+.light .muted{ color:#6a717d }
+
+.wrap{max-width:1200px;margin:0 auto;padding:24px}
+.meta-strip{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:16px 0 24px}
+.meta{border:1px solid #eee;border-radius:14px;padding:14px 16px;background:#fafbff}
+.meta h4{margin:0 0 6px 0;font:600 12px/1.2 ui-sans-serif,system-ui;color:#6a717d;letter-spacing:.04em;text-transform:uppercase}
+.meta .big{font:700 22px/1.1 ui-sans-serif,system-ui}
+.kit{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:12px 0 24px}
+.pill{font:600 13px;padding:8px 12px;border-radius:999px;border:1px solid #e7e7ea;background:#f7f8fb;cursor:pointer}
+.pill.active{background:#111;color:#fff;border-color:#111}
+.search{flex:1;display:flex}
+.search input{width:100%;padding:10px 12px;border:1px solid #e7e7ea;border-radius:10px;outline:none}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.card{border:1px solid #e7e7ea;border-radius:16px;background:#fff;overflow:hidden;display:flex;flex-direction:column}
+.card .body{padding:18px}
+.badge{display:inline-flex;align-items:center;gap:6px;font:600 12px;padding:6px 10px;border-radius:999px;background:#f2f6ff;border:1px solid #e0e8ff;color:#1a4cff}
+.price{font:700 18px;margin:8px 0}
+.card .meta{display:flex;gap:10px;align-items:center;border:none;background:transparent;padding:0}
+.card .meta span{font:600 12px;color:#6a717d}
+.card .cta{margin:12px 0 0}
+.card .cta .btn{margin-right:8px}
+.flag{position:absolute;top:12px;right:12px;font:700 11px;background:#111;color:#fff;padding:6px 8px;border-radius:8px}
+@media (max-width:1024px){ .grid{grid-template-columns:repeat(2,minmax(0,1fr));} }
+@media (max-width:720px){ .grid{grid-template-columns:1fr;} .meta-strip{grid-template-columns:1fr 1fr;} }
