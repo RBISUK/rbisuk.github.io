@@ -683,3 +683,20 @@ input::placeholder,textarea::placeholder{color:#8ea2c7}
 
 /* Kill any old floating “talk” bars defensively */
 [class*="talk"][class*="cta"], .talk, .talk-cta, .floating-cta{display:none !important}
+/* === RBIS badges & drawers (2025-09-20) === */
+.badges{display:flex;gap:8px;flex-wrap:wrap;margin:.2rem 0 .6rem}
+.badge{display:inline-flex;align-items:center;gap:6px;padding:6px 10px;border:1px solid rgba(255,255,255,.08);
+  background:#0f1424;border-radius:999px;font-weight:700;font-size:.9rem;color:#e8ecf1}
+.badge svg{width:16px;height:16px;display:block}
+
+details.rbis{background:#0f1424;border:1px solid #1d2848;border-radius:14px;padding:12px}
+details.rbis summary{list-style:none;cursor:pointer;font-weight:800}
+details.rbis summary::-webkit-details-marker{display:none}
+details.rbis[open]{box-shadow:0 8px 30px rgba(0,0,0,.22)}
+details.rbis .desc{color:#a9b2c3;margin:.4rem 0 0}
+@media (max-width:480px){
+  .nav .right{gap:8px}
+  .card{padding:14px}
+}
+/* Defuse any old floaters just in case */
+[class*="talk"][class*="cta"], .talk, .talk-cta, .floating-cta{display:none !important}
