@@ -293,3 +293,45 @@ footer{max-width:1180px;margin:40px auto 32px;padding:0 16px;color:#97a6c9}
 .r-bullets{margin:0 0 10px 18px}
 .r-close{background:none;border:none;color:var(--ink);font-size:20px;cursor:pointer;opacity:.85}
 .r-close:hover{opacity:1}
+
+/* === RBIS Apple-style polish === */
+:root{
+  --bg:#0b0e14; --panel:#101526; --ink:#eaf1ff; --muted:#a8b1c3;
+  --brand:#78a6ff; --brand2:#8fe1ff; --accent:#9dff71; --outline:#2b3552;
+  --radius:16px; --shadow:0 10px 40px rgba(0,0,0,.35);
+}
+body{background:radial-gradient(1100px 600px at 20% -10%,#142044,transparent 60%),
+                radial-gradient(800px 500px at 110% 10%,#14204422,transparent 60%),
+                linear-gradient(180deg,#0b0e14,#0d1222 35%,#0b0e14);
+  color:var(--ink)}
+.container{max-width:1140px;margin:0 auto;padding:24px}
+.site-header{position:sticky;top:0;z-index:20;backdrop-filter:blur(10px)}
+.nav{display:flex;align-items:center;justify-content:space-between;background:#0d1222cc;border-bottom:1px solid #101831}
+.nav a{color:var(--ink);opacity:.9;text-decoration:none;padding:14px 14px;display:inline-flex;align-items:center;border-radius:12px}
+.nav a:hover{background:#11193a;opacity:1}
+.nav .right a.cta{background:linear-gradient(90deg,var(--brand),var(--brand2));color:#001;font-weight:700}
+.brand{display:flex;gap:10px;align-items:center;padding:10px 14px;font-weight:800;letter-spacing:.5px}
+.brand .mark{width:28px;height:28px;animation:crestSpin 14s linear infinite;filter:drop-shadow(0 0 10px #7cf7)}
+@keyframes crestSpin{to{transform:rotate(1turn)}}
+
+.hero{padding:64px 20px 24px}
+.hero h1{font-size:54px;line-height:1.05;margin:0 0 10px;letter-spacing:-.02em}
+.hero p{color:var(--muted);font-size:18px;margin:0 0 18px}
+.hero .cta-row{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-flex;gap:8px;align-items:center;padding:12px 16px;border-radius:16px;border:1px solid var(--outline);text-decoration:none;color:var(--ink)}
+.btn.primary{background:linear-gradient(90deg,var(--brand),var(--brand2));border:none;color:#001;font-weight:800}
+.btn.ghost:hover{background:#11193a}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+.card{background:var(--panel);border:1px solid #11193a;border-radius:16px;box-shadow:var(--shadow);padding:18px}
+.card h3{margin:0 0 10px;font-size:19px;letter-spacing:.2px}
+.card small{color:var(--muted)}
+
+.badge{display:inline-block;padding:4px 8px;border-radius:999px;background:#132045;border:1px solid #1a2b55;color:#a8cffb;font-size:12px}
+.price-row li{margin:6px 0}
+
+/* Drawer (report details) */
+.rbis-drawer{position:fixed;inset:0;background:#0008;display:none;align-items:flex-end}
+.rbis-drawer .panel{width:100%;max-height:70vh;overflow:auto;background:#0f1528;border-top-left-radius:16px;border-top-right-radius:16px;border:1px solid #1a2b55;padding:18px 18px 26px}
+.rbis-drawer h3{margin:.5rem 0 0.25rem}
+.rbis-drawer.show{display:flex}

@@ -200,3 +200,28 @@ document.addEventListener('DOMContentLoaded', RBIS.renderNav);
 
   window.addEventListener('keydown', (e)=>{ if(e.key === 'Escape') closeDrawer() });
 })();
+window.RBIS = window.RBIS || {};
+RBIS.drawer = (function(){
+  let root; 
+  function ensure(){
+    if(root) return root;
+    root = document.createElement('div'); root.className='rbis-drawer'; root.innerHTML =
+      '<div class="panel"><button id="rbisDrawerClose" class="btn ghost" style="float:right">Close</button><div id="rbisDrawerBody"></div></div>';
+    document.body.appendChild(root);
+    root.addEventListener('click', e=>{ if(e.target===root) hide(); });
+    root.querySelector('#rbisDrawerClose').addEventListener('click', hide);
+    return root;
+  }
+  function show(html){ const r=ensure(); r.querySelector('#rbisDrawerBody').innerHTML=html; r.classList.add('show'); }
+  function hide(){ if(root) root.classList.remove('show'); }
+  return { show, hide };
+})();
+(function navActive(){
+  try{
+    const here = location.pathname.replace(/\/+$/,'');
+    document.querySelectorAll('.nav a[href]').forEach(a=>{
+      const href=a.getAttribute('href').replace(/\/+$/,'');
+      if(href && href===here){ a.style.background='#11193a'; a.style.opacity='1'; }
+    });
+  }catch(_){}
+})();

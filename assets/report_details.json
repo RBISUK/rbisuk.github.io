@@ -1,0 +1,14 @@
+{
+  "hdr-claim-review": ["Scope the defects and chronology", "Check breach risk, vulnerability flags", "List missing evidence with prompts"],
+  "timeline-evidence": ["Reconstruct dates from comms + photos", "Cross-check metadata and receipts", "Output audit-ready timeline"],
+  "behavioural-tone": ["Score tone, consistency, escalation markers", "Flag pressure tactics / exaggeration", "Give neutral language alternatives"],
+  "forensic-doc-image": ["Basic authenticity checks", "Compression & EXIF review", "Composite/tamper signals"],
+  "fraud-risk": ["Pattern deviation analysis", "Known-risk heuristics", "Escalation recommendations"],
+  "contractor-audit": ["Invoice sanity + duplicate scan", "SOW vs job cards vs photos", "Overcharge detection"],
+  "ombudsman-qa": ["Policy mapping", "Completeness check", "Outcome rationale clarity"],
+  "workplace-brief": ["Behavioural patterning", "Communication risk markers", "Neutral summary for HR"],
+  "voice-audio": ["Prosody & stress indicators (non-diagnostic)", "Consistency vs statements", "Redaction cues"],
+  "after-action": ["Event map", "Root cause themes", "Remediation steps"],
+  "board-risk": ["Top risks with likelihood/impact", "Control gaps", "30-60-90 actions"],
+  "lit-readiness": ["Bundle audit", "Redaction pass", "Disclosure checklist"]
+}

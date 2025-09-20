@@ -1,0 +1,12 @@
+<script id="rbis-detail-enhancer">(function(){
+ fetch("/assets/report_details.json").then(r=>r.json()).then(map=>{
+  document.querySelectorAll("#rbis-price-grid .card").forEach(card=>{
+    const name=card.querySelector("h3").textContent.trim();
+    const id=Object.keys(map).find(k=>name.toLowerCase().includes(k.split("-")[0]));
+    if(!id) return;
+    const btn=document.createElement("a"); btn.className="btn ghost"; btn.textContent="View details"; btn.style.marginLeft="8px";
+    btn.onclick=(e)=>{e.preventDefault(); const bullets=(map[id]||[]).map(x=>`<li>${x}</li>`).join(""), html=`<h3>${name}</h3><ul class=\"price-row\">${bullets}</ul>`; RBIS.drawer.show(html); };
+    const cta=card.querySelector("a.btn.primary"); cta && cta.after(btn);
+  });
+ });
+})();</script>
