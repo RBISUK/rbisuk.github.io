@@ -1,33 +1,33 @@
 <!doctype html><html lang="en"><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Veridex • Business Demo</title>
+<title>Contact • RBIS</title>
 <style>body{font:16px/1.4 system-ui;margin:2rem;max-width:720px}.row{margin:.6rem 0}label{display:block;margin:.2rem 0}.hint{color:#666;font-size:.9rem}</style>
-<h1>Veridex — Request a Business Demo</h1>
-<form id="veridex-demo">
+<h1>Contact RBIS</h1>
+<form id="rbis-contact">
   <div class="row"><label>Name <input name="name" required></label></div>
   <div class="row"><label>Email <input name="email" type="email" required></label></div>
   <div class="row"><label>Company <input name="company"></label></div>
   <div class="row"><label>Phone <input name="phone"></label></div>
-  <div class="row"><label>Use case / notes <textarea name="message" required></textarea></label></div>
+  <div class="row"><label>Message <textarea name="message" required></textarea></label></div>
 
-  <!-- keep it simple; still include context + honeypot -->
+  <!-- context + honeypot -->
   <input type="hidden" name="page" id="page">
   <input type="hidden" name="user_agent" id="user_agent">
   <input type="text" name="website" id="website" style="display:none">
 
-  <button type="submit">Request Demo</button>
+  <button type="submit">Send</button>
   <div id="status" class="hint" aria-live="polite"></div>
 </form>
 
 <script>
-const ZAP_HOOK_URL = "https://hooks.zapier.com/hooks/catch/14012873/umj0v05/";  // replaced by bash
+const ZAP_HOOK_URL = "https://hooks.zapier.com/hooks/catch/14012873/umjfdcf/";  // replaced by bash
 
 (function(){
   const qs = new URLSearchParams(location.search);
   document.getElementById("page").value = location.pathname + (qs.toString() ? "?" + qs.toString():"");
   document.getElementById("user_agent").value = navigator.userAgent;
 
-  const form = document.getElementById("veridex-demo");
+  const form = document.getElementById("rbis-contact");
   const status = document.getElementById("status");
 
   form.addEventListener("submit", async (e) => {
@@ -42,7 +42,7 @@ const ZAP_HOOK_URL = "https://hooks.zapier.com/hooks/catch/14012873/umj0v05/";  
         body: JSON.stringify(data)
       });
       if (!r.ok) throw new Error("HTTP " + r.status);
-      status.textContent = "Thanks — we’ll be in touch shortly.";
+      status.textContent = "Thanks — we’ll be in touch soon.";
       form.reset();
     } catch(err) {
       console.error(err);
