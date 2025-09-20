@@ -76,3 +76,24 @@ body.light{ background:#fff; color:#0b0e14; }
 .flag{position:absolute;top:12px;right:12px;font:700 11px;background:#111;color:#fff;padding:6px 8px;border-radius:8px}
 @media (max-width:1024px){ .grid{grid-template-columns:repeat(2,minmax(0,1fr));} }
 @media (max-width:720px){ .grid{grid-template-columns:1fr;} .meta-strip{grid-template-columns:1fr 1fr;} }
+
+/* === Forms (light / modern) === */
+.form-wrap{max-width:720px;margin:24px auto}
+.form{border:1px solid #e7e7ea;border-radius:16px;background:#fff;padding:20px}
+.form h2{margin:.2rem 0 .6rem;font-size:26px;letter-spacing:-.01em}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media (max-width:720px){ .row{grid-template-columns:1fr} }
+.field{display:flex;flex-direction:column;margin:8px 0}
+.field label{font:600 13px/1.3 ui-sans-serif,system-ui;margin:0 0 6px;color:#111}
+.field input,.field textarea,.field select{
+  padding:12px 12px;border:1px solid #e2e5ea;border-radius:10px;background:#fbfbfd;
+  font:15px/1.4 ui-sans-serif,system-ui;color:#111; outline:none
+}
+.field textarea{min-height:110px;resize:vertical}
+.helper{font:12px;color:#6a717d;margin-top:6px}
+.status{margin-top:12px;font:600 13px}
+.status.ok{color:#0a7a2a}
+.status.err{color:#b00020}
+.note{font:12px;color:#6a717d;margin-top:8px}
+.btn.primary{background:#111;color:#fff;border-radius:10px;padding:10px 14px;display:inline-block}
+.btn.ghost{background:#f2f3f6;color:#111;border:1px solid #e7e7ea;border-radius:10px;padding:10px 14px;display:inline-block}
