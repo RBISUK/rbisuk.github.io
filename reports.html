@@ -1,77 +1,113 @@
-<!doctype html>
-<html lang="en" class="no-js">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Professional Reports • RBIS</title>
-  <link rel="icon" href="favicon.svg">
-  <link rel="stylesheet" href="assets/rbis.min.css">
-  <meta name="description" content="Professional, audit-ready reports that turn noise into action—fast.">
-</head>
-<body class="light">
-  <!-- Nav -->
-  <div class="nav">
-    <div class="container bar">
-      <div class="brand"><div class="logo"></div><span>RBIS Intelligence</span></div>
-      <ul>
-        <li><a class="link" href="index.html">Home</a></li>
-        <li><a class="link" href="products.html">Products</a></li>
-        <li><a class="link" href="solutions.html">Solutions</a></li>
-        <li><a class="link" href="websites.html">Websites</a></li>
-        <li><a class="link link--active" href="reports.html">Professional Reports</a></li>
-        <li><a class="link" href="trust.html">Trust Centre</a></li>
-        <li><a class="link" href="about.html">About</a></li>
-        <li><a class="link" href="dashboard.html">Dashboard</a></li>
-      </ul>
-      <div class="cta"><a class="btn primary" href="contact.html">Contact Us</a></div>
-    </div>
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>RBIS • Professional Reports</title>
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'none'; object-src 'none'; frame-ancestors 'none'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; connect-src 'self' https://hooks.zapier.com; form-action 'self' https://hooks.zapier.com">
+<link rel="stylesheet" href="/assets/rbis.min.css">
+</head><body>
+<header id="rbis-nav"></header>
+
+<section class="section">
+  <h2>Professional Reports</h2>
+  <p class="sub">Concise, audit-ready intelligence. Fixed prices. Delivered fast.</p>
+
+  <div class="metrics" id="metrics">
+    <div class="metric"><div class="k" id="m-count">31</div><div class="l">Report titles</div></div>
+    <div class="metric"><div class="k">2–5 days</div><div class="l">Typical turnaround</div></div>
+    <div class="metric"><div class="k">AA</div><div class="l">Accessibility level</div></div>
   </div>
 
-  <main id="reports-root" class="wrap">
-    <header style="margin:24px 0 8px">
-      <h1 style="margin:.2rem 0 0;font-size:38px;letter-spacing:-.02em">Professional Reports</h1>
-      <p class="muted" style="max-width:70ch;margin:.5rem 0 0">
-        Clear, audit-ready analysis that helps leaders decide and teams deliver. Designed with
-        <em>behavioural clarity</em>: strong defaults, visible standards, and crisp calls-to-action.
-      </p>
-    </header>
+  <div class="filters" id="filters"></div>
+  <div class="grid" id="grid" aria-live="polite"></div>
+</section>
 
-    <!-- Metrics Strip (small dashboard) -->
-    <section class="meta-strip" aria-label="RBIS report metrics">
-      <div class="meta"><h4>Reports Available</h4><div class="big" id="rep-count">—</div></div>
-      <div class="meta"><h4>Avg. Turnaround</h4><div class="big" id="rep-tat">—</div></div>
-      <div class="meta"><h4>On-time Delivery</h4><div class="big" id="rep-on-time">—</div></div>
-      <div class="meta"><h4>Client NPS</h4><div class="big" id="rep-nps">—</div></div>
-    </section>
-    <p class="muted" style="margin:-10px 0 18px">Updated <span id="rep-updated">today</span> • <span id="rep-capacity">Limited slots this month</span></p>
+<dialog class="rbis-drawer" id="drawer" aria-label="Report details">
+  <div class="drawer-h">
+    <h3 id="d-title">Title</h3>
+    <button class="close-x" onclick="document.getElementById('drawer').close()">Close</button>
+  </div>
+  <div class="drawer-b">
+    <p id="d-blurb"></p>
+    <p><strong>Category:</strong> <span id="d-cat"></span></p>
+    <p><strong>Price:</strong> <span id="d-price"></span></p>
+    <p style="color:#a9b2c3">Each report includes a summary, appendix evidence, and a clear decision log.</p>
+  </div>
+</dialog>
 
-    <!-- Controls (psych: reduce effort with defaults; show a “most popular” anchor) -->
-    <div class="kit">
-      <button class="pill active" data-cat-pill="All">All</button>
-      <button class="pill" data-cat-pill="Legal">Legal</button>
-      <button class="pill" data-cat-pill="Ops">Ops</button>
-      <button class="pill" data-cat-pill="Compliance">Compliance</button>
-      <button class="pill" data-cat-pill="Web/SEO">Web/SEO</button>
-      <button class="pill" data-cat-pill="Data/CRM">Data/CRM</button>
-      <div class="search"><input id="rep-search" placeholder="Search reports (e.g. SLA, Ombudsman, Web Vitals)"></div>
-    </div>
+<footer>© RBIS — Evidence-first software & intelligence.</footer>
+<script src="/assets/rbis.nav.js" defer></script>
+<script>
+const CATS = ["Compliance","Operations","Risk","Web/SEO","Privacy/GDPR"];
+const REPORTS = [
+  {id:"r1",  t:"Repairs Compliance Audit",               p:"£1,250",  c:"Compliance", i:"🛠️", b:"Map obligations vs. practice; highlight breach vectors with quick wins."},
+  {id:"r2",  t:"SLA Breach Early-Warning Review",        p:"£950",    c:"Operations",  i:"⏱️", b:"Model breach countdowns and escalation ladders with sample thresholds."},
+  {id:"r3",  t:"Ombudsman Risk Forecast",                p:"£1,400",  c:"Risk",        i:"📈", b:"Severity × duration × vulnerability scoring; show likely uphold scenarios."},
+  {id:"r4",  t:"Evidence Completeness Check",            p:"£850",    c:"Compliance",  i:"📂", b:"Are your cases audit-ready? Coverage, gaps, and remediation plan."},
+  {id:"r5",  t:"Contractor Performance & SLA Fit",       p:"£1,150",  c:"Operations",  i:"🤝", b:"Compare actuals vs. contract; find friction, slippage, and incentives."},
+  {id:"r6",  t:"Disrepair Heatmap",                      p:"£1,250",  c:"Risk",        i:"🔥", b:"Identify hotspots by severity and time; prioritise interventions."},
+  {id:"r7",  t:"Board Pack — Operations",                p:"£1,200",  c:"Operations",  i:"📋", b:"One-click board narrative with appendix links and decisions."},
+  {id:"r8",  t:"Data Retention Sanity Check",            p:"£900",    c:"Privacy/GDPR",i:"🗄️", b:"Clocks, schedules, and legitimate interest notes that stand scrutiny."},
+  {id:"r9",  t:"Consent & PECR Posture",                 p:"£1,050",  c:"Privacy/GDPR",i:"✅", b:"Lawful basis, consent capture, preference centre, and audit trails."},
+  {id:"r10", t:"DSR (Access/Erase) Process Trial",       p:"£1,050",  c:"Privacy/GDPR",i:"🧾", b:"Dry-run your DSRs; receipts, deadlines, redactions, and exports."},
+  {id:"r11", t:"Website Core Web Vitals",                p:"£850",    c:"Web/SEO",     i:"⚡", b:"LCP, CLS, INP with a practical fix list and monitoring plan."},
+  {id:"r12", t:"Accessibility (WCAG 2.2 AA) Snapshot",   p:"£950",    c:"Web/SEO",     i:"♿", b:"Patterns, colour contrast, focus order; quick, measurable gains."},
+  {id:"r13", t:"Schema/Entities SEO Readiness",          p:"£900",    c:"Web/SEO",     i:"🔎", b:"Entity coverage, schema, sitemaps, robots and crawl sanity."},
+  {id:"r14", t:"Contractor Chasing Proofs Trial",        p:"£900",    c:"Operations",  i:"📮", b:"Run sample chases with proof receipts and rate-limit governance."},
+  {id:"r15", t:"Complaint Chronology Quality",           p:"£900",    c:"Compliance",  i:"🕰️", b:"Are timelines coherent, complete, and regulator-ready?"},
+  {id:"r16", t:"Redaction & Export Hygiene",             p:"£800",    c:"Privacy/GDPR",i:"🖤", b:"PII minimisation, safe exports, and shareable packs."},
+  {id:"r17", t:"Risk Register Tune-Up",                  p:"£1,050",  c:"Risk",        i:"🧭", b:"Sharper statements, signals, countermeasures, and owners."},
+  {id:"r18", t:"Escalation Ladder Design",               p:"£950",    c:"Operations",  i:"🪜", b:"Triggers, tone, timing: reduce uphold risk without friction."},
+  {id:"r19", t:"Promise / Appointment Reliability",      p:"£1,150",  c:"Operations",  i:"📅", b:"Missed appointments root-cause and playbooks (PACT-ready)."},
+  {id:"r20", t:"Security Change-Log Review",             p:"£900",    c:"Risk",        i:"🔐", b:"What changed, who approved, how quickly can we prove it?"},
+  {id:"r21", t:"Email Template & Tone Review",           p:"£750",    c:"Operations",  i:"✉️", b:"Clarity, commitment devices, and regulator-friendly wording."},
+  {id:"r22", t:"Channel Intake Quality (Phone/Web)",     p:"£950",    c:"Operations",  i:"📞", b:"Capture fields, prompts, and evidential nudges that cut uphold."},
+  {id:"r23", t:"KPI & Alert Contract",                   p:"£1,000",  c:"Operations",  i:"🧩", b:"Data contracts for stable dashboards; alert fatigue prevention."},
+  {id:"r24", t:"Case Export Pack Fitness",               p:"£800",    c:"Compliance",  i:"📦", b:"Is your ‘pack’ complete, legible, and machine-verifiable?"},
+  {id:"r25", t:"CRM Lawful Basis & Notes",               p:"£1,050",  c:"Privacy/GDPR",i:"🧠", b:"Default-safe capture with purpose notes and retention clocks."},
+  {id:"r26", t:"Vulnerability Signals Review",           p:"£950",    c:"Risk",        i:"🫶", b:"Flag, weigh, and protect — without bias or noise."},
+  {id:"r27", t:"Backlog Triage & ETA Policy",            p:"£950",    c:"Operations",  i:"📊", b:"Fair ordering, ETA comms, and breach trade-offs."},
+  {id:"r28", t:"Search Console & Index Health",          p:"£750",    c:"Web/SEO",     i:"🧭", b:"Index coverage, crawl budget, and content intent map."},
+  {id:"r29", t:"Third-Party Tag Governance",             p:"£800",    c:"Web/SEO",     i:"🏷️", b:"Consent-respecting analytics and tag minimisation."},
+  {id:"r30", t:"Incident Post-Mortem Coaching",          p:"£1,150",  c:"Risk",        i:"🧯", b:"Blameless timelines that teach and prevent repeat errors."},
+  {id:"r31", t:"Board Readiness: Evidence Story",        p:"£1,400",  c:"Compliance",  i:"🏛️", b:"Turn raw activity into a credible, inspectable story."},
+];
 
-    <!-- Grid -->
-    <section id="rep-grid" class="grid" aria-live="polite"></section>
-
-    <!-- Bottom CTA -->
-    <section style="margin:32px 0 12px;padding:22px;border:1px solid #e7e7ea;border-radius:16px;background:#fafbff">
-      <h3 style="margin:0 0 6px">Unsure which report fits?</h3>
-      <p class="muted" style="margin:0 0 12px">Tell us your goal; we’ll recommend a focused, fast report with a fixed price.</p>
-      <a class="btn primary" href="contact.html?ref=reports">Talk to RBIS</a>
-      <a class="btn ghost" href="veridex-demo.html">Try Veridex demo</a>
-    </section>
-  </main>
-
-  <script type="module">
-    import { initReports } from './assets/reports.js';
-    initReports();
-  </script>
-  <script src="assets/rbis.nav.js" defer></script>
-</body>
-</html>
+const grid = document.getElementById('grid');
+const filters = document.getElementById('filters');
+const drawer = document.getElementById('drawer');
+const open = (r)=>{
+  document.getElementById('d-title').textContent = `${r.i} ${r.t}`;
+  document.getElementById('d-blurb').textContent = r.b;
+  document.getElementById('d-cat').textContent = r.c;
+  document.getElementById('d-price').textContent = r.p;
+  drawer.showModal();
+};
+let cat = 'All';
+function paint(){
+  grid.innerHTML = '';
+  (cat==='All'?REPORTS:REPORTS.filter(r=>r.c===cat)).forEach(r=>{
+    const el = document.createElement('article');
+    el.className='card';
+    el.innerHTML = `
+      <div class="icon">${r.i}</div>
+      <h3>${r.t}</h3>
+      <p>${r.b}</p>
+      <div class="meta">
+        <span>${r.p}</span>
+        <a href="#" class="btn-mini" data-id="${r.id}">View details</a>
+      </div>`;
+    grid.appendChild(el);
+  });
+  grid.querySelectorAll('.btn-mini').forEach(a=>{
+    a.onclick=(e)=>{e.preventDefault(); open(REPORTS.find(x=>x.id===a.dataset.id));};
+  });
+}
+function paintFilters(){
+  filters.innerHTML = '';
+  ['All',...CATS].forEach(c=>{
+    const b=document.createElement('button'); b.className='chip'+(c===cat?' active':''); b.textContent=c;
+    b.onclick=()=>{cat=c; paint(); paintFilters();}; filters.appendChild(b);
+  });
+}
+paintFilters(); paint();
+</script>
+</body></html>
