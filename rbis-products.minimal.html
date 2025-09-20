@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>RBIS • Minimal • RBIS</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            rbis: { DEFAULT: '#22d3ee', ink: '#0f172a' }
+          },
+          boxShadow: {
+            glow: "0 0 0 3px rgba(14,165,233,.25)"
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .card:hover{transform:translateY(-2px)}
+    .badge{border:1px solid rgb(148 163 184 / .25)}
+    .prose ul{list-style:disc;padding-left:1rem}
+  </style>
+</head>
+<body class="text-slate-100 bg-slate-950">
+  <!-- Top bar -->
+  <header class="sticky top-0 z-50 backdrop-blur bg-slate-950/70 border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="h-8 w-8 rounded-lg bg-gradient-to-br from-indigo-500/30 via-sky-500/30 to-emerald-500/30"></div>
+        <a href="#top" class="font-semibold tracking-tight">RBIS</a>
+        <span class="hidden md:inline text-xs text-slate-400 ml-2">Minimal UI, maximum signal.</span>
+      </div>
+      <nav class="hidden md:flex gap-5 text-sm">
+        <a href="#claimfix" class="hover:text-white text-slate-300">Claim-Fix-AI</a>
+        <a href="#omniassist" class="hover:text-white text-slate-300">OmniAssist</a>
+        <a href="#dashboard" class="hover:text-white text-slate-300">Dashboard</a>
+        <a href="#nextusone" class="hover:text-white text-slate-300">NextusOne CRM</a>
+        <a href="#sitesseo" class="hover:text-white text-slate-300">Custom Sites & SEO-AI</a>
+        <a href="#pact" class="hover:text-white text-slate-300">PACT Ledger</a>
+      </nav>
+      <button id="mode" class="text-xs px-3 py-1.5 rounded-md bg-white/5 border border-white/10 hover:bg-white/10">Toggle contrast</button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section id="top" class="relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-b from-indigo-500/30 via-sky-500/30 to-emerald-500/30 opacity-20"></div>
+    <div class="max-w-7xl mx-auto px-4 py-16 md:py-24 relative">
+      <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight">
+        RBIS Product Suite
+      </h1>
+      <p class="mt-4 text-lg md:text-xl text-slate-300 max-w-3xl">
+        Audit-ready software that makes compliance a default, not an afterthought. Built for housing providers who want fewer headaches, faster resolutions, and courtroom-calm documentation.
+      </p>
+      <div class="mt-6 flex flex-wrap gap-2">
+        <span class="badge rounded-full px-3 py-1 text-xs text-slate-300">GDPR • PECR • DPA • SRA • FCA • ASA • WCAG 2.2 AA</span>
+        <span class="badge rounded-full px-3 py-1 text-xs text-slate-300">Evidence-first architecture</span>
+        <span class="badge rounded-full px-3 py-1 text-xs text-slate-300">Configurable SLAs</span>
+      </div>
+      <div class="mt-10 grid grid-cols-1 md:grid-cols-3 gap-4">
+        <!-- Product tiles -->
+        <a href="#claimfix" class="card group rounded-2xl border border-white/10 p-5 bg-white/[.03] hover:shadow-glow transition">
+          <h3 class="font-semibold">Claim-Fix-AI</h3>
+          <p class="text-sm text-slate-400 mt-1">Turn tenant complaints into audit-ready cases.</p>
+          <p class="text-xs text-slate-500 mt-3 group-hover:text-slate-300">Loss cut at the source: clean intake → clean outcome.</p>
+        </a>
+        <a href="#omniassist" class="card group rounded-2xl border border-white/10 p-5 bg-white/[.03] hover:shadow-glow transition">
+          <h3 class="font-semibold">OmniAssist</h3>
+          <p class="text-sm text-slate-400 mt-1">AI colleague who never cuts corners.</p>
+          <p class="text-xs text-slate-500 mt-3 group-hover:text-slate-300">Every click logged. Every step reproducible.</p>
+        </a>
+        <a href="#dashboard" class="card group rounded-2xl border border-white/10 p-5 bg-white/[.03] hover:shadow-glow transition">
+          <h3 class="font-semibold">RBIS Dashboard</h3>
+          <p class="text-sm text-slate-400 mt-1">Ops lit up, not buried in spreadsheets.</p>
+          <p class="text-xs text-slate-500 mt-3 group-hover:text-slate-300">Signal over noise, evidence over anecdotes.</p>
+        </a>
+        <a href="#nextusone" class="card group rounded-2xl border border-white/10 p-5 bg-white/[.03] hover:shadow-glow transition">
+          <h3 class="font-semibold">NextusOne CRM</h3>
+          <p class="text-sm text-slate-400 mt-1">The CRM that speaks regulator + client.</p>
+          <p class="text-xs text-slate-500 mt-3 group-hover:text-slate-300">Retention clocks, lawful bases, consent trails.</p>
+        </a>
+        <a href="#sitesseo" class="card group rounded-2xl border border-white/10 p-5 bg-white/[.03] hover:shadow-glow transition">
+          <h3 class="font-semibold">Custom Sites & SEO-AI</h3>
+          <p class="text-sm text-slate-400 mt-1">Websites & SEO that survive audits.</p>
+          <p class="text-xs text-slate-500 mt-3 group-hover:text-slate-300">Fast, accessible, schema-rich, privacy-clean.</p>
+        </a>
+        <a href="#pact" class="card group rounded-2xl border border-white/10 p-5 bg-white/[.03] hover:shadow-glow transition">
+          <h3 class="font-semibold">PACT Ledger</h3>
+          <p class="text-sm text-slate-400 mt-1">Every promise made, kept, or called to account.</p>
+          <p class="text-xs text-slate-500 mt-3 group-hover:text-slate-300">Timers, nudges, evidence packs, settlement flows.</p>
+        </a>
+      </div>
+      <p class="mt-6 text-xs text-slate-500">Minimal variant: lean copy, crisp UI, fast to scan.</p>
+    </div>
+  </section>
+
+  <!-- Deep dives -->
+  <main class="max-w-7xl mx-auto px-4 pb-24 prose prose-invert">
+    <!-- Claim-Fix-AI -->
+    <section id="claimfix" class="mt-16">
+      <h2 class="text-2xl font-extrabold">Claim-Fix-AI — Turn tenant complaints into audit-ready cases</h2>
+      <p class="text-slate-300">An intake funnel for repairs and disrepair that captures the right facts the first time, assembles evidence, and produces Ombudsman-ready packs. Fewer upheld complaints, calmer outcomes.</p>
+      <div class="grid md:grid-cols-2 gap-6 mt-6">
+        <div class="rounded-xl border border-white/10 p-5 bg-white/[.03]">
+          <h3 class="font-semibold">Outcomes</h3>
+          <ul class="mt-2 text-slate-300">
+            <li>Clean chronology: events, dates, communications, media, readings.</li>
+            <li>Configurable SLA timers (e.g., 24/48/72h) with breach receipts.</li>
+            <li>Auto-generated case briefs and evidence bundles.</li>
+            <li>Lower uphold/exposure via standardised, fair handling.</li>
+          </ul>
+        </div>
+        <div class="rounded-xl border border-white/10 p-5 bg-white/[.03]">
+          <h3 class="font-semibold">Features</h3>
+          <ul class="mt-2 text-slate-300">
+            <li>Structured intake: address, tenancy, issue taxonomy, severity triage.</li>
+            <li>Evidence capture: photos/video, damp/mould indicators, device logs.</li>
+            <li>Template letters & comms with regulator-safe defaults.</li>
+            <li>Exportable “audit pack”: timeline, contacts, actions, outcomes.</li>
+          </ul>
+        </div>
+      </div>
+      <p class="mt-4 text-sm text-slate-400"><span class="px-2 py-1 rounded-md bg-white/5 border border-white/10">Psychology</span> Loss aversion (stop uphold risk), clarity bias (pre-structured forms), authority (built on policy defaults), and friction design (only the next best action).</p>
+      <div class="mt-4 flex flex-wrap gap-2">
+        <span class="badge rounded-full px-3 py-1 text-xs">Ombudsman-ready</span>
+        <span class="badge rounded-full px-3 py-1 text-xs">SLA receipts</span>
+        <span class="badge rounded-full px-3 py-1 text-xs">Evidence-first</span>
+      </div>
+    </section>
+
+    <!-- OmniAssist -->
+    <section id="omniassist" class="mt-16">
+      <h2 class="text-2xl font-extrabold">OmniAssist — AI colleague who never cuts corners</h2>
+      <p class="text-slate-300">Your guarded automation partner. Executes repetitive online tasks with verifiable steps, screenshots, and logs. Does the boring bits without creating new risks.</p>
+      <div class="grid md:grid-cols-2 gap-6 mt-6">
+        <div class="rounded-xl border border-white/10 p-5 bg-white/[.03]">
+          <h3 class="font-semibold">Outcomes</h3>
+          <ul class="mt-2">
+            <li>Hours saved on case chasing, portal uploads, status checks.</li>
+            <li>Full reproducibility: “how we did it” log for each run.</li>
+            <li>Guardrails: domain allowlists, PII redaction, rate limits.</li>
+          </ul>
+        </div>
+        <div class="rounded-xl border border-white/10 p-5 bg-white/[.03]">
+          <h3 class="font-semibold">Features</h3>
+          <ul class="mt-2">
+            <li>Workflow builder with approvals & human-in-the-loop holds.</li>
+            <li>Step proofs: screenshots, selectors, API traces, timestamps.</li>
+            <li>Comms actions: polite nudges, deadline reminders, receipts.</li>
+          </ul>
+        </div>
+      </div>
+      <p class="mt-4 text-sm text-slate-400"><span class="px-2 py-1 rounded-md bg-white/5 border border-white/10">Psychology</span> Reduce cognitive load (one-click runs), trust via transparency (step logs), and commitment devices (pre-scheduled nudges).</p>
+    </section>
+
+    <!-- RBIS Dashboard -->
+    <section id="dashboard" class="mt-16">
+      <h2 class="text-2xl font-extrabold">RBIS Dashboard — Ops lit up, not buried in spreadsheets</h2>
+      <p class="text-slate-300">One pane for repairs, complaints, and compliance. See breaches before they land, and wins as they happen.</p>
+      <div class="grid md:grid-cols-2 gap-6 mt-6">
+        <div class="rounded-xl border border-white/10 p-5 bg-white/[.03]">
+          <h3 class="font-semibold">Outcomes</h3>
+          <ul class="mt-2">
+            <li>SLA early-warning with “time-to-breach” badges.</li>
+            <li>Disrepair risk heatmaps: severity × duration × vulnerability.</li>
+            <li>Board-ready views and operational drilldowns.</li>
+          </ul>
+        </div>
+        <div class="rounded-xl border border-white/10 p-5 bg-white/[.03]">
+          <h3 class="font-semibold">Features</h3>
+          <ul class="mt-2">
+            <li>Metrics library: first-contact, fix time, uphold rate, comms cadence.</li>
+            <li>Export controls with auto-redaction options.</li>
+            <li>Role-based dashboards: Exec, Ops, Legal, Contractor.</li>
+          </ul>
+        </div>
+      </div>
+      <p class="mt-4 text-sm text-slate-400"><span class="px-2 py-1 rounded-md bg-white/5 border border-white/10">Psychology</span> Salience (breach countdowns), progress feedback (green paths), and social proof (team scorecards without naming/shaming).</p>
+    </section>
+
+    <!-- NextusOne CRM -->
+    <section id="nextusone" class="mt-16">
+      <h2 class="text-2xl font-extrabold">NextusOne CRM — The CRM that speaks regulator + client</h2>
+      <p class="text-slate-300">All the usual CRM power, plus compliance overlays that stop risky habits: lawful basis prompts, retention clocks, consent trails, and DSR tooling.</p>
+      <div class="grid md:grid-cols-2 gap-6 mt-6">
+        <div class="rounded-xl border border-white/10 p-5 bg-white/[.03]">
+          <h3 class="font-semibold">Overlays</h3>
+          <ul class="mt-2">
+            <li>Lawful-basis selector with purpose notes.</li>
+            <li>Retention schedules and auto-review tasks.</li>
+            <li>Consent capture, preference centres, PECR guards.</li>
+          </ul>
+        </div>
+        <div class="rounded-xl border border-white/10 p-5 bg-white/[.03]">
+          <h3 class="font-semibold">Safety by default</h3>
+          <ul class="mt-2">
+            <li>Role-based views and minimum-necessary data.</li>
+            <li>Evidence trails: who saw what, when, and why.</li>
+            <li>DSR workflows: access, rectification, erasure with receipts.</li>
+          </ul>
+        </div>
+      </div>
+      <p class="mt-4 text-sm text-slate-400"><span class="px-2 py-1 rounded-md bg-white/5 border border-white/10">Psychology</span> Default effect (safe presets), pre-commitment (retention timers), and trust badges (clear data handling).</p>
+    </section>
+
+    <!-- Custom Sites & SEO-AI -->
+    <section id="sitesseo" class="mt-16">
+      <h2 class="text-2xl font-extrabold">Custom Sites & SEO-AI — Websites & SEO that survive audits</h2>
+      <p class="text-slate-300">Fast, accessible sites with privacy-clean analytics and SEO that won’t melt under scrutiny. Speed, structure, and substance.</p>
+      <div class="grid md:grid-cols-2 gap-6 mt-6">
+        <div class="rounded-xl border border-white/10 p-5 bg-white/[.03]">
+          <h3 class="font-semibold">Delivery</h3>
+          <ul class="mt-2">
+            <li>Core Web Vitals tracked; WCAG 2.2 AA patterns baked-in.</li>
+            <li>Schema, sitemaps, robots, and crawl budget sanity.</li>
+            <li>Consent-respecting analytics; zero-dark-pattern UX.</li>
+          </ul>
+        </div>
+        <div class="rounded-xl border border-white/10 p-5 bg-white/[.03]">
+          <h3 class="font-semibold">Content engine</h3>
+          <ul class="mt-2">
+            <li>Topic maps and entity coverage for durable rankings.</li>
+            <li>Editorial guardrails: accuracy, sources, review cadence.</li>
+            <li>Change logs for audit trails (what changed, when, why).</li>
+          </ul>
+        </div>
+      </div>
+      <p class="mt-4 text-sm text-slate-400"><span class="px-2 py-1 rounded-md bg-white/5 border border-white/10">Psychology</span> Clarity (plain-English CTAs), credibility (visible standards), and momentum (publish -> measure -> iterate loop).</p>
+    </section>
+
+    <!-- PACT Ledger -->
+    <section id="pact" class="mt-16">
+      <h2 class="text-2xl font-extrabold">PACT Ledger — Every promise made, kept, or called to account</h2>
+      <p class="text-slate-300">Turn commitments into trackable objects with timers, nudges, and evidence. When things slip, the ledger shows exactly what happened.</p>
+      <div class="grid md:grid-cols-2 gap-6 mt-6">
+        <div class="rounded-xl border border-white/10 p-5 bg-white/[.03]">
+          <h3 class="font-semibold">Objects & flows</h3>
+          <ul class="mt-2">
+            <li>Promise objects with terms, parties, due dates, remedies.</li>
+            <li>Timers + nudges + escalation ladders.</li>
+            <li>Settlement playbooks and exportable packs.</li>
+          </ul>
+        </div>
+        <div class="rounded-xl border border-white/10 p-5 bg-white/[.03]">
+          <h3 class="font-semibold">Assurance</h3>
+          <ul class="mt-2">
+            <li>Immutable event trails and signed receipts.</li>
+            <li>Fairness prompts (proportionality, reasonableness).</li>
+            <li>Open-standard exports for dispute resolution.</li>
+          </ul>
+        </div>
+      </div>
+      <p class="mt-4 text-sm text-slate-400"><span class="px-2 py-1 rounded-md bg-white/5 border border-white/10">Psychology</span> Commitment & consistency (clear promises), reciprocity (mutual duties), and loss aversion (visible risk of breach).</p>
+    </section>
+
+    <!-- CTAs -->
+    <section class="mt-20">
+      <div class="rounded-2xl border border-white/10 p-6 bg-gradient-to-br from-indigo-500/30 via-sky-500/30 to-emerald-500/30">
+        <h3 class="text-xl font-bold">Pilot with guardrails</h3>
+        <p class="text-slate-100/90">Start with a scoped, evidence-first pilot. Keep what works, discard what doesn’t. Documentation included by default.</p>
+        <div class="mt-4 flex flex-wrap gap-3">
+          <a href="mailto:hello@rbis.example" class="px-4 py-2 rounded-lg bg-black/30 border border-white/20 hover:bg-black/40">Email</a>
+          <a href="#" class="px-4 py-2 rounded-lg bg-black/30 border border-white/20 hover:bg-black/40">Book a walkthrough</a>
+          <span class="text-xs text-white/80">No trapdoors. You own your data.</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-white/10">
+    <div class="max-w-7xl mx-auto px-4 py-8 text-xs text-slate-400">
+      © RBIS • Built audit-first. Standards: GDPR, PECR, DPA, SRA, FCA, ASA, WCAG 2.2 AA.
+    </div>
+  </footer>
+
+  <script>
+    const btn = document.getElementById('mode');
+    btn?.addEventListener('click', () => {
+      document.body.classList.toggle('contrast');
+      document.documentElement.classList.toggle('contrast');
+    })
+  </script>
+</body>
+</html>

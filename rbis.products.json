@@ -1,0 +1,175 @@
+{
+  "products": [
+    {
+      "name": "Claim-Fix-AI",
+      "tagline": "Turn tenant complaints into audit-ready cases",
+      "psych": ["Loss aversion: shrink uphold risk", "Clarity bias: structured intake", "Authority: policy-default templates"],
+      "problem": "Repairs & disrepair complaints sprawl across emails, phones, portals; missing chronology elevates uphold risk.",
+      "users": ["Contact centre", "Repairs ops", "Legal/Complaints", "Contractors"],
+      "capabilities": [
+        "Structured intake (address, tenancy, taxonomy, severity) with evidential prompts",
+        "SLA timers with breach receipts and automatic chronology updates",
+        "Evidence capture (photos/video, damp/mould readings, reports)",
+        "One-click ‘Audit Pack’ (timeline, actions, comms, outcomes)"
+      ],
+      "dataModel": [
+        "Case {id, tenancy, property(Uprn), issue(type, severity), reportedAt}",
+        "Event {timestamp, actor, channel, payloadHash}",
+        "Evidence {type, uri, sha256, capturedBy}",
+        "SLA {triage, deadlines[], breaches[]}"
+      ],
+      "workflows": [
+        "Triage → schedule → inspect → remediate → follow-up → close",
+        "Breach detection → escalation ladder → apology/compensation review",
+        "Export pack → Ombudsman/board pack ready"
+      ],
+      "integrations": ["Email/SMS", "Contractor portals", "Asset systems (UPRN)", "Document store (R2/S3)"],
+      "security": ["PII minimisation", "Role-based views", "Immutable event hash chain", "Redaction on export"],
+      "kpis": ["Uphold rate ↓", "Time-to-fix ↓", "SLA breach rate ↓", "Evidence completeness ↑"],
+      "pricing": ["Starter: intake + packs", "Pro: timers + escalations", "Enterprise: integrations + SSO"],
+      "implementation": ["Week 1: intake + timers", "Week 2: evidence + exports", "Week 3: integrations + training"],
+      "risks": ["Low media quality → guided capture", "Data silos → CSV/API importers"],
+      "demos": ["Upload 3 photos, generate timeline, download pack in 30s"]
+    },
+    {
+      "name": "OmniAssist",
+      "tagline": "AI colleague who never cuts corners",
+      "psych": ["Cognitive offload", "Trust via transparency", "Commitment devices (scheduled nudges)"],
+      "problem": "Repetitive online tasks soak hours and create inconsistency; regulators hate invisible automation.",
+      "users": ["Ops assistants", "Case handlers", "Compliance"],
+      "capabilities": [
+        "Workflow builder with approvals and human-in-the-loop holds",
+        "Step proofs: screenshots, selectors, API traces, timestamps",
+        "Domain allowlists, PII redaction, rate limits"
+      ],
+      "dataModel": [
+        "Run {id, workflowId, startedAt, steps[], artifacts[]}",
+        "Step {action, selector, status, proofUri}",
+        "Policy {allowlist[], piiRules[], limits}"
+      ],
+      "workflows": [
+        "Portal scrape → CSV normalise → CRM update",
+        "Contractor chase → polite nudge → receipt log"
+      ],
+      "integrations": ["Headless browser", "CRM API", "Email/SMS"],
+      "security": ["Signed run receipts", "Operator attribution", "Revocable secrets"],
+      "kpis": ["Hours saved ↑", "Error rate ↓", "Proof coverage ↑"],
+      "pricing": ["Per-seat or per-run", "Enterprise volume bundles"],
+      "implementation": ["Day 1: top 2 workflows", "Week 1: approvals + redaction", "Week 2: scale out"],
+      "risks": ["Selector drift → visual anchors", "Blocked sites → allowlist governance"],
+      "demos": ["Show a run with proofs and a downloadable logbook"]
+    },
+    {
+      "name": "RBIS Dashboard",
+      "tagline": "Ops lit up, not buried in spreadsheets",
+      "psych": ["Salience (breach countdowns)", "Progress feedback", "Social proof without shame"],
+      "problem": "Leaders see lagging metrics and anecdote wars; nobody sees breaches early.",
+      "users": ["Exec", "Ops", "Legal", "Contractors"],
+      "capabilities": [
+        "SLA early-warning with time-to-breach badges",
+        "Disrepair risk heatmaps (severity × duration × vulnerability)",
+        "Board views + operational drilldowns"
+      ],
+      "dataModel": [
+        "KPI {name, formula, window}",
+        "Alert {id, severity, etaToBreach}",
+        "View {role, widgets[]}"
+      ],
+      "workflows": [
+        "Ingest → normalise → score → alert → evidence link",
+        "One-click board PDF with appendix links"
+      ],
+      "integrations": ["NextusOne CRM", "Claim-Fix-AI", "Sheets/CSV", "Email"],
+      "security": ["Role scopes", "Export redaction", "Access logging"],
+      "kpis": ["Breach count ↓", "Mean time-to-resolve ↓", "Board queries answered ↑"],
+      "pricing": ["Per-tenant", "Add-on widgets enterprise pack"],
+      "implementation": ["Week 1: ingest + base KPIs", "Week 2: alerts + exports", "Week 3: role views"],
+      "risks": ["Garbage in → data contracts", "Alert fatigue → thresholds"],
+      "demos": ["Simulate 5 breaches, watch countdowns move"]
+    },
+    {
+      "name": "NextusOne CRM",
+      "tagline": "The CRM that speaks regulator + client",
+      "psych": ["Default effect (safe presets)", "Trust badges", "Pre-commitment (retention timers)"],
+      "problem": "CRMs ignore GDPR/PECR realities; teams invent risky workarounds.",
+      "users": ["CS teams", "Marketing (compliant)", "Legal"],
+      "capabilities": [
+        "Lawful-basis selector + purpose notes at point of capture",
+        "Retention schedules with auto-review tasks",
+        "Consent capture, preference centre, PECR guards",
+        "DSR workflows: access/rectify/erase with receipts"
+      ],
+      "dataModel": [
+        "Person {id, lawfulBasis, retentionClock, consents[]}",
+        "DSR {type, requester, dueBy, artifacts[]}"
+      ],
+      "workflows": [
+        "Contact add → lawful basis prompt → retention start",
+        "DSR ticket → evidence gather → deadline receipts"
+      ],
+      "integrations": ["Email/SMS", "Web forms", "Identity providers (SSO)"],
+      "security": ["Field-level access", "Minimum-necessary data views", "DSR export hashes"],
+      "kpis": ["Unlawful sends ↓", "DSR on-time ↑", "Data minimisation ↑"],
+      "pricing": ["Seat-based + compliance pack"],
+      "implementation": ["Week 1: model + basis prompts", "Week 2: DSR flows", "Week 3: imports + SSO"],
+      "risks": ["Legacy imports → mapping tool", "Staff habits → nudges & defaults"],
+      "demos": ["Add contact, run erasure DSR, show receipts"]
+    },
+    {
+      "name": "Custom Sites & SEO-AI",
+      "tagline": "Websites & SEO that survive audits",
+      "psych": ["Clarity", "Credibility (visible standards)", "Momentum (ship-measure-iterate)"],
+      "problem": "Fancy sites fail audits: slow, inaccessible, privacy-messy; SEO collapses on review.",
+      "users": ["Marketing", "Compliance", "Web teams"],
+      "capabilities": [
+        "Core Web Vitals tracking; WCAG 2.2 AA patterns baked-in",
+        "Schema, sitemaps, robots, crawl budget sanity",
+        "Consent-respecting analytics; zero dark patterns",
+        "Topic maps + entity coverage + editorial guardrails"
+      ],
+      "dataModel": [
+        "Page {url, vitals, a11yFindings[]}",
+        "Content {entityGraph, sources, reviewCadence}"
+      ],
+      "workflows": [
+        "Audit → fixes → validate → monitor",
+        "Topic plan → drafts → review → publish → log"
+      ],
+      "integrations": ["Static hosts", "Search Console", "Analytics (privacy-clean)"],
+      "security": ["Cookie minimisation", "Tag governance", "Change logs"],
+      "kpis": ["CLS/LCP/INP ↑", "Accessibility issues ↓", "Indexed pages ↑", "Organic conversions ↑"],
+      "pricing": ["Fixed-fee build + retainers"],
+      "implementation": ["Week 1: audit & plan", "Week 2: build & QA", "Week 3: ship & monitor"],
+      "risks": ["Plugin bloat → minimal stack", "Link rot → link checks"],
+      "demos": ["Render lighthouse-lite panel, show a11y checks"]
+    },
+    {
+      "name": "PACT Ledger",
+      "tagline": "Every promise made, kept, or called to account",
+      "psych": ["Commitment & consistency", "Reciprocity", "Loss aversion"],
+      "problem": "Promises live in inboxes and memory; disputes devolve into he-said-she-said.",
+      "users": ["Suppliers", "Legal", "Ops", "Finance"],
+      "capabilities": [
+        "Promise objects with terms, parties, due dates, remedies",
+        "Timers + nudges + escalation ladders",
+        "Settlement playbooks and exportable evidence packs"
+      ],
+      "dataModel": [
+        "Promise {id, terms, parties[], due, remedy}",
+        "Event {ts, actor, action, artifactHash}",
+        "Settlement {offers[], agreements[], receipts[]}"
+      ],
+      "workflows": [
+        "Capture → confirm → monitor → escalate → settle",
+        "Import from email/WhatsApp → objectise → track"
+      ],
+      "integrations": ["Email ingestion", "CRM", "Doc store"],
+      "security": ["Immutable event trail", "Signature receipts", "Open-standard exports"],
+      "kpis": ["Late promises ↓", "Time-to-settle ↓", "Evidence completeness ↑"],
+      "pricing": ["Per-ledger volume", "Enterprise SSO + retention controls"],
+      "implementation": ["Week 1: capture + objects", "Week 2: timers + nudges", "Week 3: settlement + exports"],
+      "risks": ["Ambiguous terms → templates", "Stakeholder buy-in → quick wins"],
+      "demos": ["Ingest email thread, mint a Promise, show countdown"]
+    }
+  ]
+}

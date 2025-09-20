@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>RBIS Surfaces</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-950 text-slate-100">
+  <div class="max-w-4xl mx-auto px-4 py-12">
+    <h1 class="text-3xl font-extrabold">RBIS • One JSON → Many Surfaces</h1>
+    <p class="text-slate-300 mt-2">Edit <code class="text-xs bg-white/10 px-2 py-1 rounded">rbis.products.json</code>. Everything else reads it.</p>
+    <ul class="mt-6 space-y-2 list-disc pl-5">
+      <li><a class="text-sky-300 hover:underline" href="deep.html">Deep Product Book</a></li>
+      <li><a class="text-sky-300 hover:underline" href="landing.minimal.html">Landing — Minimal</a></li>
+      <li><a class="text-sky-300 hover:underline" href="landing.story.html">Landing — Story</a></li>
+      <li><a class="text-sky-300 hover:underline" href="landing.enterprise.html">Landing — Enterprise</a></li>
+      <li><a class="text-sky-300 hover:underline" href="embed/product.html?name=Claim-Fix-AI">Embed: Single Product (param)</a></li>
+    </ul>
+    <h2 class="text-xl font-bold mt-8">Markdown (for Notion/docs)</h2>
+    <div id="mdLinks" class="mt-2 text-slate-300 text-sm">Run script once to generate .md files.</div>
+  </div>
+  <script>
+    fetch('markdown/').then(()=>{}).catch(()=>{});
+  </script>
+</body>
+</html>

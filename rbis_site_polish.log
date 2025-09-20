@@ -1,0 +1,175 @@
++ set -euo pipefail
++ '[' -f package.json ']'
++ log 'A) Host-based rewrite so hdr.rbisintelligence.com → /hdr'
++ printf '\n\033[1;34m▶ %s\033[0m\n' 'A) Host-based rewrite so hdr.rbisintelligence.com → /hdr'
+
+[1;34m▶ A) Host-based rewrite so hdr.rbisintelligence.com → /hdr[0m
++ jq -n '
+{
+  version: 2,
+  framework: "nextjs",
+  crons: [{ path: "/api/ping-sitemap", schedule: "0 3 * * *" }],
+  headers: [
+    { source: "/(.*)", headers: [
+      { key: "Strict-Transport-Security", value: "max-age=63072000; includeSubDomains; preload" },
+      { key: "X-Content-Type-Options", value: "nosniff" },
+      { key: "X-Frame-Options", value: "DENY" },
+      { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" }
+    ]}
+  ],
+  rewrites: [
+    {
+      "source": "/",
+      "has": [{ "type": "host", "value": "hdr.rbisintelligence.com" }],
+      "destination": "/hdr"
+    }
+  ],
+  ignoreCommand: "echo prebuilt by Next"
+}'
++ log 'B) Global header (main site) with proper nav'
++ printf '\n\033[1;34m▶ %s\033[0m\n' 'B) Global header (main site) with proper nav'
+
+[1;34m▶ B) Global header (main site) with proper nav[0m
++ mkdir -p components
++ cat
++ log 'C) Ensure Root Layout uses the SiteHeader'
++ printf '\n\033[1;34m▶ %s\033[0m\n' 'C) Ensure Root Layout uses the SiteHeader'
+
+[1;34m▶ C) Ensure Root Layout uses the SiteHeader[0m
++ mkdir -p app
++ cat
++ log 'D) Services & Reports pages (so nav isn’t dead)'
++ printf '\n\033[1;34m▶ %s\033[0m\n' 'D) Services & Reports pages (so nav isn’t dead)'
+
+[1;34m▶ D) Services & Reports pages (so nav isn’t dead)[0m
++ mkdir -p app/services app/reports
++ cat
++ cat
++ log 'E) HDR layout + header (dedicated)'
++ printf '\n\033[1;34m▶ %s\033[0m\n' 'E) HDR layout + header (dedicated)'
+
+[1;34m▶ E) HDR layout + header (dedicated)[0m
++ mkdir -p components/hdr app/hdr app/hdr/help
++ cat
++ cat
++ log 'F) HDR landing that applies Fogg + Hick'
++ printf '\n\033[1;34m▶ %s\033[0m\n' 'F) HDR landing that applies Fogg + Hick'
+
+[1;34m▶ F) HDR landing that applies Fogg + Hick[0m
++ cat
++ cat
++ log 'G) Ensure Tailwind utilities exist (btn, card, container)'
++ printf '\n\033[1;34m▶ %s\033[0m\n' 'G) Ensure Tailwind utilities exist (btn, card, container)'
+
+[1;34m▶ G) Ensure Tailwind utilities exist (btn, card, container)[0m
++ mkdir -p app
++ grep -q '@import "tailwindcss"' app/globals.css
++ log 'H) Remove any old conflicting Pages Router HDR or Veridex pages'
++ printf '\n\033[1;34m▶ %s\033[0m\n' 'H) Remove any old conflicting Pages Router HDR or Veridex pages'
+
+[1;34m▶ H) Remove any old conflicting Pages Router HDR or Veridex pages[0m
++ mkdir -p legacy_pages
++ '[' -f pages/hdr.tsx ']'
++ true
++ '[' -d pages/hdr ']'
++ true
++ '[' -f pages/veridex.tsx ']'
++ true
++ '[' -f app/veridex/page.tsx ']'
++ git rm -f app/veridex/page.tsx
+rm 'app/veridex/page.tsx'
++ '[' -d app/veridex ']'
++ true
++ log 'I) Build'
++ printf '\n\033[1;34m▶ %s\033[0m\n' 'I) Build'
+
+[1;34m▶ I) Build[0m
++ npm run build
+
+> rbis-site@0.1.0 build
+> next build
+
+   ▲ Next.js 15.5.3
+   - Environments: .env.local
+
+   Creating an optimized production build ...
+ ✓ Compiled successfully in 11.6s
+   Linting and checking validity of types ...
+   Collecting page data ...
+ ⚠ Using edge runtime on a page currently disables static generation for that page
+   Generating static pages (0/23) ...
+   Generating static pages (5/23) 
+   Generating static pages (11/23) 
+   Generating static pages (17/23) 
+ ✓ Generating static pages (23/23)
+   Finalizing page optimization ...
+   Collecting build traces ...
+
+Route (app)                                  Size  First Load JS
+┌ ○ /                                       647 B         106 kB
+├ ○ /_not-found                             991 B         103 kB
+├ ƒ /api/careers                            157 B         102 kB
+├ ƒ /api/dashboard                          157 B         102 kB
+├ ƒ /api/ping-sitemap                       157 B         102 kB
+├ ƒ /api/veridex                            157 B         102 kB
+├ ƒ /api/veridex/start                      157 B         102 kB
+├ ○ /hdr                                    164 B         105 kB
+├ ○ /hdr/help                               157 B         102 kB
+├ ○ /products                               164 B         105 kB
+├ ○ /products/claim-fix-ai                  157 B         102 kB
+├ ○ /products/dashboard                     157 B         102 kB
+├ ○ /products/nextusone                     157 B         102 kB
+├ ○ /products/omniassist                    157 B         102 kB
+├ ○ /products/pact-ledger                   157 B         102 kB
+├ ○ /products/websites                      157 B         102 kB
+├ ○ /reports                                157 B         102 kB
+└ ○ /services                               157 B         102 kB
++ First Load JS shared by all              102 kB
+  ├ chunks/255-40634877ae3e8e9d.js        45.7 kB
+  ├ chunks/4bd1b696-c023c6e3521b1417.js   54.2 kB
+  └ other shared chunks (total)           1.92 kB
+
+Route (pages)                                Size  First Load JS
+┌ ○ /404                                    340 B        99.7 kB
+├ ○ /500                                    369 B        99.8 kB
+├ ○ /contact                                332 B        99.7 kB
+├ ○ /dashboard                            1.99 kB         101 kB
+├ ○ /pact-ledger                            533 B        99.9 kB
+├ ○ /privacy                                600 B         100 kB
+├ ○ /solutions                            6.44 kB         106 kB
+└ ○ /trust-centre                         1.23 kB         101 kB
++ First Load JS shared by all             99.4 kB
+  ├ chunks/framework-b1e5f14688f9ffe6.js  57.7 kB
+  ├ chunks/main-60f6e8e3665be349.js       39.8 kB
+  └ other shared chunks (total)           1.89 kB
+
+○  (Static)   prerendered as static content
+ƒ  (Dynamic)  server-rendered on demand
+
+
+> rbis-site@0.1.0 postbuild
+> next-sitemap && node ops/health/ping_sitemaps.mjs
+
+✨ [next-sitemap] Loading next-sitemap config: file:///workspaces/rbisuk.github.io/next-sitemap.config.js
+✅ [next-sitemap] Generation completed
+┌───────────────┬────────┐
+│ (index)       │ Values │
+├───────────────┼────────┤
+│ indexSitemaps │ 1      │
+│ sitemaps      │ 1      │
+└───────────────┴────────┘
+-----------------------------------------------------
+ SITEMAP INDICES 
+-----------------------------------------------------
+
+   ○ https://your-domain.example/sitemap.xml
+
+
+-----------------------------------------------------
+ SITEMAPS 
+-----------------------------------------------------
+
+   ○ https://your-domain.example/sitemap-0.xml
+
+
+Sitemap pinged: https://www.google.com/ping?sitemap=https%3A%2F%2Fyour-domain.example%2Fsitemap.xml | https://www.bing.com/ping?sitemap=https%3A%2F%2Fyour-domain.example%2Fsitemap.xml
