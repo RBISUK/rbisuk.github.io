@@ -1,1 +1,0 @@
-<main><section id="reports-root" class="container section"><h1>Reports</h1><div class="filterbar"></div><div id="reports" class="grid cols-3"></div><div id="reports-empty" class="empty hidden">No reports match your filters.</div></section></main>
