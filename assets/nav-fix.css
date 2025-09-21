@@ -62,3 +62,10 @@ details[open] .rbis-drawer{
   .rbis-nav-row a, header nav ul a{ padding:.25rem .5rem; border-radius:.5rem }
   .rbis-nav-row a[aria-current="page"], header nav ul a[aria-current="page"]{ background:#F3F4F6 }
 }
+/* eSign badge */
+.chip-esign{display:inline-flex;align-items:center;gap:.4rem;background:#EEF2FF;color:#3730A3;
+  border:1px solid #C7D2FE;border-radius:999px;padding:.15rem .5rem;font-size:.8rem;font-weight:600}
+.chip-esign svg{width:14px;height:14px}
+.btn-esign{display:inline-flex;align-items:center;gap:.5rem;background:#111;color:#fff;
+  padding:.6rem .9rem;border-radius:.6rem;text-decoration:none}
+.btn-esign:hover{background:#374151}
