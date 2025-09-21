@@ -1,27 +1,12 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 <title>RBIS Reports</title>
 <id>https://www.rbisintelligence.com/reports.xml</id>
-<updated>2025-09-21T17:45:30Z</updated>
-<entry>
-  <title>Fraud Intelligence Report</title>
-  <link href="https://www.rbisintelligence.com/reports.html#fraud-intel" />
-  <id>https://www.rbisintelligence.com/reports.html#fraud-intel</id>
-  <updated>2025-09-21T17:45:30Z</updated>
-  <summary>Entity &amp; network-level fraud patterns with behavioural markers.</summary>
-</entry>
-<entry>
-  <title>Claims Pattern Analysis</title>
-  <link href="https://www.rbisintelligence.com/reports.html#claims-trends" />
-  <id>https://www.rbisintelligence.com/reports.html#claims-trends</id>
-  <updated>2025-09-21T17:45:30Z</updated>
-  <summary>Outlier detection across cohorts and seasonality.</summary>
-</entry>
-<entry>
-  <title>Trust &amp; Safety Risk Audit</title>
-  <link href="https://www.rbisintelligence.com/reports.html#trust-audit" />
-  <id>https://www.rbisintelligence.com/reports.html#trust-audit</id>
-  <updated>2025-09-21T17:45:30Z</updated>
-  <summary>Abuse taxonomy coverage vs. policy; exploitability review.</summary>
-</entry>
+<updated>2025-09-21T18:13:28.568260+00:00</updated>
+<entry><title>Report: anchors.csv</title><link href="https://www.rbisintelligence.com/reports/anchors.csv"/><id>https://www.rbisintelligence.com/reports/anchors.csv</id><updated>2025-09-21T18:13:28.568260+00:00</updated><summary>Latest anchors.csv</summary></entry>
+<entry><title>Report: dns_records.txt</title><link href="https://www.rbisintelligence.com/reports/dns_records.txt"/><id>https://www.rbisintelligence.com/reports/dns_records.txt</id><updated>2025-09-21T18:13:28.568260+00:00</updated><summary>Latest dns_records.txt</summary></entry>
+<entry><title>Report: dupes.txt</title><link href="https://www.rbisintelligence.com/reports/dupes.txt"/><id>https://www.rbisintelligence.com/reports/dupes.txt</id><updated>2025-09-21T18:13:28.568260+00:00</updated><summary>Latest dupes.txt</summary></entry>
+<entry><title>Report: jsonld_audit.csv</title><link href="https://www.rbisintelligence.com/reports/jsonld_audit.csv"/><id>https://www.rbisintelligence.com/reports/jsonld_audit.csv</id><updated>2025-09-21T18:13:28.568260+00:00</updated><summary>Latest jsonld_audit.csv</summary></entry>
+<entry><title>Report: meta_audit.csv</title><link href="https://www.rbisintelligence.com/reports/meta_audit.csv"/><id>https://www.rbisintelligence.com/reports/meta_audit.csv</id><updated>2025-09-21T18:13:28.568260+00:00</updated><summary>Latest meta_audit.csv</summary></entry>
+<entry><title>Report: og_audit.csv</title><link href="https://www.rbisintelligence.com/reports/og_audit.csv"/><id>https://www.rbisintelligence.com/reports/og_audit.csv</id><updated>2025-09-21T18:13:28.568260+00:00</updated><summary>Latest og_audit.csv</summary></entry>
 </feed>
