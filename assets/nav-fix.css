@@ -1,0 +1,31 @@
+/* RBIS nav rescue — overrides only (keeps your brand styles) */
+
+/* Make the site header sticky and clearly separated from the hero */
+body > header{
+  position:sticky; top:0; z-index:50;
+  background:rgba(255,255,255,.88);
+  -webkit-backdrop-filter:saturate(180%) blur(8px);
+  backdrop-filter:saturate(180%) blur(8px);
+  border-bottom:1px solid rgba(0,0,0,.06);
+}
+
+/* Remove bullets/indent and lay out items in a tidy row (wrap on small) */
+header nav ul, nav ul{
+  list-style:none; margin:0; padding:0;
+  display:flex; gap:.75rem; align-items:center; flex-wrap:wrap;
+}
+
+/* Normalize LI spacing */
+header nav li, nav li{ margin:0; }
+
+/* Compact the “pills” so they don’t dominate on iPhone */
+header nav a, nav a{
+  text-decoration:none; display:inline-block;
+  padding:.40rem .70rem; border-radius:.60rem; line-height:1.2;
+}
+@media (max-width:640px){
+  header nav a, nav a{ padding:.38rem .62rem; font-weight:600; }
+}
+
+/* Keep anchored sections from tucking under the sticky header */
+:target{ scroll-margin-top:72px; }
