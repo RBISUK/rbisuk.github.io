@@ -1,6 +1,5 @@
 <!doctype html><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>RBIS • Solutions</title><link rel="stylesheet" href="assets/rbis.min.css"><body>
-<main>
 <div class="nav"><div class="container bar">
   <div class="brand"><div class="logo"></div> <span>RBIS Intelligence</span></div>
   <button class="mobile btn" id="nav-toggle" aria-label="Toggle menu">☰ Menu</button>
@@ -23,5 +22,4 @@
   </div>
 </div>
 <footer class="footer">© RBIS Intelligence.</footer><script src="assets/rbis.js" defer></script>  <script src="assets/rbis.nav.js" defer></script>
-</main>
 </body>
