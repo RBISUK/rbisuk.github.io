@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!-- RBIS:STYLE:START -->
+<link rel="stylesheet" href="/assets/rbis.css">
+<!-- RBIS:STYLE:END -->
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Veridex AI Funnel — Demo</title>
+  <link rel="stylesheet" href="assets/rbis.min.css">
+<!-- RBIS:SCRIPTS:START -->
+<script src="/assets/rbis.js" defer></script>
+<!-- RBIS:SCRIPTS:END -->
+</head>
+<body class="light">
+  <div class="nav">
+    <div class="container bar">
+      <div class="brand"><div class="logo"></div><span>RBIS Intelligence</span></div>
+      <ul>
+        <li><a class="link" href="index.html">Home</a></li>
+        <li><a class="link" href="products.html">Products</a></li>
+        <li><a class="link" href="solutions.html">Solutions</a></li>
+        <li><a class="link" href="websites.html">Websites</a></li>
+        <li><a class="link" href="reports.html">Professional Reports</a></li>
+        <li><a class="link" href="trust.html">Trust Centre</a></li>
+        <li><a class="link" href="about.html">About</a></li>
+        <li><a class="link" href="dashboard.html">Dashboard</a></li>
+      </ul>
+      <div class="cta"><a class="btn primary" href="contact.html">Contact Us</a></div>
+    </div>
+  </div>
+
+  <main class="wrap">
+    <header style="margin:24px 0 12px">
+      <h1 style="margin:0;font-size:34px;letter-spacing:-.02em">Veridex AI Funnel — Demo</h1>
+      <p class="muted" style="max-width:70ch;margin:.6rem 0 0">
+        A smart, industry-aware intake to capture the right details first time.
+      </p>
+    </header>
+
+    <section class="form-wrap">
+      <form id="veridex-demo" class="form" autocomplete="on" novalidate>
+        <h2>Try the demo</h2>
+        <div class="row">
+          <div class="field"><label for="name">Name</label><input id="name" name="name" required></div>
+          <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" required></div>
+        </div>
+        <div class="row">
+          <div class="field">
+            <label for="industry">Industry</label>
+            <select id="industry" name="industry">
+              <option>Housing Provider</option>
+              <option>Local Authority</option>
+              <option>Legal Services</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="usecase">Use case</label>
+            <select id="usecase" name="usecase">
+              <option>Disrepair Intake</option>
+              <option>Complaint Routing</option>
+              <option>Evidence Collection</option>
+              <option>Portal Chasing</option>
+            </select>
+          </div>
+        </div>
+        <div class="field"><label for="notes">Notes</label><textarea id="notes" name="notes" placeholder="What would you like Veridex to handle?"></textarea></div>
+
+        <!-- Hidden context -->
+        <input type="hidden" name="page" id="page">
+        <input type="hidden" name="ip" id="ip">
+        <input type="hidden" name="user_agent" id="user_agent">
+        <input type="text" name="website" id="website" style="display:none">
+
+        <div class="row">
+          <button class="btn primary" type="submit">Request demo</button>
+          <a class="btn ghost" href="products.html">See all products</a>
+        </div>
+        <div id="veridex-status" class="status" aria-live="polite"></div>
+      </form>
+    </section>
+  </main>
+
+  <script>
+  (async function(){
+    const set=(id,v)=>{const el=document.getElementById(id); if(el) el.value=v||"";}
+    set("page", location.pathname + location.search);
+    set("user_agent", navigator.userAgent);
+    try{ const r=await fetch("https://api.ipify.org?format=json"); const j=await r.json(); set("ip", j.ip);}catch{}
+
+    const form=document.getElementById("veridex-demo");
+    const status=document.getElementById("veridex-status");
+
+    form.addEventListener("submit", async (e)=>{
+      e.preventDefault();
+      status.className="status"; status.textContent="Sending…";
+      const data = Object.fromEntries(new FormData(form).entries());
+      if (data.website) { status.textContent="Thanks!"; return; }
+
+      const ZAP_HOOK_URL = "https://hooks.zapier.com/hooks/catch/14012873/umj0v05/"; // Veridex Zap
+
+      try{
+        const res = await fetch(ZAP_HOOK_URL, {
+          method:"POST", headers:{"Content-Type":"application/json"},
+          body: JSON.stringify(data)
+        });
+        if(!res.ok) throw new Error("HTTP "+res.status);
+        status.className="status ok"; status.textContent="Thanks — we’ll email you the demo details.";
+        form.reset();
+      }catch(err){
+        console.error(err);
+        status.className="status err";
+        status.textContent="Sorry, something went wrong. Please email contact@rbisintelligence.com.";
+      }
+    });
+  })();
+  </script>
+  <script src="assets/rbis.nav.js" defer></script>
+</body>
+</html>
