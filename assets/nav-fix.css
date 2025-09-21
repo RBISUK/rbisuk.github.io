@@ -54,7 +54,7 @@ details[open] .rbis-drawer{
 }
 .rbis-drawer a{ display:block; padding:.5rem 0; font-size:1.125rem }
 
-/* desktop row + fallback tidy if you don't have .rbis-nav-row yet */
+/* desktop row tidy */
 @media (min-width:1024px){
   .rbis-burger{ display:none }
   .rbis-drawer{ display:block; position:static; box-shadow:none; border:0; padding:0 }
@@ -62,7 +62,8 @@ details[open] .rbis-drawer{
   .rbis-nav-row a, header nav ul a{ padding:.25rem .5rem; border-radius:.5rem }
   .rbis-nav-row a[aria-current="page"], header nav ul a[aria-current="page"]{ background:#F3F4F6 }
 }
-/* eSign badge */
+
+/* eSign badge (optional trust cue you added) */
 .chip-esign{display:inline-flex;align-items:center;gap:.4rem;background:#EEF2FF;color:#3730A3;
   border:1px solid #C7D2FE;border-radius:999px;padding:.15rem .5rem;font-size:.8rem;font-weight:600}
 .chip-esign svg{width:14px;height:14px}
