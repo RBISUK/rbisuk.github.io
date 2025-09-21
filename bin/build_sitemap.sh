@@ -1,13 +1,23 @@
 #!/usr/bin/env bash
 set -Eeuo pipefail; IFS=$'\n\t'
 ORIGIN="${SITE_ORIGIN:-https://www.rbisintelligence.com}"
-out="sitemap.xml"
-echo '<?xml version="1.0" encoding="UTF-8"?>' > "$out"
-echo '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' >> "$out"
-for f in $(git ls-files '*.html' | sort); do
-  url="$ORIGIN/${f}"
-  mod=$(git log -1 --format=%cI -- "$f" 2>/dev/null || date -u +%Y-%m-%dT%H:%M:%SZ)
-  printf '  <url><loc>%s</loc><lastmod>%s</lastmod><changefreq>weekly</changefreq></url>\n' "$url" "$mod" >> "$out"
-done
-echo '</urlset>' >> "$out"
-echo "✅ sitemap.xml built ($(wc -l < "$out") lines)"
+python3 - <<'PY'
+import os, sys, datetime, subprocess, urllib.parse
+ORIGIN = os.environ.get("SITE_ORIGIN","https://www.rbisintelligence.com").rstrip("/")
+now = datetime.datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%SZ")
+listed = subprocess.run(["git","ls-files","*.html"], capture_output=True, text=True).stdout.splitlines()
+urls = []
+if "index.html" in listed:
+    urls.append(ORIGIN + "/")
+for f in listed:
+    loc = "/" + f
+    # keep reserved characters that are valid in URLs; escape others safely
+    url = ORIGIN + urllib.parse.quote(loc, safe="/:#?%[]@!$&'()*+,;=")
+    urls.append(url)
+print('<?xml version="1.0" encoding="UTF-8"?>')
+print('<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">')
+for u in urls:
+    print(f'  <url><loc>{u}</loc><lastmod>{now}</lastmod></url>')
+print('</urlset>')
+PY > sitemap.xml
+echo "✅ sitemap.xml rebuilt"
