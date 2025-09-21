@@ -2,25 +2,27 @@
 set -Eeuo pipefail; IFS=$'\n\t'
 trap 'rc=$?; echo "❌ ERR repair_reports:$LINENO :: $BASH_COMMAND (rc=$rc)"; exit $rc' ERR
 die(){ echo "❌ $*" >&2; exit 1; }
-bak(){ local f="$1"; [[ -f "$f" ]] || die "No such file: $f"; local ts=$(date -u +%Y%m%dT%H%M%SZ); cp -p "$f" "${f}.bak.$ts"; echo "🛟 Backup -> ${f}.bak.$ts"; }
+bak(){ local f="$1"; [[ -f "$f" ]] || die "No such file: $f"; local ts; ts="$(date -u +%Y%m%dT%H%M%SZ)"; cp -p "$f" "$f.bak.$ts"; echo "🛟 Backup -> $f.bak.$ts"; }
 FILE="reports.html"; [[ -f "$FILE" ]] || die "Missing reports.html"
 
-# Ensure CSS + scripts
+# Ensure CSS link
 if ! grep -q 'RBIS:STYLE' "$FILE"; then
-  tmp="$(mktemp)"; awk '
-    /<head[^>]*>/ && !ins { print; print "<!-- RBIS:STYLE:START -->"; print "<link rel=\"stylesheet\" href=\"/assets/rbis.css\">"; print "<!-- RBIS:STYLE:END -->"; ins=1; next } { print }' "$FILE" > "$tmp"
-  bak "$FILE"; mv "$tmp" "$FILE"
-fi
-if ! grep -q 'RBIS:SCRIPTS' "$FILE"; then
-  tmp="$(mktemp)"; awk '
-    /<\/head>/ && !done { print "<!-- RBIS:SCRIPTS:START -->"; print "<script src=\"/assets/rbis.js\" defer></script>"; print "<script src=\"/assets/reports.js\" defer></script>"; print "<!-- RBIS:SCRIPTS:END -->"; print; done=1; next } { print }' "$FILE" > "$tmp"
+  tmp="$(mktemp)"
+  awk '/<head[^>]*>/ && !ins { print; print "<!-- RBIS:STYLE:START -->"; print "<link rel=\"stylesheet\" href=\"/assets/rbis.css\">"; print "<!-- RBIS:STYLE:END -->"; ins=1; next } { print }' "$FILE" > "$tmp"
   bak "$FILE"; mv "$tmp" "$FILE"
 fi
 
-# Inject dataset + filters + list
+# Ensure scripts: base + reports.js
+if ! grep -q 'reports.js' "$FILE"; then
+  tmp="$(mktemp)"
+  awk '/<\/head>/ && !done { print "<!-- RBIS:SCRIPTS:START -->"; print "<script src=\"/assets/rbis.js\" defer></script>"; print "<script src=\"/assets/reports.js\" defer></script>"; print "<!-- RBIS:SCRIPTS:END -->"; print; done=1; next } { print }' "$FILE" > "$tmp"
+  bak "$FILE"; mv "$tmp" "$FILE"
+fi
+
+# Inject report UI + dataset if missing
 if ! grep -q 'id="reports-root"' "$FILE"; then
-  tmp="$(mktemp)"; awk '
-    BEGIN{placed=0}
+  tmp="$(mktemp)"
+  awk 'BEGIN{placed=0}
     /<main[^>]*>/ && !placed {
       print;
       print "<section id=\"reports-root\" class=\"container section\">";
@@ -39,13 +41,12 @@ if ! grep -q 'id="reports-root"' "$FILE"; then
       print "</section>";
       placed=1; next
     }
-    {print}
+    { print }
     END{
       if(!placed){
         print "<main><section id=\"reports-root\" class=\"container section\"><h1>Reports</h1><div class=\"filterbar\"></div><div id=\"reports\" class=\"grid cols-3\"></div><div id=\"reports-empty\" class=\"empty hidden\">No reports match your filters.</div></section></main>"
       }
-    }
-  ' "$FILE" > "$tmp"
+    }' "$FILE" > "$tmp"
   bak "$FILE"; mv "$tmp" "$FILE"
 fi
 echo "✅ reports.html repaired and enhanced"
