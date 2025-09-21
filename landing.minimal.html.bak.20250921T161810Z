@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!-- RBIS:STYLE:START -->
+<link rel="stylesheet" href="/assets/rbis.css">
+<!-- RBIS:STYLE:END -->
+  <meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>RBIS • Landing (Minimal)</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-950 text-slate-100">
+  <header class="sticky top-0 z-40 border-b border-white/10 backdrop-blur bg-slate-950/70">
+    <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="h-8 w-8 rounded-lg bg-gradient-to-br from-indigo-500/30 via-sky-500/30 to-emerald-500/30"></div>
+        <span class="font-semibold">RBIS</span>
+        <span class="hidden md:inline text-xs text-slate-400 ml-2">Landing — Minimal</span>
+      </div>
+      <a class="text-xs px-3 py-1.5 rounded-md bg-white/5 border border-white/10" href="index.html">Index</a>
+    </div>
+  </header>
+
+  <section class="relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-b from-indigo-500/30 via-sky-500/30 to-emerald-500/30 opacity-20"></div>
+    <div class="relative max-w-7xl mx-auto px-4 py-14">
+      <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight">Audit-ready software that makes compliance the default.</h1>
+      <p class="mt-4 text-lg text-slate-300 max-w-3xl">Six products. One brain. Evidence over anecdotes.</p>
+      <div id="tiles" class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-4"></div>
+    </div>
+  </section>
+
+  <main class="max-w-7xl mx-auto px-4 pb-24">
+    <div id="sections" class="grid gap-6"></div>
+  </main>
+
+  <footer class="border-top border-white/10"></footer>
+
+  <script>
+    async function run(){
+      const r = await fetch('rbis.products.json'.replace('','')); const data = await r.json();
+      const tiles = document.getElementById('tiles'); const sections = document.getElementById('sections');
+      const tile = (p)=>`
+        <a href="#${p.name}" class="card group rounded-2xl border border-white/10 p-5 bg-white/[.03] hover:shadow-lg transition">
+          <h3 class="font-semibold">${p.name}</h3>
+          <p class="text-sm text-slate-400 mt-1">${p.tagline}</p>
+          <p class="text-xs text-slate-500 mt-3 group-hover:text-slate-300">${(p.psych||[])[0]||''}</p>
+        </a>`;
+      data.products.forEach(p=> tiles.insertAdjacentHTML('beforeend', tile(p)));
+      // Show skim sections (Problem + Capabilities)
+      const list=(a)=>a.map(i=>`<li class="leading-relaxed">${i}</li>`).join('');
+      data.products.forEach(p=>{
+        const el=document.createElement('section'); el.id=p.name;
+        el.className="rounded-2xl border border-white/10 bg-white/[.03] p-6";
+        el.innerHTML=`
+          <h2 class="text-xl font-bold">${p.name} — <span class="text-slate-300">${p.tagline}</span></h2>
+          <div class="grid md:grid-cols-2 gap-4 mt-3">
+            <div><h3 class="font-semibold">Problem</h3><p class="text-slate-300 mt-1">${p.problem}</p></div>
+            <div><h3 class="font-semibold">Core Capabilities</h3><ul class="mt-1">${list(p.capabilities.slice(0,4))}</ul></div>
+          </div>
+          <div class="mt-4 text-sm text-slate-400"><a class="underline" href="deep.html#${p.name}">Deep dive →</a></div>`;
+        sections.appendChild(el);
+      });
+    } run();
+  </script>
+</body>
+</html>

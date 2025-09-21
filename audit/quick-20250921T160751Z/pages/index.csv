@@ -1,0 +1,161 @@
+path,title,has_main,has_nav,nav_hidden,stylesheets_count,images,links,h1_count,meta_desc_len
+404.html,Not found • RBIS,yes,no,no,1,0
+0,2,0
+0,0
+about.html,About • RBIS Intelligence,yes,no,no,1,0
+0,8,0
+0,0
+careers.html,Careers • RBIS,yes,yes,no,1,0
+0,9,0
+0,0
+contact.html,Contact • RBIS,yes,yes,no,1,0
+0,7,0
+0,77
+cookies.html,Cookie Policy • RBIS,yes,yes,no,1,0
+0,7,0
+0,0
+dashboard.html,RBIS • Ops Dashboard,yes,no,no,1,0
+0,5,0
+0,0
+deep.html,RBIS • Deep Product Book,yes,no,no,0
+0,0
+0,2,1,0
+docs/hello.html,Hello • RBIS,yes,no,no,0
+0,0
+0,1,0
+0,0
+embed/product.html,RBIS • Product Embed,yes,no,no,0
+0,0
+0,0
+0,0
+0,0
+hello.html,Hello • RBIS,yes,no,no,0
+0,0
+0,1,0
+0,0
+index.html,RBIS • Behavioural & Intelligence Services,yes,yes,no,1,1,10,1,137
+landing.enterprise.html,RBIS • Landing (Enterprise),yes,no,no,0
+0,0
+0,3,1,0
+landing.minimal.html,RBIS • Landing (Minimal),yes,no,no,0
+0,0
+0,3,1,0
+landing.story.html,RBIS • Landing (Story),yes,no,no,0
+0,0
+0,3,1,0
+offerings.html,Products & Services • RBIS,yes,yes,no,1,0
+0,15,0
+0,124
+privacy.html,Privacy Policy • RBIS,yes,yes,no,1,0
+0,7,0
+0,93
+products.html,RBIS • Products,yes,no,no,1,0
+0,6,0
+0,0
+reports.html,,no,no,no,0
+0,0
+0,0
+0,0
+0,0
+sections/claim-fix-ai.html,Claim-Fix-AI • RBIS Section,no,no,no,0
+0,0
+0,0
+0,0
+0,0
+sections/custom-sites-&-seo-ai.html,Custom Sites & SEO-AI • RBIS Section,no,no,no,0
+0,0
+0,0
+0,0
+0,0
+sections/nextusone-crm.html,NextusOne CRM • RBIS Section,no,no,no,0
+0,0
+0,0
+0,0
+0,0
+sections/omniassist.html,OmniAssist • RBIS Section,no,no,no,0
+0,0
+0,0
+0,0
+0,0
+sections/pact-ledger.html,PACT Ledger • RBIS Section,no,no,no,0
+0,0
+0,0
+0,0
+0,0
+sections/rbis-dashboard.html,RBIS Dashboard • RBIS Section,no,no,no,0
+0,0
+0,0
+0,0
+0,0
+solutions.html,RBIS • Solutions,yes,no,no,1,0
+0,8,0
+0,0
+surfaces/dashboard.html,RBIS • Product Dashboard,yes,no,no,0
+0,0
+0,0
+0,0
+0,0
+surfaces/sections/claim-fix-ai.html,Verdiex-AI-Funnel • RBIS Section,no,no,no,0
+0,0
+0,0
+0,0
+0,0
+surfaces/sections/custom-sites-&-seo-ai.html,Custom Sites & SEO-AI • RBIS Section,no,no,no,0
+0,0
+0,0
+0,0
+0,0
+surfaces/sections/nextusone-crm.html,NextusOne CRM • RBIS Section,no,no,no,0
+0,0
+0,0
+0,0
+0,0
+surfaces/sections/omniassist.html,OmniAssist • RBIS Section,no,no,no,0
+0,0
+0,0
+0,0
+0,0
+surfaces/sections/pact-ledger.html,PACT Ledger • RBIS Section,no,no,no,0
+0,0
+0,0
+0,0
+0,0
+surfaces/sections/rbis-dashboard.html,RBIS Dashboard • RBIS Section,no,no,no,0
+0,0
+0,0
+0,0
+0,0
+terms.html,Terms of Use • RBIS,yes,yes,no,1,0
+0,7,0
+0,0
+trust.html,Trust Centre • RBIS,yes,yes,no,1,0
+0,10,0
+0,62
+trust/accessibility/statement.html,Accessibility • RBIS,yes,no,no,1,0
+0,0
+0,0
+0,0
+trust/policies/cookies.html,RBIS • Cookies Policy,no,no,no,1,0
+0,0
+0,0
+0,0
+trust/policies/privacy.html,RBIS • Privacy Policy,no,no,no,1,0
+0,0
+0,0
+0,0
+trust/policies/retention.html,RBIS • Retention Policy,no,no,no,1,0
+0,0
+0,0
+0,0
+trust/security/overview.html,RBIS • Security Overview,no,no,no,1,0
+0,1,0
+0,0
+veridex-demo.html,Veridex AI Funnel — Demo,yes,no,no,1,0
+0,10,1,0
+veridex.html,Veridex • Business Demo,no,no,no,0
+0,0
+0,1,0
+0,0
+websites.html,RBIS • Website Development,no,no,no,1,0
+0,8,0
+0,0

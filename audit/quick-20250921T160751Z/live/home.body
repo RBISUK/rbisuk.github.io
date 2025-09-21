@@ -1,0 +1,53 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>RBIS • Behavioural & Intelligence Services</title>
+<meta name="description" content="RBIS delivers behavioural intelligence, compliant software, and professional reporting. Evidence-first, psychology-led, and audit-ready.">
+<link rel="canonical" href="https://www.rbisintelligence.com/">
+<meta property="og:title" content="RBIS • Behavioural & Intelligence Services">
+<meta property="og:description" content="Evidence-first software & reporting. Psychology-led. Audit-ready.">
+<meta property="og:type" content="website"><meta property="og:url" content="https://www.rbisintelligence.com/">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Organization","name":"RBIS","url":"https://www.rbisintelligence.com","sameAs":[]}
+</script>
+<link rel="stylesheet" href="/assets/rbis.css?v=20250920T223646Z">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; connect-src 'self' https://hooks.zapier.com">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"RBIS","url":"https://www.rbisintelligence.com"}</script>
+</head><body>
+<main>
+<header id="rbis-nav"></header><section class="hero bg-orbs">
+<nav aria-label="Primary"><a class="brand" href="/index.html">RBIS</a><ul><li><a href="/solutions.html">Solutions</a></li><li><a href="/reports.html">Reports</a></li><li><a href="/products.html">Products</a></li><li><a href="/about.html">About</a></li><li><a href="/contact.html">Contact</a></li></ul></nav>
+  <div>
+    <div class="kicker">Evidence-first software & intelligence</div>
+    <h1>Behavioural intelligence, engineered for real operations.</h1>
+    <p class="lead">Led by Ryan Roberts — applying cognitive psychology across software, reporting, and compliance so teams do the right thing, first time.</p>
+    <div class="cta-row">
+      <a class="btn" href="/offerings.html">Products & Services</a>
+      <a class="btn-ghost" href="/reports.html">Professional reports</a>
+      <span class="pill">🔒 Minimal data • receipts by default</span>
+    </div>
+  </div>
+  <div class="hero-side">
+    <svg class="crest spin" viewBox="0 0 120 120" role="img" aria-label="RBIS Crest"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#7cf"/><stop offset="50%" stop-color="#92ff72"/><stop offset="100%" stop-color="#88aaff"/></linearGradient></defs><g fill="url(#g)"><path d="M60 6 96 24 114 60 96 96 60 114 24 96 6 60 24 24Z" opacity=".22"/><path d="M60 16 88 30 104 60 88 90 60 104 32 90 16 60 32 30Z" opacity=".35"/><path d="M60 26 80 36 94 60 80 84 60 94 40 84 26 60 40 36Z"/></g></svg>
+  </div>
+</section><section class="section">
+  <div class="grid cards">
+    <article class="card"><div class="icon">🧠</div><h3>Behavioural design</h3><p>Choice architecture & clarity patterns baked into every flow.</p></article>
+    <article class="card"><div class="icon">🛡️</div><h3>Audit-ready</h3><p>Receipts, redaction, and exports ready for board or court.</p></article>
+    <article class="card"><div class="icon">⚡</div><h3>Fast results</h3><p>Ship in weeks, not months — measurable impact from day one.</p></article>
+  </div>
+</section><footer>© RBIS — Evidence-first software & intelligence.</footer>
+<script src="/assets/rbis.js?v=20250920T225108Z" defer></script>
+<section id="crest-hero" class="section" style="display:flex;gap:26px;align-items:center;justify-content:space-between;flex-wrap:wrap">
+ <div style="max-width:680px">
+  <h1 class="h1">Evidence, Behaviour, <br>and Intelligence — <span style="background:linear-gradient(90deg,#7cf,#92ff72);-webkit-background-clip:text;background-clip:text;color:transparent">beautifully clear</span>.</h1>
+  <p class="lead">RBIS blends behavioural science with AI to surface truth, reduce risk, and move decisions forward. Built by Ryan Roberts.
+  </p>
+  <div style="display:flex;gap:12px;flex-wrap:wrap">
+</main>
+    <a class="btn" href="products.html">Products </body> Services</a>
+    <a class="btn" style="background:linear-gradient(180deg,#9ae7ff,#7cc4ff)" href="reports.html">Professional Reports</a>
+  </div>
+ </div>
+ <img class="crest-spin" src="/assets/logo.svg" alt="RBIS crest"/>
+</section>
+</body></html>
