@@ -1,89 +1,34 @@
 #!/usr/bin/env bash
 set -Eeuo pipefail; IFS=$'\n\t'
 mkdir -p reports
-
-# Prefer real pages under /reports; if none, read Atom feed reports.xml
-mapfile -t PAGES < <(git ls-files 'reports/*.html' | grep -vE '/index\.html$|/a11y/|/feed|/atom|/sitemap' || true)
-
-cards=""
-
-if [[ ${#PAGES[@]} -gt 0 ]]; then
-  for f in "${PAGES[@]}"; do
-    href="/$f"
-    title="$(rg -No '(?<=<title>)(.*?)(?=</title>)' "$f" 2>/dev/null | head -n1 || true)"
-    [[ -z "$title" ]] && title="$(basename "$f" .html | tr '-' ' ' | sed 's/.*/\u&/')"
-    summary="$(rg -No '(?<=<meta name="description" content=")([^"]+)' "$f" 2>/dev/null | head -n1 || true)"
-    cards+="<a class=\"block rounded-xl border border-gray-200 p-4 hover:shadow-sm\" href=\"$href\">
-              <div class=\"chip\" style=\"background:#F3F4F6;color:#374151;display:inline-flex;padding:.25rem .5rem;border-radius:999px;font-size:.8rem;margin-bottom:.5rem\">Report</div>
-              <h3 class=\"text-lg font-semibold\" style=\"margin:0 0 .25rem\">${title}</h3>
-              <p class=\"text-sm\" style=\"color:#4B5563;margin:0\">${summary}</p>
-            </a>
-"
-  done
-elif [[ -f reports.xml ]]; then
-  python3 - <<'PY'
-import xml.etree.ElementTree as ET, html, sys
-from pathlib import Path
-ns={'a':'http://www.w3.org/2005/Atom'}
-cards=[]
-try:
-    t=ET.parse('reports.xml')
-    for e in t.findall('a:entry',ns):
-        title=(e.findtext('a:title',default='',namespaces=ns) or '').strip()
-        link=e.find('a:link',ns)
-        href=link.get('href') if link is not None else '#'
-        summary=(e.findtext('a:summary',default='',namespaces=ns) or '').strip()
-        title=html.escape(title or 'Report')
-        summary=html.escape(summary)
-        href=html.escape(href)
-        cards.append(f'''<a class="block rounded-xl border border-gray-200 p-4 hover:shadow-sm" href="{href}">
-  <div class="chip" style="background:#F3F4F6;color:#374151;display:inline-flex;padding:.25rem .5rem;border-radius:999px;font-size:.8rem;margin-bottom:.5rem">Report</div>
-  <h3 class="text-lg font-semibold" style="margin:0 0 .25rem">{title}</h3>
-  <p class="text-sm" style="color:#4B5563;margin:0">{summary}</p>
-</a>
-''')
-except Exception as ex:
-    sys.stderr.write(f"feed error: {ex}\n")
-print(''.join(cards))
+if [[ -f reports.xml ]]; then
+python3 - <<'PY' > reports/index.html
+import xml.etree.ElementTree as ET, html
+from datetime import datetime
+tree=ET.parse('reports.xml'); root=tree.getroot()
+entries=[]
+for e in root.findall('{http://www.w3.org/2005/Atom}entry'):
+    t=e.find('{http://www.w3.org/2005/Atom}title')
+    l=e.find('{http://www.w3.org/2005/Atom}link')
+    s=e.find('{http://www.w3.org/2005/Atom}summary')
+    u=l.get('href') if l is not None else '#'
+    entries.append((t.text if t is not None else 'Report', u, (s.text or '') if s is not None else ''))
+entries=entries[:100]
+print("""<!doctype html><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Reports • RBIS Intelligence</title><link rel="stylesheet" href="/assets/nav-fix.css">
+<body><a class="skip-to-content" href="#main">Skip to content</a>
+<main id="main" class="container" style="max-width:1100px;margin:2rem auto;padding:0 1rem">
+<h1 style="font-size:2rem;margin:.5rem 0 1.25rem">Professional Reports</h1>
+<p style="color:#4b5563;margin-bottom:1rem">Selected outputs, exports, and heatmaps.</p>
+<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1rem">""")
+for t,u,s in entries:
+    print(f"""<a class="block rounded-xl" href="{html.escape(u)}" style="border:1px solid #e5e7eb;padding:1rem;text-decoration:none;color:#111">
+<div class="chip-esign" style="background:#F3F4F6;color:#374151;border-color:#E5E7EB">Report</div>
+<h2 style="font-size:1.05rem;margin:.6rem 0 .25rem">{html.escape(t)}</h2>
+<p style="color:#6b7280;margin:0">{html.escape(s[:140])}</p></a>""")
+print("</div></main>")
 PY
+echo "✅ reports/index.html built from Atom feed"
 else
-  :
-fi > reports/.cards.html
-
-cards_content="$(cat reports/.cards.html 2>/dev/null || true)"
-
-cat > reports/index.html <<HTML
-<!doctype html><meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<link rel="stylesheet" href="/assets/nav-fix.css">
-<link rel="stylesheet" href="/assets/site.min.css">
-<title>Reports • RBIS</title>
-<header class="border-b" style="border-bottom:1px solid #e5e7eb">
-  <div style="max-width:80rem;margin:0 auto;padding:1rem;display:flex;align-items:center;justify-content:space-between">
-    <a href="/" style="font-weight:600">RBIS</a>
-    <details class="rbis-nav">
-      <summary class="rbis-burger"><span class="rbis-sr">Menu</span></summary>
-      <div class="rbis-drawer"><nav class="rbis-nav-row">
-        <a href="/products.html">Products & Services</a>
-        <a href="/reports/" aria-current="page">Reports</a>
-        <a href="/solutions.html">Solutions</a>
-        <a href="/trust.html">Trust Centre</a>
-        <a href="/about.html">About</a>
-        <a href="/contact.html">Contact us</a>
-      </nav></div>
-    </details>
-  </div>
-</header>
-<main id="main" style="max-width:80rem;margin:0 auto;padding:1rem">
-  <h1 style="font-size:clamp(1.75rem,3vw,2.5rem);margin:.5rem 0">Reports</h1>
-  <p style="color:#4B5563;margin:.25rem 0 1rem">Risk heatmaps, board exports, audit packs.</p>
-  <div class="grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1rem">
-    ${cards_content:-<div style="color:#6B7280">No reports found yet.</div>}
-  </div>
-</main>
-<footer style="margin-top:3rem;border-top:1px solid #e5e7eb">
-  <div style="max-width:80rem;margin:0 auto;padding:1rem;color:#6B7280;font-size:.875rem">© RBIS Intelligence</div>
-</footer>
-HTML
-
-echo "✅ reports/index.html built"
+  echo "ℹ️ reports.xml not found; nothing to build"
+fi
