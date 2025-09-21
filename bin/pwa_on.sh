@@ -1,42 +1,64 @@
 #!/usr/bin/env bash
 set -Eeuo pipefail; IFS=$'\n\t'
-backup index.html
-# offline fallback
-cat > offline.html <<'HTML'
-<!doctype html><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Offline • RBIS</title><link rel="stylesheet" href="/assets/rbis.css">
-<main class="container"><h1>Offline</h1><p>You’re offline. Core pages and assets still work; refresh when back online.</p></main>
+ORIGIN="${SITE_ORIGIN:-https://www.rbisintelligence.com}"; ORIGIN="${ORIGIN%/}"
+# 1) offline page
+[[ -f offline.html ]] || cat > offline.html <<'HTML'
+<!doctype html><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Offline • RBIS</title>
+<link rel="stylesheet" href="/assets/rbis.css">
+<main class="pad">
+  <h1>You're offline</h1>
+  <p>We’ll auto-retry when you’re back online.</p>
+  <p><a href="/">Go home</a></p>
+</main>
 HTML
-# service worker
-cat > sw.js <<'JS'
-const VERSION = 'rbis-v1';
-const CORE = [
-  '/', '/assets/rbis.css', '/assets/logo.svg', '/offline.html'
-];
-self.addEventListener('install', e=>{
-  e.waitUntil(caches.open(VERSION).then(c=>c.addAll(CORE)));
+
+# 2) precache list (top pages + critical assets if present)
+mklist(){ for f in "$@"; do [[ -f "$f" ]] && echo "$f"; done; }
+mapfile -t FILES < <(mklist index.html about.html products.html reports.html websites.html contact.html privacy.html \
+  assets/rbis.css assets/logo.svg manifest.json \
+  assets/icons/apple-touch-icon.png assets/icons/android-chrome-192x192.png assets/icons/android-chrome-512x512.png \
+  offline.html)
+
+PRECACHE="$(printf '%s\n' "${FILES[@]}" | awk 'NF' | while read -r f; do
+  h="$(openssl dgst -sha256 -binary "$f" | openssl base64 -A 2>/dev/null || echo 0)"
+  printf '{ "url": "/%s", "revision": "%s" },' "$f" "$h"
+done | sed 's/,$//')"
+
+# 3) service worker (cache-first for assets, network-first for pages, offline fallback)
+cat > sw.js <<SW
+// RBIS PWA (lite)
+const PRECACHE = [ $PRECACHE ];
+const CACHE = 'rbis-v1';
+self.addEventListener('install', e => {
+  e.waitUntil(caches.open(CACHE).then(c => c.addAll(PRECACHE.map(x=>x.url))));
+  self.skipWaiting();
 });
-self.addEventListener('activate', e=>{
-  e.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k!==VERSION).map(k=>caches.delete(k)))));
+self.addEventListener('activate', e => {
+  e.waitUntil(caches.keys().then(keys => Promise.all(keys.filter(k=>k!==CACHE).map(k=>caches.delete(k)))));
+  self.clients.claim();
 });
-self.addEventListener('fetch', e=>{
-  const u = new URL(e.request.url);
-  if (u.origin === location.origin && (u.pathname.startsWith('/assets/') || u.pathname === '/' )) {
-    e.respondWith(caches.match(e.request).then(r=> r || fetch(e.request).then(resp=>{
-      const copy = resp.clone(); caches.open(VERSION).then(c=>c.put(e.request, copy)); return resp;
-    })).catch(()=>caches.match('/offline.html')));
+self.addEventListener('fetch', e => {
+  const url = new URL(e.request.url);
+  if (e.request.mode === 'navigate') {
+    e.respondWith(fetch(e.request).catch(()=>caches.match('/offline.html')));
+    return;
+  }
+  if (PRECACHE.some(x=>x.url===url.pathname)) {
+    e.respondWith(caches.match(e.request).then(r=>r||fetch(e.request).then(res=>{
+      const copy = res.clone();
+      caches.open(CACHE).then(c=>c.put(e.request, copy));
+      return res;
+    })));
+    return;
   }
 });
-JS
-# register in pages
+SW
+
+# 4) register snippet (once)
 for f in $(git ls-files '*.html'); do
-  grep -q 'navigator.serviceWorker' "$f" && continue
-  awk '
-    /<\/body>/ && !done {
-      print "<script>if(\"serviceWorker\" in navigator){window.addEventListener(\"load\",()=>navigator.serviceWorker.register(\"/sw.js\").catch(()=>{}));}</script>";
-      print; done=1; next }
-    { print }
-  ' "$f" > "$f.tmp" && mv "$f.tmp" "$f"
-  echo "✅ PWA register -> $f"
+  rg -q 'id="sw-register"' "$f" && continue
+  perl -0777 -pe 's#</body>#<script id="sw-register">if("serviceWorker"in navigator){navigator.serviceWorker.register("/sw.js",{scope:"/"}).catch(()=>{});}</script></body>#i' -i "$f"
 done
-echo "✅ PWA enabled (sw.js + offline.html + registration)"
+echo "✅ PWA on (sw.js + offline + registration)"

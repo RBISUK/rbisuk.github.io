@@ -1,16 +1,19 @@
 #!/usr/bin/env bash
 set -Eeuo pipefail; IFS=$'\n\t'
-[[ -f sitemap.xml ]] || { echo "no sitemap.xml"; exit 0; }
-python3 - <<'PY'
-from pathlib import Path
-import re, html
-txt = Path("sitemap.xml").read_text(encoding="utf-8", errors="ignore")
-locs = re.findall(r'<loc>\s*(.*?)\s*</loc>', txt, flags=re.I|re.S)
-items = '\n'.join(f'<li><a href="{html.escape(u)}">{html.escape(u)}</a></li>' for u in locs)
-page = f"""<!doctype html><meta charset="utf-8"><title>Sitemap • RBIS</title>
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<link rel="stylesheet" href="/assets/rbis.css">
-<main class="container"><h1>Sitemap</h1><ul>{items}</ul></main>"""
-Path("sitemap.html").write_text(page, encoding="utf-8")
-print("✅ sitemap.html built")
+python3 - <<'PY' > sitemap.html
+import xml.etree.ElementTree as ET, html
+NS = {'sm':'http://www.sitemaps.org/schemas/sitemap/0.9'}
+urls=[]
+try:
+    tree=ET.parse('sitemap.xml')
+    for u in tree.findall('sm:url/sm:loc', NS):
+        urls.append(u.text or '')
+except Exception:
+    pass
+print('<!doctype html><meta charset="utf-8"><title>Sitemap • RBIS</title><h1>Site map</h1><ul>')
+for u in urls:
+    e=html.escape(u)
+    print(f'<li><a href="{e}">{e}</a></li>')
+print('</ul>')
 PY
+echo "✅ sitemap.html built"

@@ -1,0 +1,11 @@
+/* TEAM */
+Owner: RBIS Intelligence
+Site: https://www.rbisintelligence.com
+Twitter: @rbisuk
+
+/* THANKS */
+Built with care. Accessibility-first. Privacy-first.
+
+/* STANDARDS */
+Doctype: HTML5
+Tools: GitHub Pages, ImageMagick, Lighthouse, Pa11y

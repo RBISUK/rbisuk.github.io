@@ -1,0 +1,17 @@
+# Add these at your DNS provider (adjust hosts as needed)
+; --- CAA (allow Let's Encrypt + Google Trust)
+rbisintelligence.com. 3600 IN CAA 0 issue "letsencrypt.org"
+rbisintelligence.com. 3600 IN CAA 0 issue "pki.goog"
+rbisintelligence.com. 3600 IN CAA 0 iodef "mailto:security@rbisintelligence.com"
+
+; --- SPF (allow MX + transactional provider example)
+rbisintelligence.com. 3600 IN TXT "v=spf1 mx include:_spf.google.com ~all"
+
+; --- DMARC (start as quarantine; move to reject after monitoring)
+_dmarc.rbisintelligence.com. 3600 IN TXT "v=DMARC1; p=quarantine; rua=mailto:dmarc@rbisintelligence.com; ruf=mailto:dmarc@rbisintelligence.com; fo=1; adkim=s; aspf=s; pct=100"
+
+; --- DKIM (create via your email provider; example selector)
+google._domainkey.rbisintelligence.com. 3600 IN TXT "v=DKIM1; k=rsa; p=YOURPUBLICKEY"
+
+; --- MTA-STS (optional hardening)
+_mta-sts.rbisintelligence.com. 3600 IN TXT "v=STSv1; id=20250921"

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+<title>RBIS Reports</title>
+<id>https://www.rbisintelligence.com/reports.xml</id>
+<updated>2025-09-21T17:45:30Z</updated>
+<entry>
+  <title>Fraud Intelligence Report</title>
+  <link href="https://www.rbisintelligence.com/reports.html#fraud-intel" />
+  <id>https://www.rbisintelligence.com/reports.html#fraud-intel</id>
+  <updated>2025-09-21T17:45:30Z</updated>
+  <summary>Entity &amp; network-level fraud patterns with behavioural markers.</summary>
+</entry>
+<entry>
+  <title>Claims Pattern Analysis</title>
+  <link href="https://www.rbisintelligence.com/reports.html#claims-trends" />
+  <id>https://www.rbisintelligence.com/reports.html#claims-trends</id>
+  <updated>2025-09-21T17:45:30Z</updated>
+  <summary>Outlier detection across cohorts and seasonality.</summary>
+</entry>
+<entry>
+  <title>Trust &amp; Safety Risk Audit</title>
+  <link href="https://www.rbisintelligence.com/reports.html#trust-audit" />
+  <id>https://www.rbisintelligence.com/reports.html#trust-audit</id>
+  <updated>2025-09-21T17:45:30Z</updated>
+  <summary>Abuse taxonomy coverage vs. policy; exploitability review.</summary>
+</entry>
+</feed>
