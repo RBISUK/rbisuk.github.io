@@ -1,3 +1,4 @@
+command -v convert >/dev/null || { echo "ℹ️ ImageMagick not found; skipping OG build."; exit 0; }
 #!/usr/bin/env bash
 set -Eeuo pipefail; IFS=$'\n\t'
 ORIGIN="${SITE_ORIGIN:-https://www.rbisintelligence.com}"

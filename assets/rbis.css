@@ -17,7 +17,7 @@
 }
 *{box-sizing:border-box}
 html,body{height:100%}
-body{margin:0;background:var(--bg);color:var(--text);font:var(--s1)/var(--lh) var(--font);text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased}
+body{margin:0;background:var(--bg);color:var(--text);font:var(--s1)/var(--lh) var(--font);}
 a{color:var(--accent);text-decoration:none} a:hover{text-decoration:underline}
 img{max-width:100%;height:auto;border-radius:calc(var(--radius) - 6px)}
 /* Layout */
