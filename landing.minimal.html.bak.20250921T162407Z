@@ -1,12 +1,11 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta name="description" content="RBIS • Landing (Story) — RBIS applies behavioural intelligence to reduce fraud, improve trust, and accelerate decisions.">
 <!-- RBIS:STYLE:START -->
 <link rel="stylesheet" href="/assets/rbis.css">
 <!-- RBIS:STYLE:END -->
   <meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>RBIS • Landing (Story)</title>
+  <title>RBIS • Landing (Minimal)</title>
   <script src="https://cdn.tailwindcss.com"></script>
 <!-- RBIS:SCRIPTS:START -->
 <script src="/assets/rbis.js" defer></script>
@@ -16,16 +15,16 @@
   <header class="sticky top-0 z-40 border-b border-white/10 backdrop-blur bg-slate-950/70">
     <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
       <div class="flex items-center gap-3">
-        <div class="h-8 w-8 rounded-lg bg-gradient-to-br from-rose-500/30 via-orange-500/30 to-amber-500/30"></div>
+        <div class="h-8 w-8 rounded-lg bg-gradient-to-br from-indigo-500/30 via-sky-500/30 to-emerald-500/30"></div>
         <span class="font-semibold">RBIS</span>
-        <span class="hidden md:inline text-xs text-slate-400 ml-2">Landing — Story</span>
+        <span class="hidden md:inline text-xs text-slate-400 ml-2">Landing — Minimal</span>
       </div>
       <a class="text-xs px-3 py-1.5 rounded-md bg-white/5 border border-white/10" href="index.html">Index</a>
     </div>
   </header>
 
   <section class="relative overflow-hidden">
-    <div class="absolute inset-0 bg-gradient-to-b from-rose-500/30 via-orange-500/30 to-amber-500/30 opacity-20"></div>
+    <div class="absolute inset-0 bg-gradient-to-b from-indigo-500/30 via-sky-500/30 to-emerald-500/30 opacity-20"></div>
     <div class="relative max-w-7xl mx-auto px-4 py-14">
       <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight">Audit-ready software that makes compliance the default.</h1>
       <p class="mt-4 text-lg text-slate-300 max-w-3xl">Six products. One brain. Evidence over anecdotes.</p>
