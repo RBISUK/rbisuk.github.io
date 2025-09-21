@@ -83,3 +83,16 @@ details summary::-webkit-details-marker{display:none}
 /* Theme variants (optional future toggles) */
 :root[data-theme="emerald"]{ --accent:#2dd4bf; --accent-2:#a7f3d0 }
 :root[data-theme="amber"]{ --accent:#f59e0b; --accent-2:#fde68a }
+
+/* === RBIS: FIX PATCH (safe override) ========================= */
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font:var(--s1)/var(--lh) var(--font);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+[data-theme="amber"]{ --accent:#f59e0b; --accent-2:#fde68a }
+summary{ cursor:pointer }
+/* ============================================================= */
