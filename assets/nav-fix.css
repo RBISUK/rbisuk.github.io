@@ -80,3 +80,10 @@ header nav a, nav a{ text-decoration:none; display:inline-block; padding:.40rem 
   .rbis-menu > ul{ display:flex !important; background:transparent; border:0; padding:0; margin:0; box-shadow:none; }
 }
 /* RBIS HAMBURGER END */
+/* RBIS HAMBURGER ICON START */
+.rbis-burger{ font-size:0; min-width:44px; min-height:44px; } /* tap target + hide text */
+.rbis-burger .rbis-sr{
+  position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;
+  overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;
+}
+/* RBIS HAMBURGER ICON END */
