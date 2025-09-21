@@ -11,10 +11,10 @@ for f in $(git ls-files '*.html'); do
   grep -q 'class="skip-to-content"' "$f" || \
     perl -0777 -pe 's#<body([^>]*)>#<body$1>\n<a class="skip-to-content" href="#main">Skip to content</a>#i' -i "$f"
 
-  # ensure <main id="main"> (don’t clobber existing ids)
+  # ensure <main id="main"> when missing
   perl -0777 -pe 's#<main(?![^>]*\bid=)[^>]*>#my $x=$&; $x=~s/<main/<main id="main"/i unless $x=~/\bid="/i; $x#eig' -i "$f"
 
-  # normalize “Reports” links to directory
-  perl -0777 -pe 's#href="(/)?reports\.html"#href="/reports/"#g' -i "$f"
+  # normalize “Reports” links to /reports/
+  perl -0777 -pe 's#href="(?:/)?reports\.html"#href="/reports/"#g' -i "$f"
 done
 echo "✅ nav CSS linked + skip link + main#main + Reports URL normalized"
