@@ -90,9 +90,7 @@
 <!-- RBIS:STYLE:END -->
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>RBIS • Deep Product Book</title>
-  <script defer src="https://cdn.tailwindcss.com"></script>
-  <script>tailwind.config={theme:{extend:{colors:{rbis:{DEFAULT:"#22d3ee",ink:"#0f172a"}},boxShadow:{glow:"0 0 0 3px rgba(34,211,238,.25)"}}}}</script>
+  <title>RBIS • Deep Product Book</title><script>tailwind.config={theme:{extend:{colors:{rbis:{DEFAULT:"#22d3ee",ink:"#0f172a"}},boxShadow:{glow:"0 0 0 3px rgba(34,211,238,.25)"}}}}</script>
   <style>.badge{border:1px solid rgb(148 163 184 /.25)} .card:hover{transform:translateY(-2px)}</style>
 <!-- RBIS:SCRIPTS:START -->
 <script src="/assets/rbis.js" defer></script>
@@ -463,6 +461,9 @@
 <link rel="preconnect" href="veridex.html:https://hooks.zapier.com" crossorigin>
 <link rel="preconnect" href="veridex.html:https://schema.org" crossorigin>
 <link rel="preconnect" href="veridex.html:https://www.rbisintelligence.com" crossorigin>
+<link rel="preload" as="style" href="/assets/site.min.css">
+<link rel="stylesheet" href="/assets/site.min.css" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="/assets/site.min.css"></noscript>
 </head>
 <body class="bg-slate-950 text-slate-100">
   <a id="skip-to-content" class="skip" href="#main" style="position:absolute;left:-9999px;top:-9999px">Skip to content</a>

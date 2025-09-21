@@ -1,0 +1,5 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* safe tweaks if CSS ever fails to load */
+.no-js .js-only { display:none !important; }

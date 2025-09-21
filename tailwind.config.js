@@ -1,5 +1,5 @@
 module.exports = {
-  content: ["**/*.html","assets/**/*.js"],
+  content: ["./**/*.html","./**/*.js"],
   theme: { extend: {} },
-  corePlugins: { preflight: true }
+  plugins: []
 }
