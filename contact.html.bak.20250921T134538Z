@@ -57,7 +57,7 @@
       <textarea id="message" name="message" required placeholder="What outcome are you after?"></textarea>
     </div>
 
-    <!-- context -->
+    <!-- Hidden context -->
     <input type="hidden" name="page" id="page">
     <input type="hidden" name="utm_source" id="utm_source">
     <input type="hidden" name="utm_medium" id="utm_medium">

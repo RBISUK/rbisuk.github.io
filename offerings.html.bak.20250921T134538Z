@@ -27,8 +27,8 @@
     <article class="card">
       <h3>Veridex Funnel</h3>
       <div class="badges">
-        <span class="badge"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M3 4h18l-7 8v6l-4 2v-8z"/></svg> Smart intake</span>
-        <span class="badge"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 2l8 3v6c0 5-3.5 9.4-8 11-4.5-1.6-8-6-8-11V5l8-3zm-1 12l6-6-1.4-1.4L11 11.2 8.4 8.6 7 10l4 4z"/></svg> Compliant</span>
+        <span class="badge"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M3 4h18l-7 8v6l-4 2v-8z"/></svg> Smart intake</span>
+        <span class="badge"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2l8 3v6c0 5-3.5 9.4-8 11-4.5-1.6-8-6-8-11V5l8-3zm-1 12l6-6-1.4-1.4L11 11.2 8.4 8.6 7 10l4 4z"/></svg> Compliant</span>
       </div>
       <p>Smart sector funnels with pre-programmed compliance and upsell logic.</p>
       <details class="rbis"><summary>What’s included</summary>
@@ -40,8 +40,8 @@
     <article class="card">
       <h3>RBIS Dashboard</h3>
       <div class="badges">
-        <span class="badge"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M3 5h8v6H3V5zm10 0h8v4h-8V5zm0 6h8v8h-8v-8zM3 13h8v6H3v-6z"/></svg> SLA</span>
-        <span class="badge"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 100 20 10 10 0 000-20zm1 5h-2v6l5 3 1-1.7-4-2.3V7z"/></svg> Breach alerts</span>
+        <span class="badge"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M3 5h8v6H3V5zm10 0h8v4h-8V5zm0 6h8v8h-8v-8zM3 13h8v6H3v-6z"/></svg> SLA</span>
+        <span class="badge"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 100 20 10 10 0 000-20zm1 5h-2v6l5 3 1-1.7-4-2.3V7z"/></svg> Breach alerts</span>
       </div>
       <p>Early-warning KPIs, breach countdowns, disrepair risk heatmaps, board exports.</p>
       <details class="rbis"><summary>What’s included</summary>
@@ -53,8 +53,8 @@
     <article class="card">
       <h3>PACT Ledger</h3>
       <div class="badges">
-        <span class="badge"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M3 12l5-5 4 4 4-4 5 5-9 9-9-9z"/></svg> Promises</span>
-        <span class="badge"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M6 2h9l5 5v13a2 2 0 01-2 2H6a2 2 0 01-2-2V4a2 2 0 012-2zm8 1.5V8h4.5"/></svg> Receipts</span>
+        <span class="badge"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M3 12l5-5 4 4 4-4 5 5-9 9-9-9z"/></svg> Promises</span>
+        <span class="badge"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6 2h9l5 5v13a2 2 0 01-2 2H6a2 2 0 01-2-2V4a2 2 0 012-2zm8 1.5V8h4.5"/></svg> Receipts</span>
       </div>
       <p>Promises tracked with timers, escalation ladders, and settlement playbooks.</p>
       <details class="rbis"><summary>What’s included</summary>
@@ -66,8 +66,8 @@
     <article class="card">
       <h3>OmniAssist</h3>
       <div class="badges">
-        <span class="badge"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M10 2h4v2h3a3 3 0 013 3v8a3 3 0 01-3 3h-3l1 2H9l1-2H7a3 3 0 01-3-3V7a3 3 0 013-3h3V2zm-3 7h2v2H7V9zm8 0h2v2h-2V9z"/></svg> Assisted</span>
-        <span class="badge"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M6 2h9l5 5v13a2 2 0 01-2 2H6a2 2 0 01-2-2V4a2 2 0 012-2zm8 1.5V8h4.5"/></svg> Proofs</span>
+        <span class="badge"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M10 2h4v2h3a3 3 0 013 3v8a3 3 0 01-3 3h-3l1 2H9l1-2H7a3 3 0 01-3-3V7a3 3 0 013-3h3V2zm-3 7h2v2H7V9zm8 0h2v2h-2V9z"/></svg> Assisted</span>
+        <span class="badge"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6 2h9l5 5v13a2 2 0 01-2 2H6a2 2 0 01-2-2V4a2 2 0 012-2zm8 1.5V8h4.5"/></svg> Proofs</span>
       </div>
       <p>Human-in-the-loop automations with screenshots, selectors, and API traces.</p>
       <details class="rbis"><summary>What’s included</summary>
@@ -79,8 +79,8 @@
     <article class="card">
       <h3>NextusOne CRM</h3>
       <div class="badges">
-        <span class="badge"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 2l8 3v6c0 5-3.5 9.4-8 11-4.5-1.6-8-6-8-11V5l8-3zm-1 12l6-6-1.4-1.4L11 11.2 8.4 8.6 7 10l4 4z"/></svg> GDPR</span>
-        <span class="badge"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M6 2h9l5 5v13a2 2 0 01-2 2H6a2 2 0 01-2-2V4a2 2 0 012-2zm8 1.5V8h4.5"/></svg> DSR</span>
+        <span class="badge"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2l8 3v6c0 5-3.5 9.4-8 11-4.5-1.6-8-6-8-11V5l8-3zm-1 12l6-6-1.4-1.4L11 11.2 8.4 8.6 7 10l4 4z"/></svg> GDPR</span>
+        <span class="badge"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6 2h9l5 5v13a2 2 0 01-2 2H6a2 2 0 01-2-2V4a2 2 0 012-2zm8 1.5V8h4.5"/></svg> DSR</span>
       </div>
       <p>GDPR-first CRM: lawful basis at capture, retention clocks, DSR workflows.</p>
       <details class="rbis"><summary>What’s included</summary>
@@ -92,8 +92,8 @@
     <article class="card">
       <h3>Training & Advisory</h3>
       <div class="badges">
-        <span class="badge"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 3l10 5-10 5L2 8l10-5zm0 7l6.5-3.25V12c0 3.5-3.6 6.5-6.5 6.5S5.5 15.5 5.5 12V6.75L12 10z"/></svg> Workshops</span>
-        <span class="badge"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M6 2h9l5 5v13a2 2 0 01-2 2H6a2 2 0 01-2-2V4a2 2 0 012-2zm8 1.5V8h4.5"/></svg> Playbooks</span>
+        <span class="badge"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 3l10 5-10 5L2 8l10-5zm0 7l6.5-3.25V12c0 3.5-3.6 6.5-6.5 6.5S5.5 15.5 5.5 12V6.75L12 10z"/></svg> Workshops</span>
+        <span class="badge"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6 2h9l5 5v13a2 2 0 01-2 2H6a2 2 0 01-2-2V4a2 2 0 012-2zm8 1.5V8h4.5"/></svg> Playbooks</span>
       </div>
       <p>Workshops on tone, deception cues, evidence handling, and report structure.</p>
       <details class="rbis"><summary>What’s included</summary>

@@ -19,7 +19,6 @@
 <meta property="og:image" content="https://www.rbisintelligence.com/assets/logo.svg">
 <meta name="twitter:card" content="summary_large_image">
 </head><body>
-<main>
 <header id="rbis-nav"></header><section class="section">
   <div class="kicker">Catalogue</div>
   <h2>Products &amp; Services</h2>
@@ -87,5 +86,4 @@ window.PRODUCTS = [
     href:'/websites.html' },
 ];
 </script>
-</main>
 </body></html>
