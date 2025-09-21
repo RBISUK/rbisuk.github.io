@@ -1,11 +1,18 @@
 #!/usr/bin/env bash
 set -Eeuo pipefail; IFS=$'\n\t'
-G="${GOOGLE_SITE_VERIFICATION:-}"; B="${BING_SITE_VERIFICATION:-}"
-[[ -z "$G$B" ]] && { echo "ℹ️ no verification tokens set"; exit 0; }
-for f in $(git ls-files '*.html'); do
-  [[ -n "$G" ]] && rg -q 'name="google-site-verification"' "$f" || \
-    perl -0777 -pe "s#</head>#<meta name=\"google-site-verification\" content=\"$G\">\n</head>#i" -i "$f"
-  [[ -n "$B" ]] && rg -q 'name="msvalidate.01"' "$f" || \
-    perl -0777 -pe "s#</head>#<meta name=\"msvalidate.01\" content=\"$B\">\n</head>#i" -i "$f"
+# Usage: bash bin/meta_verify.sh google=TOKEN bing=TOKEN yandex=TOKEN pinterest=TOKEN ahrefs=TOKEN
+declare -A META=( [google]=google-site-verification [bing]=msvalidate.01 [yandex]=yandex-verification [pinterest]=p:domain_verify [ahrefs]=ahrefs-site-verification )
+for pair in "$@"; do
+  k="${pair%%=*}"; v="${pair#*=}"
+  [[ -n "${META[$k]:-}" && -n "$v" ]] || continue
+  name="${META[$k]}"
+  for f in $(git ls-files '*.html'); do
+    if rg -q "name=\"${name}\"" "$f"; then
+      perl -0777 -pe "s#<meta\\s+name=\"${name}\"\\s+content=\"[^\"]*\"\\s*/?>#<meta name=\"${name}\" content=\"${v}\">#i" -i "$f"
+    else
+      perl -0777 -pe "s#</head>#<meta name=\"${name}\" content=\"${v}\">\n</head>#i" -i "$f"
+    fi
+  done
+  echo "✅ injected $name"
 done
-echo "✅ site-verification metas injected (if tokens present)"
+[[ $# -eq 0 ]] && echo "ℹ️ pass tokens like: google=XXXX bing=YYYY"

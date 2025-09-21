@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 set -Eeuo pipefail; IFS=$'\n\t'
-# Collect hosts like https://example.cdn
-mapfile -t ORIGS < <(rg -No 'https://[^/"]+' --glob '*.html' | sort -u)
+mapfile -t ORIGS < <(rg -No 'https://[^/"]+' --glob '*.html' | sort -u || true)
 [[ ${#ORIGS[@]} -eq 0 ]] && { echo "ℹ️ no external origins found"; exit 0; }
 for f in $(git ls-files '*.html'); do
   for o in "${ORIGS[@]}"; do
