@@ -2,15 +2,6 @@
 set -Eeuo pipefail
 IFS=$'\n\t'
 
-echo "Hello from a long script!"
-# OVERWRITE the script (exactly as below)
-# Save as: bin/homepage_tidy.sh
-mkdir -p bin
-cat > bin/homepage_tidy.sh <<'BASH'
-#!/usr/bin/env bash
-set -Eeuo pipefail
-IFS=$'\n\t'
-
 # 0) Make sure CSS file exists
 mkdir -p assets
 touch assets/site.v2.css
@@ -117,11 +108,3 @@ CSS
 fi
 
 echo "Homepage tidy applied."
-BASH
-
-chmod +x bin/homepage_tidy.sh
-bash bin/homepage_tidy.sh
-
-git add -A
-git commit -m "style(home): tidy hero for mobile/desktop; remove duplicate hero nav; polish CTAs/pill"
-git push
