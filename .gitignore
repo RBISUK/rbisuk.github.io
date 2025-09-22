@@ -8,3 +8,8 @@ audit/
 _backups/
 drafts/
 audit/
+# backups / scratch
+.rbis_backup/
+_backups/
+*.bak
+*.bak.*
