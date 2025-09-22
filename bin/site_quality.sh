@@ -17,7 +17,7 @@ for f in "${FILES[@]}"; do
   # nav CSS linked?
   grep -qi '<link[^>]*href="/assets/nav-fix\.css"' "$f" || warn "Missing nav-fix.css in $f"
   # skip link present?
-  (grep -qi 'class="skip-to-content"' "$f" || grep -qi 'id="skip-to-content"' "$f") || warn "Missing skip link in $f"
+  (grep -qi '(?:id="skip-to-content"|class="skip"|class="skip-to-content")' "$f" || grep -qi 'id="skip-to-content"' "$f") || warn "Missing skip link in $f"
   # main landmark id?
   grep -qi '<main[^>]*\bid="main"' "$f" || warn "Missing <main id=\"main\"> in $f"
 
