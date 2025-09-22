@@ -56,7 +56,7 @@
 <script id="rbis-sw-reg">if("serviceWorker" in navigator){window.addEventListener("load",()=>{navigator.serviceWorker.register("/sw.js");});}</script><meta http-equiv="Content-Security-Policy-Report-Only" content="default-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self' data:; script-src 'self'; connect-src 'self'; frame-ancestors 'self'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests;"><link rel="stylesheet" href="/assets/nav-fix.css">
   <link rel="stylesheet" href="/assets/site.v2.css">
 </head><body>
-<a class="skip-to-content-to-content-to-content" href="#main">Skip to content</a><main id="main">
+<a class="skip-to-content" href="#main">Skip to content</a><main id="main">
 <header id="rbis-nav"></header><section class="hero bg-orbs">
 <nav aria-label="Primary"><a class="brand" href="/index.html">RBIS</a><details class="rbis-menu" role="navigation"><summary class="rbis-burger" aria-label="Menu">Menu</summary>
 <ul><li><a href="/solutions.html">Solutions</a></li><li><a href="/reports/">Reports</a></li><li><a href="/products.html">Products</a></li><li><a href="/about.html">About</a></li><li><a href="/contact.html">Contact</a></li></ul>
@@ -85,16 +85,9 @@
   </p>
   <div style="display:flex;gap:12px;flex-wrap:wrap">
 </main>
-    <a class="btn" href="products.html">Products<script id="nav-current">(()=>{try{
-        const p=(location.pathname||"/").replace(/index.html?,"").replace(//+,"/")||"/";
-        document.querySelectorAll("nav a[href]").forEach(a=>{
-          const href=(a.getAttribute("href")||"").replace(/index.html?,"");
-          if(href===p || href.replace(//,"")===p.replace(//,"")) a.setAttribute("aria-current","page");
-        });
-      }catch{}})();</script>
-<script id="sw-register">if("serviceWorker"in navigator){window.addEventListener("load",()=>{navigator.serviceWorker.register("/sw.js").catch(()=>{});});}</script><script src="/assets/nav-current.js" defer></script>
+    <a class="btn" href="products.html">Products<script src="/assets/nav-current.js" defer></script>
 <script src="/assets/sw-register.js" defer></script>
-</body> Services</a>
+</body>
   </div>
  </div>
  <img loading="lazy" decoding="async" class="crest-spin" src="/assets/logo.svg" alt="RBIS crest"/>

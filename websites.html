@@ -1,7 +1,7 @@
 <link rel="stylesheet" href="/assets/nav-fix.css">
 <!doctype html><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>RBIS • Website Development</title><link rel="stylesheet" href="assets/rbis.min.css"><body>
-<a class="skip-to-content-to-content-to-content" href="#main">Skip to content</a>
+<a class="skip-to-content" href="#main">Skip to content</a>
 <main id="main"><div class="nav"><div class="container bar">
   <div class="brand"><div class="logo"></div> <span>RBIS Intelligence</span></div>
   <button class="mobile btn" id="nav-toggle" aria-label="Toggle menu">☰ Menu</button>
@@ -47,14 +47,7 @@
     </div>
   </div>
 </div>
-<footer class="footer">© RBIS Intelligence.</footer><script src="assets/rbis.js" defer></script>  <script src="assets/rbis.nav.js" defer></script><script id="nav-current">(()=>{try{
-        const p=(location.pathname||"/").replace(/index.html?,"").replace(//+,"/")||"/";
-        document.querySelectorAll("nav a[href]").forEach(a=>{
-          const href=(a.getAttribute("href")||"").replace(/index.html?,"");
-          if(href===p || href.replace(//,"")===p.replace(//,"")) a.setAttribute("aria-current","page");
-        });
-      }catch{}})();</script>
-<script id="sw-register">if("serviceWorker"in navigator){window.addEventListener("load",()=>{navigator.serviceWorker.register("/sw.js").catch(()=>{});});}</script><script src="/assets/nav-current.js" defer></script>
+<footer class="footer">© RBIS Intelligence.</footer><script src="assets/rbis.js" defer></script>  <script src="assets/rbis.nav.js" defer></script><script src="/assets/nav-current.js" defer></script>
 <script src="/assets/sw-register.js" defer></script>
 </main>
 </body>

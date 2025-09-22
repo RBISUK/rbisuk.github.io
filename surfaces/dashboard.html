@@ -67,7 +67,7 @@
   <link rel="stylesheet" href="/assets/site.v2.css">
 </head>
 <body>
-<a class="skip-to-content-to-content-to-content" href="#main">Skip to content</a><header>
+<a class="skip-to-content" href="#main">Skip to content</a><header>
   <h1>RBIS • Product Dashboard</h1>
 </header>
 <main id="main">
@@ -159,14 +159,7 @@
   status.addEventListener('change', render);
   render();
 })();
-</script><script id="nav-current">(()=>{try{
-        const p=(location.pathname||"/").replace(/index.html?,"").replace(//+,"/")||"/";
-        document.querySelectorAll("nav a[href]").forEach(a=>{
-          const href=(a.getAttribute("href")||"").replace(/index.html?,"");
-          if(href===p || href.replace(//,"")===p.replace(//,"")) a.setAttribute("aria-current","page");
-        });
-      }catch{}})();</script>
-<script id="sw-register">if("serviceWorker"in navigator){window.addEventListener("load",()=>{navigator.serviceWorker.register("/sw.js").catch(()=>{});});}</script><script src="/assets/nav-current.js" defer></script>
+</script><script src="/assets/nav-current.js" defer></script>
 <script src="/assets/sw-register.js" defer></script>
 </body>
 </html>
