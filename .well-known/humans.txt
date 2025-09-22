@@ -1,5 +1,5 @@
 /* TEAM */
-Owner: RBIS Intelligence
+Owner: RBIS
 Site: https://www.rbisintelligence.com
 Twitter: @rbisuk
 

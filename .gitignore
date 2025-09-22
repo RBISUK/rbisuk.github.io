@@ -4,3 +4,7 @@ _backups/
 
 *.bak.*
 audit/
+.rbis_backup/
+_backups/
+drafts/
+audit/

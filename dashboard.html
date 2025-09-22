@@ -1,4 +1,9 @@
 <!doctype html><html class="no-js" lang="en"><head>
+  <meta name="theme-color" content="#ffffff">
+  <link rel="stylesheet" href="/assets/css/print.css" media="print">
+  <link rel="preload" href="/assets/css/rbis-utility.css" as="style">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="/assets/css/rbis-utility.css">
   <meta property="og:title" content="RBIS • Ops Dashboard">
   <meta property="og:description" content="RBIS • Ops Dashboard — RBIS applies behavioural intelligence to reduce fraud, improve trust, and accelerate decisions.">
   <meta property="og:url" content="https://www.rbisintelligence.com/dashboard.html">
@@ -57,8 +62,28 @@
 <script id="rbis-sw-reg">if("serviceWorker" in navigator){window.addEventListener("load",()=>{navigator.serviceWorker.register("/sw.js");});}</script><meta http-equiv="Content-Security-Policy-Report-Only" content="default-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self' data:; script-src 'self'; connect-src 'self'; frame-ancestors 'self'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests;"><link rel="stylesheet" href="/assets/nav-fix.css">
   <link rel="stylesheet" href="/assets/site.v2.css">
 </head><body>
+<!-- RBIS:header -->
+<header class="site">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="/assets/css/rbis-utility.css">
+  <div class="main-wrap" role="navigation">
+    <a href="/" style="font-weight:600;text-decoration:none">RBIS — Behavioural & Intelligence Services</a>
+    <nav>
+      <ul style="display:flex;gap:18px;list-style:none;margin:0;padding:0">
+        <li><a href="/offerings/">Products & Services</a></li>
+        <li><a href="/reports/">Reports</a></li>
+        <li><a href="/solutions/">Solutions</a></li>
+        <li><a href="/trust/">Trust</a></li>
+        <li><a href="/contact/">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<!-- RBIS:endheader -->
 <a class="skip-to-content" href="#main">Skip to content</a><main id="main">
 <header id="rbis-nav"></header>
+  <meta name="theme-color" content="#ffffff">
 
 <section class="section">
   <h2>Operational Metrics</h2>
@@ -82,8 +107,8 @@
       <h3>Forms</h3>
       <p class="sub">Endpoints use Zapier webhooks. No secrets on site.</p>
       <ul>
-        <li>Contact form — <strong>active</strong> (<a href="/contact.html">open</a>)</li>
-        <li>Veridex demo — <strong>active</strong> (<a href="/veridex-demo.html">open</a>)</li>
+        <li>Contact form — <strong>active</strong> (<a href="/contact/">open</a>)</li>
+        <li>Veridex demo — <strong>active</strong> (<a href="/veridex-demo/">open</a>)</li>
       </ul>
     </article>
   </div>
@@ -107,4 +132,12 @@
 </main><script src="/assets/nav-current.js" defer></script>
 <script src="/assets/sw-register.js" defer></script>
   <script src="/assets/nav-shadow.js" defer></script>
+<!-- RBIS:footer -->
+<footer class="site">
+  <div class="main-wrap" style="font-size:14px;color:#555">
+    <p>© RBIS. Evidence-first software & intelligence.</p>
+    <p><a href="/trust/privacy/">Privacy</a> · <a href="/trust/cookies/">Cookies</a> · <a href="/trust/terms/">Terms</a></p>
+  </div>
+</footer>
+<!-- RBIS:endfooter -->
 </body></html>
