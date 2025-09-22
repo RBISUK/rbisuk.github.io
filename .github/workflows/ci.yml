@@ -5,10 +5,19 @@ on:
     branches: [ main ]
   workflow_dispatch:
 
+permissions:
+  contents: write   # allow commits/pushes using GITHUB_TOKEN
+
 jobs:
   run-script:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Run long bash script
-        run: bash bin/my_long_script.sh
+        with:
+          fetch-depth: 0           # keep history so commits work cleanly
+      - name: Set git identity
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+      - name: Run long bash script (trace)
+        run: bash -xe bin/my_long_script.sh
