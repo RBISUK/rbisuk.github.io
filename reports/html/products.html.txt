@@ -1,0 +1,10 @@
+line 85 column 87 - Warning: <meta> attribute with missing trailing quote mark
+line 92 column 2 - Warning: plain text isn't allowed in <head> elements
+line 92 column 2 - Warning: inserting implicit <body>
+line 93 column 2 - Warning: discarding unexpected </script>
+line 537 column 1 - Warning: discarding unexpected </head>
+line 561 column 1 - Warning: discarding unexpected </head>
+line 561 column 8 - Warning: discarding unexpected <body>
+line 543 column 1 - Warning: <script> anchor "rbis-site" already defined
+line 553 column 1 - Warning: <script> anchor "rbis-org" already defined
+line 532 column 89 - Warning: trimming empty <noscript>

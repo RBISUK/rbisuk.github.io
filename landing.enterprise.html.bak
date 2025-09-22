@@ -1,0 +1,394 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+<link rel="preconnect  " href="https://cdn.tailwindcss.com" crossorigin>
+<link rel="dns-prefetch  " href="https://cdn.tailwindcss.com">
+
+  <meta property="og:title" content="RBIS • Landing (Enterprise)">
+  <meta property="og:description" content="RBIS • Landing (Enterprise) — RBIS applies behavioural intelligence to reduce fraud, improve trust, and accelerate decisions.">
+  <meta property="og:url" content="https://www.rbisintelligence.com/landing.enterprise.html">
+  <meta property="og:site_name" content="RBIS">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="RBIS • Landing (Enterprise)">
+  <meta name="twitter:description" content="RBIS • Landing (Enterprise) — RBIS applies behavioural intelligence to reduce fraud, improve trust, and accelerate decisions.">
+  <meta property="og:title" content="RBIS • Landing (Enterprise)">
+  <meta property="og:description" content="RBIS • Landing (Enterprise) — RBIS applies behavioural intelligence to reduce fraud, improve trust, and accelerate decisions.">
+  <meta property="og:url" content="https://www.rbisintelligence.com/landing.enterprise.html">
+  <meta property="og:site_name" content="RBIS">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="RBIS • Landing (Enterprise)">
+  <meta name="twitter:description" content="RBIS • Landing (Enterprise) — RBIS applies behavioural intelligence to reduce fraud, improve trust, and accelerate decisions.">
+  <meta property="og:title" content="RBIS • Landing (Enterprise)">
+  <meta property="og:description" content="RBIS • Landing (Enterprise) — RBIS applies behavioural intelligence to reduce fraud, improve trust, and accelerate decisions.">
+  <meta property="og:url" content="https://www.rbisintelligence.com/landing.enterprise.html">
+  <meta property="og:site_name" content="RBIS">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="RBIS • Landing (Enterprise)">
+  <meta name="twitter:description" content="RBIS • Landing (Enterprise) — RBIS applies behavioural intelligence to reduce fraud, improve trust, and accelerate decisions.">
+  <link rel="icon  " href="/assets/icons/favicon.ico">
+  <link rel="apple-touch-icon  " href="/assets/icons/apple-touch-icon.png">
+  <link rel="manifest  " href="/manifest.json">
+  <meta name="theme-color" content="#0b0e12">
+  <link rel="icon  " href="/assets/icons/favicon.ico">
+  <link rel="apple-touch-icon  " href="/assets/icons/apple-touch-icon.png">
+  <link rel="manifest  " href="/manifest.json">
+  <meta name="theme-color" content="#0b0e12">
+  <meta property="og:image:alt" content="Open Graph image for RBIS • Landing (Enterprise) — RBIS">
+  <meta property="og:title" content="RBIS • Landing (Enterprise)">
+  <meta property="og:description" content="RBIS • Landing (Enterprise) — RBIS applies behavioural intelligence to reduce fraud, improve trust, and accelerate decisions.">
+  <meta property="og:url" content="https://www.rbisintelligence.com/landing.enterprise.html">
+  <meta property="og:site_name" content="RBIS">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="RBIS • Landing (Enterprise)">
+  <meta name="twitter:description" content="RBIS • Landing (Enterprise) — RBIS applies behavioural intelligence to reduce fraud, improve trust, and accelerate decisions."><meta name="referrer" content="no-referrer-when-downgrade">
+  <link rel="alternate  " hreflang="x-default" href="https://www.rbisintelligence.com/landing.enterprise.html">
+  <link rel="alternate  " hreflang="en-GB" href="https://www.rbisintelligence.com/landing.enterprise.html">
+  <meta property="og:title" content="RBIS • Landing (Enterprise)">
+  <meta property="og:description" content="RBIS • Landing (Enterprise) — RBIS applies behavioural intelligence to reduce fraud, improve trust, and accelerate decisions.">
+  <meta property="og:url" content="https://www.rbisintelligence.com/landing.enterprise.html">
+  <meta property="og:site_name" content="RBIS">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="RBIS • Landing (Enterprise)">
+  <meta name="twitter:description" content="RBIS • Landing (Enterprise) — RBIS applies behavioural intelligence to reduce fraud, improve trust, and accelerate decisions.">
+  <meta property="og:title" content="RBIS • Landing (Enterprise)">
+  <meta property="og:description" content="RBIS • Landing (Enterprise) — RBIS applies behavioural intelligence to reduce fraud, improve trust, and accelerate decisions.">
+  <meta property="og:url" content="https://www.rbisintelligence.com/landing.enterprise.html">
+  <meta property="og:site_name" content="RBIS">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="RBIS • Landing (Enterprise)">
+  <meta name="twitter:description" content="RBIS • Landing (Enterprise) — RBIS applies behavioural intelligence to reduce fraud, improve trust, and accelerate decisions.">
+  <meta property="og:title" content="RBIS • Landing (Enterprise)">
+  <meta property="og:description" content="RBIS • Landing (Enterprise) — RBIS applies behavioural intelligence to reduce fraud, improve trust, and accelerate decisions.">
+  <meta property="og:url" content="https://www.rbisintelligence.com/landing.enterprise.html">
+  <meta property="og:site_name" content="RBIS">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="RBIS • Landing (Enterprise)">
+  <meta name="twitter:description" content="RBIS • Landing (Enterprise) — RBIS applies behavioural intelligence to reduce fraud, improve trust, and accelerate decisions.">
+  <meta property="og:image" content="https://www.rbisintelligence.com/assets/og/landing.enterprise.png">
+<!-- RBIS:OG:START -->
+  <meta property="og:title" content="RBIS • Landing (Enterprise)">
+  <meta property="og:description" content="RBIS • Landing (Enterprise) — RBIS applies behavioural intelligence to reduce fraud, improve trust, and accelerate decisions.">
+  <meta property="og:url" content="https://www.rbisintelligence.com/landing.enterprise.html">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="RBIS • Landing (Enterprise)">
+  <meta name="twitter:description" content="RBIS • Landing (Enterprise) — RBIS applies behavioural intelligence to reduce fraud, improve trust, and accelerate decisions.">
+<!-- RBIS:OG:END -->
+  <link rel="canonical  " href="https://www.rbisintelligence.com/landing.enterprise.html">
+  <meta name="description" content="RBIS • Landing (Enterprise) — RBIS applies behavioural intelligence to reduce fraud, improve trust, and accelerate decisions.">
+<!-- RBIS:STYLE:START -->
+<link rel="stylesheet  " href="/assets/rbis.css">
+<!-- RBIS:STYLE:END -->
+  <meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>RBIS • Landing (Enterprise)</title><!-- RBIS:SCRIPTS:START -->
+<script src="/assets/rbis.js" defer></script>
+<!-- RBIS:SCRIPTS:END -->
+<script id="rbis-bc" type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.rbisintelligence.com/"}
+{"@type":"ListItem","position":2,"name":"RBIS","item":"https://www.rbisintelligence.com/landing.enterprise.html"}]}
+</script>
+<script id="rbis-site" type="application/ld+json">
+{"@context":"https://schema.org",
+ "@type":"WebSite",
+ "url":"https://www.rbisintelligence.com/",
+ "name":"RBIS",
+ "potentialAction":{
+   "@type":"SearchAction",
+   "target":"https://www.rbisintelligence.com/search.html?q={search_term_string}",
+   "query-input":"required name=search_term_string"}}
+</script>
+<script id="rbis-org" type="application/ld+json">
+{"@context":"https://schema.org",
+ "@type":"Organization",
+ "url":"https://www.rbisintelligence.com/",
+ "name":"RBIS",
+ "logo":"https://www.rbisintelligence.com/assets/logo.svg"}
+</script>
+<link rel="search  " type="application/opensearchdescription+xml" href="/opensearch.xml">
+<link rel="mask-icon  " href="/assets/icons/safari-pinned-tab.svg" color="#111111">
+<link rel="preconnect  " href="careers.html:https://analytics.eu.org; base-uri 'self'; frame-ancestors 'self'; form-action 'self'" crossorigin>
+<link rel="preconnect  " href="careers.html:https://cdn.tailwindcss.com 'unsafe-inline'; style-src 'self' 'unsafe-inline'; connect-src 'self' https:" crossorigin>
+<link rel="preconnect  " href="careers.html:https://www.rbisintelligence.com" crossorigin>
+<link rel="preconnect  " href="contact.html:https://analytics.eu.org; base-uri 'self'; frame-ancestors 'self'; form-action 'self'" crossorigin>
+<link rel="preconnect  " href="contact.html:https://api.ipify.org?format=json" crossorigin>
+<link rel="preconnect  " href="contact.html:https://cdn.tailwindcss.com 'unsafe-inline'; style-src 'self' 'unsafe-inline'; connect-src 'self' https:" crossorigin>
+<link rel="preconnect  " href="contact.html:https://hooks.zapier.com" crossorigin>
+<link rel="preconnect  " href="contact.html:https://schema.org" crossorigin>
+<link rel="preconnect  " href="contact.html:https://www.rbisintelligence.com" crossorigin>
+<link rel="preconnect  " href="cookies.html:https://analytics.eu.org; base-uri 'self'; frame-ancestors 'self'; form-action 'self'" crossorigin>
+<link rel="preconnect  " href="cookies.html:https://cdn.tailwindcss.com 'unsafe-inline'; style-src 'self' 'unsafe-inline'; connect-src 'self' https:" crossorigin>
+<link rel="preconnect  " href="cookies.html:https://schema.org" crossorigin>
+<link rel="preconnect  " href="cookies.html:https://www.rbisintelligence.com" crossorigin>
+<link rel="preconnect  " href="dashboard.html:https://analytics.eu.org; base-uri 'self'; frame-ancestors 'self'; form-action 'self'" crossorigin>
+<link rel="preconnect  " href="dashboard.html:https://cdn.tailwindcss.com 'unsafe-inline'; style-src 'self' 'unsafe-inline'; connect-src 'self' https:" crossorigin>
+<link rel="preconnect  " href="dashboard.html:https://schema.org" crossorigin>
+<link rel="preconnect  " href="dashboard.html:https://www.rbisintelligence.com" crossorigin>
+<link rel="preconnect  " href="deep.html:https://analytics.eu.org; base-uri 'self'; frame-ancestors 'self'; form-action 'self'" crossorigin>
+<link rel="preconnect  " href="deep.html:https://cdn.tailwindcss.com" crossorigin>
+<link rel="preconnect  " href="deep.html:https://cdn.tailwindcss.com 'unsafe-inline'; style-src 'self' 'unsafe-inline'; connect-src 'self' https:" crossorigin>
+<link rel="preconnect  " href="deep.html:https://schema.org" crossorigin>
+<link rel="preconnect  " href="deep.html:https://www.rbisintelligence.com" crossorigin>
+<link rel="preconnect  " href="embed/product.html:https://analytics.eu.org; base-uri 'self'; frame-ancestors 'self'; form-action 'self'" crossorigin>
+<link rel="preconnect  " href="embed/product.html:https://cdn.tailwindcss.com" crossorigin>
+<link rel="preconnect  " href="embed/product.html:https://cdn.tailwindcss.com 'unsafe-inline'; style-src 'self' 'unsafe-inline'; connect-src 'self' https:" crossorigin>
+<link rel="preconnect  " href="embed/product.html:https://schema.org" crossorigin>
+<link rel="preconnect  " href="embed/product.html:https://www.rbisintelligence.com" crossorigin>
+<link rel="preconnect  " href="index.html:https://analytics.eu.org; base-uri 'self'; frame-ancestors 'self'; form-action 'self'" crossorigin>
+<link rel="preconnect  " href="index.html:https://cdn.tailwindcss.com 'unsafe-inline'; style-src 'self' 'unsafe-inline'; connect-src 'self' https:" crossorigin>
+<link rel="preconnect  " href="index.html:https://hooks.zapier.com" crossorigin>
+<link rel="preconnect  " href="index.html:https://schema.org" crossorigin>
+<link rel="preconnect  " href="index.html:https://www.rbisintelligence.com" crossorigin>
+<link rel="preconnect  " href="landing.enterprise.html:https://analytics.eu.org; base-uri 'self'; frame-ancestors 'self'; form-action 'self'" crossorigin>
+<link rel="preconnect  " href="landing.enterprise.html:https://cdn.tailwindcss.com" crossorigin>
+<link rel="preconnect  " href="landing.enterprise.html:https://cdn.tailwindcss.com 'unsafe-inline'; style-src 'self' 'unsafe-inline'; connect-src 'self' https:" crossorigin>
+<link rel="preconnect  " href="landing.enterprise.html:https://schema.org" crossorigin>
+<link rel="preconnect  " href="landing.enterprise.html:https://www.rbisintelligence.com" crossorigin>
+<link rel="preconnect  " href="landing.minimal.html:https://analytics.eu.org; base-uri 'self'; frame-ancestors 'self'; form-action 'self'" crossorigin>
+<link rel="preconnect  " href="landing.minimal.html:https://cdn.tailwindcss.com" crossorigin>
+<link rel="preconnect  " href="landing.minimal.html:https://cdn.tailwindcss.com 'unsafe-inline'; style-src 'self' 'unsafe-inline'; connect-src 'self' https:" crossorigin>
+<link rel="preconnect  " href="landing.minimal.html:https://schema.org" crossorigin>
+<link rel="preconnect  " href="landing.minimal.html:https://www.rbisintelligence.com" crossorigin>
+<link rel="preconnect  " href="landing.story.html:https://analytics.eu.org; base-uri 'self'; frame-ancestors 'self'; form-action 'self'" crossorigin>
+<link rel="preconnect  " href="landing.story.html:https://cdn.tailwindcss.com" crossorigin>
+<link rel="preconnect  " href="landing.story.html:https://cdn.tailwindcss.com 'unsafe-inline'; style-src 'self' 'unsafe-inline'; connect-src 'self' https:" crossorigin>
+<link rel="preconnect  " href="landing.story.html:https://schema.org" crossorigin>
+<link rel="preconnect  " href="landing.story.html:https://www.rbisintelligence.com" crossorigin>
+<link rel="preconnect  " href="offerings.html:https://analytics.eu.org; base-uri 'self'; frame-ancestors 'self'; form-action 'self'" crossorigin>
+<link rel="preconnect  " href="offerings.html:https://cdn.tailwindcss.com 'unsafe-inline'; style-src 'self' 'unsafe-inline'; connect-src 'self' https:" crossorigin>
+<link rel="preconnect  " href="offerings.html:https://schema.org" crossorigin>
+<link rel="preconnect  " href="offerings.html:https://www.rbisintelligence.com" crossorigin>
+<link rel="preconnect  " href="privacy.html:https://analytics.eu.org; base-uri 'self'; frame-ancestors 'self'; form-action 'self'" crossorigin>
+<link rel="preconnect  " href="privacy.html:https://cdn.tailwindcss.com 'unsafe-inline'; style-src 'self' 'unsafe-inline'; connect-src 'self' https:" crossorigin>
+<link rel="preconnect  " href="privacy.html:https://schema.org" crossorigin>
+<link rel="preconnect  " href="privacy.html:https://www.rbisintelligence.com" crossorigin>
+<link rel="preconnect  " href="products.html:https://analytics.eu.org; base-uri 'self'; frame-ancestors 'self'; form-action 'self'" crossorigin>
+<link rel="preconnect  " href="products.html:https://cdn.tailwindcss.com 'unsafe-inline'; style-src 'self' 'unsafe-inline'; connect-src 'self' https:" crossorigin>
+<link rel="preconnect  " href="products.html:https://hooks.zapier.com" crossorigin>
+<link rel="preconnect  " href="products.html:https://schema.org" crossorigin>
+<link rel="preconnect  " href="products.html:https://www.rbisintelligence.com" crossorigin>
+<link rel="preconnect  " href="reports.html:https://schema.org" crossorigin>
+<link rel="preconnect  " href="reports.html:https://www.rbisintelligence.com" crossorigin>
+<link rel="preconnect  " href="sitemap.html:https://www.rbisintelligence.com" crossorigin>
+<link rel="preconnect  " href="surfaces/dashboard.html:https://analytics.eu.org; base-uri 'self'; frame-ancestors 'self'; form-action 'self'" crossorigin>
+<link rel="preconnect  " href="surfaces/dashboard.html:https://cdn.tailwindcss.com 'unsafe-inline'; style-src 'self' 'unsafe-inline'; connect-src 'self' https:" crossorigin>
+<link rel="preconnect  " href="surfaces/dashboard.html:https://schema.org" crossorigin>
+<link rel="preconnect  " href="surfaces/dashboard.html:https://www.rbisintelligence.com" crossorigin>
+<link rel="preconnect  " href="terms.html:https://analytics.eu.org; base-uri 'self'; frame-ancestors 'self'; form-action 'self'" crossorigin>
+<link rel="preconnect  " href="terms.html:https://cdn.tailwindcss.com 'unsafe-inline'; style-src 'self' 'unsafe-inline'; connect-src 'self' https:" crossorigin>
+<link rel="preconnect  " href="terms.html:https://schema.org" crossorigin>
+<link rel="preconnect  " href="terms.html:https://www.rbisintelligence.com" crossorigin>
+<link rel="preconnect  " href="trust.html:https://analytics.eu.org; base-uri 'self'; frame-ancestors 'self'; form-action 'self'" crossorigin>
+<link rel="preconnect  " href="trust.html:https://cdn.tailwindcss.com 'unsafe-inline'; style-src 'self' 'unsafe-inline'; connect-src 'self' https:" crossorigin>
+<link rel="preconnect  " href="trust.html:https://schema.org" crossorigin>
+<link rel="preconnect  " href="trust.html:https://www.rbisintelligence.com" crossorigin>
+<link rel="preconnect  " href="trust/accessibility/statement.html:https://www.rbisintelligence.com" crossorigin>
+<link rel="preconnect  " href="veridex-demo.html:https://analytics.eu.org; base-uri 'self'; frame-ancestors 'self'; form-action 'self'" crossorigin>
+<link rel="preconnect  " href="veridex-demo.html:https://api.ipify.org?format=json" crossorigin>
+<link rel="preconnect  " href="veridex-demo.html:https://cdn.tailwindcss.com 'unsafe-inline'; style-src 'self' 'unsafe-inline'; connect-src 'self' https:" crossorigin>
+<link rel="preconnect  " href="veridex-demo.html:https://hooks.zapier.com" crossorigin>
+<link rel="preconnect  " href="veridex-demo.html:https://schema.org" crossorigin>
+<link rel="preconnect  " href="veridex-demo.html:https://www.rbisintelligence.com" crossorigin>
+<link rel="preconnect  " href="veridex.html:https://analytics.eu.org; base-uri 'self'; frame-ancestors 'self'; form-action 'self'" crossorigin>
+<link rel="preconnect  " href="veridex.html:https://api.ipify.org?format=json" crossorigin>
+<link rel="preconnect  " href="veridex.html:https://cdn.tailwindcss.com 'unsafe-inline'; style-src 'self' 'unsafe-inline'; connect-src 'self' https:" crossorigin>
+<link rel="preconnect  " href="veridex.html:https://hooks.zapier.com" crossorigin>
+<link rel="preconnect  " href="veridex.html:https://schema.org" crossorigin>
+<link rel="preconnect  " href="veridex.html:https://www.rbisintelligence.com" crossorigin>
+<meta http-equiv="Permissions-Policy" content="accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=()">
+<meta name="robots" content="max-image-preview:large">
+<script id="rbis-sw-reg">if("serviceWorker" in navigator){window.addEventListener("load",()=>{navigator.serviceWorker.register("/sw.js");});}</script>
+<link rel="preconnect  " href="careers.html:https://analytics.eu.org; base-uri 'self'; frame-ancestors 'self'; form-action 'self'" crossorigin>
+<link rel="preconnect  " href="careers.html:https://cdn.tailwindcss.com 'unsafe-inline'; style-src 'self' 'unsafe-inline'; connect-src 'self' https:" crossorigin>
+<link rel="preconnect  " href="careers.html:https://www.rbisintelligence.com" crossorigin>
+<link rel="preconnect  " href="contact.html:https://analytics.eu.org; base-uri 'self'; frame-ancestors 'self'; form-action 'self'" crossorigin>
+<link rel="preconnect  " href="contact.html:https://api.ipify.org?format=json" crossorigin>
+<link rel="preconnect  " href="contact.html:https://cdn.tailwindcss.com" crossorigin>
+<link rel="preconnect  " href="contact.html:https://cdn.tailwindcss.com 'unsafe-inline'; style-src 'self' 'unsafe-inline'; connect-src 'self' https:" crossorigin>
+<link rel="preconnect  " href="contact.html:https://hooks.zapier.com" crossorigin>
+<link rel="preconnect  " href="contact.html:https://schema.org" crossorigin>
+<link rel="preconnect  " href="contact.html:https://www.rbisintelligence.com" crossorigin>
+<link rel="preconnect  " href="cookies.html:https://analytics.eu.org; base-uri 'self'; frame-ancestors 'self'; form-action 'self'" crossorigin>
+<link rel="preconnect  " href="cookies.html:https://api.ipify.org?format=json" crossorigin>
+<link rel="preconnect  " href="cookies.html:https://cdn.tailwindcss.com" crossorigin>
+<link rel="preconnect  " href="cookies.html:https://cdn.tailwindcss.com 'unsafe-inline'; style-src 'self' 'unsafe-inline'; connect-src 'self' https:" crossorigin>
+<link rel="preconnect  " href="cookies.html:https://hooks.zapier.com" crossorigin>
+<link rel="preconnect  " href="cookies.html:https://schema.org" crossorigin>
+<link rel="preconnect  " href="cookies.html:https://www.rbisintelligence.com" crossorigin>
+<link rel="preconnect  " href="dashboard.html:https://analytics.eu.org; base-uri 'self'; frame-ancestors 'self'; form-action 'self'" crossorigin>
+<link rel="preconnect  " href="dashboard.html:https://api.ipify.org?format=json" crossorigin>
+<link rel="preconnect  " href="dashboard.html:https://cdn.tailwindcss.com" crossorigin>
+<link rel="preconnect  " href="dashboard.html:https://cdn.tailwindcss.com 'unsafe-inline'; style-src 'self' 'unsafe-inline'; connect-src 'self' https:" crossorigin>
+<link rel="preconnect  " href="dashboard.html:https://hooks.zapier.com" crossorigin>
+<link rel="preconnect  " href="dashboard.html:https://schema.org" crossorigin>
+<link rel="preconnect  " href="dashboard.html:https://www.rbisintelligence.com" crossorigin>
+<link rel="preconnect  " href="deep.html:https://analytics.eu.org; base-uri 'self'; frame-ancestors 'self'; form-action 'self'" crossorigin>
+<link rel="preconnect  " href="deep.html:https://api.ipify.org?format=json" crossorigin>
+<link rel="preconnect  " href="deep.html:https://cdn.tailwindcss.com" crossorigin>
+<link rel="preconnect  " href="deep.html:https://cdn.tailwindcss.com 'unsafe-inline'; style-src 'self' 'unsafe-inline'; connect-src 'self' https:" crossorigin>
+<link rel="preconnect  " href="deep.html:https://hooks.zapier.com" crossorigin>
+<link rel="preconnect  " href="deep.html:https://schema.org" crossorigin>
+<link rel="preconnect  " href="deep.html:https://www.rbisintelligence.com" crossorigin>
+<link rel="preconnect  " href="embed/product.html:https://analytics.eu.org; base-uri 'self'; frame-ancestors 'self'; form-action 'self'" crossorigin>
+<link rel="preconnect  " href="embed/product.html:https://api.ipify.org?format=json" crossorigin>
+<link rel="preconnect  " href="embed/product.html:https://cdn.tailwindcss.com" crossorigin>
+<link rel="preconnect  " href="embed/product.html:https://cdn.tailwindcss.com 'unsafe-inline'; style-src 'self' 'unsafe-inline'; connect-src 'self' https:" crossorigin>
+<link rel="preconnect  " href="embed/product.html:https://hooks.zapier.com" crossorigin>
+<link rel="preconnect  " href="embed/product.html:https://schema.org" crossorigin>
+<link rel="preconnect  " href="embed/product.html:https://www.rbisintelligence.com" crossorigin>
+<link rel="preconnect  " href="index.html:https://analytics.eu.org; base-uri 'self'; frame-ancestors 'self'; form-action 'self'" crossorigin>
+<link rel="preconnect  " href="index.html:https://api.ipify.org?format=json" crossorigin>
+<link rel="preconnect  " href="index.html:https://cdn.tailwindcss.com" crossorigin>
+<link rel="preconnect  " href="index.html:https://cdn.tailwindcss.com 'unsafe-inline'; style-src 'self' 'unsafe-inline'; connect-src 'self' https:" crossorigin>
+<link rel="preconnect  " href="index.html:https://hooks.zapier.com" crossorigin>
+<link rel="preconnect  " href="index.html:https://schema.org" crossorigin>
+<link rel="preconnect  " href="index.html:https://www.rbisintelligence.com" crossorigin>
+<link rel="preconnect  " href="landing.enterprise.html:https://analytics.eu.org; base-uri 'self'; frame-ancestors 'self'; form-action 'self'" crossorigin>
+<link rel="preconnect  " href="landing.enterprise.html:https://api.ipify.org?format=json" crossorigin>
+<link rel="preconnect  " href="landing.enterprise.html:https://cdn.tailwindcss.com" crossorigin>
+<link rel="preconnect  " href="landing.enterprise.html:https://cdn.tailwindcss.com 'unsafe-inline'; style-src 'self' 'unsafe-inline'; connect-src 'self' https:" crossorigin>
+<link rel="preconnect  " href="landing.enterprise.html:https://hooks.zapier.com" crossorigin>
+<link rel="preconnect  " href="landing.enterprise.html:https://schema.org" crossorigin>
+<link rel="preconnect  " href="landing.enterprise.html:https://www.rbisintelligence.com" crossorigin>
+<link rel="preconnect  " href="landing.minimal.html:https://analytics.eu.org; base-uri 'self'; frame-ancestors 'self'; form-action 'self'" crossorigin>
+<link rel="preconnect  " href="landing.minimal.html:https://api.ipify.org?format=json" crossorigin>
+<link rel="preconnect  " href="landing.minimal.html:https://cdn.tailwindcss.com" crossorigin>
+<link rel="preconnect  " href="landing.minimal.html:https://cdn.tailwindcss.com 'unsafe-inline'; style-src 'self' 'unsafe-inline'; connect-src 'self' https:" crossorigin>
+<link rel="preconnect  " href="landing.minimal.html:https://hooks.zapier.com" crossorigin>
+<link rel="preconnect  " href="landing.minimal.html:https://schema.org" crossorigin>
+<link rel="preconnect  " href="landing.minimal.html:https://www.rbisintelligence.com" crossorigin>
+<link rel="preconnect  " href="landing.story.html:https://analytics.eu.org; base-uri 'self'; frame-ancestors 'self'; form-action 'self'" crossorigin>
+<link rel="preconnect  " href="landing.story.html:https://api.ipify.org?format=json" crossorigin>
+<link rel="preconnect  " href="landing.story.html:https://cdn.tailwindcss.com" crossorigin>
+<link rel="preconnect  " href="landing.story.html:https://cdn.tailwindcss.com 'unsafe-inline'; style-src 'self' 'unsafe-inline'; connect-src 'self' https:" crossorigin>
+<link rel="preconnect  " href="landing.story.html:https://hooks.zapier.com" crossorigin>
+<link rel="preconnect  " href="landing.story.html:https://schema.org" crossorigin>
+<link rel="preconnect  " href="landing.story.html:https://www.rbisintelligence.com" crossorigin>
+<link rel="preconnect  " href="offerings.html:https://analytics.eu.org; base-uri 'self'; frame-ancestors 'self'; form-action 'self'" crossorigin>
+<link rel="preconnect  " href="offerings.html:https://api.ipify.org?format=json" crossorigin>
+<link rel="preconnect  " href="offerings.html:https://cdn.tailwindcss.com" crossorigin>
+<link rel="preconnect  " href="offerings.html:https://cdn.tailwindcss.com 'unsafe-inline'; style-src 'self' 'unsafe-inline'; connect-src 'self' https:" crossorigin>
+<link rel="preconnect  " href="offerings.html:https://hooks.zapier.com" crossorigin>
+<link rel="preconnect  " href="offerings.html:https://schema.org" crossorigin>
+<link rel="preconnect  " href="offerings.html:https://www.rbisintelligence.com" crossorigin>
+<link rel="preconnect  " href="privacy.html:https://analytics.eu.org; base-uri 'self'; frame-ancestors 'self'; form-action 'self'" crossorigin>
+<link rel="preconnect  " href="privacy.html:https://api.ipify.org?format=json" crossorigin>
+<link rel="preconnect  " href="privacy.html:https://cdn.tailwindcss.com" crossorigin>
+<link rel="preconnect  " href="privacy.html:https://cdn.tailwindcss.com 'unsafe-inline'; style-src 'self' 'unsafe-inline'; connect-src 'self' https:" crossorigin>
+<link rel="preconnect  " href="privacy.html:https://hooks.zapier.com" crossorigin>
+<link rel="preconnect  " href="privacy.html:https://schema.org" crossorigin>
+<link rel="preconnect  " href="privacy.html:https://www.rbisintelligence.com" crossorigin>
+<link rel="preconnect  " href="products.html:https://analytics.eu.org; base-uri 'self'; frame-ancestors 'self'; form-action 'self'" crossorigin>
+<link rel="preconnect  " href="products.html:https://api.ipify.org?format=json" crossorigin>
+<link rel="preconnect  " href="products.html:https://cdn.tailwindcss.com" crossorigin>
+<link rel="preconnect  " href="products.html:https://cdn.tailwindcss.com 'unsafe-inline'; style-src 'self' 'unsafe-inline'; connect-src 'self' https:" crossorigin>
+<link rel="preconnect  " href="products.html:https://hooks.zapier.com" crossorigin>
+<link rel="preconnect  " href="products.html:https://schema.org" crossorigin>
+<link rel="preconnect  " href="products.html:https://www.rbisintelligence.com" crossorigin>
+<link rel="preconnect  " href="reports.html:https://schema.org" crossorigin>
+<link rel="preconnect  " href="reports.html:https://www.rbisintelligence.com" crossorigin>
+<link rel="preconnect  " href="sitemap.html:https://www.rbisintelligence.com" crossorigin>
+<link rel="preconnect  " href="surfaces/dashboard.html:https://analytics.eu.org; base-uri 'self'; frame-ancestors 'self'; form-action 'self'" crossorigin>
+<link rel="preconnect  " href="surfaces/dashboard.html:https://api.ipify.org?format=json" crossorigin>
+<link rel="preconnect  " href="surfaces/dashboard.html:https://cdn.tailwindcss.com" crossorigin>
+<link rel="preconnect  " href="surfaces/dashboard.html:https://cdn.tailwindcss.com 'unsafe-inline'; style-src 'self' 'unsafe-inline'; connect-src 'self' https:" crossorigin>
+<link rel="preconnect  " href="surfaces/dashboard.html:https://hooks.zapier.com" crossorigin>
+<link rel="preconnect  " href="surfaces/dashboard.html:https://schema.org" crossorigin>
+<link rel="preconnect  " href="surfaces/dashboard.html:https://www.rbisintelligence.com" crossorigin>
+<link rel="preconnect  " href="terms.html:https://analytics.eu.org; base-uri 'self'; frame-ancestors 'self'; form-action 'self'" crossorigin>
+<link rel="preconnect  " href="terms.html:https://api.ipify.org?format=json" crossorigin>
+<link rel="preconnect  " href="terms.html:https://cdn.tailwindcss.com" crossorigin>
+<link rel="preconnect  " href="terms.html:https://cdn.tailwindcss.com 'unsafe-inline'; style-src 'self' 'unsafe-inline'; connect-src 'self' https:" crossorigin>
+<link rel="preconnect  " href="terms.html:https://hooks.zapier.com" crossorigin>
+<link rel="preconnect  " href="terms.html:https://schema.org" crossorigin>
+<link rel="preconnect  " href="terms.html:https://www.rbisintelligence.com" crossorigin>
+<link rel="preconnect  " href="trust.html:https://analytics.eu.org; base-uri 'self'; frame-ancestors 'self'; form-action 'self'" crossorigin>
+<link rel="preconnect  " href="trust.html:https://api.ipify.org?format=json" crossorigin>
+<link rel="preconnect  " href="trust.html:https://cdn.tailwindcss.com" crossorigin>
+<link rel="preconnect  " href="trust.html:https://cdn.tailwindcss.com 'unsafe-inline'; style-src 'self' 'unsafe-inline'; connect-src 'self' https:" crossorigin>
+<link rel="preconnect  " href="trust.html:https://hooks.zapier.com" crossorigin>
+<link rel="preconnect  " href="trust.html:https://schema.org" crossorigin>
+<link rel="preconnect  " href="trust.html:https://www.rbisintelligence.com" crossorigin>
+<link rel="preconnect  " href="trust/accessibility/statement.html:https://www.rbisintelligence.com" crossorigin>
+<link rel="preconnect  " href="veridex-demo.html:https://analytics.eu.org; base-uri 'self'; frame-ancestors 'self'; form-action 'self'" crossorigin>
+<link rel="preconnect  " href="veridex-demo.html:https://api.ipify.org?format=json" crossorigin>
+<link rel="preconnect  " href="veridex-demo.html:https://cdn.tailwindcss.com" crossorigin>
+<link rel="preconnect  " href="veridex-demo.html:https://cdn.tailwindcss.com 'unsafe-inline'; style-src 'self' 'unsafe-inline'; connect-src 'self' https:" crossorigin>
+<link rel="preconnect  " href="veridex-demo.html:https://hooks.zapier.com" crossorigin>
+<link rel="preconnect  " href="veridex-demo.html:https://schema.org" crossorigin>
+<link rel="preconnect  " href="veridex-demo.html:https://www.rbisintelligence.com" crossorigin>
+<link rel="preconnect  " href="veridex.html:https://analytics.eu.org; base-uri 'self'; frame-ancestors 'self'; form-action 'self'" crossorigin>
+<link rel="preconnect  " href="veridex.html:https://api.ipify.org?format=json" crossorigin>
+<link rel="preconnect  " href="veridex.html:https://cdn.tailwindcss.com" crossorigin>
+<link rel="preconnect  " href="veridex.html:https://cdn.tailwindcss.com 'unsafe-inline'; style-src 'self' 'unsafe-inline'; connect-src 'self' https:" crossorigin>
+<link rel="preconnect  " href="veridex.html:https://hooks.zapier.com" crossorigin>
+<link rel="preconnect  " href="veridex.html:https://schema.org" crossorigin>
+<link rel="preconnect  " href="veridex.html:https://www.rbisintelligence.com" crossorigin>
+<link rel="preload" as="style" href="/assets/site.min.a094e0da0d.css" integrity="sha384-ph3LLVq3hH9/5flY4qNzPJGN9YnJJUQ6p2vRza0lhnvvYw8UeNCfCQ9+dIlt7y7W" crossorigin>
+<link rel="stylesheet" href="/assets/site.min.a094e0da0d.css" integrity="sha384-ph3LLVq3hH9/5flY4qNzPJGN9YnJJUQ6p2vRza0lhnvvYw8UeNCfCQ9+dIlt7y7W" crossorigin>
+<noscript><link rel="stylesheet" href="/assets/site.min.a094e0da0d.css"></noscript>
+<meta http-equiv="Content-Security-Policy-Report-Only" content="default-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self' data:; script-src 'self'; connect-src 'self'; frame-ancestors 'self'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests;"><link rel="stylesheet" href="/assets/nav-fix.css">
+</head>
+<body class="bg-slate-950 text-slate-100">
+  <a id="skip-to-content" class="skip" href="#main" style="position:absolute;left:-9999px;top:-9999px">Skip to content</a>
+  <header class="sticky top-0 z-40 border-b border-white/10 backdrop-blur bg-slate-950/70">
+    <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="h-8 w-8 rounded-lg bg-gradient-to-br from-slate-500/30 via-sky-600/30 to-emerald-600/30"></div>
+        <span class="font-semibold">RBIS</span>
+        <span class="hidden md:inline text-xs text-slate-400 ml-2">Landing — Enterprise</span>
+      </div>
+      <a class="text-xs px-3 py-1.5 rounded-md bg-white/5 border border-white/10" href="index.html">Index</a>
+    </div>
+  </header>
+
+  <section class="relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-b from-slate-500/30 via-sky-600/30 to-emerald-600/30 opacity-20"></div>
+    <div class="relative max-w-7xl mx-auto px-4 py-14">
+      <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight">Audit-ready software that makes compliance the default.</h1>
+      <p class="mt-4 text-lg text-slate-300 max-w-3xl">Six products. One brain. Evidence over anecdotes.</p>
+      <div id="tiles" class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-4"></div>
+    </div>
+  </section>
+
+  <main id="main" class="max-w-7xl mx-auto px-4 pb-24">
+    <div id="sections" class="grid gap-6"></div>
+  </main>
+
+  <footer class="border-top border-white/10"></footer>
+
+  <script>
+    async function run(){
+      const r = await fetch('rbis.products.json'.replace('','')); const data = await r.json();
+      const tiles = document.getElementById('tiles'); const sections = document.getElementById('sections');
+      const tile = (p)=>`
+        <a href="#${p.name}" class="card group rounded-2xl border border-white/10 p-5 bg-white/[.03] hover:shadow-lg transition">
+          <h3 class="font-semibold">${p.name}</h3>
+          <p class="text-sm text-slate-400 mt-1">${p.tagline}</p>
+          <p class="text-xs text-slate-500 mt-3 group-hover:text-slate-300">${(p.psych||[])[0]||''}</p>
+        </a>`;
+      data.products.forEach(p=> tiles.insertAdjacentHTML('beforeend', tile(p)));
+      // Show skim sections (Problem + Capabilities)
+      const list=(a)=>a.map(i=>`<li class="leading-relaxed">${i}</li>`).join('');
+      data.products.forEach(p=>{
+        const el=document.createElement('section'); el.id=p.name;
+        el.className="rounded-2xl border border-white/10 bg-white/[.03] p-6";
+        el.innerHTML=`
+          <h2 class="text-xl font-bold">${p.name} — <span class="text-slate-300">${p.tagline}</span></h2>
+          <div class="grid md:grid-cols-2 gap-4 mt-3">
+            <div><h3 class="font-semibold">Problem</h3><p class="text-slate-300 mt-1">${p.problem}</p></div>
+            <div><h3 class="font-semibold">Core Capabilities</h3><ul class="mt-1">${list(p.capabilities.slice(0,4))}</ul></div>
+          </div>
+          <div class="mt-4 text-sm text-slate-400"><a class="underline" href="deep.html#${p.name}">Deep dive →</a></div>`;
+        sections.appendChild(el);
+      });
+    } run();
+  </script>
+<script id="sw-register">if("serviceWorker"in navigator){navigator.serviceWorker.register("/sw.js",{scope:"/"}).catch(()=>{});}</script><script id="nav-current">(()=>{try{const p=location.pathname.replace(/index.html?,"");document.querySelectorAll("nav a[href]").forEach(a=>{const href=a.getAttribute("href").replace(/index.html?,"");if(href===p||href===p+"/")a.setAttribute("aria-current","page");});}catch{}})();</script></body>
+</html>

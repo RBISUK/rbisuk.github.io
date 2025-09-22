@@ -1,0 +1,3 @@
+line 456 column 89 - Warning: trimming empty <noscript>
+line 472 column 7 - Warning: <a> proprietary attribute "aria-current"
+line 496 column 7 - Warning: <input> proprietary attribute "inputmode"
