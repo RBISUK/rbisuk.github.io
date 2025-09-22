@@ -19,8 +19,9 @@ JS
 fi
 
 # Ensure rbis.css imports site.v2.css (idempotent)
-grep -q 'site.v2.css' assets/rbis.css 2>/dev/null || \
+if [[ -f assets/rbis.css ]] && ! grep -q 'site.v2.css' assets/rbis.css; then
   sed -i '1i @import url("/assets/site.v2.css");' assets/rbis.css
+fi
 
 # Canonical nav markup to inject
 read -r -d '' NAV <<"HTML"
@@ -38,23 +39,23 @@ read -r -d '' NAV <<"HTML"
 HTML
 
 for f in "${FILES[@]}"; do
-  # only full pages with a body
+  # Only full pages
   grep -qi '<body\b' "$f" || continue
 
-  # Remove placeholder header and legacy inline nav/sw scripts
+  # 1) Remove placeholder header & legacy inline nav/sw scripts
   perl -0777 -i -pe 's#<header\s+id="rbis-nav"\s*></header>\s*##gis' "$f"
   perl -0777 -i -pe 's#<script id="nav-current">.*?</script>\s*##gis; s#<script id="sw-register">.*?</script>\s*##gis' "$f"
 
-  # Ensure /assets/rbis.css linked once (it imports site.v2.css)
+  # 2) Ensure /assets/rbis.css is linked (once)
   grep -qi '/assets/rbis\.css' "$f" || \
     perl -0777 -i -pe 's#</head>#  <link rel="stylesheet" href="/assets/rbis.css">\n</head>#i' "$f"
 
-  # Add skip link after <body> if missing
-  if ! grep -qi 'class="skip-to-content"' "$f"; then
+  # 3) Ensure skip link after <body> (once)
+  if ! perl -0777 -ne 'exit 0 if /<a\b[^>]*class="skip-to-content"[^>]*>/i; exit 1' "$f"; then
     perl -0777 -i -pe 's#(<body\b[^>]*>)#$1\n<a class="skip-to-content" href="#main">Skip to content</a>#i' "$f"
   fi
 
-  # Insert the header right after the skip link (once)
+  # 4) Insert header right after skip link (once)
   if ! grep -qi 'class="site-header"' "$f"; then
     awk -v nav="$NAV" 'BEGIN{added=0}
       {
@@ -63,14 +64,14 @@ for f in "${FILES[@]}"; do
       }' "$f" > "$f.tmp" && mv "$f.tmp" "$f"
   fi
 
-  # Normalize weird duplicated skip link classes
+  # 5) Normalize odd skip-link classname variants
   perl -0777 -i -pe 's/class="skip-to-content[^"]*"/class="skip-to-content"/gi' "$f"
 
-  # Ensure <main id="main"> (add id only if a <main> exists)
+  # 6) Ensure <main id="main"> (add id only if a <main> exists)
   grep -qi '<main\b' "$f" && \
     perl -0777 -i -pe 's#<main(?![^>]*\bid=)#<main id="main"#ig' "$f"
 
-  # Ensure nav-shadow helper linked once before </body>
+  # 7) Ensure nav-shadow helper before </body> (once)
   grep -q '/assets/nav-shadow\.js' "$f" || \
     perl -0777 -i -pe 's#</body>#  <script src="/assets/nav-shadow.js" defer></script>\n</body>#i' "$f"
 done
