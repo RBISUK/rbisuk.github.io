@@ -2,7 +2,7 @@ name: Deploy site (Pages)
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ main ]
   workflow_dispatch:
 
 permissions:
@@ -21,18 +21,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-          cache: 'npm'
-
-      - name: Build (ci_build)
-        run: |
-          chmod +x bin/ci_build.sh || true
-          ./bin/ci_build.sh
-
-      - name: Upload artifact
+      # Upload the repo root exactly as-is (includes CNAME/.nojekyll)
+      - name: Upload static site
         uses: actions/upload-pages-artifact@v3
         with:
           path: .
@@ -44,6 +34,6 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - name: Deploy to Pages
+      - name: Deploy
         id: deployment
         uses: actions/deploy-pages@v4
