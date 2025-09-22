@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
-# Ensure <a class="skip-to-content" …> and <main id="main"> exist on full pages.
-# Idempotent. Skips backups and report a11y mirrors.
+# Ensure skip link + <main id="main"> on every full HTML page (safe & idempotent).
 
 set -Eeuo pipefail; IFS=$'\n\t'
 
@@ -12,41 +11,28 @@ else
 fi
 
 for f in "${FILES[@]}"; do
-  # Skip backups and mirrors
-  case "$f" in
-    _backups/*|*/_backups/*|reports/a11y/*|*/reports/a11y/*) continue;;
-  esac
-
-  # Only full pages
+  # Only operate on complete pages
   grep -qi '<body\b' "$f" || continue
 
-  # A) Normalise any class="skip" -> skip-to-content (handles multi-class, ' or ")
-  perl -0777 -i -pe '
-    s{\bclass=(["\'])([^"\']*?)\bskip\b([^"\']*)\1}{class=$1$2skip-to-content$3$1}ig;
-  ' "$f" || true
+  # A) Normalise legacy skip class -> skip-to-content
+  perl -0777 -i -pe 's{(<a[^>]+class=(["\x27]))([^"'\''>]*\b)skip\b([^"'\''>]*)(\2)}{$1$3skip-to-content$4$5}ig' "$f" || true
 
   # B) Ensure a skip link exists right after <body>
   perl -0777 -i -pe '
-    if (! /class=(["\'])[^\1]*\bskip-to-content\b/i) {
+    unless (m{<a[^>]+\bclass=(["\x27])[^"\x27]*\bskip-to-content\b}i) {
       s{(<body\b[^>]*>)}{$1\n  <a class="skip-to-content" href="#main">Skip to content</a>}i;
-    }
-  ' "$f" || true
+    }' "$f" || true
 
-  # C) Ensure a proper <main id="main">
+  # C) Ensure a <main id="main"> exists
   if grep -qi '<main\b' "$f"; then
-    # If id missing, add it
+    # Add id if missing
     perl -0777 -i -pe 's{<main(?![^>]*\bid=)([^>]*)>}{<main id="main"$1>}i' "$f" || true
-    # If id present but not "main", standardise
-    perl -0777 -i -pe 's{<main([^>]*?)\bid=(["\'])(?!main\b)[^"\']*\2([^>]*)>}{<main$1 id="main"$3>}i' "$f" || true
+    # Standardise non-"main" ids to id="main"
+    perl -0777 -i -pe 's{<main([^>]*?)\bid=(["\x27])(?!main)[^"\x27]*\2([^>]*)>}{<main$1 id="main"$3>}i' "$f" || true
   else
-    # No <main>: insert after <body> (or after skip link if present), and close before </body>
-    perl -0777 -i -pe '
-      unless (/<main\b/i) {
-        s{(<body\b[^>]*>\s*(?:<a[^>]*\bskip-to-content\b[^>]*>\s*)?)}{$1<main id="main">}i;
-        s{</body>}{</main>\n</body>}i;
-      }
-    ' "$f" || true
+    # No <main> at all → wrap entire body content
+    perl -0777 -i -pe 's{(<body\b[^>]*>)}{$1\n<main id="main">}i; s{</body>}{</main>\n</body>}i' "$f" || true
   fi
 done
 
-echo "✅ skip link + <main id=\"main\"> ensured."
+echo "✅ skip link + <main id=\"main\"> ensured on ${#FILES[@]} files."
