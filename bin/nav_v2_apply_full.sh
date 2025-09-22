@@ -18,7 +18,11 @@ if [[ ! -f assets/nav-shadow.js ]]; then
 JS
 fi
 
-# Canonical nav markup
+# Ensure rbis.css imports site.v2.css (idempotent)
+grep -q 'site.v2.css' assets/rbis.css 2>/dev/null || \
+  sed -i '1i @import url("/assets/site.v2.css");' assets/rbis.css
+
+# Canonical nav markup to inject
 read -r -d '' NAV <<"HTML"
 <header class="site-header">
   <nav aria-label="Primary"><a class="brand" href="/index.html">RBIS</a><details class="rbis-menu" role="navigation"><summary class="rbis-burger" aria-label="Menu">Menu</summary>
@@ -34,14 +38,14 @@ read -r -d '' NAV <<"HTML"
 HTML
 
 for f in "${FILES[@]}"; do
-  # only full pages
+  # only full pages with a body
   grep -qi '<body\b' "$f" || continue
 
-  # Remove placeholder header and inline scripts
+  # Remove placeholder header and legacy inline nav/sw scripts
   perl -0777 -i -pe 's#<header\s+id="rbis-nav"\s*></header>\s*##gis' "$f"
   perl -0777 -i -pe 's#<script id="nav-current">.*?</script>\s*##gis; s#<script id="sw-register">.*?</script>\s*##gis' "$f"
 
-  # Ensure /assets/rbis.css linked (it imports site.v2.css)
+  # Ensure /assets/rbis.css linked once (it imports site.v2.css)
   grep -qi '/assets/rbis\.css' "$f" || \
     perl -0777 -i -pe 's#</head>#  <link rel="stylesheet" href="/assets/rbis.css">\n</head>#i' "$f"
 
@@ -59,11 +63,12 @@ for f in "${FILES[@]}"; do
       }' "$f" > "$f.tmp" && mv "$f.tmp" "$f"
   fi
 
-  # Normalize skip link class (remove doubled suffixes)
+  # Normalize weird duplicated skip link classes
   perl -0777 -i -pe 's/class="skip-to-content[^"]*"/class="skip-to-content"/gi' "$f"
 
-  # Ensure <main id="main">
-  perl -0777 -i -pe 's#<main(?![^>]*\bid=)#<main id="main"#ig' "$f"
+  # Ensure <main id="main"> (add id only if a <main> exists)
+  grep -qi '<main\b' "$f" && \
+    perl -0777 -i -pe 's#<main(?![^>]*\bid=)#<main id="main"#ig' "$f"
 
   # Ensure nav-shadow helper linked once before </body>
   grep -q '/assets/nav-shadow\.js' "$f" || \
