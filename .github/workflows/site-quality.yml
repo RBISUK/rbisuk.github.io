@@ -1,0 +1,125 @@
+name: Site Quality Gate
+
+on:
+  push:
+    branches: [ main ]
+    paths: ["**.html","assets/**","bin/**",".github/workflows/**"]
+  pull_request:
+    branches: [ main ]
+    paths: ["**.html","assets/**","bin/**",".github/workflows/**"]
+
+jobs:
+  quality:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install CLI tools
+        run: |
+          sudo apt-get update -y
+          sudo apt-get install -y tidy ripgrep jq
+          npm -g i http-server@14 pa11y-ci@3 @axe-core/cli@4 linkinator@6 @lhci/cli@0.13
+
+      - name: Start local server
+        run: |
+          npx http-server -p 8080 --silent & 
+          echo "waiting for server..."
+          for i in {1..30}; do curl -sf http://127.0.0.1:8080/ && break || sleep 1; done
+
+      - name: Build URL list
+        id: urls
+        run: |
+          if [ -f sitemap.xml ]; then
+            python3 - <<'PY' > /tmp/urls.txt
+import xml.etree.ElementTree as ET
+r=ET.parse('sitemap.xml').getroot()
+ns={'s':'http://www.sitemaps.org/schemas/sitemap/0.9'}
+for loc in r.findall('.//s:url/s:loc', ns):
+    print(loc.text.strip())
+PY
+          else
+            # fall back to discovered html files
+            rg -n --glob '*.html' '' | cut -d: -f1 | sort -u | sed 's|^|http://127.0.0.1:8080/|' > /tmp/urls.txt
+          fi
+          echo "Found $(wc -l </tmp/urls.txt) URLs"
+          head -n 50 /tmp/urls.txt
+
+      - name: HTML validate (tidy)
+        continue-on-error: true
+        run: |
+          mkdir -p reports/html
+          for f in $(git ls-files '*.html'); do
+            tidy -qe -utf8 "$f" >"reports/html/$(echo "$f" | tr '/' '_').txt" 2>&1 || true
+          done
+
+      - name: Accessibility (pa11y)
+        continue-on-error: true
+        run: |
+          mkdir -p reports/a11y
+          head -n 100 /tmp/urls.txt | jq -R . | jq -s '{defaults:{standard:"WCAG2AA","timeout":60000}, urls:.}' > /tmp/.pa11yci.json
+          pa11y-ci --config /tmp/.pa11yci.json > reports/a11y/summary.txt 2>&1 || true
+
+      - name: Axe scan (sample pages)
+        continue-on-error: true
+        run: |
+          mkdir -p reports/axe
+          while read -r u; do
+            npx axe --chromium --timeout 60000 "$u" > "reports/axe/$(echo "$u" | sed 's|https\?://||; s|/|_|g').json" || true
+          done < <(head -n 30 /tmp/urls.txt)
+
+      - name: Link crawl
+        continue-on-error: true
+        run: |
+          mkdir -p reports/links
+          npx linkinator http://127.0.0.1:8080 --recurse --skip 'mailto:,tel:' --timeout 300000 --verbosity error > reports/links/report.txt || true
+          tail -n +1 reports/links/report.txt || true
+
+      - name: Lighthouse – desktop & mobile (top 10)
+        continue-on-error: true
+        run: |
+          mkdir -p reports/lighthouse
+          for u in $(head -n 10 /tmp/urls.txt); do
+            safe=$(echo "$u" | sed 's|https\?://||; s|/|_|g')
+            npx lhci collect --url="$u" --settings.preset=desktop --outputPath="reports/lighthouse/${safe}-desktop" || true
+            npx lhci collect --url="$u" --settings.preset=mobile  --outputPath="reports/lighthouse/${safe}-mobile"  || true
+          done
+
+      - name: JSON-LD lint
+        continue-on-error: true
+        run: |
+          mkdir -p reports/jsonld
+          node - <<'JS' > reports/jsonld/parse.txt
+const fs=require('fs'); const glob=require('glob');
+let bad=0;
+for (const f of glob.sync('**/*.html',{ignore:['node_modules/**','.git/**']})) {
+  const html=fs.readFileSync(f,'utf8');
+  const re=/<script[^>]*type=["']application\/ld\+json["'][^>]*>([\s\S]*?)<\/script>/gi;
+  let m; while ((m=re.exec(html))) {
+    try { JSON.parse(m[1]); } catch(e){ bad++; console.log(`[JSONLD] ${f}: ${e.message}`); }
+  }
+}
+process.exit(0);
+JS
+          sed -n '1,200p' reports/jsonld/parse.txt || true
+
+      - name: Upload reports
+        uses: actions/upload-artifact@v4
+        with:
+          name: site-reports
+          path: reports
+          if-no-files-found: warn
+
+      - name: Fail build on critical issues
+        run: |
+          if grep -qi 'BROKEN' reports/links/report.txt 2>/dev/null; then
+            echo "::error::Broken links found"; exit 1; fi
+          if rg -qi '^\[JSONLD\]' reports/jsonld/parse.txt 2>/dev/null; then
+            echo "::error::Invalid JSON-LD blocks"; exit 1; fi
