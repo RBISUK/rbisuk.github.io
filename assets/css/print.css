@@ -1,0 +1,5 @@
+@media print{
+  nav, footer{display:none}
+  .main-wrap{max-width:auto;padding:0}
+  a:link:after{content:" (" attr(href) ")"; font-size:90%}
+}
