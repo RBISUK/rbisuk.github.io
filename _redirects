@@ -1,6 +1,0 @@
-/reports.html     /reports/        301
-/contact.html     /contact/        301
-/contact-us/      /contact/        301
-/*.html           /:splat/         301
-/legal-notice/    /trust/terms/    301
-/veridex-demo.html  /veridex/  301
