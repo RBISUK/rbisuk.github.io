@@ -1,7 +1,8 @@
+<link rel="stylesheet" href="/assets/nav-fix.css">
 <!doctype html><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Search • RBIS</title>
-<link rel="stylesheet  " href="/assets/rbis.css">
+<link rel="stylesheet" href="/assets/rbis.css">
   <h1>Search</h1>
   <ul id="results"></ul>
 </main>
@@ -23,3 +24,5 @@ function render(urls, q){
 let urls=[]; getUrls().then(us=>{urls=us; render(urls,inp.value)});
 inp.addEventListener('input', ()=>render(urls, inp.value));
 </script>
+<script src="/assets/nav-current.js" defer></script>
+<script src="/assets/sw-register.js" defer></script>

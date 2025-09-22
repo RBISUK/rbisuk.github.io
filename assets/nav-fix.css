@@ -88,3 +88,58 @@ main > section:first-of-type svg{
 .hero>div:first-child{flex:1 1 420px;min-width:280px}
 @media (max-width:640px){ .hero{gap:16px} }
 /* RBIS HERO END */
+/* RBIS SPINNER SIZE */
+.crest,.crest-spin{width:clamp(140px,35vw,260px);height:auto;max-width:100%}
+@media (min-width:1024px){ .crest,.crest-spin{width:clamp(180px,22vw,300px)} }
+/* RBIS NAV TIDY */
+header nav ul{display:flex;gap:1rem;flex-wrap:wrap;align-items:center}
+header nav ul a{display:inline-flex;padding:.5rem .8rem;border-radius:.5rem}
+header nav ul a[aria-current="page"]{background:#F3F4F6}
+summary::-webkit-details-marker{display:none}
+.rbis-burger{font-size:0;min-width:44px;min-height:44px;display:inline-flex;align-items:center;justify-content:center}
+.rbis-burger::before{content:"☰";font-size:22px;line-height:1}
+/* RBIS SPINNER SIZE */
+.crest,.crest-spin{width:clamp(140px,35vw,260px);height:auto;max-width:100%}
+@media (min-width:1024px){ .crest,.crest-spin{width:clamp(180px,22vw,300px)} }
+/* RBIS NAV TIDY */
+header nav ul{display:flex;gap:1rem;flex-wrap:wrap;align-items:center}
+header nav ul a{display:inline-flex;padding:.5rem .8rem;border-radius:.5rem}
+header nav ul a[aria-current="page"]{background:#F3F4F6}
+summary::-webkit-details-marker{display:none}
+.rbis-burger{font-size:0;min-width:44px;min-height:44px;display:inline-flex;align-items:center;justify-content:center}
+.rbis-burger::before{content:"☰";font-size:22px;line-height:1}
+/* RBIS SPINNER SIZE */
+.crest,.crest-spin{width:clamp(120px,28vw,220px);height:auto;max-width:100%}
+@media (min-width:1024px){ .crest,.crest-spin{width:clamp(160px,20vw,260px)} }
+/* RBIS NAV TIDY */
+header nav ul{display:flex;gap:1rem;flex-wrap:wrap;align-items:center;margin:0;padding:0;list-style:none}
+header nav ul a{display:inline-flex;padding:.5rem .8rem;border-radius:.5rem;text-decoration:none}
+header nav ul a:hover{background:#f9fafb}
+header nav ul a[aria-current="page"]{background:#F3F4F6}
+summary::-webkit-details-marker{display:none}
+.rbis-burger{font-size:0;min-width:44px;min-height:44px;display:inline-flex;align-items:center;justify-content:center}
+.rbis-burger::before{content:"☰";font-size:22px;line-height:1}
+/* RBIS SPINNER SIZE */
+.crest,.crest-spin{width:clamp(120px,28vw,220px);height:auto;max-width:100%}
+@media (min-width:1024px){ .crest,.crest-spin{width:clamp(160px,20vw,260px)} }
+
+/* NAV POLISH */
+header nav ul{display:flex;gap:1rem;flex-wrap:wrap;align-items:center;margin:0;padding:0;list-style:none}
+header nav ul a{display:inline-flex;padding:.5rem .8rem;border-radius:.5rem;text-decoration:none}
+header nav ul a:hover{background:#f9fafb}
+header nav ul a[aria-current="page"]{background:#F3F4F6}
+summary::-webkit-details-marker{display:none}
+.rbis-burger{font-size:0;min-width:44px;min-height:44px;display:inline-flex;align-items:center;justify-content:center}
+.rbis-burger::before{content:"☰";font-size:22px;line-height:1}
+/* RBIS SPINNER SIZE */
+.crest,.crest-spin{width:clamp(120px,28vw,220px);height:auto;max-width:100%}
+@media (min-width:1024px){ .crest,.crest-spin{width:clamp(160px,20vw,260px)} }
+
+/* NAV POLISH */
+header nav ul{display:flex;gap:1rem;flex-wrap:wrap;align-items:center;margin:0;padding:0;list-style:none}
+header nav ul a{display:inline-flex;padding:.5rem .8rem;border-radius:.5rem;text-decoration:none}
+header nav ul a:hover{background:#f9fafb}
+header nav ul a[aria-current="page"]{background:#F3F4F6}
+summary::-webkit-details-marker{display:none}
+.rbis-burger{font-size:0;min-width:44px;min-height:44px;display:inline-flex;align-items:center;justify-content:center}
+.rbis-burger::before{content:"☰";font-size:22px;line-height:1}
