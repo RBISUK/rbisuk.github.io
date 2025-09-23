@@ -1,0 +1,14 @@
+/* RBIS:NAVV2 */
+:root{--rbis-max:1120px;--rbis-gap:16px;--rbis-surface:rgba(255,255,255,.72);--rbis-border:rgba(0,0,0,.08);--rbis-text:#111}
+@media (prefers-color-scheme:dark){:root{--rbis-surface:rgba(15,15,18,.7);--rbis-border:rgba(255,255,255,.1);--rbis-text:#f3f3f3}}
+.site-header{position:sticky;top:0;z-index:1000;backdrop-filter:saturate(120%) blur(10px);background:var(--rbis-surface);border-bottom:1px solid var(--rbis-border)}
+.site-header-inner{max-width:var(--rbis-max);margin:0 auto;padding:10px var(--rbis-gap);display:flex;align-items:center;gap:12px;justify-content:space-between}
+.site-header .brand{font-weight:800;letter-spacing:.2px;text-decoration:none;color:var(--rbis-text)}
+.site-header nav ul{list-style:none;margin:0;padding:0;display:flex;gap:14px;align-items:center}
+.site-header nav a{text-decoration:none;color:var(--rbis-text)}
+.rbis-burger{cursor:pointer}
+.rbis-menu{display:none}
+@media (max-width:880px){.rbis-menu{display:block}.site-header nav ul{display:none}.rbis-menu[open]+ul{display:flex;flex-direction:column;padding:10px 0}}
+body.scrolled .site-header{box-shadow:0 6px 20px rgba(0,0,0,.08)}
+.skip-to-content{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
+.skip-to-content:focus{position:fixed;left:16px;top:16px;width:auto;height:auto;padding:.5rem .75rem;background:#005fcc;color:#fff;border-radius:8px;outline:0;z-index:2000}
