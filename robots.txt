@@ -1,4 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://<your-gh-pages-domain>/sitemap.xml
-
+# Sitemap: https://www.rbisintelligence.com/sitemap.xml
