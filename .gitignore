@@ -13,3 +13,7 @@ audit/
 _backups/
 *.bak
 *.bak.*
+
+# backup files
+*.bak
+*.html.bak
