@@ -5,40 +5,47 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>RBIS — Evidence-first software & intelligence</title>
   <meta name="description" content="Behavioural & Intelligence Services. Evidence-first software, compliant automations, audit-ready reporting.">
+  <meta name="theme-color" content="#111827">
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     :focus-visible{outline:2px solid #111;outline-offset:2px}
     html{scroll-behavior:smooth}
     @media (prefers-reduced-motion: reduce){*{scroll-behavior:auto}}
+    .chip{border-radius:9999px;border:1px solid #e5e7eb;padding:.125rem .5rem;font-size:.75rem}
+    .active-chip{border-color:#4338ca;background:#4338ca10}
     .accent{color:#4338ca}
     .btn-accent{border-color:#4338ca}
-    .btn-accent:hover{background:#4338ca0d}
-    .chip{border-radius:9999px;border:1px solid #e5e7eb;padding:.125rem .5rem;font-size:.75rem}
-    .active-chip{border-color:#4338ca;background:#4338ca0f}
+    .btn-accent:hover{background:#4338ca10}
     .hide{display:none}
+    .table {width:100%; border-collapse:collapse}
+    .table th,.table td{border:1px solid #e5e7eb; padding:.75rem; vertical-align:top; font-size:.9rem}
+    .table th{background:#f9fafb; text-align:left; font-weight:600}
   </style>
 </head>
 <body class="antialiased bg-white text-black">
   <!-- Header -->
-  <header class="sticky top-0 z-40 border-b bg-white/90 backdrop-blur">
+  <header class="sticky top-0 z-40 border-b bg-white/90 backdrop-blur supports-[backdrop-filter]:bg-white/70">
     <div class="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between">
-      <a href="#top" class="font-semibold tracking-tight">RBIS • Behavioural &amp; Intelligence Services</a>
+      <!-- Clicking RBIS always goes home -->
+      <a href="#top" class="font-semibold tracking-tight" id="brandLink">RBIS • Behavioural &amp; Intelligence Services</a>
       <nav class="hidden md:flex gap-2" aria-label="Primary">
         <a class="px-3 py-1.5 rounded-lg text-sm hover:bg-black/5" href="#products">Products</a>
+        <a class="px-3 py-1.5 rounded-lg text-sm hover:bg-black/5" href="#packages">Packages</a>
         <a class="px-3 py-1.5 rounded-lg text-sm hover:bg-black/5" href="#solutions">Solutions</a>
         <a class="px-3 py-1.5 rounded-lg text-sm hover:bg-black/5" href="#trust">Trust</a>
-        <a class="px-3 py-1.5 rounded-lg text-sm hover:bg-black/5" href="#reports">Reports</a>
+        <a class="px-3 py-1.5 rounded-lg text-sm hover:bg-black/5" href="#reports">Evidence Reports</a>
         <a class="px-3 py-1.5 rounded-lg text-sm hover:bg-black/5" href="#about">About</a>
         <a class="px-3 py-1.5 rounded-lg text-sm hover:bg-black/5" href="#contact">Contact</a>
       </nav>
-      <button id="menuBtn" class="md:hidden border rounded-lg px-3 py-1.5 text-sm" aria-controls="mobileNav" aria-expanded="false">Menu</button>
+      <button id="menuBtn" class="md:hidden border rounded-lg px-3 py-1.5 text-sm" aria-controls="mobileNav" aria-expanded="false" aria-label="Open menu">Menu</button>
     </div>
-    <div id="mobileNav" class="hidden md:hidden border-t" aria-label="Mobile">
+    <div id="mobileNav" class="hidden md:hidden border-t" aria-label="Mobile menu">
       <div class="mx-auto max-w-6xl px-4 py-2 grid gap-1">
         <a class="px-3 py-2 rounded-lg text-sm hover:bg-black/5" href="#products">Products</a>
+        <a class="px-3 py-2 rounded-lg text-sm hover:bg-black/5" href="#packages">Packages</a>
         <a class="px-3 py-2 rounded-lg text-sm hover:bg-black/5" href="#solutions">Solutions</a>
         <a class="px-3 py-2 rounded-lg text-sm hover:bg-black/5" href="#trust">Trust</a>
-        <a class="px-3 py-2 rounded-lg text-sm hover:bg-black/5" href="#reports">Reports</a>
+        <a class="px-3 py-2 rounded-lg text-sm hover:bg-black/5" href="#reports">Evidence Reports</a>
         <a class="px-3 py-2 rounded-lg text-sm hover:bg-black/5" href="#about">About</a>
         <a class="px-3 py-2 rounded-lg text-sm hover:bg-black/5" href="#contact">Contact</a>
       </div>
@@ -53,8 +60,8 @@
         Do the right thing, first time. Proof by default. Minimal data. Audit-ready exports.
       </p>
       <div class="mt-5 flex gap-3">
-        <a href="#products" class="border btn-accent rounded-xl px-4 py-2 text-sm font-medium hover:bg-black/5">See Products</a>
-        <a href="#contact" class="border btn-accent rounded-xl px-4 py-2 text-sm font-medium hover:bg-black/5">Request a sample</a>
+        <a href="#packages" class="border btn-accent rounded-xl px-4 py-2 text-sm font-medium hover:bg-black/5">View Packages</a>
+        <a href="#reports" class="border btn-accent rounded-xl px-4 py-2 text-sm font-medium hover:bg-black/5">Browse Reports</a>
       </div>
       <div class="mt-6 flex flex-wrap gap-2 text-xs">
         <span class="chip">Clarity by design</span>
@@ -168,6 +175,81 @@
     </div>
   </section>
 
+  <!-- Packages (Websites & Digital Platforms) -->
+  <section id="packages" class="py-14 border-b">
+    <div class="mx-auto max-w-6xl px-4">
+      <h2 class="text-xl md:text-2xl font-semibold tracking-tight accent">Website Packages — Standard vs Premium (Robots)</h2>
+      <p class="mt-2 text-sm opacity-80">Transparent pricing. Support add-on: <strong>£250</strong> (includes premium monitoring robot). Major amendments: <strong>£50/hour</strong> consultation and custom plan.</p>
+      <div class="mt-6 overflow-x-auto">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Package</th>
+              <th>Features / Deliverables</th>
+              <th>Standard Price<br>(no robots)</th>
+              <th>Premium Price<br>(robots / embedded intelligence)</th>
+              <th>Timeline</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>1) Foundation Site</strong></td>
+              <td>
+                3–5 pages (Home, About, Contact, Services); responsive + SSL;<br>
+                basic SEO (meta titles, mobile performance, speed tweaks);<br>
+                contact form, Google Maps / social links.
+              </td>
+              <td>£3,500</td>
+              <td>£4,500<br><span class="text-xs opacity-70">+ uptime robot, basic SEO alerts</span></td>
+              <td>~7 days</td>
+            </tr>
+            <tr>
+              <td><strong>2) Compliance-Ready Site</strong></td>
+              <td>
+                Foundation + GDPR/PECR privacy/cookie; accessibility baseline (WCAG checks);<br>
+                secure/data-handled forms with audit log; cookie banner/policy/opt-in popups.
+              </td>
+              <td>£5,500</td>
+              <td>£7,000<br><span class="text-xs opacity-70">+ consent drift monitoring, compliance scans</span></td>
+              <td>~10–15 days</td>
+            </tr>
+            <tr>
+              <td><strong>3) Growth Site</strong></td>
+              <td>
+                Compliance-Ready + SEO automation (blog setup, content clustering, auto metas);<br>
+                social feed integration; analytics dashboard; CMS training.
+              </td>
+              <td>£8,500</td>
+              <td>£10,500<br><span class="text-xs opacity-70">+ SEO ranking robot, competitor alerts, perf audits</span></td>
+              <td>~3–4 weeks</td>
+            </tr>
+            <tr>
+              <td><strong>4) Audit-Ready Pro Site</strong></td>
+              <td>
+                Growth + full WCAG 2.2 AA audit across journeys; CAP/ASA ad-claim review;<br>
+                live compliance hooks (logs, dashboards); exportable evidence packs; Core Web Vitals tuning.
+              </td>
+              <td>£12,000</td>
+              <td>£15,000+<br><span class="text-xs opacity-70">+ robotised re-scans (accessibility, uptime, content drift, legal risk)</span></td>
+              <td>~4–6 weeks</td>
+            </tr>
+            <tr>
+              <td><strong>5) Vision Build (Bespoke)</strong></td>
+              <td>
+                Bespoke system (portals, accounts, advanced workflows); embedded AI/automation;<br>
+                custom dashboard/analytics; ongoing support & monitoring contract.
+              </td>
+              <td>£25,000–£50,000+</td>
+              <td>£35,000–£70,000+<br><span class="text-xs opacity-70">+ full automation, robotics, SLAs</span></td>
+              <td>Phased ~2–6 months</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="mt-3 text-xs opacity-70">All prices ex-VAT. Premium tier includes embedded robots/monitoring. Support add-on £250 per month.</p>
+    </div>
+  </section>
+
   <!-- Solutions -->
   <section id="solutions" class="py-14 border-b">
     <div class="mx-auto max-w-6xl px-4">
@@ -210,229 +292,29 @@
     </div>
   </section>
 
-  <!-- Reports (31 items + filters) -->
+  <!-- Evidence & Compliance Reports (31 items with fixed prices) -->
   <section id="reports" class="py-14 border-b">
     <div class="mx-auto max-w-6xl px-4">
-      <h2 class="text-xl md:text-2xl font-semibold tracking-tight accent">Reports &amp; Exports</h2>
-      <p class="mt-2 text-sm opacity-80">Select a category to filter. Pricing is shown where confirmed. Otherwise: <em>Contact for price</em>.</p>
+      <h2 class="text-xl md:text-2xl font-semibold tracking-tight accent">Evidence &amp; Compliance Reports</h2>
+      <p class="mt-2 text-sm opacity-80">
+        Transparent: report prices are fixed. If major amendments are needed, we’ll agree a consultation at <strong>£50/hour</strong> and create a custom plan.
+        Optional Support add-on: <strong>£250</strong> (includes premium monitoring robot).
+      </p>
 
       <!-- Filters -->
       <div class="mt-6 flex flex-wrap gap-2 text-sm" role="tablist" aria-label="Report filters">
-        <button class="chip active-chip" data-filter="all" aria-selected="true">All</button>
-        <button class="chip" data-filter="repairs">Repairs &amp; Compliance</button>
-        <button class="chip" data-filter="complaints">Complaints &amp; Ombudsman</button>
-        <button class="chip" data-filter="dataprotection">Data Protection &amp; Marketing</button>
-        <button class="chip" data-filter="webaccess">Website &amp; Accessibility</button>
-        <button class="chip" data-filter="operations">Operations &amp; Auditability</button>
-        <button class="chip" data-filter="pact">PACT Ledger</button>
+        <button class="chip active-chip" data-filter="all" role="tab" aria-selected="true">All</button>
+        <button class="chip" data-filter="repairs" role="tab" aria-selected="false">Repairs &amp; Compliance</button>
+        <button class="chip" data-filter="complaints" role="tab" aria-selected="false">Complaints &amp; Ombudsman</button>
+        <button class="chip" data-filter="dataprotection" role="tab" aria-selected="false">Data Protection &amp; Marketing</button>
+        <button class="chip" data-filter="webaccess" role="tab" aria-selected="false">Website &amp; Accessibility</button>
+        <button class="chip" data-filter="operations" role="tab" aria-selected="false">Operations &amp; Auditability</button>
+        <button class="chip" data-filter="pact" role="tab" aria-selected="false">PACT Ledger</button>
       </div>
 
       <!-- Grid -->
-      <div id="reportsGrid" class="mt-8 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-        <!-- Repairs & Compliance (8) -->
-        <article class="rounded-2xl border p-5" data-cat="repairs">
-          <h3 class="text-base font-semibold">Repairs SLA Compliance Audit</h3>
-          <p class="mt-2 text-sm opacity-90">Measure adherence to statutory/contractual SLAs, identify breach patterns, and recommend queue &amp; scheduling fixes.</p>
-          <p class="mt-3 text-sm"><strong>Price:</strong> Contact for price</p>
-          <a href="#contact" class="mt-3 inline-block text-sm underline">Request sample</a>
-        </article>
-        <article class="rounded-2xl border p-5" data-cat="repairs">
-          <h3 class="text-base font-semibold">Disrepair Risk Heatmap &amp; Early Warning</h3>
-          <p class="mt-2 text-sm opacity-90">Heatmap of risk factors, countdowns to potential breach, and targeted interventions to prevent disrepair claims.</p>
-          <p class="mt-3 text-sm"><strong>Price:</strong> Contact for price</p>
-          <a href="#contact" class="mt-3 inline-block text-sm underline">Request sample</a>
-        </article>
-        <article class="rounded-2xl border p-5" data-cat="repairs">
-          <h3 class="text-base font-semibold">Damp &amp; Mould Response Audit</h3>
-          <p class="mt-2 text-sm opacity-90">Assess triage, inspection, remediation and communication timeliness; gaps against guidance and best practice.</p>
-          <p class="mt-3 text-sm"><strong>Price:</strong> Contact for price</p>
-          <a href="#contact" class="mt-3 inline-block text-sm underline">Request sample</a>
-        </article>
-        <article class="rounded-2xl border p-5" data-cat="repairs">
-          <h3 class="text-base font-semibold">Repairs Communications: Tone &amp; Clarity Review</h3>
-          <p class="mt-2 text-sm opacity-90">Analyse letters/SMS/email for clarity, commitment language, and next-step salience to reduce avoidable repeats.</p>
-          <p class="mt-3 text-sm"><strong>Price:</strong> Contact for price</p>
-          <a href="#contact" class="mt-3 inline-block text-sm underline">Request sample</a>
-        </article>
-        <article class="rounded-2xl border p-5" data-cat="repairs">
-          <h3 class="text-base font-semibold">Repairs Evidence Pack Quality Audit</h3>
-          <p class="mt-2 text-sm opacity-90">Check that photo/visit notes, diagnostics, and decisions form a court-ready pack with redaction standards applied.</p>
-          <p class="mt-3 text-sm"><strong>Price:</strong> Contact for price</p>
-          <a href="#contact" class="mt-3 inline-block text-sm underline">Request sample</a>
-        </article>
-        <article class="rounded-2xl border p-5" data-cat="repairs">
-          <h3 class="text-base font-semibold">Contractor Performance &amp; SLA Adherence</h3>
-          <p class="mt-2 text-sm opacity-90">Compare contractor cohorts by first-time fix, appointment keeping, cost-to-resolve, and customer impact.</p>
-          <p class="mt-3 text-sm"><strong>Price:</strong> Contact for price</p>
-          <a href="#contact" class="mt-3 inline-block text-sm underline">Request sample</a>
-        </article>
-        <article class="rounded-2xl border p-5" data-cat="repairs">
-          <h3 class="text-base font-semibold">Appointments &amp; No-Access Analysis</h3>
-          <p class="mt-2 text-sm opacity-90">Identify patterns behind no-access and misses; introduce nudge &amp; reminder patterns that cut waste.</p>
-          <p class="mt-3 text-sm"><strong>Price:</strong> Contact for price</p>
-          <a href="#contact" class="mt-3 inline-block text-sm underline">Request sample</a>
-        </article>
-        <article class="rounded-2xl border p-5" data-cat="repairs">
-          <h3 class="text-base font-semibold">Repairs Complaints Root Cause</h3>
-          <p class="mt-2 text-sm opacity-90">Map complaint drivers back to process defects; quantify impact and fixes with before/after tracking.</p>
-          <p class="mt-3 text-sm"><strong>Price:</strong> Contact for price</p>
-          <a href="#contact" class="mt-3 inline-block text-sm underline">Request sample</a>
-        </article>
-
-        <!-- Complaints & Ombudsman (6) -->
-        <article class="rounded-2xl border p-5" data-cat="complaints">
-          <h3 class="text-base font-semibold">Complaint Handling Audit (Stage 1/2)</h3>
-          <p class="mt-2 text-sm opacity-90">Check timeliness, fairness, and evidence use across stages; identify uphold risk and remedy gaps.</p>
-          <p class="mt-3 text-sm"><strong>Price:</strong> Contact for price</p>
-          <a href="#contact" class="mt-3 inline-block text-sm underline">Request sample</a>
-        </article>
-        <article class="rounded-2xl border p-5" data-cat="complaints">
-          <h3 class="text-base font-semibold">Ombudsman Determination Readiness</h3>
-          <p class="mt-2 text-sm opacity-90">Stress-test a sample of cases against scheme expectations; produce determination-ready summaries.</p>
-          <p class="mt-3 text-sm"><strong>Price:</strong> Contact for price</p>
-          <a href="#contact" class="mt-3 inline-block text-sm underline">Request sample</a>
-        </article>
-        <article class="rounded-2xl border p-5" data-cat="complaints">
-          <h3 class="text-base font-semibold">Response Clarity &amp; Fairness Audit</h3>
-          <p class="mt-2 text-sm opacity-90">Score letters for empathy, clarity, and verifiable commitments; pinpoint misleading phrasing risks.</p>
-          <p class="mt-3 text-sm"><strong>Price:</strong> Contact for price</p>
-          <a href="#contact" class="mt-3 inline-block text-sm underline">Request sample</a>
-        </article>
-        <article class="rounded-2xl border p-5" data-cat="complaints">
-          <h3 class="text-base font-semibold">Escalation &amp; Remedy Consistency Check</h3>
-          <p class="mt-2 text-sm opacity-90">Evaluate escalation triggers and remedy banding; propose consistent, defensible thresholds.</p>
-          <p class="mt-3 text-sm"><strong>Price:</strong> Contact for price</p>
-          <a href="#contact" class="mt-3 inline-block text-sm underline">Request sample</a>
-        </article>
-        <article class="rounded-2xl border p-5" data-cat="complaints">
-          <h3 class="text-base font-semibold">Learning &amp; Service Improvement Evidence</h3>
-          <p class="mt-2 text-sm opacity-90">Verify that lessons are captured, tracked, and evidenced across cycles with owner/accountability clarity.</p>
-          <p class="mt-3 text-sm"><strong>Price:</strong> Contact for price</p>
-          <a href="#contact" class="mt-3 inline-block text-sm underline">Request sample</a>
-        </article>
-        <article class="rounded-2xl border p-5" data-cat="complaints">
-          <h3 class="text-base font-semibold">Unreasonable Behaviour Policy Fit Check</h3>
-          <p class="mt-2 text-sm opacity-90">Confirm fair application of policy and safeguards; ensure access is preserved while reducing harm.</p>
-          <p class="mt-3 text-sm"><strong>Price:</strong> Contact for price</p>
-          <a href="#contact" class="mt-3 inline-block text-sm underline">Request sample</a>
-        </article>
-
-        <!-- Data Protection & Marketing (6) -->
-        <article class="rounded-2xl border p-5" data-cat="dataprotection">
-          <h3 class="text-base font-semibold">Lawful Basis &amp; Consent Inventory</h3>
-          <p class="mt-2 text-sm opacity-90">Catalogue processing activities, bases, and consents; flag mismatches and risk hotspots.</p>
-          <p class="mt-3 text-sm"><strong>Price:</strong> Contact for price</p>
-          <a href="#contact" class="mt-3 inline-block text-sm underline">Request sample</a>
-        </article>
-        <article class="rounded-2xl border p-5" data-cat="dataprotection">
-          <h3 class="text-base font-semibold">Retention Schedule Coverage Audit</h3>
-          <p class="mt-2 text-sm opacity-90">Test real deletion/archival behaviour vs policy; add timers and reporting where missing.</p>
-          <p class="mt-3 text-sm"><strong>Price:</strong> Contact for price</p>
-          <a href="#contact" class="mt-3 inline-block text-sm underline">Request sample</a>
-        </article>
-        <article class="rounded-2xl border p-5" data-cat="dataprotection">
-          <h3 class="text-base font-semibold">Subject Rights Workflow Test (DSAR/Erasure)</h3>
-          <p class="mt-2 text-sm opacity-90">Run end-to-end test cases; verify identity checks, search coverage, redaction and deadlines.</p>
-          <p class="mt-3 text-sm"><strong>Price:</strong> Contact for price</p>
-          <a href="#contact" class="mt-3 inline-block text-sm underline">Request sample</a>
-        </article>
-        <article class="rounded-2xl border p-5" data-cat="dataprotection">
-          <h3 class="text-base font-semibold">Cookie &amp; Tracking Compliance Review</h3>
-          <p class="mt-2 text-sm opacity-90">Audit consent flows, storage, and auto-blocking; verify lawful basis and banner copy accuracy.</p>
-          <p class="mt-3 text-sm"><strong>Price:</strong> Contact for price</p>
-          <a href="#contact" class="mt-3 inline-block text-sm underline">Request sample</a>
-        </article>
-        <article class="rounded-2xl border p-5" data-cat="dataprotection">
-          <h3 class="text-base font-semibold">Marketing Permissions &amp; PECR Compliance</h3>
-          <p class="mt-2 text-sm opacity-90">Check capture points, consent records, channel rules (email/SMS/calls), and suppression logic.</p>
-          <p class="mt-3 text-sm"><strong>Price:</strong> Contact for price</p>
-          <a href="#contact" class="mt-3 inline-block text-sm underline">Request sample</a>
-        </article>
-        <article class="rounded-2xl border p-5" data-cat="dataprotection">
-          <h3 class="text-base font-semibold">Data Breach Readiness &amp; Logging</h3>
-          <p class="mt-2 text-sm opacity-90">Assess incident detection, 72-hr reporting readiness, and evidence capture for regulators/boards.</p>
-          <p class="mt-3 text-sm"><strong>Price:</strong> Contact for price</p>
-          <a href="#contact" class="mt-3 inline-block text-sm underline">Request sample</a>
-        </article>
-
-        <!-- Website & Accessibility (5) -->
-        <article class="rounded-2xl border p-5" data-cat="webaccess">
-          <h3 class="text-base font-semibold">Accessibility Snapshot (WCAG 2.2 AA)</h3>
-          <p class="mt-2 text-sm opacity-90">Rapid assessment of critical success criteria, with prioritized remediation plan.</p>
-          <p class="mt-3 text-sm"><strong>Price:</strong> Contact for price</p>
-          <a href="#contact" class="mt-3 inline-block text-sm underline">Request sample</a>
-        </article>
-        <article class="rounded-2xl border p-5" data-cat="webaccess">
-          <h3 class="text-base font-semibold">Content Clarity &amp; Plain English Review</h3>
-          <p class="mt-2 text-sm opacity-90">Check reading level, sentence structure, and task completion clarity across key pages.</p>
-          <p class="mt-3 text-sm"><strong>Price:</strong> Contact for price</p>
-          <a href="#contact" class="mt-3 inline-block text-sm underline">Request sample</a>
-        </article>
-        <article class="rounded-2xl border p-5" data-cat="webaccess">
-          <h3 class="text-base font-semibold">Forms UX &amp; Error Handling Audit</h3>
-          <p class="mt-2 text-sm opacity-90">Review labels, help text, validation timing, and recovery paths to cut abandonment and errors.</p>
-          <p class="mt-3 text-sm"><strong>Price:</strong> Contact for price</p>
-          <a href="#contact" class="mt-3 inline-block text-sm underline">Request sample</a>
-        </article>
-        <article class="rounded-2xl border p-5" data-cat="webaccess">
-          <h3 class="text-base font-semibold">Information Architecture &amp; Navigation</h3>
-          <p class="mt-2 text-sm opacity-90">Test findability with card sorts and task flows; propose a simpler, clearer IA.</p>
-          <p class="mt-3 text-sm"><strong>Price:</strong> Contact for price</p>
-          <a href="#contact" class="mt-3 inline-block text-sm underline">Request sample</a>
-        </article>
-        <article class="rounded-2xl border p-5" data-cat="webaccess">
-          <h3 class="text-base font-semibold">Performance &amp; Core Web Vitals</h3>
-          <p class="mt-2 text-sm opacity-90">Measure LCP/INP/CLS and deliver a prioritized, low-regret optimization plan.</p>
-          <p class="mt-3 text-sm"><strong>Price:</strong> Contact for price</p>
-          <a href="#contact" class="mt-3 inline-block text-sm underline">Request sample</a>
-        </article>
-
-        <!-- Operations & Auditability (4) -->
-        <article class="rounded-2xl border p-5" data-cat="operations">
-          <h3 class="text-base font-semibold">SLA Timers &amp; MI Dashboard Review</h3>
-          <p class="mt-2 text-sm opacity-90">Evaluate dashboards for early warnings, role views, and decision usefulness; remove vanity metrics.</p>
-          <p class="mt-3 text-sm"><strong>Price:</strong> Contact for price</p>
-          <a href="#contact" class="mt-3 inline-block text-sm underline">Request sample</a>
-        </article>
-        <article class="rounded-2xl border p-5" data-cat="operations">
-          <h3 class="text-base font-semibold">Policy-to-Process Traceability</h3>
-          <p class="mt-2 text-sm opacity-90">Show how policy lines turn into steps, forms, and controls; highlight gaps and duplications.</p>
-          <p class="mt-3 text-sm"><strong>Price:</strong> Contact for price</p>
-          <a href="#contact" class="mt-3 inline-block text-sm underline">Request sample</a>
-        </article>
-        <article class="rounded-2xl border p-5" data-cat="operations">
-          <h3 class="text-base font-semibold">Evidence Handling &amp; Redaction Quality</h3>
-          <p class="mt-2 text-sm opacity-90">Audit sampling for redaction errors and chain-of-custody; provide a reusable export checklist.</p>
-          <p class="mt-3 text-sm"><strong>Price:</strong> Contact for price</p>
-          <a href="#contact" class="mt-3 inline-block text-sm underline">Request sample</a>
-        </article>
-        <article class="rounded-2xl border p-5" data-cat="operations">
-          <h3 class="text-base font-semibold">Risk Register &amp; Controls Coverage</h3>
-          <p class="mt-2 text-sm opacity-90">Map risks to controls and tests; ensure owners and review cadence are in place and evidenced.</p>
-          <p class="mt-3 text-sm"><strong>Price:</strong> Contact for price</p>
-          <a href="#contact" class="mt-3 inline-block text-sm underline">Request sample</a>
-        </article>
-
-        <!-- PACT Ledger (3) -->
-        <article class="rounded-2xl border p-5" data-cat="pact">
-          <h3 class="text-base font-semibold">Promise Object &amp; Escalation Ladder Review</h3>
-          <p class="mt-2 text-sm opacity-90">Design and quality-check “promise” objects, timers, and breach ladders to reduce slippage.</p>
-          <p class="mt-3 text-sm"><strong>Price:</strong> Contact for price</p>
-          <a href="#contact" class="mt-3 inline-block text-sm underline">Request sample</a>
-        </article>
-        <article class="rounded-2xl border p-5" data-cat="pact">
-          <h3 class="text-base font-semibold">Settlement Pathways &amp; Outcome Tracking</h3>
-          <p class="mt-2 text-sm opacity-90">Analyse settlement routes, remedies, and measures; build a consistent, auditable pathway set.</p>
-          <p class="mt-3 text-sm"><strong>Price:</strong> Contact for price</p>
-          <a href="#contact" class="mt-3 inline-block text-sm underline">Request sample</a>
-        </article>
-        <article class="rounded-2xl border p-5" data-cat="pact">
-          <h3 class="text-base font-semibold">Cross-Channel Promise Capture Audit</h3>
-          <p class="mt-2 text-sm opacity-90">Ensure promises from email/SMS/portals are captured with evidence, timers, and owner accountability.</p>
-          <p class="mt-3 text-sm"><strong>Price:</strong> Contact for price</p>
-          <a href="#contact" class="mt-3 inline-block text-sm underline">Request sample</a>
-        </article>
-      </div>
+      <div id="reportsGrid" class="mt-8 grid gap-6 md:grid-cols-2 xl:grid-cols-3"></div>
+      <noscript><p class="mt-6 text-sm">JavaScript is disabled. Please contact us for the full report catalogue.</p></noscript>
     </div>
   </section>
 
@@ -512,30 +394,161 @@
     </div>
   </footer>
 
-  <!-- Tiny JS: mobile nav + year + simple filters -->
+  <!-- JS: nav, anchors, dynamic reports with fixed prices, filters -->
   <script>
     (function(){
-      // Mobile nav
+      // Smooth anchors (respect reduced motion)
+      function scrollToId(id){
+        const el=document.getElementById(id);
+        if(!el) return;
+        const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+        el.scrollIntoView({behavior: reduce?'auto':'smooth', block:'start'});
+      }
+
+      // Mobile nav: toggle, close on link/Esc/resize
       const btn=document.getElementById('menuBtn');
       const nav=document.getElementById('mobileNav');
-      if(btn&&nav){
+      function closeNav(){
+        if(nav && !nav.classList.contains('hidden')){
+          nav.classList.add('hidden');
+          btn && btn.setAttribute('aria-expanded','false');
+        }
+      }
+      if(btn && nav){
         btn.addEventListener('click',()=>{
           nav.classList.toggle('hidden');
-          btn.setAttribute('aria-expanded',String(!nav.classList.contains('hidden')));
+          btn.setAttribute('aria-expanded', String(!nav.classList.contains('hidden')));
+        });
+        nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',closeNav));
+        document.addEventListener('keydown',(e)=>{ if(e.key==='Escape') closeNav(); });
+        addEventListener('resize',()=>{ if(innerWidth>=768) closeNav(); });
+      }
+
+      // Brand link always returns home
+      const brand=document.getElementById('brandLink');
+      if(brand){
+        brand.addEventListener('click',(e)=>{
+          const href=brand.getAttribute('href')||'#top';
+          if(href.startsWith('#')){ e.preventDefault(); closeNav(); scrollToId(href.slice(1)); }
         });
       }
-      // Year
-      const y=document.getElementById('year'); if(y){y.textContent=new Date().getFullYear();}
 
-      // Filters
+      // Enhance all in-page anchor clicks
+      document.querySelectorAll('a[href^="#"]').forEach(a=>{
+        a.addEventListener('click',(e)=>{
+          const id=a.getAttribute('href').slice(1);
+          if(document.getElementById(id)){ e.preventDefault(); scrollToId(id); }
+        });
+      });
+
+      // Year stamp
+      const y=document.getElementById('year'); if(y){ y.textContent=new Date().getFullYear(); }
+
+      // ---------------- Reports catalogue (fixed prices) ----------------
+      // Pricing is "same price" per report; unknowns avoided; set below-market midpoints.
+      const reports=[
+        // Repairs & Compliance (8)
+        {cat:'repairs', title:'Repairs SLA Compliance Audit', price:'£1,250',
+          desc:'Measure adherence to statutory/contractual SLAs, identify breach patterns, and recommend queue & scheduling fixes.'},
+        {cat:'repairs', title:'Disrepair Risk Heatmap & Early Warning', price:'£950',
+          desc:'Heatmap of risk factors, countdowns to potential breach, and targeted interventions to prevent disrepair claims.'},
+        {cat:'repairs', title:'Damp & Mould Response Audit', price:'£850',
+          desc:'Assess triage, inspection, remediation and communication timeliness; gaps against guidance and best practice.'},
+        {cat:'repairs', title:'Repairs Communications: Tone & Clarity Review', price:'£650',
+          desc:'Analyse letters/SMS/email for clarity, commitment language, and next-step salience to reduce avoidable repeats.'},
+        {cat:'repairs', title:'Repairs Evidence Pack Quality Audit', price:'£750',
+          desc:'Check that photo/visit notes, diagnostics, and decisions form a court-ready pack with redaction standards applied.'},
+        {cat:'repairs', title:'Contractor Performance & SLA Adherence', price:'£900',
+          desc:'Compare contractor cohorts by first-time fix, appointment keeping, cost-to-resolve, and customer impact.'},
+        {cat:'repairs', title:'Appointments & No-Access Analysis', price:'£700',
+          desc:'Identify patterns behind no-access and misses; introduce nudge & reminder patterns that cut waste.'},
+        {cat:'repairs', title:'Repairs Complaints Root Cause', price:'£800',
+          desc:'Map complaint drivers back to process defects; quantify impact and fixes with before/after tracking.'},
+
+        // Complaints & Ombudsman (6)
+        {cat:'complaints', title:'Complaint Handling Audit (Stage 1/2)', price:'£1,750',
+          desc:'Check timeliness, fairness, and evidence use across stages; identify uphold risk and remedy gaps.'},
+        {cat:'complaints', title:'Ombudsman Determination Readiness', price:'£1,300',
+          desc:'Stress-test a sample of cases against scheme expectations; produce determination-ready summaries.'},
+        {cat:'complaints', title:'Response Clarity & Fairness Audit', price:'£700',
+          desc:'Score letters for empathy, clarity, and verifiable commitments; pinpoint misleading phrasing risks.'},
+        {cat:'complaints', title:'Escalation & Remedy Consistency Check', price:'£900',
+          desc:'Evaluate escalation triggers and remedy banding; propose consistent, defensible thresholds.'},
+        {cat:'complaints', title:'Learning & Service Improvement Evidence', price:'£900',
+          desc:'Verify that lessons are captured, tracked, and evidenced across cycles with owner/accountability clarity.'},
+        {cat:'complaints', title:'Unreasonable Behaviour Policy Fit Check', price:'£600',
+          desc:'Confirm fair application of policy and safeguards; ensure access is preserved while reducing harm.'},
+
+        // Data Protection & Marketing (6)
+        {cat:'dataprotection', title:'Lawful Basis & Consent Inventory', price:'£1,200',
+          desc:'Catalogue processing activities, bases, and consents; flag mismatches and risk hotspots.'},
+        {cat:'dataprotection', title:'Retention Schedule Coverage Audit', price:'£1,100',
+          desc:'Test real deletion/archival behaviour vs policy; add timers and reporting where missing.'},
+        {cat:'dataprotection', title:'Subject Rights Workflow Test (DSAR/Erasure)', price:'£1,100',
+          desc:'Run end-to-end test cases; verify identity checks, search coverage, redaction and deadlines.'},
+        {cat:'dataprotection', title:'Cookie & Tracking Compliance Review', price:'£900',
+          desc:'Audit consent flows, storage, and auto-blocking; verify lawful basis and banner copy accuracy.'},
+        {cat:'dataprotection', title:'Marketing Permissions & PECR Compliance', price:'£950',
+          desc:'Check capture points, consent records, channel rules (email/SMS/calls), and suppression logic.'},
+        {cat:'dataprotection', title:'Data Breach Readiness & Logging', price:'£1,300',
+          desc:'Assess incident detection, 72-hr reporting readiness, and evidence capture for regulators/boards.'},
+
+        // Website & Accessibility (5)
+        {cat:'webaccess', title:'Accessibility Audit (WCAG 2.2 AA)', price:'£2,200',
+          desc:'Issues list, fixes and re-test plan across journeys; best-effort conformance evidence pack.'},
+        {cat:'webaccess', title:'Content Clarity & Plain English Review', price:'£650',
+          desc:'Check reading level, sentence structure, and task completion clarity across key pages.'},
+        {cat:'webaccess', title:'Forms UX & Error Handling Audit', price:'£700',
+          desc:'Review labels, help text, validation timing, and recovery paths to cut abandonment and errors.'},
+        {cat:'webaccess', title:'Information Architecture & Navigation', price:'£900',
+          desc:'Test findability with card sorts and task flows; propose a simpler, clearer IA.'},
+        {cat:'webaccess', title:'Performance & Core Web Vitals', price:'£800',
+          desc:'Measure LCP/INP/CLS and deliver a prioritized, low-regret optimization plan.'},
+
+        // Operations & Auditability (4)
+        {cat:'operations', title:'SLA Timers & MI Dashboard Review', price:'£1,200',
+          desc:'Evaluate dashboards for early warnings, role views, and decision usefulness; remove vanity metrics.'},
+        {cat:'operations', title:'Policy-to-Process Traceability', price:'£1,000',
+          desc:'Show how policy lines turn into steps, forms, and controls; highlight gaps and duplications.'},
+        {cat:'operations', title:'Evidence Handling & Redaction Quality', price:'£950',
+          desc:'Audit sampling for redaction errors and chain-of-custody; provide a reusable export checklist.'},
+        {cat:'operations', title:'Risk Register & Controls Coverage', price:'£1,200',
+          desc:'Map risks to controls and tests; ensure owners and review cadence are in place and evidenced.'},
+
+        // PACT Ledger (3)
+        {cat:'pact', title:'Promise Object & Escalation Ladder Review', price:'£800',
+          desc:'Design and quality-check “promise” objects, timers, and breach ladders to reduce slippage.'},
+        {cat:'pact', title:'Settlement Pathways & Outcome Tracking', price:'£1,100',
+          desc:'Analyse settlement routes, remedies, and measures; build a consistent, auditable pathway set.'},
+        {cat:'pact', title:'Cross-Channel Promise Capture Audit', price:'£900',
+          desc:'Ensure promises from email/SMS/portals are captured with evidence, timers, and ownership.'},
+      ];
+
+      const grid=document.getElementById('reportsGrid');
+      function cardHTML(r){
+        return `
+          <article class="rounded-2xl border p-5" data-cat="${r.cat}">
+            <h3 class="text-base font-semibold">${r.title}</h3>
+            <p class="mt-2 text-sm opacity-90">${r.desc}</p>
+            <p class="mt-3 text-sm"><strong>Price:</strong> ${r.price}</p>
+            <a href="#contact" class="mt-3 inline-block text-sm underline">Request sample</a>
+          </article>
+        `;
+      }
+      if(grid){ grid.innerHTML = reports.map(cardHTML).join(''); }
+
+      // Filters with ARIA updates
       const chips=[...document.querySelectorAll('button[data-filter]')];
       const cards=[...document.querySelectorAll('#reportsGrid [data-cat]')];
       function setFilter(val){
-        chips.forEach(c=>c.classList.toggle('active-chip',c.getAttribute('data-filter')===val));
+        chips.forEach(c=>{
+          const is = c.getAttribute('data-filter')===val;
+          c.classList.toggle('active-chip', is);
+          c.setAttribute('aria-selected', String(is));
+        });
         cards.forEach(card=>{
-          const cat=card.getAttribute('data-cat');
-          const show=(val==='all'||val===cat);
-          card.classList.toggle('hide',!show);
+          const show = (val==='all' || card.getAttribute('data-cat')===val);
+          card.classList.toggle('hide', !show);
         });
       }
       chips.forEach(c=>c.addEventListener('click',()=>setFilter(c.getAttribute('data-filter'))));
