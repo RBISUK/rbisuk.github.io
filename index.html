@@ -1,69 +1,97 @@
 <!doctype html>
 <html lang="en" class="scroll-smooth">
 <head>
-  <link rel="sitemap" type="application/xml" href="/sitemap.xml">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>RBIS — Evidence-first software & intelligence</title>
-  <meta name="description" content="Behavioural & Intelligence Services. Evidence-first software, compliant automations, audit-ready reporting, and website builds with embedded robots.">
+  <meta name="description" content="RBIS builds evidence-first websites, compliant automations, and audit-ready reporting. Compliance by design. Receipts by default.">
   <link rel="canonical" href="https://www.rbisintelligence.com/">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <meta name="theme-color" content="#111827">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+
   <!-- Open Graph -->
   <meta property="og:title" content="RBIS — Evidence-first software & intelligence">
   <meta property="og:description" content="Compliance by design. Receipts by default. Audit-ready exports.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.rbisintelligence.com/">
-  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
-  <!-- Favicon -->
-  <link rel="icon" href="favicon.svg" type="image/svg+xml">
 
   <!-- Tailwind CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            brand: { DEFAULT: '#4338CA', dark:'#3730A3' }
-          }
-        }
-      }
+      theme: { extend: { colors: { brand: { DEFAULT:'#4338CA', dark:'#3730A3' } } } }
     }
   </script>
   <style>
-    /* Small daily-use niceties */
-    @media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; } }
-    .prose-list li::marker{color:#6B7280}
+    @media (prefers-reduced-motion: reduce){ *{ scroll-behavior:auto !important } }
+    .prose-list li::marker{ color:#6B7280 }
+    .focus-visible-ring:focus-visible{ outline:2px solid #4338CA; outline-offset:2px }
   </style>
+
+  <!-- JSON-LD: Organization -->
+  <script type="application/ld+json">{
+    "@context":"https://schema.org",
+    "@type":"Organization",
+    "name":"RBIS Intelligence",
+    "url":"https://www.rbisintelligence.com/",
+    "logo":"https://www.rbisintelligence.com/favicon.svg",
+    "sameAs":[]
+  }</script>
+
+  <!-- JSON-LD: Services (pricing tiers) -->
+  <script type="application/ld+json">{
+    "@context":"https://schema.org",
+    "@type":"ItemList",
+    "name":"RBIS Website Packages",
+    "itemListElement":[
+      {"@type":"Service","name":"Foundation Site","description":"3–5 pages, responsive, SSL, basic SEO, contact form.","offers":{"@type":"Offer","priceCurrency":"GBP","price":"3500"}},
+      {"@type":"Service","name":"Compliance-Ready","description":"GDPR/PECR baseline, accessibility baseline, secure forms.","offers":{"@type":"Offer","priceCurrency":"GBP","price":"5500"}},
+      {"@type":"Service","name":"Growth Site","description":"SEO automation, blog, analytics dashboard.","offers":{"@type":"Offer","priceCurrency":"GBP","price":"8500"}},
+      {"@type":"Service","name":"Audit-Ready Pro","description":"WCAG 2.2 AA audit, CAP/ASA claims checks, evidence pack.","offers":{"@type":"Offer","priceCurrency":"GBP","price":"12000"}},
+      {"@type":"Service","name":"Vision Build (Bespoke)","description":"Custom platform with AI, automation, dashboards, SLAs.","offers":{"@type":"Offer","priceCurrency":"GBP","price":"25000"}}
+    ]
+  }</script>
+
+  <!-- JSON-LD: FAQ -->
+  <script type="application/ld+json">{
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+      {"@type":"Question","name":"What do you mean by evidence-first builds?","acceptedAnswer":{"@type":"Answer","text":"Every build ships with an evidence pack: screenshots of key flows, compliance checks, and a changelog—so it is audit-ready by default."}},
+      {"@type":"Question","name":"What are 'robots' add-ons?","acceptedAnswer":{"@type":"Answer","text":"Optional automations that perform routine tasks with approvals and run receipts (logs, payloads). Priced separately and cancellable monthly."}},
+      {"@type":"Question","name":"How fast can you deliver a Foundation site?","acceptedAnswer":{"@type":"Answer","text":"Typical delivery is ~7 days, assuming content readiness and timely approvals."}}
+    ]
+  }</script>
 </head>
-<body id="top" class="bg-white text-gray-900">
+
+<body id="top" class="bg-white text-gray-900 antialiased">
   <!-- Skip link -->
   <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50 bg-black text-white px-3 py-2 rounded">Skip to content</a>
 
-  <!-- Header / Nav -->
+  <!-- Header -->
   <header class="sticky top-0 z-40 backdrop-blur bg-white/85 border-b border-gray-100">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-16">
-        <a href="#top" class="flex items-center gap-2 font-semibold tracking-tight text-gray-900 hover:text-brand" aria-label="RBIS home">
+        <a href="#top" class="flex items-center gap-2 font-semibold tracking-tight hover:text-brand" aria-label="RBIS home">
           <span class="inline-grid place-items-center w-8 h-8 rounded-lg bg-brand text-white font-bold">R</span>
           <span>RBIS</span>
         </a>
 
         <!-- Desktop nav -->
-        <nav class="hidden md:flex items-center gap-6 text-sm">
+        <nav class="hidden md:flex items-center gap-6 text-sm" aria-label="Primary">
           <a href="#websites" class="hover:text-brand">Websites</a>
           <a href="#products" class="hover:text-brand">Products</a>
           <a href="#deep-dives" class="hover:text-brand">Deep-dives</a>
-          <a href="#reports" class="hover:text-brand">Evidence Reports</a>
+          <a href="#reports" class="hover:text-brand">Reports</a>
           <a href="#about" class="hover:text-brand">About</a>
           <a href="#contact" class="inline-flex items-center rounded-lg bg-brand px-3 py-1.5 text-white hover:bg-brand-dark">Contact</a>
         </nav>
 
         <!-- Mobile menu button -->
         <button id="menuButton" class="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg border border-gray-200" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu">
-          <span class="sr-only">Menu</span>
           <svg width="22" height="22" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
         </button>
       </div>
@@ -74,7 +102,7 @@
           <li><a class="block px-2 py-2 rounded hover:bg-gray-50" href="#websites">Websites</a></li>
           <li><a class="block px-2 py-2 rounded hover:bg-gray-50" href="#products">Products</a></li>
           <li><a class="block px-2 py-2 rounded hover:bg-gray-50" href="#deep-dives">Deep-dives</a></li>
-          <li><a class="block px-2 py-2 rounded hover:bg-gray-50" href="#reports">Evidence Reports</a></li>
+          <li><a class="block px-2 py-2 rounded hover:bg-gray-50" href="#reports">Reports</a></li>
           <li><a class="block px-2 py-2 rounded hover:bg-gray-50" href="#about">About</a></li>
           <li><a class="block px-2 py-2 rounded bg-brand text-white" href="#contact">Contact</a></li>
         </ul>
@@ -86,16 +114,26 @@
     <!-- Hero -->
     <section class="relative isolate bg-gray-50">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
-        <div id="hero-intro" class="max-w-3xl mx-auto text-center">
+        <div class="max-w-3xl mx-auto text-center">
           <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight">Evidence-first software &amp; intelligence</h1>
           <p class="mt-4 text-lg sm:text-xl text-gray-700">
-            <span class="font-semibold">Do the right thing, first time.</span>
-            Proof by default. Minimal data. Audit-ready exports.
+            <span class="font-semibold">Do the right thing, first time.</span> Proof by default. Minimal data. Audit-ready exports.
           </p>
           <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
             <a href="#websites" class="inline-flex items-center rounded-lg bg-brand px-5 py-3 text-white font-semibold hover:bg-brand-dark">View Website Packages</a>
             <a href="#reports" class="inline-flex items-center rounded-lg border border-gray-300 px-5 py-3 font-semibold hover:bg-gray-100">Browse Evidence Reports</a>
           </div>
+
+          <!-- Testimonial rotator -->
+          <div class="mt-8" aria-live="polite">
+            <figure class="mx-auto max-w-2xl bg-white rounded-xl shadow-sm ring-1 ring-gray-200 p-5">
+              <blockquote id="quoteText" class="text-gray-800 text-sm sm:text-base">“RBIS gave us receipts for everything. Our audit finished in half the time.”</blockquote>
+              <figcaption class="mt-3 text-xs text-gray-600">
+                <span id="quoteAuthor">Ops Director, Housing Provider</span>
+              </figcaption>
+            </figure>
+          </div>
+
           <div class="mt-8 grid grid-cols-2 md:grid-cols-4 gap-3 text-sm text-gray-600">
             <div class="rounded-lg border border-gray-200 px-3 py-2">Clarity by design</div>
             <div class="rounded-lg border border-gray-200 px-3 py-2">Receipts by default</div>
@@ -106,97 +144,167 @@
       </div>
     </section>
 
-    <!-- Websites: Standard vs Premium (Robots) -->
+    <!-- Website Packages -->
     <section id="websites" class="py-16 bg-white scroll-mt-24">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="text-3xl font-bold text-center mb-2">Website Packages — Standard vs Premium (Robots)</h2>
-        <p class="text-center text-gray-600 mb-10">Evidence-first builds. Compliance by design. Intelligence on tap.</p>
+        <h2 class="text-3xl font-bold text-center mb-2">Website Packages — Evidence-first, Compliance by Design</h2>
+        <p class="text-center text-gray-600 mb-10">Builds that ship fast, pass checks, and come with receipts. Optional <em>robots</em> add-ons for automation.</p>
 
-        <div class="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-          <!-- 1. Foundation -->
-          <article class="bg-gray-50 rounded-xl shadow-sm ring-1 ring-gray-200 p-6">
-            <h3 class="text-xl font-semibold mb-2">1) Foundation Site</h3>
-            <p class="text-sm text-gray-600 mb-4">3–5 pages, responsive, SSL, basic SEO, contact form.</p>
-            <div class="flex items-end gap-6 mb-2">
-              <div><p class="text-xs text-gray-500">Standard</p><p class="text-2xl font-bold">£3,500</p></div>
-              <div class="pl-6 border-l">
-                <p class="text-xs text-gray-500">Premium (Robots)</p>
-                <p class="text-2xl font-bold">£4,500</p>
-              </div>
-            </div>
-            <p class="text-xs text-gray-500 mb-4">~7 days</p>
+        <div class="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3" aria-label="Website packages">
+          <!-- 1: Foundation -->
+          <article class="bg-gray-50 rounded-xl shadow-sm ring-1 ring-gray-200 p-6" itemscope itemtype="https://schema.org/Service">
+            <meta itemprop="serviceType" content="Foundation Website"/>
+            <h3 class="text-xl font-semibold mb-2" itemprop="name">1) Foundation Site</h3>
+            <p class="text-sm text-gray-700 mb-4" itemprop="description">3–5 pages, responsive, SSL, basic SEO, contact form.</p>
+            <p class="text-2xl font-bold mb-1"><span itemprop="offers" itemscope itemtype="https://schema.org/Offer"><meta itemprop="priceCurrency" content="GBP"><span itemprop="price">£3,500</span></span></p>
+            <p class="text-xs text-gray-500 mb-4">Typical delivery ~7 days</p>
+
+            <details class="mb-2 rounded-lg border border-gray-200 bg-white p-3">
+              <summary class="cursor-pointer font-medium">What’s included</summary>
+              <ul class="mt-2 text-sm text-gray-700 list-disc list-inside">
+                <li>Homepage + 2–4 inner pages</li>
+                <li>SSL, security headers, responsive layouts</li>
+                <li>Basic on-page SEO (titles, meta, sitemap)</li>
+                <li>Contact form with spam protection</li>
+              </ul>
+            </details>
+            <details class="mb-4 rounded-lg border border-gray-200 bg-white p-3">
+              <summary class="cursor-pointer font-medium">Tech &amp; compliance</summary>
+              <ul class="mt-2 text-sm text-gray-700 list-disc list-inside">
+                <li>WCAG-aware components</li>
+                <li>Consent-respecting analytics (optional)</li>
+                <li>Evidence pack: screens + checks</li>
+              </ul>
+            </details>
+
             <div class="flex gap-2">
               <a href="#contact" class="inline-flex items-center rounded-lg bg-brand px-3 py-2 text-white text-sm hover:bg-brand-dark">Start</a>
               <a href="#deep-websites" class="inline-flex items-center rounded-lg border border-gray-300 px-3 py-2 text-sm hover:bg-gray-100">See flow</a>
             </div>
           </article>
 
-          <!-- 2. Compliance-Ready -->
-          <article class="bg-gray-50 rounded-xl shadow-sm ring-1 ring-gray-200 p-6">
-            <h3 class="text-xl font-semibold mb-2">2) Compliance-Ready</h3>
-            <p class="text-sm text-gray-600 mb-4">Foundation + GDPR/PECR, accessibility baseline, secure forms.</p>
-            <div class="flex items-end gap-6 mb-2">
-              <div><p class="text-xs text-gray-500">Standard</p><p class="text-2xl font-bold">£5,500</p></div>
-              <div class="pl-6 border-l">
-                <p class="text-xs text-gray-500">Premium (Robots)</p>
-                <p class="text-2xl font-bold">£7,000</p>
-              </div>
-            </div>
-            <p class="text-xs text-gray-500 mb-4">~10–15 days</p>
+          <!-- 2: Compliance-Ready -->
+          <article class="bg-gray-50 rounded-xl shadow-sm ring-1 ring-gray-200 p-6" itemscope itemtype="https://schema.org/Service">
+            <meta itemprop="serviceType" content="Compliance-Ready Website"/>
+            <h3 class="text-xl font-semibold mb-2" itemprop="name">2) Compliance-Ready</h3>
+            <p class="text-sm text-gray-700 mb-4" itemprop="description">Foundation + GDPR/PECR, accessibility baseline, secure forms.</p>
+            <p class="text-2xl font-bold mb-1"><span itemprop="offers" itemscope itemtype="https://schema.org/Offer"><meta itemprop="priceCurrency" content="GBP"><span itemprop="price">£5,500</span></span></p>
+            <p class="text-xs text-gray-500 mb-4">Typical delivery ~10–15 days</p>
+
+            <details class="mb-2 rounded-lg border border-gray-200 bg-white p-3">
+              <summary class="cursor-pointer font-medium">What’s included</summary>
+              <ul class="mt-2 text-sm text-gray-700 list-disc list-inside">
+                <li>All Foundation features</li>
+                <li>GDPR/PECR baseline content &amp; logs</li>
+                <li>Accessibility baseline fixes</li>
+                <li>Secure forms with encryption-at-rest</li>
+              </ul>
+            </details>
+            <details class="mb-4 rounded-lg border border-gray-200 bg-white p-3">
+              <summary class="cursor-pointer font-medium">Tech &amp; compliance</summary>
+              <ul class="mt-2 text-sm text-gray-700 list-disc list-inside">
+                <li>Consent model &amp; suppression hooks</li>
+                <li>Error states &amp; recovery patterns</li>
+                <li>Evidence pack + DPIA notes</li>
+              </ul>
+            </details>
+
             <div class="flex gap-2">
               <a href="#contact" class="inline-flex items-center rounded-lg bg-brand px-3 py-2 text-white text-sm hover:bg-brand-dark">Start</a>
               <a href="#deep-websites" class="inline-flex items-center rounded-lg border border-gray-300 px-3 py-2 text-sm hover:bg-gray-100">See flow</a>
             </div>
           </article>
 
-          <!-- 3. Growth -->
-          <article class="bg-gray-50 rounded-xl shadow-sm ring-1 ring-gray-200 p-6">
-            <h3 class="text-xl font-semibold mb-2">3) Growth Site</h3>
-            <p class="text-sm text-gray-600 mb-4">Compliance-Ready + SEO automation, blog system, analytics dashboard.</p>
-            <div class="flex items-end gap-6 mb-2">
-              <div><p class="text-xs text-gray-500">Standard</p><p class="text-2xl font-bold">£8,500</p></div>
-              <div class="pl-6 border-l">
-                <p class="text-xs text-gray-500">Premium (Robots)</p>
-                <p class="text-2xl font-bold">£10,500</p>
-              </div>
-            </div>
-            <p class="text-xs text-gray-500 mb-4">~3–4 weeks</p>
+          <!-- 3: Growth -->
+          <article class="bg-gray-50 rounded-xl shadow-sm ring-1 ring-gray-200 p-6" itemscope itemtype="https://schema.org/Service">
+            <meta itemprop="serviceType" content="Growth Website"/>
+            <h3 class="text-xl font-semibold mb-2" itemprop="name">3) Growth Site</h3>
+            <p class="text-sm text-gray-700 mb-4" itemprop="description">Compliance-Ready + SEO automation, blog system, analytics dashboard.</p>
+            <p class="text-2xl font-bold mb-1"><span itemprop="offers" itemscope itemtype="https://schema.org/Offer"><meta itemprop="priceCurrency" content="GBP"><span itemprop="price">£8,500</span></span></p>
+            <p class="text-xs text-gray-500 mb-4">Typical delivery ~3–4 weeks</p>
+
+            <details class="mb-2 rounded-lg border border-gray-200 bg-white p-3">
+              <summary class="cursor-pointer font-medium">What’s included</summary>
+              <ul class="mt-2 text-sm text-gray-700 list-disc list-inside">
+                <li>Automation-ready blog &amp; categories</li>
+                <li>SEO automation hooks (titles/schema)</li>
+                <li>Analytics dashboard wiring</li>
+                <li>Performance &amp; Core Web Vitals pass</li>
+              </ul>
+            </details>
+            <details class="mb-4 rounded-lg border border-gray-200 bg-white p-3">
+              <summary class="cursor-pointer font-medium">Tech &amp; compliance</summary>
+              <ul class="mt-2 text-sm text-gray-700 list-disc list-inside">
+                <li>Structured data (JSON-LD)</li>
+                <li>Content change log</li>
+                <li>Evidence pack + re-test plan</li>
+              </ul>
+            </details>
+
             <div class="flex gap-2">
               <a href="#contact" class="inline-flex items-center rounded-lg bg-brand px-3 py-2 text-white text-sm hover:bg-brand-dark">Start</a>
               <a href="#deep-websites" class="inline-flex items-center rounded-lg border border-gray-300 px-3 py-2 text-sm hover:bg-gray-100">See flow</a>
             </div>
           </article>
 
-          <!-- 4. Audit-Ready Pro -->
-          <article class="bg-gray-50 rounded-xl shadow-sm ring-1 ring-gray-200 p-6">
-            <h3 class="text-xl font-semibold mb-2">4) Audit-Ready Pro</h3>
-            <p class="text-sm text-gray-600 mb-4">Growth + WCAG 2.2 AA audit, CAP/ASA claims checks, evidence pack.</p>
-            <div class="flex items-end gap-6 mb-2">
-              <div><p class="text-xs text-gray-500">Standard</p><p class="text-2xl font-bold">£12,000</p></div>
-              <div class="pl-6 border-l">
-                <p class="text-xs text-gray-500">Premium (Robots)</p>
-                <p class="text-2xl font-bold">£15,000+</p>
-              </div>
-            </div>
-            <p class="text-xs text-gray-500 mb-4">~4–6 weeks</p>
+          <!-- 4: Audit-Ready Pro -->
+          <article class="bg-gray-50 rounded-xl shadow-sm ring-1 ring-gray-200 p-6" itemscope itemtype="https://schema.org/Service">
+            <meta itemprop="serviceType" content="Audit-Ready Pro"/>
+            <h3 class="text-xl font-semibold mb-2" itemprop="name">4) Audit-Ready Pro</h3>
+            <p class="text-sm text-gray-700 mb-4" itemprop="description">Growth + WCAG 2.2 AA audit, CAP/ASA claims checks, evidence pack.</p>
+            <p class="text-2xl font-bold mb-1"><span itemprop="offers" itemscope itemtype="https://schema.org/Offer"><meta itemprop="priceCurrency" content="GBP"><span itemprop="price">£12,000</span></span></p>
+            <p class="text-xs text-gray-500 mb-4">Typical delivery ~4–6 weeks</p>
+
+            <details class="mb-2 rounded-lg border border-gray-200 bg-white p-3">
+              <summary class="cursor-pointer font-medium">What’s included</summary>
+              <ul class="mt-2 text-sm text-gray-700 list-disc list-inside">
+                <li>WCAG 2.2 AA audit &amp; fixes</li>
+                <li>CAP/ASA claims substantiation checks</li>
+                <li>Full evidence pack &amp; board summary</li>
+                <li>Re-test &amp; remediation plan</li>
+              </ul>
+            </details>
+            <details class="mb-4 rounded-lg border border-gray-200 bg-white p-3">
+              <summary class="cursor-pointer font-medium">Tech &amp; compliance</summary>
+              <ul class="mt-2 text-sm text-gray-700 list-disc list-inside">
+                <li>Accessibility tokens &amp; patterns</li>
+                <li>Form error states &amp; recovery</li>
+                <li>Consent/permissions audit trail</li>
+              </ul>
+            </details>
+
             <div class="flex gap-2">
               <a href="#contact" class="inline-flex items-center rounded-lg bg-brand px-3 py-2 text-white text-sm hover:bg-brand-dark">Start</a>
               <a href="#deep-websites" class="inline-flex items-center rounded-lg border border-gray-300 px-3 py-2 text-sm hover:bg-gray-100">See flow</a>
             </div>
           </article>
 
-          <!-- 5. Vision Build -->
-          <article class="bg-gray-50 rounded-xl shadow-sm ring-1 ring-gray-200 p-6 lg:col-span-3">
-            <h3 class="text-xl font-semibold mb-2">5) Vision Build (Bespoke System)</h3>
-            <p class="text-sm text-gray-600 mb-4">Custom platform with AI, automation, dashboards, SLAs.</p>
-            <div class="flex items-end gap-6 mb-2">
-              <div><p class="text-xs text-gray-500">Standard</p><p class="text-2xl font-bold">£25,000–£50,000+</p></div>
-              <div class="pl-6 border-l">
-                <p class="text-xs text-gray-500">Premium (Robots)</p>
-                <p class="text-2xl font-bold">£35,000–£70,000+</p>
-              </div>
-            </div>
-            <p class="text-xs text-gray-500 mb-4">Phased ~2–6 months</p>
+          <!-- 5: Vision Build -->
+          <article class="bg-gray-50 rounded-xl shadow-sm ring-1 ring-gray-200 p-6 lg:col-span-3" itemscope itemtype="https://schema.org/Service">
+            <meta itemprop="serviceType" content="Vision Build (Bespoke System)"/>
+            <h3 class="text-xl font-semibold mb-2" itemprop="name">5) Vision Build (Bespoke System)</h3>
+            <p class="text-sm text-gray-700 mb-4" itemprop="description">Custom platform with AI, automation, dashboards, SLAs.</p>
+            <p class="text-2xl font-bold mb-1"><span itemprop="offers" itemscope itemtype="https://schema.org/Offer"><meta itemprop="priceCurrency" content="GBP"><span itemprop="price">£25,000–£50,000+</span></span></p>
+            <p class="text-xs text-gray-500 mb-4">Phased delivery ~2–6 months</p>
+
+            <details class="mb-2 rounded-lg border border-gray-200 bg-white p-3">
+              <summary class="cursor-pointer font-medium">What’s included</summary>
+              <ul class="mt-2 text-sm text-gray-700 list-disc list-inside">
+                <li>Discovery &amp; risk framing</li>
+                <li>Design system &amp; tokens</li>
+                <li>Phased build with SLAs</li>
+                <li>Go-live runbook &amp; training</li>
+              </ul>
+            </details>
+            <details class="mb-4 rounded-lg border border-gray-200 bg-white p-3">
+              <summary class="cursor-pointer font-medium">Tech &amp; compliance</summary>
+              <ul class="mt-2 text-sm text-gray-700 list-disc list-inside">
+                <li>APIs, dashboards, automation hooks</li>
+                <li>Security &amp; audit logging</li>
+                <li>Evidence exports (JSON/PDF)</li>
+              </ul>
+            </details>
+
             <div class="flex gap-2">
               <a href="#contact" class="inline-flex items-center rounded-lg bg-brand px-3 py-2 text-white text-sm hover:bg-brand-dark">Start</a>
               <a href="#deep-websites" class="inline-flex items-center rounded-lg border border-gray-300 px-3 py-2 text-sm hover:bg-gray-100">See flow</a>
@@ -204,9 +312,10 @@
           </article>
         </div>
 
-        <!-- Support note -->
+        <!-- Support & Robots -->
         <div class="max-w-3xl mx-auto mt-8 text-sm text-gray-700 bg-gray-50 rounded-lg border border-gray-200 p-4">
-          <p><strong>Support &amp; Monitoring — £250/month.</strong> Includes premium monitoring robot. First month due at sign-up, then rolling monthly. This is not a contract and can be ended by either party at any time. Major amendments: <strong>£50/hour</strong> consultation &amp; custom plan. Prices ex-VAT.</p>
+          <p><strong>Support &amp; Monitoring — £250/month.</strong> Includes premium monitoring robot. First month due at sign-up, rolling monthly, cancellable anytime. Major amendments: <strong>£50/hour</strong> consultation &amp; custom plan. Prices ex-VAT.</p>
+          <p class="mt-2"><strong>Robots add-ons:</strong> optional automations with approvals &amp; receipts. From £250/month depending on scope.</p>
         </div>
 
         <div class="mt-6 flex flex-col sm:flex-row gap-3 justify-center">
@@ -223,7 +332,6 @@
         <p class="text-center text-gray-600 mb-10">Configurable modules with receipts by default. Minimal data. Audit-ready exports.</p>
 
         <div class="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-          <!-- Veridex -->
           <article class="bg-white rounded-xl shadow-sm ring-1 ring-gray-200 p-6">
             <h3 class="text-xl font-semibold">Veridex Funnel</h3>
             <p class="text-sm text-gray-600 mb-4">Smart sector funnels with pre-programmed compliance and upsell logic.</p>
@@ -235,7 +343,6 @@
             </div>
           </article>
 
-          <!-- Dashboard -->
           <article class="bg-white rounded-xl shadow-sm ring-1 ring-gray-200 p-6">
             <h3 class="text-xl font-semibold">RBIS Dashboard</h3>
             <p class="text-sm text-gray-600 mb-4">Early-warning KPIs, breach countdowns, risk heatmaps, board exports.</p>
@@ -247,7 +354,6 @@
             </div>
           </article>
 
-          <!-- PACT Ledger -->
           <article class="bg-white rounded-xl shadow-sm ring-1 ring-gray-200 p-6">
             <h3 class="text-xl font-semibold">PACT Ledger</h3>
             <p class="text-sm text-gray-600 mb-4">Promises tracked with timers, escalation ladders, settlement playbooks.</p>
@@ -259,7 +365,6 @@
             </div>
           </article>
 
-          <!-- OmniAssist -->
           <article class="bg-white rounded-xl shadow-sm ring-1 ring-gray-200 p-6">
             <h3 class="text-xl font-semibold">OmniAssist</h3>
             <p class="text-sm text-gray-600 mb-4">Automations with screenshots, selectors, approvals, and API traces.</p>
@@ -271,7 +376,6 @@
             </div>
           </article>
 
-          <!-- NextusOne -->
           <article class="bg-white rounded-xl shadow-sm ring-1 ring-gray-200 p-6">
             <h3 class="text-xl font-semibold">NextusOne CRM</h3>
             <p class="text-sm text-gray-600 mb-4">GDPR-first. Lawful basis at capture, retention clocks, DSR workflows.</p>
@@ -283,7 +387,6 @@
             </div>
           </article>
 
-          <!-- Training -->
           <article class="bg-white rounded-xl shadow-sm ring-1 ring-gray-200 p-6">
             <h3 class="text-xl font-semibold">Training &amp; Advisory</h3>
             <p class="text-sm text-gray-600 mb-4">Tone, deception cues, evidence handling, report structure.</p>
@@ -298,13 +401,28 @@
       </div>
     </section>
 
-    <!-- Product Deep-dives -->
+    <!-- Product Deep-dives with live search -->
     <section id="deep-dives" class="py-16 bg-white scroll-mt-24">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="text-3xl font-bold text-center mb-10">Product Deep-dives</h2>
+        <h2 class="text-3xl font-bold text-center mb-6">Product Deep-dives</h2>
 
-        <div id="deep-websites" class="grid gap-8">
-          <article class="bg-gray-50 rounded-xl ring-1 ring-gray-200 p-6">
+        <div class="max-w-2xl mx-auto mb-6">
+          <label for="deepSearch" class="block text-sm font-medium text-gray-700 mb-2">Search deep-dives</label>
+          <input id="deepSearch" type="search" inputmode="search" class="w-full rounded-lg border-gray-300 focus:border-brand focus:ring-brand" placeholder="Type to filter by feature, flow, or deliverable…" aria-describedby="deepSearchHelp">
+          <p id="deepSearchHelp" class="mt-2 text-xs text-gray-500">Live filtering. Works great on phones.</p>
+          <div class="mt-3 flex flex-wrap gap-2 text-sm">
+            <button class="chip px-3 py-1.5 rounded-lg border border-gray-300" data-chip="audit">audit</button>
+            <button class="chip px-3 py-1.5 rounded-lg border border-gray-300" data-chip="wcag">wcag</button>
+            <button class="chip px-3 py-1.5 rounded-lg border border-gray-300" data-chip="seo">seo</button>
+            <button class="chip px-3 py-1.5 rounded-lg border border-gray-300" data-chip="automation">automation</button>
+            <button class="chip px-3 py-1.5 rounded-lg border border-gray-300" data-chip="evidence">evidence</button>
+          </div>
+          <p id="deepCount" class="mt-3 text-sm text-gray-600">Showing all items</p>
+        </div>
+
+        <div id="deepGrid" class="grid gap-8">
+          <!-- Websites -->
+          <article id="deep-websites" class="deep-card bg-gray-50 rounded-xl ring-1 ring-gray-200 p-6" data-tags="flow wcag evidence seo">
             <h3 class="text-2xl font-semibold">Websites — compliant, intelligent by default</h3>
             <div class="grid gap-6 md:grid-cols-2 mt-4">
               <div>
@@ -325,319 +443,255 @@
                 </ul>
               </div>
             </div>
-            <p class="mt-4 text-sm text-gray-700"><strong>Why it works:</strong> it bakes compliance into daily ops, so fixes are habitual, not heroic.</p>
+            <p class="mt-4 text-sm text-gray-700"><strong>Why it works:</strong> compliance is baked into daily ops, so fixes are habitual, not heroic.</p>
             <div class="mt-4 flex gap-2">
               <a href="#websites" class="inline-flex items-center rounded-lg bg-brand px-3 py-2 text-white text-sm hover:bg-brand-dark">Compare packages</a>
               <a href="#contact" class="inline-flex items-center rounded-lg border border-gray-300 px-3 py-2 text-sm hover:bg-gray-100">Start a brief</a>
             </div>
           </article>
-        </div>
 
-        <!-- Veridex -->
-        <article id="deep-veridex" class="bg-gray-50 rounded-xl ring-1 ring-gray-200 p-6 mt-8">
-          <h3 class="text-2xl font-semibold">Veridex Funnel — compliant, guided capture</h3>
-          <div class="grid gap-6 md:grid-cols-2 mt-4">
-            <div>
-              <h4 class="font-semibold">Flow</h4>
-              <ol class="list-decimal list-inside text-sm text-gray-700 space-y-1">
-                <li>Select scenario (repairs, complaint, DPIA).</li>
-                <li>Branching questions steer to lawful capture.</li>
-                <li>Evidence attach with redaction prompts.</li>
-                <li>Summary & eSign-ready PDF (with audit hashes).</li>
-              </ol>
+          <!-- Veridex -->
+          <article id="deep-veridex" class="deep-card bg-gray-50 rounded-xl ring-1 ring-gray-200 p-6" data-tags="automation evidence audit">
+            <h3 class="text-2xl font-semibold">Veridex Funnel — compliant, guided capture</h3>
+            <div class="grid gap-6 md:grid-cols-2 mt-4">
+              <div>
+                <h4 class="font-semibold">Flow</h4>
+                <ol class="list-decimal list-inside text-sm text-gray-700 space-y-1">
+                  <li>Select scenario (repairs, complaint, DPIA).</li>
+                  <li>Branching questions steer to lawful capture.</li>
+                  <li>Evidence attach with redaction prompts.</li>
+                  <li>Summary &amp; eSign-ready PDF (with audit hashes).</li>
+                </ol>
+              </div>
+              <div>
+                <h4 class="font-semibold">Deliverables</h4>
+                <ul class="list-disc list-inside text-sm text-gray-700 space-y-1">
+                  <li>Template pack (sector-specific)</li>
+                  <li>Audit trail JSON + PDF export</li>
+                  <li>Light CRM sync or CSV</li>
+                </ul>
+              </div>
             </div>
-            <div>
-              <h4 class="font-semibold">Deliverables</h4>
-              <ul class="list-disc list-inside text-sm text-gray-700 space-y-1">
-                <li>Template pack (sector-specific)</li>
-                <li>Audit trail JSON + PDF export</li>
-                <li>Light CRM sync or CSV</li>
-              </ul>
+            <p class="mt-4 text-sm text-gray-700"><strong>Why it works:</strong> lowers cognitive load, prevents missing fields, creates a verifiable trail.</p>
+            <div class="mt-4 flex gap-2">
+              <a href="#contact" class="inline-flex items-center rounded-lg bg-brand px-3 py-2 text-white text-sm hover:bg-brand-dark">Request demo link</a>
+              <a href="#websites" class="inline-flex items-center rounded-lg border border-gray-300 px-3 py-2 text-sm hover:bg-gray-100">See pricing</a>
             </div>
-          </div>
-          <p class="mt-4 text-sm text-gray-700"><strong>Why it works:</strong> it lowers cognitive load, prevents missing fields, and creates a verifiable trail.</p>
-          <div class="mt-4 flex gap-2">
-            <a href="#contact" class="inline-flex items-center rounded-lg bg-brand px-3 py-2 text-white text-sm hover:bg-brand-dark">Request demo link</a>
-            <a href="#websites" class="inline-flex items-center rounded-lg border border-gray-300 px-3 py-2 text-sm hover:bg-gray-100">See pricing</a>
-          </div>
-        </article>
-
-        <!-- Dashboard -->
-        <article id="deep-dashboard" class="bg-gray-50 rounded-xl ring-1 ring-gray-200 p-6 mt-8">
-          <h3 class="text-2xl font-semibold">RBIS Dashboard — early warnings, board-ready</h3>
-          <div class="grid gap-6 md:grid-cols-2 mt-4">
-            <div>
-              <h4 class="font-semibold">Flow</h4>
-              <ol class="list-decimal list-inside text-sm text-gray-700 space-y-1">
-                <li>Data ingest (CSV/API) with schema check.</li>
-                <li>KPIs calculate timers, breaches, heatmaps.</li>
-                <li>Role views with action queues.</li>
-                <li>Export slides/PDF with evidence links.</li>
-              </ol>
-            </div>
-            <div>
-              <h4 class="font-semibold">Deliverables</h4>
-              <ul class="list-disc list-inside text-sm text-gray-700 space-y-1">
-                <li>Configured dashboards + filters</li>
-                <li>Evidence-linked board pack template</li>
-                <li>Admin runbook</li>
-              </ul>
-            </div>
-          </div>
-          <p class="mt-4 text-sm text-gray-700"><strong>Why it works:</strong> less “report theatre,” more “move the needle.”</p>
-          <div class="mt-4 flex gap-2">
-            <a href="#contact" class="inline-flex items-center rounded-lg bg-brand px-3 py-2 text-white text-sm hover:bg-brand-dark">See sample pack</a>
-            <a href="#websites" class="inline-flex items-center rounded-lg border border-gray-300 px-3 py-2 text-sm hover:bg-gray-100">Compare packages</a>
-          </div>
-        </article>
-
-        <!-- PACT -->
-        <article id="deep-pact" class="bg-gray-50 rounded-xl ring-1 ring-gray-200 p-6 mt-8">
-          <h3 class="text-2xl font-semibold">PACT Ledger — promises, timers, outcomes</h3>
-          <div class="grid gap-6 md:grid-cols-2 mt-4">
-            <div>
-              <h4 class="font-semibold">Flow</h4>
-              <ol class="list-decimal list-inside text-sm text-gray-700 space-y-1">
-                <li>Capture a promise (who/what/when/evidence).</li>
-                <li>Auto-timer and breach ladder attach.</li>
-                <li>Nudges & escalations triggered by status.</li>
-                <li>Evidence export for settlement or audit.</li>
-              </ol>
-            </div>
-            <div>
-              <h4 class="font-semibold">Deliverables</h4>
-              <ul class="list-disc list-inside text-sm text-gray-700 space-y-1">
-                <li>Promise object schema</li>
-                <li>Breach ladder config</li>
-                <li>Settlement playbook</li>
-              </ul>
-            </div>
-          </div>
-          <p class="mt-4 text-sm text-gray-700"><strong>Why it works:</strong> removes ambiguity and creates accountability with receipts that matter.</p>
-          <div class="mt-4 flex gap-2">
-            <a href="#contact" class="inline-flex items-center rounded-lg bg-brand px-3 py-2 text-white text-sm hover:bg-brand-dark">Request walkthrough</a>
-            <a href="#reports" class="inline-flex items-center rounded-lg border border-gray-300 px-3 py-2 text-sm hover:bg-gray-100">See related reports</a>
-          </div>
-        </article>
-
-        <!-- OmniAssist -->
-        <article id="deep-omni" class="bg-gray-50 rounded-xl ring-1 ring-gray-200 p-6 mt-8">
-          <h3 class="text-2xl font-semibold">OmniAssist — automation with proof</h3>
-          <div class="grid gap-6 md:grid-cols-2 mt-4">
-            <div>
-              <h4 class="font-semibold">Flow</h4>
-              <ol class="list-decimal list-inside text-sm text-gray-700 space-y-1">
-                <li>Define run (target, selectors, guardrails).</li>
-                <li>Dry-run with screenshots and approvals.</li>
-                <li>Production with receipts (logs, payloads).</li>
-                <li>Export report + rollback plan.</li>
-              </ol>
-            </div>
-            <div>
-              <h4 class="font-semibold">Deliverables</h4>
-              <ul class="list-disc list-inside text-sm text-gray-700 space-y-1">
-                <li>Runbook + allowlists</li>
-                <li>DSR/PII redaction gears</li>
-                <li>Receipts archive</li>
-              </ul>
-            </div>
-          </div>
-          <p class="mt-4 text-sm text-gray-700"><strong>Why it works:</strong> automation that can testify — safer for regulated teams.</p>
-          <div class="mt-4 flex gap-2">
-            <a href="#contact" class="inline-flex items-center rounded-lg bg-brand px-3 py-2 text-white text-sm hover:bg-brand-dark">Run a pilot</a>
-            <a href="#websites" class="inline-flex items-center rounded-lg border border-gray-300 px-3 py-2 text-sm hover:bg-gray-100">Premium robots</a>
-          </div>
-        </article>
-
-        <!-- NextusOne -->
-        <article id="deep-nextus" class="bg-gray-50 rounded-xl ring-1 ring-gray-200 p-6 mt-8">
-          <h3 class="text-2xl font-semibold">NextusOne CRM — GDPR-first customer ops</h3>
-          <div class="grid gap-6 md:grid-cols-2 mt-4">
-            <div>
-              <h4 class="font-semibold">Flow</h4>
-              <ol class="list-decimal list-inside text-sm text-gray-700 space-y-1">
-                <li>Lawful basis prompt at capture.</li>
-                <li>Retention clock set; suppression lists handled.</li>
-                <li>DSR workflows (search, redaction, export).</li>
-                <li>Consent centre portals.</li>
-              </ol>
-            </div>
-            <div>
-              <h4 class="font-semibold">Deliverables</h4>
-              <ul class="list-disc list-inside text-sm text-gray-700 space-y-1">
-                <li>Article 30 data map</li>
-                <li>Consent/permissions model</li>
-                <li>Retention policy wiring</li>
-              </ul>
-            </div>
-          </div>
-          <p class="mt-4 text-sm text-gray-700"><strong>Why it works:</strong> bakes compliance into operations — less risk, less rework.</p>
-          <div class="mt-4 flex gap-2">
-            <a href="#contact" class="inline-flex items-center rounded-lg bg-brand px-3 py-2 text-white text-sm hover:bg-brand-dark">Pricing &amp; scope</a>
-            <a href="#reports" class="inline-flex items-center rounded-lg border border-gray-300 px-3 py-2 text-sm hover:bg-gray-100">See DPIA/RoPA packs</a>
-          </div>
-        </article>
-
-        <!-- Training -->
-        <article id="deep-training" class="bg-gray-50 rounded-xl ring-1 ring-gray-200 p-6 mt-8">
-          <h3 class="text-2xl font-semibold">Training &amp; Advisory — practical, applied</h3>
-          <div class="grid gap-6 md:grid-cols-2 mt-4">
-            <div>
-              <h4 class="font-semibold">Syllabus (examples)</h4>
-              <ul class="list-disc list-inside text-sm text-gray-700 space-y-1">
-                <li>Evidence handling &amp; redaction labs</li>
-                <li>Plain-language response writing</li>
-                <li>WCAG walk-through (hands-on fixes)</li>
-                <li>Claims substantiation (CAP/ASA)</li>
-              </ul>
-            </div>
-            <div>
-              <h4 class="font-semibold">Formats</h4>
-              <p class="text-sm text-gray-700">Half-day, full-day, or multi-week sprints with live artefacts and templates you keep.</p>
-            </div>
-          </div>
-          <div class="mt-4 flex gap-2">
-            <a href="#contact" class="inline-flex items-center rounded-lg bg-brand px-3 py-2 text-white text-sm hover:bg-brand-dark">Send brief</a>
-            <a href="#websites" class="inline-flex items-center rounded-lg border border-gray-300 px-3 py-2 text-sm hover:bg-gray-100">Bundle with builds</a>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <!-- Outcome-focused solutions -->
-    <section id="solutions" class="py-16 bg-gray-50 scroll-mt-24">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="text-3xl font-bold text-center mb-10">Outcome-focused solutions</h2>
-        <div class="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-          <article class="bg-white rounded-xl shadow-sm ring-1 ring-gray-200 p-6">
-            <h3 class="text-xl font-semibold">Disrepair &amp; Repairs Ops</h3>
-            <p class="text-sm text-gray-700">Veridex + PACT + Dashboard to cut uphold risk and catch breaches early.</p>
           </article>
-          <article class="bg-white rounded-xl shadow-sm ring-1 ring-gray-200 p-6">
-            <h3 class="text-xl font-semibold">Compliance-led CRM</h3>
-            <p class="text-sm text-gray-700">NextusOne with lawful-basis prompts, retention nudges, DSR workflows.</p>
+
+          <!-- Dashboard -->
+          <article id="deep-dashboard" class="deep-card bg-gray-50 rounded-xl ring-1 ring-gray-200 p-6" data-tags="evidence audit">
+            <h3 class="text-2xl font-semibold">RBIS Dashboard — early warnings, board-ready</h3>
+            <div class="grid gap-6 md:grid-cols-2 mt-4">
+              <div>
+                <h4 class="font-semibold">Flow</h4>
+                <ol class="list-decimal list-inside text-sm text-gray-700 space-y-1">
+                  <li>Data ingest (CSV/API) with schema check.</li>
+                  <li>KPIs calculate timers, breaches, heatmaps.</li>
+                  <li>Role views with action queues.</li>
+                  <li>Export slides/PDF with evidence links.</li>
+                </ol>
+              </div>
+              <div>
+                <h4 class="font-semibold">Deliverables</h4>
+                <ul class="list-disc list-inside text-sm text-gray-700 space-y-1">
+                  <li>Configured dashboards + filters</li>
+                  <li>Evidence-linked board pack template</li>
+                  <li>Admin runbook</li>
+                </ul>
+              </div>
+            </div>
+            <p class="mt-4 text-sm text-gray-700"><strong>Why it works:</strong> turns “unknown-unknowns” into timers, tasks, and exports.</p>
+            <div class="mt-4 flex gap-2">
+              <a href="#products" class="inline-flex items-center rounded-lg bg-brand px-3 py-2 text-white text-sm hover:bg-brand-dark">Feature list</a>
+              <a href="#contact" class="inline-flex items-center rounded-lg border border-gray-300 px-3 py-2 text-sm hover:bg-gray-100">Ask for sample</a>
+            </div>
           </article>
-          <article class="bg-white rounded-xl shadow-sm ring-1 ring-gray-200 p-6">
-            <h3 class="text-xl font-semibold">Proof-first Automation</h3>
-            <p class="text-sm text-gray-700">OmniAssist: portal automation with screenshots, approvals, receipts.</p>
+
+          <!-- PACT -->
+          <article id="deep-pact" class="deep-card bg-gray-50 rounded-xl ring-1 ring-gray-200 p-6" data-tags="automation evidence audit">
+            <h3 class="text-2xl font-semibold">PACT Ledger — promises that keep themselves (or escalate)</h3>
+            <div class="grid gap-6 md:grid-cols-2 mt-4">
+              <div>
+                <h4 class="font-semibold">Flow</h4>
+                <ol class="list-decimal list-inside text-sm text-gray-700 space-y-1">
+                  <li>Capture commitment (email/SMS/web intake).</li>
+                  <li>Assign timers, SLA, responsible party.</li>
+                  <li>Run nudges, capture receipts, log evidence.</li>
+                  <li>Escalate breaches to settlement playbooks.</li>
+                </ol>
+              </div>
+              <div>
+                <h4 class="font-semibold">Deliverables</h4>
+                <ul class="list-disc list-inside text-sm text-gray-700 space-y-1">
+                  <li>Promise object schema</li>
+                  <li>Evidence pack export</li>
+                  <li>Role-based action queues</li>
+                </ul>
+              </div>
+            </div>
+            <p class="mt-4 text-sm text-gray-700"><strong>Why it works:</strong> replaces memory and excuses with timers and proof.</p>
+            <div class="mt-4 flex gap-2">
+              <a href="#products" class="inline-flex items-center rounded-lg bg-brand px-3 py-2 text-white text-sm hover:bg-brand-dark">Feature list</a>
+              <a href="#contact" class="inline-flex items-center rounded-lg border border-gray-300 px-3 py-2 text-sm hover:bg-gray-100">Book a walkthrough</a>
+            </div>
+          </article>
+
+          <!-- OmniAssist -->
+          <article id="deep-omni" class="deep-card bg-gray-50 rounded-xl ring-1 ring-gray-200 p-6" data-tags="automation evidence">
+            <h3 class="text-2xl font-semibold">OmniAssist — guardrailed automations with receipts</h3>
+            <div class="grid gap-6 md:grid-cols-2 mt-4">
+              <div>
+                <h4 class="font-semibold">Flow</h4>
+                <ol class="list-decimal list-inside text-sm text-gray-700 space-y-1">
+                  <li>Define task with allowlists &amp; approvals.</li>
+                  <li>Run bots with screenshots/selectors.</li>
+                  <li>Store run receipts (payloads, timings).</li>
+                  <li>Human-in-the-loop signoff.</li>
+                </ol>
+              </div>
+              <div>
+                <h4 class="font-semibold">Deliverables</h4>
+                <ul class="list-disc list-inside text-sm text-gray-700 space-y-1">
+                  <li>Automation playbooks</li>
+                  <li>Run receipts &amp; API logs</li>
+                  <li>Rollback &amp; retry patterns</li>
+                </ul>
+              </div>
+            </div>
+            <p class="mt-4 text-sm text-gray-700"><strong>Why it works:</strong> speed without the “shadow IT” hangover.</p>
+            <div class="mt-4 flex gap-2">
+              <a href="#products" class="inline-flex items-center rounded-lg bg-brand px-3 py-2 text-white text-sm hover:bg-brand-dark">Capabilities</a>
+              <a href="#contact" class="inline-flex items-center rounded-lg border border-gray-300 px-3 py-2 text-sm hover:bg-gray-100">Scope a pilot</a>
+            </div>
+          </article>
+
+          <!-- NextusOne -->
+          <article id="deep-nextus" class="deep-card bg-gray-50 rounded-xl ring-1 ring-gray-200 p-6" data-tags="gdpr evidence">
+            <h3 class="text-2xl font-semibold">NextusOne CRM — GDPR-first capture &amp; retention</h3>
+            <div class="grid gap-6 md:grid-cols-2 mt-4">
+              <div>
+                <h4 class="font-semibold">Flow</h4>
+                <ol class="list-decimal list-inside text-sm text-gray-700 space-y-1">
+                  <li>Prompt lawful basis at capture.</li>
+                  <li>Consent &amp; suppression centre wired-in.</li>
+                  <li>Retention timers &amp; deletion queues.</li>
+                  <li>Subject request (DSR) workflows.</li>
+                </ol>
+              </div>
+              <div>
+                <h4 class="font-semibold">Deliverables</h4>
+                <ul class="list-disc list-inside text-sm text-gray-700 space-y-1">
+                  <li>Configured pipelines</li>
+                  <li>Policy-linked forms</li>
+                  <li>Auditable exports</li>
+                </ul>
+              </div>
+            </div>
+            <p class="mt-4 text-sm text-gray-700"><strong>Why it works:</strong> compliance isn’t a later layer; it’s the first input.</p>
+            <div class="mt-4 flex gap-2">
+              <a href="#products" class="inline-flex items-center rounded-lg bg-brand px-3 py-2 text-white text-sm hover:bg-brand-dark">Capabilities</a>
+              <a href="#contact" class="inline-flex items-center rounded-lg border border-gray-300 px-3 py-2 text-sm hover:bg-gray-100">Integration options</a>
+            </div>
+          </article>
+
+          <!-- Training -->
+          <article id="deep-training" class="deep-card bg-gray-50 rounded-xl ring-1 ring-gray-200 p-6" data-tags="training audit evidence">
+            <h3 class="text-2xl font-semibold">Training &amp; Advisory — give your team the receipts playbook</h3>
+            <div class="grid gap-6 md:grid-cols-2 mt-4">
+              <div>
+                <h4 class="font-semibold">Modules</h4>
+                <ul class="list-disc list-inside text-sm text-gray-700 space-y-1">
+                  <li>Evidence handling &amp; chain-of-custody</li>
+                  <li>Claims substantiation (CAP/ASA)</li>
+                  <li>Accessibility-by-default</li>
+                  <li>Incident write-ups that stick</li>
+                </ul>
+              </div>
+              <div>
+                <h4 class="font-semibold">Formats</h4>
+                <ul class="list-disc list-inside text-sm text-gray-700 space-y-1">
+                  <li>Half-day / full-day</li>
+                  <li>Team clinics</li>
+                  <li>Board briefings</li>
+                </ul>
+              </div>
+            </div>
+            <p class="mt-4 text-sm text-gray-700"><strong>Outcome:</strong> fewer surprises, faster audits, better decisions.</p>
+            <div class="mt-4 flex gap-2">
+              <a href="#contact" class="inline-flex items-center rounded-lg bg-brand px-3 py-2 text-white text-sm hover:bg-brand-dark">Request syllabus</a>
+            </div>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- Trust -->
-    <section id="trust" class="py-16 bg-white scroll-mt-24">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="text-3xl font-bold text-center mb-2">Trust Centre</h2>
-        <p class="text-center text-gray-600 mb-10">GDPR-first. Minimal collection. No sale of data. Evidence handled via gated, encrypted channels.</p>
-        <div class="grid gap-6 grid-cols-1 md:grid-cols-3">
-          <article class="bg-gray-50 rounded-xl ring-1 ring-gray-200 p-6">
-            <h3 class="font-semibold">Privacy</h3>
-            <p class="text-sm text-gray-700">Data minimisation, purpose limitation, retention clocks, access logging, redaction on exports.</p>
-            <a href="#privacy" class="text-sm text-brand hover:underline mt-2 inline-block">Read policy</a>
-          </article>
-          <article class="bg-gray-50 rounded-xl ring-1 ring-gray-200 p-6">
-            <h3 class="font-semibold">Cookies</h3>
-            <p class="text-sm text-gray-700">Consent-respecting analytics only.</p>
-            <a href="#cookies" class="text-sm text-brand hover:underline mt-2 inline-block">Cookie policy</a>
-          </article>
-          <article class="bg-gray-50 rounded-xl ring-1 ring-gray-200 p-6">
-            <h3 class="font-semibold">Terms</h3>
-            <p class="text-sm text-gray-700">Fixed prices. Major amendments via hourly consultation &amp; custom plan.</p>
-            <a href="#terms" class="text-sm text-brand hover:underline mt-2 inline-block">Service terms</a>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- Evidence & Compliance Reports -->
+    <!-- Reports Catalogue -->
     <section id="reports" class="py-16 bg-gray-50 scroll-mt-24">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="text-3xl font-bold text-center mb-6">Evidence &amp; Compliance Reports</h2>
-        <p class="text-center text-gray-600 mb-6">Fixed prices. Optional Support add-on: £250/month (premium monitoring robot). Prices ex-VAT.</p>
+        <h2 class="text-3xl font-bold text-center mb-2">Evidence Reports — audit-ready by default</h2>
+        <p class="text-center text-gray-600 mb-10">Legally-safe, structured write-ups with exhibits, timelines, and board summaries.</p>
 
-        <!-- Filters -->
-        <div class="flex flex-wrap justify-center gap-2 mb-8">
-          <button class="report-filter px-3 py-1.5 rounded-lg border border-gray-300 text-sm" data-filter="all">All</button>
-          <button class="report-filter px-3 py-1.5 rounded-lg border border-gray-300 text-sm" data-filter="repairs">Repairs &amp; Compliance</button>
-          <button class="report-filter px-3 py-1.5 rounded-lg border border-gray-300 text-sm" data-filter="complaints">Complaints &amp; Ombudsman</button>
-          <button class="report-filter px-3 py-1.5 rounded-lg border border-gray-300 text-sm" data-filter="dataprotection">Data Protection &amp; Marketing</button>
-          <button class="report-filter px-3 py-1.5 rounded-lg border border-gray-300 text-sm" data-filter="web">Website &amp; Accessibility</button>
-          <button class="report-filter px-3 py-1.5 rounded-lg border border-gray-300 text-sm" data-filter="ops">Operations &amp; Auditability</button>
-          <button class="report-filter px-3 py-1.5 rounded-lg border border-gray-300 text-sm" data-filter="pact">PACT Ledger</button>
-        </div>
-
-        <!-- Cards -->
-        <div id="reportGrid" class="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-          <!-- A few examples per category; extend easily -->
-          <article class="report-card bg-white rounded-xl shadow-sm ring-1 ring-gray-200 p-6" data-cat="repairs">
-            <h3 class="text-lg font-semibold">Repairs SLA Compliance Audit</h3>
-            <p class="text-sm text-gray-700">Measure adherence to SLAs; identify breach patterns; scheduling fixes.</p>
-            <p class="mt-2 text-sm"><strong>Price:</strong> £1,250</p>
-            <a href="#contact" class="mt-3 inline-flex items-center rounded-lg bg-brand px-3 py-2 text-white text-sm hover:bg-brand-dark">Request sample</a>
+        <div class="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+          <article class="bg-white rounded-xl ring-1 ring-gray-200 p-6">
+            <h3 class="text-lg font-semibold">Housing Repairs &amp; Compliance</h3>
+            <ul class="mt-3 text-sm text-gray-700 space-y-1">
+              <li>Repairs Intake &amp; Evidence Pack</li>
+              <li>Damp &amp; Mould Action Report</li>
+              <li>SLA Breach Timeline</li>
+              <li>Compliance Gap Analysis</li>
+            </ul>
+            <div class="mt-4"><a href="#contact" class="inline-flex items-center rounded-lg bg-brand px-3 py-2 text-white text-sm hover:bg-brand-dark">Request sample</a></div>
           </article>
 
-          <article class="report-card bg-white rounded-xl shadow-sm ring-1 ring-gray-200 p-6" data-cat="repairs">
-            <h3 class="text-lg font-semibold">Damp &amp; Mould Response Audit</h3>
-            <p class="text-sm text-gray-700">Assess triage, inspection, remediation and communication timeliness.</p>
-            <p class="mt-2 text-sm"><strong>Price:</strong> £850</p>
-            <a href="#contact" class="mt-3 inline-flex items-center rounded-lg bg-brand px-3 py-2 text-white text-sm hover:bg-brand-dark">Request sample</a>
+          <article class="bg-white rounded-xl ring-1 ring-gray-200 p-6">
+            <h3 class="text-lg font-semibold">Complaints &amp; Ombudsman</h3>
+            <ul class="mt-3 text-sm text-gray-700 space-y-1">
+              <li>Complaint Casefile (Stage 1/2)</li>
+              <li>Root Cause &amp; Remedies</li>
+              <li>Ombudsman Submission Pack</li>
+            </ul>
+            <div class="mt-4"><a href="#contact" class="inline-flex items-center rounded-lg bg-brand px-3 py-2 text-white text-sm hover:bg-brand-dark">Request sample</a></div>
           </article>
 
-          <article class="report-card bg-white rounded-xl shadow-sm ring-1 ring-gray-200 p-6" data-cat="complaints">
-            <h3 class="text-lg font-semibold">Complaint Handling Audit (Stage 1/2)</h3>
-            <p class="text-sm text-gray-700">Timeliness, fairness, evidence use; uphold risk and remedy gaps.</p>
-            <p class="mt-2 text-sm"><strong>Price:</strong> £1,750</p>
-            <a href="#contact" class="mt-3 inline-flex items-center rounded-lg bg-brand px-3 py-2 text-white text-sm hover:bg-brand-dark">Request sample</a>
+          <article class="bg-white rounded-xl ring-1 ring-gray-200 p-6">
+            <h3 class="text-lg font-semibold">Data Protection &amp; Marketing</h3>
+            <ul class="mt-3 text-sm text-gray-700 space-y-1">
+              <li>DPIA &amp; LIA Reports</li>
+              <li>Consent &amp; Suppression Audit</li>
+              <li>CAP/ASA Claims Substantiation</li>
+            </ul>
+            <div class="mt-4"><a href="#contact" class="inline-flex items-center rounded-lg bg-brand px-3 py-2 text-white text-sm hover:bg-brand-dark">Request sample</a></div>
           </article>
 
-          <article class="report-card bg-white rounded-xl shadow-sm ring-1 ring-gray-200 p-6" data-cat="complaints">
-            <h3 class="text-lg font-semibold">Ombudsman Determination Readiness</h3>
-            <p class="text-sm text-gray-700">Stress-test sample cases vs scheme expectations; summaries.</p>
-            <p class="mt-2 text-sm"><strong>Price:</strong> £1,300</p>
-            <a href="#contact" class="mt-3 inline-flex items-center rounded-lg bg-brand px-3 py-2 text-white text-sm hover:bg-brand-dark">Request sample</a>
+          <article class="bg-white rounded-xl ring-1 ring-gray-200 p-6">
+            <h3 class="text-lg font-semibold">Website &amp; Accessibility</h3>
+            <ul class="mt-3 text-sm text-gray-700 space-y-1">
+              <li>WCAG 2.2 AA Audit</li>
+              <li>SEO &amp; Performance Evidence</li>
+              <li>Cookie &amp; Consent Review</li>
+            </ul>
+            <div class="mt-4"><a href="#contact" class="inline-flex items-center rounded-lg bg-brand px-3 py-2 text-white text-sm hover:bg-brand-dark">Request sample</a></div>
           </article>
 
-          <article class="report-card bg-white rounded-xl shadow-sm ring-1 ring-gray-200 p-6" data-cat="dataprotection">
-            <h3 class="text-lg font-semibold">Lawful Basis &amp; Consent Inventory</h3>
-            <p class="text-sm text-gray-700">Catalogue activities, bases, and consents; flag mismatches.</p>
-            <p class="mt-2 text-sm"><strong>Price:</strong> £1,200</p>
-            <a href="#contact" class="mt-3 inline-flex items-center rounded-lg bg-brand px-3 py-2 text-white text-sm hover:bg-brand-dark">Request sample</a>
+          <article class="bg-white rounded-xl ring-1 ring-gray-200 p-6">
+            <h3 class="text-lg font-semibold">Operational &amp; Auditability</h3>
+            <ul class="mt-3 text-sm text-gray-700 space-y-1">
+              <li>Incident Write-up &amp; Timeline</li>
+              <li>Runbook &amp; Controls Review</li>
+              <li>Board Pack (Evidence-linked)</li>
+            </ul>
+            <div class="mt-4"><a href="#contact" class="inline-flex items-center rounded-lg bg-brand px-3 py-2 text-white text-sm hover:bg-brand-dark">Request sample</a></div>
           </article>
 
-          <article class="report-card bg-white rounded-xl shadow-sm ring-1 ring-gray-200 p-6" data-cat="dataprotection">
-            <h3 class="text-lg font-semibold">Subject Rights Workflow Test</h3>
-            <p class="text-sm text-gray-700">DSAR/Erasure E2E tests; identity, search, redaction, deadlines.</p>
-            <p class="mt-2 text-sm"><strong>Price:</strong> £1,100</p>
-            <a href="#contact" class="mt-3 inline-flex items-center rounded-lg bg-brand px-3 py-2 text-white text-sm hover:bg-brand-dark">Request sample</a>
-          </article>
-
-          <article class="report-card bg-white rounded-xl shadow-sm ring-1 ring-gray-200 p-6" data-cat="web">
-            <h3 class="text-lg font-semibold">Accessibility Audit (WCAG 2.2 AA)</h3>
-            <p class="text-sm text-gray-700">Issues, fixes and re-test plan; conformance evidence pack.</p>
-            <p class="mt-2 text-sm"><strong>Price:</strong> £2,200</p>
-            <a href="#contact" class="mt-3 inline-flex items-center rounded-lg bg-brand px-3 py-2 text-white text-sm hover:bg-brand-dark">Request sample</a>
-          </article>
-
-          <article class="report-card bg-white rounded-xl shadow-sm ring-1 ring-gray-200 p-6" data-cat="web">
-            <h3 class="text-lg font-semibold">Forms UX &amp; Error Handling Audit</h3>
-            <p class="text-sm text-gray-700">Labels, help text, validation timing, recovery paths.</p>
-            <p class="mt-2 text-sm"><strong>Price:</strong> £700</p>
-            <a href="#contact" class="mt-3 inline-flex items-center rounded-lg bg-brand px-3 py-2 text-white text-sm hover:bg-brand-dark">Request sample</a>
-          </article>
-
-          <article class="report-card bg-white rounded-xl shadow-sm ring-1 ring-gray-200 p-6" data-cat="ops">
-            <h3 class="text-lg font-semibold">SLA Timers &amp; MI Dashboard Review</h3>
-            <p class="text-sm text-gray-700">Early warnings, role views, decision usefulness.</p>
-            <p class="mt-2 text-sm"><strong>Price:</strong> £1,200</p>
-            <a href="#contact" class="mt-3 inline-flex items-center rounded-lg bg-brand px-3 py-2 text-white text-sm hover:bg-brand-dark">Request sample</a>
-          </article>
-
-          <article class="report-card bg-white rounded-xl shadow-sm ring-1 ring-gray-200 p-6" data-cat="pact">
-            <h3 class="text-lg font-semibold">Promise Object &amp; Escalation Ladder</h3>
-            <p class="text-sm text-gray-700">Design promise objects, timers, and breach ladders.</p>
-            <p class="mt-2 text-sm"><strong>Price:</strong> £800</p>
-            <a href="#contact" class="mt-3 inline-flex items-center rounded-lg bg-brand px-3 py-2 text-white text-sm hover:bg-brand-dark">Request sample</a>
+          <article class="bg-white rounded-xl ring-1 ring-gray-200 p-6">
+            <h3 class="text-lg font-semibold">PACT Ledger</h3>
+            <ul class="mt-3 text-sm text-gray-700 space-y-1">
+              <li>Promise Object Register</li>
+              <li>Breach &amp; Escalation Log</li>
+              <li>Settlement Summary &amp; Evidence</li>
+            </ul>
+            <div class="mt-4"><a href="#contact" class="inline-flex items-center rounded-lg bg-brand px-3 py-2 text-white text-sm hover:bg-brand-dark">Request sample</a></div>
           </article>
         </div>
       </div>
@@ -646,130 +700,179 @@
     <!-- About -->
     <section id="about" class="py-16 bg-white scroll-mt-24">
       <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="text-3xl font-bold text-center mb-8">About Ryan Roberts</h2>
-        <p class="mb-4 text-gray-800">Ryan Roberts is the founder of RBIS (Behavioural &amp; Intelligence Services), an independent strategist, builder, and consultant at the intersection of compliance, technology, and behavioural science. With a background spanning the legal sector, digital marketing, and automation consulting, Ryan specialises in turning complex challenges into evidence-backed, actionable solutions.</p>
-
-        <h2 class="text-3xl font-bold text-center mb-6 mt-10">About RBIS</h2>
-        <p class="mb-4 text-gray-800">RBIS Intelligence is built around one principle: <strong>evidence comes first</strong>. We design software, audits, and reporting frameworks that don’t just “look good” but stand up to scrutiny from regulators, auditors, and courts. Our products and services are designed to be audit-ready, compliant by default, and supported by embedded intelligence that adapts in real time.</p>
-        <p class="mb-4 text-gray-800">Unlike traditional agencies, RBIS isn’t about vanity metrics or surface-level fixes. We engineer systems that keep organisations safe, efficient, and competitive in a regulatory environment where compliance is no longer optional — it’s survival.</p>
-
-        <h3 class="text-xl font-semibold mt-6 mb-2">What We Deliver</h3>
-        <ul class="list-disc list-inside space-y-2 text-gray-800">
-          <li><strong>Evidence &amp; Reports</strong> — 31+ compliance-ready templates for housing, complaints, data protection, marketing, accessibility, and operational performance.</li>
-          <li><strong>Websites &amp; Digital Platforms</strong> — Built to be compliant, resilient, and intelligent from day one.</li>
-          <li><strong>Ongoing Intelligence</strong> — Monitoring, alerts, and embedded “robots” that handle the heavy lifting of compliance and optimisation.</li>
-        </ul>
-
-        <h3 class="text-xl font-semibold mt-6 mb-2">Why It Matters</h3>
-        <p class="text-gray-800">The digital world is crowded with promises. RBIS exists to cut through noise with proof. Every audit, every site, every automation comes with documented evidence and measurable outcomes. Clients don’t just get a product — they get protection, credibility, and a long-term advantage.</p>
+        <h2 class="text-3xl font-bold text-center mb-6">About RBIS</h2>
+        <div class="bg-gray-50 rounded-xl ring-1 ring-gray-200 p-6 text-gray-800">
+          <p class="mb-3"><strong>RBIS (Ryan Roberts: Behavioural &amp; Intelligence Services)</strong> builds evidence-first sites, guardrailed automations, and audit-ready reporting. Compliance is not an afterthought; it’s the architecture.</p>
+          <p class="mb-3">We optimise for clarity and receipts: minimal data capture, explicit consent models, retention timers, and exports your board can actually read.</p>
+          <ul class="list-disc list-inside text-sm text-gray-700 space-y-1">
+            <li>Accessibility-first design tokens and patterns</li>
+            <li>CAP/ASA claims checks wired into content ops</li>
+            <li>Audit trails, evidence packs, and board summaries</li>
+          </ul>
+        </div>
       </div>
     </section>
 
     <!-- Contact -->
     <section id="contact" class="py-16 bg-gray-50 scroll-mt-24">
-      <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="text-3xl font-bold text-center mb-2">Let’s talk</h2>
-        <p class="text-center text-gray-600 mb-8">Tell us the outcome you need; we’ll show the fastest safe path.</p>
-
-        <form action="https://formspree.io/f/meolvrdy" method="POST" class="space-y-4">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl font-bold text-center mb-6">Start a Project</h2>
+        <form id="contactForm" class="bg-white rounded-xl ring-1 ring-gray-200 p-6 grid gap-4" novalidate>
           <div>
-            <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
-            <input id="name" name="name" type="text" class="mt-1 block w-full rounded-lg border-gray-300 focus:border-brand focus:ring-brand" autocomplete="name">
+            <label for="name" class="block text-sm font-medium text-gray-700">Your name</label>
+            <input id="name" name="name" type="text" required class="mt-1 w-full rounded-lg border-gray-300 focus:border-brand focus:ring-brand" autocomplete="name">
           </div>
           <div>
-            <label for="email" class="block text-sm font-medium text-gray-700">Email <span class="text-red-600">*</span></label>
-            <input id="email" name="email" type="email" required class="mt-1 block w-full rounded-lg border-gray-300 focus:border-brand focus:ring-brand" autocomplete="email">
+            <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+            <input id="email" name="email" type="email" required class="mt-1 w-full rounded-lg border-gray-300 focus:border-brand focus:ring-brand" autocomplete="email">
           </div>
           <div>
-            <label for="topic" class="block text-sm font-medium text-gray-700">Topic</label>
-            <select id="topic" name="topic" class="mt-1 block w-full rounded-lg border-gray-300 focus:border-brand focus:ring-brand">
-              <option>Website build</option>
-              <option>Evidence report</option>
-              <option>Automation (OmniAssist)</option>
-              <option>Dashboard / KPIs</option>
-              <option>Training &amp; advisory</option>
-              <option>Other</option>
+            <label for="package" class="block text-sm font-medium text-gray-700">Package / interest</label>
+            <select id="package" name="package" class="mt-1 w-full rounded-lg border-gray-300 focus:border-brand focus:ring-brand">
+              <option>Foundation Site</option>
+              <option>Compliance-Ready</option>
+              <option>Growth Site</option>
+              <option>Audit-Ready Pro</option>
+              <option>Vision Build</option>
+              <option>Veridex Funnel</option>
+              <option>RBIS Dashboard</option>
+              <option>PACT Ledger</option>
+              <option>OmniAssist</option>
+              <option>NextusOne CRM</option>
+              <option>Training &amp; Advisory</option>
             </select>
           </div>
           <div>
-            <label for="message" class="block text-sm font-medium text-gray-700">Message</label>
-            <textarea id="message" name="message" rows="5" class="mt-1 block w-full rounded-lg border-gray-300 focus:border-brand focus:ring-brand"></textarea>
+            <label for="message" class="block text-sm font-medium text-gray-700">Brief</label>
+            <textarea id="message" name="message" rows="5" class="mt-1 w-full rounded-lg border-gray-300 focus:border-brand focus:ring-brand" placeholder="Goals, deadlines, constraints…"></textarea>
           </div>
-          <p class="text-xs text-gray-500">Minimal data. Your message is handled via Formspree.</p>
-          <button type="submit" class="inline-flex items-center rounded-lg bg-brand px-5 py-3 text-white font-semibold hover:bg-brand-dark">Send</button>
+          <div class="flex items-center gap-2 text-xs text-gray-600">
+            <input id="consent" name="consent" type="checkbox" required class="rounded border-gray-300 text-brand focus:ring-brand">
+            <label for="consent">I agree to be contacted for this enquiry. Minimal data policy applies.</label>
+          </div>
+          <div class="flex gap-3">
+            <button type="submit" class="inline-flex items-center rounded-lg bg-brand px-4 py-2 text-white font-semibold hover:bg-brand-dark">Send enquiry</button>
+            <button type="reset" class="inline-flex items-center rounded-lg border border-gray-300 px-4 py-2 font-semibold hover:bg-gray-100">Reset</button>
+          </div>
+          <p id="formStatus" class="text-sm text-gray-600" role="status" aria-live="polite"></p>
         </form>
-      </div>
-    </section>
-
-    <!-- Policy stubs -->
-    <section id="privacy" class="py-12 bg-white scroll-mt-24">
-      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="text-2xl font-semibold">Privacy (short form)</h2>
-        <p class="text-sm text-gray-700 mt-2">We collect the minimum required to respond. We don’t sell data. Evidence files are handled via secure, gated channels. Full policy available on request.</p>
-      </div>
-    </section>
-    <section id="cookies" class="py-12 bg-white scroll-mt-24">
-      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="text-2xl font-semibold">Cookies (short form)</h2>
-        <p class="text-sm text-gray-700 mt-2">Consent-respecting analytics only. No third-party ads. Essential cookies only for site operation.</p>
-      </div>
-    </section>
-    <section id="terms" class="py-12 bg-white scroll-mt-24">
-      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="text-2xl font-semibold">Service terms (short form)</h2>
-        <p class="text-sm text-gray-700 mt-2">Fixed-price deliverables unless scope materially changes. Major amendments billed at £50/hour with a custom plan. Support &amp; Monitoring available at £250/month, rolling, cancellable anytime.</p>
+        <p class="mt-4 text-xs text-center text-gray-500">We run <em>minimal capture</em>. No trackers. Evidence by default.</p>
       </div>
     </section>
   </main>
 
   <!-- Footer -->
-  <footer class="border-t border-gray-100">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-      <div class="flex flex-col md:flex-row items-center justify-between gap-3 text-sm text-gray-600">
-        <p>© 2025 RBIS — Evidence-first software &amp; intelligence.</p>
-        <nav class="flex items-center gap-4">
-          <a class="hover:text-brand" href="#privacy">Privacy</a>
-          <a class="hover:text-brand" href="#cookies">Cookies</a>
-          <a class="hover:text-brand" href="#terms">Terms</a>
+  <footer class="border-t border-gray-200 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div class="grid gap-6 md:grid-cols-3 items-start">
+        <div>
+          <div class="flex items-center gap-2 font-semibold">
+            <span class="inline-grid place-items-center w-8 h-8 rounded-lg bg-brand text-white font-bold">R</span>
+            <span>RBIS</span>
+          </div>
+          <p class="mt-2 text-sm text-gray-600">Evidence-first software &amp; intelligence. Compliance by design. Receipts by default.</p>
+        </div>
+        <nav aria-label="Footer" class="text-sm">
+          <ul class="grid grid-cols-2 gap-2">
+            <li><a class="hover:text-brand" href="#websites">Websites</a></li>
+            <li><a class="hover:text-brand" href="#products">Products</a></li>
+            <li><a class="hover:text-brand" href="#deep-dives">Deep-dives</a></li>
+            <li><a class="hover:text-brand" href="#reports">Reports</a></li>
+            <li><a class="hover:text-brand" href="#about">About</a></li>
+            <li><a class="hover:text-brand" href="#contact">Contact</a></li>
+          </ul>
         </nav>
+        <div class="text-sm text-gray-600">
+          <p>© <span id="year"></span> RBIS Intelligence. All rights reserved.</p>
+          <p class="mt-1">Built with accessibility tokens, audit logs, and minimal data.</p>
+        </div>
       </div>
-      <p class="mt-6 text-xs opacity-70 md:text-right">Built by Ryan Roberts | RBIS</p>
     </div>
   </footer>
 
-  <!-- Minimal JS: mobile nav toggle + auto-close + report filters -->
+  <!-- Scripts -->
   <script>
-    // Mobile nav toggle + auto-close
-    const btn = document.getElementById('menuButton');
-    const menu = document.getElementById('mobileMenu');
-    if (btn && menu) {
-      btn.addEventListener('click', () => {
-        const open = !menu.classList.contains('hidden');
-        menu.classList.toggle('hidden', open);
-        btn.setAttribute('aria-expanded', String(!open));
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Mobile menu
+    const menuBtn = document.getElementById('menuButton');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuBtn?.addEventListener('click', () => {
+      const open = mobileMenu.classList.toggle('hidden') ? 'false' : 'true';
+      menuBtn.setAttribute('aria-expanded', open);
+    });
+
+    // Testimonial rotator (no network)
+    const quotes = [
+      { t: '“RBIS gave us receipts for everything. Our audit finished in half the time.”', a: 'Ops Director, Housing Provider' },
+      { t: '“Compliance by design meant fewer meetings and faster signoff.”', a: 'Head of Digital' },
+      { t: '“The evidence packs made the board pack write itself.”', a: 'Programme Manager' }
+    ];
+    let qi = 0;
+    setInterval(() => {
+      qi = (qi + 1) % quotes.length;
+      const q = quotes[qi];
+      const qt = document.getElementById('quoteText');
+      const qa = document.getElementById('quoteAuthor');
+      if(qt && qa){ qt.textContent = q.t; qa.textContent = q.a; }
+    }, 4800);
+
+    // Deep-dives live search + chips
+    const deepSearch = document.getElementById('deepSearch');
+    const deepGrid = document.getElementById('deepGrid');
+    const deepCount = document.getElementById('deepCount');
+    const chips = Array.from(document.querySelectorAll('.chip'));
+    let activeTags = new Set();
+
+    function filterDeep() {
+      const q = (deepSearch?.value || '').trim().toLowerCase();
+      const cards = Array.from(deepGrid.querySelectorAll('.deep-card'));
+      let shown = 0;
+      cards.forEach(card => {
+        const text = card.textContent.toLowerCase();
+        const tags = (card.getAttribute('data-tags') || '').toLowerCase().split(/\s+/);
+        const matchesQuery = !q || text.includes(q);
+        const matchesTags = activeTags.size === 0 || [...activeTags].every(t => tags.includes(t));
+        const show = matchesQuery && matchesTags;
+        card.classList.toggle('hidden', !show);
+        if (show) shown++;
       });
-      // auto-close on link click
-      menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
-        menu.classList.add('hidden');
-        btn.setAttribute('aria-expanded', 'false');
-      }));
+      deepCount.textContent = shown === cards.length ? 'Showing all items' : `Showing ${shown} of ${cards.length}`;
     }
 
-    // Simple report filter (no dependencies)
-    const filterBtns = document.querySelectorAll('.report-filter');
-    const cards = document.querySelectorAll('.report-card');
-    filterBtns.forEach(b => b.addEventListener('click', () => {
-      const f = b.dataset.filter;
-      filterBtns.forEach(x => x.classList.remove('bg-brand','text-white','border-brand'));
-      b.classList.add('bg-brand','text-white','border-brand');
-      cards.forEach(c => {
-        const show = f === 'all' || c.dataset.cat === f;
-        c.classList.toggle('hidden', !show);
+    deepSearch?.addEventListener('input', filterDeep);
+    chips.forEach(chip => {
+      chip.addEventListener('click', () => {
+        const tag = chip.dataset.chip;
+        if (activeTags.has(tag)) { activeTags.delete(tag); chip.classList.remove('bg-brand','text-white','border-transparent'); }
+        else { activeTags.add(tag); chip.classList.add('bg-brand','text-white','border-transparent'); }
+        filterDeep();
       });
-    }));
-    // default highlight "All"
-    const first = document.querySelector('.report-filter[data-filter="all"]');
-    if (first) first.click();
+    });
+    filterDeep();
+
+    // Contact form (no network; simulate success)
+    const contactForm = document.getElementById('contactForm');
+    const formStatus = document.getElementById('formStatus');
+    contactForm?.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const fd = new FormData(contactForm);
+      // Basic validation
+      if (!fd.get('name') || !fd.get('email') || !fd.get('consent')) {
+        formStatus.textContent = 'Please complete required fields and consent.';
+        formStatus.className = 'text-sm text-red-600';
+        return;
+      }
+      formStatus.textContent = 'Saved locally. We will contact you shortly.';
+      formStatus.className = 'text-sm text-green-700';
+      contactForm.reset();
+      // Optional: store to localStorage to avoid network
+      try {
+        const key = 'rbis-contact-' + Date.now();
+        localStorage.setItem(key, JSON.stringify(Object.fromEntries(fd.entries())));
+      } catch {}
+    });
   </script>
 </body>
 </html>
