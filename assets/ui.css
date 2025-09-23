@@ -50,3 +50,8 @@ a.button:hover,a.cta:hover{transform:translateY(-1px)}
 footer{border-top:1px solid var(--rbis-border);margin-top:40px}
 footer .inner{max-width:var(--rbis-max);margin:0 auto;padding:20px var(--rbis-gap);color:var(--rbis-muted);font-size:.95rem}
 .pill{display:inline-block;padding:6px 10px;border-radius:999px;background:rgba(127,127,127,.12);border:1px solid var(--rbis-border);font-size:.9rem}
+/* RBIS:UI Rhythm */
+section{margin-block:28px}
+.flow > * + *{margin-top:clamp(8px,1.8vw,14px)}
+ul,ol{padding-left:1.25rem}
+ul li+li,ol li+li{margin-top:.35em}
