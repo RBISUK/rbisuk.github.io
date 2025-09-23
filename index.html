@@ -1,1 +1,348 @@
-404: Not Found
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>RBIS — Behavioural & Intelligence Services</title>
+  <meta name="description" content="RBIS — Evidence-first software & intelligence. Outcome-focused solutions for housing and regulated sectors: Veridex Funnel, RBIS Dashboard, PACT Ledger, OmniAssist, NextusOne CRM, and Professional Reports." />
+  <meta property="og:title" content="RBIS — Behavioural & Intelligence Services" />
+  <meta property="og:description" content="Evidence-first software & intelligence. Outcome-focused solutions." />
+  <meta name="theme-color" content="#bfe6ff">
+
+  <style>
+    :root{
+      /* theme tokens */
+      --bg: #fbfdff;
+      --bg-elev: #ffffff;
+      --text: #0f1720;
+      --muted: #5b6570;
+      --brand: #bfe6ff;      /* blue cloud */
+      --brand-ink: #0a5599;  /* deep ink */
+      --accent: #111827;     /* buttons text */
+      --ring: #93c5fd;
+      --card: #f3f8ff;
+      --shadow: 0 10px 30px rgba(18,38,60,.08);
+      --radius: 16px;
+      --maxw: 1100px;
+    }
+    @media (prefers-color-scheme: dark){
+      :root{
+        --bg:#0b1117; --bg-elev:#0f1620; --card:#0f1b29;
+        --text:#e6edf3; --muted:#9fb2c5; --brand:#133a57; --brand-ink:#8fd1ff;
+        --accent:#e6edf3; --ring:#2a7cc7; --shadow: 0 10px 30px rgba(0,0,0,.4);
+      }
+    }
+    *{box-sizing:border-box}
+    html:focus-within{scroll-behavior:smooth}
+    body{
+      margin:0; font:16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial,"Noto Sans",sans-serif;
+      color:var(--text); background:var(--bg);
+    }
+    a{color:var(--brand-ink); text-decoration:none}
+    a:hover{opacity:.9}
+    .wrap{max-width:var(--maxw); margin-inline:auto; padding-inline:20px}
+    .skip{position:absolute; left:-9999px; top:auto}
+    .skip:focus{left:12px; top:12px; background:#fff; padding:8px 12px; border-radius:8px; box-shadow:var(--shadow)}
+    /* Header */
+    header{
+      position:sticky; top:0; z-index:50; backdrop-filter:saturate(1.2) blur(8px);
+      background:color-mix(in oklab, var(--bg) 85%, transparent);
+      border-bottom:1px solid color-mix(in oklab, var(--muted) 15%, transparent);
+    }
+    .nav{display:flex; align-items:center; justify-content:space-between; gap:12px; padding:10px 0}
+    .brand{display:flex; align-items:center; gap:10px; font-weight:700}
+    .pill{background:var(--brand); color:#0b2946; padding:6px 10px; border-radius:999px; font-size:12px; font-weight:700}
+    .menu{display:flex; gap:16px; align-items:center}
+    .menu a{padding:8px 10px; border-radius:10px}
+    .cta{background:var(--brand); color:#0b2946; padding:8px 14px; border-radius:999px; font-weight:700; display:inline-block}
+    .burger{display:none; border:0; background:transparent; padding:8px; border-radius:10px}
+    .burger:focus-visible{outline:2px solid var(--ring)}
+    @media (max-width:840px){
+      .menu{display:none; position:absolute; inset:58px 12px auto 12px; background:var(--bg-elev); border:1px solid color-mix(in oklab, var(--muted) 20%, transparent); padding:12px; border-radius:12px; box-shadow:var(--shadow); flex-direction:column; }
+      .menu.open{display:flex}
+      .burger{display:inline-block}
+      .cta{width:100%; text-align:center}
+    }
+
+    /* Hero */
+    .hero{padding:56px 0 28px}
+    .hero-grid{
+      display:grid; grid-template-columns: 1.1fr .9fr; gap:24px; align-items:stretch;
+    }
+    @media (max-width:900px){ .hero-grid{grid-template-columns:1fr} }
+    .bubble{
+      background:var(--brand);
+      padding:28px; border-radius:40px; min-height:220px; box-shadow:var(--shadow);
+      display:flex; align-items:center;
+    }
+    h1{font-size: clamp(28px, 4vw, 46px); line-height:1.1; margin:0}
+    .cards{display:grid; grid-template-columns:repeat(3,1fr); gap:16px}
+    @media (max-width:900px){ .cards{grid-template-columns:1fr} }
+    .card{
+      background:var(--bg-elev); border-radius:20px; padding:18px; box-shadow:var(--shadow); border:1px solid color-mix(in oklab, var(--muted) 15%, transparent);
+      display:flex; flex-direction:column; gap:10px;
+    }
+    .card h3{margin:4px 0 0; font-size:18px}
+    .card p{margin:0; color:var(--muted)}
+    .card .links{margin-top:auto; display:flex; gap:10px; flex-wrap:wrap}
+    .btn{display:inline-block; padding:8px 12px; border-radius:12px; border:1px solid color-mix(in oklab, var(--muted) 25%, transparent)}
+    .btn.primary{background:var(--brand); color:#0b2946; border-color:transparent; font-weight:700}
+    .section{padding:54px 0}
+    .section h2{font-size:28px; margin:0 0 8px}
+    .muted{color:var(--muted)}
+    .list{display:grid; gap:10px}
+    .list .row{background:var(--card); padding:12px 14px; border-radius:10px; border:1px solid color-mix(in oklab, var(--muted) 15%, transparent)}
+    .trust-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:14px}
+    @media (max-width:900px){ .trust-grid{grid-template-columns:1fr} }
+    footer{padding:40px 0; border-top:1px solid color-mix(in oklab, var(--muted) 15%, transparent); color:var(--muted)}
+    .small{font-size:13px}
+    /* focus */
+    :where(a, button, .btn, .cta):focus-visible{outline:3px solid var(--ring); outline-offset:2px; border-radius:12px}
+  </style>
+</head>
+<body>
+  <a class="skip" href="#content">Skip to content</a>
+  <header>
+    <div class="wrap nav" role="navigation" aria-label="Primary">
+      <div class="brand">
+        <span class="pill" aria-hidden="true">RBIS</span>
+        <span>Behavioural &amp; Intelligence Services</span>
+      </div>
+      <button class="burger" aria-expanded="false" aria-controls="menu" id="burger" title="Menu">☰</button>
+      <nav id="menu" class="menu">
+        <a href="#products">Products &amp; Services</a>
+        <a href="#reports">Reports</a>
+        <a href="#solutions">Solutions</a>
+        <a href="#trust">Trust</a>
+        <a class="cta" href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="content">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div class="bubble">
+          <h1>Outcome-focused solutions</h1>
+        </div>
+        <div class="cards">
+          <article class="card">
+            <h3>Veridex + PACT + Dashboard</h3>
+            <p>Cut uphold risk and catch breaches early.</p>
+            <div class="links">
+              <a class="btn primary" href="#demo">See demo</a>
+              <a class="btn" href="#contact">Talk to sales</a>
+            </div>
+          </article>
+          <article class="card">
+            <h3>NextusOne CRM</h3>
+            <p>Lawful-basis CRM with retention nudges and DSR workflows.</p>
+            <div class="links">
+              <a class="btn" href="#products">What’s included</a>
+            </div>
+          </article>
+          <article class="card">
+            <h3>OmniAssist</h3>
+            <p>Human-in-the-loop automations with screenshots, selectors &amp; API traces.</p>
+            <div class="links">
+              <a class="btn" href="#products">Request a run-through</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRODUCTS -->
+    <section id="products" class="section" aria-labelledby="h-products">
+      <div class="wrap">
+        <h2 id="h-products">Products &amp; Services</h2>
+        <p class="muted small">eSign ready • Audit-first</p>
+        <div class="cards" style="margin-top:12px">
+          <article class="card" id="demo">
+            <h3>Veridex Funnel</h3>
+            <p>Smart sector funnels with pre-programmed compliance and upsell logic.</p>
+            <div class="links">
+              <a class="btn primary" href="#contact">Request demo</a>
+              <a class="btn" href="#solutions">How it fits</a>
+            </div>
+          </article>
+          <article class="card">
+            <h3>RBIS Dashboard</h3>
+            <p>Early-warning KPIs, breach countdowns, disrepair heatmaps, board exports.</p>
+            <div class="links">
+              <a class="btn" href="#reports">View sample</a>
+              <a class="btn" href="#contact">Talk to sales</a>
+            </div>
+          </article>
+          <article class="card">
+            <h3>PACT Ledger</h3>
+            <p>Promises tracked with timers, escalation ladders, settlement playbooks.</p>
+            <div class="links">
+              <a class="btn primary" href="#contact">Request access</a>
+            </div>
+          </article>
+          <article class="card">
+            <h3>OmniAssist</h3>
+            <p>Human-supervised automations that capture screenshots and provenance.</p>
+            <div class="links">
+              <a class="btn" href="#contact">Request a run-through</a>
+            </div>
+          </article>
+          <article class="card">
+            <h3>NextusOne CRM</h3>
+            <p>Consent + lawful-basis overlays, retention nudges, subject-rights flows.</p>
+            <div class="links">
+              <a class="btn" href="#contact">Join waitlist</a>
+            </div>
+          </article>
+          <article class="card">
+            <h3>Professional Reports</h3>
+            <p>Selected outputs, exports, and heatmaps. Court-safe, exec-ready.</p>
+            <div class="links">
+              <a class="btn" href="#reports">Browse reports</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- REPORTS -->
+    <section id="reports" class="section" aria-labelledby="h-reports">
+      <div class="wrap">
+        <h2 id="h-reports">Reports</h2>
+        <p class="muted">Legally safe, evidence-based templates you can hand to auditors.</p>
+        <div class="list" style="margin-top:12px">
+          <div class="row">Housing Repairs &amp; Compliance — Evidence Pack</div>
+          <div class="row">Complaints &amp; Ombudsman — Root Cause &amp; Remedies</div>
+          <div class="row">Data Protection &amp; Marketing — GDPR/PECR Readiness</div>
+          <div class="row">Website &amp; Accessibility — WCAG/UX Audit</div>
+          <div class="row">Operational Performance — KPIs &amp; Heatmaps</div>
+          <div class="row">PACT Ledger — Promise Evidence Export</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SOLUTIONS -->
+    <section id="solutions" class="section" aria-labelledby="h-sol">
+      <div class="wrap">
+        <h2 id="h-sol">Solutions</h2>
+        <p class="muted">We build for regulated, complaint-prone environments where proof matters.</p>
+        <div class="list" style="margin-top:12px">
+          <div class="row">Claim-Fix-AI — Housing Disrepair intake (flagship)</div>
+          <div class="row">Repairs &amp; Compliance Copilot — SLAs, timers, evidence packs</div>
+          <div class="row">OmniAssist — repetitive online task automation with guardrails</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRUST -->
+    <section id="trust" class="section" aria-labelledby="h-trust">
+      <div class="wrap">
+        <h2 id="h-trust">Trust</h2>
+        <p class="muted">Evidence-first by design.</p>
+        <div class="trust-grid" style="margin-top:12px">
+          <div class="row">GDPR/PECR/DPA overlays • DPIA-friendly</div>
+          <div class="row">SRA/FCA aligned comms &amp; record-keeping</div>
+          <div class="row">Accessibility: WCAG-aware components</div>
+          <div class="row">Security: Least-privilege, audit trails, API provenance</div>
+          <div class="row">Hosting: Cloudflare edge + regional storage (configurable)</div>
+          <div class="row">Exportability: court-ready PDFs &amp; CSVs</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section" aria-labelledby="h-contact">
+      <div class="wrap">
+        <h2 id="h-contact">Contact</h2>
+        <p class="muted">Email: <a href="mailto:contact@rbisintelligence.com">contact@rbisintelligence.com</a></p>
+        <form onsubmit="return sendMailto(event)" aria-describedby="contact-help" style="margin-top:12px; max-width:640px">
+          <p id="contact-help" class="small muted">Static-site safe. Opens your mail client with pre-filled details.</p>
+          <div style="display:grid; gap:10px">
+            <input required name="name" aria-label="Your name" placeholder="Name" style="padding:12px;border-radius:12px;border:1px solid #cfd8e3;background:var(--bg-elev);color:var(--text)">
+            <input required type="email" name="email" aria-label="Your email" placeholder="Email" style="padding:12px;border-radius:12px;border:1px solid #cfd8e3;background:var(--bg-elev);color:var(--text)">
+            <select name="topic" aria-label="Topic" style="padding:12px;border-radius:12px;border:1px solid #cfd8e3;background:var(--bg-elev);color:var(--text)">
+              <option>Talk to sales</option>
+              <option>See a demo</option>
+              <option>Partnership</option>
+              <option>Other</option>
+            </select>
+            <textarea required name="message" aria-label="Your message" placeholder="Message" rows="5" style="padding:12px;border-radius:12px;border:1px solid #cfd8e3;background:var(--bg-elev);color:var(--text)"></textarea>
+            <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap">
+              <button class="cta" type="submit">Send</button>
+              <button class="btn" type="button" id="copyEmail">Copy email</button>
+              <button class="btn" type="button" id="toggleTheme" aria-pressed="false">Toggle theme</button>
+            </div>
+            <div id="note" class="small muted" role="status" aria-live="polite"></div>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap small">
+      <div>© RBIS. Evidence-first software &amp; intelligence.</div>
+      <div class="muted">Privacy • Cookies • Terms</div>
+    </div>
+  </footer>
+
+  <script>
+    // mobile menu
+    const burger = document.getElementById('burger');
+    const menu = document.getElementById('menu');
+    burger?.addEventListener('click', () => {
+      const open = menu.classList.toggle('open');
+      burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+
+    // contact mailto (GitHub Pages compatible)
+    function sendMailto(e){
+      e.preventDefault();
+      const f = e.target;
+      const to = 'contact@rbisintelligence.com';
+      const subj = encodeURIComponent(`[RBIS] ${f.topic.value} — ${f.name.value}`);
+      const body = encodeURIComponent(`Name: ${f.name.value}\nEmail: ${f.email.value}\nTopic: ${f.topic.value}\n\n${f.message.value}`);
+      window.location.href = `mailto:${to}?subject=${subj}&body=${body}`;
+      document.getElementById('note').textContent = "Opening your email app… If nothing happens, click 'Copy email' and send manually.";
+      return false;
+    }
+
+    // copy email helper
+    document.getElementById('copyEmail')?.addEventListener('click', async ()=>{
+      const email = 'contact@rbisintelligence.com';
+      try { await navigator.clipboard.writeText(email);
+        document.getElementById('note').textContent = 'Email address copied: ' + email;
+      } catch { document.getElementById('note').textContent = 'Could not copy. Use: ' + email; }
+    });
+
+    // theme toggle
+    const btnTheme = document.getElementById('toggleTheme');
+    btnTheme?.addEventListener('click', ()=>{
+      const dark = document.documentElement.classList.toggle('dark');
+      btnTheme.setAttribute('aria-pressed', dark ? 'true' : 'false');
+      if(dark){
+        document.documentElement.style.setProperty('--bg','#0b1117');
+        document.documentElement.style.setProperty('--bg-elev','#0f1620');
+        document.documentElement.style.setProperty('--card','#0f1b29');
+        document.documentElement.style.setProperty('--text','#e6edf3');
+        document.documentElement.style.setProperty('--muted','#9fb2c5');
+        document.documentElement.style.setProperty('--brand','#133a57');
+        document.documentElement.style.setProperty('--brand-ink','#8fd1ff');
+        document.documentElement.style.setProperty('--accent','#e6edf3');
+        document.documentElement.style.setProperty('--ring','#2a7cc7');
+      } else {
+        document.documentElement.removeAttribute('style');
+      }
+    });
+
+    // respect reduced motion for menu sliding (none used but future-proof)
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+      document.documentElement.style.scrollBehavior = 'auto';
+    }
+  </script>
+</body>
+</html>
+
+
