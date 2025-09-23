@@ -1,6 +1,9 @@
 <!doctype html>
 <html lang="en">
 <head>
+  <link rel="preconnect" href="https://cdn.tailwindcss.com" crossorigin>
+  <meta name="format-detection" content="telephone=no">
+  <meta name="color-scheme" content="light dark">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <meta property="og:title" content="RBIS — Evidence-first software & intelligence">
   <meta property="og:description" content="Behavioural & Intelligence Services. Evidence-first software, compliant automations, audit-ready reporting.">
@@ -29,9 +32,15 @@
     .table th,.table td{border:1px solid #e5e7eb;padding:.75rem;vertical-align:top;font-size:.9rem}
     .table th{background:#f9fafb;text-align:left;font-weight:600}
     .kbd{border:1px solid #e5e7eb;border-bottom-width:2px;border-radius:.5rem;padding:.125rem .375rem;font-size:.75rem}
+    /* rbis-mobile-optimise */
+    img,svg,video{max-width:100%;height:auto}
+    input,select,textarea{font-size:16px}
+    @media (max-width:768px){a,button,[role=button]{min-height:44px;padding-top:.625rem;padding-bottom:.625rem}}
+
   </style>
 </head>
 <body class="antialiased bg-white text-black">
+  <a class="skip-link absolute left-2 top-2 -translate-y-16 focus:translate-y-0 bg-white border rounded px-3 py-2 text-sm" href="#products">Skip to content</a>
   <!-- Header -->
   <header class="sticky top-0 z-40 border-b bg-white/90 backdrop-blur supports-[backdrop-filter]:bg-white/70">
     <div class="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between">
