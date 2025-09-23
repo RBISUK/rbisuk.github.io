@@ -61,3 +61,7 @@ a{transition:text-underline-offset .2s ease,color .2s ease}
 a:hover{text-underline-offset:3px}
 .ar-16x9{aspect-ratio:16/9;object-fit:cover;border-radius:12px}
 .ar-1x1{aspect-ratio:1/1;object-fit:cover;border-radius:12px}
+/* RBIS:UI micro-tweak */
+body{line-height:1.7}
+h1,h2,h3{letter-spacing:.1px}
+.hero .lead{line-height:1.6}
