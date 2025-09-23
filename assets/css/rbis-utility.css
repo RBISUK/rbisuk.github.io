@@ -1,6 +1,0 @@
-:root{--rbis-max:1100px;--rbis-txt:#111;--rbis-dim:#555}
-*{box-sizing:border-box} body{color:var(--rbis-txt);-webkit-font-smoothing:antialiased}
-.main-wrap{max-width:var(--rbis-max);margin:0 auto;padding:24px}
-
-.skip-link{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
-.skip-link:focus{left:8px;top:8px;width:auto;height:auto;z-index:999;background:#fff;border:1px solid #000;padding:8px;border-radius:8px}

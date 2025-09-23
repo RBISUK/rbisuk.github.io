@@ -1,2 +1,0 @@
-line 454 column 89 - Warning: trimming empty <noscript>
-line 464 column 141 - Warning: <a> proprietary attribute "aria-current"

@@ -1,7 +1,0 @@
-line 462 column 1 - Warning: <meta> isn't allowed in <html> elements
-line 463 column 1 - Warning: <meta> isn't allowed in <html> elements
-line 464 column 1 - Warning: <title> isn't allowed in <html> elements
-line 465 column 1 - Warning: <style> isn't allowed in <html> elements
-line 486 column 1 - Warning: inserting implicit <body>
-line 456 column 89 - Warning: trimming empty <noscript>
-line 462 column 1 - Warning: discarding unexpected <meta>

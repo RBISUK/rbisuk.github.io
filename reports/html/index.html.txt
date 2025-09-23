@@ -1,9 +1,0 @@
-line 495 column 3 - Warning: missing </div>
-line 491 column 2 - Warning: missing </div>
-line 490 column 1 - Warning: missing </section>
-line 499 column 3 - Warning: discarding unexpected </div>
-line 500 column 2 - Warning: discarding unexpected </div>
-line 502 column 1 - Warning: discarding unexpected </section>
-line 457 column 89 - Warning: trimming empty <noscript>
-line 501 column 2 - Warning: <img> proprietary attribute "loading"
-line 501 column 2 - Warning: <img> proprietary attribute "decoding"
