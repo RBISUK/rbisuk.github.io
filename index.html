@@ -480,21 +480,22 @@
     <div class="mx-auto max-w-6xl px-4">
       <h2 class="text-xl md:text-2xl font-semibold tracking-tight accent">Let’s talk</h2>
       <p class="mt-2 text-sm opacity-80">Tell us the outcome you need; we'll show the fastest safe path.</p>
-      <form action="mailto:hello@rbisintelligence.com" method="post" encType="text/plain" class="mt-6 grid max-w-2xl gap-4">
+      <form action="https://formspree.io/f/meolvrdy" method="POST">
         <div class="grid gap-2 md:grid-cols-2">
           <label class="grid gap-1"><span class="text-sm">Name</span><input class="rounded-xl border p-3" name="name" required></label>
-          <label class="grid gap-1"><span class="text-sm">Email</span><input class="rounded-xl border p-3" type="email" name="email" required></label>
+          <label class="grid gap-1"><span class="text-sm">Email</span><input class="rounded-xl border p-3" type="email" name="email" name="email" required></label>
         </div>
         <label class="grid gap-1"><span class="text-sm">Topic</span>
           <select name="topic" class="rounded-xl border p-3">
             <option>General enquiry</option><option>Professional report</option><option>Veridex Funnel</option><option>RBIS Dashboard</option><option>PACT Ledger</option><option>OmniAssist</option><option>NextusOne CRM</option>
           </select>
         </label>
-        <label class="grid gap-1"><span class="text-sm">Message</span><textarea class="rounded-xl border p-3 min-h-[120px]" name="message" required></textarea></label>
+        <label class="grid gap-1"><span class="text-sm">Message</span><textarea class="rounded-xl border p-3 min-h-[120px]" name="message" required name="message"></textarea></label>
         <div class="flex items-center justify-between">
           <p class="text-xs opacity-70">Minimal data. Your message opens in your email client.</p>
           <button class="rounded-xl border btn-accent px-4 py-2 text-sm font-medium hover:bg-black/5" type="submit">Send</button>
         </div>
+<input type="hidden" name="_next" value="https://www.rbisintelligence.com/#thank-you">
       </form>
     </div>
   </section>
