@@ -1,23 +1,10 @@
 #!/usr/bin/env bash
 set -euo pipefail
-base="https://www.rbisintelligence.com"
-
-# key routes should be 200
-for p in / /about/ /reports/ /veridex/ /contact/ ; do
-  printf "=== %s ===\n" "$p"
-  curl -sI "$base$p" | awk 'BEGIN{RS=""} /HTTP\/|last-modified|etag/'
-done
-
-# icons present?
-curl -sI "$base/favicon.ico" | awk 'BEGIN{RS=""} /HTTP\/|content-type|content-length/'
-curl -sI "$base/icons/favicon-192.png" | awk 'BEGIN{RS=""} /HTTP\/|content-type|content-length/'
-
-# OG block on home
-curl -s "$base/" | sed -n '/RBIS:OG START/,/RBIS:OG END/p' | sed -n '1,15p'
-
-# no .html hrefs in public pages
-if grep -RIl --exclude-dir=".git" --exclude-dir="drafts" -E 'href="[^"]+\.html"' . ; then
-  echo "⚠️  .html links remain above — replace with folder routes"
-else
-  echo "👍 No .html links in public pages"
-fi
+fail=0
+# internal .html only (skip http/mailto/tel/#), exclude drafts
+hits=$(find . -type f -name '*.html' ! -path './drafts/*' -exec perl -0777 -ne 'print "$ARGV\n" if m/href="(?!https?:\/\/|mailto:|tel:|#)[^"]+\.html"/i' {} + | sort -u)
+if [ -n "$hits" ]; then echo "❌ internal .html hrefs remain:"; echo "$hits"; fail=1; else echo "✅ no internal .html hrefs"; fi
+# canonicals on all folder index pages (not drafts)
+miss=$(for f in $(git ls-files '**/index.html' | grep -v '^drafts/'); do grep -qi 'rel="canonical"' "$f" || echo "$f"; done)
+if [ -n "$miss" ]; then echo "❌ missing canonical:"; echo "$miss"; fail=1; else echo "✅ canonicals present"; fi
+exit $fail

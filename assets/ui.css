@@ -1,0 +1,63 @@
+/* RBIS:UI Base */
+:root{--rbis-max:1120px;--rbis-gap:16px;--rbis-text:#111;--rbis-muted:#555;--rbis-bg:#fff;--rbis-border:rgba(0,0,0,.08);--rbis-accent:#0b5cff;--rbis-ink:#fff}
+@media (prefers-color-scheme:dark){:root{--rbis-text:#eee;--rbis-muted:#b8b8b8;--rbis-bg:#0f0f12;--rbis-border:rgba(255,255,255,.12);--rbis-accent:#6aa4ff;--rbis-ink:#0b1b36}}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--rbis-bg);color:var(--rbis-text);font:400 16px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,Inter,Arial,sans-serif;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+main{max-width:var(--rbis-max);margin:0 auto;padding:24px var(--rbis-gap)}
+@media(min-width:980px){main{padding:32px var(--rbis-gap)}}
+/* RBIS:UI Type */
+h1,h2,h3,h4,h5,h6{line-height:1.2;margin:1.1em 0 .5em;font-weight:800;letter-spacing:.2px}
+h1{font-size:clamp(2rem,3vw,2.75rem)}
+h2{font-size:clamp(1.6rem,2.2vw,2rem)}
+h3{font-size:clamp(1.25rem,1.6vw,1.4rem)}
+p,ul,ol,blockquote,pre,table{margin:0 0 1.1em}
+small,.muted{color:var(--rbis-muted)} strong{font-weight:700}
+a{color:var(--rbis-accent);text-decoration:underline;text-decoration-thickness:1.5px;text-underline-offset:2px}
+a:hover{filter:brightness(1.05)}
+img,video,svg,canvas{max-width:100%;height:auto}
+code,kbd,pre{font-family:ui-monospace,SFMono-Regular,Consolas,Menlo,monospace}
+pre{overflow:auto;background:rgba(127,127,127,.12);padding:12px;border-radius:12px}
+/* RBIS:UI Tables */
+table{border-collapse:collapse;width:100%;overflow:hidden;border-radius:12px}
+th,td{padding:10px 12px;border-bottom:1px solid var(--rbis-border)}
+thead th{background:rgba(127,127,127,.08);text-align:left}
+/* Utilities */
+.mt-0{margin-top:0}.mb-0{margin-bottom:0}
+.mt-1{margin-top:8px}.mb-1{margin-bottom:8px}
+.mt-2{margin-top:16px}.mb-2{margin-bottom:16px}
+.mt-3{margin-top:24px}.mb-3{margin-bottom:24px}
+.center{text-align:center}.max{max-width:var(--rbis-max);margin-inline:auto}
+/* RBIS:UI Buttons */
+.btn{display:inline-flex;align-items:center;gap:10px;padding:10px 16px;border-radius:999px;border:1px solid var(--rbis-border);text-decoration:none}
+.btn:hover{transform:translateY(-1px)}
+.btn-primary{background:var(--rbis-accent);color:var(--rbis-ink);border-color:transparent}
+.btn-ghost{background:transparent;color:var(--rbis-text)}
+/* Upgrade old .button/.cta anchors without HTML edits */
+a.button,a.cta{display:inline-block;background:var(--rbis-accent);color:var(--rbis-ink)!important;border-radius:999px;padding:10px 16px;text-decoration:none;border:1px solid transparent}
+a.button:hover,a.cta:hover{transform:translateY(-1px)}
+/* RBIS:UI Cards & Grid */
+.card{background:rgba(127,127,127,.06);border:1px solid var(--rbis-border);border-radius:18px;padding:16px}
+.card:hover{box-shadow:0 10px 30px rgba(0,0,0,.06)}
+.grid{display:grid;gap:16px}
+.grid-2{grid-template-columns:1fr}
+@media(min-width:880px){.grid-2{grid-template-columns:repeat(2,1fr)}}
+.grid-3{grid-template-columns:1fr}
+@media(min-width:980px){.grid-3{grid-template-columns:repeat(3,1fr)}}
+/* RBIS:UI Hero & Footer */
+.hero{display:grid;gap:16px;padding:32px 0 8px}
+@media(min-width:980px){.hero{grid-template-columns:1.2fr .8fr;align-items:center;padding:40px 0 12px}}
+.hero h1{margin:0}.hero .lead{font-size:1.125rem;color:var(--rbis-muted)}
+footer{border-top:1px solid var(--rbis-border);margin-top:40px}
+footer .inner{max-width:var(--rbis-max);margin:0 auto;padding:20px var(--rbis-gap);color:var(--rbis-muted);font-size:.95rem}
+.pill{display:inline-block;padding:6px 10px;border-radius:999px;background:rgba(127,127,127,.12);border:1px solid var(--rbis-border);font-size:.9rem}
+/* RBIS:UI Rhythm */
+section{margin-block:28px}
+.flow > * + *{margin-top:clamp(8px,1.8vw,14px)}
+ul,ol{padding-left:1.25rem}
+ul li+li,ol li+li{margin-top:.35em}
+/* RBIS:UI micro helpers */
+.container{max-width:var(--rbis-max);margin-inline:auto;padding-inline:var(--rbis-gap)}
+a{transition:text-underline-offset .2s ease,color .2s ease}
+a:hover{text-underline-offset:3px}
+.ar-16x9{aspect-ratio:16/9;object-fit:cover;border-radius:12px}
+.ar-1x1{aspect-ratio:1/1;object-fit:cover;border-radius:12px}
