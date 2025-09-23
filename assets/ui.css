@@ -55,3 +55,9 @@ section{margin-block:28px}
 .flow > * + *{margin-top:clamp(8px,1.8vw,14px)}
 ul,ol{padding-left:1.25rem}
 ul li+li,ol li+li{margin-top:.35em}
+/* RBIS:UI micro helpers */
+.container{max-width:var(--rbis-max);margin-inline:auto;padding-inline:var(--rbis-gap)}
+a{transition:text-underline-offset .2s ease,color .2s ease}
+a:hover{text-underline-offset:3px}
+.ar-16x9{aspect-ratio:16/9;object-fit:cover;border-radius:12px}
+.ar-1x1{aspect-ratio:1/1;object-fit:cover;border-radius:12px}
