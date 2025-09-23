@@ -1,348 +1,553 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>RBIS — Behavioural & Intelligence Services</title>
-  <meta name="description" content="RBIS — Evidence-first software & intelligence. Outcome-focused solutions for housing and regulated sectors: Veridex Funnel, RBIS Dashboard, PACT Ledger, OmniAssist, NextusOne CRM, and Professional Reports." />
-  <meta property="og:title" content="RBIS — Behavioural & Intelligence Services" />
-  <meta property="og:description" content="Evidence-first software & intelligence. Outcome-focused solutions." />
-  <meta name="theme-color" content="#bfe6ff">
-
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>RBIS — Evidence-first software & intelligence</title>
+  <meta name="description" content="Behavioural & Intelligence Services. Evidence-first software, compliant automations, audit-ready reporting.">
+  <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    :root{
-      /* theme tokens */
-      --bg: #fbfdff;
-      --bg-elev: #ffffff;
-      --text: #0f1720;
-      --muted: #5b6570;
-      --brand: #bfe6ff;      /* blue cloud */
-      --brand-ink: #0a5599;  /* deep ink */
-      --accent: #111827;     /* buttons text */
-      --ring: #93c5fd;
-      --card: #f3f8ff;
-      --shadow: 0 10px 30px rgba(18,38,60,.08);
-      --radius: 16px;
-      --maxw: 1100px;
-    }
-    @media (prefers-color-scheme: dark){
-      :root{
-        --bg:#0b1117; --bg-elev:#0f1620; --card:#0f1b29;
-        --text:#e6edf3; --muted:#9fb2c5; --brand:#133a57; --brand-ink:#8fd1ff;
-        --accent:#e6edf3; --ring:#2a7cc7; --shadow: 0 10px 30px rgba(0,0,0,.4);
-      }
-    }
-    *{box-sizing:border-box}
-    html:focus-within{scroll-behavior:smooth}
-    body{
-      margin:0; font:16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial,"Noto Sans",sans-serif;
-      color:var(--text); background:var(--bg);
-    }
-    a{color:var(--brand-ink); text-decoration:none}
-    a:hover{opacity:.9}
-    .wrap{max-width:var(--maxw); margin-inline:auto; padding-inline:20px}
-    .skip{position:absolute; left:-9999px; top:auto}
-    .skip:focus{left:12px; top:12px; background:#fff; padding:8px 12px; border-radius:8px; box-shadow:var(--shadow)}
-    /* Header */
-    header{
-      position:sticky; top:0; z-index:50; backdrop-filter:saturate(1.2) blur(8px);
-      background:color-mix(in oklab, var(--bg) 85%, transparent);
-      border-bottom:1px solid color-mix(in oklab, var(--muted) 15%, transparent);
-    }
-    .nav{display:flex; align-items:center; justify-content:space-between; gap:12px; padding:10px 0}
-    .brand{display:flex; align-items:center; gap:10px; font-weight:700}
-    .pill{background:var(--brand); color:#0b2946; padding:6px 10px; border-radius:999px; font-size:12px; font-weight:700}
-    .menu{display:flex; gap:16px; align-items:center}
-    .menu a{padding:8px 10px; border-radius:10px}
-    .cta{background:var(--brand); color:#0b2946; padding:8px 14px; border-radius:999px; font-weight:700; display:inline-block}
-    .burger{display:none; border:0; background:transparent; padding:8px; border-radius:10px}
-    .burger:focus-visible{outline:2px solid var(--ring)}
-    @media (max-width:840px){
-      .menu{display:none; position:absolute; inset:58px 12px auto 12px; background:var(--bg-elev); border:1px solid color-mix(in oklab, var(--muted) 20%, transparent); padding:12px; border-radius:12px; box-shadow:var(--shadow); flex-direction:column; }
-      .menu.open{display:flex}
-      .burger{display:inline-block}
-      .cta{width:100%; text-align:center}
-    }
-
-    /* Hero */
-    .hero{padding:56px 0 28px}
-    .hero-grid{
-      display:grid; grid-template-columns: 1.1fr .9fr; gap:24px; align-items:stretch;
-    }
-    @media (max-width:900px){ .hero-grid{grid-template-columns:1fr} }
-    .bubble{
-      background:var(--brand);
-      padding:28px; border-radius:40px; min-height:220px; box-shadow:var(--shadow);
-      display:flex; align-items:center;
-    }
-    h1{font-size: clamp(28px, 4vw, 46px); line-height:1.1; margin:0}
-    .cards{display:grid; grid-template-columns:repeat(3,1fr); gap:16px}
-    @media (max-width:900px){ .cards{grid-template-columns:1fr} }
-    .card{
-      background:var(--bg-elev); border-radius:20px; padding:18px; box-shadow:var(--shadow); border:1px solid color-mix(in oklab, var(--muted) 15%, transparent);
-      display:flex; flex-direction:column; gap:10px;
-    }
-    .card h3{margin:4px 0 0; font-size:18px}
-    .card p{margin:0; color:var(--muted)}
-    .card .links{margin-top:auto; display:flex; gap:10px; flex-wrap:wrap}
-    .btn{display:inline-block; padding:8px 12px; border-radius:12px; border:1px solid color-mix(in oklab, var(--muted) 25%, transparent)}
-    .btn.primary{background:var(--brand); color:#0b2946; border-color:transparent; font-weight:700}
-    .section{padding:54px 0}
-    .section h2{font-size:28px; margin:0 0 8px}
-    .muted{color:var(--muted)}
-    .list{display:grid; gap:10px}
-    .list .row{background:var(--card); padding:12px 14px; border-radius:10px; border:1px solid color-mix(in oklab, var(--muted) 15%, transparent)}
-    .trust-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:14px}
-    @media (max-width:900px){ .trust-grid{grid-template-columns:1fr} }
-    footer{padding:40px 0; border-top:1px solid color-mix(in oklab, var(--muted) 15%, transparent); color:var(--muted)}
-    .small{font-size:13px}
-    /* focus */
-    :where(a, button, .btn, .cta):focus-visible{outline:3px solid var(--ring); outline-offset:2px; border-radius:12px}
+    :focus-visible{outline:2px solid #111;outline-offset:2px}
+    html{scroll-behavior:smooth}
+    @media (prefers-reduced-motion: reduce){*{scroll-behavior:auto}}
+    .accent{color:#4338ca}
+    .btn-accent{border-color:#4338ca}
+    .btn-accent:hover{background:#4338ca0d}
+    .chip{border-radius:9999px;border:1px solid #e5e7eb;padding:.125rem .5rem;font-size:.75rem}
+    .active-chip{border-color:#4338ca;background:#4338ca0f}
+    .hide{display:none}
   </style>
 </head>
-<body>
-  <a class="skip" href="#content">Skip to content</a>
-  <header>
-    <div class="wrap nav" role="navigation" aria-label="Primary">
-      <div class="brand">
-        <span class="pill" aria-hidden="true">RBIS</span>
-        <span>Behavioural &amp; Intelligence Services</span>
-      </div>
-      <button class="burger" aria-expanded="false" aria-controls="menu" id="burger" title="Menu">☰</button>
-      <nav id="menu" class="menu">
-        <a href="#products">Products &amp; Services</a>
-        <a href="#reports">Reports</a>
-        <a href="#solutions">Solutions</a>
-        <a href="#trust">Trust</a>
-        <a class="cta" href="#contact">Contact</a>
+<body class="antialiased bg-white text-black">
+  <!-- Header -->
+  <header class="sticky top-0 z-40 border-b bg-white/90 backdrop-blur">
+    <div class="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between">
+      <a href="#top" class="font-semibold tracking-tight">RBIS • Behavioural &amp; Intelligence Services</a>
+      <nav class="hidden md:flex gap-2" aria-label="Primary">
+        <a class="px-3 py-1.5 rounded-lg text-sm hover:bg-black/5" href="#products">Products</a>
+        <a class="px-3 py-1.5 rounded-lg text-sm hover:bg-black/5" href="#solutions">Solutions</a>
+        <a class="px-3 py-1.5 rounded-lg text-sm hover:bg-black/5" href="#trust">Trust</a>
+        <a class="px-3 py-1.5 rounded-lg text-sm hover:bg-black/5" href="#reports">Reports</a>
+        <a class="px-3 py-1.5 rounded-lg text-sm hover:bg-black/5" href="#about">About</a>
+        <a class="px-3 py-1.5 rounded-lg text-sm hover:bg-black/5" href="#contact">Contact</a>
       </nav>
+      <button id="menuBtn" class="md:hidden border rounded-lg px-3 py-1.5 text-sm" aria-controls="mobileNav" aria-expanded="false">Menu</button>
+    </div>
+    <div id="mobileNav" class="hidden md:hidden border-t" aria-label="Mobile">
+      <div class="mx-auto max-w-6xl px-4 py-2 grid gap-1">
+        <a class="px-3 py-2 rounded-lg text-sm hover:bg-black/5" href="#products">Products</a>
+        <a class="px-3 py-2 rounded-lg text-sm hover:bg-black/5" href="#solutions">Solutions</a>
+        <a class="px-3 py-2 rounded-lg text-sm hover:bg-black/5" href="#trust">Trust</a>
+        <a class="px-3 py-2 rounded-lg text-sm hover:bg-black/5" href="#reports">Reports</a>
+        <a class="px-3 py-2 rounded-lg text-sm hover:bg-black/5" href="#about">About</a>
+        <a class="px-3 py-2 rounded-lg text-sm hover:bg-black/5" href="#contact">Contact</a>
+      </div>
     </div>
   </header>
 
-  <main id="content">
-    <!-- HERO -->
-    <section class="hero">
-      <div class="wrap hero-grid">
-        <div class="bubble">
-          <h1>Outcome-focused solutions</h1>
-        </div>
-        <div class="cards">
-          <article class="card">
-            <h3>Veridex + PACT + Dashboard</h3>
-            <p>Cut uphold risk and catch breaches early.</p>
-            <div class="links">
-              <a class="btn primary" href="#demo">See demo</a>
-              <a class="btn" href="#contact">Talk to sales</a>
-            </div>
-          </article>
-          <article class="card">
-            <h3>NextusOne CRM</h3>
-            <p>Lawful-basis CRM with retention nudges and DSR workflows.</p>
-            <div class="links">
-              <a class="btn" href="#products">What’s included</a>
-            </div>
-          </article>
-          <article class="card">
-            <h3>OmniAssist</h3>
-            <p>Human-in-the-loop automations with screenshots, selectors &amp; API traces.</p>
-            <div class="links">
-              <a class="btn" href="#products">Request a run-through</a>
-            </div>
-          </article>
-        </div>
+  <!-- Hero -->
+  <main id="top" class="min-h-[56vh] flex items-center border-b bg-[radial-gradient(80%_50%_at_50%_-10%,#e7e7ff,transparent)]">
+    <div class="mx-auto max-w-6xl px-4 py-16">
+      <h1 class="text-3xl md:text-5xl font-semibold tracking-tight">Evidence-first software &amp; intelligence</h1>
+      <p class="mt-3 max-w-2xl text-sm md:text-base opacity-90">
+        Do the right thing, first time. Proof by default. Minimal data. Audit-ready exports.
+      </p>
+      <div class="mt-5 flex gap-3">
+        <a href="#products" class="border btn-accent rounded-xl px-4 py-2 text-sm font-medium hover:bg-black/5">See Products</a>
+        <a href="#contact" class="border btn-accent rounded-xl px-4 py-2 text-sm font-medium hover:bg-black/5">Request a sample</a>
       </div>
-    </section>
-
-    <!-- PRODUCTS -->
-    <section id="products" class="section" aria-labelledby="h-products">
-      <div class="wrap">
-        <h2 id="h-products">Products &amp; Services</h2>
-        <p class="muted small">eSign ready • Audit-first</p>
-        <div class="cards" style="margin-top:12px">
-          <article class="card" id="demo">
-            <h3>Veridex Funnel</h3>
-            <p>Smart sector funnels with pre-programmed compliance and upsell logic.</p>
-            <div class="links">
-              <a class="btn primary" href="#contact">Request demo</a>
-              <a class="btn" href="#solutions">How it fits</a>
-            </div>
-          </article>
-          <article class="card">
-            <h3>RBIS Dashboard</h3>
-            <p>Early-warning KPIs, breach countdowns, disrepair heatmaps, board exports.</p>
-            <div class="links">
-              <a class="btn" href="#reports">View sample</a>
-              <a class="btn" href="#contact">Talk to sales</a>
-            </div>
-          </article>
-          <article class="card">
-            <h3>PACT Ledger</h3>
-            <p>Promises tracked with timers, escalation ladders, settlement playbooks.</p>
-            <div class="links">
-              <a class="btn primary" href="#contact">Request access</a>
-            </div>
-          </article>
-          <article class="card">
-            <h3>OmniAssist</h3>
-            <p>Human-supervised automations that capture screenshots and provenance.</p>
-            <div class="links">
-              <a class="btn" href="#contact">Request a run-through</a>
-            </div>
-          </article>
-          <article class="card">
-            <h3>NextusOne CRM</h3>
-            <p>Consent + lawful-basis overlays, retention nudges, subject-rights flows.</p>
-            <div class="links">
-              <a class="btn" href="#contact">Join waitlist</a>
-            </div>
-          </article>
-          <article class="card">
-            <h3>Professional Reports</h3>
-            <p>Selected outputs, exports, and heatmaps. Court-safe, exec-ready.</p>
-            <div class="links">
-              <a class="btn" href="#reports">Browse reports</a>
-            </div>
-          </article>
-        </div>
+      <div class="mt-6 flex flex-wrap gap-2 text-xs">
+        <span class="chip">Clarity by design</span>
+        <span class="chip">Receipts by default</span>
+        <span class="chip">Minimal data</span>
+        <span class="chip">Board-ready exports</span>
       </div>
-    </section>
-
-    <!-- REPORTS -->
-    <section id="reports" class="section" aria-labelledby="h-reports">
-      <div class="wrap">
-        <h2 id="h-reports">Reports</h2>
-        <p class="muted">Legally safe, evidence-based templates you can hand to auditors.</p>
-        <div class="list" style="margin-top:12px">
-          <div class="row">Housing Repairs &amp; Compliance — Evidence Pack</div>
-          <div class="row">Complaints &amp; Ombudsman — Root Cause &amp; Remedies</div>
-          <div class="row">Data Protection &amp; Marketing — GDPR/PECR Readiness</div>
-          <div class="row">Website &amp; Accessibility — WCAG/UX Audit</div>
-          <div class="row">Operational Performance — KPIs &amp; Heatmaps</div>
-          <div class="row">PACT Ledger — Promise Evidence Export</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SOLUTIONS -->
-    <section id="solutions" class="section" aria-labelledby="h-sol">
-      <div class="wrap">
-        <h2 id="h-sol">Solutions</h2>
-        <p class="muted">We build for regulated, complaint-prone environments where proof matters.</p>
-        <div class="list" style="margin-top:12px">
-          <div class="row">Claim-Fix-AI — Housing Disrepair intake (flagship)</div>
-          <div class="row">Repairs &amp; Compliance Copilot — SLAs, timers, evidence packs</div>
-          <div class="row">OmniAssist — repetitive online task automation with guardrails</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- TRUST -->
-    <section id="trust" class="section" aria-labelledby="h-trust">
-      <div class="wrap">
-        <h2 id="h-trust">Trust</h2>
-        <p class="muted">Evidence-first by design.</p>
-        <div class="trust-grid" style="margin-top:12px">
-          <div class="row">GDPR/PECR/DPA overlays • DPIA-friendly</div>
-          <div class="row">SRA/FCA aligned comms &amp; record-keeping</div>
-          <div class="row">Accessibility: WCAG-aware components</div>
-          <div class="row">Security: Least-privilege, audit trails, API provenance</div>
-          <div class="row">Hosting: Cloudflare edge + regional storage (configurable)</div>
-          <div class="row">Exportability: court-ready PDFs &amp; CSVs</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact" class="section" aria-labelledby="h-contact">
-      <div class="wrap">
-        <h2 id="h-contact">Contact</h2>
-        <p class="muted">Email: <a href="mailto:contact@rbisintelligence.com">contact@rbisintelligence.com</a></p>
-        <form onsubmit="return sendMailto(event)" aria-describedby="contact-help" style="margin-top:12px; max-width:640px">
-          <p id="contact-help" class="small muted">Static-site safe. Opens your mail client with pre-filled details.</p>
-          <div style="display:grid; gap:10px">
-            <input required name="name" aria-label="Your name" placeholder="Name" style="padding:12px;border-radius:12px;border:1px solid #cfd8e3;background:var(--bg-elev);color:var(--text)">
-            <input required type="email" name="email" aria-label="Your email" placeholder="Email" style="padding:12px;border-radius:12px;border:1px solid #cfd8e3;background:var(--bg-elev);color:var(--text)">
-            <select name="topic" aria-label="Topic" style="padding:12px;border-radius:12px;border:1px solid #cfd8e3;background:var(--bg-elev);color:var(--text)">
-              <option>Talk to sales</option>
-              <option>See a demo</option>
-              <option>Partnership</option>
-              <option>Other</option>
-            </select>
-            <textarea required name="message" aria-label="Your message" placeholder="Message" rows="5" style="padding:12px;border-radius:12px;border:1px solid #cfd8e3;background:var(--bg-elev);color:var(--text)"></textarea>
-            <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap">
-              <button class="cta" type="submit">Send</button>
-              <button class="btn" type="button" id="copyEmail">Copy email</button>
-              <button class="btn" type="button" id="toggleTheme" aria-pressed="false">Toggle theme</button>
-            </div>
-            <div id="note" class="small muted" role="status" aria-live="polite"></div>
-          </div>
-        </form>
-      </div>
-    </section>
+    </div>
   </main>
 
-  <footer>
-    <div class="wrap small">
-      <div>© RBIS. Evidence-first software &amp; intelligence.</div>
-      <div class="muted">Privacy • Cookies • Terms</div>
+  <!-- Products -->
+  <section id="products" class="py-14 border-b">
+    <div class="mx-auto max-w-6xl px-4">
+      <h2 class="text-xl md:text-2xl font-semibold tracking-tight accent">Products &amp; Services</h2>
+      <p class="mt-2 text-sm opacity-80">Configurable modules with receipts by default. Minimal data. Audit-ready exports.</p>
+
+      <div class="mt-8 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+        <!-- Veridex Funnel -->
+        <article class="rounded-2xl border p-5">
+          <header class="flex items-center justify-between gap-4">
+            <h3 class="text-lg font-semibold">Veridex Funnel</h3>
+            <span class="text-xs chip">eSign ready</span>
+          </header>
+          <p class="mt-2 text-sm opacity-90">Smart sector funnels with pre-programmed compliance and upsell logic.</p>
+          <ul class="mt-3 space-y-1 text-sm">
+            <li class="flex gap-2"><span aria-hidden>•</span>Industry templates</li>
+            <li class="flex gap-2"><span aria-hidden>•</span>Branching logic</li>
+            <li class="flex gap-2"><span aria-hidden>•</span>Audit trail</li>
+            <li class="flex gap-2"><span aria-hidden>•</span>Light CRM sync</li>
+          </ul>
+          <a href="#contact" class="mt-4 inline-flex items-center border btn-accent rounded-xl px-3 py-2 text-sm font-medium hover:bg-black/5">See demo</a>
+        </article>
+
+        <!-- RBIS Dashboard -->
+        <article class="rounded-2xl border p-5">
+          <header class="flex items-center justify-between gap-4">
+            <h3 class="text-lg font-semibold">RBIS Dashboard</h3>
+            <span class="text-xs chip">Board pack</span>
+          </header>
+          <p class="mt-2 text-sm opacity-90">Early-warning KPIs, breach countdowns, risk heatmaps, board exports.</p>
+          <ul class="mt-3 space-y-1 text-sm">
+            <li class="flex gap-2"><span aria-hidden>•</span>SLA timers</li>
+            <li class="flex gap-2"><span aria-hidden>•</span>Role views</li>
+            <li class="flex gap-2"><span aria-hidden>•</span>Exportable board pack</li>
+            <li class="flex gap-2"><span aria-hidden>•</span>CSV ingest</li>
+          </ul>
+          <a href="#contact" class="mt-4 inline-flex items-center border btn-accent rounded-xl px-3 py-2 text-sm font-medium hover:bg-black/5">View sample</a>
+        </article>
+
+        <!-- PACT Ledger -->
+        <article class="rounded-2xl border p-5">
+          <header class="flex items-center justify-between gap-4">
+            <h3 class="text-lg font-semibold">PACT Ledger</h3>
+            <span class="text-xs chip">Escalations</span>
+          </header>
+          <p class="mt-2 text-sm opacity-90">Promises tracked with timers, escalation ladders, settlement playbooks.</p>
+          <ul class="mt-3 space-y-1 text-sm">
+            <li class="flex gap-2"><span aria-hidden>•</span>Promise objects</li>
+            <li class="flex gap-2"><span aria-hidden>•</span>Breach escalations</li>
+            <li class="flex gap-2"><span aria-hidden>•</span>Evidence pack export</li>
+          </ul>
+          <a href="#contact" class="mt-4 inline-flex items-center border btn-accent rounded-xl px-3 py-2 text-sm font-medium hover:bg-black/5">Request access</a>
+        </article>
+
+        <!-- OmniAssist -->
+        <article class="rounded-2xl border p-5">
+          <header class="flex items-center justify-between gap-4">
+            <h3 class="text-lg font-semibold">OmniAssist</h3>
+            <span class="text-xs chip">Human-in-loop</span>
+          </header>
+          <p class="mt-2 text-sm opacity-90">Automations with screenshots, selectors, approvals, and API traces.</p>
+          <ul class="mt-3 space-y-1 text-sm">
+            <li class="flex gap-2"><span aria-hidden>•</span>Approvals</li>
+            <li class="flex gap-2"><span aria-hidden>•</span>Allowlists</li>
+            <li class="flex gap-2"><span aria-hidden>•</span>PII redaction</li>
+            <li class="flex gap-2"><span aria-hidden>•</span>Run receipts</li>
+          </ul>
+          <a href="#contact" class="mt-4 inline-flex items-center border btn-accent rounded-xl px-3 py-2 text-sm font-medium hover:bg-black/5">Run-through</a>
+        </article>
+
+        <!-- NextusOne CRM -->
+        <article class="rounded-2xl border p-5">
+          <header class="flex items-center justify-between gap-4">
+            <h3 class="text-lg font-semibold">NextusOne CRM</h3>
+            <span class="text-xs chip">GDPR-first</span>
+          </header>
+          <p class="mt-2 text-sm opacity-90">Lawful basis at capture, retention clocks, DSR workflows.</p>
+          <ul class="mt-3 space-y-1 text-sm">
+            <li class="flex gap-2"><span aria-hidden>•</span>Basis prompts</li>
+            <li class="flex gap-2"><span aria-hidden>•</span>Consent centre</li>
+            <li class="flex gap-2"><span aria-hidden>•</span>Retention schedules</li>
+          </ul>
+          <a href="#contact" class="mt-4 inline-flex items-center border btn-accent rounded-xl px-3 py-2 text-sm font-medium hover:bg-black/5">Get pricing</a>
+        </article>
+
+        <!-- Training & Advisory -->
+        <article class="rounded-2xl border p-5">
+          <header class="flex items-center justify-between gap-4">
+            <h3 class="text-lg font-semibold">Training &amp; Advisory</h3>
+            <span class="text-xs chip">Workshops</span>
+          </header>
+          <p class="mt-2 text-sm opacity-90">Tone, deception cues, evidence handling, report structure.</p>
+          <ul class="mt-3 space-y-1 text-sm">
+            <li class="flex gap-2"><span aria-hidden>•</span>Half-day / day</li>
+            <li class="flex gap-2"><span aria-hidden>•</span>Custom syllabus</li>
+            <li class="flex gap-2"><span aria-hidden>•</span>Anonymised examples</li>
+          </ul>
+          <a href="#contact" class="mt-4 inline-flex items-center border btn-accent rounded-xl px-3 py-2 text-sm font-medium hover:bg-black/5">Book session</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Solutions -->
+  <section id="solutions" class="py-14 border-b">
+    <div class="mx-auto max-w-6xl px-4">
+      <h2 class="text-xl md:text-2xl font-semibold tracking-tight accent">Outcome-focused solutions</h2>
+      <p class="mt-2 text-sm opacity-80">Combine modules to hit your outcome fast.</p>
+      <div class="mt-8 grid gap-6 md:grid-cols-3">
+        <article class="rounded-2xl border p-5">
+          <h3 class="text-base font-semibold">Disrepair &amp; Repairs Ops</h3>
+          <p class="mt-2 text-sm opacity-90">Veridex + PACT + Dashboard to cut uphold risk and catch breaches early.</p>
+        </article>
+        <article class="rounded-2xl border p-5">
+          <h3 class="text-base font-semibold">Compliance-led CRM</h3>
+          <p class="mt-2 text-sm opacity-90">NextusOne with lawful-basis prompts, retention nudges, DSR workflows.</p>
+        </article>
+        <article class="rounded-2xl border p-5">
+          <h3 class="text-base font-semibold">Proof-first Automation</h3>
+          <p class="mt-2 text-sm opacity-90">OmniAssist: portal automation with screenshots, approvals, receipts.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust -->
+  <section id="trust" class="py-14 border-b">
+    <div class="mx-auto max-w-6xl px-4">
+      <h2 class="text-xl md:text-2xl font-semibold tracking-tight accent">Trust Centre</h2>
+      <p class="mt-2 text-sm opacity-80">GDPR-first. Minimal collection. No sale of data. No secrets on edge. Evidence handled via gated, encrypted channels.</p>
+      <div class="mt-8 grid gap-6 md:grid-cols-2">
+        <article class="rounded-2xl border p-6">
+          <h3 class="text-base font-semibold">Privacy</h3>
+          <p class="mt-2 text-sm opacity-90">Data minimisation, purpose limitation, retention clocks, access logging, redaction on exports.</p>
+          <a href="#contact" class="mt-4 inline-block text-sm underline">Read policy</a>
+        </article>
+        <article class="rounded-2xl border p-6">
+          <h3 class="text-base font-semibold">Cookies</h3>
+          <p class="mt-2 text-sm opacity-90">Consent-respecting analytics only.</p>
+          <a href="#contact" class="mt-4 inline-block text-sm underline">Cookie policy</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reports (31 items + filters) -->
+  <section id="reports" class="py-14 border-b">
+    <div class="mx-auto max-w-6xl px-4">
+      <h2 class="text-xl md:text-2xl font-semibold tracking-tight accent">Reports &amp; Exports</h2>
+      <p class="mt-2 text-sm opacity-80">Select a category to filter. Pricing is shown where confirmed. Otherwise: <em>Contact for price</em>.</p>
+
+      <!-- Filters -->
+      <div class="mt-6 flex flex-wrap gap-2 text-sm" role="tablist" aria-label="Report filters">
+        <button class="chip active-chip" data-filter="all" aria-selected="true">All</button>
+        <button class="chip" data-filter="repairs">Repairs &amp; Compliance</button>
+        <button class="chip" data-filter="complaints">Complaints &amp; Ombudsman</button>
+        <button class="chip" data-filter="dataprotection">Data Protection &amp; Marketing</button>
+        <button class="chip" data-filter="webaccess">Website &amp; Accessibility</button>
+        <button class="chip" data-filter="operations">Operations &amp; Auditability</button>
+        <button class="chip" data-filter="pact">PACT Ledger</button>
+      </div>
+
+      <!-- Grid -->
+      <div id="reportsGrid" class="mt-8 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+        <!-- Repairs & Compliance (8) -->
+        <article class="rounded-2xl border p-5" data-cat="repairs">
+          <h3 class="text-base font-semibold">Repairs SLA Compliance Audit</h3>
+          <p class="mt-2 text-sm opacity-90">Measure adherence to statutory/contractual SLAs, identify breach patterns, and recommend queue &amp; scheduling fixes.</p>
+          <p class="mt-3 text-sm"><strong>Price:</strong> Contact for price</p>
+          <a href="#contact" class="mt-3 inline-block text-sm underline">Request sample</a>
+        </article>
+        <article class="rounded-2xl border p-5" data-cat="repairs">
+          <h3 class="text-base font-semibold">Disrepair Risk Heatmap &amp; Early Warning</h3>
+          <p class="mt-2 text-sm opacity-90">Heatmap of risk factors, countdowns to potential breach, and targeted interventions to prevent disrepair claims.</p>
+          <p class="mt-3 text-sm"><strong>Price:</strong> Contact for price</p>
+          <a href="#contact" class="mt-3 inline-block text-sm underline">Request sample</a>
+        </article>
+        <article class="rounded-2xl border p-5" data-cat="repairs">
+          <h3 class="text-base font-semibold">Damp &amp; Mould Response Audit</h3>
+          <p class="mt-2 text-sm opacity-90">Assess triage, inspection, remediation and communication timeliness; gaps against guidance and best practice.</p>
+          <p class="mt-3 text-sm"><strong>Price:</strong> Contact for price</p>
+          <a href="#contact" class="mt-3 inline-block text-sm underline">Request sample</a>
+        </article>
+        <article class="rounded-2xl border p-5" data-cat="repairs">
+          <h3 class="text-base font-semibold">Repairs Communications: Tone &amp; Clarity Review</h3>
+          <p class="mt-2 text-sm opacity-90">Analyse letters/SMS/email for clarity, commitment language, and next-step salience to reduce avoidable repeats.</p>
+          <p class="mt-3 text-sm"><strong>Price:</strong> Contact for price</p>
+          <a href="#contact" class="mt-3 inline-block text-sm underline">Request sample</a>
+        </article>
+        <article class="rounded-2xl border p-5" data-cat="repairs">
+          <h3 class="text-base font-semibold">Repairs Evidence Pack Quality Audit</h3>
+          <p class="mt-2 text-sm opacity-90">Check that photo/visit notes, diagnostics, and decisions form a court-ready pack with redaction standards applied.</p>
+          <p class="mt-3 text-sm"><strong>Price:</strong> Contact for price</p>
+          <a href="#contact" class="mt-3 inline-block text-sm underline">Request sample</a>
+        </article>
+        <article class="rounded-2xl border p-5" data-cat="repairs">
+          <h3 class="text-base font-semibold">Contractor Performance &amp; SLA Adherence</h3>
+          <p class="mt-2 text-sm opacity-90">Compare contractor cohorts by first-time fix, appointment keeping, cost-to-resolve, and customer impact.</p>
+          <p class="mt-3 text-sm"><strong>Price:</strong> Contact for price</p>
+          <a href="#contact" class="mt-3 inline-block text-sm underline">Request sample</a>
+        </article>
+        <article class="rounded-2xl border p-5" data-cat="repairs">
+          <h3 class="text-base font-semibold">Appointments &amp; No-Access Analysis</h3>
+          <p class="mt-2 text-sm opacity-90">Identify patterns behind no-access and misses; introduce nudge &amp; reminder patterns that cut waste.</p>
+          <p class="mt-3 text-sm"><strong>Price:</strong> Contact for price</p>
+          <a href="#contact" class="mt-3 inline-block text-sm underline">Request sample</a>
+        </article>
+        <article class="rounded-2xl border p-5" data-cat="repairs">
+          <h3 class="text-base font-semibold">Repairs Complaints Root Cause</h3>
+          <p class="mt-2 text-sm opacity-90">Map complaint drivers back to process defects; quantify impact and fixes with before/after tracking.</p>
+          <p class="mt-3 text-sm"><strong>Price:</strong> Contact for price</p>
+          <a href="#contact" class="mt-3 inline-block text-sm underline">Request sample</a>
+        </article>
+
+        <!-- Complaints & Ombudsman (6) -->
+        <article class="rounded-2xl border p-5" data-cat="complaints">
+          <h3 class="text-base font-semibold">Complaint Handling Audit (Stage 1/2)</h3>
+          <p class="mt-2 text-sm opacity-90">Check timeliness, fairness, and evidence use across stages; identify uphold risk and remedy gaps.</p>
+          <p class="mt-3 text-sm"><strong>Price:</strong> Contact for price</p>
+          <a href="#contact" class="mt-3 inline-block text-sm underline">Request sample</a>
+        </article>
+        <article class="rounded-2xl border p-5" data-cat="complaints">
+          <h3 class="text-base font-semibold">Ombudsman Determination Readiness</h3>
+          <p class="mt-2 text-sm opacity-90">Stress-test a sample of cases against scheme expectations; produce determination-ready summaries.</p>
+          <p class="mt-3 text-sm"><strong>Price:</strong> Contact for price</p>
+          <a href="#contact" class="mt-3 inline-block text-sm underline">Request sample</a>
+        </article>
+        <article class="rounded-2xl border p-5" data-cat="complaints">
+          <h3 class="text-base font-semibold">Response Clarity &amp; Fairness Audit</h3>
+          <p class="mt-2 text-sm opacity-90">Score letters for empathy, clarity, and verifiable commitments; pinpoint misleading phrasing risks.</p>
+          <p class="mt-3 text-sm"><strong>Price:</strong> Contact for price</p>
+          <a href="#contact" class="mt-3 inline-block text-sm underline">Request sample</a>
+        </article>
+        <article class="rounded-2xl border p-5" data-cat="complaints">
+          <h3 class="text-base font-semibold">Escalation &amp; Remedy Consistency Check</h3>
+          <p class="mt-2 text-sm opacity-90">Evaluate escalation triggers and remedy banding; propose consistent, defensible thresholds.</p>
+          <p class="mt-3 text-sm"><strong>Price:</strong> Contact for price</p>
+          <a href="#contact" class="mt-3 inline-block text-sm underline">Request sample</a>
+        </article>
+        <article class="rounded-2xl border p-5" data-cat="complaints">
+          <h3 class="text-base font-semibold">Learning &amp; Service Improvement Evidence</h3>
+          <p class="mt-2 text-sm opacity-90">Verify that lessons are captured, tracked, and evidenced across cycles with owner/accountability clarity.</p>
+          <p class="mt-3 text-sm"><strong>Price:</strong> Contact for price</p>
+          <a href="#contact" class="mt-3 inline-block text-sm underline">Request sample</a>
+        </article>
+        <article class="rounded-2xl border p-5" data-cat="complaints">
+          <h3 class="text-base font-semibold">Unreasonable Behaviour Policy Fit Check</h3>
+          <p class="mt-2 text-sm opacity-90">Confirm fair application of policy and safeguards; ensure access is preserved while reducing harm.</p>
+          <p class="mt-3 text-sm"><strong>Price:</strong> Contact for price</p>
+          <a href="#contact" class="mt-3 inline-block text-sm underline">Request sample</a>
+        </article>
+
+        <!-- Data Protection & Marketing (6) -->
+        <article class="rounded-2xl border p-5" data-cat="dataprotection">
+          <h3 class="text-base font-semibold">Lawful Basis &amp; Consent Inventory</h3>
+          <p class="mt-2 text-sm opacity-90">Catalogue processing activities, bases, and consents; flag mismatches and risk hotspots.</p>
+          <p class="mt-3 text-sm"><strong>Price:</strong> Contact for price</p>
+          <a href="#contact" class="mt-3 inline-block text-sm underline">Request sample</a>
+        </article>
+        <article class="rounded-2xl border p-5" data-cat="dataprotection">
+          <h3 class="text-base font-semibold">Retention Schedule Coverage Audit</h3>
+          <p class="mt-2 text-sm opacity-90">Test real deletion/archival behaviour vs policy; add timers and reporting where missing.</p>
+          <p class="mt-3 text-sm"><strong>Price:</strong> Contact for price</p>
+          <a href="#contact" class="mt-3 inline-block text-sm underline">Request sample</a>
+        </article>
+        <article class="rounded-2xl border p-5" data-cat="dataprotection">
+          <h3 class="text-base font-semibold">Subject Rights Workflow Test (DSAR/Erasure)</h3>
+          <p class="mt-2 text-sm opacity-90">Run end-to-end test cases; verify identity checks, search coverage, redaction and deadlines.</p>
+          <p class="mt-3 text-sm"><strong>Price:</strong> Contact for price</p>
+          <a href="#contact" class="mt-3 inline-block text-sm underline">Request sample</a>
+        </article>
+        <article class="rounded-2xl border p-5" data-cat="dataprotection">
+          <h3 class="text-base font-semibold">Cookie &amp; Tracking Compliance Review</h3>
+          <p class="mt-2 text-sm opacity-90">Audit consent flows, storage, and auto-blocking; verify lawful basis and banner copy accuracy.</p>
+          <p class="mt-3 text-sm"><strong>Price:</strong> Contact for price</p>
+          <a href="#contact" class="mt-3 inline-block text-sm underline">Request sample</a>
+        </article>
+        <article class="rounded-2xl border p-5" data-cat="dataprotection">
+          <h3 class="text-base font-semibold">Marketing Permissions &amp; PECR Compliance</h3>
+          <p class="mt-2 text-sm opacity-90">Check capture points, consent records, channel rules (email/SMS/calls), and suppression logic.</p>
+          <p class="mt-3 text-sm"><strong>Price:</strong> Contact for price</p>
+          <a href="#contact" class="mt-3 inline-block text-sm underline">Request sample</a>
+        </article>
+        <article class="rounded-2xl border p-5" data-cat="dataprotection">
+          <h3 class="text-base font-semibold">Data Breach Readiness &amp; Logging</h3>
+          <p class="mt-2 text-sm opacity-90">Assess incident detection, 72-hr reporting readiness, and evidence capture for regulators/boards.</p>
+          <p class="mt-3 text-sm"><strong>Price:</strong> Contact for price</p>
+          <a href="#contact" class="mt-3 inline-block text-sm underline">Request sample</a>
+        </article>
+
+        <!-- Website & Accessibility (5) -->
+        <article class="rounded-2xl border p-5" data-cat="webaccess">
+          <h3 class="text-base font-semibold">Accessibility Snapshot (WCAG 2.2 AA)</h3>
+          <p class="mt-2 text-sm opacity-90">Rapid assessment of critical success criteria, with prioritized remediation plan.</p>
+          <p class="mt-3 text-sm"><strong>Price:</strong> Contact for price</p>
+          <a href="#contact" class="mt-3 inline-block text-sm underline">Request sample</a>
+        </article>
+        <article class="rounded-2xl border p-5" data-cat="webaccess">
+          <h3 class="text-base font-semibold">Content Clarity &amp; Plain English Review</h3>
+          <p class="mt-2 text-sm opacity-90">Check reading level, sentence structure, and task completion clarity across key pages.</p>
+          <p class="mt-3 text-sm"><strong>Price:</strong> Contact for price</p>
+          <a href="#contact" class="mt-3 inline-block text-sm underline">Request sample</a>
+        </article>
+        <article class="rounded-2xl border p-5" data-cat="webaccess">
+          <h3 class="text-base font-semibold">Forms UX &amp; Error Handling Audit</h3>
+          <p class="mt-2 text-sm opacity-90">Review labels, help text, validation timing, and recovery paths to cut abandonment and errors.</p>
+          <p class="mt-3 text-sm"><strong>Price:</strong> Contact for price</p>
+          <a href="#contact" class="mt-3 inline-block text-sm underline">Request sample</a>
+        </article>
+        <article class="rounded-2xl border p-5" data-cat="webaccess">
+          <h3 class="text-base font-semibold">Information Architecture &amp; Navigation</h3>
+          <p class="mt-2 text-sm opacity-90">Test findability with card sorts and task flows; propose a simpler, clearer IA.</p>
+          <p class="mt-3 text-sm"><strong>Price:</strong> Contact for price</p>
+          <a href="#contact" class="mt-3 inline-block text-sm underline">Request sample</a>
+        </article>
+        <article class="rounded-2xl border p-5" data-cat="webaccess">
+          <h3 class="text-base font-semibold">Performance &amp; Core Web Vitals</h3>
+          <p class="mt-2 text-sm opacity-90">Measure LCP/INP/CLS and deliver a prioritized, low-regret optimization plan.</p>
+          <p class="mt-3 text-sm"><strong>Price:</strong> Contact for price</p>
+          <a href="#contact" class="mt-3 inline-block text-sm underline">Request sample</a>
+        </article>
+
+        <!-- Operations & Auditability (4) -->
+        <article class="rounded-2xl border p-5" data-cat="operations">
+          <h3 class="text-base font-semibold">SLA Timers &amp; MI Dashboard Review</h3>
+          <p class="mt-2 text-sm opacity-90">Evaluate dashboards for early warnings, role views, and decision usefulness; remove vanity metrics.</p>
+          <p class="mt-3 text-sm"><strong>Price:</strong> Contact for price</p>
+          <a href="#contact" class="mt-3 inline-block text-sm underline">Request sample</a>
+        </article>
+        <article class="rounded-2xl border p-5" data-cat="operations">
+          <h3 class="text-base font-semibold">Policy-to-Process Traceability</h3>
+          <p class="mt-2 text-sm opacity-90">Show how policy lines turn into steps, forms, and controls; highlight gaps and duplications.</p>
+          <p class="mt-3 text-sm"><strong>Price:</strong> Contact for price</p>
+          <a href="#contact" class="mt-3 inline-block text-sm underline">Request sample</a>
+        </article>
+        <article class="rounded-2xl border p-5" data-cat="operations">
+          <h3 class="text-base font-semibold">Evidence Handling &amp; Redaction Quality</h3>
+          <p class="mt-2 text-sm opacity-90">Audit sampling for redaction errors and chain-of-custody; provide a reusable export checklist.</p>
+          <p class="mt-3 text-sm"><strong>Price:</strong> Contact for price</p>
+          <a href="#contact" class="mt-3 inline-block text-sm underline">Request sample</a>
+        </article>
+        <article class="rounded-2xl border p-5" data-cat="operations">
+          <h3 class="text-base font-semibold">Risk Register &amp; Controls Coverage</h3>
+          <p class="mt-2 text-sm opacity-90">Map risks to controls and tests; ensure owners and review cadence are in place and evidenced.</p>
+          <p class="mt-3 text-sm"><strong>Price:</strong> Contact for price</p>
+          <a href="#contact" class="mt-3 inline-block text-sm underline">Request sample</a>
+        </article>
+
+        <!-- PACT Ledger (3) -->
+        <article class="rounded-2xl border p-5" data-cat="pact">
+          <h3 class="text-base font-semibold">Promise Object &amp; Escalation Ladder Review</h3>
+          <p class="mt-2 text-sm opacity-90">Design and quality-check “promise” objects, timers, and breach ladders to reduce slippage.</p>
+          <p class="mt-3 text-sm"><strong>Price:</strong> Contact for price</p>
+          <a href="#contact" class="mt-3 inline-block text-sm underline">Request sample</a>
+        </article>
+        <article class="rounded-2xl border p-5" data-cat="pact">
+          <h3 class="text-base font-semibold">Settlement Pathways &amp; Outcome Tracking</h3>
+          <p class="mt-2 text-sm opacity-90">Analyse settlement routes, remedies, and measures; build a consistent, auditable pathway set.</p>
+          <p class="mt-3 text-sm"><strong>Price:</strong> Contact for price</p>
+          <a href="#contact" class="mt-3 inline-block text-sm underline">Request sample</a>
+        </article>
+        <article class="rounded-2xl border p-5" data-cat="pact">
+          <h3 class="text-base font-semibold">Cross-Channel Promise Capture Audit</h3>
+          <p class="mt-2 text-sm opacity-90">Ensure promises from email/SMS/portals are captured with evidence, timers, and owner accountability.</p>
+          <p class="mt-3 text-sm"><strong>Price:</strong> Contact for price</p>
+          <a href="#contact" class="mt-3 inline-block text-sm underline">Request sample</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="py-14 border-b">
+    <div class="mx-auto max-w-6xl px-4">
+      <h2 class="text-xl md:text-2xl font-semibold tracking-tight accent">About RBIS</h2>
+      <div class="mt-6 grid gap-6 md:grid-cols-3">
+        <div class="md:col-span-2 rounded-2xl border p-6">
+          <p class="text-sm opacity-90">
+            RBIS blends behavioural science with AI to surface truth, reduce risk, and move decisions forward.
+            We design flows that make the right action the easy action — and capture proof while doing it.
+          </p>
+        </div>
+        <div class="rounded-2xl border p-6">
+          <h3 class="text-base font-semibold">Principles</h3>
+          <ul class="mt-2 space-y-1 text-sm">
+            <li>Clarity over cleverness</li>
+            <li>Receipts by default</li>
+            <li>Minimal viable data</li>
+            <li>Audit-ready exports</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="py-14">
+    <div class="mx-auto max-w-6xl px-4">
+      <h2 class="text-xl md:text-2xl font-semibold tracking-tight accent">Let’s talk</h2>
+      <p class="mt-2 text-sm opacity-80">Tell us the outcome you need; we'll show the fastest safe path.</p>
+      <form action="mailto:hello@rbisintelligence.com" method="post" encType="text/plain" class="mt-6 grid max-w-2xl gap-4">
+        <div class="grid gap-2 md:grid-cols-2">
+          <label class="grid gap-1">
+            <span class="text-sm">Name</span>
+            <input class="rounded-xl border p-3" name="name" required>
+          </label>
+          <label class="grid gap-1">
+            <span class="text-sm">Email</span>
+            <input class="rounded-xl border p-3" type="email" name="email" required>
+          </label>
+        </div>
+        <label class="grid gap-1">
+          <span class="text-sm">Topic</span>
+          <select name="topic" class="rounded-xl border p-3">
+            <option>General enquiry</option>
+            <option>Professional report</option>
+            <option>Veridex Funnel</option>
+            <option>RBIS Dashboard</option>
+            <option>PACT Ledger</option>
+            <option>OmniAssist</option>
+            <option>NextusOne CRM</option>
+          </select>
+        </label>
+        <label class="grid gap-1">
+          <span class="text-sm">Message</span>
+          <textarea class="rounded-xl border p-3 min-h-[120px]" name="message" required></textarea>
+        </label>
+        <div class="flex items-center justify-between">
+          <p class="text-xs opacity-70">Minimal data. Your message opens in your email client.</p>
+          <button class="rounded-xl border btn-accent px-4 py-2 text-sm font-medium hover:bg-black/5" type="submit">Send</button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t">
+    <div class="mx-auto max-w-6xl px-4 py-8 text-sm flex items-center justify-between">
+      <div>© <span id="year"></span> RBIS — Evidence-first software &amp; intelligence.</div>
+      <div class="flex gap-4">
+        <a href="#trust" class="underline">Privacy</a>
+        <a href="#trust" class="underline">Cookies</a>
+        <a href="#contact" class="underline">Terms</a>
+      </div>
     </div>
   </footer>
 
+  <!-- Tiny JS: mobile nav + year + simple filters -->
   <script>
-    // mobile menu
-    const burger = document.getElementById('burger');
-    const menu = document.getElementById('menu');
-    burger?.addEventListener('click', () => {
-      const open = menu.classList.toggle('open');
-      burger.setAttribute('aria-expanded', open ? 'true' : 'false');
-    });
-
-    // contact mailto (GitHub Pages compatible)
-    function sendMailto(e){
-      e.preventDefault();
-      const f = e.target;
-      const to = 'contact@rbisintelligence.com';
-      const subj = encodeURIComponent(`[RBIS] ${f.topic.value} — ${f.name.value}`);
-      const body = encodeURIComponent(`Name: ${f.name.value}\nEmail: ${f.email.value}\nTopic: ${f.topic.value}\n\n${f.message.value}`);
-      window.location.href = `mailto:${to}?subject=${subj}&body=${body}`;
-      document.getElementById('note').textContent = "Opening your email app… If nothing happens, click 'Copy email' and send manually.";
-      return false;
-    }
-
-    // copy email helper
-    document.getElementById('copyEmail')?.addEventListener('click', async ()=>{
-      const email = 'contact@rbisintelligence.com';
-      try { await navigator.clipboard.writeText(email);
-        document.getElementById('note').textContent = 'Email address copied: ' + email;
-      } catch { document.getElementById('note').textContent = 'Could not copy. Use: ' + email; }
-    });
-
-    // theme toggle
-    const btnTheme = document.getElementById('toggleTheme');
-    btnTheme?.addEventListener('click', ()=>{
-      const dark = document.documentElement.classList.toggle('dark');
-      btnTheme.setAttribute('aria-pressed', dark ? 'true' : 'false');
-      if(dark){
-        document.documentElement.style.setProperty('--bg','#0b1117');
-        document.documentElement.style.setProperty('--bg-elev','#0f1620');
-        document.documentElement.style.setProperty('--card','#0f1b29');
-        document.documentElement.style.setProperty('--text','#e6edf3');
-        document.documentElement.style.setProperty('--muted','#9fb2c5');
-        document.documentElement.style.setProperty('--brand','#133a57');
-        document.documentElement.style.setProperty('--brand-ink','#8fd1ff');
-        document.documentElement.style.setProperty('--accent','#e6edf3');
-        document.documentElement.style.setProperty('--ring','#2a7cc7');
-      } else {
-        document.documentElement.removeAttribute('style');
+    (function(){
+      // Mobile nav
+      const btn=document.getElementById('menuBtn');
+      const nav=document.getElementById('mobileNav');
+      if(btn&&nav){
+        btn.addEventListener('click',()=>{
+          nav.classList.toggle('hidden');
+          btn.setAttribute('aria-expanded',String(!nav.classList.contains('hidden')));
+        });
       }
-    });
+      // Year
+      const y=document.getElementById('year'); if(y){y.textContent=new Date().getFullYear();}
 
-    // respect reduced motion for menu sliding (none used but future-proof)
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches){
-      document.documentElement.style.scrollBehavior = 'auto';
-    }
+      // Filters
+      const chips=[...document.querySelectorAll('button[data-filter]')];
+      const cards=[...document.querySelectorAll('#reportsGrid [data-cat]')];
+      function setFilter(val){
+        chips.forEach(c=>c.classList.toggle('active-chip',c.getAttribute('data-filter')===val));
+        cards.forEach(card=>{
+          const cat=card.getAttribute('data-cat');
+          const show=(val==='all'||val===cat);
+          card.classList.toggle('hide',!show);
+        });
+      }
+      chips.forEach(c=>c.addEventListener('click',()=>setFilter(c.getAttribute('data-filter'))));
+      setFilter('all');
+    })();
   </script>
+
+  <!-- Optional: sticky CTA on mobile -->
+  <div class="fixed bottom-3 inset-x-3 md:hidden">
+    <a href="#contact" class="block text-center border btn-accent rounded-xl px-4 py-3 text-sm font-medium bg-white/90 backdrop-blur hover:bg-black/5">
+      Request a sample
+    </a>
+  </div>
 </body>
 </html>
-
-
