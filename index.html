@@ -163,7 +163,7 @@
         </label>
         <label class="grid gap-1"><span class="text-sm">Message</span><textarea class="rounded-xl border p-3 min-h-[120px]" name="message" required name="message"></textarea></label>
         <div class="flex items-center justify-between">
-          <p class="text-xs opacity-70">Minimal data. Your message opens in your email client.</p>
+          <p class="text-sm opacity-70">Minimal data. Your message opens in your email client.</p>
           <button class="rounded-xl border btn-accent px-4 py-2 text-sm font-medium hover:bg-black/5" type="submit">Send</button>
         </div>
 <input type="hidden" name="_next" value="https://www.rbisintelligence.com/#thank-you">
@@ -298,5 +298,11 @@
   <div class="fixed bottom-3 inset-x-3 md:hidden">
     <a href="#contact" class="block text-center border btn-accent rounded-xl px-4 py-3 text-sm font-medium bg-white/90 backdrop-blur hover:bg-black/5">Request a sample</a>
   </div>
+  <script id="mobile-nav-script">
+    document.querySelectorAll("nav a").forEach(a => a.addEventListener("click", () => {
+      const menu = document.getElementById("menu");
+      if(menu && menu.classList.contains("block")){ menu.classList.remove("block"); menu.classList.add("hidden"); }
+    }));
+  </script>
 </body>
 </html>
