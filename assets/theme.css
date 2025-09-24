@@ -1,0 +1,6 @@
+:root{--bg:#f8fafc;--panel:#fff;--ink:#0f172a;--line:#e5e7eb;--brand:#4f46e5;--brand2:#06b6d4}
+body{background:var(--bg);color:var(--ink)}
+.section{max-width:1120px;margin:0 auto;padding:2.2rem 1.2rem}
+.card,.kpi,.ev,.board{background:var(--panel);border:1px solid var(--line);border-radius:14px;box-shadow:0 8px 18px rgba(15,23,42,.06)}
+.disclosure,header,footer{background:#fff;border-color:var(--line);color:var(--ink)}
+header nav a.active,header nav a:hover{background:linear-gradient(135deg,var(--brand),var(--brand2));color:#fff;border-color:transparent}
