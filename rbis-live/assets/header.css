@@ -1,0 +1,25 @@
+/* RBIS universal header — light, glassy, mobile-ready */
+:root{
+  --ink:#0B1020;--brand:#4753FF;--brand2:#2F39D7;--line:#e5e7eb;
+}
+#rbis-header *{box-sizing:border-box}
+#rbis-header header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.9);
+  backdrop-filter:saturate(160%) blur(8px);border-bottom:1px solid var(--line)}
+#rbis-header .shell{max-width:1200px;margin:auto;padding:0 16px}
+#rbis-header .bar{display:flex;align-items:center;justify-content:space-between;height:64px}
+#rbis-header a{text-decoration:none;color:inherit}
+#rbis-header .brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.2px}
+#rbis-header .nav{display:flex;gap:12px;align-items:center}
+#rbis-header .btn{display:inline-flex;align-items:center;justify-content:center;border:1px solid var(--line);
+  border-radius:12px;padding:8px 12px;font-weight:700}
+#rbis-header .btn.brand{background:var(--brand);color:#fff;border-color:transparent}
+#rbis-header .hidemd{display:none}
+@media (min-width:768px){#rbis-header .hidemd{display:flex} #rbis-header .showmd{display:none}}
+/* crystal */
+#rbis-header .crystal{width:32px;height:32px;display:inline-grid;place-items:center}
+#rbis-header .spin{animation:spin 4.8s linear infinite}@keyframes spin{to{transform:rotate(1turn)}}
+@media (prefers-reduced-motion:reduce){#rbis-header .spin{animation:none}}
+/* active link */
+#rbis-header .nav a.active{color:var(--brand);font-weight:800}
+/* quick reviews speed override (if used) */
+.reviews .track{animation-duration:12s !important}
