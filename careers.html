@@ -1,22 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"/>
+<meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>RBISUK — Careers</title>
-<style>/* same styles as index.html */</style>
+<title>RBIS — Careers</title>
+<meta name="description" content="RBIS Careers: join the evidence intelligence movement. Audit-ready, objective, futuristic compliance."/>
+<style>
+:root{
+  --bg:#0b0c10;--panel:#12141d;--ink:#f2f3fa;--muted:#a4abbd;--line:#202433;
+  --brand:#8b5cf6;--brand2:#22d3ee;--ok:#22c55e;--warn:#f59e0b;--bad:#ef4444;
+}
+*{box-sizing:border-box} body{margin:0;font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
+a{color:inherit;text-decoration:none}
+.disclosure{background:#0f1220;padding:.6rem 1rem;font-size:.9rem;border-bottom:1px solid #1a2031}
+header{background:#12141d;position:sticky;top:0;z-index:100}
+header nav{display:flex;gap:.6rem;justify-content:center;padding:.8rem;flex-wrap:wrap}
+header nav a{padding:.45rem .9rem;border:1px solid #1a2031;border-radius:999px}
+header nav a.active,header nav a:hover{background:linear-gradient(135deg,var(--brand),var(--brand2));color:#000;font-weight:600}
+#hero{text-align:center;padding:3.5rem 1rem}
+.spinny{font-size:3rem;font-weight:900;animation:spin 8s linear infinite;display:inline-block}
+@keyframes spin{to{transform:rotate(360deg)}}
+h1{margin:.5rem 0;font-size:2.2rem}
+.sub{color:var(--muted);max-width:820px;margin:0 auto}
+.section{padding:2rem 1rem;max-width:1100px;margin:0 auto;border-top:1px solid #1a2031}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.2rem}
+.card{background:var(--panel);padding:1.2rem;border-radius:14px;border:1px solid #1f2333}
+.card h3{margin-top:0}
+.badge{display:inline-block;padding:.15rem .55rem;border-radius:999px;font-size:.78rem;font-weight:700}
+.badge.filled{background:rgba(239,68,68,.16);color:#fecaca;border:1px solid rgba(239,68,68,.35)}
+.badge.open{background:rgba(34,197,94,.16);color:#86efac;border:1px solid rgba(34,197,94,.35)}
+form label{display:block;font-weight:600;margin:.4rem 0 .25rem}
+input,textarea,button{font-family:inherit;font-size:1rem}
+input,textarea{width:100%;padding:.65rem;border-radius:10px;border:1px solid #2a2f44;background:#0f111b;color:#fff}
+textarea{min-height:100px;resize:vertical}
+button{padding:.65rem 1rem;border-radius:10px;border:1px solid #2a2f44;background:linear-gradient(135deg,var(--brand),var(--brand2));color:#000;font-weight:700;cursor:pointer}
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:.4rem}
+.skill{background:#0f111b;border:1px solid #1d2132;padding:.5rem;border-radius:10px}
+.result{margin-top:1rem;padding:1rem;background:#0f111b;border-radius:10px;font-weight:600}
+footer{background:#0d111d;border-top:1px solid #1a2031;padding:1.2rem;text-align:center;color:#aaa;margin-top:3rem;font-size:.9rem}
+</style>
 </head>
 <body>
-<div class="disclosure"><b>Disclosure:</b> RBIS is not a law firm...</div>
-<header class="nav"><div class="logo">RBIS</div><nav>
-  <a href="index.html">Home</a><a href="demo.html">Demo</a>
-  <a href="dashboard.html">Dashboard</a><a href="legal.html">Legal</a>
-  <a class="active" href="careers.html">Careers</a>
+
+<div class="disclosure"><strong>Disclosure:</strong> RBIS is not a law firm and does not provide legal advice. We analyse only the evidence in front of our intelligence officers, objectively and without bias.</div>
+
+<header>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="reports.html">Reports</a>
+    <a href="demo.html">Demo</a>
+    <a href="dashboard.html">Dashboard</a>
     <a href="managed.html">Managed Support</a>
-  </nav></header>
-<section id="hero"><div class="spinny-R">R</div><h1>Careers at RBIS</h1><p>Join us in building audit-ready intelligence software</p></section>
-<main class="container">
-  <div class="card"><h3>Implementation Specialist</h3><p>Own client onboarding for Repairs & Compliance Copilot.</p></div>
-  <div class="card"><h3>AI Automation Consultant</h3><p>Design workflows for intake, timers, and evidence packs.</p></div>
-</main>
-</body></html>
+    <a class="active" href="careers.html">Careers</a>
+    <a href="legal.html">Legal</a>
+  </nav>
+</header>
+
+<section id="hero">
+  <div class="spinny">R</div>
+  <h1>Careers at RBIS</h1>
+  <p class="sub">We’re building the future of evidence intelligence. Join us if you thrive on precision, design, and critical thinking.</p>
+</section>
+
+<section class="section">
+  <h2>Open & Filled Positions</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Serious Report Intelligence Officer <span class="badge filled">FILLED</span></h3>
+      <p>Lead investigator role focused on assembling high-stakes evidence bundles. Requires rigour, discretion, and courage.</p>
+    </div>
+    <div class="card">
+      <h3>Software Engineer — Evidence Systems <span class="badge open">OPEN</span></h3>
+      <p><b>Salary:</b> £55k–£68k + benefits</p>
+      <p>Design and build the RBIS software stack: intake engines, SLA timers, evidence grids, and board dashboards. This role blends technical precision with compliance-first architecture.</p>
+      <p><b>Requirements:</b> strong JS/TS, Node, and frontend frameworks; appetite for security & auditability; curiosity about housing/compliance domain.</p>
+      <a href="#apply">Apply below →</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <h2 id="apply">Apply Now</h2>
+  <form onsubmit="event.preventDefault();alert('Application submitted! We will contact shortlisted candidates.');this.reset();">
+    <label>Name</label>
+    <input required>
+    <label>Email</label>
+    <input type="email" required>
+    <label>Cover Letter</label>
+    <textarea required></textarea>
+    <button type="submit">Submit Application</button>
+  </form>
+</section>
+
+<section class="section">
+  <h2>Skills Fit Tool</h2>
+  <p>Check your fit for RBIS engineering roles:</p>
+  <div class="skills">
+    <label class="skill"><input type="checkbox" value="JS/TS"> JavaScript / TypeScript</label>
+    <label class="skill"><input type="checkbox" value="Node"> Node.js</label>
+    <label class="skill"><input type="checkbox" value="Frontend"> Frontend Frameworks (React/Vue)</label>
+    <label class="skill"><input type="checkbox" value="Security"> Security & Compliance</label>
+    <label class="skill"><input type="checkbox" value="Data"> Data handling / SQL</label>
+    <label class="skill"><input type="checkbox" value="Critical"> Critical Thinking</label>
+  </div>
+  <button onclick="calcFit()">Calculate Fit</button>
+  <div id="fitOut" class="result">Select your skills to see your match %.</div>
+</section>
+
+<footer>
+  Designed &amp; built by Ryan Roberts | RBIS
+</footer>
+
+<script>
+function calcFit(){
+  const checks=document.querySelectorAll('.skills input:checked').length;
+  const total=document.querySelectorAll('.skills input').length;
+  const pct=Math.round((checks/total)*100);
+  document.getElementById('fitOut').innerText=`Your skills fit: ${pct}%`;
+}
+</script>
+
+</body>
+</html>
