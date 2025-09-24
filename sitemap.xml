@@ -1,11 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<url><loc>/index.html</loc></url>
-<url><loc>/demo.html</loc></url>
-<url><loc>/careers.html</loc></url>
-<url><loc>/legal.html</loc></url>
-<url><loc>/managed.html</loc></url>
-<url><loc>/articles/</loc></url>
-<url><loc>/reports.html</loc></url>
-<url><loc>/reports-grid.html</loc></url>
+  <url><loc>https://www.rbisintelligence.com/</loc></url>
 </urlset>
