@@ -42,6 +42,7 @@ header nav a.active,header nav a:hover,header nav summary:hover{background:linea
 /* Slightly subtler brand pills */
 :root{--brand:#4441c7;--brand2:#6a8a99}
 
+
 /* ==== Ultra polish ==== */
 
 /* Respect motion sensitivity */
@@ -49,7 +50,7 @@ header nav a.active,header nav a:hover,header nav summary:hover{background:linea
   *{animation:none !important; transition:none !important; scroll-behavior:auto !important}
 }
 
-/* Spinner: GPU hint + slower by default (already reduced above) */
+/* Spinner polish */
 .spinny{will-change:transform; animation-duration:12s}
 
 /* Clear, accessible focus rings */
