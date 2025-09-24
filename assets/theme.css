@@ -9,3 +9,7 @@ header{padding-top: max(0px,var(--safe-top))}
 header nav a{min-height:44px; line-height:1.2}
 button,.btn,input[type=submit]{min-height:44px}
 input[type=number], input[type=text]{touch-action:manipulation}
+
+/* Force bright defaults everywhere */
+body{background:var(--bg,#f8fafc);color:var(--ink,#0f172a)}
+.card,.section,form,input,textarea,select{background:var(--panel,#fff);color:var(--ink,#0f172a)}
