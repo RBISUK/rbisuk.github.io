@@ -1,0 +1,261 @@
+<!doctype html><html lang="en" class="scroll-smooth"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>RBIS — Evidence-first software & intelligence</title>
+<meta name="description" content="Bright, modern, evidence-first sites and audit-ready intelligence. Compliance by design. Receipts by default. Transparent pricing.">
+<link rel="canonical" href="https://www.rbisintelligence.com/"><meta name="referrer" content="strict-origin-when-cross-origin"><meta name="theme-color" content="#0B1020">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>tailwind.config={theme:{extend:{colors:{brand:{DEFAULT:'#4753FF',dark:'#2F39D7',light:'#EEF1FF'},ink:{DEFAULT:'#0B1020',soft:'#10172A'}},boxShadow:{soft:'0 10px 30px rgba(17,24,39,.08)'}}}}</script>
+<style>
+  .hero-bg{background:radial-gradient(1200px 800px at 10% -10%,#B8C0FF 0,transparent 55%),radial-gradient(1000px 700px at 90% -20%,#A5F3FC 0,transparent 50%),linear-gradient(180deg,#fff 0,#F8FAFF 100%)}
+  .rev-track{display:flex;gap:.75rem;padding:.5rem;animation:rev 12s linear infinite;will-change:transform;transform:translateZ(0)}
+  .rev-card{min-width:280px;border:1px solid #e5e7eb;border-radius:12px;padding:12px;background:#fff}
+  .rev-roller:hover .rev-track{animation-play-state:paused}
+  @keyframes rev{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+</style>
+</head>
+<body class="bg-white text-ink antialiased" id="top">
+<div style="background:#FFFBEB;padding:8px;border-bottom:1px solid #FCD34D"><b>Disclosure:</b> RBIS is not a law firm and does not provide legal advice. We analyse only the evidence in front of our intelligence officers, objectively and without bias.</div>
+<!-- Disclosure -->
+<div class="bg-amber-50 border-b border-amber-300 text-[13px] px-3 py-2 text-amber-900">
+  <b>Disclosure:</b> RBIS is <b>not</b> a law firm and does <b>not</b> provide legal advice. We analyse only the evidence in front of our intelligence officers, objectively and without bias.
+</div>
+
+<header class="sticky top-0 z-40 backdrop-blur bg-white/80 border-b border-gray-100">
+  <div class="max-w-7xl mx-auto px-4">
+    <div class="h-16 flex items-center justify-between">
+      <a href="#top" class="flex items-center gap-2 font-semibold"><span class="grid place-items-center w-8 h-8 rounded-xl bg-ink text-white font-bold">R</span>RBIS</a>
+      <nav class="hidden md:flex items-center gap-6 text-sm" aria-label="Primary">
+        <a href="#websites" class="hover:text-brand">Websites</a>
+        <a href="#products" class="hover:text-brand">Products</a>
+        <a href="dashboard.html" class="hover:text-brand">Live Dashboard</a>
+        <a href="#reports" class="hover:text-brand">Reports</a>
+        <a href="about.html" class="hover:text-brand">About</a>
+        <a href="#contact" class="inline-flex items-center rounded-lg bg-brand px-3 py-1.5 text-white hover:bg-brand-dark shadow-soft">Contact</a>
+      </nav>
+      <button id="menuBtn" class="md:hidden w-10 h-10 rounded-xl border border-gray-200" aria-expanded="false" aria-controls="mnav" aria-label="Open menu">
+        <svg width="22" height="22" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+    <nav id="mnav" class="md:hidden hidden pb-3" aria-label="Mobile">
+      <a class="block px-2 py-2 rounded hover:bg-gray-50" href="#websites">Websites</a>
+      <a class="block px-2 py-2 rounded hover:bg-gray-50" href="#products">Products</a>
+      <a class="block px-2 py-2 rounded hover:bg-gray-50" href="dashboard.html">Live Dashboard</a>
+      <a class="block px-2 py-2 rounded hover:bg-gray-50" href="#reports">Reports</a>
+      <a class="block px-2 py-2 rounded hover:bg-gray-50" href="about.html">About</a>
+      <a class="block px-2 py-2 rounded bg-brand text-white" href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <!-- HERO -->
+  <section class="hero-bg">
+    <div class="max-w-7xl mx-auto px-4 py-20 md:py-28 text-center">
+      <span class="inline-flex items-center gap-2 text-xs font-semibold uppercase text-brand bg-brand/10 px-3 py-1 rounded-full ring-1 ring-brand/20">Transparent pricing • Evidence by default</span>
+      <h1 class="mt-4 text-4xl md:text-6xl font-black tracking-tight">Bright, modern, <span class="text-brand">audit-ready</span> software</h1>
+      <p class="mt-4 text-lg md:text-xl text-gray-700">Websites and platforms that show their working: receipts, logs, and board-ready exports. Minimal data. Built for scrutiny.</p>
+      <div class="mt-7 flex flex-col sm:flex-row items-center justify-center gap-3">
+        <a href="#websites" class="inline-flex items-center rounded-xl bg-brand px-6 py-3 text-white font-semibold hover:bg-brand-dark">Compare Packages</a>
+        <a href="demo.html" class="inline-flex items-center rounded-xl border border-gray-300 px-6 py-3 font-semibold hover:bg-gray-100">Play with a Demo</a>
+      </div>
+      <div class="mt-10 grid grid-cols-2 md:grid-cols-4 gap-3 text-sm text-gray-700">
+        <div class="rounded-xl px-3 py-2 ring-1 ring-gray-200 bg-white/70 backdrop-blur">Receipts by default</div>
+        <div class="rounded-xl px-3 py-2 ring-1 ring-gray-200 bg-white/70 backdrop-blur">WCAG-aware patterns</div>
+        <div class="rounded-xl px-3 py-2 ring-1 ring-gray-200 bg-white/70 backdrop-blur">Consent & retention hooks</div>
+        <div class="rounded-xl px-3 py-2 ring-1 ring-gray-200 bg-white/70 backdrop-blur">Board-ready exports</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WEBSITE PACKAGES -->
+  <section id="websites" class="py-16 bg-white scroll-mt-24">
+    <div class="max-w-7xl mx-auto px-4">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-3">Websites & Platforms — Transparent Packages</h2>
+      <p class="text-center text-gray-600 mb-8">Choose <b>Standard</b> or <b>Premium</b> (with embedded monitoring “robots”). Ex-VAT.</p>
+      <div class="grid gap-6 md:grid-cols-2">
+        <article class="p-6 border rounded-2xl bg-white shadow-sm">
+          <div class="flex items-start justify-between"><h3 class="text-xl font-semibold">Foundation Site</h3><span class="text-xs bg-brand/10 text-brand px-2 py-1 rounded-full">~7 days</span></div>
+          <p class="mt-2 text-sm text-gray-700">3–5 pages • SSL • basic SEO • contact form</p>
+          <div class="mt-4 grid grid-cols-2 gap-3 text-center">
+            <div class="border rounded-xl p-3"><div class="text-xs text-gray-500">Standard</div><div class="text-2xl font-bold">£3,500</div></div>
+            <div class="border rounded-xl p-3"><div class="text-xs text-gray-500">Premium</div><div class="text-2xl font-bold">£4,500</div><p class="text-[12px] text-gray-600 mt-1">Uptime & SSL robot</p></div>
+          </div>
+          <div class="mt-4 flex gap-2"><a href="#contact" class="bg-brand text-white px-3 py-2 rounded-lg text-sm">Start</a><a href="demo.html#flow" class="border px-3 py-2 rounded-lg text-sm">See flow</a></div>
+        </article>
+
+        <article class="p-6 border rounded-2xl bg-white shadow-sm">
+          <div class="flex items-start justify-between"><h3 class="text-xl font-semibold">Compliance-Ready Site</h3><span class="text-xs bg-brand/10 text-brand px-2 py-1 rounded-full">~10–15 days</span></div>
+          <p class="mt-2 text-sm text-gray-700">GDPR/PECR • WCAG baseline • audited forms • cookie policy</p>
+          <div class="mt-4 grid grid-cols-2 gap-3 text-center">
+            <div class="border rounded-xl p-3"><div class="text-xs text-gray-500">Standard</div><div class="text-2xl font-bold">£5,500</div></div>
+            <div class="border rounded-xl p-3"><div class="text-xs text-gray-500">Premium</div><div class="text-2xl font-bold">£7,000</div><p class="text-[12px] text-gray-600 mt-1">Compliance scans</p></div>
+          </div>
+          <div class="mt-4 flex gap-2"><a href="#contact" class="bg-brand text-white px-3 py-2 rounded-lg text-sm">Start</a><a href="demo.html#flow" class="border px-3 py-2 rounded-lg text-sm">See flow</a></div>
+        </article>
+      </div>
+
+      <div class="grid gap-6 md:grid-cols-2 mt-6">
+        <article class="p-6 border rounded-2xl bg-white shadow-sm">
+          <div class="flex items-start justify-between"><h3 class="text-xl font-semibold">Growth Site</h3><span class="text-xs bg-brand/10 text-brand px-2 py-1 rounded-full">~3–4 weeks</span></div>
+          <p class="mt-2 text-sm text-gray-700">SEO automation • blog • analytics • CMS training</p>
+          <div class="mt-4 grid grid-cols-2 gap-3 text-center">
+            <div class="border rounded-xl p-3"><div class="text-xs text-gray-500">Standard</div><div class="text-2xl font-bold">£8,500</div></div>
+            <div class="border rounded-xl p-3"><div class="text-xs text-gray-500">Premium</div><div class="text-2xl font-bold">£10,500</div><p class="text-[12px] text-gray-600 mt-1">Competitor alerts</p></div>
+          </div>
+          <div class="mt-4 flex gap-2"><a href="#contact" class="bg-brand text-white px-3 py-2 rounded-lg text-sm">Start</a><a href="demo.html#flow" class="border px-3 py-2 rounded-lg text-sm">See flow</a></div>
+        </article>
+
+        <article class="p-6 border rounded-2xl bg-white shadow-sm">
+          <div class="flex items-start justify-between"><h3 class="text-xl font-semibold">Audit-Ready Pro</h3><span class="text-xs bg-brand/10 text-brand px-2 py-1 rounded-full">~4–6 weeks</span></div>
+          <p class="mt-2 text-sm text-gray-700">WCAG 2.2 AA • CAP/ASA sweep • evidence packs • Core Web Vitals</p>
+          <div class="mt-4 grid grid-cols-2 gap-3 text-center">
+            <div class="border rounded-xl p-3"><div class="text-xs text-gray-500">Standard</div><div class="text-2xl font-bold">£12,000</div></div>
+            <div class="border rounded-xl p-3"><div class="text-xs text-gray-500">Premium</div><div class="text-2xl font-bold">£15,000+</div><p class="text-[12px] text-gray-600 mt-1">Live re-scans & alerts</p></div>
+          </div>
+          <div class="mt-4 flex gap-2"><a href="#contact" class="bg-brand text-white px-3 py-2 rounded-lg text-sm">Start</a><a href="demo.html#flow" class="border px-3 py-2 rounded-lg text-sm">See flow</a></div>
+        </article>
+      </div>
+
+      <div class="max-w-3xl mx-auto mt-8 text-sm text-gray-800 border rounded-2xl p-5">
+        <p><b>Support & Monitoring — £250/mo</b> (monthly, cancel anytime). Includes uptime/SSL/content checks. Larger changes via <b>£50/hour</b> consultation and a scoped plan.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCTS -->
+  <section id="products" class="py-16 bg-gradient-to-b from-white to-brand.light scroll-mt-24">
+    <div class="max-w-7xl mx-auto px-4">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-3">Products & Services</h2>
+      <p class="text-center text-gray-600 mb-8">Configurable modules with <b>receipts by default</b>. Minimal data. Audit-ready exports.</p>
+      <div class="grid gap-6 md:grid-cols-3">
+        <article class="p-6 border rounded-2xl bg-white shadow-sm">
+          <h3 class="text-xl font-semibold">Veridex Funnel</h3>
+          <p class="text-sm text-gray-600 mb-3">Guided, compliant capture with branching and audit trails.</p>
+          <ul class="text-sm text-gray-700 space-y-1 list-disc list-inside"><li>Industry templates</li><li>Evidence attach + redaction prompts</li><li>Audit JSON + PDF</li><li>Light CSV handoff</li></ul>
+          <div class="mt-4"><a href="demo.html#veridex" class="bg-brand text-white px-3 py-2 rounded-lg text-sm">See demo</a></div>
+        </article>
+        <article class="p-6 border rounded-2xl bg-white shadow-sm">
+          <h3 class="text-xl font-semibold">RBIS Dashboard</h3>
+          <p class="text-sm text-gray-600 mb-3">Early-warning KPIs, breach timers, risk heatmaps, board exports.</p>
+          <ul class="text-sm text-gray-700 space-y-1 list-disc list-inside"><li>SLA timers</li><li>Role views</li><li>Evidence-linked board pack</li><li>CSV ingest</li></ul>
+          <div class="mt-4"><a href="dashboard.html" class="bg-brand text-white px-3 py-2 rounded-lg text-sm">Live dashboard</a></div>
+        </article>
+        <article class="p-6 border rounded-2xl bg-white shadow-sm">
+          <h3 class="text-xl font-semibold">Training & Advisory</h3>
+          <p class="text-sm text-gray-600 mb-3">Tone, deception cues, evidence handling, report structure.</p>
+          <ul class="text-sm text-gray-700 space-y-1 list-disc list-inside"><li>Half-day / full-day</li><li>Custom syllabus</li><li>Anonymised examples</li></ul>
+          <div class="mt-4"><a href="#contact" class="bg-brand text-white px-3 py-2 rounded-lg text-sm">Request syllabus</a></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS (de-blurred scroller) -->
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4">
+      <h2 class="text-2xl font-bold mb-4">What people say</h2>
+      <div class="rev-roller overflow-hidden border rounded-2xl bg-white">
+        <div class="rev-track">
+          <figure class="rev-card"><blockquote class="text-sm">“Warm team, serious work. The packs made decisions easy.”</blockquote><figcaption class="text-xs text-gray-500 mt-1">Director, Housing Association</figcaption></figure>
+          <figure class="rev-card"><blockquote class="text-sm">“Calm UX, regulator-friendly outputs.”</blockquote><figcaption class="text-xs text-gray-500 mt-1">COO, Public Sector</figcaption></figure>
+          <figure class="rev-card"><blockquote class="text-sm">“Design that understands evidence.”</blockquote><figcaption class="text-xs text-gray-500 mt-1">Law Firm Partner</figcaption></figure>
+          <!-- duplicate set for seamless loop -->
+          <figure class="rev-card" aria-hidden="true"><blockquote class="text-sm">“Warm team, serious work. The packs made decisions easy.”</blockquote><figcaption class="text-xs text-gray-500 mt-1">Director, Housing Association</figcaption></figure>
+          <figure class="rev-card" aria-hidden="true"><blockquote class="text-sm">“Calm UX, regulator-friendly outputs.”</blockquote><figcaption class="text-xs text-gray-500 mt-1">COO, Public Sector</figcaption></figure>
+          <figure class="rev-card" aria-hidden="true"><blockquote class="text-sm">“Design that understands evidence.”</blockquote><figcaption class="text-xs text-gray-500 mt-1">Law Firm Partner</figcaption></figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REPORT CATALOGUE (kept concise) -->
+  <section id="reports" class="py-16 bg-gray-50 scroll-mt-24">
+    <div class="max-w-7xl mx-auto px-4">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-3">Professional Evidence Reports — Fixed Pricing</h2>
+      <p class="text-center text-gray-600 mb-8">Factual, audit-ready documentation; <b>no legal advice</b>. Typical delivery 2–10 days. Rush options available. Ex-VAT.</p>
+      <div class="overflow-auto border rounded-2xl bg-white">
+        <table class="min-w-full text-sm">
+          <thead class="bg-gray-50 text-left text-gray-500"><tr><th class="py-2 px-3">Code</th><th class="py-2 px-3">Report</th><th class="py-2 px-3">RBIS Price</th><th class="py-2 px-3">Rush</th><th class="py-2 px-3">Notes</th></tr></thead>
+          <tbody class="align-top">
+            <tr class="border-t"><td class="py-2 px-3">A1</td><td class="py-2 px-3">Disrepair Evidence Pack</td><td class="py-2 px-3 font-semibold">£950</td><td class="py-2 px-3">Y</td><td class="py-2 px-3">Factual only</td></tr>
+            <tr class="border-t"><td class="py-2 px-3">B3</td><td class="py-2 px-3">Ombudsman Referral Bundle</td><td class="py-2 px-3 font-semibold">£1,400</td><td class="py-2 px-3">Y</td><td class="py-2 px-3">Cross-referenced</td></tr>
+            <tr class="border-t"><td class="py-2 px-3">C1</td><td class="py-2 px-3">DPIA</td><td class="py-2 px-3 font-semibold">£1,500</td><td class="py-2 px-3">Y</td><td class="py-2 px-3">ICO pattern</td></tr>
+            <tr class="border-t"><td class="py-2 px-3">D1</td><td class="py-2 px-3">Accessibility Audit (WCAG 2.2 AA)</td><td class="py-2 px-3 font-semibold">£2,200</td><td class="py-2 px-3">Y</td><td class="py-2 px-3">Issues + re-test</td></tr>
+            <tr class="border-t"><td class="py-2 px-3">E3</td><td class="py-2 px-3">Comms Transcript Pack</td><td class="py-2 px-3 font-semibold">£700</td><td class="py-2 px-3">Y</td><td class="py-2 px-3">Chain-of-custody</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="text-center mt-6"><a href="#contact" class="bg-brand text-white px-5 py-3 rounded-xl font-semibold">Request a Sample Pack</a></div>
+    </div>
+  </section>
+
+  <!-- BODY LOUNGE (explainer) -->
+  <section class="py-16 bg-white">
+    <div class="max-w-5xl mx-auto px-4">
+      <h2 class="text-2xl md:text-3xl font-bold">Body Lounge — Behaviour beneath words</h2>
+      <p class="text-gray-700 mt-2">Micro-expressions, cadence, hesitation, and pacing often betray intent. We pair AI signal-picking with expert review. <a class="text-brand underline" href="articles/body-lounge.html">Deep dive ↗</a></p>
+      <div class="grid md:grid-cols-3 gap-4 mt-6 text-sm">
+        <div class="border rounded-2xl p-4"><b>Voice as data</b><br>Stress markers & speech rhythm can flag inconsistency.</div>
+        <div class="border rounded-2xl p-4"><b>Contextual checks</b><br>Signals are interpreted against timeline & facts, not alone.</div>
+        <div class="border rounded-2xl p-4"><b>No bias rule</b><br>We document method limits and avoid “mind-reading”.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="py-16 bg-gradient-to-b from-white to-brand.light scroll-mt-24">
+    <div class="max-w-3xl mx-auto px-4">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-6">Start a Project</h2>
+      <form id="contactForm" class="border rounded-2xl p-6 grid gap-4 bg-white" novalidate>
+        <div><label class="block text-sm font-medium">Your name</label><input id="name" required class="mt-1 w-full border rounded-xl px-3 py-2 focus:outline-none focus:ring-2 focus:ring-brand"></div>
+        <div><label class="block text-sm font-medium">Email</label><input id="email" type="email" required class="mt-1 w-full border rounded-xl px-3 py-2 focus:outline-none focus:ring-2 focus:ring-brand"></div>
+        <div><label class="block text-sm font-medium">Interest</label>
+          <select id="pkg" class="mt-1 w-full border rounded-xl px-3 py-2"><option>Foundation Site</option><option>Compliance-Ready Site</option><option>Growth Site</option><option>Audit-Ready Pro</option><option>Vision Build</option><option>Evidence Reports</option></select>
+        </div>
+        <div><label class="block text-sm font-medium">Brief</label><textarea id="msg" rows="5" class="mt-1 w-full border rounded-xl px-3 py-2 focus:outline-none focus:ring-2 focus:ring-brand" placeholder="Goals, deadlines, constraints…"></textarea></div>
+        <label class="flex items-center gap-2 text-xs text-gray-600"><input id="consent" type="checkbox" required class="accent-brand"><span>I agree to be contacted for this enquiry. Minimal data policy applies.</span></label>
+        <div class="flex gap-3"><button class="bg-brand text-white px-4 py-2 rounded-xl font-semibold">Send enquiry</button><button type="reset" class="border px-4 py-2 rounded-xl">Reset</button></div>
+        <p id="formStatus" class="text-sm text-gray-600" role="status" aria-live="polite"></p>
+      </form>
+      <p class="mt-4 text-xs text-center text-gray-500">We run minimal capture. No trackers. Evidence by default.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="border-t bg-white">
+  <div class="max-w-7xl mx-auto px-4 py-8 grid md:grid-cols-3 gap-6">
+    <div><div class="flex items-center gap-2 font-semibold"><span class="grid place-items-center w-8 h-8 rounded-xl bg-ink text-white font-bold">R</span>RBIS</div>
+      <p class="mt-2 text-sm text-gray-600">Evidence-first software & intelligence. Compliance by design. Receipts by default.</p>
+    </div>
+    <nav class="text-sm"><ul class="grid grid-cols-2 gap-2">
+      <li><a class="hover:text-brand" href="about.html">About</a></li>
+      <li><a class="hover:text-brand" href="articles/">Articles</a></li>
+      <li><a class="hover:text-brand" href="dashboard.html">Live Dashboard</a></li>
+      <li><a class="hover:text-brand" href="demo.html">Demo</a></li>
+      <li><a class="hover:text-brand" href="legal.html">Legal Hub</a></li>
+      <li><a class="hover:text-brand" href="careers.html">Careers</a></li>
+    </ul></nav>
+    <div class="text-sm text-gray-600">
+      <p>© <span id="year"></span> RBIS Intelligence.</p>
+      <p class="mt-1"><b>Designed &amp; Built by Ryan Roberts | RBIS</b>.</p>
+      <p class="mt-1">VIP/Gov requests: <a class="underline" href="mailto:Confidential@RBISIntelligence.com">Confidential@RBISIntelligence.com</a></p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Year
+  document.getElementById('year').textContent=new Date().getFullYear();
+  // Mobile menu (auto-close after click)
+  const mbtn=document.getElementById('menuBtn'), mnav=document.getElementById('mnav');
+  const closeMenu=()=>{mnav.classList.add('hidden'); mbtn.setAttribute('aria-expanded','false');};
+  mbtn?.addEventListener('click',()=>{const open=mnav.classList.toggle('hidden')?'false':'true'; mbtn.setAttribute('aria-expanded',open);});
+  mnav?.querySelectorAll('a').forEach(a=>a.addEventListener('click',closeMenu));
+  // Contact (local only)
+  const f=document.getElementById('contactForm'), s=document.getElementById('formStatus');
+  f?.addEventListener('submit',(e)=>{e.preventDefault();const ok=f.name.value&&f.email.value&&f.consent.checked;
+    if(!ok){s.textContent='Please complete required fields and consent.';s.className='text-sm text-red-600';return;}
+    s.textContent='Saved locally. We will contact you shortly.';s.className='text-sm text-emerald-700';try{localStorage.setItem('rbis-contact-'+Date.now(),JSON.stringify({n:f.name.value,e:f.email.value,p:f.pkg.value,m:f.msg.value}))}catch{};f.reset();});
+</script>
+</body></html>
