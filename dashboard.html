@@ -1,15 +1,23 @@
-<!DOCTYPE html><html lang="en"><head>
-<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>RBISUK — Dashboard</title><link rel="stylesheet" href="assets/header.css"/>
-</head><body>
-<div id="site-header"></div>
-<section id="hero"><div class="spinny-R">R</div><h1>Executive Dashboard</h1><p class="subtle">Snapshot metrics for board review.</p></section>
-<main class="container">
-  <div class="table">
-    <div class="row"><div><h4>Open Repairs</h4><div class="muted">Aging & priority</div></div><div><h4>123</h4><div class="muted">17 over SLA</div></div><div><h4>↘︎ 9%</h4><div class="muted">vs last month</div></div></div>
-    <div class="row"><div><h4>Complaints (Stage 1/2)</h4><div class="muted">Timers & outcomes</div></div><div><h4>24 / 7</h4><div class="muted">On time: 92%</div></div><div><h4>↗︎ 3%</h4><div class="muted">volume</div></div></div>
-    <div class="row"><div><h4>Data Requests (DSAR)</h4><div class="muted">30-day compliance</div></div><div><h4>5</h4><div class="muted">Due < 7 days: 2</div></div><div><h4>100%</h4><div class="muted">on-time YTD</div></div></div>
-  </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>RBISUK — Dashboard</title>
+<style>/* same styles as index.html */</style>
+</head>
+<body>
+<div class="disclosure"><b>Disclosure:</b> RBIS is not a law firm...</div>
+<header class="nav"><div class="logo">RBIS</div><nav>
+  <a href="index.html">Home</a><a href="demo.html">Demo</a>
+  <a class="active" href="dashboard.html">Dashboard</a><a href="legal.html">Legal</a><a href="careers.html">Careers</a>
+    <a href="managed.html">Managed Support</a>
+  </nav></header>
+<section id="hero"><div class="spinny-R">R</div><h1>Executive Dashboard</h1><p>Board-ready metrics with variance notes</p></section>
+<main class="container grid">
+  <div class="card"><h3>Open Repairs</h3><p><b>124</b> (−8 w/w)</p></div>
+  <div class="card"><h3>SLA Breaches</h3><p><b>7</b> (+2)</p></div>
+  <div class="card"><h3>Complaints</h3><p><b>19</b> (median 8d)</p></div>
+  <div class="card"><h3>DSARs Active</h3><p><b>3</b> (avg age 9d)</p></div>
 </main>
-<script src="assets/header.js"></script>
 </body></html>
