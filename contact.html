@@ -1,13 +1,14 @@
 <!DOCTYPE html><html lang="en"><head>
 <meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
+<meta name="viewport"
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg"> content="width=device-width,initial-scale=1,viewport-fit=cover"/>
 <title>Contact — RBIS</title>
 <link rel="canonical" href="https://rbisuk.github.io/contact.html">
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 <link rel="icon" type="image/png" href="assets/favicon.png">
 <link rel="apple-touch-icon" href="assets/favicon.png">
 <meta name="theme-color" content="#4f46e5">
-<link rel="stylesheet" href="assets/theme.css?v=20">
+<link rel="stylesheet" href="assets/theme.css?v=21">
 <style>
 .formgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:.8rem}
 input,select,textarea{background:#fff;border:1px solid var(--line);border-radius:12px;padding:.6rem}
@@ -36,7 +37,7 @@ label{display:block}
     <h1>Contact RBIS</h1>
     <p>Tell us what you need — quotes, walkthroughs, or a quick steer.</p>
 
-    <form action="https://formspree.io/f/meolvrdy" method="POST" class="board" style="padding:1rem" id="contactForm">
+    <form action="https://formspree.io/f/meolvrdy" method="POST">
       <div class="formgrid">
         <label>Full name
           <input name="name" type="text" placeholder="Your name" required>
@@ -95,8 +96,8 @@ label{display:block}
     try{
       const res=await fetch(form.action,{method:'POST',body:data,headers:{'Accept':'application/json'}});
       if(res.ok){ status.textContent='Thanks — we will reply shortly.'; form.reset(); }
-      else{ status.textContent='Something went wrong. Please try again or email rbr.01@outlook.com.'; }
-    }catch(e){ status.textContent='Network issue. Please try again or email rbr.01@outlook.com.'; }
+      else{ status.textContent='Something went wrong. Please try again or email Contact@RBISIntelligence.com.'; }
+    }catch(e){ status.textContent='Network issue. Please try again or email Contact@RBISIntelligence.com.'; }
   });
 })();
 </script>
