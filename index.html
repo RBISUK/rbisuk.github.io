@@ -1,128 +1,85 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>RBISUK Reports</title>
-  <link rel="stylesheet" href="assets/header.css" />
-  <script src="assets/header.js" defer></script>
-  <style>
-    body {
-      margin: 0;
-      font-family: system-ui, sans-serif;
-      background: #f9f9f9;
-      color: #222;
-    }
-    /* Hero Spinny R */
-    .spinny-R {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 40vh;
-      font-size: 5rem;
-      font-weight: bold;
-      animation: spin 8s linear infinite;
-    }
-    @keyframes spin {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
-    }
-    h1 {
-      text-align: center;
-      margin-bottom: 2rem;
-    }
-    /* Grid styles */
-    #reports-grid {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 2rem;
-    }
-    .banner {
-      background: #333;
-      color: #fff;
-      padding: 1rem;
-      text-align: center;
-      font-weight: bold;
-      margin-bottom: 2rem;
-      border-radius: 6px;
-    }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-      gap: 1rem;
-    }
-    .card {
-      background: #fff;
-      border: 1px solid #ddd;
-      border-radius: 6px;
-      padding: 1rem;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-    }
-    .card h3 {
-      margin-top: 0;
-    }
-    .card p {
-      font-size: 0.9rem;
-      color: #555;
-    }
-  </style>
-</head>
-<body>
-  <!-- Hero / Spinny R -->
-  <section id="hero">
-    <div class="spinny-R">R</div>
-    <h1>RBISUK Reports & Intelligence</h1>
-  </section>
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>RBISUK — Professional Evidence Reports</title>
+<link rel="stylesheet" href="assets/header.css"/>
+</head><body>
+<div id="site-header"></div>
 
-  <!-- Reports Grid -->
-<div class="banner">Not a law firm</div>
-<div class="grid">
-  <!-- Repairs & Compliance -->
-  <div class="card" data-code="A01"><h3>Repairs Intake Log</h3><p>Timestamped record of all repair reports with attachments and receipts.</p></div>
-  <div class="card" data-code="A02"><h3>Mould & Damp Tracker</h3><p>Photo-evidence, humidity notes, and revisit timers for environmental hazards.</p></div>
-  <div class="card" data-code="A03"><h3>SLA Deadline Monitor</h3><p>Auto-calculates statutory due dates, flags breaches, and escalation paths.</p></div>
-  <div class="card" data-code="A04"><h3>Vulnerability Flags</h3><p>Identifies priority tenants and applies tighter response targets.</p></div>
-  <div class="card" data-code="A05"><h3>Repairs Evidence Pack</h3><p>Court-ready PDF: chronology, comms, photos, and missed appointments.</p></div>
+<!-- COMMON HEADER -->
 
-  <!-- Complaints & Ombudsman -->
-  <div class="card" data-code="A06"><h3>Stage 1 Complaint File</h3><p>Issue summary, acknowledgement receipt, and 10-day resolution timer.</p></div>
-  <div class="card" data-code="A07"><h3>Stage 2 Escalation</h3><p>Decision review checklist with reasons, remedies, and new deadlines.</p></div>
-  <div class="card" data-code="A08"><h3>Ombudsman Readiness</h3><p>Policy conformance scan, missing evidence finder, final position letter.</p></div>
-  <div class="card" data-code="A09"><h3>Goodwill & Redress Calc</h3><p>Transparent formula for apology, reimbursement, and service failure awards.</p></div>
-  <div class="card" data-code="A10"><h3>Learning Outcomes Log</h3><p>Tracks repeat failure themes and assigns preventive actions.</p></div>
+<section id="hero"><div class="spinny-R" aria-hidden="true">R</div>
+  <h1>Professional Evidence Reports — Cards View</h1>
+  <p class="subtle">Tap a card to copy the code &amp; price. Ex-VAT.</p>
+</section>
 
-  <!-- Data Protection & Marketing -->
-  <div class="card" data-code="A11"><h3>Subject Access Pack</h3><p>DSAR intake, identity checks, redactions, and 30-day timer receipts.</p></div>
-  <div class="card" data-code="A12"><h3>Opt-in Evidence Register</h3><p>GDPR-proof consent records with purpose, channel, and timestamps.</p></div>
-  <div class="card" data-code="A13"><h3>PECR Marketing Check</h3><p>Email/SMS contact rules checker with lawful basis summary.</p></div>
-  <div class="card" data-code="A14"><h3>Data Breach Log</h3><p>72-hour clock, risk grading, containment, and ICO narrative builder.</p></div>
-  <div class="card" data-code="A15"><h3>Retention & Deletion Map</h3><p>Record classes, keep-until rules, and automated purge receipts.</p></div>
+<main class="container">
+  <div class="controls">
+    <div><input id="q" type="search" placeholder="Search title, code, notes…"></div>
+    <div><select id="cat">
+      <option value="all">All categories</option>
+      <option value="A">A) Housing Repairs</option>
+      <option value="B">B) Complaints & Ombudsman</option>
+      <option value="C">C) Data Protection & Marketing</option>
+      <option value="D">D) Website & Accessibility</option>
+      <option value="E">E) Operational & Audit</option>
+      <option value="F">F) PACT Ledger</option>
+    </select> <button id="csv" class="primary">Download CSV</button></div>
+  </div>
 
-  <!-- Website & Accessibility -->
-  <div class="card" data-code="A16"><h3>WCAG Quick Scan</h3><p>Contrast, keyboard nav, labels, and alt-text checkpoints.</p></div>
-  <div class="card" data-code="A17"><h3>Cookie & Consent Audit</h3><p>Classifies cookies, prior consent checks, and banner wording test.</p></div>
-  <div class="card" data-code="A18"><h3>Privacy & Terms Check</h3><p>Links, last-updated stamps, scope, and user rights clarity.</p></div>
-  <div class="card" data-code="A19"><h3>Form UX & Errors</h3><p>Validations, error messaging, and success receipts with IDs.</p></div>
-  <div class="card" data-code="A20"><h3>SEO Technical Basics</h3><p>Titles, metas, sitemaps, robots, and canonical hygiene report.</p></div>
+  <div id="cards" class="grid">
+    <!-- A) Housing Repairs (10) -->
+    <article class="card" data-code="A1" data-cat="A" data-price="650" data-notes="Factual only"><h3>A1) Disrepair Evidence Pack <span class="price">£650</span></h3><div class="kicker">A) Housing Repairs</div><p class="meta">Factual-only pack for unresolved repairs with receipts & chronology.</p></article>
+    <article class="card" data-code="A2" data-cat="A" data-price="850" data-notes="Ops mitigations"><h3>A2) Damp &amp; Mould Dossier <span class="price">£850</span></h3><div class="kicker">A) Housing Repairs</div><p class="meta">Humidity notes, photos, risk flags, and recommended mitigations.</p></article>
+    <article class="card" data-code="A3" data-cat="A" data-price="750" data-notes="Desktop screen"><h3>A3) HHSRS Desktop Screening <span class="price">£750</span></h3><div class="kicker">A) Housing Repairs</div><p class="meta">HHSRS factor review from evidence; not a statutory inspection.</p></article>
+    <article class="card" data-code="A4" data-cat="A" data-price="1250" data-notes="Ops audit"><h3>A4) Works &amp; SLA Audit <span class="price">£1,250</span></h3><div class="kicker">A) Housing Repairs</div><p class="meta">Order flow, attendance, parts, and deadline conformance audit.</p></article>
+    <article class="card" data-code="A5" data-cat="A" data-price="700" data-notes="Desktop mapping"><h3>A5) Landlord Compliance Snapshot <span class="price">£700</span></h3><div class="kicker">A) Housing Repairs</div><p class="meta">Key certificates, servicing, and landlord responsibilities mapping.</p></article>
+    <article class="card" data-code="A6" data-cat="A" data-price="1100" data-notes="Process review"><h3>A6) Void Turnaround Audit <span class="price">£1,100</span></h3><div class="kicker">A) Housing Repairs</div><p class="meta">Turnaround times, standards, and contractor accountability review.</p></article>
+    <article class="card" data-code="A7" data-cat="A" data-price="1100" data-notes="Desktop compilation"><h3>A7) Gas/Electrical Evidence Pack <span class="price">£1,100</span></h3><div class="kicker">A) Housing Repairs</div><p class="meta">Records, access logs, and safety evidence compiled into a bundle.</p></article>
+    <article class="card" data-code="A8" data-cat="A" data-price="900" data-notes="Desktop only"><h3>A8) Legionella Risk Log <span class="price">£900</span></h3><div class="kicker">A) Housing Repairs</div><p class="meta">Asset list, flushing evidence, and remedial prompts with timers.</p></article>
+    <article class="card" data-code="A9" data-cat="A" data-price="1200" data-notes="Desktop only"><h3>A9) Fire Door Register Audit <span class="price">£1,200</span></h3><div class="kicker">A) Housing Repairs</div><p class="meta">Register completeness check, risk flags, and action owners.</p></article>
+    <article class="card" data-code="A10" data-cat="A" data-price="900" data-notes="Ops review"><h3>A10) Moisture Ingress Review <span class="price">£900</span></h3><div class="kicker">A) Housing Repairs</div><p class="meta">Ingress sources, previous fixes, and follow-up plan with evidence.</p></article>
 
-  <!-- Operational Performance & Auditability -->
-  <div class="card" data-code="A21"><h3>Comms Timeline</h3><p>Unified thread of emails, SMS, calls, and letters with read receipts.</p></div>
-  <div class="card" data-code="A22"><h3>Missed Appointment Log</h3><p>Who/when/why, notice policy check, and compensation triggers.</p></div>
-  <div class="card" data-code="A23"><h3>Contractor KPI Sheet</h3><p>First-time-fix rate, average days open, and customer satisfaction.</p></div>
-  <div class="card" data-code="A24"><h3>Root Cause Register</h3><p>Maps incidents to causes, fixes, owners, and review dates.</p></div>
-  <div class="card" data-code="A25"><h3>Board-Ready Dashboard</h3><p>Monthly headline metrics with variance notes and actions.</p></div>
+    <!-- B) Complaints & Ombudsman (5) -->
+    <article class="card" data-code="B1" data-cat="B" data-price="1900" data-notes="Against Code"><h3>B1) Complaint Code Gap Analysis <span class="price">£1,900</span></h3><div class="kicker">B) Complaints &amp; Ombudsman</div><p class="meta">Process vs Housing Ombudsman Code with corrective actions.</p></article>
+    <article class="card" data-code="B2" data-cat="B" data-price="850" data-notes="Stage 1/2"><h3>B2) Stage 1/2 Evidence Pack <span class="price">£850</span></h3><div class="kicker">B) Complaints &amp; Ombudsman</div><p class="meta">Chronology, receipts, and draft response for Stage 1 or 2.</p></article>
+    <article class="card" data-code="B3" data-cat="B" data-price="1400" data-notes="Cross-referenced"><h3>B3) Ombudsman Referral Bundle <span class="price">£1,400</span></h3><div class="kicker">B) Complaints &amp; Ombudsman</div><p class="meta">Final position letter, policy cites, and evidence index.</p></article>
+    <article class="card" data-code="B4" data-cat="B" data-price="600" data-notes="10-day clock"><h3>B4) Acknowledgement &amp; Timer Pack <span class="price">£600</span></h3><div class="kicker">B) Complaints &amp; Ombudsman</div><p class="meta">Receipt templates, timers, and nudge schedule for stages.</p></article>
+    <article class="card" data-code="B5" data-cat="B" data-price="950" data-notes="Learning outcomes"><h3>B5) Learning &amp; Remedies Log <span class="price">£950</span></h3><div class="kicker">B) Complaints &amp; Ombudsman</div><p class="meta">Themes, redress rationale, and preventive actions tracker.</p></article>
 
-  <!-- PACT Ledger (Promises & Settlements) -->
-  <div class="card" data-code="A26"><h3>Promise Intake</h3><p>Captures commitments from email/SMS with who, what, and by-when.</p></div>
-  <div class="card" data-code="A27"><h3>Timer & Nudge Engine</h3><p>Automated reminders, escalation tiers, and receipt proofs.</p></div>
-  <div class="card" data-code="A28"><h3>Settlement Workflow</h3><p>Offer, counter, agree, and pay with audit stamps.</p></div>
-  <div class="card" data-code="A29"><h3>Non-Compliance Dossier</h3><p>Collects breaches, evidence, and draft pre-action letter.</p></div>
-  <div class="card" data-code="A30"><h3>Export: Court Bundle</h3><p>Chronology, exhibits, and statements packaged to PDF/ZIP.</p></div>
+    <!-- C) Data Protection & Marketing (5) -->
+    <article class="card" data-code="C1" data-cat="C" data-price="750" data-notes="30-day timer"><h3>C1) DSAR Evidence Pack <span class="price">£750</span></h3><div class="kicker">C) Data Protection &amp; Marketing</div><p class="meta">Identity checks, redactions, timeline, and disclosure receipts.</p></article>
+    <article class="card" data-code="C2" data-cat="C" data-price="500" data-notes="Lawful basis"><h3>C2) Opt-in &amp; Consent Register <span class="price">£500</span></h3><div class="kicker">C) Data Protection &amp; Marketing</div><p class="meta">Purpose, channel, timestamp evidence for GDPR/PECR.</p></article>
+    <article class="card" data-code="C3" data-cat="C" data-price="600" data-notes="Email/SMS rules"><h3>C3) PECR Marketing Check <span class="price">£600</span></h3><div class="kicker">C) Data Protection &amp; Marketing</div><p class="meta">Contact type matrix and compliance notes for campaigns.</p></article>
+    <article class="card" data-code="C4" data-cat="C" data-price="1200" data-notes="72-hour"><h3>C4) Data Breach Log &amp; Narrative <span class="price">£1,200</span></h3><div class="kicker">C) Data Protection &amp; Marketing</div><p class="meta">Containment, risk grading, and ICO narrative builder.</p></article>
+    <article class="card" data-code="C5" data-cat="C" data-price="650" data-notes="Rules map"><h3>C5) Retention &amp; Deletion Map <span class="price">£650</span></h3><div class="kicker">C) Data Protection &amp; Marketing</div><p class="meta">Record classes, keep-until rules, and purge receipts.</p></article>
 
-  <!-- Extra -->
-  <div class="card" data-code="A31"><h3>Glossary & How-To</h3><p>Plain-English definitions and step-by-step guides for staff.</p></div>
-</div>
-       </section>
-</body>
-</html>
+    <!-- D) Website & Accessibility (4) -->
+    <article class="card" data-code="D1" data-cat="D" data-price="550" data-notes="Contrast/labels"><h3>D1) WCAG Quick Scan <span class="price">£550</span></h3><div class="kicker">D) Website &amp; Accessibility</div><p class="meta">Contrast, keyboard nav, labels, and alt-text checkpoints.</p></article>
+    <article class="card" data-code="D2" data-cat="D" data-price="450" data-notes="Classify cookies"><h3>D2) Cookie &amp; Consent Audit <span class="price">£450</span></h3><div class="kicker">D) Website &amp; Accessibility</div><p class="meta">Cookie classes, prior consent checks, and banner wording test.</p></article>
+    <article class="card" data-code="D3" data-cat="D" data-price="600" data-notes="Links & scope"><h3>D3) Privacy &amp; Terms Check <span class="price">£600</span></h3><div class="kicker">D) Website &amp; Accessibility</div><p class="meta">Links, last-updated stamps, scope, and user rights clarity.</p></article>
+    <article class="card" data-code="D4" data-cat="D" data-price="500" data-notes="Sitemaps, robots"><h3>D4) SEO Technical Basics <span class="price">£500</span></h3><div class="kicker">D) Website &amp; Accessibility</div><p class="meta">Titles, metas, sitemaps, robots, and canonical hygiene.</p></article>
 
+    <!-- E) Operational & Audit (4) -->
+    <article class="card" data-code="E1" data-cat="E" data-price="700" data-notes="Unified thread"><h3>E1) Comms Timeline <span class="price">£700</span></h3><div class="kicker">E) Operational &amp; Audit</div><p class="meta">Emails, SMS, calls, letters, and read receipts in one line.</p></article>
+    <article class="card" data-code="E2" data-cat="E" data-price="650" data-notes="Comp triggers"><h3>E2) Missed Appointment Log <span class="price">£650</span></h3><div class="kicker">E) Operational &amp; Audit</div><p class="meta">Who/when/why, notice policy check, compensation triggers.</p></article>
+    <article class="card" data-code="E3" data-cat="E" data-price="900" data-notes="KPI sheet"><h3>E3) Contractor KPI Sheet <span class="price">£900</span></h3><div class="kicker">E) Operational &amp; Audit</div><p class="meta">FTF rate, average days open, and customer satisfaction.</p></article>
+    <article class="card" data-code="E4" data-cat="E" data-price="950" data-notes="Board monthly"><h3>E4) Board-Ready Dashboard <span class="price">£950</span></h3><div class="kicker">E) Operational &amp; Audit</div><p class="meta">Headline metrics with variance notes and actions.</p></article>
+
+    <!-- F) PACT Ledger (3) -->
+    <article class="card" data-code="F1" data-cat="F" data-price="600" data-notes="Capture commitments"><h3>F1) Promise Intake <span class="price">£600</span></h3><div class="kicker">F) PACT Ledger</div><p class="meta">Who/what/by-when captured from email/SMS/web with receipts.</p></article>
+    <article class="card" data-code="F2" data-cat="F" data-price="700" data-notes="Timers & nudges"><h3>F2) Timer &amp; Nudge Engine <span class="price">£700</span></h3><div class="kicker">F) PACT Ledger</div><p class="meta">Automated reminders, escalation tiers, and audit stamps.</p></article>
+    <article class="card" data-code="F3" data-cat="F" data-price="1200" data-notes="Court export"><h3>F3) Settlement &amp; Court Bundle <span class="price">£1,200</span></h3><div class="kicker">F) PACT Ledger</div><p class="meta">Offer → counter → agree → pay with court-ready exports.</p></article>
+  </div>
+</main>
+
+<div id="toast" class="copy-toast" role="status" aria-live="polite">Copied.</div>
+<script>
+const q=document.getElementById('q'),cat=document.getElementById('cat'),grid=document.getElementById('cards'),toast=document.getElementById('toast');
+function filter(){const t=q.value.toLowerCase().trim(),c=cat.value;[...grid.children].forEach(x=>{const ok=(c==='all'||x.dataset.cat===c)&&x.innerText.toLowerCase().includes(t);x.style.display=ok?'':'none';});}
+q.addEventListener('input',filter);cat.addEventListener('change',filter);
+function toastMsg(m){toast.textContent=m;toast.classList.add('show');setTimeout(()=>toast.classList.remove('show'),1200);}
+grid.addEventListener('click',e=>{const x=e.target.closest('.card');if(!x)return;const txt=`${x.dataset.code}, £${x.dataset.price}`;navigator.clipboard?.writeText(txt).then(()=>toastMsg(`${txt} copied`)).catch(()=>toastMsg('Copied'))});
+document.getElementById('csv').addEventListener('click',()=>{const rows=[['Code','Category','Title','Price','Notes']];[...grid.children].forEach(x=>{if(x.style.display==='none')return;rows.push([x.dataset.code,x.dataset.cat,(x.querySelector('h3')||{}).innerText?.replace(/\s*£[\d,]+/,'')||'',x.dataset.price,x.dataset.notes||'']);});const csv=rows.map(r=>r.map(v=>`"${String(v).replace(/"/g,'""')}"`).join(',')).join('\n');const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([csv],{type:'text/csv'}));a.download='rbis-reports.csv';a.click();URL.revokeObjectURL(a.href);});
+</script>
+<script src="assets/header.js"></script>
+</body></html>

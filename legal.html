@@ -1,67 +1,13 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Legal & Policies | RBIS</title>
-<style>
-:root{--ink:#0b1020;--mut:#475569;--line:#e5e7eb;--brand:#4753ff}
-*{box-sizing:border-box}body{margin:0;font:16px/1.55 system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial;color:var(--ink)}
-.banner{background:#fffbeb;border-bottom:1px solid #fcd34d;padding:10px 14px}
-.wrap{max-width:960px;margin:auto;padding:0 16px}
-a{color:var(--brand);text-decoration:none}a:hover{text-decoration:underline}
-nav{position:sticky;top:0;background:#fff;border-bottom:1px solid var(--line);z-index:5}
-.navbar{display:flex;align-items:center;gap:14px;height:56px}
-.brand{font-weight:700}
-.menu{display:flex;gap:14px}.menu a{padding:6px 8px;border-radius:8px;color:#111827}.menu a.active{background:rgba(71,83,255,.08)}
-#toggle{display:none;margin-left:auto;border:1px solid var(--line);background:#fff;border-radius:8px;padding:6px 10px}
-@media(max-width:820px){#toggle{display:block}.menu{display:none;flex-direction:column;padding:8px;border:1px solid var(--line);border-radius:12px;margin:8px 0}.menu.open{display:flex}}
-h2{margin:12px 0 6px}footer{border-top:1px solid var(--line);padding:18px;text-align:center;color:var(--mut)}
-.card{border:1px solid var(--line);border-radius:14px;padding:14px;box-shadow:0 6px 24px rgba(0,0,0,.04)}
-small.mut{color:#475569}
-</style></head><body>
-<div style="background:#FFFBEB;padding:8px;border-bottom:1px solid #FCD34D"><b>Disclosure:</b> RBIS is not a law firm and does not provide legal advice. We analyse only the evidence in front of our intelligence officers, objectively and without bias.</div>
-
-<nav><div class="wrap navbar">
-  <a class="brand" href="/index.html">RBIS</a>
-  <button id="toggle" aria-expanded="false">Menu</button>
-  <div id="menu" class="menu">
-    <a href="/index.html">Home</a><a href="/demo.html">Demo</a><a href="/careers.html">Careers</a><a href="/managed.html">Managed Support</a><a href="/legal.html">Legal</a><a href="/articles/">Articles</a><a href="/about.html">About</a>
-  </div>
-</div></nav>
-
-<main class="wrap" style="padding:18px 0 28px">
-  <h1 style="margin:6px 0 6px">Legal & Policies</h1>
-
-  <section class="card">
-    <h2>Independent Analysis — Not Legal Advice</h2>
-    <p>RBIS UK does not provide legal advice or representation. We act as independent analysts and produce court-ready, evidence-based reports designed to be submitted alongside a solicitor’s work. Our commitment is clarity, integrity, and <b>no bias</b>.</p>
-  </section>
-
-  <section class="card" style="margin-top:12px">
-    <h2>Data & Privacy</h2>
-    <ul>
-      <li>We minimise data collected and retain only what is necessary.</li>
-      <li>We practice least-privilege access and log handling steps for audit.</li>
-      <li>On request we can provide DPIA/ROPA entries and vendor due-diligence notes.</li>
-    </ul>
-    <p><small class="mut">For procurement packs (insurance, security, accessibility statements), email: <a href="mailto:Contact@RBISIntelligence.com?subject=Procurement%20Pack">Contact@RBISIntelligence.com</a></small></p>
-  </section>
-
-  <section class="card" style="margin-top:12px">
-    <h2>Acceptable Use & Conduct</h2>
-    <ul>
-      <li>No attempts to mislead or conceal material facts.</li>
-      <li>No unlawful acquisition of data or breach of confidentiality.</li>
-      <li>We may refuse work where independence or safety is compromised.</li>
-    </ul>
-  </section>
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>RBISUK — Legal & Notices</title><link rel="stylesheet" href="assets/header.css"/>
+</head><body>
+<div id="site-header"></div>
+<section id="hero"><div class="spinny-R">R</div><h1>Legal & Notices</h1><p class="subtle">Plain-English terms, privacy, and cookies.</p></section>
+<main class="container">
+  <div class="card"><h3>Privacy Policy</h3><p class="meta">How we handle data, retention rules, and your rights.</p></div>
+  <div class="card"><h3>Terms of Use</h3><p class="meta">Fair-use, acceptable behaviour, and disclaimers.</p></div>
+  <div class="card"><h3>Cookie Notice</h3><p class="meta">Consent, categories, and opt-out controls.</p></div>
 </main>
-
-<footer>© <span id="y"></span> RBIS Intelligence. <b>Designed &amp; Built by Ryan Roberts | RBIS</b>.</footer>
-
-<script>
-(()=>{const p=location.pathname.split('/').pop()||'index.html';
-const m=document.getElementById('menu'),t=document.getElementById('toggle');
-t.addEventListener('click',()=>{const on=!m.classList.contains('open');m.classList.toggle('open',on);t.setAttribute('aria-expanded',on)});
-m.querySelectorAll('a').forEach(a=>{if(a.getAttribute('href').endsWith(p))a.classList.add('active');a.addEventListener('click',()=>m.classList.remove('open'))});
-addEventListener('resize',()=>{if(innerWidth>820)m.classList.remove('open')});
-document.getElementById('y').textContent=new Date().getFullYear();
-})();
-</script>
+<script src="assets/header.js"></script>
 </body></html>
