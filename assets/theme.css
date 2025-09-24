@@ -30,3 +30,14 @@ header nav a.active,header nav a:hover,header nav summary:hover{background:linea
 
 /* Ensure bright panels everywhere */
 .card,.section,form,input,textarea,select{background:var(--panel,#fff);color:var(--ink,#0f172a)}
+
+/* RBIS spinner */
+.spinny{font-weight:900;font-size:3rem;letter-spacing:.08em;display:inline-block;
+  animation:spin 10s linear infinite;
+  background:linear-gradient(135deg,#4441c7,#6a8a99); /* matte indigo → slate teal */
+  -webkit-background-clip:text; background-clip:text; color:transparent;
+  filter:saturate(.92) contrast(.95)}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* Slightly subtler brand pills */
+:root{--brand:#4441c7;--brand2:#6a8a99}

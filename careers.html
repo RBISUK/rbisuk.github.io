@@ -10,7 +10,7 @@
 <meta name="theme-color" content="#4f46e5">
 <link rel="icon"
 <link rel="apple-touch-icon" href="assets/favicon.svg"> href="assets/favicon.png">
-<link rel="stylesheet" href="assets/theme.css?v=10"> content="width=device-width,initial-scale=1,viewport-fit=cover"/>
+<link rel="stylesheet" href="assets/theme.css?v=11"> content="width=device-width,initial-scale=1,viewport-fit=cover"/>
 <title>RBIS — Careers</title>
 <meta name="description" content="RBIS Careers: join the evidence intelligence movement. Audit-ready, objective, futuristic compliance."/>
 <style>
@@ -54,105 +54,3 @@ footer{background:#0d111d;border-top:1px solid #1a2031;padding:1.2rem;text-align
 <header>
   <nav>
   <a href="index.html">Home</a>
-  <a href="services.html">Services <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="webdev.html">Web & Dev</a>
-    <a href="reports.html">Reports</a>
-    <a href="managed.html">Managed Support</a>
-    <a href="demo.html">Demo</a>
-    <a href="dashboard.html">Dashboard</a>
-    <a class="active" href="careers.html">Careers</a>
-    <a href="legal.html">Legal</a>
-      <a href="services.html">Services & Products</a>
-  </nav>amp; Products</a>
-  <a href="reports.html">Reports</a>
-  <a href="webdev.html">Web <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="webdev.html">Web & Dev</a>
-    <a href="reports.html">Reports</a>
-    <a href="managed.html">Managed Support</a>
-    <a href="demo.html">Demo</a>
-    <a href="dashboard.html">Dashboard</a>
-    <a class="active" href="careers.html">Careers</a>
-    <a href="legal.html">Legal</a>
-      <a href="services.html">Services & Products</a>
-  </nav>amp; Dev</a>
-  <a href="managed.html">Managed</a>
-  <details class="more"><summary>More</summary>
-    <a href="demo.html">Demo</a>
-    <a href="dashboard.html">Dashboard</a>
-    <a class="active" href="careers.html">Careers</a>
-    <a href="about.html">About</a>
-    <a href="legal.html">Legal</a>
-  </details>
-</nav>
-</header>
-
-<section id="hero">
-  <div class="spinny">R</div>
-  <h1>Careers at RBIS</h1>
-  <p class="sub">We’re building the future of evidence intelligence. Join us if you thrive on precision, design, and critical thinking.</p>
-</section>
-
-<section class="section">
-  <h2>Open & Filled Positions</h2>
-  <div class="grid">
-    <div class="card">
-      <h3>Serious Report Intelligence Officer <span class="badge filled">FILLED</span></h3>
-      <p>Lead investigator role focused on assembling high-stakes evidence bundles. Requires rigour, discretion, and courage.</p>
-    </div>
-    <div class="card">
-      <h3>Software Engineer — Evidence Systems <span class="badge open">OPEN</span></h3>
-      <p><b>Salary:</b> £55k–£68k + benefits</p>
-      <p>Design and build the RBIS software stack: intake engines, SLA timers, evidence grids, and board dashboards. This role blends technical precision with compliance-first architecture.</p>
-      <p><b>Requirements:</b> strong JS/TS, Node, and frontend frameworks; appetite for security & auditability; curiosity about housing/compliance domain.</p>
-      <a href="#apply">Apply below →</a>
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <h2 id="apply">Apply Now</h2>
-  <form onsubmit="event.preventDefault();alert('Application submitted! We will contact shortlisted candidates.');this.reset();">
-    <label>Name</label>
-    <input required>
-    <label>Email</label>
-    <input type="email" required>
-    <label>Cover Letter</label>
-    <textarea required></textarea>
-    <button type="submit">Submit Application</button>
-  </form>
-</section>
-
-<section class="section">
-  <h2>Skills Fit Tool</h2>
-  <p>Check your fit for RBIS engineering roles:</p>
-  <div class="skills">
-    <label class="skill"><input type="checkbox" value="JS/TS"> JavaScript / TypeScript</label>
-    <label class="skill"><input type="checkbox" value="Node"> Node.js</label>
-    <label class="skill"><input type="checkbox" value="Frontend"> Frontend Frameworks (React/Vue)</label>
-    <label class="skill"><input type="checkbox" value="Security"> Security & Compliance</label>
-    <label class="skill"><input type="checkbox" value="Data"> Data handling / SQL</label>
-    <label class="skill"><input type="checkbox" value="Critical"> Critical Thinking</label>
-  </div>
-  <button onclick="calcFit()">Calculate Fit</button>
-  <div id="fitOut" class="result">Select your skills to see your match %.</div>
-</section>
-
-<footer>
-  Designed &amp; built by Ryan Roberts | RBIS
-</footer>
-
-<script>
-function calcFit(){
-  const checks=document.querySelectorAll('.skills input:checked').length;
-  const total=document.querySelectorAll('.skills input').length;
-  const pct=Math.round((checks/total)*100);
-  document.getElementById('fitOut').innerText=`Your skills fit: ${pct}%`;
-}
-</script>
-
-</body>
-</html>

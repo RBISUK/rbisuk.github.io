@@ -10,7 +10,7 @@
 <meta name="theme-color" content="#4f46e5">
 <link rel="icon"
 <link rel="apple-touch-icon" href="assets/favicon.svg"> href="assets/favicon.png">
-<link rel="stylesheet" href="assets/theme.css?v=10"> content="width=device-width,initial-scale=1,viewport-fit=cover"/>
+<link rel="stylesheet" href="assets/theme.css?v=11"> content="width=device-width,initial-scale=1,viewport-fit=cover"/>
 <title>RBIS — Dashboard Playground</title>
 <meta name="description" content="RBIS Dashboard Playground: live metrics, board-ready insights, risk simulation.">
 <style>
@@ -47,105 +47,3 @@ footer{background:#0d111d;border-top:1px solid #1a2031;padding:1.2rem;text-align
 <header>
   <nav>
   <a href="index.html">Home</a>
-  <a href="services.html">Services <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="webdev.html">Web & Dev</a>
-    <a href="reports.html">Reports</a>
-    <a href="managed.html">Managed Support</a>
-    <a href="demo.html">Demo</a>
-    <a class="active" href="dashboard.html">Dashboard</a>
-    <a href="careers.html">Careers</a>
-    <a href="legal.html">Legal</a>
-      <a href="services.html">Services & Products</a>
-  </nav>amp; Products</a>
-  <a href="reports.html">Reports</a>
-  <a href="webdev.html">Web <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="webdev.html">Web & Dev</a>
-    <a href="reports.html">Reports</a>
-    <a href="managed.html">Managed Support</a>
-    <a href="demo.html">Demo</a>
-    <a class="active" href="dashboard.html">Dashboard</a>
-    <a href="careers.html">Careers</a>
-    <a href="legal.html">Legal</a>
-      <a href="services.html">Services & Products</a>
-  </nav>amp; Dev</a>
-  <a href="managed.html">Managed</a>
-  <details class="more"><summary>More</summary>
-    <a href="demo.html">Demo</a>
-    <a class="active" href="dashboard.html">Dashboard</a>
-    <a href="careers.html">Careers</a>
-    <a href="about.html">About</a>
-    <a href="legal.html">Legal</a>
-  </details>
-</nav>
-</header>
-
-<section id="hero">
-  <div class="spinny">R</div>
-  <h1>Dashboard Playground</h1>
-  <p class="sub">Move the sliders. Watch your board pack build itself. Evidence-led governance in motion.</p>
-</section>
-
-<section class="section">
-  <div class="grid">
-    <div class="card">
-      <h3>Repair Volume</h3>
-      <label>Cases this month <span class="value" id="vCases">200</span></label>
-      <input type="range" id="cases" min="0" max="500" value="200" oninput="update()">
-    </div>
-    <div class="card">
-      <h3>SLA Compliance</h3>
-      <label>On-time % <span class="value" id="vSLA">85%</span></label>
-      <input type="range" id="sla" min="50" max="100" value="85" oninput="update()">
-    </div>
-    <div class="card">
-      <h3>Complaint Rate</h3>
-      <label>Complaints per 100 cases <span class="value" id="vComp">12</span></label>
-      <input type="range" id="comp" min="0" max="30" value="12" oninput="update()">
-    </div>
-    <div class="card">
-      <h3>Breach Risk</h3>
-      <label>% at risk of statutory breach <span class="value" id="vBreach">8%</span></label>
-      <input type="range" id="breach" min="0" max="50" value="8" oninput="update()">
-    </div>
-  </div>
-
-  <div class="board" id="board">
-    <h3>Board Summary</h3>
-    <p>Drag the sliders to simulate live KPI shifts.</p>
-    <ul id="boardList"></ul>
-  </div>
-</section>
-
-<footer>
-  Designed &amp; built by Ryan Roberts | RBIS
-</footer>
-
-<script>
-function update(){
-  const cases=+document.getElementById('cases').value;
-  const sla=+document.getElementById('sla').value;
-  const comp=+document.getElementById('comp').value;
-  const breach=+document.getElementById('breach').value;
-
-  document.getElementById('vCases').innerText=cases;
-  document.getElementById('vSLA').innerText=sla+"%";
-  document.getElementById('vComp').innerText=comp;
-  document.getElementById('vBreach').innerText=breach+"%";
-
-  const list=document.getElementById('boardList');
-  list.innerHTML=`
-    <li>Total cases this month: <b>${cases}</b></li>
-    <li>SLA compliance: <b>${sla}%</b> (${sla<80?"⚠ Needs escalation":"✓ Within target"})</li>
-    <li>Complaint rate: <b>${comp}</b> per 100 (${comp>20?"⚠ High":"Normal"})</li>
-    <li>Breach risk: <b>${breach}%</b> (${breach>25?"⚠ Critical":"Stable"})</li>
-  `;
-}
-update();
-</script>
-
-</body>
-</html>
