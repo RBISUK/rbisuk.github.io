@@ -93,3 +93,30 @@ header *{pointer-events:auto}
 
 /* rbis no-spin */
 .logo--spin, .spin, [data-spin] { animation: none !important; transform: none !important; }
+
+/* rbis no-spin v2 (focused) */
+[class*="logo"], .logo, .site-logo, .brand, header svg, header img {
+  animation: none !important;
+  transform: none !important;
+}
+/* neuter common keyframes by name if present */
+@keyframes spin { from { transform:none; } to { transform:none; } }
+@keyframes rotate { from { transform:none; } to { transform:none; } }
+
+.rbis-rotor,.logo-spin{animation:none!important;transform:none!important;}
+
+/* rbis no-spin v3 (exact keyframes + inline catches) */
+@keyframes rbis-slow { from { transform:none; } to { transform:none; } }
+@keyframes orbit { from { transform:none; } to { transform:none; } }
+
+/* classes that might be applied */
+.rbis-slow, .orbit, [class*="rbis-slow"], [class*="orbit"] {
+  animation: none !important;
+  transform: none !important;
+}
+
+/* inline styles that reference these names */
+*[style*="rbis-slow"], *[style*="orbit"] {
+  animation: none !important;
+  transform: none !important;
+}
