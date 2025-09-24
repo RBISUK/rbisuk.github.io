@@ -41,3 +41,29 @@ header nav a.active,header nav a:hover,header nav summary:hover{background:linea
 
 /* Slightly subtler brand pills */
 :root{--brand:#4441c7;--brand2:#6a8a99}
+
+/* ==== Ultra polish ==== */
+
+/* Respect motion sensitivity */
+@media (prefers-reduced-motion: reduce){
+  *{animation:none !important; transition:none !important; scroll-behavior:auto !important}
+}
+
+/* Spinner: GPU hint + slower by default (already reduced above) */
+.spinny{will-change:transform; animation-duration:12s}
+
+/* Clear, accessible focus rings */
+:focus-visible{
+  outline:2px solid var(--brand2);
+  outline-offset:3px;
+  border-radius:12px;
+}
+
+/* High-contrast users get crisper edges */
+@media (prefers-contrast: more){
+  .card,.kpi,.ev,.board{box-shadow:none;border-color:#cbd5e1}
+  header nav a, header nav summary{border-color:#94a3b8}
+}
+
+/* Hover vibes that don’t jump layout */
+.card:hover{transform:translateY(-1px); transition:transform .15s ease}
