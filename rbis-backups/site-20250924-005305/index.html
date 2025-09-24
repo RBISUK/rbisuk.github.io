@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>RBIS — Evidence-first software & intelligence</title>
+  <meta name="description" content="Bright, modern, evidence-first sites and audit-ready intelligence. Compliance by design. Receipts by default. Transparent pricing."/>
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml"/>
+  <meta name="theme-color" content="#0B1020"/>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config={theme:{extend:{colors:{brand:{DEFAULT:'#4753FF',dark:'#2F39D7',light:'#EEF1FF'},ink:{DEFAULT:'#0B1020',soft:'#10172A'}},boxShadow:{soft:'0 10px 30px rgba(17,24,39,.08)'}}}};
+  </script>
+  <style>
+    .card{background:#fff;border:1px solid #E5E7EB;border-radius:1rem;box-shadow:0 8px 24px rgba(0,0,0,.06)}
+    .glass{background:rgba(255,255,255,.65);backdrop-filter:saturate(180%) blur(10px)}
+    @keyframes scroll {from{transform:translateX(0)} to{transform:translateX(-50%)}}
+  </style>
+</head>
+<body class="bg-white text-ink antialiased">
+  <!-- Header -->
+  <header class="sticky top-0 z-40 backdrop-blur bg-white/80 border-b border-gray-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <a href="/index.html" class="flex items-center gap-2 font-semibold hover:text-brand" aria-label="RBIS home">
+        <span class="inline-grid place-items-center w-8 h-8 rounded-xl bg-ink text-white font-bold">R</span>RBIS
+      </a>
+      <nav class="hidden md:flex gap-6 text-sm">
+        <a class="hover:text-brand" href="#websites">Websites</a>
+        <a class="hover:text-brand" href="#products">Products</a>
+        <a class="hover:text-brand" href="#dashboard">Live Dashboard</a>
+        <a class="hover:text-brand" href="#reports">Reports</a>
+        <a class="hover:text-brand" href="/careers.html">Careers</a>
+        <a class="hover:text-brand" href="/demo.html">Demo</a>
+        <a class="hover:text-brand" href="/legal.html">Legal</a>
+        <a class="inline-flex items-center rounded-lg bg-brand px-3 py-1.5 text-white hover:bg-brand-dark" href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- Hero -->
+    <section class="bg-gradient-to-b from-brand.light to-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 text-center">
+        <span class="inline-flex items-center gap-2 text-xs font-semibold uppercase text-brand bg-brand/10 px-3 py-1 rounded-full ring-1 ring-brand/20">Transparent pricing • Evidence by default</span>
+        <h1 class="mt-4 text-4xl sm:text-6xl font-black tracking-tight">Bright, modern, <span class="text-brand">audit-ready</span> software</h1>
+        <p class="mt-4 text-lg sm:text-xl text-gray-700">Websites and platforms that show their working: receipts, logs, and board-ready exports. Minimal data. Built for scrutiny.</p>
+        <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
+          <a href="#websites" class="inline-flex items-center rounded-xl bg-brand px-6 py-3 text-white font-semibold hover:bg-brand-dark shadow-soft">Compare Packages</a>
+          <a href="#reports" class="inline-flex items-center rounded-xl border border-gray-300 px-6 py-3 font-semibold hover:bg-gray-100">Evidence Reports</a>
+        </div>
+        <!-- Mini trust row -->
+        <div class="mt-10 grid grid-cols-2 md:grid-cols-4 gap-3 text-sm text-gray-700">
+          <div class="glass rounded-xl px-3 py-2 ring-1 ring-white/50">Receipts by default</div>
+          <div class="glass rounded-xl px-3 py-2 ring-1 ring-white/50">WCAG-aware patterns</div>
+          <div class="glass rounded-xl px-3 py-2 ring-1 ring-white/50">Consent & retention hooks</div>
+          <div class="glass rounded-xl px-3 py-2 ring-1 ring-white/50">Board-ready exports</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Packages -->
+    <section id="websites" class="py-16 bg-white scroll-mt-24">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-3">Websites & Platforms — Transparent Packages</h2>
+        <p class="text-center text-gray-600 mb-10">Choose <strong>Standard</strong> or <strong>Premium</strong> (with light “robot” monitoring). Prices ex-VAT.</p>
+        <div class="grid gap-6 grid-cols-1 lg:grid-cols-2">
+          <article class="card p-6">
+            <div class="flex items-start justify-between"><h3 class="text-xl font-semibold">Foundation Site</h3><span class="text-xs rounded-full bg-brand/10 text-brand px-2 py-1">~7 days</span></div>
+            <p class="mt-2 text-sm text-gray-700">3–5 pages • SSL • basic SEO • contact form</p>
+            <div class="mt-4 grid sm:grid-cols-2 gap-3">
+              <div class="rounded-xl border p-4"><div class="text-sm text-gray-500">Standard</div><div class="text-2xl font-bold">£3,500</div></div>
+              <div class="rounded-xl border p-4"><div class="text-sm text-gray-500">Premium</div><div class="text-2xl font-bold">£4,500</div><p class="text-xs text-gray-600 mt-1">Uptime robot + basic SEO alerts</p></div>
+            </div>
+            <div class="mt-4 flex gap-2"><a href="#contact" class="inline-flex items-center rounded-xl bg-brand px-3 py-2 text-white text-sm hover:bg-brand-dark">Start</a></div>
+          </article>
+          <article class="card p-6">
+            <div class="flex items-start justify-between"><h3 class="text-xl font-semibold">Compliance-Ready Site</h3><span class="text-xs rounded-full bg-brand/10 text-brand px-2 py-1">~10–15 days</span></div>
+            <p class="mt-2 text-sm text-gray-700">GDPR/PECR • cookie banner/policy • audited forms • WCAG baseline</p>
+            <div class="mt-4 grid sm:grid-cols-2 gap-3">
+              <div class="rounded-xl border p-4"><div class="text-sm text-gray-500">Standard</div><div class="text-2xl font-bold">£5,500</div></div>
+              <div class="rounded-xl border p-4"><div class="text-sm text-gray-500">Premium</div><div class="text-2xl font-bold">£7,000</div><p class="text-xs text-gray-600 mt-1">Consent drift watch + scans</p></div>
+            </div>
+            <div class="mt-4 flex gap-2"><a href="#contact" class="inline-flex items-center rounded-xl bg-brand px-3 py-2 text-white text-sm hover:bg-brand-dark">Start</a></div>
+          </article>
+        </div>
+        <div class="max-w-4xl mx-auto mt-8 text-sm text-gray-800 card p-5">
+          <p><strong>Support & Monitoring — £250/month</strong>, cancellable monthly. Major amendments via <strong>£50/hour</strong> scoped plan. Prices ex-VAT.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Products (concise) -->
+    <section id="products" class="py-16 bg-gradient-to-b from-white to-brand.light scroll-mt-24">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-3">Products & Services</h2>
+        <p class="text-center text-gray-600 mb-10">Configurable modules with <strong>receipts by default</strong>. Minimal data. Audit-ready exports.</p>
+        <div class="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+          <article class="card p-6"><h3 class="text-xl font-semibold">Veridex Funnel</h3><p class="text-sm text-gray-600">Guided, compliant capture with audit trails.</p><a href="/demo.html#lead-demo" class="mt-4 inline-flex items-center rounded-lg bg-brand px-3 py-2 text-white text-sm hover:bg-brand-dark">Try demo</a></article>
+          <article class="card p-6"><h3 class="text-xl font-semibold">RBIS Dashboard</h3><p class="text-sm text-gray-600">Risk heatmaps, SLA timers, board exports.</p><a href="#dashboard" class="mt-4 inline-flex items-center rounded-lg border px-3 py-2 text-sm hover:bg-gray-50">See below</a></article>
+          <article class="card p-6"><h3 class="text-xl font-semibold">PACT Ledger</h3><p class="text-sm text-gray-600">Promises with timers and evidence.</p><a href="/demo.html#pact" class="mt-4 inline-flex items-center rounded-lg border px-3 py-2 text-sm hover:bg-gray-50">View model</a></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Dashboard (demo only) -->
+    <section id="dashboard" class="py-16 bg-white scroll-mt-24">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between"><h2 class="text-3xl md:text-4xl font-bold">RBIS Intelligence Dashboard</h2><button id="refreshDash" class="inline-flex items-center rounded-xl border px-3 py-2 text-sm hover:bg-gray-50">Refresh demo data</button></div>
+        <p class="text-gray-600 mt-2 mb-8">Real-time posture for UK organisations (demo data; no network).</p>
+        <div class="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
+          <div class="card p-5"><div class="text-xs uppercase text-gray-500">UK Legal Watch</div><div class="mt-2 text-3xl font-bold"><span id="ukLegalCount">—</span></div></div>
+          <div class="card p-5"><div class="text-xs uppercase text-gray-500">ICO Signals</div><div class="mt-2 text-3xl font-bold"><span id="icoEnf">—</span></div></div>
+          <div class="card p-5"><div class="text-xs uppercase text-gray-500">Ombudsman Activity</div><div class="mt-2 text-3xl font-bold"><span id="ombCases">—</span></div></div>
+          <div class="card p-5"><div class="text-xs uppercase text-gray-500">Repairs SLA Health</div><div class="mt-2 text-3xl font-bold"><span id="slaHealth">—%</span></div></div>
+        </div>
+        <div class="mt-6 grid gap-6 grid-cols-1 lg:grid-cols-2">
+          <div class="card p-6"><h3 class="text-lg font-semibold">Risk Heatmap (demo)</h3>
+            <div class="mt-4 grid grid-cols-3 gap-3 text-sm">
+              <div class="rounded-xl p-4 text-center bg-red-50 border border-red-100"><div class="text-xs text-red-700">High</div><div class="text-2xl font-bold" id="riskHigh">—</div></div>
+              <div class="rounded-xl p-4 text-center bg-amber-50 border border-amber-100"><div class="text-xs text-amber-700">Medium</div><div class="text-2xl font-bold" id="riskMed">—</div></div>
+              <div class="rounded-xl p-4 text-center bg-emerald-50 border border-emerald-100"><div class="text-xs text-emerald-700">Low</div><div class="text-2xl font-bold" id="riskLow">—</div></div>
+            </div>
+            <p class="mt-3 text-xs text-gray-600">Scored from case mix, breach timers, and sentiment (simulated).</p>
+          </div>
+          <div class="card p-6"><h3 class="text-lg font-semibold">Board-ready Export</h3><p class="text-sm text-gray-700">One click to generate a sample pack (placeholder).</p><button class="mt-4 inline-flex items-center rounded-xl bg-brand px-3 py-2 text-white text-sm hover:bg-brand-dark">Generate sample</button></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Reports (smart table) -->
+    <section id="reports" class="py-16 bg-gradient-to-b from-white to-gray-50 scroll-mt-24">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-3">Professional Evidence Reports — Fixed Pricing</h2>
+        <p class="text-center text-gray-600 mb-8">Factual documentation, not legal advice. Prices ex-VAT.</p>
+        <div class="card p-6 overflow-x-auto">
+          <table class="min-w-full text-sm">
+            <thead class="text-left text-gray-500">
+              <tr><th class="py-2 pr-4">Code</th><th class="py-2 pr-4">Report</th><th class="py-2 pr-4">Price</th><th class="py-2 pr-4">Rush</th><th class="py-2">Notes</th></tr>
+            </thead>
+            <tbody class="align-top">
+              <tr><td class="py-2 pr-4">A1</td><td class="py-2 pr-4">Disrepair Evidence Pack</td><td class="py-2 pr-4 font-semibold">£950</td><td class="py-2 pr-4">Y</td><td class="py-2">Factual only</td></tr>
+              <tr><td class="py-2 pr-4">B3</td><td class="py-2 pr-4">Ombudsman Referral Bundle</td><td class="py-2 pr-4 font-semibold">£1,400</td><td class="py-2 pr-4">Y</td><td class="py-2">Cross-referenced evidence</td></tr>
+              <tr><td class="py-2 pr-4">C3</td><td class="py-2 pr-4">PECR Cookie Audit</td><td class="py-2 pr-4 font-semibold">£950</td><td class="py-2 pr-4">Y</td><td class="py-2">Consent mode</td></tr>
+              <tr><td class="py-2 pr-4">D1</td><td class="py-2 pr-4">Accessibility Audit (WCAG 2.2 AA)</td><td class="py-2 pr-4 font-semibold">£2,200</td><td class="py-2 pr-4">Y</td><td class="py-2">Issues + re-test plan</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- About (deeper) -->
+    <section id="about" class="py-16 bg-white scroll-mt-24">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-6">About RBIS</h2>
+        <div class="card p-6 text-gray-800">
+          <p class="mb-3"><strong>RBIS (Ryan Roberts: Behavioural & Intelligence Services)</strong> builds bright, modern, evidence-first software — with guardrailed automations and audit-ready reporting. Compliance isn’t a bolt-on; it’s the architecture.</p>
+          <ul class="list-disc list-inside text-sm text-gray-700 space-y-1">
+            <li>Accessibility-first patterns; clean semantics</li>
+            <li>Claims discipline (ASA/CAP) and SRA/FCA-safe marketing</li>
+            <li>Evidence packs, chain-of-custody notes, and board summaries</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Reviews -->
+    <section id="reviews" class="py-16 bg-gradient-to-b from-white to-gray-50">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-6">What people say</h2>
+        <div class="relative overflow-hidden">
+          <div class="flex gap-4 animate-[scroll_35s_linear_infinite] will-change-transform" aria-hidden="true" style="animation:scroll 35s linear infinite">
+            <div class="flex gap-4">
+              <figure class="min-w-[300px] card p-4"><blockquote class="text-sm text-gray-800">“Warm team, serious work. The packs made decisions easy.”</blockquote><figcaption class="mt-2 text-xs text-gray-500">Director, Housing Association</figcaption></figure>
+              <figure class="min-w-[300px] card p-4"><blockquote class="text-sm text-gray-800">“Calm UX, regulator-friendly outputs.”</blockquote><figcaption class="mt-2 text-xs text-gray-500">COO, Public Sector</figcaption></figure>
+              <figure class="min-w-[300px] card p-4"><blockquote class="text-sm text-gray-800">“Design that understands evidence.”</blockquote><figcaption class="mt-2 text-xs text-gray-500">Partner, Law Firm</figcaption></figure>
+            </div>
+            <div class="flex gap-4" aria-hidden="true">
+              <figure class="min-w-[300px] card p-4"><blockquote class="text-sm text-gray-800">“Warm team, serious work. The packs made decisions easy.”</blockquote><figcaption class="mt-2 text-xs text-gray-500">Director, Housing Association</figcaption></figure>
+              <figure class="min-w-[300px] card p-4"><blockquote class="text-sm text-gray-800">“Calm UX, regulator-friendly outputs.”</blockquote><figcaption class="mt-2 text-xs text-gray-500">COO, Public Sector</figcaption></figure>
+              <figure class="min-w-[300px] card p-4"><blockquote class="text-sm text-gray-800">“Design that understands evidence.”</blockquote><figcaption class="mt-2 text-xs text-gray-500">Partner, Law Firm</figcaption></figure>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="py-16 bg-white scroll-mt-24">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-6">Start a Project</h2>
+        <form id="contactForm" class="card p-6 grid gap-4" novalidate>
+          <div><label for="name" class="block text-sm font-medium text-gray-700">Your name</label><input id="name" name="name" type="text" required class="mt-1 w-full rounded-xl border-gray-300 focus:border-brand focus:ring-brand" autocomplete="name"></div>
+          <div><label for="email" class="block text-sm font-medium text-gray-700">Email</label><input id="email" name="email" type="email" required class="mt-1 w-full rounded-xl border-gray-300 focus:border-brand focus:ring-brand" autocomplete="email"></div>
+          <div><label for="package" class="block text-sm font-medium text-gray-700">Package / interest</label>
+            <select id="package" name="package" class="mt-1 w-full rounded-xl border-gray-300 focus:border-brand focus:ring-brand">
+              <option>Foundation Site</option><option>Compliance-Ready Site</option><option>Growth Site</option><option>Audit-Ready Pro Site</option><option>Vision Build</option>
+              <option>Veridex Funnel</option><option>RBIS Dashboard</option><option>PACT Ledger</option><option>Training & Advisory</option><option>Evidence Reports</option>
+            </select></div>
+          <div><label for="message" class="block text-sm font-medium text-gray-700">Brief</label><textarea id="message" name="message" rows="5" class="mt-1 w-full rounded-xl border-gray-300 focus:border-brand focus:ring-brand" placeholder="Goals, deadlines, constraints…"></textarea></div>
+          <div class="flex items-center gap-2 text-xs text-gray-600"><input id="consent" name="consent" type="checkbox" required class="rounded border-gray-300 text-brand focus:ring-brand"><label for="consent">I agree to be contacted for this enquiry. Minimal data policy applies.</label></div>
+          <div class="flex gap-3"><button type="submit" class="inline-flex items-center rounded-xl bg-brand px-4 py-2 text-white font-semibold hover:bg-brand-dark">Send enquiry</button><button type="reset" class="inline-flex items-center rounded-xl border px-4 py-2 font-semibold hover:bg-gray-100">Reset</button></div>
+          <p id="formStatus" class="text-sm text-gray-600" role="status" aria-live="polite"></p>
+        </form>
+        <p class="mt-4 text-xs text-center text-gray-500">VIP / Government: <a class="underline" href="mailto:Confidential@RBISIntelligence.com">Confidential@RBISIntelligence.com</a></p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 text-sm text-gray-600">
+      <p>© <span id="year"></span> RBIS Intelligence. Designed &amp; Built by Ryan Roberts | RBIS.</p>
+    </div>
+  </footer>
+
+  <!-- Scripts (demo-only, no network) -->
+  <script>
+    document.getElementById('year').textContent=new Date().getFullYear();
+
+    // Dashboard demo numbers
+    function rnd(min,max){return Math.floor(Math.random()*(max-min+1))+min}
+    function refreshDash(){
+      (id=>document.getElementById(id).textContent=rnd(6,18))('ukLegalCount');
+      (id=>document.getElementById(id).textContent=rnd(2,9))('icoEnf');
+      (id=>document.getElementById(id).textContent=rnd(12,28))('ombCases');
+      (id=>document.getElementById(id).textContent=rnd(72,96)+'%')('slaHealth');
+      (id=>document.getElementById(id).textContent=rnd(2,6))('riskHigh');
+      (id=>document.getElementById(id).textContent=rnd(6,14))('riskMed');
+      (id=>document.getElementById(id).textContent=rnd(12,22))('riskLow');
+    }
+    document.getElementById('refreshDash')?.addEventListener('click',refreshDash); refreshDash();
+
+    // Contact form (local-only)
+    const contactForm=document.getElementById('contactForm'); const formStatus=document.getElementById('formStatus');
+    contactForm?.addEventListener('submit',(e)=>{e.preventDefault(); const fd=new FormData(contactForm);
+      if(!fd.get('name')||!fd.get('email')||!fd.get('consent')){formStatus.textContent='Please complete required fields and consent.';formStatus.className='text-sm text-red-600';return;}
+      formStatus.textContent='Saved locally. We will contact you shortly.';formStatus.className='text-sm text-emerald-700';
+      try{localStorage.setItem('rbis-contact-'+Date.now(),JSON.stringify(Object.fromEntries(fd.entries())));}catch{}
+      contactForm.reset();
+    });
+  </script>
+</body>
+</html>

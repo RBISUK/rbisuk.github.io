@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>RBIS Demo — Live Examples</title>
+  <meta name="description" content="Live, client-safe demos of RBIS modules: lead intake, PACT ledger, and more. All client-side; no external calls."/>
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml"/>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config={theme:{extend:{colors:{brand:{DEFAULT:'#4753FF',dark:'#2F39D7',light:'#EEF1FF'},ink:{DEFAULT:'#0B1020'}}}}}</script>
+  <style>.card{background:#fff;border:1px solid #E5E7EB;border-radius:1rem;box-shadow:0 8px 24px rgba(0,0,0,.06)}</style>
+</head>
+<body class="bg-white text-ink antialiased">
+  <header class="sticky top-0 z-40 backdrop-blur bg-white/80 border-b">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <a href="/index.html" class="flex items-center gap-2 font-semibold hover:text-brand"><span class="inline-grid place-items-center w-8 h-8 rounded-xl bg-ink text-white font-bold">R</span>RBIS</a>
+      <nav class="hidden md:flex gap-6 text-sm">
+        <a class="hover:text-brand" href="/index.html#products">Products</a>
+        <a class="hover:text-brand" href="/careers.html">Careers</a>
+        <a class="hover:text-brand" href="/legal.html">Legal</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="bg-gradient-to-b from-brand.light to-white">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16 text-center">
+        <h1 class="text-4xl md:text-5xl font-black tracking-tight">Demo: “Show your working”</h1>
+        <p class="mt-3 text-gray-700">Click around. Everything here is <strong>HTML-only</strong>, client-side, and safe to screen-share.</p>
+      </div>
+    </section>
+
+    <!-- Lead-gen Assistant (chat-style) -->
+    <section id="lead-demo" class="py-12">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 card p-6">
+        <h2 class="text-2xl font-semibold">Lead Assistant (Demo)</h2>
+        <p class="text-sm text-gray-600">Conversational flow with simple gating. No network calls; data stored locally for the demo.</p>
+        <div id="chat" class="mt-4 space-y-3 text-sm"></div>
+        <div class="mt-4 flex gap-2">
+          <input id="chatInput" class="flex-1 rounded-xl border-gray-300" placeholder="Type or click suggested…"/>
+          <button id="chatSend" class="rounded-xl bg-brand px-4 py-2 text-white">Send</button>
+        </div>
+        <p id="chatStatus" class="text-xs text-gray-500 mt-2" aria-live="polite"></p>
+      </div>
+    </section>
+
+    <!-- PACT Ledger (promise objects) -->
+    <section id="pact" class="py-12 bg-gray-50">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 card p-6">
+        <h2 class="text-2xl font-semibold">PACT Ledger (Demo)</h2>
+        <p class="text-sm text-gray-600">Promises with timers and evidence links. Useful for procurement, ops, and settlements.</p>
+        <div class="mt-4 overflow-x-auto">
+          <table class="min-w-full text-sm">
+            <thead class="text-left text-gray-500"><tr><th class="py-2 pr-4">Promise</th><th class="py-2 pr-4">Owner</th><th class="py-2 pr-4">Due</th><th class="py-2 pr-4">Status</th><th class="py-2 pr-4">Evidence</th></tr></thead>
+            <tbody>
+              <tr><td class="py-2 pr-4">Repair visit scheduled</td><td class="py-2 pr-4">Repairs Team</td><td class="py-2 pr-4">+3d</td><td class="py-2 pr-4">Pending</td><td class="py-2 pr-4"><button class="rounded border px-2 py-1">Open</button></td></tr>
+              <tr><td class="py-2 pr-4">Follow-up call</td><td class="py-2 pr-4">Customer Care</td><td class="py-2 pr-4">+1d</td><td class="py-2 pr-4">Done</td><td class="py-2 pr-4"><button class="rounded border px-2 py-1">Open</button></td></tr>
+              <tr><td class="py-2 pr-4">Compensation review</td><td class="py-2 pr-4">Ops</td><td class="py-2 pr-4">+7d</td><td class="py-2 pr-4">In review</td><td class="py-2 pr-4"><button class="rounded border px-2 py-1">Open</button></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="mt-3 text-xs text-gray-500">Demo data only; no personal info, no external calls.</p>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="py-12">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 card p-6">
+        <h2 class="text-2xl font-semibold">Book a walkthrough</h2>
+        <p class="text-sm text-gray-600">Email <a class="underline" href="mailto:Contact@RBISIntelligence.com">Contact@RBISIntelligence.com</a> — subject: “Demo”.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 text-sm text-gray-600">
+      <p>© <span id="year"></span> RBIS Intelligence. Designed &amp; Built by Ryan Roberts | RBIS.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent=new Date().getFullYear();
+
+    // Tiny chat demo (local only)
+    const chat=document.getElementById('chat'), input=document.getElementById('chatInput'), send=document.getElementById('chatSend'), status=document.getElementById('chatStatus');
+    const steps=[
+      {q:'Are you the tenant?', opts:['Yes','No (with tenant)','No'], gate:(a)=>a!=='No'},
+      {q:'Any rent arrears?', opts:['No','Under £999','£1000 or more'], gate:(a)=>a!=='£1000 or more'},
+      {q:'Who is the landlord?', opts:['Council','Housing Association','Private'], gate:()=>true},
+      {q:'When did you last report the problem?', opts:['Within 3 months','Over 3 months'], gate:(a)=>a==='Within 3 months'},
+      {q:'Location check: England or Wales?', opts:['Yes','No'], gate:(a)=>a==='Yes'},
+      {q:'Great — add your email to get a sample summary (demo).', input:true}
+    ];
+    let i=0, store={};
+    function bubble(text, role='sys'){
+      const el=document.createElement('div'); el.className=role==='sys'?'text-gray-800':'text-gray-700';
+      el.innerHTML=`<div class="rounded-xl ${role==='sys'?'bg-gray-50':'bg-brand text-white'} px-3 py-2 inline-block max-w-[90%]">${text}</div>`;
+      chat.appendChild(el); chat.scrollTop=chat.scrollHeight;
+    }
+    function renderStep(){
+      const s=steps[i]; if(!s)return finish();
+      let html = `<strong>${s.q}</strong>`;
+      if(s.opts){ html += '<div class="mt-2 flex flex-wrap gap-2">'+s.opts.map(o=>`<button class="opt rounded-xl border px-3 py-1">${o}</button>`).join('')+'</div>'; }
+      if(s.input){ html += '<div class="mt-2"><input id="leadEmail" type="email" class="rounded-xl border-gray-300" placeholder="you@example.com"></div>'; }
+      bubble(html);
+    }
+    function finish(){
+      bubble('Demo complete. Data is stored locally only.', 'sys');
+      status.textContent='Saved locally for demo.';
+      try{localStorage.setItem('rbis-demo-'+Date.now(), JSON.stringify(store));}catch{}
+    }
+    chat.addEventListener('click',(e)=>{
+      if(e.target.classList.contains('opt')){
+        const a=e.target.textContent; const s=steps[i];
+        store['step'+i]=a; if(!s.gate(a)){ bubble('This path is paused in the demo. Thanks.', 'sys'); return finish(); }
+        i++; renderStep();
+      }
+    });
+    send.addEventListener('click',()=>{
+      if(steps[i]?.input){
+        const em=document.getElementById('leadEmail'); if(!em.value){status.textContent='Enter an email for the demo.';return;}
+        store['email']=em.value; i++; renderStep();
+      } else {
+        const val=input.value.trim(); if(!val) return; bubble(val,'usr'); input.value='';
+      }
+    });
+    // boot
+    bubble('Welcome to the RBIS lead assistant (demo).','sys'); renderStep();
+  </script>
+</body>
+</html>
