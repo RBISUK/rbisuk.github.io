@@ -1,0 +1,27 @@
+# root pages
+index.html
+services.html
+reports.html
+webdev.html
+managed.html
+demo.html
+dashboard.html
+careers.html
+about.html
+legal.html
+privacy.html
+terms.html
+cookies.html
+contact.html
+claim-fix-ai.html
+copilot.html
+omniassist.html
+404.html
+robots.txt
+sitemap.xml
+
+# assets
+assets/theme.css
+assets/active-nav.js
+assets/favicon.svg
+assets/favicon.png

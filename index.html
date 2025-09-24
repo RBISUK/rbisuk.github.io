@@ -1,61 +1,87 @@
 <!DOCTYPE html><html lang="en"><head>
-<title>RBIS — Evidence Intelligence</title>
-<meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
+<meta charset="utf-8"/>
+<title>RBIS — Audit-Ready Behavioural & Intelligence Services</title>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
 <meta name="theme-color" content="#4f46e5"/>
-<link rel="icon" type="image/svg+xml" href="assets/favicon.svg"><link rel="icon" type="image/png" href="assets/favicon.png"><link rel="apple-touch-icon" href="assets/favicon.png">
-<link rel="stylesheet" href="assets/theme.css?v=20">
-</head><body>
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/favicon.png">
+<link rel="stylesheet" href="assets/theme.css">
+</head>
+<body>
 <div class="disclosure"><b>Disclosure:</b> RBIS is not a law firm and does not provide legal advice. We analyse only the evidence in front of our intelligence officers, objectively and without bias.</div>
+
 <header class="nav"><nav>
-  <a href="index.html">Home</a><a href="services.html">Services &amp; Products</a><a href="reports.html">Reports</a><a href="webdev.html">Web &amp; Dev</a><a href="managed.html">Managed</a><a href="demo.html">Demo</a><a href="dashboard.html">Dashboard</a><a href="careers.html">Careers</a><a href="about.html">About</a><a href="legal.html">Legal</a>
+  <a href="index.html">Home</a>
+  <a href="services.html">Services &amp; Products</a>
+  <a href="reports.html">Reports</a>
+  <a href="webdev.html">Web &amp; Dev</a>
+  <a href="managed.html">Managed</a>
+  <a href="demo.html">Demo</a>
+  <a href="dashboard.html">Dashboard</a>
+  <a href="careers.html">Careers</a>
+  <a href="about.html">About</a>
+  <a href="legal.html">Legal</a>
+  <a href="contact.html">Contact</a>
 </nav></header>
 
-<section class="hero section" style="text-align:center">
-  <div class="spinny">RBIS</div>
-  <h1>The Future of Evidence Intelligence</h1>
-  <p>Audit-ready. Magical. Built with an intelligence officer’s mindset: precision, objectivity, foresight.</p>
-  <p>
-    <a class="btn brand" href="reports.html">Explore Reports</a>
-    <a class="btn" href="demo.html">Try the Demo</a>
-    <a class="btn" href="careers.html">Careers</a>
+<section class="section center" id="hero">
+  <div class="orbit" aria-hidden="true"><div class="core">RBIS</div><div class="ring"></div></div>
+  <h1>Audit-ready AI for housing, compliance &amp; operations</h1>
+  <p style="max-width:780px;margin:.4rem auto 0" class="small">
+    We turn messy threads into <b>board-ready</b> and <b>court-ready</b> clarity: objective evidence, SLA timers that escalate, and exports that stand up.
   </p>
-  <div class="card" style="margin-top:1rem">
-    <label>Deep Site Search</label>
-    <input class="input" id="q" placeholder="Search reports, demos, careers..." oninput="liveSearch(this.value)">
-    <div id="searchOut" style="margin-top:.6rem;font-size:.95rem;color:#334155"></div>
+  <div style="margin-top:1rem;display:flex;gap:.6rem;flex-wrap:wrap;justify-content:center">
+    <a class="btn" href="services.html">Explore Services</a>
+    <a class="btn secondary" href="reports.html">Browse Reports</a>
+    <a class="btn" href="demo.html">Try the Demo</a>
   </div>
 </section>
 
-<section class="section grid cols-3">
-  <div class="card">
-    <h3>CPL & ROI Calculator</h3>
-    <label>Ad Spend (£)</label><input id="spend" class="input" type="number" value="5000">
-    <label>Leads</label><input id="leads" class="input" type="number" value="200">
-    <label>Conversions</label><input id="conv" class="input" type="number" value="20">
-    <label>Average Deal Value (£)</label><input id="adv" class="input" type="number" value="1500">
-    <p class="result" id="cplOut">CPL: £—</p><p class="result" id="roiOut">ROI: —%</p>
-    <button class="btn brand" onclick="calc()">Calculate</button>
-  </div>
-  <div class="card">
-    <h3>Why RBIS?</h3>
-    <ul>
-      <li><b>Evidence over opinion:</b> chain-of-custody, IDs, timestamps.</li>
-      <li><b>Timers that escalate:</b> SLA clocks build the pack while they tick.</li>
-      <li><b>Export on demand:</b> CSV/PDF, board brief or court bundle.</li>
-    </ul>
-  </div>
-  <div class="card">
-    <h3>Popular paths</h3>
-    <p><a href="services.html">Services &amp; Products</a> · <a href="reports.html">Professional Reports</a> · <a href="managed.html">Managed Support</a></p>
+<section class="section">
+  <h2 class="center">Interactive preview</h2>
+  <div class="card" style="max-width:860px;margin:0 auto">
+    <ol id="preview" class="board" style="padding-left:1.1rem">
+      <li><b>Intake:</b> paste email/thread → IDs, timestamps, parties.</li>
+      <li style="display:none"><b>Analyse:</b> contradictions flagged; language shifts noted.</li>
+      <li style="display:none"><b>Export:</b> index + chronology + exhibits (PDF/CSV).</li>
+    </ol>
+    <div style="display:flex;gap:.6rem;flex-wrap:wrap">
+      <button class="btn" id="nextStep">Run next step →</button>
+      <a class="btn secondary" href="demo.html">Open full demo</a>
+    </div>
   </div>
 </section>
 
-<footer>Designed &amp; built by Ryan Roberts | RBIS<div class="foot-links"><a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · <a href="cookies.html">Cookies</a></div></footer>
+<section class="section">
+  <div class="grid">
+    <a class="card" href="services.html"><h3>Services &amp; Products</h3><p>Claim-Fix-AI Funnel, Repairs &amp; Compliance Copilot, OmniAssist + add-ons.</p></a>
+    <a class="card" href="reports.html"><h3>Professional Reports</h3><p>Fixed-price, evidence-based packs across housing, data, ops.</p></a>
+    <a class="card" href="dashboard.html"><h3>Live Dashboard</h3><p>Risk map, SLA timers, one-click exports.</p></a>
+  </div>
+</section>
+
+<section class="section" aria-label="Social proof">
+  <h2>Trusted where credibility matters</h2>
+  <div class="grid">
+    <div class="card"><h3>Housing Providers</h3><p>Resolve damp/mould, repairs and complaint escalations with clean audit trails.</p></div>
+    <div class="card"><h3>Law Firms</h3><p>Independent analysis, timelines, and communication forensics.</p></div>
+    <div class="card"><h3>Councils</h3><p>Impartial reviews with transparent evidence handling and exports.</p></div>
+    <div class="card"><h3>Corporate HR</h3><p>Behavioural signals in sensitive comms and dispute de-risking.</p></div>
+  </div>
+</section>
+
+<footer>Designed &amp; built by Ryan Roberts | RBIS
+  <div class="foot-links"><a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · <a href="cookies.html">Cookies</a></div>
+</footer>
 
 <script src="assets/active-nav.js"></script>
 <script>
-function calc(){var s=+spend.value||0,l=+leads.value||1,c=+conv.value||0,v=+adv.value||0;var cpl=l?Math.round((s/l)*100)/100:0;var rev=c*v;var roi=s?Math.round(((rev-s)/s)*100):0;cplOut.textContent='CPL: £'+cpl.toFixed(2);roiOut.textContent='ROI: '+roi+'%';}
-function liveSearch(t){var links=[['reports.html','Reports'],['webdev.html','Web & Dev'],['managed.html','Managed'],['demo.html','Demo'],['dashboard.html','Dashboard'],['careers.html','Careers'],['services.html','Services & Products'],['about.html','About'],['legal.html','Legal']];t=t.toLowerCase();var out=links.filter(x=>x[1].toLowerCase().includes(t)||x[0].includes(t)).map(x=>'<span class="badge"><a href="'+x[0]+'">'+x[1]+'</a></span>').join(' ');searchOut.innerHTML=out||'<span class="muted">No matches.</span>';}
-calc();
+(function(){
+  var i=0, steps=document.querySelectorAll('#preview li'), btn=document.getElementById('nextStep');
+  btn.addEventListener('click', function(){
+    if(i<steps.length-1){ i++; steps[i].style.display='list-item'; if(i===steps.length-1){ btn.disabled=true; btn.textContent="Preview complete"; } }
+  });
+})();
 </script>
 </body></html>

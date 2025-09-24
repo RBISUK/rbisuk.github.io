@@ -1,7 +1,0 @@
-Contact: mailto:security@rbisintelligence.com
-Contact: https://www.rbisintelligence.com/contact.html
-Policy:  https://www.rbisintelligence.com/trust/security/overview.html
-Preferred-Languages: en
-Expires: 2030-01-01T00:00:00Z
-Encryption: https://keys.openpgp.org/
-Canonical: https://www.rbisintelligence.com/.well-known/security.txt
