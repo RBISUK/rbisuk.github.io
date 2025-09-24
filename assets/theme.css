@@ -70,3 +70,8 @@ header nav a.active,header nav a:hover,header nav summary:hover{background:linea
 
 /* Hover vibes that don’t jump layout */
 .card:hover{transform:translateY(-1px); transition:transform .15s ease}
+
+/* clickability guard */
+a, button, summary { pointer-events:auto }
+header, .disclosure, main, footer, .section { position:relative; z-index:auto }
+.more[open]{ position:relative; z-index:20 } /* dropdown above, not over */
