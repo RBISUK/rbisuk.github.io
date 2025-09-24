@@ -1,12 +1,20 @@
-<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>https://rbisuk.github.io/index.html</loc></url>
-<url><loc>https://rbisuk.github.io/about.html</loc></url>
-<url><loc>https://rbisuk.github.io/webdev.html</loc></url>
-<url><loc>https://rbisuk.github.io/reports.html</loc></url>
-<url><loc>https://rbisuk.github.io/managed.html</loc></url>
-<url><loc>https://rbisuk.github.io/demo.html</loc></url>
-<url><loc>https://rbisuk.github.io/dashboard.html</loc></url>
-<url><loc>https://rbisuk.github.io/careers.html</loc></url>
-<url><loc>https://rbisuk.github.io/legal.html</loc></url>
-<url><loc>https://rbisuk.github.io/privacy.html</loc></url>
-<url><loc>https://rbisuk.github.io/terms.html</loc></url>
-<url><loc>https://rbisuk.github.io/cookies.html</loc></url><url><loc>https://rbisuk.github.io/services.html</loc></url></urlset>
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://rbisuk.github.io/404.html</loc></url>
+  <url><loc>https://rbisuk.github.io/about.html</loc></url>
+  <url><loc>https://rbisuk.github.io/careers.html</loc></url>
+  <url><loc>https://rbisuk.github.io/claim-fix-ai.html</loc></url>
+  <url><loc>https://rbisuk.github.io/cookies.html</loc></url>
+  <url><loc>https://rbisuk.github.io/copilot.html</loc></url>
+  <url><loc>https://rbisuk.github.io/dashboard.html</loc></url>
+  <url><loc>https://rbisuk.github.io/demo.html</loc></url>
+  <url><loc>https://rbisuk.github.io/index.html</loc></url>
+  <url><loc>https://rbisuk.github.io/legal.html</loc></url>
+  <url><loc>https://rbisuk.github.io/managed.html</loc></url>
+  <url><loc>https://rbisuk.github.io/omniassist.html</loc></url>
+  <url><loc>https://rbisuk.github.io/privacy.html</loc></url>
+  <url><loc>https://rbisuk.github.io/reports.html</loc></url>
+  <url><loc>https://rbisuk.github.io/services.html</loc></url>
+  <url><loc>https://rbisuk.github.io/terms.html</loc></url>
+  <url><loc>https://rbisuk.github.io/webdev.html</loc></url>
+</urlset>
