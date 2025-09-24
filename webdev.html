@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>RBIS — Website & Development</title>
+<meta name="description" content="Starter websites that undercut agencies — clear deliverables, fast launch, no gotchas. Live pricing calculator and transparent add-ons."/>
+<link rel="stylesheet" href="assets/theme.css">
+<style>
+:root{--brand:#4f46e5;--brand2:#06b6d4}
+*{box-sizing:border-box} body{margin:0;font-family:Inter,system-ui,sans-serif;line-height:1.65}
+a{color:#1e3a8a;text-decoration:none} a:hover{text-decoration:underline}
+.disclosure{padding:.6rem 1rem;border-bottom:1px solid var(--line);background:#fff}
+header{position:sticky;top:0;z-index:100;border-bottom:1px solid var(--line);background:#fff}
+header nav{display:flex;gap:.6rem;justify-content:center;padding:.8rem;flex-wrap:wrap}
+header nav a{padding:.45rem .9rem;border:1px solid var(--line);border-radius:999px;background:#fff}
+header nav a.active,header nav a:hover{background:linear-gradient(135deg,var(--brand),var(--brand2));color:#fff;border-color:transparent}
+#hero{text-align:center;padding:3.2rem 1rem}
+.spinny{font-size:3rem;font-weight:900;animation:spin 8s linear infinite;display:inline-block;color:var(--brand)}
+@keyframes spin{to{transform:rotate(360deg)}}
+h1{margin:.5rem 0;font-size:2.2rem}
+.sub{color:#475569;max-width:900px;margin:0 auto}
+
+.section{max-width:1120px;margin:0 auto;padding:2.2rem 1.2rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.2rem}
+.card{background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:0 8px 18px rgba(15,23,42,.06);padding:1.2rem}
+.card h3{margin-top:0}
+.badge{display:inline-block;padding:.2rem .6rem;border:1px solid var(--line);border-radius:999px;background:#fff;font-weight:700;font-size:.8rem}
+.badge.value{border-color:#c7f9cc;background:#ecfdf5}
+.badge.fast{border-color:#bfdbfe;background:#eff6ff}
+.badge.seo{border-color:#fde68a;background:#fffbeb}
+.price{font-size:1.8rem;font-weight:900;margin:.2rem 0}
+.small{color:#64748b}
+ul.clean{margin:.6rem 0 0 1rem}
+hr.soft{border:0;border-top:1px solid var(--line);margin:1rem 0}
+.table{width:100%;border-collapse:collapse}
+.table th,.table td{border-bottom:1px solid var(--line);padding:.6rem .4rem;text-align:left}
+
+label{display:block;font-weight:600;margin:.4rem 0 .25rem}
+input[type=number]{width:100%;padding:.65rem;border:1px solid var(--line);border-radius:10px;background:#fff}
+.opt{display:flex;align-items:center;gap:.6rem;margin:.35rem 0}
+button{padding:.65rem 1rem;border-radius:10px;border:1px solid var(--line);background:linear-gradient(135deg,var(--brand),var(--brand2));color:#fff;font-weight:800;cursor:pointer}
+.result{margin-top:.8rem;padding:1rem;background:#f8fafc;border:1px solid var(--line);border-radius:10px}
+
+.note{color:#475569;font-size:.92rem}
+footer{border-top:1px solid var(--line);padding:1.2rem;text-align:center;color:#475569;margin-top:2rem}
+.foot-links{margin-top:.5rem}
+</style>
+</head>
+<body>
+
+<div class="disclosure"><strong>Disclosure:</strong> RBIS is not a law firm and does not provide legal advice. We analyse only the evidence in front of our intelligence officers, objectively and without bias.</div>
+
+<header>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="reports.html">Reports</a>
+    <a href="demo.html">Demo</a>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="managed.html">Managed Support</a>
+    <a href="careers.html">Careers</a>
+    <a href="legal.html">Legal</a>
+    <a class="active" href="webdev.html">Web &amp; Dev</a>
+  </nav>
+</header>
+
+<section id="hero">
+  <div class="spinny">R</div>
+  <h1>Website &amp; Development</h1>
+  <p class="sub">Undercut the market, without cutting corners. Clear deliverables, fast timelines, no hidden fees — ever.</p>
+</section>
+
+<section class="section">
+  <div class="grid">
+
+    <!-- STARTER -->
+    <div class="card">
+      <span class="badge value">Best value</span> <span class="badge fast">5-day launch</span> <span class="badge seo">SEO basics</span>
+      <h3>Starter — £395 <span class="small">ex VAT</span></h3>
+      <p>Perfect for solos/consultancies who need to look legit, load fast, and convert.</p>
+      <ul class="clean">
+        <li>Up to 3 pages (Home, Services, Contact)</li>
+        <li>Bright RBIS theme + brand setup (type/colour/spacing)</li>
+        <li>SEO basics (titles, meta, sitemap, robots)</li>
+        <li>Speed pass (image compression, lazy-load)</li>
+        <li>Accessibility quick pass (labels, contrast, keyboard)</li>
+        <li>Privacy & Cookies boilerplates</li>
+        <li>Analytics-ready (GA4/Matomo hook)</li>
+        <li>1× revision round, handover ZIP</li>
+      </ul>
+      <hr class="soft">
+      <p class="note">Market note: UK brochure sites typically run **£1k–£5k**; we keep this lean to undercut the pack while covering essentials.</p>
+    </div>
+
+    <!-- ESSENTIAL -->
+    <div class="card">
+      <h3>Essential — £750</h3>
+      <p>Everything in Starter, plus more content depth & conversion polish.</p>
+      <ul class="clean">
+        <li>Up to 5 pages total + simple lead magnet/download</li>
+        <li>Refined copy edits (light, not full copywriting)</li>
+        <li>Structured data (org/breadcrumbs)</li>
+        <li>Basic contact form with spam guard</li>
+      </ul>
+      <hr class="soft">
+      <p class="note">Typical market for a 5-page brochure: **£1k–£3k+**. We price transparently and keep timelines short.</p>
+    </div>
+
+    <!-- PRO -->
+    <div class="card">
+      <h3>Pro — £1,500</h3>
+      <p>For teams needing depth, blog, and stronger SEO foundations.</p>
+      <ul class="clean">
+        <li>Up to 10 pages + blog index + post template</li>
+        <li>On-page SEO polish (H-structure, internal links, basics)</li>
+        <li>Performance budget & lighthouse targets</li>
+        <li>Two revision rounds</li>
+      </ul>
+      <hr class="soft">
+      <p class="note">Market for this tier often **£3k–£8k+**. We’re aggressive on value, not on quality.</p>
+    </div>
+
+    <!-- ECOM LITE -->
+    <div class="card">
+      <h3>E-com Lite — from £1,200</h3>
+      <p>Selling a few products/services fast — no heavy CMS.</p>
+      <ul class="clean">
+        <li>Stripe Checkout links (no cart), price tables</li>
+        <li>Product landing page + thank-you page</li>
+        <li>Receipt email hook (via Stripe)</li>
+      </ul>
+      <hr class="soft">
+      <p class="note">Full custom ecommerce regularly runs **£5k–£20k+**. “Lite” gets you selling without a platform tax.</p>
+    </div>
+
+  </div>
+</section>
+
+<section class="section">
+  <div class="grid">
+
+    <!-- ADDONS -->
+    <div class="card">
+      <h3>Add-ons (mix & match)</h3>
+      <table class="table">
+        <thead><tr><th>Addon</th><th>What you get</th><th>From</th></tr></thead>
+        <tbody>
+          <tr><td>Extra pages</td><td>Fully laid out, mobile-first</td><td>£95 / page</td></tr>
+          <tr><td>Copywriting</td><td>Conversion copy (per page)</td><td>£85 / page</td></tr>
+          <tr><td>Logo & mini brand</td><td>Wordmark + palette + usage</td><td>£180</td></tr>
+          <tr><td>Blog (static)</td><td>Index + post template</td><td>£220</td></tr>
+          <tr><td>Booking embed</td><td>Calendly/YCBM wired + styles</td><td>£90</td></tr>
+          <tr><td>Contact form</td><td>Spam guard + email hook</td><td>£120</td></tr>
+          <tr><td>Basic shop</td><td>Stripe links, no cart</td><td>£240</td></tr>
+        </tbody>
+      </table>
+      <p class="note">Maintenance: optional care plans below. No forced subscriptions or hidden “drip” fees — all unavoidable costs are shown upfront.</p>
+    </div>
+
+    <!-- CARE PLANS -->
+    <div class="card">
+      <h3>Care Plans (optional)</h3>
+      <ul class="clean">
+        <li><b>Light — £49/mo:</b> minor edits, uptime peek, quarterly speed pass</li>
+        <li><b>Standard — £99/mo:</b> up to 1h edits, monthly checks, reports</li>
+        <li><b>Plus — £199/mo:</b> up to 3h edits, priority support, A/B tweaks</li>
+      </ul>
+      <hr class="soft">
+      <p class="note">UK maintenance typically ranges **£100–£550+/mo** depending on scope; these tiers stay entry-level and honest.</p>
+    </div>
+
+    <!-- TRANSPARENCY -->
+    <div class="card">
+      <h3>Transparent by design</h3>
+      <ul class="clean">
+        <li>No lock-in: static exports you can host anywhere</li>
+        <li>No hidden fees: we price all unavoidable costs up front</li>
+        <li>Fast support: small changes, same-day where feasible</li>
+      </ul>
+      <p class="note">We follow UK consumer rules on pricing clarity — no “dripped” extras or sneaky add-ons.</p>
+    </div>
+
+  </div>
+</section>
+
+<section id="calc" class="section">
+  <div class="card">
+    <h3>Build your bundle — live calculator</h3>
+    <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem">
+      <div>
+        <label>Base package</label>
+        <select id="base" onchange="calc()">
+          <option value="395">Starter (£395)</option>
+          <option value="750">Essential (£750)</option>
+          <option value="1500">Pro (£1500)</option>
+          <option value="1200">E-com Lite (from £1200)</option>
+        </select>
+      </div>
+      <div>
+        <label>Extra pages (beyond base)</label>
+        <input id="pages" type="number" min="0" value="0" oninput="calc()"/>
+        <div class="small">£95 / page</div>
+      </div>
+      <div>
+        <label>Add-ons</label>
+        <div class="opt"><input type="checkbox" data-price="85p" id="optCopy" onchange="calc()"> <label for="optCopy">Copywriting (per extra page)</label></div>
+        <div class="opt"><input type="checkbox" data-price="180" id="optLogo" onchange="calc()"> <label for="optLogo">Logo & mini brand</label></div>
+        <div class="opt"><input type="checkbox" data-price="220" id="optBlog" onchange="calc()"> <label for="optBlog">Blog (static)</label></div>
+        <div class="opt"><input type="checkbox" data-price="90" id="optBook" onchange="calc()"> <label for="optBook">Booking embed</label></div>
+        <div class="opt"><input type="checkbox" data-price="120" id="optForm" onchange="calc()"> <label for="optForm">Contact form</label></div>
+        <div class="opt"><input type="checkbox" data-price="240" id="optShop" onchange="calc()"> <label for="optShop">Basic shop</label></div>
+        <div class="opt"><input type="checkbox" data-price="49m" id="optCare" onchange="calc()"> <label for="optCare">Care plan (monthly)</label></div>
+      </div>
+    </div>
+    <div id="out" class="result" style="margin-top:.6rem">Total: £395 ex VAT</div>
+    <p class="note">Want to start? <a href="demo.html">Open the intake</a> — we’ll copy your calculator choices in the first message.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="grid">
+    <div class="card">
+      <h3>Exactly what you get (summary)</h3>
+      <ul class="clean">
+        <li>Fully built static site (HTML/CSS/JS) — fast & portable</li>
+        <li>SEO basics done; performance & accessibility pass</li>
+        <li>Privacy/Cookies pages + footer links</li>
+        <li>Export ZIP + simple edit guide</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>What to prepare</h3>
+      <ul class="clean">
+        <li>Your logo (if you have one) and brand colours</li>
+        <li>Your service list and any testimonials</li>
+        <li>Domain/DNS access (GitHub Pages/Netlify/Vercel ready)</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>FAQ</h3>
+      <p><b>Can I add a CMS later?</b> Yes — we keep the stack portable.</p>
+      <p><b>Do you write copy?</b> Yes — add the copywriting option.</p>
+      <p><b>Do you host?</b> We can, or we’ll deploy to your host with zero lock-in.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  Designed &amp; built by Ryan Roberts | RBIS
+  <div class="foot-links"><a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · <a href="cookies.html">Cookies</a></div>
+</footer>
+
+<script>
+function money(n){return '£'+Number(n).toLocaleString(undefined,{maximumFractionDigits:0})}
+function calc(){
+  const base=parseInt(document.getElementById('base').value,10)||395;
+  const pages=Math.max(0, +document.getElementById('pages').value||0);
+  const addPages=95*pages;
+
+  const pick=id=>document.getElementById(id)?.checked;
+  let addons=0;
+  addons += pick('optLogo')?180:0;
+  addons += pick('optBlog')?220:0;
+  addons += pick('optBook')?90:0;
+  addons += pick('optForm')?120:0;
+  addons += pick('optShop')?240:0;
+
+  const copy = pick('optCopy') ? (85*pages) : 0;
+  const care = pick('optCare') ? 49 : 0; // monthly (shown separately)
+
+  const total = base + addPages + addons + copy;
+
+  const parts = [
+    `Base: ${money(base)}`,
+    pages?`Extra pages: ${pages} × £95 = ${money(addPages)}`:null,
+    pick('optCopy')?`Copywriting: ${pages} × £85 = ${money(copy)}`:null,
+    pick('optLogo')?`Logo & mini brand: £180`:null,
+    pick('optBlog')?`Blog (static): £220`:null,
+    pick('optBook')?`Booking embed: £90`:null,
+    pick('optForm')?`Contact form: £120`:null,
+    pick('optShop')?`Basic shop: £240`:null,
+  ].filter(Boolean).join('<br>');
+
+  const careLine = care? `<br><br>Care plan: £${care}/mo` : '';
+
+  document.getElementById('out').innerHTML = `Total: <b>${money(total)}</b> ex VAT<br><span class="small">${parts || 'Starter only'}</span>${careLine}`;
+}
+calc();
+</script>
+
+</body>
+</html>
