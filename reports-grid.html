@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>RBIS — Professional Evidence Reports (Cards)</title>
+<link rel="canonical" href="/reports-grid.html">
+<link rel="stylesheet" href="/assets/header.css">
+<body style="margin:0;font:16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,Arial,sans-serif;color:#0b1020;background:#fff">
+<div style="background:#FFFBEB;padding:8px;border-bottom:1px solid #FCD34D"><b>Disclosure:</b> RBIS is not a law firm and does not provide legal advice. We analyse only the evidence in front of our intelligence officers, objectively and without bias.</div>
+
+<!-- Universal header -->
+<div id="rbis-header" data-active="Reports"></div>
+<script defer src="/assets/header.js"></script>
+
+<main style="max-width:1100px;margin:20px auto;padding:0 16px">
+  <h1 style="margin:8px 0 6px">Professional Evidence Reports — Cards View</h1>
+  <p style="margin:0 0 16px;color:#475569">
+    Tap a card to copy the code & price. Prices ex-VAT. Prefer a printable table?
+    <a href="/reports.html">View as table</a>.
+  </p>
+
+  <!-- Controls -->
+  <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:0 0 12px">
+    <input id="q" placeholder="Search title, code, notes…" aria-label="Search reports"
+           style="flex:1;min-width:220px;padding:10px 12px;border:1px solid #e5e7eb;border-radius:12px">
+    <select id="cat" aria-label="Filter by category"
+            style="padding:10px 12px;border:1px solid #e5e7eb;border-radius:12px">
+      <option value="">All categories</option>
+      <option value="A">A) Housing Repairs</option>
+      <option value="B">B) Complaints & Ombudsman</option>
+      <option value="C">C) Data Protection & Marketing</option>
+      <option value="D">D) Website & Accessibility</option>
+      <option value="E">E) Operational Performance</option>
+      <option value="F">F) PACT Ledger</option>
+    </select>
+    <button id="csv" class="btn" style="padding:10px 12px;border:1px solid #e5e7eb;border-radius:12px;font-weight:700;background:#fff">
+      Download CSV
+    </button>
+  </div>
+
+  <!-- Grid -->
+  <div id="grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px"></div>
+</main>
+
+<footer style="border-top:1px solid #e5e7eb;margin-top:24px">
+  <div style="max-width:1100px;margin:0 auto;padding:16px 16px;color:#475569;font-size:14px;text-align:center">
+    © <span id="y"></span> RBIS Intelligence. <strong>Designed &amp; Built by Ryan Roberts | RBIS</strong>.
+  </div>
+</footer>
+
+<script>
+  // Year
+  document.getElementById('y').textContent = new Date().getFullYear();
+
+  // Data: 31 reports (code, title, price, rush(Y/N), notes, category)
+  const R = [
+    // A) Housing Repairs & Compliance
+    ["A1","Disrepair Evidence Pack",950,"Y","Factual only","A"],
+    ["A2","Damp & Mould Dossier",850,"Y","Ops mitigations","A"],
+    ["A3","HHSRS Desktop Screening",750,"Y","Not statutory inspection","A"],
+    ["A4","Works & SLA Audit",1250,"Y","Ops audit","A"],
+    ["A5","Landlord Compliance Snapshot",700,"Y","Desktop mapping","A"],
+    ["A6","Void Turnaround Audit",1100,"Y","Process review","A"],
+    ["A7","Gas/Electrical Evidence Pack",1100,"Y","Desktop compilation","A"],
+    ["A8","Legionella Risk Log",900,"Y","Desktop only","A"],
+    ["A9","Fire Door Register Audit",1200,"Y","Desktop only","A"],
+    // B) Complaints & Ombudsman
+    ["B1","Complaint Code Gap Analysis",1900,"Y","Against statutory Code","B"],
+    ["B2","Stage 1/2 Evidence Pack",850,"Y","Facts; org signs response","B"],
+    ["B3","Ombudsman Referral Bundle",1400,"Y","Cross-referenced evidence","B"],
+    ["B4","Remedy Benchmarking",1250,"Y","Comparative outcomes","B"],
+    // C) Data Protection & Marketing
+    ["C1","DPIA",1500,"Y","ICO pattern","C"],
+    ["C2","RoPA Pack",1300,"Y","Art.30 register","C"],
+    ["C3","PECR Cookie Audit",950,"Y","Consent mode","C"],
+    ["C4","Marketing Claims File",1100,"Y","CAP substantiation","C"],
+    ["C5","SAR Response Pack",1000,"Y","Triage & redaction","C"],
+    ["C6","Data Breach Incident Report",900,"Y","24–72h window","C"],
+    ["C7","Legitimate Interests Assessment",950,"Y","Balancing test","C"],
+    // D) Website & Accessibility
+    ["D1","Accessibility Audit (WCAG 2.2 AA)",2200,"Y","Issues + re-test plan","D"],
+    ["D2","Advertising Compliance Sweep",1300,"Y","CAP/BCAP scan","D"],
+    ["D3","WCAG Conformance Statement",750,"Y","Statement + scope","D"],
+    // E) Operational Performance & Auditability
+    ["E1","SLA Breach Ledger",1200,"Y","Timers + root-cause","E"],
+    ["E2","Contractor Scorecard",1000,"Y","OT/FTF/cost variance","E"],
+    ["E3","Comms Transcript Pack",700,"Y","Chain-of-custody","E"],
+    ["E4","KPI/OKR Quarterly",1100,"Y","Board pack","E"],
+    ["E5","Backlog Triage Model",1000,"Y","Prioritisation","E"],
+    // F) PACT Ledger
+    ["F1","Promise Compliance Report",900,"Y","Evidence object","F"],
+    ["F2","Settlement Readiness Pack",1200,"Y","Options & evidence","F"],
+    ["F3","Promise Taxonomy",900,"Y","Controls & naming","F"],
+  ];
+
+  const CATS = {A:"A) Housing Repairs",B:"B) Complaints & Ombudsman",C:"C) Data Protection & Marketing",
+                D:"D) Website & Accessibility",E:"E) Operational Performance",F:"F) PACT Ledger"};
+
+  const grid = document.getElementById('grid');
+  const q = document.getElementById('q');
+  const cat = document.getElementById('cat');
+
+  function £(n){ return "£" + n.toLocaleString("en-GB"); }
+
+  function render(){
+    const term = (q.value||"").trim().toLowerCase();
+    const catv = cat.value;
+    const out = [];
+    for(const [code,title,price,rush,notes,g] of R){
+      if(catv && g!==catv) continue;
+      const blob = (code+" "+title+" "+notes+" "+CATS[g]).toLowerCase();
+      if(term && !blob.includes(term)) continue;
+      out.push(`
+        <button class="card" data-copy="${code} — ${£(price)}"
+                style="text-align:left;background:#fff;border:1px solid #e5e7eb;border-radius:14px;padding:14px;cursor:pointer"
+                title="Click to copy ‘${code} — ${£(price)}’">
+          <div style="display:flex;justify-content:space-between;gap:8px;align-items:flex-start">
+            <span style="font-weight:700">${code}</span>
+            <span style="font-size:12px;color:#475569">${CATS[g]}</span>
+          </div>
+          <div style="margin-top:6px;font-weight:600">${title}</div>
+          <div style="margin-top:6px;display:flex;align-items:center;gap:10px">
+            <span style="font-weight:800">${£(price)}</span>
+            <span style="font-size:12px;color:#0b1020;background:#f1f5f9;border:1px solid #e2e8f0;border-radius:10px;padding:2px 8px">Rush: ${rush}</span>
+          </div>
+          <div style="margin-top:6px;font-size:13px;color:#475569">${notes}</div>
+        </button>
+      `);
+    }
+    grid.innerHTML = out.join('') || `<div style="color:#475569">No reports match your filters.</div>`;
+    // click-to-copy
+    grid.querySelectorAll('.card').forEach(btn=>{
+      btn.addEventListener('click',()=>{
+        const s = btn.getAttribute('data-copy');
+        try{ navigator.clipboard.writeText(s); btn.style.boxShadow="0 0 0 3px rgba(71,83,255,.25)";
+             setTimeout(()=>btn.style.boxShadow="",600);}catch{}
+      });
+    });
+  }
+
+  q.addEventListener('input', render);
+  cat.addEventListener('change', render);
+  render();
+
+  // CSV download
+  document.getElementById('csv').addEventListener('click', () => {
+    const rows = [["Code","Report","PriceGBP","Rush","Notes","Category"]];
+    R.forEach(([c,t,p,r,n,g]) => rows.push([c,t,p,r,n,CATS[g]]));
+    const csv = rows.map(r=>r.map(x=>String(x).includes(',')?`"${String(x).replace(/"/g,'""')}"`:x).join(',')).join('\n');
+    const blob = new Blob([csv], {type:"text/csv;charset=utf-8"});
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob); a.download = "rbis-reports-31.csv"; a.click();
+    URL.revokeObjectURL(a.href);
+  });
+</script>
+</body>
+</html>
