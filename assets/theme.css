@@ -1,1 +1,11 @@
 :root{--bg:#f8fafc;--panel:#fff;--ink:#0f172a;--line:#e5e7eb;--brand:#4f46e5;--brand2:#06b6d4;--accent:#0ea5e9}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,sans-serif;line-height:1.65}.section{max-width:1120px;margin:0 auto;padding:2.2rem 1.2rem}.card,.kpi,.ev,.board{background:var(--panel);border:1px solid var(--line);border-radius:14px;box-shadow:0 8px 18px rgba(15,23,42,.06)}.disclosure,header,footer{background:#fff;border-color:var(--line);color:var(--ink)}header nav a{border:1px solid var(--line);border-radius:999px;padding:.45rem .9rem}header nav a.active,header nav a:hover{background:linear-gradient(135deg,var(--brand),var(--brand2));color:#fff;border-color:transparent}a{color:#1e3a8a}a:hover{text-decoration:underline}.foot-links{margin-top:.6rem;color:#64748b}
+/* Mobile safe areas (iOS/Android) */
+:root{--safe-top: env(safe-area-inset-top); --safe-bottom: env(safe-area-inset-bottom)}
+body{padding-top: max(0px,var(--safe-top))}
+footer{padding-bottom: calc(1.2rem + max(0px,var(--safe-bottom)))}
+header{padding-top: max(0px,var(--safe-top))}
+
+/* Touch targets */
+header nav a{min-height:44px; line-height:1.2}
+button,.btn,input[type=submit]{min-height:44px}
+input[type=number], input[type=text]{touch-action:manipulation}
