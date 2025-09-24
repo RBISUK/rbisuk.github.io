@@ -219,6 +219,7 @@ footer{border-top:1px solid var(--line);padding:1.2rem;text-align:center;color:#
       </div>
     </div>
     <div id="out" class="result" style="margin-top:.6rem">Total: £395 ex VAT</div>
+<button id="orderNow" style="margin-top:.6rem">Order with this quote →</button>
     <p class="note">Want to start? <a href="demo.html">Open the intake</a> — we’ll copy your calculator choices in the first message.</p>
   </div>
 </section>
@@ -295,6 +296,7 @@ calc();
 </script>
 
 </body>
+<script>function _p(i){var e=document.getElementById(i);return e&&e.checked}function _v(i){var e=document.getElementById(i);return e?e.value:""}function currentQuote(){var b=document.getElementById("base"),bv=parseInt((b&&b.value)||"395",10),bl=b?b.options[b.selectedIndex].text:"Starter (£395)",pg=Math.max(0,parseInt(_v("pages")||"0",10)),ad=[];_p("optLogo")&&ad.push("Logo £180");_p("optBlog")&&ad.push("Blog £220");_p("optBook")&&ad.push("Booking £90");_p("optForm")&&ad.push("Form £120");_p("optShop")&&ad.push("Shop £240");_p("optCopy")&&ad.push("Copy x"+pg+" (£85/pg)");var care=_p("optCare")?"Care plan £49/mo":null;var tot=(document.getElementById("out")||{}).innerText||("Total £"+bv);return "RBIS Web & Dev quote\nBase: "+bl+"\nExtra pages: "+pg+"\nAdd-ons: "+(ad.join(", ")||"None")+"\n"+(care?care+"\n":"")+tot}document.addEventListener("click",function(e){if(e.target&&e.target.id==="orderNow"){location.href="demo.html?quote="+encodeURIComponent(currentQuote());}});</script>
 </html>
 <script>
 function _pick(id){var el=document.getElementById(id);return el&&el.checked}
