@@ -90,3 +90,6 @@ header *{pointer-events:auto}
 /* Utility */
 .center{text-align:center}
 .small{font-size:.92rem; color:var(--muted)}
+
+/* rbis no-spin */
+.logo--spin, .spin, [data-spin] { animation: none !important; transform: none !important; }
