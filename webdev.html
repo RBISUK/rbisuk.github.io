@@ -1,78 +1,47 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8"/>
-<meta name="viewport"
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="default">
-<meta name="format-detection" content="telephone=no">
-<link rel="canonical" href="https://rbisuk.github.io/webdev.html">
-<meta name="theme-color" content="#4f46e5">
-<link rel="icon"
-<link rel="apple-touch-icon" href="assets/favicon.svg"> href="assets/favicon.png"> content="width=device-width,initial-scale=1,viewport-fit=cover"/>
-<title>RBIS — Website & Development</title>
-<meta name="description" content="Starter websites that undercut agencies — clear deliverables, fast launch, no gotchas. Live pricing calculator and transparent add-ons."/>
-<link rel="stylesheet" href="assets/theme.css?v=19">
-<style>
+<!DOCTYPE html><html lang="en"><head>
+<title>Web & Dev — RBIS</title>
+<meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/><meta name="theme-color" content="#4f46e5"/>
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg"><link rel="icon" type="image/png" href="assets/favicon.png"><link rel="apple-touch-icon" href="assets/favicon.png"><link rel="stylesheet" href="assets/theme.css?v=20">
+</head><body>
+<div class="disclosure"><b>Disclosure:</b> RBIS is not a law firm and does not provide legal advice.</div>
+<header class="nav"><nav>
+  <a href="index.html">Home</a><a href="services.html">Services &amp; Products</a><a href="reports.html">Reports</a><a href="webdev.html">Web &amp; Dev</a><a href="managed.html">Managed</a><a href="demo.html">Demo</a><a href="dashboard.html">Dashboard</a><a href="careers.html">Careers</a><a href="about.html">About</a><a href="legal.html">Legal</a>
+</nav></header>
 
-*{box-sizing:border-box} body{margin:0;font-family:Inter,system-ui,sans-serif;line-height:1.65}
-a{color:#1e3a8a;text-decoration:none} a:hover{text-decoration:underline}
-.disclosure{padding:.6rem 1rem;border-bottom:1px solid var(--line);background:#fff}
-header{position:sticky;top:0;z-index:100;border-bottom:1px solid var(--line);background:#fff}
-header nav{display:flex;gap:.6rem;justify-content:center;padding:.8rem;flex-wrap:wrap}
-header nav a{padding:.45rem .9rem;border:1px solid var(--line);border-radius:999px;background:#fff}
-header nav a.active,header nav a:hover{background:linear-gradient(135deg,var(--brand),var(--brand2));color:#fff;border-color:transparent}
-#hero{text-align:center;padding:3.2rem 1rem}
-.spinny{font-size:3rem;font-weight:900;animation:spin 8s linear infinite;display:inline-block;color:var(--brand)}
-@keyframes spin{to{transform:rotate(360deg)}}
-h1{margin:.5rem 0;font-size:2.2rem}
-.sub{color:#475569;max-width:900px;margin:0 auto}
+<section class="section"><h1>Web & Development</h1><p>Lean builds that ship in days, not months. Transparent pricing, no fluff.</p></section>
 
-.section{max-width:1120px;margin:0 auto;padding:2.2rem 1.2rem}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.2rem}
-.card{background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:0 8px 18px rgba(15,23,42,.06);padding:1.2rem}
-.card h3{margin-top:0}
-.badge{display:inline-block;padding:.2rem .6rem;border:1px solid var(--line);border-radius:999px;background:#fff;font-weight:700;font-size:.8rem}
-.badge.value{border-color:#c7f9cc;background:#ecfdf5}
-.badge.fast{border-color:#bfdbfe;background:#eff6ff}
-.badge.seo{border-color:#fde68a;background:#fffbeb}
-.price{font-size:1.8rem;font-weight:900;margin:.2rem 0}
-.small{color:#64748b}
-ul.clean{margin:.6rem 0 0 1rem}
-hr.soft{border:0;border-top:1px solid var(--line);margin:1rem 0}
-.table{width:100%;border-collapse:collapse}
-.table th,.table td{border-bottom:1px solid var(--line);padding:.6rem .4rem;text-align:left}
+<section class="section grid cols-3">
+  <div class="card"><h3>Starter Site (£395)</h3><p>1-page site, brand colour, analytics, contact form.</p></div>
+  <div class="card"><h3>Growth Site (£950)</h3><p>Up to 5 pages, blog, SEO basics, lead tracking.</p></div>
+  <div class="card"><h3>Shop Lite (£1,450)</h3><p>Small catalogue, Stripe checkout, receipts.</p></div>
+</section>
 
-label{display:block;font-weight:600;margin:.4rem 0 .25rem}
-input[type=number]{width:100%;padding:.65rem;border:1px solid var(--line);border-radius:10px;background:#fff}
-.opt{display:flex;align-items:center;gap:.6rem;margin:.35rem 0}
-button{padding:.65rem 1rem;border-radius:10px;border:1px solid var(--line);background:linear-gradient(135deg,var(--brand),var(--brand2));color:#fff;font-weight:800;cursor:pointer}
-.result{margin-top:.8rem;padding:1rem;background:#f8fafc;border:1px solid var(--line);border-radius:10px}
+<section class="section card">
+  <h3>Quick Quote</h3>
+  <label>Base</label>
+  <select id="base" class="input">
+    <option value="395">Starter (£395)</option>
+    <option value="950">Growth (£950)</option>
+    <option value="1450">Shop Lite (£1450)</option>
+  </select>
+  <label>Extra pages</label><input id="pages" class="input" type="number" value="0">
+  <div class="grid"><label><input id="optLogo" type="checkbox"> Logo (£180)</label><label><input id="optBlog" type="checkbox"> Blog (£220)</label><label><input id="optBook" type="checkbox"> Booking (£90)</label><label><input id="optForm" type="checkbox"> Form (£120)</label><label><input id="optShop" type="checkbox"> Shop (£240)</label><label><input id="optCopy" type="checkbox"> Copywriting (£85/pg)</label><label><input id="optCare" type="checkbox"> Care plan (£49/mo)</label></div>
+  <p id="out" class="result">Total: £395 ex VAT</p>
+  <button id="orderNow" class="btn brand">Order with this quote →</button>
+</section>
 
-.note{color:#475569;font-size:.92rem}
-footer{border-top:1px solid var(--line);padding:1.2rem;text-align:center;color:#475569;margin-top:2rem}
-.foot-links{margin-top:.5rem}
-</style>
-<style id="bright-overrides">body,header,footer,.disclosure{background:#fff!important;color:#0f172a!important;border-color:#e5e7eb!important} .card,.kpi,.ev,.board{background:#fff!important;border-color:#e5e7eb!important;box-shadow:0 8px 18px rgba(15,23,42,.06)!important} a{color:#1e3a8a!important}</style>
-</head>
-<body>
-
-<div class="disclosure"><strong>Disclosure:</strong> RBIS is not a law firm and does not provide legal advice. We analyse only the evidence in front of our intelligence officers, objectively and without bias.</div>
-
-<header>
-<nav>
-  <a href="index.html">Home</a>
-  <a href="services.html">Services &amp; Products</a>
-  <a href="reports.html">Reports</a>
-  <a href="webdev.html">Web &amp; Dev</a>
-  <a href="managed.html">Managed</a>
-  <a href="demo.html">Demo</a>
-  <a href="dashboard.html">Dashboard</a>
-  <a href="careers.html">Careers</a>
-  <a href="about.html">About</a>
-  <a href="legal.html">Legal</a>
-</nav>
-  <nav>
-  <a href="index.html">Home</a>
-
+<footer>Designed &amp; built by Ryan Roberts | RBIS<div class="foot-links"><a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · <a href="cookies.html">Cookies</a></div></footer>
 <script src="assets/active-nav.js"></script>
+<script>
+function _p(i){var e=document.getElementById(i);return e&&e.checked}
+function _v(i){var e=document.getElementById(i);return e?e.value:""}
+function calc(){var b=document.getElementById("base"),bv=parseInt((b&&b.value)||"395",10);var pg=Math.max(0,parseInt(_v("pages")||"0",10));
+  var total=bv+pg*85*(_p("optCopy")?1:0)+(_p("optLogo")?180:0)+(_p("optBlog")?220:0)+(_p("optBook")?90:0)+(_p("optForm")?120:0)+(_p("optShop")?240:0);
+  out.textContent="Total: £"+total+" ex VAT";}
+document.addEventListener("input",calc);calc();
+function currentQuote(){calc();var b=document.getElementById("base"),bl=b.options[b.selectedIndex].text;var pg=Math.max(0,parseInt(_v("pages")||"0",10));var add=[];
+  _p("optLogo")&&add.push("Logo £180");_p("optBlog")&&add.push("Blog £220");_p("optBook")&&add.push("Booking £90");_p("optForm")&&add.push("Form £120");_p("optShop")&&add.push("Shop £240");_p("optCopy")&&add.push("Copy x"+pg+" (£85/pg)");
+  var care=_p("optCare")?"Care plan £49/mo":null;return "RBIS Web & Dev quote\nBase: "+bl+"\nExtra pages: "+pg+"\nAdd-ons: "+(add.join(", ")||"None")+"\n"+(care?care+"\n":"")+out.textContent;}
+document.getElementById("orderNow").addEventListener("click",function(){location.href="demo.html?quote="+encodeURIComponent(currentQuote());});
+</script>
+</body></html>

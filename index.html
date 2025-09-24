@@ -1,64 +1,61 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8"/>
-<meta name="viewport"
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="default">
-<meta name="format-detection" content="telephone=no">
-<link rel="canonical" href="https://rbisuk.github.io/index.html">
-<meta name="theme-color" content="#4f46e5">
-<link rel="icon"
-<link rel="apple-touch-icon" href="assets/favicon.svg"> href="assets/favicon.png">
-<link rel="stylesheet" href="assets/theme.css?v=19"> content="width=device-width,initial-scale=1,viewport-fit=cover"/>
+<!DOCTYPE html><html lang="en"><head>
 <title>RBIS — Evidence Intelligence</title>
-<style>
-:root{
-}
-*{box-sizing:border-box} body{margin:0;font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
-a{color:inherit;text-decoration:none}
-.disclosure{background:#0f1220;padding:.6rem 1rem;font-size:.9rem;border-bottom:1px solid #1a2031}
-header nav{display:flex;gap:.6rem;justify-content:center;padding:.8rem;flex-wrap:wrap}
-header nav a{padding:.45rem .9rem;border:1px solid #1a2031;border-radius:999px}
-header nav a.active,header nav a:hover{background:linear-gradient(135deg,var(--brand),var(--brand2));color:#000;font-weight:600}
-#hero{text-align:center;padding:4rem 1rem}
-.spinny{font-size:3rem;font-weight:900;animation:spin 8s linear infinite;display:inline-block}
-@keyframes spin{to{transform:rotate(360deg)}}
-h1{font-size:2.4rem;margin:.5rem 0}
-.sub{color:var(--muted);max-width:640px;margin:0 auto}
-.ctas{margin-top:1.4rem;display:flex;justify-content:center;gap:.8rem;flex-wrap:wrap}
-.btn{padding:.6rem 1rem;border-radius:12px;border:1px solid #333}
-.btn.primary{background:linear-gradient(135deg,var(--brand),var(--brand2));color:#000;font-weight:700}
-.section{padding:3rem 1rem;border-top:1px solid #1a2031;max-width:960px;margin:0 auto}
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.2rem;margin-top:1.4rem}
-.card{background:var(--panel);padding:1.4rem;border-radius:14px;border:1px solid #1f2333}
-.card h3{margin-top:0}
-input,button{font-family:inherit}
-input{padding:.6rem;border-radius:8px;border:1px solid #333;background:#0f111b;color:#fff;width:100%}
-button{padding:.6rem 1rem;border-radius:8px;border:1px solid #333;background:var(--brand);color:#000;cursor:pointer}
-footer{background:#0d111d;border-top:1px solid #1a2031;padding:1.2rem;text-align:center;color:#aaa;margin-top:3rem;font-size:.9rem}
-.result{margin-top:1rem;padding:1rem;background:#0f111b;border-radius:10px;font-weight:600}
-</style>
-<style id="bright-overrides">body,header,footer,.disclosure{background:#fff!important;color:#0f172a!important;border-color:#e5e7eb!important} .card,.kpi,.ev,.board{background:#fff!important;border-color:#e5e7eb!important;box-shadow:0 8px 18px rgba(15,23,42,.06)!important} a{color:#1e3a8a!important}</style>
-</head>
-<body>
+<meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
+<meta name="theme-color" content="#4f46e5"/>
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg"><link rel="icon" type="image/png" href="assets/favicon.png"><link rel="apple-touch-icon" href="assets/favicon.png">
+<link rel="stylesheet" href="assets/theme.css?v=20">
+</head><body>
+<div class="disclosure"><b>Disclosure:</b> RBIS is not a law firm and does not provide legal advice. We analyse only the evidence in front of our intelligence officers, objectively and without bias.</div>
+<header class="nav"><nav>
+  <a href="index.html">Home</a><a href="services.html">Services &amp; Products</a><a href="reports.html">Reports</a><a href="webdev.html">Web &amp; Dev</a><a href="managed.html">Managed</a><a href="demo.html">Demo</a><a href="dashboard.html">Dashboard</a><a href="careers.html">Careers</a><a href="about.html">About</a><a href="legal.html">Legal</a>
+</nav></header>
 
-<div class="disclosure"><strong>Disclosure:</strong> RBIS is not a law firm and does not provide legal advice. We analyse only the evidence in front of our intelligence officers, objectively and without bias.</div>
+<section class="hero section" style="text-align:center">
+  <div class="spinny">RBIS</div>
+  <h1>The Future of Evidence Intelligence</h1>
+  <p>Audit-ready. Magical. Built with an intelligence officer’s mindset: precision, objectivity, foresight.</p>
+  <p>
+    <a class="btn brand" href="reports.html">Explore Reports</a>
+    <a class="btn" href="demo.html">Try the Demo</a>
+    <a class="btn" href="careers.html">Careers</a>
+  </p>
+  <div class="card" style="margin-top:1rem">
+    <label>Deep Site Search</label>
+    <input class="input" id="q" placeholder="Search reports, demos, careers..." oninput="liveSearch(this.value)">
+    <div id="searchOut" style="margin-top:.6rem;font-size:.95rem;color:#334155"></div>
+  </div>
+</section>
 
-<header>
-<nav>
-  <a href="index.html">Home</a>
-  <a href="services.html">Services &amp; Products</a>
-  <a href="reports.html">Reports</a>
-  <a href="webdev.html">Web &amp; Dev</a>
-  <a href="managed.html">Managed</a>
-  <a href="demo.html">Demo</a>
-  <a href="dashboard.html">Dashboard</a>
-  <a href="careers.html">Careers</a>
-  <a href="about.html">About</a>
-  <a href="legal.html">Legal</a>
-</nav>
-  <nav>
-  <a class="active" aria-current="page" href="index.html">Home</a>
+<section class="section grid cols-3">
+  <div class="card">
+    <h3>CPL & ROI Calculator</h3>
+    <label>Ad Spend (£)</label><input id="spend" class="input" type="number" value="5000">
+    <label>Leads</label><input id="leads" class="input" type="number" value="200">
+    <label>Conversions</label><input id="conv" class="input" type="number" value="20">
+    <label>Average Deal Value (£)</label><input id="adv" class="input" type="number" value="1500">
+    <p class="result" id="cplOut">CPL: £—</p><p class="result" id="roiOut">ROI: —%</p>
+    <button class="btn brand" onclick="calc()">Calculate</button>
+  </div>
+  <div class="card">
+    <h3>Why RBIS?</h3>
+    <ul>
+      <li><b>Evidence over opinion:</b> chain-of-custody, IDs, timestamps.</li>
+      <li><b>Timers that escalate:</b> SLA clocks build the pack while they tick.</li>
+      <li><b>Export on demand:</b> CSV/PDF, board brief or court bundle.</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h3>Popular paths</h3>
+    <p><a href="services.html">Services &amp; Products</a> · <a href="reports.html">Professional Reports</a> · <a href="managed.html">Managed Support</a></p>
+  </div>
+</section>
+
+<footer>Designed &amp; built by Ryan Roberts | RBIS<div class="foot-links"><a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · <a href="cookies.html">Cookies</a></div></footer>
 
 <script src="assets/active-nav.js"></script>
+<script>
+function calc(){var s=+spend.value||0,l=+leads.value||1,c=+conv.value||0,v=+adv.value||0;var cpl=l?Math.round((s/l)*100)/100:0;var rev=c*v;var roi=s?Math.round(((rev-s)/s)*100):0;cplOut.textContent='CPL: £'+cpl.toFixed(2);roiOut.textContent='ROI: '+roi+'%';}
+function liveSearch(t){var links=[['reports.html','Reports'],['webdev.html','Web & Dev'],['managed.html','Managed'],['demo.html','Demo'],['dashboard.html','Dashboard'],['careers.html','Careers'],['services.html','Services & Products'],['about.html','About'],['legal.html','Legal']];t=t.toLowerCase();var out=links.filter(x=>x[1].toLowerCase().includes(t)||x[0].includes(t)).map(x=>'<span class="badge"><a href="'+x[0]+'">'+x[1]+'</a></span>').join(' ');searchOut.innerHTML=out||'<span class="muted">No matches.</span>';}
+calc();
+</script>
+</body></html>
