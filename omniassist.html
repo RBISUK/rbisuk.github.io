@@ -1,0 +1,52 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
+<title>OmniAssist — RBIS</title>
+<link rel="canonical" href="https://rbisuk.github.io/omniassist.html">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg"><link rel="icon" type="image/png" href="assets/favicon.png"><link rel="apple-touch-icon" href="assets/favicon.png">
+<meta name="theme-color" content="#4f46e5"><link rel="stylesheet" href="assets/theme.css?v=20">
+</head><body>
+<div class="disclosure"><b>Disclosure:</b> RBIS is not a law firm and does not provide legal advice.</div>
+<header class="nav"><nav>
+  <a href="index.html">Home</a><a href="services.html">Services &amp; Products</a><a href="reports.html">Reports</a><a href="webdev.html">Web &amp; Dev</a><a href="managed.html">Managed</a><a href="demo.html">Demo</a><a href="dashboard.html">Dashboard</a><a href="careers.html">Careers</a><a href="about.html">About</a><a href="legal.html">Legal</a><a href="contact.html">Contact</a>
+</nav></header>
+
+<section class="section"><div class="card" style="padding:1.2rem">
+  <h1>OmniAssist</h1>
+  <p>Guardrails for email, CRM, and casework — so automation helps, but never breaks policy.</p>
+  <div class="grid">
+    <div class="board" style="padding:1rem">
+      <h3>Template Guard Demo</h3>
+      <label>Draft reply
+        <textarea id="oa_txt" placeholder="Type a quick reply..." style="min-height:140px"></textarea>
+      </label>
+      <button class="btn" id="oa_check" style="margin-top:.6rem">Check against policy</button>
+      <pre id="oa_out" class="board" style="padding:.8rem;min-height:100px;margin-top:.6rem"></pre>
+      <div style="display:flex;gap:.6rem;margin-top:.6rem;flex-wrap:wrap">
+        <a class="btn" href="services.html">Back to Services</a>
+        <a class="btn" href="contact.html">Talk to us</a>
+      </div>
+    </div>
+    <div class="card">
+      <h3>What you get</h3>
+      <ul><li>Reply templates with required clauses</li><li>CRM note prompts</li><li>Risk wording detection</li><li>Audit stamps</li></ul>
+      <p class="foot-links">Great with <a href="copilot.html">Copilot</a> and <a href="pact-ledger.html">PACT Ledger</a>.</p>
+    </div>
+  </div>
+</div></section>
+
+<footer>Designed &amp; built by Ryan Roberts | RBIS<div class="foot-links"><a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · <a href="cookies.html">Cookies</a></div></footer>
+<script src="assets/active-nav.js"></script>
+<script>
+(function(){
+  const txt=document.getElementById('oa_txt'), out=document.getElementById('oa_out');
+  document.getElementById('oa_check').addEventListener('click',()=>{
+    const t=(txt.value||'').toLowerCase();
+    const flags=[];
+    if(!/timescale|timeframe|working days/.test(t)) flags.push('Add clear timescale.');
+    if(!/contact|reply|reach/.test(t)) flags.push('Offer a contact route.');
+    if(/guarantee|promise/.test(t)) flags.push('Avoid absolute promises.');
+    out.textContent= flags.length?('Guardrails:\n - '+flags.join('\n - ')) : 'Looks compliant.';
+  });
+})();
+</script>
+</body></html>

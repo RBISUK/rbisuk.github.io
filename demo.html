@@ -1,30 +1,43 @@
 <!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
 <title>Demo — RBIS</title>
-<meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/><meta name="theme-color" content="#4f46e5"/>
-<link rel="icon" type="image/svg+xml" href="assets/favicon.svg"><link rel="icon" type="image/png" href="assets/favicon.png"><link rel="apple-touch-icon" href="assets/favicon.png"><link rel="stylesheet" href="assets/theme.css?v=20">
+<link rel="canonical" href="https://rbisuk.github.io/demo.html">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg"><link rel="icon" type="image/png" href="assets/favicon.png"><link rel="apple-touch-icon" href="assets/favicon.png">
+<meta name="theme-color" content="#4f46e5"><link rel="stylesheet" href="assets/theme.css?v=20">
 </head><body>
 <div class="disclosure"><b>Disclosure:</b> RBIS is not a law firm and does not provide legal advice.</div>
 <header class="nav"><nav>
-  <a href="index.html">Home</a><a href="services.html">Services &amp; Products</a><a href="reports.html">Reports</a><a href="webdev.html">Web &amp; Dev</a><a href="managed.html">Managed</a><a href="demo.html">Demo</a><a href="dashboard.html">Dashboard</a><a href="careers.html">Careers</a><a href="about.html">About</a><a href="legal.html">Legal</a>
+  <a href="index.html">Home</a><a href="services.html">Services &amp; Products</a><a href="reports.html">Reports</a><a href="webdev.html">Web &amp; Dev</a><a href="managed.html">Managed</a><a href="demo.html">Demo</a><a href="dashboard.html">Dashboard</a><a href="careers.html">Careers</a><a href="about.html">About</a><a href="legal.html">Legal</a><a href="contact.html">Contact</a>
 </nav></header>
 
 <section class="section">
-  <h1>Interactive Demo</h1>
-  <div class="card"><h3>Order details (prefilled)</h3><textarea id="prefill" class="input" style="min-height:160px"></textarea></div>
-  <div class="card"><h3>Evidence Intake</h3>
-    <label>Case title</label><input class="input" id="title">
-    <label>What outcome do you want?</label><input class="input" id="goal" placeholder="e.g., settlement, fix, apology">
-    <label>Paste key emails/notes</label><textarea class="input" id="notes" style="min-height:160px"></textarea>
-    <p><button class="btn brand" onclick="bundle()">Build a mini-report →</button></p>
-    <pre id="bundleOut" class="card" style="white-space:pre-wrap"></pre>
+  <div class="card" style="padding:1.2rem">
+    <h1>Demo</h1>
+    <p>Paste the outline from Home or Web &amp; Dev — or start fresh.</p>
+    <textarea id="d_txt" placeholder="Paste your outline or type a case..." style="min-height:160px"></textarea>
+    <div style="display:flex;gap:.6rem;flex-wrap:wrap;margin-top:.6rem">
+      <button class="btn" id="d_analyse">Analyse</button>
+      <button class="btn" id="d_clear">Clear</button>
+      <a class="btn" href="dashboard.html">See simulated dashboard</a>
+    </div>
+    <pre id="d_out" class="board" style="padding:.8rem;min-height:120px;margin-top:.6rem"></pre>
   </div>
 </section>
 
 <footer>Designed &amp; built by Ryan Roberts | RBIS<div class="foot-links"><a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · <a href="cookies.html">Cookies</a></div></footer>
 <script src="assets/active-nav.js"></script>
 <script>
-(function(){var q=new URLSearchParams(location.search).get("quote");if(q) document.getElementById('prefill').value=q;})();
-function bundle(){var t=title.value||'(untitled)';var g=goal.value||'(unspecified)';var n=(notes.value||'').trim();
-  var now=new Date().toISOString();var out=['RBIS Mini-Report','Case: '+t,'Goal: '+g,'Timestamp: '+now,'— Evidence —',n||'(no pasted notes)','— End —'].join('\n');bundleOut.textContent=out;}
+(function(){
+  const ta=document.getElementById('d_txt'), out=document.getElementById('d_out');
+  // prefill from ?quote=
+  const q=new URLSearchParams(location.search).get('quote'); if(q){ ta.value=q; }
+  document.getElementById('d_analyse').addEventListener('click',()=>{
+    const t=(ta.value||'').trim();
+    if(!t){ out.textContent='Type or paste something first.'; return; }
+    const r=['RBIS Demo Analysis','— Signals: timeline, receipts, IDs','— Risks: promises, gaps, delays','— Next: pack → CSV/PDF','',t].join('\n');
+    out.textContent=r;
+  });
+  document.getElementById('d_clear').addEventListener('click',()=>{ ta.value=''; out.textContent=''; history.replaceState({},'',location.pathname); });
+})();
 </script>
 </body></html>

@@ -1,18 +1,124 @@
 <!DOCTYPE html><html lang="en"><head>
-<title>Legal — RBIS</title>
-<meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/><meta name="theme-color" content="#4f46e5"/>
-<link rel="icon" type="image/svg+xml" href="assets/favicon.svg"><link rel="icon" type="image/png" href="assets/favicon.png"><link rel="apple-touch-icon" href="assets/favicon.png"><link rel="stylesheet" href="assets/theme.css?v=20">
-</head><body>
-<div class="disclosure"><b>Disclosure:</b> RBIS is not a law firm and does not provide legal advice.</div>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
+<title>Legal Hub — RBIS</title>
+<link rel="canonical" href="https://rbisuk.github.io/legal.html">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/favicon.png">
+<meta name="theme-color" content="#4f46e5">
+<link rel="stylesheet" href="assets/theme.css?v=20">
+<style>
+  /* Page-specific micro-polish */
+  .legal-grid{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+  .badge{display:inline-block;padding:.2rem .5rem;border-radius:999px;border:1px solid var(--line);font-size:.8rem}
+  .toc a{display:inline-block;margin:.2rem .4rem 0 0}
+  .legal-card p{margin:.4rem 0 .2rem}
+  .kbd{font:600 .8rem ui-monospace,SFMono-Regular,Menlo,monospace;background:#f1f5f9;border:1px solid #e2e8f0;border-radius:6px;padding:.08rem .35rem}
+</style>
+</head>
+<body>
+<div class="disclosure"><b>Disclosure:</b> RBIS is not a law firm and does not provide legal advice. We analyse only the evidence in front of our intelligence officers, objectively and without bias.</div>
+
 <header class="nav"><nav>
-  <a href="index.html">Home</a><a href="services.html">Services &amp; Products</a><a href="reports.html">Reports</a><a href="webdev.html">Web &amp; Dev</a><a href="managed.html">Managed</a><a href="demo.html">Demo</a><a href="dashboard.html">Dashboard</a><a href="careers.html">Careers</a><a href="about.html">About</a><a href="legal.html">Legal</a>
+  <a href="index.html">Home</a>
+  <a href="services.html">Services &amp; Products</a>
+  <a href="reports.html">Reports</a>
+  <a href="webdev.html">Web &amp; Dev</a>
+  <a href="managed.html">Managed</a>
+  <a href="demo.html">Demo</a>
+  <a href="dashboard.html">Dashboard</a>
+  <a href="careers.html">Careers</a>
+  <a href="about.html">About</a>
+  <a href="legal.html">Legal</a>
+  <a href="contact.html">Contact</a>
 </nav></header>
 
-<section class="section"><h1>Legal</h1>
-  <p><a class="btn" href="privacy.html">Privacy</a> <a class="btn" href="terms.html">Terms</a> <a class="btn" href="cookies.html">Cookies</a></p>
-  <p>RBIS provides independent analysis and reporting. We do not provide legal advice or representation.</p>
-</section>
+<main class="section">
+  <!-- Hero / Overview -->
+  <div class="card" style="padding:1.2rem">
+    <h1>Legal Hub</h1>
+    <p>This hub centralises the policies and statements that govern use of RBIS websites, demos, and services. We keep things <b>clear, minimal, and audit-ready</b>.</p>
+    <div class="toc foot-links">
+      <span class="badge">Quick links</span>
+      <a href="#policies">Policies</a> ·
+      <a href="#accessibility">Accessibility Statement</a> ·
+      <a href="#licensing">Licensing &amp; Attribution</a> ·
+      <a href="#contact-legal">Contact &amp; Issues</a>
+    </div>
+  </div>
 
-<footer>Designed &amp; built by Ryan Roberts | RBIS<div class="foot-links"><a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · <a href="cookies.html">Cookies</a></div></footer>
+  <!-- Policy Cards -->
+  <section id="policies" class="section" style="padding-left:0;padding-right:0">
+    <div class="legal-grid">
+      <div class="card legal-card">
+        <h3>Privacy Policy</h3>
+        <p>How we collect, use, share, and retain personal data—your rights and our responsibilities.</p>
+        <p><a class="btn" href="privacy.html">Read Privacy →</a></p>
+        <p class="foot-links">Updated 24 Sep 2025</p>
+      </div>
+
+      <div class="card legal-card">
+        <h3>Terms of Use</h3>
+        <p>Rules for using this website and demos. Separate service terms apply for paid work.</p>
+        <p><a class="btn" href="terms.html">Read Terms →</a></p>
+        <p class="foot-links">Updated 24 Sep 2025</p>
+      </div>
+
+      <div class="card legal-card">
+        <h3>Cookie Policy</h3>
+        <p>What cookies we use (kept minimal), why we use them, and how to control them.</p>
+        <p><a class="btn" href="cookies.html">Read Cookies →</a></p>
+        <p class="foot-links">Updated 24 Sep 2025</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Accessibility -->
+  <section id="accessibility" class="section" style="padding-left:0;padding-right:0">
+    <div class="card" style="padding:1.2rem">
+      <h2>Accessibility Statement</h2>
+      <p>We aim for a usable, accessible experience for everyone. Our UI uses strong color contrast, keyboard-visible focus rings, reduced-motion support, and large touch targets.</p>
+      <ul>
+        <li><b>Standards:</b> WCAG 2.2 AA (best efforts, ongoing).</li>
+        <li><b>Keyboard:</b> All interactive elements are reachable with <span class="kbd">Tab</span> / <span class="kbd">Shift+Tab</span>; current item is clearly highlighted.</li>
+        <li><b>Reduced motion:</b> Respects <i>prefers-reduced-motion</i>; ornamental animation is disabled where set.</li>
+        <li><b>Touch targets:</b> Minimum 44px height; safe-area insets supported on iOS/Android.</li>
+      </ul>
+      <p>If you experience any barrier, tell us via the <a href="contact.html">Contact</a> page (select “Accessibility”). We’ll review and fix.</p>
+    </div>
+  </section>
+
+  <!-- Licensing & Attribution -->
+  <section id="licensing" class="section" style="padding-left:0;padding-right:0">
+    <div class="card" style="padding:1.2rem">
+      <h2>Licensing &amp; Attribution</h2>
+      <ul>
+        <li><b>Site content:</b> © RBIS. You may link to or quote small excerpts with attribution.</li>
+        <li><b>Logos/trademarks:</b> belong to their respective owners.</li>
+        <li><b>Third-party libraries:</b> Browser-native only on public pages; no external JS frameworks required.</li>
+      </ul>
+      <p>Where we include third-party code or assets, we follow their licenses and attribute appropriately.</p>
+    </div>
+  </section>
+
+  <!-- Issues / Requests -->
+  <section id="contact-legal" class="section" style="padding-left:0;padding-right:0">
+    <div class="card" style="padding:1.2rem">
+      <h2>Report an Issue or Make a Request</h2>
+      <ul>
+        <li><b>Privacy requests (access, deletion, etc.):</b> use <a href="contact.html">Contact</a> and choose “Privacy/Data”.</li>
+        <li><b>Security:</b> If you suspect a vulnerability, contact us privately via <a href="contact.html">Contact</a> (“Security”).</li>
+        <li><b>Content concerns:</b> For copyright or trademark issues, include evidence of ownership and URLs.</li>
+      </ul>
+      <p class="foot-links">We aim to acknowledge within 5 working days.</p>
+    </div>
+  </section>
+</main>
+
+<footer>Designed &amp; built by Ryan Roberts | RBIS
+  <div class="foot-links"><a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · <a href="cookies.html">Cookies</a></div>
+</footer>
+
 <script src="assets/active-nav.js"></script>
 </body></html>

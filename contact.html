@@ -1,0 +1,103 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
+<title>Contact — RBIS</title>
+<link rel="canonical" href="https://rbisuk.github.io/contact.html">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/favicon.png">
+<meta name="theme-color" content="#4f46e5">
+<link rel="stylesheet" href="assets/theme.css?v=20">
+<style>
+.formgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:.8rem}
+input,select,textarea{background:#fff;border:1px solid var(--line);border-radius:12px;padding:.6rem}
+label{display:block}
+</style>
+</head>
+<body>
+<div class="disclosure"><b>Disclosure:</b> RBIS is not a law firm and does not provide legal advice. We analyse only the evidence in front of our intelligence officers, objectively and without bias.</div>
+
+<header class="nav"><nav>
+  <a href="index.html">Home</a>
+  <a href="services.html">Services &amp; Products</a>
+  <a href="reports.html">Reports</a>
+  <a href="webdev.html">Web &amp; Dev</a>
+  <a href="managed.html">Managed</a>
+  <a href="demo.html">Demo</a>
+  <a href="dashboard.html">Dashboard</a>
+  <a href="careers.html">Careers</a>
+  <a href="about.html">About</a>
+  <a href="legal.html">Legal</a>
+  <a href="contact.html">Contact</a>
+</nav></header>
+
+<section class="section">
+  <div class="card" style="padding:1.2rem">
+    <h1>Contact RBIS</h1>
+    <p>Tell us what you need — quotes, walkthroughs, or a quick steer.</p>
+
+    <form action="https://formspree.io/f/meolvrdy" method="POST" class="board" style="padding:1rem" id="contactForm">
+      <div class="formgrid">
+        <label>Full name
+          <input name="name" type="text" placeholder="Your name" required>
+        </label>
+        <label>Email
+          <input name="_replyto" type="email" placeholder="you@org.co.uk" required>
+        </label>
+        <label>Phone (optional)
+          <input name="phone" type="tel" placeholder="+44...">
+        </label>
+        <label>Organisation
+          <input name="org" type="text" placeholder="Your organisation">
+        </label>
+        <label>Topic
+          <select name="topic">
+            <option>Quote / Pricing</option>
+            <option>Demo / Walkthrough</option>
+            <option>Legal / Data Request</option>
+            <option>Support</option>
+            <option>Other</option>
+          </select>
+        </label>
+      </div>
+
+      <label style="margin-top:.6rem">Message
+        <textarea name="message" placeholder="Describe your context and outcomes…" style="min-height:160px" required></textarea>
+      </label>
+
+      <!-- Optional: pass page context -->
+      <input type="hidden" name="source" value="rbisuk.github.io/contact.html">
+      <!-- Formspree recommended honeypot -->
+      <input type="text" name="_gotcha" style="display:none">
+
+      <div style="display:flex;gap:.6rem;flex-wrap:wrap;margin-top:.6rem">
+        <button class="btn" type="submit">Send</button>
+        <button class="btn" type="reset">Reset</button>
+        <a class="btn" href="demo.html?quote=Request%20a%20walkthrough">Book a walkthrough</a>
+      </div>
+      <p id="c_status" class="foot-links" style="margin-top:.4rem"></p>
+    </form>
+  </div>
+</section>
+
+<footer>Designed &amp; built by Ryan Roberts | RBIS
+  <div class="foot-links"><a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · <a href="cookies.html">Cookies</a></div>
+</footer>
+
+<script src="assets/active-nav.js"></script>
+<script>
+/* Gentle UX: show a tiny success hint after Formspree redirectless POST */
+(function(){
+  const form=document.getElementById('contactForm'), status=document.getElementById('c_status');
+  form.addEventListener('submit', async function(ev){
+    ev.preventDefault();
+    const data=new FormData(form);
+    try{
+      const res=await fetch(form.action,{method:'POST',body:data,headers:{'Accept':'application/json'}});
+      if(res.ok){ status.textContent='Thanks — we will reply shortly.'; form.reset(); }
+      else{ status.textContent='Something went wrong. Please try again or email rbr.01@outlook.com.'; }
+    }catch(e){ status.textContent='Network issue. Please try again or email rbr.01@outlook.com.'; }
+  });
+})();
+</script>
+</body></html>

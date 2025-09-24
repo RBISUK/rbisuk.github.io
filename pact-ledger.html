@@ -1,7 +1,7 @@
 <!DOCTYPE html><html lang="en"><head>
 <meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
-<title>Repairs & Compliance Copilot — RBIS</title>
-<link rel="canonical" href="https://rbisuk.github.io/copilot.html">
+<title>PACT Ledger — RBIS</title>
+<link rel="canonical" href="https://rbisuk.github.io/pact-ledger.html">
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg"><link rel="icon" type="image/png" href="assets/favicon.png"><link rel="apple-touch-icon" href="assets/favicon.png">
 <meta name="theme-color" content="#4f46e5"><link rel="stylesheet" href="assets/theme.css?v=20">
 </head><body>
@@ -11,25 +11,24 @@
 </nav></header>
 
 <section class="section"><div class="card" style="padding:1.2rem">
-  <h1>Repairs &amp; Compliance Copilot</h1>
-  <p>Policy-aware SLA timers with automatic nudges, breach detection, and board-ready reporting.</p>
+  <h1>PACT Ledger</h1>
+  <p>Track promises and actions: who, what, by-when — with receipts, timers, and exports.</p>
   <div class="grid">
     <div class="board" style="padding:1rem">
-      <h3>Simulated Timer</h3>
-      <label>Policy Window (days) <input id="p_days" type="number" value="10" min="1"></label>
-      <label style="margin-top:.4rem">Opened <input id="p_open" type="date"></label>
-      <button class="btn" id="p_calc" style="margin-top:.6rem">Calculate deadline</button>
-      <div id="p_out" class="result" style="margin-top:.6rem">—</div>
-      <div style="margin-top:.4rem" class="foot-links">Auto-nudge preview: email, SMS, and task note added at D-2.</div>
+      <h3>Quick Entry</h3>
+      <label>Who <input id="pl_who" type="text" placeholder="Team / Contractor / Contact"></label>
+      <label style="margin-top:.4rem">What <input id="pl_what" type="text" placeholder="Action promised"></label>
+      <label style="margin-top:.4rem">By-when <input id="pl_when" type="date"></label>
+      <button class="btn" id="pl_add" style="margin-top:.6rem">Add</button>
+      <div id="pl_list" class="board" style="padding:.8rem;margin-top:.6rem;min-height:90px"></div>
       <div style="display:flex;gap:.6rem;margin-top:.6rem;flex-wrap:wrap">
-        <a class="btn" href="dashboard.html">See dashboard</a>
         <a class="btn" href="services.html">Back to Services</a>
+        <a class="btn" href="dashboard.html">See dashboard</a>
       </div>
     </div>
     <div class="card">
       <h3>What you get</h3>
-      <ul><li>SLA timers per stage</li><li>Nudges/escalations</li><li>Breach log</li><li>Board packs</li></ul>
-      <p class="foot-links">Pairs with <a href="claim-fix-ai.html">Claim-Fix-AI</a> and <a href="omniassist.html">OmniAssist</a>.</p>
+      <ul><li>Promise ledger + receipts</li><li>Timers &amp; nudges</li><li>CSV/PDF exports</li><li>Audit trail</li></ul>
     </div>
   </div>
 </div></section>
@@ -38,13 +37,13 @@
 <script src="assets/active-nav.js"></script>
 <script>
 (function(){
-  function fmt(d){return d.toISOString().slice(0,10)}
-  document.getElementById('p_calc').addEventListener('click',()=>{
-    const days=+document.getElementById('p_days').value||0;
-    const opened=document.getElementById('p_open').value;
-    if(!opened){document.getElementById('p_out').textContent='Pick an opened date.';return;}
-    const d=new Date(opened); d.setDate(d.getDate()+days);
-    document.getElementById('p_out').innerHTML='Deadline: <b>'+fmt(d)+'</b> · Status: <b>'+ (new Date()>d?'BREACH':'On track') +'</b>';
+  const list=document.getElementById('pl_list');
+  document.getElementById('pl_add').addEventListener('click',()=>{
+    const who=document.getElementById('pl_who').value||'—';
+    const what=document.getElementById('pl_what').value||'—';
+    const when=document.getElementById('pl_when').value||'—';
+    const row=document.createElement('div'); row.className='card'; row.style.padding='.6rem'; row.textContent=who+' — '+what+' — due '+when;
+    list.appendChild(row);
   });
 })();
 </script>

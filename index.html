@@ -1,73 +1,77 @@
 <!DOCTYPE html><html lang="en"><head>
 <meta charset="utf-8"/>
-<title>RBIS — Audit-Ready Behavioural & Intelligence Services</title>
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
-<meta name="theme-color" content="#4f46e5"/>
+<title>RBIS — Audit-Ready Intelligence for Housing, Compliance & Ops</title>
+<link rel="canonical" href="https://rbisuk.github.io/index.html">
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 <link rel="icon" type="image/png" href="assets/favicon.png">
 <link rel="apple-touch-icon" href="assets/favicon.png">
-<link rel="stylesheet" href="assets/theme.css">
+<meta name="theme-color" content="#4f46e5">
+<link rel="stylesheet" href="assets/theme.css?v=20">
+<style>
+/* Premium matte spinner (RBIS wordmark, slow, subtle) */
+.hero-brand{display:inline-flex;gap:.6rem;align-items:center}
+.spinny-rbis{font-weight:900;font-size:2.2rem;letter-spacing:.08em;display:inline-block;
+  background:linear-gradient(135deg,#4f46e5,#06b6d4);-webkit-background-clip:text;background-clip:text;color:transparent;
+  animation:rbis-slow 12s linear infinite;will-change:transform;filter:saturate(.95) contrast(.95)}
+@keyframes rbis-slow{to{transform:rotate(360deg)}}
+</style>
 </head>
 <body>
 <div class="disclosure"><b>Disclosure:</b> RBIS is not a law firm and does not provide legal advice. We analyse only the evidence in front of our intelligence officers, objectively and without bias.</div>
+<header class="nav">
+  <nav>
+    <a class="active" aria-current="page" href="index.html">Home</a>
+    <a href="services.html">Services &amp; Products</a>
+    <a href="reports.html">Reports</a>
+    <a href="webdev.html">Web &amp; Dev</a>
+    <a href="managed.html">Managed</a>
+    <a href="demo.html">Demo</a>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="careers.html">Careers</a>
+    <a href="about.html">About</a>
+    <a href="legal.html">Legal</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
 
-<header class="nav"><nav>
-  <a href="index.html">Home</a>
-  <a href="services.html">Services &amp; Products</a>
-  <a href="reports.html">Reports</a>
-  <a href="webdev.html">Web &amp; Dev</a>
-  <a href="managed.html">Managed</a>
-  <a href="demo.html">Demo</a>
-  <a href="dashboard.html">Dashboard</a>
-  <a href="careers.html">Careers</a>
-  <a href="about.html">About</a>
-  <a href="legal.html">Legal</a>
-  <a href="contact.html">Contact</a>
-</nav></header>
-
-<section class="section center" id="hero">
-  <div class="orbit" aria-hidden="true"><div class="core">RBIS</div><div class="ring"></div></div>
-  <h1>Audit-ready AI for housing, compliance &amp; operations</h1>
-  <p style="max-width:780px;margin:.4rem auto 0" class="small">
-    We turn messy threads into <b>board-ready</b> and <b>court-ready</b> clarity: objective evidence, SLA timers that escalate, and exports that stand up.
-  </p>
-  <div style="margin-top:1rem;display:flex;gap:.6rem;flex-wrap:wrap;justify-content:center">
-    <a class="btn" href="services.html">Explore Services</a>
-    <a class="btn secondary" href="reports.html">Browse Reports</a>
-    <a class="btn" href="demo.html">Try the Demo</a>
-  </div>
-</section>
-
-<section class="section">
-  <h2 class="center">Interactive preview</h2>
-  <div class="card" style="max-width:860px;margin:0 auto">
-    <ol id="preview" class="board" style="padding-left:1.1rem">
-      <li><b>Intake:</b> paste email/thread → IDs, timestamps, parties.</li>
-      <li style="display:none"><b>Analyse:</b> contradictions flagged; language shifts noted.</li>
-      <li style="display:none"><b>Export:</b> index + chronology + exhibits (PDF/CSV).</li>
-    </ol>
-    <div style="display:flex;gap:.6rem;flex-wrap:wrap">
-      <button class="btn" id="nextStep">Run next step →</button>
-      <a class="btn secondary" href="demo.html">Open full demo</a>
+<section class="section" id="hero">
+  <div class="card" style="padding:1.4rem;text-align:center">
+    <div class="hero-brand">
+      <div class="spinny-rbis">RBIS</div>
+      <div style="font-size:1rem;opacity:.75">Behavioural &amp; Intelligence Services</div>
+    </div>
+    <h1 style="margin:.6rem 0 0">Audit-ready AI for housing, compliance &amp; operations</h1>
+    <p>Evidence over opinion. Timers, nudges, and exportable packs — built like an intelligence officer: precision, objectivity, foresight.</p>
+    <div style="display:flex;flex-wrap:wrap;gap:.6rem;justify-content:center">
+      <a class="btn" href="services.html">Explore Services →</a>
+      <a class="btn" href="demo.html">Try the Demo →</a>
+      <a class="btn" href="careers.html">Careers →</a>
+      <a class="btn" href="contact.html">Talk to RBIS →</a>
     </div>
   </div>
 </section>
 
 <section class="section">
   <div class="grid">
-    <a class="card" href="services.html"><h3>Services &amp; Products</h3><p>Claim-Fix-AI Funnel, Repairs &amp; Compliance Copilot, OmniAssist + add-ons.</p></a>
-    <a class="card" href="reports.html"><h3>Professional Reports</h3><p>Fixed-price, evidence-based packs across housing, data, ops.</p></a>
-    <a class="card" href="dashboard.html"><h3>Live Dashboard</h3><p>Risk map, SLA timers, one-click exports.</p></a>
+    <a class="card" href="services.html"><h3>Services &amp; Products</h3><p>Claim-Fix-AI intake, Repairs &amp; Compliance Copilot, OmniAssist + add-ons.</p></a>
+    <a class="card" href="reports.html"><h3>Pro Reports</h3><p>Evidence-based, legally safe packs for Repairs, Data, Accessibility, Ops.</p></a>
+    <a class="card" href="dashboard.html"><h3>Dashboard</h3><p>Risk map, SLA timers, escalation nudges, export to CSV/PDF.</p></a>
   </div>
 </section>
 
-<section class="section" aria-label="Social proof">
-  <h2>Trusted where credibility matters</h2>
-  <div class="grid">
-    <div class="card"><h3>Housing Providers</h3><p>Resolve damp/mould, repairs and complaint escalations with clean audit trails.</p></div>
-    <div class="card"><h3>Law Firms</h3><p>Independent analysis, timelines, and communication forensics.</p></div>
-    <div class="card"><h3>Councils</h3><p>Impartial reviews with transparent evidence handling and exports.</p></div>
-    <div class="card"><h3>Corporate HR</h3><p>Behavioural signals in sensitive comms and dispute de-risking.</p></div>
+<section class="section">
+  <div class="card" style="padding:1.2rem">
+    <h2>CPL &amp; ROI Calculator</h2>
+    <p>Estimate your cost-per-lead and ROI with RBIS automation.</p>
+    <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(220px,1fr))">
+      <label>Ad Spend (£)<input id="ad" type="number" value="5000" min="0"></label>
+      <label>Leads Generated<input id="leads" type="number" value="200" min="0"></label>
+      <label>Conversions<input id="conv" type="number" value="20" min="0"></label>
+      <label>Avg Deal Value (£)<input id="val" type="number" value="1500" min="0"></label>
+    </div>
+    <div id="calcOut" class="kpi" style="margin-top:.8rem">CPL: £25 • ROI: 5.0×</div>
+    <button class="btn" id="toDemo">Use these numbers in Demo →</button>
   </div>
 </section>
 
@@ -78,9 +82,24 @@
 <script src="assets/active-nav.js"></script>
 <script>
 (function(){
-  var i=0, steps=document.querySelectorAll('#preview li'), btn=document.getElementById('nextStep');
-  btn.addEventListener('click', function(){
-    if(i<steps.length-1){ i++; steps[i].style.display='list-item'; if(i===steps.length-1){ btn.disabled=true; btn.textContent="Preview complete"; } }
+  function calc(){
+    var ad=+document.getElementById('ad').value||0,
+        leads=+document.getElementById('leads').value||0,
+        conv=+document.getElementById('conv').value||0,
+        val=+document.getElementById('val').value||0;
+    var cpl = leads? (ad/leads):0;
+    var rev = conv*val, roi = ad? (rev/ad):0;
+    document.getElementById('calcOut').textContent =
+      "CPL: £"+cpl.toFixed(2)+" • ROI: "+roi.toFixed(2)+"×";
+    return {ad,leads,conv,val,cpl:+cpl.toFixed(2),roi:+roi.toFixed(2)};
+  }
+  ['ad','leads','conv','val'].forEach(id=>document.getElementById(id).addEventListener('input',calc));
+  calc();
+  document.getElementById('toDemo').addEventListener('click',function(){
+    var q=calc();
+    location.href='demo.html?quote='+encodeURIComponent(
+      `RBIS ROI quick calc\nAd £${q.ad}\nLeads ${q.leads}\nConv ${q.conv}\nValue £${q.val}\nCPL £${q.cpl}\nROI ${q.roi}x`
+    );
   });
 })();
 </script>

@@ -1,41 +1,51 @@
 <!DOCTYPE html><html lang="en"><head>
-<title>Reports — RBIS</title>
-<meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/><meta name="theme-color" content="#4f46e5"/>
-<link rel="icon" type="image/svg+xml" href="assets/favicon.svg"><link rel="icon" type="image/png" href="assets/favicon.png"><link rel="apple-touch-icon" href="assets/favicon.png"><link rel="stylesheet" href="assets/theme.css?v=20">
+<meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
+<title>Professional Reports — RBIS</title>
+<link rel="canonical" href="https://rbisuk.github.io/reports.html">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg"><link rel="icon" type="image/png" href="assets/favicon.png"><link rel="apple-touch-icon" href="assets/favicon.png">
+<meta name="theme-color" content="#4f46e5"><link rel="stylesheet" href="assets/theme.css?v=20">
 </head><body>
 <div class="disclosure"><b>Disclosure:</b> RBIS is not a law firm and does not provide legal advice.</div>
 <header class="nav"><nav>
-  <a href="index.html">Home</a><a href="services.html">Services &amp; Products</a><a href="reports.html">Reports</a><a href="webdev.html">Web &amp; Dev</a><a href="managed.html">Managed</a><a href="demo.html">Demo</a><a href="dashboard.html">Dashboard</a><a href="careers.html">Careers</a><a href="about.html">About</a><a href="legal.html">Legal</a>
+  <a href="index.html">Home</a><a href="services.html">Services &amp; Products</a><a href="reports.html">Reports</a><a href="webdev.html">Web &amp; Dev</a><a href="managed.html">Managed</a><a href="demo.html">Demo</a><a href="dashboard.html">Dashboard</a><a href="careers.html">Careers</a><a href="about.html">About</a><a href="legal.html">Legal</a><a href="contact.html">Contact</a>
 </nav></header>
 
-<section class="section"><h1>Professional Evidence Reports</h1><p>Tap a card to copy the code &amp; price. Ex-VAT. CSV export included.</p></section>
+<section class="section"><div class="card" style="padding:1.2rem">
+  <h1>Professional Evidence Reports</h1>
+  <p>Evidence-based, legally cautious packs across <b>Housing & Repairs</b>, <b>Compliance & Data</b>, <b>Marketing & Accessibility</b>, and <b>Operations & Audit</b>. Court/Ombudsman-ready exports.</p>
+</div></section>
 
 <section class="section">
-  <div class="grid cols-3" id="grid"></div>
-  <p style="margin-top:.6rem"><button class="btn" onclick="downloadCSV()">Download CSV</button></p>
+  <div class="grid">
+    <div class="card"><h3>Housing &amp; Repairs</h3><ul>
+      <li>A1) Disrepair Evidence Pack — £650</li>
+      <li>A2) Damp &amp; Mould Dossier — £850</li>
+      <li>A3) HHSRS Desktop Screening — £750</li>
+      <li>A4) Works &amp; SLA Audit — £1,250</li>
+      <li>A5) Landlord Compliance Snapshot — £700</li>
+    </ul></div>
+    <div class="card"><h3>Compliance &amp; Data Protection</h3><ul>
+      <li>C1) DSAR Evidence Pack — £750</li>
+      <li>C2) Opt-in &amp; Consent Register — £500</li>
+      <li>C3) PECR Marketing Check — £600</li>
+      <li>C4) Data Breach Log &amp; Narrative — £1,200</li>
+    </ul></div>
+    <div class="card"><h3>Marketing &amp; Accessibility</h3><ul>
+      <li>D1) WCAG Quick Scan — £550</li>
+      <li>D2) Cookie &amp; Consent Audit — £450</li>
+      <li>D3) Privacy &amp; Terms Check — £600</li>
+      <li>D4) SEO Technical Basics — £500</li>
+    </ul></div>
+    <div class="card"><h3>Operations &amp; Audit</h3><ul>
+      <li>E2) Missed Appointment Log — £650</li>
+      <li>E3) Contractor KPI Sheet — £900</li>
+      <li>E4) Board-Ready Dashboard — £950</li>
+      <li>F2) Timer &amp; Nudge Engine — £700</li>
+    </ul></div>
+  </div>
+  <div style="margin-top:.8rem" class="foot-links">Tip: Ask about bundling with <a href="services.html">Claim-Fix-AI</a> + <a href="copilot.html">Copilot</a>.</div>
 </section>
 
 <footer>Designed &amp; built by Ryan Roberts | RBIS<div class="foot-links"><a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · <a href="cookies.html">Cookies</a></div></footer>
-
 <script src="assets/active-nav.js"></script>
-<script>
-const items=[
- {id:"A1",price:650,cat:"A) Housing Repairs",title:"Disrepair Evidence Pack",desc:"Factual-only pack for unresolved repairs with receipts & chronology."},
- {id:"A2",price:850,cat:"A) Housing Repairs",title:"Damp & Mould Dossier",desc:"Humidity notes, photos, risk flags, and recommended mitigations."},
- {id:"A3",price:750,cat:"A) Housing Repairs",title:"HHSRS Desktop Screening",desc:"Factor review from evidence; not a statutory inspection."},
- {id:"A4",price:1250,cat:"A) Housing Repairs",title:"Works & SLA Audit",desc:"Order flow, attendance, parts, and deadline conformance audit."},
- {id:"B1",price:1900,cat:"B) Complaints & Ombudsman",title:"Complaint Code Gap Analysis",desc:"Process vs Code with corrective actions."},
- {id:"B2",price:850,cat:"B) Complaints & Ombudsman",title:"Stage 1/2 Evidence Pack",desc:"Chronology, receipts, and draft response."},
- {id:"B3",price:1400,cat:"B) Complaints & Ombudsman",title:"Ombudsman Referral Bundle",desc:"Final position, policy cites, evidence index."},
- {id:"C1",price:750,cat:"C) Data Protection & Marketing",title:"DSAR Evidence Pack",desc:"Identity checks, redactions, timeline, receipts."},
- {id:"C4",price:1200,cat:"C) Data Protection & Marketing",title:"Data Breach Log & Narrative",desc:"Containment, grading, ICO narrative builder."},
- {id:"D1",price:550,cat:"D) Website & Accessibility",title:"WCAG Quick Scan",desc:"Contrast, keyboard nav, labels, alt-text."},
- {id:"E4",price:950,cat:"E) Operational & Audit",title:"Board-Ready Dashboard",desc:"Headline metrics with variance notes and actions."},
- {id:"F3",price:1200,cat:"F) PACT Ledger",title:"Settlement & Court Bundle",desc:"Offer→agree→pay with court-ready exports."}
-];
-const grid=document.getElementById('grid');
-grid.innerHTML=items.map(x=>`<div class="card" data-id="${x.id}" onclick="copy('${x.id}, £${x.price}')"><div class="badge">${x.cat}</div><h3 id="${x.id}">${x.id}) ${x.title} — £${x.price}</h3><p>${x.desc}</p></div>`).join('');
-window.copy=async t=>{try{await navigator.clipboard.writeText(t);alert(t+' copied');}catch(e){prompt('Copy',t)}};
-function downloadCSV(){const rows=[['Code','Title','Price','Category'],...items.map(i=>[i.id,i.title,i.price,i.cat])];const csv=rows.map(r=>r.join(',')).join('\n');const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([csv],{type:'text/csv'}));a.download='rbis-reports.csv';a.click();}
-</script>
 </body></html>
