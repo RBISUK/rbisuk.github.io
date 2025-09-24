@@ -307,3 +307,10 @@ function resetAll(){
 
 </body>
 </html>
+<script>
+(function(){
+  var q=new URLSearchParams(location.search).get('quote'); if(!q) return;
+  var ta=document.querySelector('textarea');
+  if(!ta){
+    var wrap=document.createElement('div'); wrap.className='section';
+    var card=document.createElement('div'); card.className='card';
