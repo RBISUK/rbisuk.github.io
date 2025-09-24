@@ -73,7 +73,7 @@ button,.btn,input[type=submit]{min-height:44px}
           mask:radial-gradient(circle at center, transparent 60%, #000 61%);
   animation:orbit 12s linear infinite;
 }
-@keyframes orbit{to{transform:rotate(360deg)}}
+}
 @media (prefers-reduced-motion:reduce){ .orbit .ring{animation:none} }
 
 /* Micro-interactions */
