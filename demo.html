@@ -1,78 +1,71 @@
-<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Demo | RBIS</title><body style="font:16px/1.5 system-ui, sans-serif; color:#0b1020; margin:0">
-<div style="background:#FFFBEB;padding:8px;border-bottom:1px solid #FCD34D"><strong>Disclosure:</strong> RBIS is not a law firm and does not provide legal advice. We analyse the evidence in front of our intelligence officers, objectively and without bias.</div>
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Demo — RBIS</title>
+<script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-white text-[#0B1020]">
+<div class="bg-amber-50 border-b border-amber-300 text-[13px] px-3 py-2 text-amber-900">
+  <b>Disclosure:</b> Demo only — no network calls. RBIS is not a law firm and does not provide legal advice.
+</div>
 
-<header style="display:flex;justify-content:space-between;align-items:center;padding:14px;border-bottom:1px solid #e5e7eb;position:sticky;top:0;background:#fff">
-  <a href="/index.html" style="text-decoration:none;color:inherit;font-weight:600">RBIS</a>
-  <nav>
-    <a href="/index.html#products" style="margin-right:12px">Products</a>
-    <a href="/index.html#reports" style="margin-right:12px">Reports</a>
-    <a href="/careers.html" style="margin-right:12px">Careers</a>
-    <a href="/legal.html">Legal</a>
-  </nav>
-</header>
+<header class="border-b bg-white sticky top-0 z-30"><div class="max-w-6xl mx-auto px-4 h-14 flex items-center justify-between">
+  <a href="index.html" class="font-semibold">RBIS</a>
+  <nav class="hidden md:flex gap-5 text-sm"><a href="index.html#websites" class="hover:text-indigo-600">Packages</a><a href="dashboard.html" class="hover:text-indigo-600">Live Dashboard</a><a href="articles/" class="hover:text-indigo-600">Articles</a></nav>
+</div></header>
 
-<main style="max-width:1100px;margin:0 auto;padding:24px">
-  <h1 style="font-size:clamp(28px,4vw,40px);margin:0 0 6px"><a href="managed.html" style="float:right;font-size:14px">Managed Support ↗</a></h1>
-  <p style="color:#475569;margin:0 0 20px">Live previews of dashboards, funnels and evidence reports (simulated—no trackers, no external calls).</p>
+<main class="max-w-6xl mx-auto px-4 py-10">
+  <h1 class="text-3xl md:text-4xl font-bold">RBIS Demo Toys</h1>
+  <p class="mt-2 text-gray-700">Zero-setup widgets clients can play with — shows design taste and thinking.</p>
 
-  <!-- WOW: 4 tiles with live numbers (no libs) -->
-  <section style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px">
-    <div style="border:1px solid #e5e7eb;border-radius:12px;padding:14px">
-      <div style="font-size:12px;color:#64748b;text-transform:uppercase">UK Legal Watch</div>
-      <div id="d-legal" style="font-size:32px;font-weight:800">—</div>
-      <p style="font-size:12px;color:#6b7280;margin:6px 0 0">New consultations & bulletins (30d)</p>
+  <!-- Lead ROI Calculator -->
+  <section id="roi" class="mt-8 border rounded-2xl p-5">
+    <h2 class="text-xl font-semibold">Lead ROI Calculator</h2>
+    <div class="grid md:grid-cols-4 gap-3 mt-3 text-sm">
+      <label class="block">Leads / month<input id="leads" type="number" value="120" class="mt-1 w-full border rounded-lg px-2 py-1"></label>
+      <label class="block">Conversion %<input id="conv" type="number" value="12" class="mt-1 w-full border rounded-lg px-2 py-1"></label>
+      <label class="block">Revenue / case (£)<input id="rev" type="number" value="900" class="mt-1 w-full border rounded-lg px-2 py-1"></label>
+      <label class="block">Cost / lead (£)<input id="cpl" type="number" value="90" class="mt-1 w-full border rounded-lg px-2 py-1"></label>
     </div>
-    <div style="border:1px solid #e5e7eb;border-radius:12px;padding:14px">
-      <div style="font-size:12px;color:#64748b;text-transform:uppercase">ICO Signals</div>
-      <div id="d-ico" style="font-size:32px;font-weight:800">—</div>
-      <p style="font-size:12px;color:#6b7280;margin:6px 0 0">Enforcement-adjacent notices</p>
-    </div>
-    <div style="border:1px solid #e5e7eb;border-radius:12px;padding:14px">
-      <div style="font-size:12px;color:#64748b;text-transform:uppercase">Ombudsman Activity</div>
-      <div id="d-omb" style="font-size:32px;font-weight:800">—</div>
-      <p style="font-size:12px;color:#6b7280;margin:6px 0 0">Determinations tracked</p>
-    </div>
-    <div style="border:1px solid #e5e7eb;border-radius:12px;padding:14px">
-      <div style="font-size:12px;color:#64748b;text-transform:uppercase">Repairs SLA Health</div>
-      <div id="d-sla" style="font-size:32px;font-weight:800">—%</div>
-      <p style="font-size:12px;color:#6b7280;margin:6px 0 0">On-time (rolling 30d)</p>
-    </div>
+    <div class="mt-4 flex gap-2"><button id="calc" class="bg-indigo-600 text-white px-3 py-2 rounded-lg text-sm">Calculate</button><span id="ro" class="text-sm text-gray-700"></span></div>
   </section>
 
-  <!-- Reviews scroller -->
-  <section style="margin-top:24px;overflow:hidden;border:1px solid #e5e7eb;border-radius:12px">
-    <div id="rev" style="display:flex;gap:12px;white-space:nowrap;padding:12px;will-change:transform">
-      <div style="min-width:280px;border:1px solid #e5e7eb;border-radius:10px;padding:12px">“Warm team, serious work.” — Director, HA</div>
-      <div style="min-width:280px;border:1px solid #e5e7eb;border-radius:10px;padding:12px">“Calm UX, regulator-friendly outputs.” — Public Sector COO</div>
-      <div style="min-width:280px;border:1px solid #e5e7eb;border-radius:10px;padding:12px">“Design that understands evidence.” — Law Firm Partner</div>
-      <div style="min-width:280px;border:1px solid #e5e7eb;border-radius:10px;padding:12px">“Clarity over hype. Useful.” — Programme Lead</div>
+  <!-- Signal Score Toy -->
+  <section id="signal" class="mt-6 border rounded-2xl p-5">
+    <h2 class="text-xl font-semibold">Signal Score (toy)</h2>
+    <p class="text-sm text-gray-600">Weighting mixer for cadence drift, pause density, and lexical flips (demo-only; no claims).</p>
+    <div class="grid md:grid-cols-3 gap-3 mt-3 text-sm">
+      <label class="block">Cadence drift<input id="cad" type="range" min="0" max="100" value="40" class="w-full"></label>
+      <label class="block">Pause density<input id="pau" type="range" min="0" max="100" value="35" class="w-full"></label>
+      <label class="block">Lexical flips<input id="lex" type="range" min="0" max="100" value="25" class="w-full"></label>
     </div>
+    <div class="mt-3"><div class="h-3 bg-gray-200 rounded-full overflow-hidden"><div id="bar" class="h-3 bg-indigo-600" style="width:0%"></div></div>
+      <p class="text-sm mt-2">Score: <b id="sc">—</b> / 100 (illustrative)</p></div>
   </section>
 
-  <!-- Clear statement -->
-  <section style="margin-top:26px;border:1px solid #e5e7eb;border-radius:12px;padding:16px;background:#f8fafc">
-    <strong>Important:</strong> RBIS provides independent, evidence-led analysis and reporting. We do not provide legal advice.
+  <section id="flow" class="mt-8 border rounded-2xl p-5">
+    <h2 class="text-xl font-semibold">Client journey (simple)</h2>
+    <ol class="list-decimal list-inside text-sm text-gray-700 space-y-1">
+      <li>Chat-style intake with branch rules (minimal capture)</li>
+      <li>Evidence upload with hints & redaction prompts</li>
+      <li>Audit pack export (PDF + JSON)</li>
+      <li>Portal status updates (email/SMS optional)</li>
+    </ol>
   </section>
 </main>
 
-<footer style="border-top:1px solid #e5e7eb;padding:16px;text-align:center;color:#475569">
-  © <span id="year"></span> RBIS Intelligence. <strong>Designed &amp; Built by Ryan Roberts | RBIS</strong>.
-</footer>
+<footer class="border-t py-6 text-sm text-gray-600 text-center">© <span id="y"></span> RBIS Intelligence. <b>Designed &amp; Built by Ryan Roberts | RBIS</b>.</footer>
 
 <script>
-const r=(a,b)=>Math.floor(Math.random()*(b-a+1))+a;
-(function tick(){
-  document.getElementById('d-legal').textContent=r(6,18);
-  document.getElementById('d-ico').textContent=r(2,9);
-  document.getElementById('d-omb').textContent=r(12,28);
-  document.getElementById('d-sla').textContent=r(72,96)+'%';
-  setTimeout(tick,3500);
-})();
-(function scroll(){
-  const el=document.getElementById('rev'); let x=0;
-  function step(){ x=(x+0.5)%600; el.style.transform=`translateX(${-x}px)`; requestAnimationFrame(step); }
-  step();
-})();
-document.getElementById('year').textContent=new Date().getFullYear();
+  document.getElementById('y').textContent=new Date().getFullYear();
+  // ROI
+  function fmt(n){return new Intl.NumberFormat('en-GB').format(n)}
+  document.getElementById('calc').addEventListener('click',()=>{
+    const L=+leads.value, C=(+conv.value)/100, R=+rev.value, CPL=+cpl.value;
+    const cases=Math.round(L*C), revenue=cases*R, cost=L*CPL, profit=revenue-cost, roas=cost? (revenue/cost).toFixed(2) : '∞';
+    ro.innerHTML=`<b>${cases}</b> cases • Revenue £<b>${fmt(revenue)}</b> • Cost £<b>${fmt(cost)}</b> • Profit £<b>${fmt(profit)}</b> • ROAS <b>${roas}x</b>`;
+  });
+  // Signal toy
+  function paint(){const s=Math.round((+cad.value*.4)+(+pau.value*.35)+(+lex.value*.25));sc.textContent=s;bar.style.width=s+'%';}
+  ;['cad','pau','lex'].forEach(id=>document.getElementById(id).addEventListener('input',paint));paint();
 </script>
 </body></html>

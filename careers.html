@@ -1,173 +1,72 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Careers | RBIS</title>
-<style>
-:root{--ink:#0b1020;--mut:#475569;--line:#e5e7eb;--brand:#4753ff}
-*{box-sizing:border-box}body{margin:0;font:16px/1.55 system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial;color:var(--ink)}
-.banner{background:#fffbeb;border-bottom:1px solid #fcd34d;padding:10px 14px}
-.wrap{max-width:1120px;margin:auto;padding:0 16px}
-a{color:var(--brand);text-decoration:none}a:hover{text-decoration:underline}
-nav{position:sticky;top:0;background:#fff;border-bottom:1px solid var(--line);z-index:5}
-.navbar{display:flex;align-items:center;gap:14px;height:56px}
-.brand{font-weight:700;color:var(--ink)}
-.menu{display:flex;gap:14px}.menu a{padding:6px 8px;border-radius:8px;color:#111827}.menu a.active{background:rgba(71,83,255,.08)}
-#toggle{display:none;margin-left:auto;border:1px solid var(--line);background:#fff;border-radius:8px;padding:6px 10px}
-@media(max-width:820px){#toggle{display:block}.menu{display:none;flex-direction:column;padding:8px;border:1px solid var(--line);border-radius:12px;margin:8px 0}.menu.open{display:flex}}
-.grid{display:grid;gap:14px}.cards{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
-.card{border:1px solid var(--line);border-radius:14px;padding:14px;box-shadow:0 6px 24px rgba(0,0,0,.04)}
-.badge{font-size:12px;border:1px solid var(--line);padding:3px 8px;border-radius:999px}
-footer{border-top:1px solid var(--line);padding:18px;text-align:center;color:var(--mut)}
-small.mut{color:var(--mut)}
-details{border:1px solid var(--line);border-radius:12px;padding:10px 12px}details+details{margin-top:10px}summary{cursor:pointer;font-weight:600}
-.cta{display:inline-flex;align-items:center;gap:8px;background:var(--brand);color:#fff;padding:8px 12px;border-radius:10px}
-</style></head><body>
-<div class="banner"><b>Disclosure:</b> RBIS is not a law firm and does not provide legal advice. We only analyse the evidence in front of our intelligence officers — objectively and without bias.</div>
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Careers — RBIS</title>
+<script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-white text-[#0B1020]">
+<div class="bg-amber-50 border-b border-amber-300 text-[13px] px-3 py-2 text-amber-900">
+  <b>Disclosure:</b> RBIS is not a law firm and does not provide legal advice. We analyse only the evidence in front of our intelligence officers, objectively and without bias.
+</div>
 
-<nav><div class="wrap navbar">
-  <a class="brand" href="/index.html">RBIS</a>
-  <button id="toggle" aria-expanded="false">Menu</button>
-  <div id="menu" class="menu">
-    <a href="/index.html">Home</a>
-    <a href="/demo.html">Demo</a>
-    <a href="/careers.html">Careers</a>
-    <a href="/managed.html">Managed Support</a>
-    <a href="/legal.html">Legal</a>
-    <a href="/articles/">Articles</a>
-  </div>
-</div></nav>
+<header class="border-b bg-white sticky top-0 z-30"><div class="max-w-5xl mx-auto px-4 h-14 flex items-center justify-between">
+  <a href="index.html" class="font-semibold">RBIS</a>
+  <nav class="hidden md:flex gap-5 text-sm"><a href="about.html" class="hover:text-indigo-600">About</a><a href="articles/" class="hover:text-indigo-600">Articles</a><a href="legal.html" class="hover:text-indigo-600">Legal</a></nav>
+</div></header>
 
-<main class="wrap" style="padding:18px 0 28px">
-  <header style="margin:6px 0 12px">
-    <h1 style="margin:0">Careers — Human-first, Evidence-led</h1>
-    <p class="small mut">Remote-first (UK) with monthly Swansea meetups for whiteboards, tea, and strategy.</p>
-  </header>
+<main class="max-w-5xl mx-auto px-4 py-10">
+  <h1 class="text-3xl md:text-4xl font-bold">Careers — AI &amp; Us</h1>
+  <p class="mt-2 text-gray-700">Warm team, serious work. Remote-first; Swansea meet-ups as needed. We prize clarity, kindness, and evidence-led craft.</p>
 
-  <section class="grid cards" aria-label="Open roles">
-    <!-- Intelligence -->
-    <article class="card"><h3>Junior Intelligence Case Handler <span class="badge">Open</span></h3>
-      <p>Turn messy real-world evidence into clear, defensible summaries. Learn to blend behavioural cues with practical investigation.</p>
-      <ul><li>Review emails/chats/calls for contradictions & timelines</li><li>Draft exhibits and “receipts by default” tables</li><li>Work on court/board-ready packs</li></ul>
-      <p><a class="cta" href="mailto:Contact@RBISIntelligence.com?subject=Application%20-%20Junior%20Intelligence%20Case%20Handler">Apply</a></p>
+  <div class="mt-6 grid gap-5">
+    <!-- Closed -->
+    <article class="border rounded-2xl p-5 bg-gray-50">
+      <div class="flex items-start justify-between">
+        <h2 class="text-xl font-semibold">Senior Behavioural Analyst (Closed)</h2>
+        <span class="text-xs bg-gray-200 px-2 py-1 rounded-full">Closed</span>
+      </div>
+      <p class="text-sm text-gray-700 mt-1">Thanks for your interest — this role is now closed. We’ll reopen later this year.</p>
     </article>
 
-    <article class="card"><h3>Software Engineer — Product (Web) <span class="badge">Open</span></h3>
-      <p>Build accessible, audit-ready interfaces. You care about performance, semantics, and guardrails.</p>
-      <ul><li>Polished UI with vanilla JS</li><li>Validation, consent, retention hints</li><li>Evidence-linked dashboards & exports</li></ul>
-      <p><a class="cta" href="mailto:Contact@RBISIntelligence.com?subject=Application%20-%20Software%20Engineer%20(Product)">Apply</a></p>
-    </article>
-
-    <article class="card"><h3>System Integration Officer <span class="badge">Open</span></h3>
-      <p>Connect forms, evidence pipelines, and dashboards. Document flows for audit and continuity.</p>
-      <ul><li>Own integrations & vendor due-diligence notes</li><li>Keep diagrams current; least-privilege access</li><li>Coordinate test data & redaction checks</li></ul>
-      <p><a class="cta" href="mailto:Contact@RBISIntelligence.com?subject=Application%20-%20System%20Integration%20Officer">Apply</a></p>
-    </article>
-
-    <article class="card"><h3>1st Line Support <span class="badge">Open</span></h3>
-      <p>Front-door triage with kindness. Quick fixes, clean notes, fast handoffs.</p>
-      <ul><li>Own the queue; label, reproduce, resolve or route</li><li>“How-to” notes that prevent repeats</li><li>Spot patterns and nudge playbook updates</li></ul>
-      <p><a class="cta" href="mailto:Contact@RBISIntelligence.com?subject=Application%20-%201st%20Line%20Support">Apply</a></p>
-    </article>
-
-    <article class="card"><h3>2nd Line Support <span class="badge">Open</span></h3>
-      <p>Handle deeper issues, coordinate with engineering, and safeguard SLAs.</p>
-      <ul><li>Reproduce reliably; minimal test cases</li><li>Runbooks & rollback notes</li><li>Coach 1st line with templates/checklists</li></ul>
-      <p><a class="cta" href="mailto:Contact@RBISIntelligence.com?subject=Application%20-%202nd%20Line%20Support">Apply</a></p>
-    </article>
-
-    <article class="card"><h3>3rd Line Support <span class="badge">Open</span></h3>
-      <p>Own complex incidents, root cause, and prevention. Calm under pressure.</p>
-      <ul><li>Lead incident response; post-mortems</li><li>Harden guardrails & logging</li><li>Turn fixes into repeatable runbooks</li></ul>
-      <p><a class="cta" href="mailto:Contact@RBISIntelligence.com?subject=Application%20-%203rd%20Line%20Support">Apply</a></p>
-    </article>
-
-    <article class="card"><h3>Compliance Officer <span class="badge">Open</span></h3>
-      <p>Guardrails over theatre. Make compliance usable and calm.</p>
-      <ul><li>Retention, consent, DPIA/ROPA rhythms</li><li>Audits and vendor reviews</li><li>Incident drills & after-action notes</li></ul>
-      <p><a class="cta" href="mailto:Contact@RBISIntelligence.com?subject=Application%20-%20Compliance%20Officer">Apply</a></p>
-    </article>
-
-    <article class="card"><h3>Legal Counsel (Commercial & Privacy) — Contract <span class="badge">Open</span></h3>
-      <p>Review MSAs, NDAs, DPAs, marketing claims. Practical, plain-English advice.</p>
-      <ul><li>ASA/CAP • SRA/FCA-safe claims</li><li>Templates (UK GDPR, PECR)</li><li>Quick turnarounds; clear notes</li></ul>
-      <p><a class="cta" href="mailto:Confidential@RBISIntelligence.com?subject=Application%20-%20Legal%20Counsel%20(Contract)">Apply (secure)</a></p>
-    </article>
-
-    <article class="card"><h3>Behavioural Data Analyst <span class="badge">Open</span></h3>
-      <p>Quantify tone drift, timing, and anomaly signals. Help turn patterns into decisions.</p>
-      <ul><li>Simple scoring models & dashboards</li><li>Translate stats into plain English</li><li>Partner with Intelligence</li></ul>
-      <p><a class="cta" href="mailto:Contact@RBISIntelligence.com?subject=Application%20-%20Behavioural%20Data%20Analyst">Apply</a></p>
-    </article>
-
-    <article class="card"><h3>Evidence Operations Coordinator <span class="badge">Open</span></h3>
-      <p>Make intake painless and traceable. Keep exhibits tidy and chain-of-custody clean.</p>
-      <ul><li>Checklists; verify completeness & metadata</li><li>Exhibit tables & redaction passes</li><li>Board/court pack assembly</li></ul>
-      <p><a class="cta" href="mailto:Contact@RBISIntelligence.com?subject=Application%20-%20Evidence%20Ops%20Coordinator">Apply</a></p>
-    </article>
-
-    <article class="card"><h3>Security Specialist — Chain of Custody <span class="badge">Open</span></h3>
-      <p>Operational security for sensitive info. Practical, not theatrical.</p>
-      <ul><li>Access hygiene & secrets handling</li><li>Storage & transfer with receipts</li><li>Vendor reviews & breach playbooks</li></ul>
-      <p><a class="cta" href="mailto:Confidential@RBISIntelligence.com?subject=Application%20-%20Security%20(Chain%20of%20Custody)">Apply (secure)</a></p>
-    </article>
-
-    <article class="card"><h3>Procurement Lead <span class="badge">Open</span></h3>
-      <p>Own onboarding, frameworks, and due-diligence packs. Keep buyers confident.</p>
-      <ul><li>Insurance, accessibility, security docs</li><li>“Evidence by default” templates</li><li>Work with Legal & Compliance</li></ul>
-      <p><a class="cta" href="mailto:Contact@RBISIntelligence.com?subject=Application%20-%20Procurement%20Lead">Apply</a></p>
-    </article>
-
-    <article class="card"><h3>UX Writer (Evidence) — Contract <span class="badge">Open</span></h3>
-      <p>Give forms a heartbeat and reports a spine. Friendly, exact, and accessible.</p>
-      <ul><li>Calm forms + consent prompts</li><li>Report headings that say what they mean</li><li>Glossaries users actually read</li></ul>
-      <p><a class="cta" href="mailto:Contact@RBISIntelligence.com?subject=Application%20-%20UX%20Writer%20(Evidence)">Apply</a></p>
-    </article>
-
-    <article class="card"><h3>Delivery Project Manager <span class="badge">Open</span></h3>
-      <p>Keep projects on rails and humans in the loop. Light process, strong follow-through.</p>
-      <ul><li>Sprint notes, risk logs, and updates</li><li>Dependencies, timelines, scope trims</li><li>Protect focus; celebrate done</li></ul>
-      <p><a class="cta" href="mailto:Contact@RBISIntelligence.com?subject=Application%20-%20Delivery%20PM">Apply</a></p>
-    </article>
-  </section>
-
-  <section style="margin-top:22px">
-    <h2>Our Point of View</h2>
-    <details open><summary>⚡ The Biggest Lie in Business Communication</summary>
-      <p>“It’s not what you say, it’s how you say it” is half the story. Words can be rehearsed; tone can be performed. The interaction between the two — and the behaviour behind both — is where truth slips out. That’s behavioural intelligence.</p>
-    </details>
-    <details><summary>Beyond Words: Voice & Speech</summary>
-      <p>We read tone, cadence, and delivery as measurable behavioural data. Shifts, pauses, and pacing can signal stress, uncertainty, or concealment — regardless of the chosen words.</p>
-    </details>
-    <details><summary>Why This Matters in Law & Risk</summary>
-      <p>RBIS UK does not provide legal advice or representation. We deliver independent, court-ready analysis that strengthens cases by surfacing inconsistencies and credibility risks early.</p>
-    </details>
-    <details><summary>Methodologies & Evidence</summary>
-      <ul>
-        <li>Behavioural patterning, timeline reconstruction</li>
-        <li>Document authentication, audio forensics</li>
-        <li>Evidence correlation mapping, stats validation</li>
+    <!-- Open: Junior Case Handler x2 -->
+    <article class="border rounded-2xl p-5 bg-white">
+      <div class="flex items-start justify-between">
+        <h2 class="text-xl font-semibold">Junior Intelligence Case Handler</h2>
+        <span class="text-xs bg-emerald-100 text-emerald-800 px-2 py-1 rounded-full">Open (2)</span>
+      </div>
+      <ul class="mt-2 text-sm text-gray-700 list-disc list-inside space-y-1">
+        <li>Review communications & timelines, annotate signal candidates</li>
+        <li>Compile factual evidence packs (no legal advice)</li>
+        <li>Coordinate with analysts; maintain audit trail discipline</li>
       </ul>
-    </details>
-  </section>
+      <p class="text-sm text-gray-700 mt-2"><b>Location:</b> Remote (UK). <b>Meetings:</b> Swansea. <b>Type:</b> Contractor or PT/FT.</p>
+      <p class="text-sm text-gray-700 mt-1"><b>Apply:</b> Email a short note + CV to <a class="underline" href="mailto:Careers@RBISIntelligence.com">Careers@RBISIntelligence.com</a>. Subject: <i>Jr Case Handler</i>.</p>
+    </article>
 
-  <section class="card" style="margin-top:22px">
-    <h2 style="margin:0 0 6px">How We Hire</h2>
-    <ol>
-      <li>Intro email → we skim your work/notes</li>
-      <li>Short call (25m) → expectations both ways</li>
-      <li>Paid work sample (compact; no spec theatre)</li>
-      <li>Decision + simple paperwork</li>
-    </ol>
-    <p><small class="mut">We welcome career changers and returners. Adjustments available on request.</small></p>
-  </section>
+    <!-- Open: Software Engineer -->
+    <article class="border rounded-2xl p-5 bg-white">
+      <div class="flex items-start justify-between">
+        <h2 class="text-xl font-semibold">Software Engineer — Product (Web)</h2>
+        <span class="text-xs bg-emerald-100 text-emerald-800 px-2 py-1 rounded-full">Open</span>
+      </div>
+      <ul class="mt-2 text-sm text-gray-700 list-disc list-inside space-y-1">
+        <li>Build audit-ready UIs (forms, dashboards, exports)</li>
+        <li>Own performance & accessibility baselines</li>
+        <li>Secure data handling (minimal capture, retention clocks)</li>
+      </ul>
+      <p class="text-sm text-gray-700 mt-2"><b>Stack:</b> HTML/CSS/JS, Tailwind, basic Node familiarity (nice to have). No frameworks required.</p>
+      <p class="text-sm text-gray-700 mt-1"><b>Location:</b> Remote (UK). <b>Meetings:</b> Swansea.</p>
+      <p class="text-sm text-gray-700 mt-1"><b>Apply:</b> <a class="underline" href="mailto:Careers@RBISIntelligence.com">Careers@RBISIntelligence.com</a>. Subject: <i>Software Engineer</i>.</p>
+    </article>
+  </div>
+
+  <div class="mt-8 text-sm text-gray-600 border rounded-2xl p-4">
+    <p><b>Contracts & Procurement</b> — vendor onboarding welcome.</p>
+    <p class="mt-1"><b>Special Requests (VIP/Government)</b> — use our secure route: <a class="underline" href="mailto:Confidential@RBISIntelligence.com">Confidential@RBISIntelligence.com</a></p>
+  </div>
 </main>
 
-<footer>© <span id="y"></span> RBIS Intelligence. <b>Designed &amp; Built by Ryan Roberts | RBIS</b>.</footer>
-
-<script>
-(()=>{const p=location.pathname.split('/').pop()||'index.html';
-const m=document.getElementById('menu'); const t=document.getElementById('toggle');
-t.addEventListener('click',()=>{const on=!(m.classList.contains('open'));m.classList.toggle('open',on);t.setAttribute('aria-expanded',on)});
-m.querySelectorAll('a').forEach(a=>{if(a.getAttribute('href').endsWith(p))a.classList.add('active');a.addEventListener('click',()=>m.classList.remove('open'))});
-addEventListener('resize',()=>{if(innerWidth>820)m.classList.remove('open')});
-document.getElementById('y').textContent=new Date().getFullYear();
-})();
-</script>
+<footer class="border-t py-6 text-sm text-gray-600 text-center">
+  © <span id="y"></span> RBIS Intelligence. <b>Designed &amp; Built by Ryan Roberts | RBIS</b>.
+</footer>
+<script>document.getElementById('y').textContent=new Date().getFullYear()</script>
 </body></html>

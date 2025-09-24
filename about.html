@@ -1,106 +1,65 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>About | RBIS</title>
-<style>
-:root{--ink:#0b1020;--mut:#475569;--line:#e5e7eb;--brand:#4753ff}
-*{box-sizing:border-box}body{margin:0;font:16px/1.55 system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial;color:var(--ink)}
-.banner{background:#fffbeb;border-bottom:1px solid #fcd34d;padding:10px 14px}
-.wrap{max-width:1120px;margin:auto;padding:0 16px}
-a{color:var(--brand);text-decoration:none}a:hover{text-decoration:underline}
-nav{position:sticky;top:0;background:#fff;border-bottom:1px solid var(--line);z-index:5}
-.navbar{display:flex;align-items:center;gap:14px;height:56px}
-.brand{font-weight:700}
-.menu{display:flex;gap:14px}
-.menu a{padding:6px 8px;border-radius:8px;color:#111827}
-.menu a.active{background:rgba(71,83,255,.08)}
-#toggle{display:none;margin-left:auto;border:1px solid var(--line);background:#fff;border-radius:8px;padding:6px 10px}
-@media(max-width:820px){#toggle{display:block}.menu{display:none;flex-direction:column;padding:8px;border:1px solid var(--line);border-radius:12px;margin:8px 0}.menu.open{display:flex}}
-.card{border:1px solid var(--line);border-radius:14px;padding:14px;box-shadow:0 6px 24px rgba(0,0,0,.04)}
-.grid{display:grid;gap:16px}
-.cols{grid-template-columns:2fr 1fr}
-@media(max-width:900px){.cols{grid-template-columns:1fr}}
-small.mut{color:var(--mut)}
-footer{border-top:1px solid var(--line);padding:18px;text-align:center;color:var(--mut)}
-.cta{display:inline-flex;align-items:center;gap:8px;background:var(--brand);color:#fff;padding:10px 14px;border-radius:10px}
-details{border:1px solid var(--line);border-radius:12px;padding:10px 12px}details+details{margin-top:10px}summary{cursor:pointer;font-weight:600}
-</style></head><body>
-<div class="banner"><b>Disclosure:</b> RBIS is not a law firm and does not provide legal advice. We only analyse the evidence in front of our intelligence officers — objectively and without bias.</div>
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>About — RBIS</title>
+<script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-white text-[#0B1020]">
+<div class="bg-amber-50 border-b border-amber-300 text-[13px] px-3 py-2 text-amber-900">
+  <b>Disclosure:</b> RBIS is not a law firm and does not provide legal advice. We analyse only the evidence in front of our intelligence officers, objectively and without bias.
+</div>
 
-<nav><div class="wrap navbar">
-  <a class="brand" href="/index.html">RBIS</a>
-  <button id="toggle" aria-expanded="false">Menu</button>
-  <div id="menu" class="menu">
-    <a href="/index.html">Home</a><a href="/demo.html">Demo</a><a href="/careers.html">Careers</a><a href="/managed.html">Managed Support</a><a href="/legal.html">Legal</a><a href="/articles/">Articles</a><a href="/about.html">About</a>
-  </div>
-</div></nav>
+<header class="border-b bg-white sticky top-0 z-30"><div class="max-w-6xl mx-auto px-4 h-14 flex items-center justify-between">
+  <a href="index.html" class="font-semibold">RBIS</a>
+  <nav class="hidden md:flex gap-5 text-sm"><a href="index.html#products" class="hover:text-indigo-600">Products</a><a href="dashboard.html" class="hover:text-indigo-600">Dashboard</a><a href="articles/" class="hover:text-indigo-600">Articles</a><a href="legal.html" class="hover:text-indigo-600">Legal</a></nav>
+</div></header>
 
-<main class="wrap" style="padding:18px 0 28px">
-  <header>
-    <h1 style="margin:6px 0 6px">About RBIS — See Beyond the Surface</h1>
-    <p class="mut">Human-first, evidence-led. We combine behavioural science with intelligence methods to deliver clarity in high-stakes decisions.</p>
-  </header>
+<main class="max-w-3xl mx-auto px-4 py-10">
+  <h1 class="text-3xl md:text-4xl font-bold">About RBIS</h1>
+  <p class="mt-3 text-gray-700">RBIS (Ryan Roberts: Behavioural & Intelligence Services) builds bright, modern, evidence-first software — with guardrailed automations and audit-ready reporting. Compliance is not a bolt-on; it’s the architecture.</p>
 
-  <section class="grid cols" style="margin-top:12px">
-    <article class="card">
-      <h2 style="margin:0 0 6px">What We Believe</h2>
-      <p>“It’s not what you say, it’s how you say it” is half the story. Words can be rehearsed; tone can be performed. It’s the <b>interaction</b> between both — and the behaviour beneath — where truth slips out. That’s behavioural intelligence.</p>
-      <details open><summary>Beyond Words: Voice & Speech</summary>
-        <p>We treat tone, cadence, and delivery as measurable behavioural data. Shifts, pauses, and pacing can signal stress, uncertainty, or concealment — regardless of the chosen words.</p>
-      </details>
-      <details><summary>Methodologies (for audit)</summary>
-        <ul>
-          <li>Behavioural pattern analysis & timeline reconstruction</li>
-          <li>Document authentication & audio forensics</li>
-          <li>Evidence correlation mapping & statistical validation</li>
-        </ul>
-      </details>
-      <details><summary>Where It Applies</summary>
-        <ul>
-          <li>Corporate negotiations & leadership selection</li>
-          <li>Risk & compliance; incident reviews</li>
-          <li>Legal contexts (independent, court-ready analysis)</li>
-        </ul>
-      </details>
-    </article>
-
-    <aside class="card">
-      <h3 style="margin:0 0 6px">24/7 Specialists</h3>
-      <p>When urgency matters, we can route to a panel of psychological, behavioural, and intelligence specialists — any time.</p>
-      <p><a class="cta" href="mailto:Contact@RBISIntelligence.com?subject=RBIS%20Enquiry">Talk to RBIS</a></p>
-    </aside>
-  </section>
-
-  <section class="card" style="margin-top:16px">
-    <h2 style="margin:0 0 6px">Ryan Roberts — Founder</h2>
-    <p>Ryan Roberts is an entrepreneur, AI automation specialist, and digital strategist focused on cutting through noise to reveal what’s real. He has led campaigns and products across Google, Facebook, Instagram, and TikTok, built practical AI-enabled workflows, and modernised operations for organisations from law firms to public bodies.</p>
-    <p>He founded Vanguard AI to streamline workflows and deploy measurable, AI-powered growth systems. With Digitally Advanced, he modernised processes for solicitors — improving intake, advertising, and client outcomes.</p>
-    <p>Beyond consulting, Ryan has developed product solutions in emerging markets. As a published author, his work spans accessible AI guides to light-hearted books — underscoring a habit of experimentation and clarity.</p>
-    <p>At RBIS, he applies this range to deliver intelligence that goes deeper than data. The result: impartial, evidence-based reports and guidance leaders can act on with confidence.</p>
-  </section>
-
-  <section class="grid" style="margin-top:16px">
-    <article class="card">
-      <h3 style="margin:0 0 6px">Independent. Not Legal Advice.</h3>
-      <p>RBIS UK does not provide legal advice or representation. We act as independent analysts. Our reporting is designed to be submitted alongside a solicitor’s work — court-ready, defensible, and free from bias.</p>
-    </article>
-    <article class="card">
-      <h3 style="margin:0 0 6px">Sectors We Help</h3>
-      <ul>
-        <li>Councils & Housing Associations — impartial dispute analysis</li>
-        <li>Law Firms — forensic reports, expert input, credibility assessment</li>
-        <li>Corporate & HR — sensitive communications review; behavioural profiling</li>
+  <section class="mt-8 grid gap-4">
+    <article class="border rounded-2xl p-5 bg-white">
+      <h2 class="text-xl font-semibold">Our approach</h2>
+      <ul class="mt-2 text-sm text-gray-700 list-disc list-inside space-y-1">
+        <li>Accessibility-first tokens and patterns (WCAG-aware)</li>
+        <li>CAP/ASA claims checks baked into content ops</li>
+        <li>Evidence packs & board-ready exports (“receipts by default”)</li>
+        <li>Minimal data collection with clear retention clocks</li>
       </ul>
     </article>
+
+    <article class="border rounded-2xl p-5 bg-white">
+      <h2 class="text-xl font-semibold">Ryan Roberts — Founder</h2>
+      <p class="text-sm text-gray-700 mt-1">Entrepreneur, AI automation specialist, and digital strategist. Ryan has delivered scaled funnels, modernised legal ops for solicitors, and designed products in emerging markets. As a published author, he blends clarity with pragmatism: <i>build what proves itself.</i></p>
+      <ul class="mt-3 text-sm text-gray-700 list-disc list-inside space-y-1">
+        <li>Vanguard AI — workflow automation, AI-driven campaigns</li>
+        <li>Digitally Advanced — modernising solicitor operations & ad strategy</li>
+        <li>RBIS — intelligence-led behaviour analysis and evidence reporting</li>
+      </ul>
+      <p class="text-sm text-gray-700 mt-3">Today, Ryan leads RBIS to combine AI signal-picking (micro-expressions, cadence, written tone) with expert human review. When urgency strikes, we can convene a panel of psychological, behavioural, and intelligence specialists — 24/7 via our emergency route.</p>
+    </article>
+
+    <article class="border rounded-2xl p-5 bg-white">
+      <h2 class="text-xl font-semibold">Body Lounge — How we use it</h2>
+      <p class="text-sm text-gray-700 mt-1">Body Lounge is our lens for behaviour beneath words. We never “mind-read”. Instead, we:</p>
+      <ul class="mt-2 text-sm text-gray-700 list-disc list-inside space-y-1">
+        <li>Extract signal candidates (pauses, pitch drift, rhythm)</li>
+        <li>Tie to context (timeline, documents, comms provenance)</li>
+        <li>Document limitations and avoid bias (“no single cue” rule)</li>
+      </ul>
+      <p class="text-sm text-gray-700 mt-2">See our article: <a class="text-indigo-600 underline" href="articles/body-lounge.html">Micro-expressions in a digital age ↗</a></p>
+    </article>
   </section>
+
+  <div class="mt-10 text-sm text-gray-600 border rounded-2xl p-4">
+    <b>Contact</b><br>
+    General: <a class="underline" href="mailto:Contact@RBISIntelligence.com">Contact@RBISIntelligence.com</a><br>
+    VIP / Government: <a class="underline" href="mailto:Confidential@RBISIntelligence.com">Confidential@RBISIntelligence.com</a>
+  </div>
 </main>
 
-<footer>© <span id="y"></span> RBIS Intelligence. <b>Designed &amp; Built by Ryan Roberts | RBIS</b>.</footer>
-
-<script>
-(()=>{const p=location.pathname.split('/').pop()||'index.html';
-const m=document.getElementById('menu'),t=document.getElementById('toggle');
-t.addEventListener('click',()=>{const on=!m.classList.contains('open');m.classList.toggle('open',on);t.setAttribute('aria-expanded',on)});
-m.querySelectorAll('a').forEach(a=>{if(a.getAttribute('href').endsWith(p))a.classList.add('active');a.addEventListener('click',()=>m.classList.remove('open'))});
-addEventListener('resize',()=>{if(innerWidth>820)m.classList.remove('open')});
-document.getElementById('y').textContent=new Date().getFullYear();
-})();
-</script>
+<footer class="border-t py-6 text-sm text-gray-600 text-center">
+  © <span id="y"></span> RBIS Intelligence. <b>Designed &amp; Built by Ryan Roberts | RBIS</b>.
+</footer>
+<script>document.getElementById('y').textContent=new Date().getFullYear()</script>
 </body></html>
