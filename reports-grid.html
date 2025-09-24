@@ -1,30 +1,18 @@
-<!doctype html>
-<html lang="en">
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<!doctype html><html lang="en">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>RBIS — Professional Evidence Reports (Cards)</title>
 <link rel="canonical" href="/reports-grid.html">
 <link rel="stylesheet" href="/assets/header.css">
 <body style="margin:0;font:16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,Arial,sans-serif;color:#0b1020;background:#fff">
 <div style="background:#FFFBEB;padding:8px;border-bottom:1px solid #FCD34D"><b>Disclosure:</b> RBIS is not a law firm and does not provide legal advice. We analyse only the evidence in front of our intelligence officers, objectively and without bias.</div>
-
-<!-- Universal header -->
 <div id="rbis-header" data-active="Reports"></div>
-<script defer src="/assets/header.js"></script>
-
+<script defer src="/assets/header.js?v=6"></script>
 <main style="max-width:1100px;margin:20px auto;padding:0 16px">
   <h1 style="margin:8px 0 6px">Professional Evidence Reports — Cards View</h1>
-  <p style="margin:0 0 16px;color:#475569">
-    Tap a card to copy the code & price. Prices ex-VAT. Prefer a printable table?
-    <a href="/reports.html">View as table</a>.
-  </p>
-
-  <!-- Controls -->
+  <p style="margin:0 0 16px;color:#475569">Tap a card to copy the code & price. Ex-VAT. Prefer a table? <a href="/reports.html">View table</a>.</p>
   <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:0 0 12px">
-    <input id="q" placeholder="Search title, code, notes…" aria-label="Search reports"
-           style="flex:1;min-width:220px;padding:10px 12px;border:1px solid #e5e7eb;border-radius:12px">
-    <select id="cat" aria-label="Filter by category"
-            style="padding:10px 12px;border:1px solid #e5e7eb;border-radius:12px">
+    <input id="q" placeholder="Search title, code, notes…" aria-label="Search reports" style="flex:1;min-width:220px;padding:10px 12px;border:1px solid #e5e7eb;border-radius:12px">
+    <select id="cat" aria-label="Filter by category" style="padding:10px 12px;border:1px solid #e5e7eb;border-radius:12px">
       <option value="">All categories</option>
       <option value="A">A) Housing Repairs</option>
       <option value="B">B) Complaints & Ombudsman</option>
@@ -33,125 +21,82 @@
       <option value="E">E) Operational Performance</option>
       <option value="F">F) PACT Ledger</option>
     </select>
-    <button id="csv" class="btn" style="padding:10px 12px;border:1px solid #e5e7eb;border-radius:12px;font-weight:700;background:#fff">
-      Download CSV
-    </button>
+    <button id="csv" class="btn" style="padding:10px 12px;border:1px solid #e5e7eb;border-radius:12px;font-weight:700;background:#fff">Download CSV</button>
   </div>
-
-  <!-- Grid -->
-  <div id="grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px"></div>
+  <div id="grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px">
+<!-- A) Housing Repairs -->
+<button class="card" data-code="A1" data-title="Disrepair Evidence Pack" data-price="950" data-notes="Factual only" data-cat="A" style="text-align:left;background:#fff;border:1px solid #e5e7eb;border-radius:14px;padding:14px;cursor:pointer"><div style="display:flex;justify-content:space-between;gap:8px;align-items:flex-start"><span style="font-weight:700">A1</span><span style="font-size:12px;color:#475569">A) Housing Repairs</span></div><div style="margin-top:6px;font-weight:600">Disrepair Evidence Pack</div><div style="margin-top:6px;display:flex;align-items:center;gap:10px"><span style="font-weight:800">£950</span><span style="font-size:12px;color:#0b1020;background:#f1f5f9;border:1px solid #e2e8f0;border-radius:10px;padding:2px 8px">Rush: Y</span></div><div style="margin-top:6px;font-size:13px;color:#475569">Factual only</div></button>
+<button class="card" data-code="A2" data-title="Damp & Mould Dossier" data-price="850" data-notes="Ops mitigations" data-cat="A" style="text-align:left;background:#fff;border:1px solid #e5e7eb;border-radius:14px;padding:14px;cursor:pointer"><div style="display:flex;justify-content:space-between;gap:8px;align-items:flex-start"><span style="font-weight:700">A2</span><span style="font-size:12px;color:#475569">A) Housing Repairs</span></div><div style="margin-top:6px;font-weight:600">Damp & Mould Dossier</div><div style="margin-top:6px;display:flex;align-items:center;gap:10px"><span style="font-weight:800">£850</span><span style="font-size:12px;color:#0b1020;background:#f1f5f9;border:1px solid #e2e8f0;border-radius:10px;padding:2px 8px">Rush: Y</span></div><div style="margin-top:6px;font-size:13px;color:#475569">Ops mitigations</div></button>
+<button class="card" data-code="A3" data-title="HHSRS Desktop Screening" data-price="750" data-notes="Not statutory inspection" data-cat="A" style="text-align:left;background:#fff;border:1px solid #e5e7eb;border-radius:14px;padding:14px;cursor:pointer"><div style="display:flex;justify-content:space-between;gap:8px;align-items:flex-start"><span style="font-weight:700">A3</span><span style="font-size:12px;color:#475569">A) Housing Repairs</span></div><div style="margin-top:6px;font-weight:600">HHSRS Desktop Screening</div><div style="margin-top:6px;display:flex;align-items:center;gap:10px"><span style="font-weight:800">£750</span><span style="font-size:12px;color:#0b1020;background:#f1f5f9;border:1px solid #e2e8f0;border-radius:10px;padding:2px 8px">Rush: Y</span></div><div style="margin-top:6px;font-size:13px;color:#475569">Not statutory inspection</div></button>
+<button class="card" data-code="A4" data-title="Works & SLA Audit" data-price="1250" data-notes="Ops audit" data-cat="A" style="text-align:left;background:#fff;border:1px solid #e5e7eb;border-radius:14px;padding:14px;cursor:pointer"><div style="display:flex;justify-content:space-between;gap:8px;align-items:flex-start"><span style="font-weight:700">A4</span><span style="font-size:12px;color:#475569">A) Housing Repairs</span></div><div style="margin-top:6px;font-weight:600">Works & SLA Audit</div><div style="margin-top:6px;display:flex;align-items:center;gap:10px"><span style="font-weight:800">£1,250</span><span style="font-size:12px;color:#0b1020;background:#f1f5f9;border:1px solid #e2e8f0;border-radius:10px;padding:2px 8px">Rush: Y</span></div><div style="margin-top:6px;font-size:13px;color:#475569">Ops audit</div></button>
+<button class="card" data-code="A5" data-title="Landlord Compliance Snapshot" data-price="700" data-notes="Desktop mapping" data-cat="A" style="text-align:left;background:#fff;border:1px solid #e5e7eb;border-radius:14px;padding:14px;cursor:pointer"><div style="display:flex;justify-content:space-between;gap:8px;align-items:flex-start"><span style="font-weight:700">A5</span><span style="font-size:12px;color:#475569">A) Housing Repairs</span></div><div style="margin-top:6px;font-weight:600">Landlord Compliance Snapshot</div><div style="margin-top:6px;display:flex;align-items:center;gap:10px"><span style="font-weight:800">£700</span><span style="font-size:12px;color:#0b1020;background:#f1f5f9;border:1px solid #e2e8f0;border-radius:10px;padding:2px 8px">Rush: Y</span></div><div style="margin-top:6px;font-size:13px;color:#475569">Desktop mapping</div></button>
+<button class="card" data-code="A6" data-title="Void Turnaround Audit" data-price="1100" data-notes="Process review" data-cat="A" style="text-align:left;background:#fff;border:1px solid #e5e7eb;border-radius:14px;padding:14px;cursor:pointer"><div style="display:flex;justify-content:space-between;gap:8px;align-items:flex-start"><span style="font-weight:700">A6</span><span style="font-size:12px;color:#475569">A) Housing Repairs</span></div><div style="margin-top:6px;font-weight:600">Void Turnaround Audit</div><div style="margin-top:6px;display:flex;align-items:center;gap:10px"><span style="font-weight:800">£1,100</span><span style="font-size:12px;color:#0b1020;background:#f1f5f9;border:1px solid #e2e8f0;border-radius:10px;padding:2px 8px">Rush: Y</span></div><div style="margin-top:6px;font-size:13px;color:#475569">Process review</div></button>
+<button class="card" data-code="A7" data-title="Gas/Electrical Evidence Pack" data-price="1100" data-notes="Desktop compilation" data-cat="A" style="text-align:left;background:#fff;border:1px solid #e5e7eb;border-radius:14px;padding:14px;cursor:pointer"><div style="display:flex;justify-content:space-between;gap:8px;align-items:flex-start"><span style="font-weight:700">A7</span><span style="font-size:12px;color:#475569">A) Housing Repairs</span></div><div style="margin-top:6px;font-weight:600">Gas/Electrical Evidence Pack</div><div style="margin-top:6px;display:flex;align-items:center;gap:10px"><span style="font-weight:800">£1,100</span><span style="font-size:12px;color:#0b1020;background:#f1f5f9;border:1px solid #e2e8f0;border-radius:10px;padding:2px 8px">Rush: Y</span></div><div style="margin-top:6px;font-size:13px;color:#475569">Desktop compilation</div></button>
+<button class="card" data-code="A8" data-title="Legionella Risk Log" data-price="900" data-notes="Desktop only" data-cat="A" style="text-align:left;background:#fff;border:1px solid #e5e7eb;border-radius:14px;padding:14px;cursor:pointer"><div style="display:flex;justify-content:space-between;gap:8px;align-items:flex-start"><span style="font-weight:700">A8</span><span style="font-size:12px;color:#475569">A) Housing Repairs</span></div><div style="margin-top:6px;font-weight:600">Legionella Risk Log</div><div style="margin-top:6px;display:flex;align-items:center;gap:10px"><span style="font-weight:800">£900</span><span style="font-size:12px;color:#0b1020;background:#f1f5f9;border:1px solid #e2e8f0;border-radius:10px;padding:2px 8px">Rush: Y</span></div><div style="margin-top:6px;font-size:13px;color:#475569">Desktop only</div></button>
+<button class="card" data-code="A9" data-title="Fire Door Register Audit" data-price="1200" data-notes="Desktop only" data-cat="A" style="text-align:left;background:#fff;border:1px solid #e5e7eb;border-radius:14px;padding:14px;cursor:pointer"><div style="display:flex;justify-content:space-between;gap:8px;align-items:flex-start"><span style="font-weight:700">A9</span><span style="font-size:12px;color:#475569">A) Housing Repairs</span></div><div style="margin-top:6px;font-weight:600">Fire Door Register Audit</div><div style="margin-top:6px;display:flex;align-items:center;gap:10px"><span style="font-weight:800">£1,200</span><span style="font-size:12px;color:#0b1020;background:#f1f5f9;border:1px solid #e2e8f0;border-radius:10px;padding:2px 8px">Rush: Y</span></div><div style="margin-top:6px;font-size:13px;color:#475569">Desktop only</div></button>
+<!-- B) Complaints & Ombudsman -->
+<button class="card" data-code="B1" data-title="Complaint Code Gap Analysis" data-price="1900" data-notes="Against statutory Code" data-cat="B" style="text-align:left;background:#fff;border:1px solid #e5e7eb;border-radius:14px;padding:14px;cursor:pointer"><div style="display:flex;justify-content:space-between;gap:8px;align-items:flex-start"><span style="font-weight:700">B1</span><span style="font-size:12px;color:#475569">B) Complaints & Ombudsman</span></div><div style="margin-top:6px;font-weight:600">Complaint Code Gap Analysis</div><div style="margin-top:6px;display:flex;align-items:center;gap:10px"><span style="font-weight:800">£1,900</span><span style="font-size:12px;color:#0b1020;background:#f1f5f9;border:1px solid #e2e8f0;border-radius:10px;padding:2px 8px">Rush: Y</span></div><div style="margin-top:6px;font-size:13px;color:#475569">Against statutory Code</div></button>
+<button class="card" data-code="B2" data-title="Stage 1/2 Evidence Pack" data-price="850" data-notes="Facts; org signs response" data-cat="B" style="text-align:left;background:#fff;border:1px solid #e5e7eb;border-radius:14px;padding:14px;cursor:pointer"><div style="display:flex;justify-content:space-between;gap:8px;align-items:flex-start"><span style="font-weight:700">B2</span><span style="font-size:12px;color:#475569">B) Complaints & Ombudsman</span></div><div style="margin-top:6px;font-weight:600">Stage 1/2 Evidence Pack</div><div style="margin-top:6px;display:flex;align-items:center;gap:10px"><span style="font-weight:800">£850</span><span style="font-size:12px;color:#0b1020;background:#f1f5f9;border:1px solid #e2e8f0;border-radius:10px;padding:2px 8px">Rush: Y</span></div><div style="margin-top:6px;font-size:13px;color:#475569">Facts; org signs response</div></button>
+<button class="card" data-code="B3" data-title="Ombudsman Referral Bundle" data-price="1400" data-notes="Cross-referenced evidence" data-cat="B" style="text-align:left;background:#fff;border:1px solid #e5e7eb;border-radius:14px;padding:14px;cursor:pointer"><div style="display:flex;justify-content:space-between;gap:8px;align-items:flex-start"><span style="font-weight:700">B3</span><span style="font-size:12px;color:#475569">B) Complaints & Ombudsman</span></div><div style="margin-top:6px;font-weight:600">Ombudsman Referral Bundle</div><div style="margin-top:6px;display:flex;align-items:center;gap:10px"><span style="font-weight:800">£1,400</span><span style="font-size:12px;color:#0b1020;background:#f1f5f9;border:1px solid #e2e8f0;border-radius:10px;padding:2px 8px">Rush: Y</span></div><div style="margin-top:6px;font-size:13px;color:#475569">Cross-referenced evidence</div></button>
+<button class="card" data-code="B4" data-title="Remedy Benchmarking" data-price="1250" data-notes="Comparative outcomes" data-cat="B" style="text-align:left;background:#fff;border:1px solid #e5e7eb;border-radius:14px;padding:14px;cursor:pointer"><div style="display:flex;justify-content:space-between;gap:8px;align-items:flex-start"><span style="font-weight:700">B4</span><span style="font-size:12px;color:#475569">B) Complaints & Ombudsman</span></div><div style="margin-top:6px;font-weight:600">Remedy Benchmarking</div><div style="margin-top:6px;display:flex;align-items:center;gap:10px"><span style="font-weight:800">£1,250</span><span style="font-size:12px;color:#0b1020;background:#f1f5f9;border:1px solid #e2e8f0;border-radius:10px;padding:2px 8px">Rush: Y</span></div><div style="margin-top:6px;font-size:13px;color:#475569">Comparative outcomes</div></button>
+<!-- C) Data Protection & Marketing -->
+<button class="card" data-code="C1" data-title="DPIA" data-price="1500" data-notes="ICO pattern" data-cat="C" style="text-align:left;background:#fff;border:1px solid #e5e7eb;border-radius:14px;padding:14px;cursor:pointer"><div style="display:flex;justify-content:space-between;gap:8px;align-items:flex-start"><span style="font-weight:700">C1</span><span style="font-size:12px;color:#475569">C) Data Protection & Marketing</span></div><div style="margin-top:6px;font-weight:600">DPIA</div><div style="margin-top:6px;display:flex;align-items:center;gap:10px"><span style="font-weight:800">£1,500</span><span style="font-size:12px;color:#0b1020;background:#f1f5f9;border:1px solid #e2e8f0;border-radius:10px;padding:2px 8px">Rush: Y</span></div><div style="margin-top:6px;font-size:13px;color:#475569">ICO pattern</div></button>
+<button class="card" data-code="C2" data-title="RoPA Pack" data-price="1300" data-notes="Art.30 register" data-cat="C" style="text-align:left;background:#fff;border:1px solid #e5e7eb;border-radius:14px;padding:14px;cursor:pointer"><div style="display:flex;justify-content:space-between;gap:8px;align-items:flex-start"><span style="font-weight:700">C2</span><span style="font-size:12px;color:#475569">C) Data Protection & Marketing</span></div><div style="margin-top:6px;font-weight:600">RoPA Pack</div><div style="margin-top:6px;display:flex;align-items:center;gap:10px"><span style="font-weight:800">£1,300</span><span style="font-size:12px;color:#0b1020;background:#f1f5f9;border:1px solid #e2e8f0;border-radius:10px;padding:2px 8px">Rush: Y</span></div><div style="margin-top:6px;font-size:13px;color:#475569">Art.30 register</div></button>
+<button class="card" data-code="C3" data-title="PECR Cookie Audit" data-price="950" data-notes="Consent mode" data-cat="C" style="text-align:left;background:#fff;border:1px solid #e5e7eb;border-radius:14px;padding:14px;cursor:pointer"><div style="display:flex;justify-content:space-between;gap:8px;align-items:flex-start"><span style="font-weight:700">C3</span><span style="font-size:12px;color:#475569">C) Data Protection & Marketing</span></div><div style="margin-top:6px;font-weight:600">PECR Cookie Audit</div><div style="margin-top:6px;display:flex;align-items:center;gap:10px"><span style="font-weight:800">£950</span><span style="font-size:12px;color:#0b1020;background:#f1f5f9;border:1px solid #e2e8f0;border-radius:10px;padding:2px 8px">Rush: Y</span></div><div style="margin-top:6px;font-size:13px;color:#475569">Consent mode</div></button>
+<button class="card" data-code="C4" data-title="Marketing Claims File" data-price="1100" data-notes="CAP substantiation" data-cat="C" style="text-align:left;background:#fff;border:1px solid #e5e7eb;border-radius:14px;padding:14px;cursor:pointer"><div style="display:flex;justify-content:space-between;gap:8px;align-items:flex-start"><span style="font-weight:700">C4</span><span style="font-size:12px;color:#475569">C) Data Protection & Marketing</span></div><div style="margin-top:6px;font-weight:600">Marketing Claims File</div><div style="margin-top:6px;display:flex;align-items:center;gap:10px"><span style="font-weight:800">£1,100</span><span style="font-size:12px;color:#0b1020;background:#f1f5f9;border:1px solid #e2e8f0;border-radius:10px;padding:2px 8px">Rush: Y</span></div><div style="margin-top:6px;font-size:13px;color:#475569">CAP substantiation</div></button>
+<button class="card" data-code="C5" data-title="SAR Response Pack" data-price="1000" data-notes="Triage & redaction" data-cat="C" style="text-align:left;background:#fff;border:1px solid #e5e7eb;border-radius:14px;padding:14px;cursor:pointer"><div style="display:flex;justify-content:space-between;gap:8px;align-items:flex-start"><span style="font-weight:700">C5</span><span style="font-size:12px;color:#475569">C) Data Protection & Marketing</span></div><div style="margin-top:6px;font-weight:600">SAR Response Pack</div><div style="margin-top:6px;display:flex;align-items:center;gap:10px"><span style="font-weight:800">£1,000</span><span style="font-size:12px;color:#0b1020;background:#f1f5f9;border:1px solid #e2e8f0;border-radius:10px;padding:2px 8px">Rush: Y</span></div><div style="margin-top:6px;font-size:13px;color:#475569">Triage & redaction</div></button>
+<button class="card" data-code="C6" data-title="Data Breach Incident Report" data-price="900" data-notes="24–72h window" data-cat="C" style="text-align:left;background:#fff;border:1px solid #e5e7eb;border-radius:14px;padding:14px;cursor:pointer"><div style="display:flex;justify-content:space-between;gap:8px;align-items:flex-start"><span style="font-weight:700">C6</span><span style="font-size:12px;color:#475569">C) Data Protection & Marketing</span></div><div style="margin-top:6px;font-weight:600">Data Breach Incident Report</div><div style="margin-top:6px;display:flex;align-items:center;gap:10px"><span style="font-weight:800">£900</span><span style="font-size:12px;color:#0b1020;background:#f1f5f9;border:1px solid #e2e8f0;border-radius:10px;padding:2px 8px">Rush: Y</span></div><div style="margin-top:6px;font-size:13px;color:#475569">24–72h window</div></button>
+<button class="card" data-code="C7" data-title="Legitimate Interests Assessment" data-price="950" data-notes="Balancing test" data-cat="C" style="text-align:left;background:#fff;border:1px solid #e5e7eb;border-radius:14px;padding:14px;cursor:pointer"><div style="display:flex;justify-content:space-between;gap:8px;align-items:flex-start"><span style="font-weight:700">C7</span><span style="font-size:12px;color:#475569">C) Data Protection & Marketing</span></div><div style="margin-top:6px;font-weight:600">Legitimate Interests Assessment</div><div style="margin-top:6px;display:flex;align-items:center;gap:10px"><span style="font-weight:800">£950</span><span style="font-size:12px;color:#0b1020;background:#f1f5f9;border:1px solid #e2e8f0;border-radius:10px;padding:2px 8px">Rush: Y</span></div><div style="margin-top:6px;font-size:13px;color:#475569">Balancing test</div></button>
+<!-- D) Website & Accessibility -->
+<button class="card" data-code="D1" data-title="Accessibility Audit (WCAG 2.2 AA)" data-price="2200" data-notes="Issues + re-test plan" data-cat="D" style="text-align:left;background:#fff;border:1px solid #e5e7eb;border-radius:14px;padding:14px;cursor:pointer"><div style="display:flex;justify-content:space-between;gap:8px;align-items:flex-start"><span style="font-weight:700">D1</span><span style="font-size:12px;color:#475569">D) Website & Accessibility</span></div><div style="margin-top:6px;font-weight:600">Accessibility Audit (WCAG 2.2 AA)</div><div style="margin-top:6px;display:flex;align-items:center;gap:10px"><span style="font-weight:800">£2,200</span><span style="font-size:12px;color:#0b1020;background:#f1f5f9;border:1px solid #e2e8f0;border-radius:10px;padding:2px 8px">Rush: Y</span></div><div style="margin-top:6px;font-size:13px;color:#475569">Issues + re-test plan</div></button>
+<button class="card" data-code="D2" data-title="Advertising Compliance Sweep" data-price="1300" data-notes="CAP/BCAP scan" data-cat="D" style="text-align:left;background:#fff;border:1px solid #e5e7eb;border-radius:14px;padding:14px;cursor:pointer"><div style="display:flex;justify-content:space-between;gap:8px;align-items:flex-start"><span style="font-weight:700">D2</span><span style="font-size:12px;color:#475569">D) Website & Accessibility</span></div><div style="margin-top:6px;font-weight:600">Advertising Compliance Sweep</div><div style="margin-top:6px;display:flex;align-items:center;gap:10px"><span style="font-weight:800">£1,300</span><span style="font-size:12px;color:#0b1020;background:#f1f5f9;border:1px solid #e2e8f0;border-radius:10px;padding:2px 8px">Rush: Y</span></div><div style="margin-top:6px;font-size:13px;color:#475569">CAP/BCAP scan</div></button>
+<button class="card" data-code="D3" data-title="WCAG Conformance Statement" data-price="750" data-notes="Statement + scope" data-cat="D" style="text-align:left;background:#fff;border:1px solid #e5e7eb;border-radius:14px;padding:14px;cursor:pointer"><div style="display:flex;justify-content:space-between;gap:8px;align-items:flex-start"><span style="font-weight:700">D3</span><span style="font-size:12px;color:#475569">D) Website & Accessibility</span></div><div style="margin-top:6px;font-weight:600">WCAG Conformance Statement</div><div style="margin-top:6px;display:flex;align-items:center;gap:10px"><span style="font-weight:800">£750</span><span style="font-size:12px;color:#0b1020;background:#f1f5f9;border:1px solid #e2e8f0;border-radius:10px;padding:2px 8px">Rush: Y</span></div><div style="margin-top:6px;font-size:13px;color:#475569">Statement + scope</div></button>
+<!-- D) Website & Accessibility -->
+<button class="card" data-code="D1" data-title="Accessibility Audit (WCAG 2.2 AA)" data-price="2200" data-notes="Issues + re-test plan" data-cat="D" style="text-align:left;background:#fff;border:1px solid #e5e7eb;border-radius:14px;padding:14px;cursor:pointer"><div style="display:flex;justify-content:space-between;gap:8px;align-items:flex-start"><span style="font-weight:700">D1</span><span style="font-size:12px;color:#475569">D) Website & Accessibility</span></div><div style="margin-top:6px;font-weight:600">Accessibility Audit (WCAG 2.2 AA)</div><div style="margin-top:6px;display:flex;align-items:center;gap:10px"><span style="font-weight:800">£2,200</span><span style="font-size:12px;color:#0b1020;background:#f1f5f9;border:1px solid #e2e8f0;border-radius:10px;padding:2px 8px">Rush: Y</span></div><div style="margin-top:6px;font-size:13px;color:#475569">Issues + re-test plan</div></button>
+<button class="card" data-code="D2" data-title="Advertising Compliance Sweep" data-price="1300" data-notes="CAP/BCAP scan" data-cat="D" style="text-align:left;background:#fff;border:1px solid #e5e7eb;border-radius:14px;padding:14px;cursor:pointer"><div style="display:flex;justify-content:space-between;gap:8px;align-items:flex-start"><span style="font-weight:700">D2</span><span style="font-size:12px;color:#475569">D) Website & Accessibility</span></div><div style="margin-top:6px;font-weight:600">Advertising Compliance Sweep</div><div style="margin-top:6px;display:flex;align-items:center;gap:10px"><span style="font-weight:800">£1,300</span><span style="font-size:12px;color:#0b1020;background:#f1f5f9;border:1px solid #e2e8f0;border-radius:10px;padding:2px 8px">Rush: Y</span></div><div style="margin-top:6px;font-size:13px;color:#475569">CAP/BCAP scan</div></button>
+<button class="card" data-code="D3" data-title="WCAG Conformance Statement" data-price="750" data-notes="Statement + scope" data-cat="D" style="text-align:left;background:#fff;border:1px solid #e5e7eb;border-radius:14px;padding:14px;cursor:pointer"><div style="display:flex;justify-content:space-between;gap:8px;align-items:flex-start"><span style="font-weight:700">D3</span><span style="font-size:12px;color:#475569">D) Website & Accessibility</span></div><div style="margin-top:6px;font-weight:600">WCAG Conformance Statement</div><div style="margin-top:6px;display:flex;align-items:center;gap:10px"><span style="font-weight:800">£750</span><span style="font-size:12px;color:#0b1020;background:#f1f5f9;border:1px solid #e2e8f0;border-radius:10px;padding:2px 8px">Rush: Y</span></div><div style="margin-top:6px;font-size:13px;color:#475569">Statement + scope</div></button>
+<!-- E) Operational Performance & Auditability -->
+<button class="card" data-code="E1" data-title="SLA Breach Ledger" data-price="1200" data-notes="Timers + root-cause" data-cat="E" style="text-align:left;background:#fff;border:1px solid #e5e7eb;border-radius:14px;padding:14px;cursor:pointer"><div style="display:flex;justify-content:space-between;gap:8px;align-items:flex-start"><span style="font-weight:700">E1</span><span style="font-size:12px;color:#475569">E) Operational Performance</span></div><div style="margin-top:6px;font-weight:600">SLA Breach Ledger</div><div style="margin-top:6px;display:flex;align-items:center;gap:10px"><span style="font-weight:800">£1,200</span><span style="font-size:12px;color:#0b1020;background:#f1f5f9;border:1px solid #e2e8f0;border-radius:10px;padding:2px 8px">Rush: Y</span></div><div style="margin-top:6px;font-size:13px;color:#475569">Timers + root-cause</div></button>
+<button class="card" data-code="E2" data-title="Contractor Scorecard" data-price="1000" data-notes="OT/FTF/cost variance" data-cat="E" style="text-align:left;background:#fff;border:1px solid #e5e7eb;border-radius:14px;padding:14px;cursor:pointer"><div style="display:flex;justify-content:space-between;gap:8px;align-items:flex-start"><span style="font-weight:700">E2</span><span style="font-size:12px;color:#475569">E) Operational Performance</span></div><div style="margin-top:6px;font-weight:600">Contractor Scorecard</div><div style="margin-top:6px;display:flex;align-items:center;gap:10px"><span style="font-weight:800">£1,000</span><span style="font-size:12px;color:#0b1020;background:#f1f5f9;border:1px solid #e2e8f0;border-radius:10px;padding:2px 8px">Rush: Y</span></div><div style="margin-top:6px;font-size:13px;color:#475569">OT/FTF/cost variance</div></button>
+<button class="card" data-code="E3" data-title="Comms Transcript Pack" data-price="700" data-notes="Chain-of-custody" data-cat="E" style="text-align:left;background:#fff;border:1px solid #e5e7eb;border-radius:14px;padding:14px;cursor:pointer"><div style="display:flex;justify-content:space-between;gap:8px;align-items:flex-start"><span style="font-weight:700">E3</span><span style="font-size:12px;color:#475569">E) Operational Performance</span></div><div style="margin-top:6px;font-weight:600">Comms Transcript Pack</div><div style="margin-top:6px;display:flex;align-items:center;gap:10px"><span style="font-weight:800">£700</span><span style="font-size:12px;color:#0b1020;background:#f1f5f9;border:1px solid #e2e8f0;border-radius:10px;padding:2px 8px">Rush: Y</span></div><div style="margin-top:6px;font-size:13px;color:#475569">Chain-of-custody</div></button>
+<button class="card" data-code="E4" data-title="KPI/OKR Quarterly" data-price="1100" data-notes="Board pack" data-cat="E" style="text-align:left;background:#fff;border:1px solid #e5e7eb;border-radius:14px;padding:14px;cursor:pointer"><div style="display:flex;justify-content:space-between;gap:8px;align-items:flex-start"><span style="font-weight:700">E4</span><span style="font-size:12px;color:#475569">E) Operational Performance</span></div><div style="margin-top:6px;font-weight:600">KPI/OKR Quarterly</div><div style="margin-top:6px;display:flex;align-items:center;gap:10px"><span style="font-weight:800">£1,100</span><span style="font-size:12px;color:#0b1020;background:#f1f5f9;border:1px solid #e2e8f0;border-radius:10px;padding:2px 8px">Rush: Y</span></div><div style="margin-top:6px;font-size:13px;color:#475569">Board pack</div></button>
+<button class="card" data-code="E5" data-title="Backlog Triage Model" data-price="1000" data-notes="Prioritisation" data-cat="E" style="text-align:left;background:#fff;border:1px solid #e5e7eb;border-radius:14px;padding:14px;cursor:pointer"><div style="display:flex;justify-content:space-between;gap:8px;align-items:flex-start"><span style="font-weight:700">E5</span><span style="font-size:12px;color:#475569">E) Operational Performance</span></div><div style="margin-top:6px;font-weight:600">Backlog Triage Model</div><div style="margin-top:6px;display:flex;align-items:center;gap:10px"><span style="font-weight:800">£1,000</span><span style="font-size:12px;color:#0b1020;background:#f1f5f9;border:1px solid #e2e8f0;border-radius:10px;padding:2px 8px">Rush: Y</span></div><div style="margin-top:6px;font-size:13px;color:#475569">Prioritisation</div></button>
 </main>
-
 <footer style="border-top:1px solid #e5e7eb;margin-top:24px">
   <div style="max-width:1100px;margin:0 auto;padding:16px 16px;color:#475569;font-size:14px;text-align:center">
     © <span id="y"></span> RBIS Intelligence. <strong>Designed &amp; Built by Ryan Roberts | RBIS</strong>.
   </div>
 </footer>
-
 <script>
-  // Year
   document.getElementById('y').textContent = new Date().getFullYear();
-
-  // Data: 31 reports (code, title, price, rush(Y/N), notes, category)
-  const R = [
-    // A) Housing Repairs & Compliance
-    ["A1","Disrepair Evidence Pack",950,"Y","Factual only","A"],
-    ["A2","Damp & Mould Dossier",850,"Y","Ops mitigations","A"],
-    ["A3","HHSRS Desktop Screening",750,"Y","Not statutory inspection","A"],
-    ["A4","Works & SLA Audit",1250,"Y","Ops audit","A"],
-    ["A5","Landlord Compliance Snapshot",700,"Y","Desktop mapping","A"],
-    ["A6","Void Turnaround Audit",1100,"Y","Process review","A"],
-    ["A7","Gas/Electrical Evidence Pack",1100,"Y","Desktop compilation","A"],
-    ["A8","Legionella Risk Log",900,"Y","Desktop only","A"],
-    ["A9","Fire Door Register Audit",1200,"Y","Desktop only","A"],
-    // B) Complaints & Ombudsman
-    ["B1","Complaint Code Gap Analysis",1900,"Y","Against statutory Code","B"],
-    ["B2","Stage 1/2 Evidence Pack",850,"Y","Facts; org signs response","B"],
-    ["B3","Ombudsman Referral Bundle",1400,"Y","Cross-referenced evidence","B"],
-    ["B4","Remedy Benchmarking",1250,"Y","Comparative outcomes","B"],
-    // C) Data Protection & Marketing
-    ["C1","DPIA",1500,"Y","ICO pattern","C"],
-    ["C2","RoPA Pack",1300,"Y","Art.30 register","C"],
-    ["C3","PECR Cookie Audit",950,"Y","Consent mode","C"],
-    ["C4","Marketing Claims File",1100,"Y","CAP substantiation","C"],
-    ["C5","SAR Response Pack",1000,"Y","Triage & redaction","C"],
-    ["C6","Data Breach Incident Report",900,"Y","24–72h window","C"],
-    ["C7","Legitimate Interests Assessment",950,"Y","Balancing test","C"],
-    // D) Website & Accessibility
-    ["D1","Accessibility Audit (WCAG 2.2 AA)",2200,"Y","Issues + re-test plan","D"],
-    ["D2","Advertising Compliance Sweep",1300,"Y","CAP/BCAP scan","D"],
-    ["D3","WCAG Conformance Statement",750,"Y","Statement + scope","D"],
-    // E) Operational Performance & Auditability
-    ["E1","SLA Breach Ledger",1200,"Y","Timers + root-cause","E"],
-    ["E2","Contractor Scorecard",1000,"Y","OT/FTF/cost variance","E"],
-    ["E3","Comms Transcript Pack",700,"Y","Chain-of-custody","E"],
-    ["E4","KPI/OKR Quarterly",1100,"Y","Board pack","E"],
-    ["E5","Backlog Triage Model",1000,"Y","Prioritisation","E"],
-    // F) PACT Ledger
-    ["F1","Promise Compliance Report",900,"Y","Evidence object","F"],
-    ["F2","Settlement Readiness Pack",1200,"Y","Options & evidence","F"],
-    ["F3","Promise Taxonomy",900,"Y","Controls & naming","F"],
-  ];
-
-  const CATS = {A:"A) Housing Repairs",B:"B) Complaints & Ombudsman",C:"C) Data Protection & Marketing",
-                D:"D) Website & Accessibility",E:"E) Operational Performance",F:"F) PACT Ledger"};
-
-  const grid = document.getElementById('grid');
-  const q = document.getElementById('q');
-  const cat = document.getElementById('cat');
-
-  function £(n){ return "£" + n.toLocaleString("en-GB"); }
-
-  function render(){
-    const term = (q.value||"").trim().toLowerCase();
-    const catv = cat.value;
-    const out = [];
-    for(const [code,title,price,rush,notes,g] of R){
-      if(catv && g!==catv) continue;
-      const blob = (code+" "+title+" "+notes+" "+CATS[g]).toLowerCase();
-      if(term && !blob.includes(term)) continue;
-      out.push(`
-        <button class="card" data-copy="${code} — ${£(price)}"
-                style="text-align:left;background:#fff;border:1px solid #e5e7eb;border-radius:14px;padding:14px;cursor:pointer"
-                title="Click to copy ‘${code} — ${£(price)}’">
-          <div style="display:flex;justify-content:space-between;gap:8px;align-items:flex-start">
-            <span style="font-weight:700">${code}</span>
-            <span style="font-size:12px;color:#475569">${CATS[g]}</span>
-          </div>
-          <div style="margin-top:6px;font-weight:600">${title}</div>
-          <div style="margin-top:6px;display:flex;align-items:center;gap:10px">
-            <span style="font-weight:800">${£(price)}</span>
-            <span style="font-size:12px;color:#0b1020;background:#f1f5f9;border:1px solid #e2e8f0;border-radius:10px;padding:2px 8px">Rush: ${rush}</span>
-          </div>
-          <div style="margin-top:6px;font-size:13px;color:#475569">${notes}</div>
-        </button>
-      `);
-    }
-    grid.innerHTML = out.join('') || `<div style="color:#475569">No reports match your filters.</div>`;
-    // click-to-copy
-    grid.querySelectorAll('.card').forEach(btn=>{
-      btn.addEventListener('click',()=>{
-        const s = btn.getAttribute('data-copy');
-        try{ navigator.clipboard.writeText(s); btn.style.boxShadow="0 0 0 3px rgba(71,83,255,.25)";
-             setTimeout(()=>btn.style.boxShadow="",600);}catch{}
-      });
-    });
+  const grid = document.getElementById('grid'), q=document.getElementById('q'), cat=document.getElementById('cat');
+  function text(n){return (n||'').toLowerCase();}
+  function match(btn){
+    const t = text(q.value);
+    const blob = (btn.dataset.code+' '+btn.dataset.title+' '+(btn.dataset.notes||'')+' '+btn.dataset.cat).toLowerCase();
+    if(cat.value && btn.dataset.cat!==cat.value) return false;
+    if(t && !blob.includes(t)) return false;
+    return true;
   }
-
-  q.addEventListener('input', render);
-  cat.addEventListener('change', render);
-  render();
-
-  // CSV download
-  document.getElementById('csv').addEventListener('click', () => {
-    const rows = [["Code","Report","PriceGBP","Rush","Notes","Category"]];
-    R.forEach(([c,t,p,r,n,g]) => rows.push([c,t,p,r,n,CATS[g]]));
-    const csv = rows.map(r=>r.map(x=>String(x).includes(',')?`"${String(x).replace(/"/g,'""')}"`:x).join(',')).join('\n');
-    const blob = new Blob([csv], {type:"text/csv;charset=utf-8"});
-    const a = document.createElement('a');
-    a.href = URL.createObjectURL(blob); a.download = "rbis-reports-31.csv"; a.click();
-    URL.revokeObjectURL(a.href);
+  function render(){
+    grid.querySelectorAll('.card').forEach(b=>{ b.style.display = match(b)?'block':'none'; });
+  }
+  q.addEventListener('input',render); cat.addEventListener('change',render); render();
+  grid.querySelectorAll('.card').forEach(b=>{
+    b.addEventListener('click',()=>{
+      const s = `${b.dataset.code} — £${Number(b.dataset.price).toLocaleString('en-GB')}`;
+      navigator.clipboard?.writeText(s).catch(()=>{});
+      b.style.boxShadow="0 0 0 3px rgba(71,83,255,.25)"; setTimeout(()=>b.style.boxShadow="",600);
+    });
+  });
+  document.getElementById('csv').addEventListener('click',()=>{
+    const rows=[['Code','Report','PriceGBP','Rush','Notes','Category']];
+    grid.querySelectorAll('.card').forEach(b=>{
+      rows.push([b.dataset.code,b.dataset.title,b.dataset.price,'Y',b.dataset.notes||'',b.dataset.cat]);
+    });
+    const csv=rows.map(r=>r.map(x=>String(x).includes(',')?`"${String(x).replace(/"/g,'""')}"`:x).join(',')).join('\n');
+    const blob=new Blob([csv],{type:'text/csv;charset=utf-8'}); const a=document.createElement('a');
+    a.href=URL.createObjectURL(blob); a.download='rbis-reports-31.csv'; a.click(); URL.revokeObjectURL(a.href);
   });
 </script>
-</body>
-</html>
+</body></html>
