@@ -13,3 +13,20 @@ input[type=number], input[type=text]{touch-action:manipulation}
 /* Force bright defaults everywhere */
 body{background:var(--bg,#f8fafc);color:var(--ink,#0f172a)}
 .card,.section,form,input,textarea,select{background:var(--panel,#fff);color:var(--ink,#0f172a)}
+
+/* Tidy nav + More dropdown */
+header nav{display:flex;gap:.6rem;flex-wrap:wrap;justify-content:center}
+header nav a, header nav summary{border:1px solid var(--line);border-radius:999px;padding:.45rem .9rem;background:#fff;cursor:pointer}
+header nav a.active,header nav a:hover,header nav summary:hover{background:linear-gradient(135deg,var(--brand),var(--brand2));color:#fff;border-color:transparent}
+.more{position:relative;display:inline-block}
+.more[open]{z-index:20}
+.more>summary{list-style:none}
+.more>summary::-webkit-details-marker{display:none}
+.more>a{display:block;margin-top:.4rem}
+.more>summary{padding:.45rem .9rem}
+.more{padding:0 .2rem}
+.more[open]{background:#fff;border-radius:12px;box-shadow:0 8px 18px rgba(15,23,42,.06);padding:.4rem;border:1px solid var(--line)}
+.more[open]>summary{margin-bottom:.2rem}
+
+/* Ensure bright panels everywhere */
+.card,.section,form,input,textarea,select{background:var(--panel,#fff);color:var(--ink,#0f172a)}
