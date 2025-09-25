@@ -12,3 +12,13 @@
   };
   strip(nav);
 })();
+(function(){
+  var d=document;
+  function strip(root){
+    Array.prototype.slice.call(root.childNodes).forEach(function(n){
+      if(n.nodeType===3 && n.textContent.trim()) n.remove();
+      else if(n.nodeType===1) strip(n);
+    });
+  }
+  var dn=d.querySelector('.nav-drawer nav'); if(dn) strip(dn);
+})();
