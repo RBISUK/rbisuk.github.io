@@ -1,22 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://rbisuk.github.io/404.html</loc></url>
-  <url><loc>https://rbisuk.github.io/about.html</loc></url>
-  <url><loc>https://rbisuk.github.io/careers.html</loc></url>
-  <url><loc>https://rbisuk.github.io/claim-fix-ai.html</loc></url>
-  <url><loc>https://rbisuk.github.io/contact.html</loc></url>
-  <url><loc>https://rbisuk.github.io/cookies.html</loc></url>
-  <url><loc>https://rbisuk.github.io/copilot.html</loc></url>
-  <url><loc>https://rbisuk.github.io/dashboard.html</loc></url>
-  <url><loc>https://rbisuk.github.io/demo.html</loc></url>
-  <url><loc>https://rbisuk.github.io/index.html</loc></url>
-  <url><loc>https://rbisuk.github.io/legal.html</loc></url>
-  <url><loc>https://rbisuk.github.io/managed.html</loc></url>
-  <url><loc>https://rbisuk.github.io/omniassist.html</loc></url>
-  <url><loc>https://rbisuk.github.io/pact-ledger.html</loc></url>
-  <url><loc>https://rbisuk.github.io/privacy.html</loc></url>
-  <url><loc>https://rbisuk.github.io/reports.html</loc></url>
-  <url><loc>https://rbisuk.github.io/services.html</loc></url>
-  <url><loc>https://rbisuk.github.io/terms.html</loc></url>
-  <url><loc>https://rbisuk.github.io/webdev.html</loc></url>
+  <url><loc>https://www.rbisintelligence.com/</loc><lastmod>2025-09-25</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
+
+  <url><loc>https://www.rbisintelligence.com/about.html</loc><lastmod>2025-09-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.rbisintelligence.com/services.html</loc><lastmod>2025-09-25</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.rbisintelligence.com/reports.html</loc><lastmod>2025-09-25</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.rbisintelligence.com/trust.html</loc><lastmod>2025-09-25</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.rbisintelligence.com/saas-licensing.html</loc><lastmod>2025-09-25</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+
+  <url><loc>https://www.rbisintelligence.com/dashboard.html</loc><lastmod>2025-09-25</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.rbisintelligence.com/rbis-ai.html</loc><lastmod>2025-09-25</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.rbisintelligence.com/rbis-ai-auto-call.html</loc><lastmod>2025-09-25</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.rbisintelligence.com/veridex.html</loc><lastmod>2025-09-25</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.rbisintelligence.com/omniassist.html</loc><lastmod>2025-09-25</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.rbisintelligence.com/pact-ledger.html</loc><lastmod>2025-09-25</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.rbisintelligence.com/nextusone.html</loc><lastmod>2025-09-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+
+  <url><loc>https://www.rbisintelligence.com/behavioural-intelligence.html</loc><lastmod>2025-09-25</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.rbisintelligence.com/solutions.html</loc><lastmod>2025-09-25</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.rbisintelligence.com/solutions-councils.html</loc><lastmod>2025-09-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.rbisintelligence.com/solutions-housing.html</loc><lastmod>2025-09-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.rbisintelligence.com/solutions-law.html</loc><lastmod>2025-09-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.rbisintelligence.com/solutions-corporate-hr.html</loc><lastmod>2025-09-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+
+  <url><loc>https://www.rbisintelligence.com/packages.html</loc><lastmod>2025-09-25</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://www.rbisintelligence.com/careers.html</loc><lastmod>2025-09-25</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://www.rbisintelligence.com/contact.html</loc><lastmod>2025-09-25</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+
+  <url><loc>https://www.rbisintelligence.com/terms.html</loc><lastmod>2025-09-25</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.rbisintelligence.com/privacy.html</loc><lastmod>2025-09-25</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.rbisintelligence.com/legal.html</loc><lastmod>2025-09-25</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.rbisintelligence.com/cookies.html</loc><lastmod>2025-09-25</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.rbisintelligence.com/accessibility.html</loc><lastmod>2025-09-25</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
 </urlset>
