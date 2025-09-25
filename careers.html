@@ -1,560 +1,205 @@
 <!doctype html>
-<html lang="en" dir="ltr">
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>Careers — Build Evidence-First Products | RBIS UK Ltd</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Join RBIS to build behavioural intelligence, dashboards, and regulator-ready tooling. Explore open roles across engineering, analysis, design, compliance, and go-to-market.">
-  <link rel="canonical" href="https://www.rbisintelligence.com/careers.html">
-  <meta name="theme-color" content="#0A3D91">
-  <!-- Open Graph -->
-  <meta property="og:title" content="Careers — Build Evidence-First Products | RBIS UK Ltd">
-  <meta property="og:description" content="We’re hiring for implementation, software automation, data/AI, design, forensics, success, compliance, writing, and sales engineering.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://www.rbisintelligence.com/careers.html">
-  <meta property="og:image" content="https://www.rbisintelligence.com/assets/social-share.jpg">
-  <link rel="icon" href="/assets/favicon.ico">
+  <meta charset="utf-8" />
+  <title>Careers — Build Audit-Ready Intelligence | RBIS UK Ltd</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Join RBIS to build guardrails, dashboards, and evidence-ready exports. Remote-first UK roles; high standards, low fluff." />
+  <link rel="canonical" href="https://www.rbisintelligence.com/careers.html" />
+  <meta name="theme-color" content="#0b3d91" />
+  <link rel="stylesheet" href="/notice.css">
   <style>
-    :root{
-      --blue:#0A3D91; --navy:#071F49; --bg:#fff; --text:#0B1221; --grey:#E8ECF3; --muted:#6A7280;
-      --green:#109867; --amber:#D9822B; --red:#C4383E;
-    }
+    :root{--ink:#0a1428;--blue:#0b3d91;--muted:#5b6578;--line:#e6edf5;--bg:#ffffff}
     *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{margin:0;font:16px/1.58 system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;color:var(--text);background:var(--bg)}
-    a{color:var(--blue);text-decoration:none}
-    a:focus-visible,button:focus-visible{outline:2px solid rgba(10,61,145,.6);outline-offset:2px}
-    .container{max-width:1100px;margin:0 auto;padding:0 16px}
-    .skip{position:absolute;left:-9999px}
-    .skip:focus{left:16px;top:12px;background:#fff;padding:.5rem .75rem;border-radius:.5rem;box-shadow:0 8px 24px rgba(0,0,0,.12)}
-
-    /* Legal notice */
-    .notice{background:var(--navy);color:#fff}
-    .notice .container{display:flex;gap:.75rem;align-items:center;padding:.55rem 16px}
-    .notice a{color:#AECBFF}
-
-    /* Header */
-    header{position:sticky;top:0;z-index:1000;background:rgba(255,255,255,.92);backdrop-filter:saturate(180%) blur(8px);border-bottom:1px solid var(--grey)}
-    .nav{display:flex;align-items:center;justify-content:space-between;padding:.7rem 0}
-    .brand{display:flex;align-items:center;gap:.5rem;color:var(--navy);font-weight:800}
-    .dot{width:10px;height:10px;border-radius:999px;background:var(--blue)}
-    nav ul{display:flex;gap:16px;list-style:none;margin:0;padding:0}
-    nav a{color:#1b2946;font-weight:600}
-    .menu{display:none;border:1px solid var(--grey);padding:.45rem .6rem;border-radius:.5rem;background:#fff}
-    @media (max-width:900px){
-      nav{display:none}.menu{display:inline-block}
-      .mobile{display:none;border-top:1px solid var(--grey)}
-      .mobile.open{display:block}
-      .mobile a{display:block;padding:.9rem 16px;border-bottom:1px solid var(--grey);color:#1b2946}
-    }
-
-    /* Hero */
-    .hero{background:linear-gradient(180deg, rgba(10,61,145,.06), transparent 60%);padding:40px 0 18px}
-    h1{font-size:clamp(28px,4vw,42px);line-height:1.1;margin:.25rem 0 .5rem;color:var(--blue)}
-    .sub{color:#22304d;font-size:1.05rem;max-width:72ch}
-    .actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
-    .btn{display:inline-block;padding:.7rem 1rem;border-radius:.7rem;font-weight:800;border:1px solid var(--blue)}
+    body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;line-height:1.6}
+    a{color:var(--blue);text-underline-offset:2px}
+    .notice{background:#0f172a;color:#fff;padding:.55rem .9rem;font-size:.95rem}
+    .site-header{position:sticky;top:0;z-index:40;background:rgba(255,255,255,.96);backdrop-filter:saturate(180%) blur(8px);border-bottom:1px solid var(--line)}
+    .wrap{max-width:1100px;margin:0 auto;padding:0 1rem}
+    .bar{display:flex;align-items:center;justify-content:space-between;gap:1rem;height:56px}
+    .logo{font-weight:800;text-decoration:none;color:var(--ink)}
+    .nav-toggle{appearance:none;border:1px solid var(--line);background:#fff;border-radius:10px;padding:.55rem .75rem;line-height:1;font-weight:600}
+    .nav{display:flex;gap:.75rem;align-items:center}
+    .nav a{text-decoration:none;color:var(--ink);padding:.35rem .4rem;border-radius:8px}
+    .btn{display:inline-block;padding:.65rem .9rem;border-radius:10px;border:1px solid var(--blue);text-decoration:none}
     .btn.primary{background:var(--blue);color:#fff}
-    .btn.ghost{background:#fff;color:var(--blue)}
-
-    /* Sections & cards */
-    section{padding:20px 0}
-    .grid-3{display:grid;gap:14px;grid-template-columns:repeat(3,1fr)}
-    .grid-2{display:grid;gap:14px;grid-template-columns:repeat(2,1fr)}
-    @media (max-width:900px){.grid-3,.grid-2{grid-template-columns:1fr}}
-    .card{border:1px solid var(--grey);border-radius:12px;padding:16px;background:#fff;box-shadow:0 8px 24px rgba(7,31,73,.05)}
+    @media (max-width:900px){
+      .nav{position:fixed;inset:56px 0 0 0;background:#fff;border-top:1px solid var(--line);flex-direction:column;align-items:flex-start;padding:1rem;overflow:auto}
+      .nav[hidden]{display:none}
+    }
+    @media (min-width:901px){.nav-toggle{display:none}}
+    main{max-width:1100px;margin:0 auto;padding:1rem}
+    .grid{display:grid;gap:16px}
+    @media (min-width:920px){.cols-2{grid-template-columns:repeat(2,1fr)}}
+    .card{border:1px solid var(--line);border-radius:14px;padding:16px;background:#fff}
     .muted{color:var(--muted)}
-    .list{margin:.2rem 0 .9rem 1.2rem}
-    .badge{display:inline-block;padding:.35rem .6rem;border:1px solid var(--grey);border-radius:999px;background:#fbfcff;margin:0 6px 6px 0}
-    .legend{font-size:.92rem;color:var(--muted)}
-    .filled{background:#faf5f5;border-color:#f2d4d6}
-    .tag{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--grey);border-radius:999px;padding:.3rem .55rem;font-size:.86rem}
-    .tag .dotg,.tag .dota,.tag .dotr{width:8px;height:8px;border-radius:999px;display:inline-block}
-    .dotg{background:var(--green)} .dota{background:var(--amber)} .dotr{background:var(--red)}
-
-    /* Footer */
-    footer{border-top:1px solid var(--grey);margin-top:22px}
-    .foot{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:14px 0}
-    .foot a{color:#33405c}
-
-    /* Print */
-    @media print{
-      header,.notice,footer{display:none}
-      a[href]::after{content:" (" attr(href) ")"} body{color:#000}
-    }
+    h1{margin:12px 0}
+    section h2{margin:18px 0 8px}
+    .small{font-size:.92rem;color:var(--muted)}
+    form{display:grid;gap:10px;margin-top:8px}
+    input,select,textarea{width:100%;padding:.7rem .8rem;border:1px solid var(--line);border-radius:10px}
+    label{font-weight:600;display:grid;gap:.35rem}
+    footer{border-top:1px solid var(--line);margin-top:28px;padding:14px 16px}
   </style>
-
-  <!-- Schema: ItemList + JobPosting for open roles -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"ItemList",
-    "name":"RBIS Careers",
-    "itemListElement":[
-      {"@type":"ListItem","position":1,"name":"Implementation Specialist"},
-      {"@type":"ListItem","position":2,"name":"Software Engineer (Automation)"},
-      {"@type":"ListItem","position":3,"name":"Data/AI Engineer (Signals)"},
-      {"@type":"ListItem","position":4,"name":"Product Designer (A11y-first)"},
-      {"@type":"ListItem","position":5,"name":"Forensic Analyst (Comms/Docs)"},
-      {"@type":"ListItem","position":6,"name":"Customer Success Lead (Regulated)"},
-      {"@type":"ListItem","position":7,"name":"Compliance Officer"},
-      {"@type":"ListItem","position":8,"name":"Technical Writer (Evidence Packs)"},
-      {"@type":"ListItem","position":9,"name":"Sales Engineer (Gov/Legal)"},
-      {"@type":"ListItem","position":10,"name":"Serious Report Intelligence Officer — Filled"}
-    ]
-  }
-  </script>
-  <script type="application/ld+json">
-  [
-    {
-      "@context":"https://schema.org",
-      "@type":"JobPosting",
-      "title":"Implementation Specialist",
-      "employmentType":"FULL_TIME",
-      "applicantLocationRequirements":{"@type":"Country","name":"United Kingdom"},
-      "jobLocationType":"TELECOMMUTE",
-      "hiringOrganization":{"@type":"Organization","name":"RBIS UK Ltd","sameAs":"https://www.rbisintelligence.com"},
-      "industry":"Compliance, Intelligence, SaaS",
-      "datePosted":"2025-09-25",
-      "validThrough":"2025-12-31",
-      "description":"Deploy Claim-Fix-AI, Copilot, and OmniAssist; map client policies; run go-lives and training.",
-      "identifier":{"@type":"PropertyValue","name":"RBIS","value":"impl-spec"},
-      "directApply":true
-    },
-    {
-      "@context":"https://schema.org",
-      "@type":"JobPosting",
-      "title":"Software Engineer (Automation)",
-      "employmentType":"FULL_TIME",
-      "applicantLocationRequirements":{"@type":"Country","name":"United Kingdom"},
-      "jobLocationType":"TELECOMMUTE",
-      "hiringOrganization":{"@type":"Organization","name":"RBIS UK Ltd"},
-      "industry":"Software, Automation, Evidence Exports",
-      "datePosted":"2025-09-25",
-      "validThrough":"2025-12-31",
-      "description":"Build guardrails, timers, and exports. JS/HTML/CSS; CSV/PDF workflows; a11y awareness; curiosity mandatory.",
-      "identifier":{"@type":"PropertyValue","name":"RBIS","value":"soft-eng-auto"},
-      "directApply":true
-    },
-    {
-      "@context":"https://schema.org",
-      "@type":"JobPosting",
-      "title":"Data/AI Engineer (Signals)",
-      "employmentType":"FULL_TIME",
-      "applicantLocationRequirements":{"@type":"Country","name":"United Kingdom"},
-      "jobLocationType":"TELECOMMUTE",
-      "hiringOrganization":{"@type":"Organization","name":"RBIS UK Ltd"},
-      "industry":"AI, Signal Processing, Compliance",
-      "datePosted":"2025-09-25",
-      "validThrough":"2025-12-31",
-      "description":"Speech/text feature extraction, risk models, redaction tooling.",
-      "identifier":{"@type":"PropertyValue","name":"RBIS","value":"data-ai-signals"},
-      "directApply":true
-    },
-    {
-      "@context":"https://schema.org",
-      "@type":"JobPosting",
-      "title":"Product Designer (A11y-first)",
-      "employmentType":"FULL_TIME",
-      "applicantLocationRequirements":{"@type":"Country","name":"United Kingdom"},
-      "jobLocationType":"TELECOMMUTE",
-      "hiringOrganization":{"@type":"Organization","name":"RBIS UK Ltd"},
-      "industry":"Design, Accessibility, Compliance",
-      "datePosted":"2025-09-25",
-      "validThrough":"2025-12-31",
-      "description":"Component library, WCAG AA/AAA, dashboard ergonomics.",
-      "identifier":{"@type":"PropertyValue","name":"RBIS","value":"prod-des-a11y"},
-      "directApply":true
-    },
-    {
-      "@context":"https://schema.org",
-      "@type":"JobPosting",
-      "title":"Forensic Analyst (Comms/Docs)",
-      "employmentType":"CONTRACTOR",
-      "applicantLocationRequirements":{"@type":"Country","name":"United Kingdom"},
-      "jobLocationType":"TELECOMMUTE",
-      "hiringOrganization":{"@type":"Organization","name":"RBIS UK Ltd"},
-      "industry":"Forensics, Legal Tech",
-      "datePosted":"2025-09-25",
-      "validThrough":"2025-12-31",
-      "description":"Authentication, timelines, correlation mapping.",
-      "identifier":{"@type":"PropertyValue","name":"RBIS","value":"forensic-analyst"},
-      "directApply":true
-    },
-    {
-      "@context":"https://schema.org",
-      "@type":"JobPosting",
-      "title":"Customer Success Lead (Regulated)",
-      "employmentType":"FULL_TIME",
-      "applicantLocationRequirements":{"@type":"Country","name":"United Kingdom"},
-      "jobLocationType":"TELECOMMUTE",
-      "hiringOrganization":{"@type":"Organization","name":"RBIS UK Ltd"},
-      "industry":"Customer Success, Compliance SaaS",
-      "datePosted":"2025-09-25",
-      "validThrough":"2025-12-31",
-      "description":"Onboarding, training, SLA coaching.",
-      "identifier":{"@type":"PropertyValue","name":"RBIS","value":"cs-lead"},
-      "directApply":true
-    },
-    {
-      "@context":"https://schema.org",
-      "@type":"JobPosting",
-      "title":"Compliance Officer",
-      "employmentType":"PART_TIME",
-      "applicantLocationRequirements":{"@type":"Country","name":"United Kingdom"},
-      "jobLocationType":"TELECOMMUTE",
-      "hiringOrganization":{"@type":"Organization","name":"RBIS UK Ltd"},
-      "industry":"GDPR, PECR, SRA/FCA",
-      "datePosted":"2025-09-25",
-      "validThrough":"2025-12-31",
-      "description":"DPIAs, audits, policy overlays.",
-      "identifier":{"@type":"PropertyValue","name":"RBIS","value":"compliance-officer"},
-      "directApply":true
-    },
-    {
-      "@context":"https://schema.org",
-      "@type":"JobPosting",
-      "title":"Technical Writer (Evidence Packs)",
-      "employmentType":"CONTRACTOR",
-      "applicantLocationRequirements":{"@type":"Country","name":"United Kingdom"},
-      "jobLocationType":"TELECOMMUTE",
-      "hiringOrganization":{"@type":"Organization","name":"RBIS UK Ltd"},
-      "industry":"Technical Writing, Legal Tech",
-      "datePosted":"2025-09-25",
-      "validThrough":"2025-12-31",
-      "description":"Templates, regulator-ready wording.",
-      "identifier":{"@type":"PropertyValue","name":"RBIS","value":"tech-writer"},
-      "directApply":true
-    },
-    {
-      "@context":"https://schema.org",
-      "@type":"JobPosting",
-      "title":"Sales Engineer (Gov/Legal)",
-      "employmentType":"FULL_TIME",
-      "applicantLocationRequirements":{"@type":"Country","name":"United Kingdom"},
-      "jobLocationType":"TELECOMMUTE",
-      "hiringOrganization":{"@type":"Organization","name":"RBIS UK Ltd"},
-      "industry":"GovTech, LegalTech",
-      "datePosted":"2025-09-25",
-      "validThrough":"2025-12-31",
-      "description":"Demo environments, RFPs, proof plans.",
-      "identifier":{"@type":"PropertyValue","name":"RBIS","value":"sales-eng"},
-      "directApply":true
-    }
-  ]
-  </script>
 </head>
 <body>
-  <a class="skip" href="#main">Skip to content</a>
-
-  <!-- Legal disclosure -->
-  <div class="notice" role="note" aria-label="Legal disclosure">
-    <div class="container">
-      <strong>Notice:</strong> RBIS UK Ltd (England &amp; Wales) provides independent intelligence analysis and reporting.
-      <strong>We are not a law firm and do not provide legal advice.</strong>
-      Contact: <a href="mailto:contact@rbisintelligence.com">contact@rbisintelligence.com</a>
-    </div>
+  <div class="notice" role="note" aria-label="Regulatory notice">
+    <span class="tag">Notice:</span>
+    <span class="text">RBIS UK Ltd (England <body>amp; Wales) provides independent intelligence analysis and reporting. We are not a law firm and do not provide legal advice. Contact: contact@rbisintelligence.com</span>
+    <a href="/legal.html#disclaimer">Details</a>
   </div>
 
-  <!-- Header -->
-  <header role="banner">
-    <div class="container nav">
-      <a class="brand" href="/" aria-label="RBIS home"><span class="dot" aria-hidden="true"></span> RBIS</a>
-      <nav aria-label="In-page">
-        <ul>
-          <li><a href="#openings">Open roles</a></li>
-          <li><a href="#values">Values & benefits</a></li>
-          <li><a href="#process">Hiring process</a></li>
-          <li><a href="#faq">FAQ</a></li>
-        </ul>
+  <header class="site-header" role="banner">
+    <div class="wrap bar">
+      <a class="logo" href="/" aria-label="RBIS Home">RBIS</a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav">Menu</button>
+      <nav id="site-nav" class="nav" aria-label="Primary" hidden>
+        <a href="/">Home</a>
+        <a href="/services.html">Services</a>
+        <a href="/reports.html">Reports</a>
+        <a href="/dashboard.html">Dashboard</a>
+        <a href="/veridex.html">Veridex</a>
+        <a href="/omniassist.html">OmniAssist</a>
+        <a href="/rbis-ai.html">RBIS AI</a>
+        <a href="/rbis-ai-auto-call.html">AI Auto Call</a>
+        <a href="/pact-ledger.html">PACT</a>
+        <a href="/saas-licensing.html">Pricing</a>
+        <a href="/trust.html">Trust</a>
+        <a href="/about.html">About</a>
+        <a href="/careers.html" aria-current="page">Careers</a>
+        <a class="btn primary" href="/contact.html#contact-form">Request Demo</a>
       </nav>
-      <button class="menu" id="menu" aria-expanded="false" aria-controls="mobile">Menu</button>
-    </div>
-    <div class="mobile" id="mobile" role="dialog" aria-label="Mobile menu">
-      <a href="#openings">Open roles</a>
-      <a href="#values">Values & benefits</a>
-      <a href="#process">Hiring process</a>
-      <a href="#faq">FAQ</a>
     </div>
   </header>
 
-  <main id="main">
-    <!-- Hero -->
-    <section class="hero" aria-label="Careers">
-      <div class="container">
-        <h1>Careers at RBIS</h1>
-        <p class="sub">Help build the evidence stack: behavioural intelligence, regulator-ready dashboards, and exports that stand up in the tough rooms. Remote-first UK, flexible, high-trust.</p>
-        <div class="actions">
-          <a class="btn primary" href="https://formspree.io/f/meolvrdy" rel="nofollow">Send CV / Register interest</a>
-          <a class="btn ghost" href="#openings">View openings</a>
+  <main class="wrap" id="main">
+    <h1>Careers at RBIS</h1>
+    <p class="muted">Remote UK • Competitive + growth • High standards, low fluff. Build guardrails, dashboards, and evidence-ready exports.</p>
+
+    <section class="grid cols-2" aria-label="Open roles">
+      <article class="card">
+        <h2>Serious Report Intelligence Officer — <span class="muted">Filled</span></h2>
+        <p>Forensic-style evidence analysis, chronology, and court-ready reporting. (Position filled; register interest.)</p>
+      </article>
+
+      <article class="card">
+        <h2>Implementation Specialist</h2>
+        <p>Deploy Claim-Fix-AI, Copilot, and OmniAssist; map client policies; run go-lives and training.</p>
+        <p class="small">Full-time • Remote UK • Competitive + growth</p>
+      </article>
+
+      <article class="card">
+        <h2>Software Engineer (Automation)</h2>
+        <p>Build guardrails, timers, and exports. JS/HTML/CSS; CSV/PDF workflows; a11y awareness; curiosity mandatory.</p>
+        <p class="small">Full-time • Remote UK • Competitive + growth</p>
+      </article>
+
+      <article class="card">
+        <h2>Data/AI Engineer (Signals)</h2>
+        <p>Speech/text feature extraction, risk models, redaction tooling.</p>
+        <p class="small">Full-time • Remote UK</p>
+      </article>
+
+      <article class="card">
+        <h2>Product Designer (A11y-first)</h2>
+        <p>Component library, WCAG AA/AAA, dashboard ergonomics.</p>
+        <p class="small">Full-time/Contract • Remote UK</p>
+      </article>
+
+      <article class="card">
+        <h2>Forensic Analyst (Comms/Docs)</h2>
+        <p>Authentication, timelines, correlation mapping. Court-ready outputs.</p>
+        <p class="small">Contract • Remote UK</p>
+      </article>
+
+      <article class="card">
+        <h2>Customer Success Lead (Regulated)</h2>
+        <p>Onboarding, training, SLA coaching, and renewal playbooks in regulated orgs.</p>
+        <p class="small">Full-time • Remote UK</p>
+      </article>
+
+      <article class="card">
+        <h2>Compliance Officer</h2>
+        <p>GDPR/PECR/SRA/FCA overlays, DPIAs, audits.</p>
+        <p class="small">Part-time/Consultant • Remote UK</p>
+      </article>
+
+      <article class="card">
+        <h2>Technical Writer (Evidence Packs)</h2>
+        <p>Templates, regulator-ready language, tone consistency.</p>
+        <p class="small">Contract • Remote UK</p>
+      </article>
+
+      <article class="card">
+        <h2>Sales Engineer (Gov/Legal)</h2>
+        <p>Demo environments, RFPs, proof plans with board-assurance framing.</p>
+        <p class="small">Full-time • Remote UK</p>
+      </article>
+    </section>
+
+    <section id="apply" class="card" aria-labelledby="apply-h">
+      <h2 id="apply-h">Apply</h2>
+      <p>We hire for judgement, clarity, and curiosity. Tell us what you’ve shipped and why it mattered.</p>
+      <form action="https://formspree.io/f/meolvrdy" method="POST" accept-charset="UTF-8">
+        <div style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden" aria-hidden="true">
+          <label>Leave blank<input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></label>
         </div>
-      </div>
+        <input type="hidden" name="_subject" value="RBIS Careers — Application" />
+        <input type="hidden" name="_origin" value="https://www.rbisintelligence.com/careers.html" />
+        <label>Role
+          <select name="role" required>
+            <option value="">Select a role…</option>
+            <option>Implementation Specialist</option>
+            <option>Software Engineer (Automation)</option>
+            <option>Data/AI Engineer (Signals)</option>
+            <option>Product Designer (A11y-first)</option>
+            <option>Forensic Analyst (Comms/Docs)</option>
+            <option>Customer Success Lead (Regulated)</option>
+            <option>Compliance Officer</option>
+            <option>Technical Writer (Evidence Packs)</option>
+            <option>Sales Engineer (Gov/Legal)</option>
+            <option>Register Interest — Serious Report Intelligence Officer</option>
+          </select>
+        </label>
+        <label>Full name<input name="name" required autocomplete="name" /></label>
+        <label>Work email<input type="email" name="email" required autocomplete="email" /></label>
+        <label>LinkedIn / Portfolio URL<input type="url" name="url" placeholder="https://…" /></label>
+        <label>Why RBIS? What have you shipped?
+          <textarea name="message" rows="6" required></textarea>
+        </label>
+        <label><input type="checkbox" name="consent" required /> I consent to RBIS processing this application to respond. See <a href="/privacy.html">Privacy</a>.</label>
+        <button class="btn primary" type="submit">Send application</button>
+      </form>
+      <p class="small">Equal opportunity employer. If you need adjustments for accessibility, email <a href="mailto:accessibility@rbisintelligence.com">accessibility@rbisintelligence.com</a>.</p>
     </section>
 
-    <!-- Openings -->
-    <section id="openings" aria-labelledby="openings-h">
-      <div class="container">
-        <h2 id="openings-h">Open roles</h2>
-
-        <div class="grid-2">
-          <!-- 1 Implementation Specialist -->
-          <article class="card job">
-            <h3>Implementation Specialist</h3>
-            <p class="legend">Full-time • Remote UK • Competitive + growth</p>
-            <h4>What you’ll do</h4>
-            <ul class="list">
-              <li>Deploy Claim-Fix-AI, Copilot, and OmniAssist; run go-lives and training.</li>
-              <li>Map client policies to workflows, SLAs, and exports.</li>
-              <li>Coach users; close the loop on feedback and adoption.</li>
-            </ul>
-            <h4>What you’ll need</h4>
-            <ul class="list">
-              <li>Process-mapping chops; comfort with CSV/PDF tooling.</li>
-              <li>Calm comms in regulated, complaint-prone environments.</li>
-            </ul>
-            <p><a class="btn primary" href="https://formspree.io/f/meolvrdy" rel="nofollow">Apply — Implementation Specialist</a></p>
-          </article>
-
-          <!-- 2 Software Engineer (Automation) -->
-          <article class="card job">
-            <h3>Software Engineer (Automation)</h3>
-            <p class="legend">Full-time • Remote UK • Competitive + growth</p>
-            <h4>What you’ll do</h4>
-            <ul class="list">
-              <li>Build guardrails, timers, and exports across web surfaces.</li>
-              <li>Own CSV/PDF workflows and a11y-first components.</li>
-              <li>Keep the JS budget lean and the CSP tight.</li>
-            </ul>
-            <h4>What you’ll need</h4>
-            <ul class="list">
-              <li>Strong JS/HTML/CSS; experience with security headers.</li>
-              <li>Curiosity and tidy code; bias to evidence.</li>
-            </ul>
-            <p><a class="btn primary" href="https://formspree.io/f/meolvrdy" rel="nofollow">Apply — Software Engineer (Automation)</a></p>
-          </article>
-
-          <!-- 3 Data/AI Engineer (Signals) -->
-          <article class="card job">
-            <h3>Data/AI Engineer (Signals)</h3>
-            <p class="legend">Full-time • Remote UK</p>
-            <h4>What you’ll do</h4>
-            <ul class="list">
-              <li>Extract features from speech/text; build risk & tone-shift models.</li>
-              <li>Redaction pipelines; evaluator tooling; quality gates.</li>
-            </ul>
-            <h4>What you’ll need</h4>
-            <ul class="list">
-              <li>Signal processing, embeddings, or classical NLP; Python/JS.</li>
-              <li>Pragmatic about truth, bias, and guardrails.</li>
-            </ul>
-            <p><a class="btn primary" href="https://formspree.io/f/meolvrdy" rel="nofollow">Apply — Data/AI Engineer</a></p>
-          </article>
-
-          <!-- 4 Product Designer (A11y-first) -->
-          <article class="card job">
-            <h3>Product Designer (A11y-first)</h3>
-            <p class="legend">Full-time or Contract • Remote UK</p>
-            <h4>What you’ll do</h4>
-            <ul class="list">
-              <li>Design a11y-first components and dashboard ergonomics.</li>
-              <li>Partner with engineers to deliver WCAG AA/AAA.</li>
-            </ul>
-            <h4>What you’ll need</h4>
-            <ul class="list">
-              <li>Strong UI systems; able to argue for clarity over glitter.</li>
-              <li>Portfolio showing a11y tradeoffs done right.</li>
-            </ul>
-            <p><a class="btn primary" href="https://formspree.io/f/meolvrdy" rel="nofollow">Apply — Product Designer</a></p>
-          </article>
-
-          <!-- 5 Forensic Analyst (Comms/Docs) -->
-          <article class="card job">
-            <h3>Forensic Analyst (Comms/Docs)</h3>
-            <p class="legend">Contract • Remote UK</p>
-            <h4>What you’ll do</h4>
-            <ul class="list">
-              <li>Authentication, timelines, and correlation mapping.</li>
-              <li>Draft evidence packs with redactions and hashes.</li>
-            </ul>
-            <h4>What you’ll need</h4>
-            <ul class="list">
-              <li>Methodical, court-ready writing; chain-of-custody rigour.</li>
-            </ul>
-            <p><a class="btn primary" href="https://formspree.io/f/meolvrdy" rel="nofollow">Apply — Forensic Analyst</a></p>
-          </article>
-
-          <!-- 6 Customer Success Lead (Regulated) -->
-          <article class="card job">
-            <h3>Customer Success Lead (Regulated)</h3>
-            <p class="legend">Full-time • Remote UK</p>
-            <h4>What you’ll do</h4>
-            <ul class="list">
-              <li>Onboard teams; design playbooks; drive adoption.</li>
-              <li>Coach on SLAs, timers, and dashboards.</li>
-            </ul>
-            <h4>What you’ll need</h4>
-            <ul class="list">
-              <li>Enterprise CSM in regulated sectors; crisp comms.</li>
-            </ul>
-            <p><a class="btn primary" href="https://formspree.io/f/meolvrdy" rel="nofollow">Apply — Customer Success Lead</a></p>
-          </article>
-
-          <!-- 7 Compliance Officer -->
-          <article class="card job">
-            <h3>Compliance Officer</h3>
-            <p class="legend">Part-time / Consultant • Remote UK</p>
-            <h4>What you’ll do</h4>
-            <ul class="list">
-              <li>GDPR/PECR overlays; DPIAs; audit frameworks.</li>
-              <li>Author security header and consent templates.</li>
-            </ul>
-            <h4>What you’ll need</h4>
-            <ul class="list">
-              <li>Privacy ops; regulator-sane language; cool head.</li>
-            </ul>
-            <p><a class="btn primary" href="https://formspree.io/f/meolvrdy" rel="nofollow">Apply — Compliance Officer</a></p>
-          </article>
-
-          <!-- 8 Technical Writer (Evidence Packs) -->
-          <article class="card job">
-            <h3>Technical Writer (Evidence Packs)</h3>
-            <p class="legend">Contract • Remote UK</p>
-            <h4>What you’ll do</h4>
-            <ul class="list">
-              <li>Write/report templates; regulator-ready phrasing.</li>
-              <li>Partner with analysts to tighten logic and flow.</li>
-            </ul>
-            <h4>What you’ll need</h4>
-            <ul class="list">
-              <li>Legal-tech or forensics writing samples.</li>
-            </ul>
-            <p><a class="btn primary" href="https://formspree.io/f/meolvrdy" rel="nofollow">Apply — Technical Writer</a></p>
-          </article>
-
-          <!-- 9 Sales Engineer (Gov/Legal) -->
-          <article class="card job">
-            <h3>Sales Engineer (Gov/Legal)</h3>
-            <p class="legend">Full-time • Remote UK</p>
-            <h4>What you’ll do</h4>
-            <ul class="list">
-              <li>Build demo environments; answer RFPs; design proof plans.</li>
-              <li>Translate regulator concerns into product wins.</li>
-            </ul>
-            <h4>What you’ll need</h4>
-            <ul class="list">
-              <li>Gov/Legal buyers; calm live demos; tidy slides.</li>
-            </ul>
-            <p><a class="btn primary" href="https://formspree.io/f/meolvrdy" rel="nofollow">Apply — Sales Engineer</a></p>
-          </article>
-
-          <!-- 10 Serious Report Intelligence Officer — Filled -->
-          <article class="card job filled" aria-describedby="filled-note">
-            <h3>Serious Report Intelligence Officer — <span style="color:#B3261E">Filled</span></h3>
-            <p id="filled-note" class="legend">Forensic-style evidence analysis, chronology, and court-ready reporting. (Position filled; register interest.)</p>
-            <p><a class="btn ghost" href="https://formspree.io/f/meolvrdy" rel="nofollow">Register interest</a></p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- Values & benefits -->
-    <section id="values" aria-labelledby="values-h">
-      <div class="container grid-3">
-        <article class="card">
-          <h2 id="values-h">How we work</h2>
-          <ul class="list">
-            <li>Evidence over opinion; tidy commits; small PRs.</li>
-            <li>Async by default; crisp docs; respectful debate.</li>
-            <li>Accessible by design; regulator-ready language.</li>
-          </ul>
-        </article>
-        <article class="card">
-          <h2>Benefits</h2>
-          <ul class="list">
-            <li>Remote-first UK; flexible hours</li>
-            <li>Equipment budget; learning stipend</li>
-            <li>Clear progression; meaningful problems</li>
-          </ul>
-        </article>
-        <article class="card">
-          <h2>Equal Opportunity</h2>
-          <p class="muted">RBIS is an equal-opportunity employer. We welcome applicants from all backgrounds and do not discriminate based on legally protected characteristics. If you need adjustments during the process, email <a href="mailto:accessibility@rbisintelligence.com">accessibility@rbisintelligence.com</a>.</p>
-        </article>
-      </div>
-    </section>
-
-    <!-- Hiring process -->
-    <section id="process" aria-labelledby="process-h">
-      <div class="container grid-2">
-        <article class="card">
-          <h2 id="process-h">Hiring process</h2>
-          <ol class="list">
-            <li>Intro call (30 mins)</li>
-            <li>Small, real task (time-boxed)</li>
-            <li>Panel interview (skills + collaboration)</li>
-            <li>Offer & references</li>
-          </ol>
-        </article>
-        <article class="card">
-          <h2>Apply now</h2>
-          <p>Send your CV, links (GitHub/portfolio), and availability.</p>
-          <p><a class="btn primary" href="https://formspree.io/f/meolvrdy" rel="nofollow">Send CV / Register interest</a></p>
-        </article>
-      </div>
-    </section>
-
-    <!-- FAQ -->
-    <section id="faq" class="card" aria-labelledby="faq-h">
-      <div class="container">
-        <h2 id="faq-h">FAQ</h2>
-        <details>
-          <summary>Do you sponsor visas?</summary>
-          <p>Currently hiring within the UK only.</p>
-        </details>
-        <details>
-          <summary>What’s the tech stack?</summary>
-          <p>Lean, standards-first web; strict security headers; export pipelines for CSV/PDF.</p>
-        </details>
-        <details>
-          <summary>Is this fully remote?</summary>
-          <p>Yes, remote-first within the UK. Occasional in-person workshops by agreement.</p>
-        </details>
-      </div>
-    </section>
+    <p class="small">All rights reserved © 2025 RBIS UK Ltd • Terms include IP protections • Watermarking / code obfuscation where appropriate</p>
   </main>
 
-  <!-- Footer -->
-  <footer role="contentinfo">
-    <div class="container foot">
-      <div>© <span id="yr"></span> RBIS UK Ltd. All rights reserved. · RBIS © | Designed &amp; Created by Ryan Roberts</div>
-      <nav aria-label="Footer">
-        <a href="/terms.html">Terms of Use</a> ·
-        <a href="/privacy.html">Privacy</a> ·
-        <a href="/legal.html">Legal Notice</a> ·
-        <a href="/cookies.html">Cookies</a> ·
-        <a href="/accessibility.html">Accessibility</a> ·
-        <a href="/trust.html">Trust</a>
-      </nav>
-    </div>
-    <div class="container" style="font-size:.92rem;color:#445">
-      <p><strong>License & IP:</strong> Unless explicitly licensed otherwise, this page is “All rights reserved.” We may apply watermarking and code obfuscation where appropriate. Terms include IP protections.</p>
+  <footer>
+    <div class="wrap">
+      <p class="small">© 2025 RBIS UK Ltd. All rights reserved. · RBIS © | Designed &amp; Created by Ryan Roberts</p>
+      <p class="small">
+        <a href="/terms.html">Terms</a> · <a href="/privacy.html">Privacy</a> ·
+        <a href="/legal.html">Legal Notice</a> · <a href="/cookies.html">Cookies</a> ·
+        <a href="/accessibility.html">Accessibility</a> · <a href="/trust.html">Trust</a>
+      </p>
     </div>
   </footer>
 
   <script>
-    // Mobile menu
     (function(){
-      var btn=document.getElementById('menu'), mob=document.getElementById('mobile');
-      if(!btn||!mob) return;
-      btn.addEventListener('click', function(){
-        var open=mob.classList.toggle('open');
-        btn.setAttribute('aria-expanded', String(open));
+      const btn = document.querySelector('.nav-toggle');
+      const nav = document.getElementById('site-nav');
+      btn.addEventListener('click', () => {
+        const open = btn.getAttribute('aria-expanded') === 'true';
+        btn.setAttribute('aria-expanded', String(!open));
+        nav.hidden = open;
+      });
+      document.addEventListener('keydown', (e)=> {
+        if(e.key === 'Escape' && btn.getAttribute('aria-expanded') === 'true'){ btn.click(); }
       });
     })();
-    // Year
-    document.getElementById('yr').textContent = new Date().getFullYear();
   </script>
-
-  <!-- Optional: include your site-wide consent banner snippet here -->
 </body>
 </html>

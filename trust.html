@@ -7,12 +7,13 @@
   <meta name="description" content="RBIS trust posture: security headers (CSP, HSTS), privacy & consent (GDPR/PECR/ICO-aligned), and WCAG 2.2 AA accessibility. Copy–paste Cloudflare header snippets included.">
   <link rel="canonical" href="https://www.rbisintelligence.com/trust.html">
   <meta name="theme-color" content="#0A3D91">
+  <link rel="stylesheet" href="/notice.css">
   <!-- Open Graph -->
   <meta property="og:title" content="Trust — Security • Privacy • Accessibility">
   <meta property="og:description" content="Strict security headers, lawful processing, DPIA/DPA support, and accessibility by default. Includes ready-to-use header snippets.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.rbisintelligence.com/trust.html">
-  <meta property="og:image" content="https://www.rbisintelligence.com/assets/social-share.jpg">
+  <meta property="og:image" content="/assets/social-share.png">
   <link rel="icon" href="/assets/favicon.ico">
   <style>
     :root{
@@ -85,10 +86,14 @@
   </style>
 </head>
 <body>
+  <div class="notice" role="note" aria-label="Regulatory notice">
+    <span class="tag">Notice:</span>
+    <span class="text">RBIS UK Ltd (England <body>amp; Wales) provides independent intelligence analysis and reporting. We are not a law firm and do not provide legal advice. Contact: contact@rbisintelligence.com</span>
+    <a href="/legal.html#disclaimer">Details</a>
+  </div>
   <a class="skip" href="#main">Skip to content</a>
 
   <!-- Legal disclosure -->
-  <div class="notice" role="note" aria-label="Legal disclosure">
     <div class="container">
       <strong>Notice:</strong> RBIS UK Ltd (England &amp; Wales) provides independent intelligence analysis and reporting.
       <strong>We are not a law firm and do not provide legal advice.</strong>
@@ -124,7 +129,7 @@
           <h1 id="trust-h">Trust — Security • Privacy • Accessibility</h1>
           <p class="sub">Evidence-first systems demand strong defaults. RBIS applies strict headers, lawful processing, and WCAG 2.2 AA accessibility. Below are copy-and-paste configurations for Cloudflare (or your reverse proxy) so you can mirror our posture immediately.</p>
           <div class="actions">
-            <a class="btn primary" href="https://formspree.io/f/meolvrdy" rel="nofollow">Ask a Trust Question</a>
+            <a class="btn primary" href="/contact.html#contact-form" rel="nofollow">Ask a Trust Question</a>
             <a class="btn ghost" href="/legal.html">Read Legal Notice</a>
           </div>
           <p class="muted" style="margin-top:8px">
@@ -303,7 +308,7 @@ add_header X-DNS-Prefetch-Control "off" always;</code></pre>
             <li><strong>DSR/DPA:</strong> Use the request form below; we’ll verify identity before action.</li>
           </ul>
           <p>
-            <a class="btn primary" href="https://formspree.io/f/meolvrdy" rel="nofollow">Submit a Trust/DPA request</a>
+            <a class="btn primary" href="/contact.html#contact-form" rel="nofollow">Submit a Trust/DPA request</a>
             <a class="btn ghost" href="/privacy.html">Read Privacy Policy</a>
           </p>
         </article>
@@ -324,7 +329,7 @@ add_header X-DNS-Prefetch-Control "off" always;</code></pre>
         <h2 id="cta-h">Need help mirroring this setup?</h2>
         <p>We can review your headers, consent configuration, and accessibility posture, then ship a one-page remediation plan.</p>
         <p>
-          <a class="btn primary" href="https://formspree.io/f/meolvrdy" rel="nofollow">Request a Trust Review</a>
+          <a class="btn primary" href="/contact.html#contact-form" rel="nofollow">Request a Trust Review</a>
           <a class="btn ghost" href="/cookies.html">Review cookie categories</a>
         </p>
       </div>

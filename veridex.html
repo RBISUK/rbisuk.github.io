@@ -1,326 +1,208 @@
 <!doctype html>
-<html lang="en" dir="ltr">
+<html lang="en">
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   <title>Veridex — Intake & Evidence Engine | RBIS UK Ltd</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Veridex captures complete stories and proof from the first touch. Guided prompts, timeline builder, secure uploads, policy-aware routing, and court-ready exports.">
-  <link rel="canonical" href="https://www.rbisintelligence.com/veridex.html">
-  <meta name="theme-color" content="#0A3D91">
-  <meta property="og:title" content="Veridex — Intake & Evidence Engine">
-  <meta property="og:description" content="Smart intake that produces evidence, not chaos. Chronology, uploads, attestations, and signed exports.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://www.rbisintelligence.com/veridex.html">
-  <meta property="og:image" content="https://www.rbisintelligence.com/assets/social-share.jpg">
-  <link rel="icon" href="/assets/favicon.ico">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Guided intake that captures complete stories and proof from first touch. Timelines, secure uploads, policy-aware routing, court-ready exports." />
+  <link rel="canonical" href="https://www.rbisintelligence.com/veridex.html" />
+  <meta property="og:title" content="Veridex — Intake & Evidence Engine" />
+  <meta property="og:description" content="Intake done right: fewer escalations, cleaner dossiers, faster resolution. Starter £490/mo, Pro £990/mo, Regulated custom." />
+  <meta name="theme-color" content="#0b3d91" />
+  <link rel="stylesheet" href="/notice.css">
   <style>
-    :root{
-      --blue:#0A3D91; --navy:#071F49; --bg:#fff; --text:#0B1221; --grey:#E8ECF3; --muted:#6A7280;
-      --green:#109867; --amber:#D9822B; --red:#C4383E;
-    }
+    :root{--ink:#0a1428;--blue:#0b3d91;--muted:#5b6578;--line:#e6edf5;--bg:#ffffff}
     *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{margin:0;font:16px/1.58 system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;color:var(--text);background:var(--bg)}
-    a{color:var(--blue);text-decoration:none}
-    a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid rgba(10,61,145,.6);outline-offset:2px}
-    .container{max-width:1100px;margin:0 auto;padding:0 16px}
-    .skip{position:absolute;left:-9999px}
-    .skip:focus{left:16px;top:12px;background:#fff;padding:.5rem .75rem;border-radius:.5rem;box-shadow:0 8px 24px rgba(0,0,0,.12)}
-
-    /* Legal notice */
-    .notice{background:var(--navy);color:#fff}
-    .notice .container{display:flex;gap:.75rem;align-items:center;padding:.55rem 16px}
-    .notice a{color:#AECBFF}
-
-    /* Header */
-    header{position:sticky;top:0;z-index:1000;background:rgba(255,255,255,.92);backdrop-filter:saturate(180%) blur(8px);border-bottom:1px solid var(--grey)}
-    .nav{display:flex;align-items:center;justify-content:space-between;padding:.7rem 0}
-    .brand{display:flex;align-items:center;gap:.5rem;color:var(--navy);font-weight:800}
-    .dot{width:10px;height:10px;border-radius:999px;background:var(--blue)}
-    nav ul{display:flex;gap:16px;list-style:none;margin:0;padding:0}
-    nav a{color:#1b2946;font-weight:600}
-    .menu{display:none;border:1px solid var(--grey);padding:.45rem .6rem;border-radius:.5rem;background:#fff}
-    @media (max-width:900px){
-      nav{display:none}.menu{display:inline-block}
-      .mobile{display:none;border-top:1px solid var(--grey)}
-      .mobile.open{display:block}
-      .mobile a{display:block;padding:.9rem 16px;border-bottom:1px solid var(--grey);color:#1b2946}
-    }
-
-    /* Hero */
-    .hero{background:linear-gradient(180deg, rgba(10,61,145,.06), transparent 60%);padding:28px 0 8px}
-    h1{font-size:clamp(28px,4vw,42px);line-height:1.1;margin:.25rem 0 .5rem;color:var(--blue)}
-    .sub{color:#22304d;font-size:1.05rem;max-width:74ch}
-    .actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
-    .btn{display:inline-block;padding:.7rem 1rem;border-radius:.7rem;font-weight:800;border:1px solid var(--blue)}
+    body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;line-height:1.6}
+    a{color:var(--blue);text-underline-offset:2px}
+    .notice{background:#0f172a;color:#fff;padding:.55rem .9rem;font-size:.95rem}
+    .site-header{position:sticky;top:0;z-index:40;background:rgba(255,255,255,.96);backdrop-filter:saturate(180%) blur(8px);border-bottom:1px solid var(--line)}
+    .wrap{max-width:1100px;margin:0 auto;padding:0 1rem}
+    .bar{display:flex;align-items:center;justify-content:space-between;gap:1rem;height:56px}
+    .logo{font-weight:800;text-decoration:none;color:var(--ink)}
+    .nav-toggle{appearance:none;border:1px solid var(--line);background:#fff;border-radius:10px;padding:.55rem .75rem;line-height:1;font-weight:600}
+    .nav{display:flex;gap:.75rem;align-items:center}
+    .nav a{text-decoration:none;color:var(--ink);padding:.35rem .4rem;border-radius:8px}
+    .btn{display:inline-block;padding:.65rem .9rem;border-radius:10px;border:1px solid var(--blue);text-decoration:none}
     .btn.primary{background:var(--blue);color:#fff}
-    .btn.ghost{background:#fff;color:var(--blue)}
-    .muted{color:var(--muted)}
-    .badge{display:inline-block;padding:.35rem .6rem;border:1px solid var(--grey);border-radius:999px;background:#fbfcff;margin:0 6px 6px 0}
-
-    /* Sections & cards */
-    section{padding:18px 0}
-    .grid-3{display:grid;gap:14px;grid-template-columns:repeat(3,1fr)}
-    .grid-2{display:grid;gap:14px;grid-template-columns:repeat(2,1fr)}
-    @media (max-width:900px){.grid-3,.grid-2{grid-template-columns:1fr}}
-    .card{border:1px solid var(--grey);border-radius:12px;padding:16px;background:#fff;box-shadow:0 8px 24px rgba(7,31,73,.05)}
-    .list{margin:.2rem 0 .9rem 1.2rem}
-    .kv{display:grid;grid-template-columns:1.05fr .95fr;gap:14px;align-items:stretch}
-    @media(max-width:900px){.kv{grid-template-columns:1fr}}
-    .redacted{border:1px dashed #9bb0d6;border-radius:12px;padding:14px;background:repeating-linear-gradient(135deg, #f3f6ff 0 14px, #eef3ff 14px 28px)}
-    .bar{height:14px;background:#0b1f49;border-radius:6px;margin:8px 0}
-    .blk{height:10px;background:#0b1f49;border-radius:3px;margin:6px 0;width:100%}
-    .blk.s{width:62%}.blk.m{width:80%}.blk.l{width:94%}
-
-    /* Footer */
-    footer{border-top:1px solid var(--grey);margin-top:22px}
-    .foot{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:14px 0}
-    .foot a{color:#33405c}
-
-    /* Print */
-    @media print{
-      header,.notice,footer{display:none}
-      a[href]::after{content:" (" attr(href) ")"} body{color:#000}
+    @media (max-width:900px){
+      .nav{position:fixed;inset:56px 0 0 0;background:#fff;border-top:1px solid var(--line);flex-direction:column;align-items:flex-start;padding:1rem;overflow:auto}
+      .nav[hidden]{display:none}
     }
+    @media (min-width:901px){.nav-toggle{display:none}}
+    main{max-width:1100px;margin:0 auto;padding:1rem}
+    .hero{display:grid;gap:16px;grid-template-columns:1.1fr .9fr;align-items:start;padding:12px 0}
+    @media (max-width:920px){.hero{grid-template-columns:1fr}}
+    .card{border:1px solid var(--line);border-radius:14px;padding:16px;background:#fff}
+    .grid{display:grid;gap:16px}
+    @media (min-width:920px){.cols-3{grid-template-columns:repeat(3,1fr)} .cols-2{grid-template-columns:repeat(2,1fr)}}
+    .muted{color:var(--muted)} .price{font-weight:800}
+    form{display:grid;gap:10px;margin-top:8px}
+    input,textarea{width:100%;padding:.7rem .8rem;border:1px solid var(--line);border-radius:10px}
+    label{font-weight:600;display:grid;gap:.35rem}
+    footer{border-top:1px solid var(--line);margin-top:28px;padding:14px 16px}
+    .small{font-size:.92rem;color:var(--muted)}
+    .list{padding-left:20px}
   </style>
-
-  <!-- Schema: Product (Veridex) -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"Product",
-    "name":"Veridex — Intake & Evidence Engine",
-    "brand":{"@type":"Brand","name":"RBIS"},
-    "description":"Smart intake that captures complete stories and proof from the first touch. Guided prompts, timeline builder, secure uploads, policy-aware routing, and court-ready exports.",
-    "offers":{"@type":"Offer","price":"0","priceCurrency":"GBP","availability":"https://schema.org/InStock"}
-  }
-  </script>
 </head>
 <body>
-  <a class="skip" href="#main">Skip to content</a>
-
-  <!-- Legal disclosure -->
-  <div class="notice" role="note" aria-label="Legal disclosure">
-    <div class="container">
-      <strong>Notice:</strong> RBIS UK Ltd (England &amp; Wales) provides independent intelligence analysis and reporting.
-      <strong>We are not a law firm and do not provide legal advice.</strong>
-      Contact: <a href="mailto:contact@rbisintelligence.com">contact@rbisintelligence.com</a>
-    </div>
+  <div class="notice" role="note" aria-label="Regulatory notice">
+    <span class="tag">Notice:</span>
+    <span class="text">RBIS UK Ltd (England <body>amp; Wales) provides independent intelligence analysis and reporting. We are not a law firm and do not provide legal advice. Contact: contact@rbisintelligence.com</span>
+    <a href="/legal.html#disclaimer">Details</a>
   </div>
 
-  <!-- Header -->
-  <header role="banner">
-    <div class="container nav">
-      <a class="brand" href="/" aria-label="RBIS home"><span class="dot" aria-hidden="true"></span> RBIS</a>
-      <nav aria-label="In-page">
-        <ul>
-          <li><a href="#proof">Proof</a></li>
-          <li><a href="#why">Why Veridex</a></li>
-          <li><a href="#features">Features</a></li>
-          <li><a href="#workflows">Workflows</a></li>
-          <li><a href="#exports">Exports</a></li>
-          <li><a href="#cta">Start</a></li>
-        </ul>
+  <header class="site-header" role="banner">
+    <div class="wrap bar">
+      <a class="logo" href="/" aria-label="RBIS Home">RBIS</a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav">Menu</button>
+      <nav id="site-nav" class="nav" aria-label="Primary" hidden>
+        <a href="/">Home</a>
+        <a href="/services.html">Services</a>
+        <a href="/reports.html">Reports</a>
+        <a href="/dashboard.html">Dashboard</a>
+        <a href="/veridex.html" aria-current="page">Veridex</a>
+        <a href="/omniassist.html">OmniAssist</a>
+        <a href="/rbis-ai.html">RBIS AI</a>
+        <a href="/rbis-ai-auto-call.html">AI Auto Call</a>
+        <a href="/pact-ledger.html">PACT</a>
+        <a href="/saas-licensing.html">Pricing</a>
+        <a href="/trust.html">Trust</a>
+        <a href="/about.html">About</a>
+        <a href="/careers.html">Careers</a>
+        <a class="btn primary" href="/contact.html#contact-form">Request Demo</a>
       </nav>
-      <button class="menu" id="menu" aria-expanded="false" aria-controls="mobile">Menu</button>
-    </div>
-    <div class="mobile" id="mobile" role="dialog" aria-label="Mobile menu">
-      <a href="#proof">Proof</a><a href="#why">Why Veridex</a><a href="#features">Features</a><a href="#workflows">Workflows</a><a href="#exports">Exports</a><a href="#cta">Start</a>
     </div>
   </header>
 
   <main id="main">
-    <!-- Proof-first hero -->
-    <section id="proof" class="hero" aria-labelledby="proof-h">
-      <div class="container kv">
-        <div class="redacted" aria-label="Redacted Veridex case output">
-          <div class="bar"></div>
-          <div class="blk l"></div>
-          <div class="blk s"></div>
-          <div class="blk m"></div>
-          <div class="blk l"></div>
-          <div class="blk s"></div>
-          <p class="muted" style="margin-top:8px">Redacted excerpt: guided intake → chronology → annexed evidence with reviewer attestation and signed hashes.</p>
-        </div>
+    <div class="wrap">
+      <section class="hero">
         <div>
           <h1>Veridex — Intake &amp; Evidence Engine</h1>
-          <p class="sub">Smart intake that produces evidence, not chaos. From the first contact, Veridex captures the right facts, builds a defensible timeline, and packages regulator-ready proof.</p>
-          <div class="actions">
-            <a class="btn primary" href="https://formspree.io/f/meolvrdy" rel="nofollow">Try a Guided Intake</a>
-            <a class="btn ghost" href="/reports.html">View evidence packs</a>
-          </div>
-          <div class="grid-2" style="margin-top:12px">
-            <div class="card"><strong>Escalations</strong><p class="muted" style="margin:.4rem 0 0">Cleaner dossiers + timers cut escalations by <strong>28%</strong> in housing pilot (6 weeks, anonymised).</p></div>
-            <div class="card"><strong>Marketing funnel</strong><p class="muted" style="margin:.4rem 0 0">Toolkit fixes took conversion <strong>6% → 13%</strong> in <strong>14 days</strong> (controlled test).</p></div>
-          </div>
+          <p class="muted">Capture the whole story at first contact: guided prompts, secure uploads, policy-aware routing, timelines, and exports that stand up to scrutiny.</p>
+          <p class="price">Pricing: <strong>Starter £490/mo</strong> • <strong>Pro £990/mo</strong> • <strong>Regulated custom</strong></p>
+          <p><a class="btn primary" href="#contact">Try Veridex Demo</a> <a class="btn" href="#contact">Talk to Sales</a></p>
+          <p class="muted">Optional onboarding: from <strong>£1,500</strong> for workflow mapping, imports, and training.</p>
         </div>
-      </div>
-    </section>
+        <aside class="card">
+          <strong>What a Veridex case contains</strong>
+          <ul class="list">
+            <li>Intake transcript + attachments (redactions supported)</li>
+            <li>Timeline builder with source links</li>
+            <li>Policy overlays &amp; SLA timers</li>
+            <li>PDF pack + CSV annexes + signed hashes</li>
+          </ul>
+        </aside>
+      </section>
 
-    <!-- Why Veridex -->
-    <section id="why" aria-labelledby="why-h">
-      <div class="container grid-3">
+      <section class="grid cols-3" aria-label="Capabilities">
         <article class="card">
-          <h2 id="why-h">Complete stories, fewer gaps</h2>
+          <h2>Guided intake</h2>
           <ul class="list">
-            <li>Guided prompts capture facts, context, and consent</li>
-            <li>Structured forms that discourage hedging</li>
-            <li>Automatic time-stamping and source linking</li>
+            <li>Domain templates (repairs, complaints, incidents)</li>
+            <li>Smart prompts to reduce missing info</li>
+            <li>Multilingual; accessibility-first forms</li>
           </ul>
         </article>
         <article class="card">
-          <h2>Policy-aware routing</h2>
+          <h2>Evidence handling</h2>
           <ul class="list">
-            <li>Rules map to SLA, Ombudsman, GDPR/PECR</li>
-            <li>Prioritises vulnerable persons & risk flags</li>
-            <li>Escalation paths with human-in-the-loop</li>
+            <li>Secure upload links; metadata capture</li>
+            <li>Redaction &amp; pseudonymisation options</li>
+            <li>Audit trail with reviewer attestations</li>
           </ul>
         </article>
         <article class="card">
-          <h2>Defensible by design</h2>
+          <h2>Routing &amp; exports</h2>
           <ul class="list">
-            <li>Immutable change log & reviewer attestation</li>
-            <li>Signed export hashes; watermarking by default</li>
-            <li>WCAG-aware UI; focus styles & captions</li>
+            <li>Policy-aware routing; escalation rules</li>
+            <li>CSV/PDF exports; court-ready packs</li>
+            <li>Webhooks to CRM/Helpdesk</li>
           </ul>
         </article>
-      </div>
-    </section>
+      </section>
 
-    <!-- Features -->
-    <section id="features" aria-labelledby="features-h">
-      <div class="container grid-3">
-        <article class="card">
-          <h2 id="features-h">Timeline builder</h2>
-          <ul class="list">
-            <li>Chronology from first contact to resolution</li>
-            <li>Attach emails, photos, logs (secure links)</li>
-            <li>RAG flags and breach countdowns</li>
-          </ul>
-        </article>
-        <article class="card">
-          <h2>Secure uploads</h2>
-          <ul class="list">
-            <li>Signed URL uploads (never via brochure site)</li>
-            <li>Format checks & virus scanning upstream</li>
-            <li>PII redaction & pseudonymisation options</li>
-          </ul>
-        </article>
-        <article class="card">
-          <h2>Attestations</h2>
-          <ul class="list">
-            <li>Reviewer sign-off with role & timestamp</li>
-            <li>Automated change summary</li>
-            <li>Integrity evidence (hash chain)</li>
-          </ul>
-        </article>
-      </div>
-    </section>
+      <section aria-labelledby="plans">
+        <h2 id="plans">Plans &amp; details</h2>
+        <div class="grid cols-3">
+          <article class="card">
+            <h3>Starter — £490/mo</h3>
+            <ul class="list">
+              <li>1 workspace • up to 10 users</li>
+              <li>Core templates + exports</li>
+              <li>Email notifications</li>
+            </ul>
+            <p><a class="btn primary" href="#contact">Request Starter</a></p>
+          </article>
+          <article class="card">
+            <h3>Pro — £990/mo</h3>
+            <ul class="list">
+              <li>Unlimited users*</li>
+              <li>Webhooks • CRM/Helpdesk integration</li>
+              <li>Change logs &amp; attestations</li>
+            </ul>
+            <p class="small">*Fair-use; contact for high-volume terms.</p>
+            <p><a class="btn" href="#contact">Request Pro</a></p>
+          </article>
+          <article class="card">
+            <h3>Regulated — custom</h3>
+            <ul class="list">
+              <li>Region-pinned (UK/EU)</li>
+              <li>Retention controls • legal holds</li>
+              <li>Signed exports • enhanced logging</li>
+            </ul>
+            <p><a class="btn" href="#contact">Request Regulated</a></p>
+          </article>
+        </div>
+      </section>
 
-    <!-- Workflows -->
-    <section id="workflows" aria-labelledby="workflows-h">
-      <div class="container grid-3">
-        <article class="card">
-          <h2 id="workflows-h">Repairs Intake</h2>
-          <ul class="list">
-            <li>Damp/mould audit with secure photo link</li>
-            <li>Health impact & vulnerability prompts</li>
-            <li>Access windows & contact verification</li>
-          </ul>
-        </article>
-        <article class="card">
-          <h2>Complaints Intake</h2>
-          <ul class="list">
-            <li>Stage ID (early/escalated/ombudsman)</li>
-            <li>Policy mapping & deadline timers</li>
-            <li>Tone/consistency markers captured</li>
-          </ul>
-        </article>
-        <article class="card">
-          <h2>Sales & Marketing</h2>
-          <ul class="list">
-            <li>Lead qualification & consent capture</li>
-            <li>Regulator overlays (ASA, ICO, PECR)</li>
-            <li>Export to CRM with audit trail</li>
-          </ul>
-        </article>
-      </div>
-    </section>
+      <section id="contact" class="card" aria-labelledby="contact-h">
+        <h2 id="contact-h">Contact</h2>
+        <p>Tell us your context; we’ll propose a fit-for-purpose intake with a fixed plan where possible.</p>
+        <form action="https://formspree.io/f/meolvrdy" method="POST" accept-charset="UTF-8">
+          <div style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden" aria-hidden="true">
+            <label>Leave blank<input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></label>
+          </div>
+          <input type="hidden" name="_subject" value="Veridex — Demo request" />
+          <input type="hidden" name="_origin" value="https://www.rbisintelligence.com/veridex.html" />
+          <label>Full name<input name="name" required autocomplete="name" /></label>
+          <label>Work email<input type="email" name="email" required autocomplete="email" /></label>
+          <label>Organisation<input name="org" autocomplete="organization" /></label>
+          <label>Message<textarea name="message" rows="4" required></textarea></label>
+          <label><input type="checkbox" name="consent" required /> I consent to RBIS processing this message to respond. See <a href="/privacy.html">Privacy</a>.</label>
+          <button class="btn primary" type="submit">Send</button>
+        </form>
+      </section>
 
-    <!-- Exports -->
-    <section id="exports" aria-labelledby="exports-h">
-      <div class="container grid-2">
-        <article class="card">
-          <h2 id="exports-h">Exports & Evidence</h2>
-          <ul class="list">
-            <li>PDF report + CSV annexes (watermarked)</li>
-            <li>Signed hashes & reviewer attestations</li>
-            <li>Court-ready packs in minutes</li>
-          </ul>
-          <p class="muted">See <a href="/reports.html">reports</a> for pack formats.</p>
-        </article>
-        <article class="card">
-          <h2>Security & A11y posture</h2>
-          <ul class="list">
-            <li>Strict headers (CSP, HSTS, Referrer, Permissions)</li>
-            <li>Keyboard-only nav; reduced motion support</li>
-            <li>All rights reserved; IP protections in Terms</li>
-          </ul>
-          <p class="muted">Copy–paste header snippets on <a href="/trust.html">Trust</a>.</p>
-        </article>
-      </div>
-    </section>
-
-    <!-- CTA -->
-    <section id="cta" aria-labelledby="cta-h">
-      <div class="container card">
-        <h2 id="cta-h">Start with a guided intake</h2>
-        <p>Tell us your use case (repairs, complaints, sales intake). We’ll spin up a guided flow and send a redacted sample output.</p>
-        <p>
-          <a class="btn primary" href="https://formspree.io/f/meolvrdy" rel="nofollow">Request Guided Intake</a>
-          <a class="btn ghost" href="/dashboard.html">See Dashboard Suite</a>
-        </p>
-        <p class="muted">
-          <span class="badge">All rights reserved</span>
-          <span class="badge">© <span id="cpy"></span> RBIS UK Ltd</span>
-          <span class="badge">Terms include IP protections</span>
-          <span class="badge">Watermarking / code obfuscation where appropriate</span>
-        </p>
-      </div>
-    </section>
+      <p class="small">All rights reserved © 2025 RBIS UK Ltd • Terms include IP protections • Watermarking / code obfuscation where appropriate</p>
+    </div>
   </main>
 
-  <!-- Footer -->
-  <footer role="contentinfo">
-    <div class="container foot">
-      <div>© <span id="yr"></span> RBIS UK Ltd. All rights reserved. · RBIS © | Designed &amp; Created by Ryan Roberts</div>
-      <nav aria-label="Footer">
-        <a href="/terms.html">Terms of Use</a> ·
-        <a href="/privacy.html">Privacy</a> ·
-        <a href="/legal.html">Legal Notice</a> ·
-        <a href="/cookies.html">Cookies</a> ·
-        <a href="/accessibility.html">Accessibility</a> ·
-        <a href="/trust.html">Trust</a>
-      </nav>
+  <footer>
+    <div class="wrap">
+      <p class="small">© 2025 RBIS UK Ltd. All rights reserved. · RBIS © | Designed &amp; Created by Ryan Roberts</p>
+      <p class="small">
+        <a href="/terms.html">Terms</a> · <a href="/privacy.html">Privacy</a> ·
+        <a href="/legal.html">Legal Notice</a> · <a href="/cookies.html">Cookies</a> ·
+        <a href="/accessibility.html">Accessibility</a> · <a href="/trust.html">Trust</a> ·
+        <a href="/careers.html">Careers</a>
+      </p>
     </div>
   </footer>
 
   <script>
-    // Mobile menu
     (function(){
-      var btn=document.getElementById('menu'), mob=document.getElementById('mobile');
-      if(btn && mob){
-        btn.addEventListener('click', function(){
-          var open=mob.classList.toggle('open');
-          btn.setAttribute('aria-expanded', String(open));
-        });
-      }
-    })();
-    // Years
-    (function(){
-      var y=new Date().getFullYear();
-      var yr=document.getElementById('yr'), c=document.getElementById('cpy');
-      if(yr) yr.textContent=y; if(c) c.textContent=y;
+      const btn = document.querySelector('.nav-toggle');
+      const nav = document.getElementById('site-nav');
+      btn.addEventListener('click', () => {
+        const open = btn.getAttribute('aria-expanded') === 'true';
+        btn.setAttribute('aria-expanded', String(!open));
+        nav.hidden = open;
+      });
+      document.addEventListener('keydown', (e)=> {
+        if(e.key === 'Escape' && btn.getAttribute('aria-expanded') === 'true'){ btn.click(); }
+      });
     })();
   </script>
 </body>

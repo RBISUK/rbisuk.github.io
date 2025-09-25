@@ -1,320 +1,167 @@
 <!doctype html>
-<html lang="en" dir="ltr">
+<html lang="en">
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   <title>RBIS AI — Proof-First Behavioural Intelligence | RBIS UK Ltd</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Proof first. See a redacted, court-ready pack built with RBIS AI: tone-shifts, cadence anomalies, and lexical hedging, reviewed by humans and exportable in minutes.">
-  <link rel="canonical" href="https://www.rbisintelligence.com/rbis-ai.html">
-  <meta name="theme-color" content="#0A3D91">
-  <meta property="og:title" content="RBIS AI — Proof-First Behavioural Intelligence">
-  <meta property="og:description" content="Download a redacted sample pack. Evidence that survives tough rooms.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://www.rbisintelligence.com/rbis-ai.html">
-  <meta property="og:image" content="https://www.rbisintelligence.com/assets/social-share.jpg">
-  <link rel="icon" href="/assets/favicon.ico">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="RBIS AI turns speech/text signals into defensible evidence. Human-in-the-loop review, redactions, signed hashes, exportable packs. Starter, Pro, and Regulated plans." />
+  <link rel="canonical" href="https://www.rbisintelligence.com/rbis-ai.html" />
+  <meta property="og:title" content="RBIS AI — Proof-First Behavioural Intelligence" />
+  <meta property="og:description" content="Evidence first. Hype never. Court-ready packs with reviewer attestations and signed export hashes." />
+  <meta property="og:type" content="website" />
   <style>
-    :root{--blue:#0A3D91;--navy:#071F49;--bg:#fff;--text:#0B1221;--grey:#E8ECF3;--muted:#6A7280;--green:#109867;--amber:#D9822B;--red:#C4383E}
-    *{box-sizing:border-box} html{scroll-behavior:smooth}
-    body{margin:0;font:16px/1.58 system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;color:var(--text);background:var(--bg)}
-    a{color:var(--blue);text-decoration:none}
-    a:focus-visible,button:focus-visible{outline:2px solid rgba(10,61,145,.6);outline-offset:2px}
-    .container{max-width:1100px;margin:0 auto;padding:0 16px}
-    .skip{position:absolute;left:-9999px}.skip:focus{left:16px;top:12px;background:#fff;padding:.5rem .75rem;border-radius:.5rem;box-shadow:0 8px 24px rgba(0,0,0,.12)}
-    .notice{background:var(--navy);color:#fff}.notice .container{display:flex;gap:.75rem;align-items:center;padding:.55rem 16px}.notice a{color:#AECBFF}
-    header{position:sticky;top:0;z-index:1000;background:rgba(255,255,255,.92);backdrop-filter:saturate(180%) blur(8px);border-bottom:1px solid var(--grey)}
-    .nav{display:flex;align-items:center;justify-content:space-between;padding:.7rem 0}
-    .brand{display:flex;align-items:center;gap:.5rem;color:var(--navy);font-weight:800}.dot{width:10px;height:10px;border-radius:999px;background:var(--blue)}
-    nav ul{display:flex;gap:16px;list-style:none;margin:0;padding:0} nav a{color:#1b2946;font-weight:600}
-    .menu{display:none;border:1px solid var(--grey);padding:.45rem .6rem;border-radius:.5rem;background:#fff}
-    @media (max-width:900px){nav{display:none}.menu{display:inline-block}.mobile{display:none;border-top:1px solid var(--grey)}.mobile.open{display:block}.mobile a{display:block;padding:.9rem 16px;border-bottom:1px solid var(--grey);color:#1b2946}}
-    .hero{background:linear-gradient(180deg, rgba(10,61,145,.06), transparent 60%);padding:28px 0 8px}
-    h1{font-size:clamp(28px,4vw,42px);line-height:1.1;margin:.25rem 0 .5rem;color:var(--blue)}
-    .sub{color:#22304d;font-size:1.05rem;max-width:74ch}
-    .actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
-    .btn{display:inline-block;padding:.7rem 1rem;border-radius:.7rem;font-weight:800;border:1px solid var(--blue)}
-    .btn.primary{background:var(--blue);color:#fff}.btn.ghost{background:#fff;color:var(--blue)}
-    .muted{color:var(--muted)} .badge{display:inline-block;padding:.35rem .6rem;border:1px solid var(--grey);border-radius:999px;background:#fbfcff;margin:0 6px 6px 0}
-    section{padding:18px 0}.grid-3{display:grid;gap:14px;grid-template-columns:repeat(3,1fr)}.grid-2{display:grid;gap:14px;grid-template-columns:repeat(2,1fr)}
-    @media (max-width:900px){.grid-3,.grid-2{grid-template-columns:1fr}}
-    .card{border:1px solid var(--grey);border-radius:12px;padding:16px;background:#fff;box-shadow:0 8px 24px rgba(7,31,73,.05)}
-    .list{margin:.2rem 0 .9rem 1.2rem}
-    .case-pane{display:grid;grid-template-columns:1.1fr .9fr;gap:14px;align-items:stretch}
-    @media(max-width:900px){.case-pane{grid-template-columns:1fr}}
-    .redacted{border:1px dashed #9bb0d6;border-radius:12px;padding:14px;background:repeating-linear-gradient(135deg, #f3f6ff 0 14px, #eef3ff 14px 28px)}
-    .bar{height:14px;background:#0b1f49;border-radius:6px;margin:8px 0}
-    .blk{height:10px;background:#0b1f49;border-radius:3px;margin:6px 0;width:100%}
-    .blk.s{width:65%}.blk.m{width:82%}.blk.l{width:94%}
-    .kv{display:grid;grid-template-columns:1fr 2fr;gap:10px} @media(max-width:900px){.kv{grid-template-columns:1fr}}
-    footer{border-top:1px solid var(--grey);margin-top:22px}.foot{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:14px 0}.foot a{color:#33405c}
-    @media print{header,.notice,footer{display:none} a[href]::after{content:" (" attr(href) ")"} body{color:#000}}
+    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;line-height:1.55;margin:0;color:#0a1a2b;background:#fff}
+    header,footer{padding:12px 16px;border-bottom:1px solid #e6edf5}
+    footer{border-top:1px solid #e6edf5;border-bottom:0;margin-top:40px}
+    .notice{font-size:.9rem;background:#f4f7fb;color:#05213d;padding:8px 12px}
+    main{max-width:940px;margin:24px auto;padding:0 16px}
+    h1{font-size:2rem;margin:.75rem 0}
+    h2{font-size:1.25rem;margin:1.25rem 0 .5rem}
+    .btn{display:inline-block;padding:10px 14px;border-radius:10px;border:1px solid #0b5bd3;text-decoration:none}
+    .btn.primary{background:#0b5bd3;color:#fff;border-color:#0b5bd3}
+    .grid{display:grid;gap:16px}
+    @media(min-width:800px){.plans{grid-template-columns:1fr 1fr 1fr}}
+    .card{border:1px solid #e6edf5;border-radius:14px;padding:16px}
+    .muted{color:#355}
+    .kbd{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;background:#eef3fb;border:1px solid #d7e3f8;border-radius:6px;padding:1px 6px}
+    ul{padding-left:20px}
+    .legal{font-size:.9rem;color:#345}
+    nav a{margin-right:10px}
   </style>
-
-  <!-- Schema: Product + CaseStudy + FAQ -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"Product",
-    "name":"RBIS AI",
-    "description":"Proof-first behavioural intelligence: tone-shifts, cadence anomalies, and lexical hedging across text/voice with human review and signed exports.",
-    "brand":{"@type":"Brand","name":"RBIS"},
-    "offers":{"@type":"AggregateOffer","lowPrice":"0","priceCurrency":"GBP","offerCount":"3"}
-  }
-  </script>
-  <script type="application/ld+json">
-  [
-    {
-      "@context":"https://schema.org",
-      "@type":"CaseStudy",
-      "name":"Meta Ads Conversion Lift",
-      "description":"RBIS AI toolkit analysis flagged friction and injected guardrailed copy/workflow changes. Conversion rose from 6% to 13% in 14 days.",
-      "audience":{"@type":"Audience","audienceType":"Marketing/Acquisition"},
-      "isPartOf":{"@type":"Product","name":"RBIS AI"}
-    },
-    {
-      "@context":"https://schema.org",
-      "@type":"CaseStudy",
-      "name":"Complaints Escalation Reduction",
-      "description":"Tone-shift risk flags + SLA nudges reduced escalations by 28% over 6 weeks in an anonymised housing pilot.",
-      "audience":{"@type":"Audience","audienceType":"Operations/Complaints"},
-      "isPartOf":{"@type":"Product","name":"RBIS AI"}
-    }
-  ]
-  </script>
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"FAQPage",
-    "mainEntity":[
-      {"@type":"Question","name":"Does RBIS AI replace human judgement?","acceptedAnswer":{"@type":"Answer","text":"No. RBIS AI augments analysts. Material conclusions require human review with reviewer attestations."}},
-      {"@type":"Question","name":"Where is data processed?","acceptedAnswer":{"@type":"Answer","text":"UK/EU region-pinned options are available. The brochure site never stores evidence."}},
-      {"@type":"Question","name":"Is NextusOne CRM available?","acceptedAnswer":{"@type":"Answer","text":"NextusOne CRM is currently on a waitlist. RBIS integrates with existing CRMs today."}}
-    ]
-  }
-  </script>
+  <link rel="stylesheet" href="/notice.css">
 </head>
 <body>
-  <a class="skip" href="#main">Skip to content</a>
-
-  <!-- Legal disclosure -->
-  <div class="notice" role="note" aria-label="Legal disclosure">
-    <div class="container">
-      <strong>Notice:</strong> RBIS UK Ltd (England &amp; Wales) provides independent intelligence analysis and reporting.
-      <strong>We are not a law firm and do not provide legal advice.</strong>
-      Contact: <a href="mailto:contact@rbisintelligence.com">contact@rbisintelligence.com</a>
-    </div>
+  <div class="notice" role="note" aria-label="Regulatory notice">
+    <span class="tag">Notice:</span>
+    <span class="text">RBIS UK Ltd (England <body>amp; Wales) provides independent intelligence analysis and reporting. We are not a law firm and do not provide legal advice. Contact: contact@rbisintelligence.com</span>
+    <a href="/legal.html#disclaimer">Details</a>
   </div>
+  <header><strong>RBIS</strong> · <nav>
+    <a href="/dashboard.html">Dashboard</a>
+    <a href="/rbis-ai.html" aria-current="page">RBIS AI</a>
+    <a href="/rbis-ai-auto-call.html">AI Auto Call</a>
+    <a href="/veridex.html">Veridex</a>
+    <a href="/pact-ledger.html">PACT</a>
+    <a href="/saas-licensing.html">Pricing</a>
+    <a href="/trust.html">Trust</a>
+  </nav></header>
 
-  <!-- Header -->
-  <header role="banner">
-    <div class="container nav">
-      <a class="brand" href="/" aria-label="RBIS home"><span class="dot" aria-hidden="true"></span> RBIS</a>
-      <nav aria-label="In-page">
-        <ul>
-          <li><a href="#case">Case study</a></li>
-          <li><a href="#engine">Signals</a></li>
-          <li><a href="#guardrails">Guardrails</a></li>
-          <li><a href="#auto-call">Auto Call</a></li>
-          <li><a href="#plans">Plans</a></li>
-          <li><a href="#faq">FAQ</a></li>
-        </ul>
-      </nav>
-      <button class="menu" id="menu" aria-expanded="false" aria-controls="mobile">Menu</button>
-    </div>
-    <div class="mobile" id="mobile" role="dialog" aria-label="Mobile menu">
-      <a href="#case">Case study</a><a href="#engine">Signals</a><a href="#guardrails">Guardrails</a><a href="#auto-call">Auto Call</a><a href="#plans">Plans</a><a href="#faq">FAQ</a>
-    </div>
-  </header>
+  <main>
+    <p class="muted">Redacted excerpt: timestamps, tone-shift flags, reviewer attestations, export hashes.</p>
+    <h1>Evidence first. Hype never.</h1>
+    <p>Download a redacted, court-ready pack built with RBIS AI. See tone-shifts, cadence anomalies, and lexical hedging — then see how human reviewers turned signals into defensible conclusions.</p>
+    <p>
+      <a class="btn primary" href="/contact.html#contact-form">Download Sample Pack</a>
+      <a class="btn" href="/contact.html#contact-form">Request Access</a>
+    </p>
 
-  <main id="main">
-    <!-- Hero: Case-study first -->
-    <section id="case" class="hero" aria-labelledby="case-h">
-      <div class="container case-pane">
-        <div class="redacted" aria-label="Redacted sample pack preview">
-          <div class="bar" aria-hidden="true"></div>
-          <div class="blk l"></div>
-          <div class="blk s"></div>
-          <div class="blk m"></div>
-          <div class="blk l"></div>
-          <div class="blk s"></div>
-          <p class="muted" style="margin-top:8px">Redacted excerpt: timestamps, tone-shift flags, reviewer attestations, export hashes.</p>
-        </div>
-        <div>
-          <h1>Evidence first. Hype never.</h1>
-          <p class="sub">Download a redacted, court-ready pack built with RBIS AI. See tone-shifts, cadence anomalies, and lexical hedging — then see how human reviewers turned signals into defensible conclusions.</p>
-          <div class="actions">
-            <a class="btn primary" href="https://formspree.io/f/meolvrdy" rel="nofollow">Download Sample Pack</a>
-            <a class="btn ghost" href="https://formspree.io/f/meolvrdy" rel="nofollow">Request Access</a>
-          </div>
-          <div class="kv" style="margin-top:12px">
-            <div><strong>Meta Ads (pilot)</strong></div>
-            <div>Toolkit analysis flagged friction; guardrailed fixes took conversion from <strong>6%</strong> to <strong>13%</strong> in <strong>14 days</strong>.</div>
-            <div><strong>Complaints (housing)</strong></div>
-            <div>Tone-shift risk flags + SLA nudges cut escalations by <strong>28%</strong> over <strong>6 weeks</strong> (anonymised pilot).</div>
-          </div>
-          <p class="muted">Metrics are anonymised, method-documented, and replicable on request.</p>
-        </div>
-      </div>
+    <section aria-labelledby="results">
+      <h2 id="results">Proven uplifts (anonymised, replicable)</h2>
+      <ul>
+        <li><strong>Meta Ads (pilot):</strong> toolkit analysis flagged friction; guardrailed fixes took conversion <strong>6% → 13%</strong> in 14 days.</li>
+        <li><strong>Complaints (housing):</strong> tone-shift risk flags + SLA nudges cut escalations by <strong>28%</strong> over 6 weeks.</li>
+      </ul>
+      <p class="muted">Metrics are anonymised, method-documented, and replicable on request.</p>
     </section>
 
-    <!-- Signals / Outputs / Stack -->
-    <section id="engine" aria-labelledby="engine-h">
-      <div class="container grid-3">
-        <article class="card">
-          <h2 id="engine-h">Signals we analyse</h2>
-          <ul class="list">
-            <li>Cadence & pause windows</li>
-            <li>Pitch variance & jitter</li>
-            <li>Lexical hedging & modal verbs</li>
-            <li>Pronoun & tense shifts</li>
-            <li>Metadata & timing consistency</li>
-          </ul>
-        </article>
-        <article class="card">
-          <h2>Outputs you get</h2>
-          <ul class="list">
-            <li>Timestamped evidence snippets (audio/text)</li>
-            <li>Consistency flags & storyline deltas</li>
-            <li>PDF + CSV annex exports</li>
-            <li>Reviewer attestations & change log</li>
-          </ul>
-        </article>
-        <article class="card">
-          <h2>Stack & integrations</h2>
-          <ul class="list">
-            <li>Telephony/SIP, email, chat, social DMs</li>
-            <li>CRMs & DMS via signed links</li>
-            <li>NextusOne CRM <strong>(waitlist)</strong></li>
-          </ul>
-          <p class="muted">No evidence stored on the brochure site.</p>
-        </article>
-      </div>
+    <section aria-labelledby="signals">
+      <h2 id="signals">Signals we analyse</h2>
+      <ul>
+        <li>Cadence &amp; pause windows • Pitch variance &amp; jitter</li>
+        <li>Lexical hedging &amp; modal verbs • Pronoun &amp; tense shifts</li>
+        <li>Metadata &amp; timing consistency across artefacts</li>
+      </ul>
     </section>
 
-    <!-- Guardrails -->
-    <section id="guardrails" aria-labelledby="guardrails-h">
-      <div class="container grid-3">
-        <article class="card">
-          <h2 id="guardrails-h">Guardrails</h2>
-          <ul class="list">
-            <li>Human review required for material conclusions</li>
-            <li>Redaction & pseudonymisation at ingest</li>
-            <li>Change logs, hashes, signed exports</li>
-          </ul>
-        </article>
-        <article class="card">
-          <h2>Security & Privacy</h2>
-          <ul class="list">
-            <li>TLS + HSTS; strict CSP, Referrer & Permissions-Policy</li>
-            <li>Least-privilege; MFA; audit logs</li>
-            <li>Region-pinned processing (UK/EU options)</li>
-          </ul>
-          <p class="muted">See <a href="/trust.html">Trust</a> for copy-paste headers.</p>
-        </article>
-        <article class="card">
-          <h2>Accessibility</h2>
-          <ul class="list">
-            <li>WCAG 2.2 AA targets</li>
-            <li>Captions/transcripts; keyboard-first</li>
-            <li>Reduced motion & strong focus states</li>
-          </ul>
-        </article>
-      </div>
+    <section aria-labelledby="outputs">
+      <h2 id="outputs">Outputs you get</h2>
+      <ul>
+        <li>Timestamped evidence snippets (audio/text)</li>
+        <li>Consistency flags &amp; storyline deltas</li>
+        <li>PDF + CSV annex exports; reviewer attestations &amp; change log</li>
+      </ul>
     </section>
 
-    <!-- Auto Call Answering -->
-    <section id="auto-call" aria-labelledby="auto-call-h">
-      <div class="container card">
-        <h2 id="auto-call-h">RBIS AI Auto Call Answering</h2>
-        <p class="muted">Answers, verifies identity, captures consent, triages, and creates a Veridex case with audio + transcript. Escalates to a human on uncertainty. <strong>Voice is Off by default</strong> in any embedded demo.</p>
-        <div class="grid-2">
-          <div>
-            <h3>Core</h3>
-            <ul class="list">
-              <li>Consent prompts and logging</li>
-              <li>Facts capture → CRM case</li>
-              <li>Routing & callback scheduling</li>
-              <li>Exportable audio/transcript snippets</li>
-            </ul>
-          </div>
-          <div>
-            <h3>KPIs</h3>
-            <ul class="list">
-              <li>First-contact resolution %</li>
-              <li>Average handling time</li>
-              <li>Consent capture rate</li>
-              <li>Escalation % & QA pass rate</li>
-            </ul>
-          </div>
-        </div>
-        <p>
-          <a class="btn primary" href="https://formspree.io/f/meolvrdy" rel="nofollow">See a live call flow</a>
-          <a class="btn ghost" href="/omniassist.html">Explore OmniAssist</a>
-        </p>
-      </div>
+    <section aria-labelledby="guardrails">
+      <h2 id="guardrails">Guardrails</h2>
+      <ul>
+        <li>Human review required for material conclusions</li>
+        <li>Redaction &amp; pseudonymisation at ingest</li>
+        <li>Hashes &amp; signed exports; region-pinned options (UK/EU)</li>
+      </ul>
+      <p class="muted">See <a href="/trust.html">Trust</a> for copy-paste headers (CSP/HSTS/Referrer/Permissions).</p>
     </section>
 
-    <!-- Plans -->
-    <section id="plans" aria-labelledby="plans-h">
-      <div class="container grid-3">
-        <article class="card">
-          <h2 id="plans-h">Starter</h2>
+    <section aria-labelledby="auto-call">
+      <h2 id="auto-call">RBIS AI Auto Call Answering</h2>
+      <p>Answers, verifies identity, captures consent, triages, and creates a Veridex case with audio + transcript. Escalates to a human on uncertainty. <strong>Voice is Off by default</strong> in any embedded demo.</p>
+      <ul>
+        <li>Consent prompts/logging • Facts capture → CRM case • Routing &amp; callback scheduling • Exportable audio/transcript snippets</li>
+        <li>KPIs: FCR %, AHT, consent capture rate, escalation % &amp; QA pass rate</li>
+      </ul>
+      <p><a class="btn" href="/contact.html#contact-form">See a live call flow</a> <a class="btn" href="/omniassist.html">Explore OmniAssist</a></p>
+    </section>
+
+    <section aria-labelledby="plans">
+      <h2 id="plans">Plans &amp; pricing</h2>
+      <div class="grid plans">
+        <article class="card" aria-labelledby="starter">
+          <h3 id="starter">Starter</h3>
           <p class="muted">Small teams • internal use</p>
-          <ul class="list"><li>Core signals</li><li>Manual redaction & review</li><li>PDF/CSV exports</li></ul>
-          <p><strong>from £<span>X</span>/month</strong></p>
-          <p><a class="btn primary" href="https://formspree.io/f/meolvrdy" rel="nofollow">Request Starter</a></p>
+          <ul>
+            <li>Core signals (speech/text)</li>
+            <li>Manual redaction &amp; review</li>
+            <li>PDF/CSV exports</li>
+          </ul>
+          <p><strong>from £990/mo</strong> + <span class="kbd">£0.09/min</span> audio</p>
+          <p><a class="btn primary" href="/contact.html#contact-form">Request Starter</a></p>
         </article>
-        <article class="card">
-          <h2>Pro</h2>
+        <article class="card" aria-labelledby="pro">
+          <h3 id="pro">Pro</h3>
           <p class="muted">Multi-team • integrations</p>
-          <ul class="list"><li>Risk scoring & timelines</li><li>Redaction pipelines</li><li>SAML/SSO & log exports</li></ul>
-          <p><strong>from £<span>Y</span>/month</strong></p>
-          <p><a class="btn primary" href="https://formspree.io/f/meolvrdy" rel="nofollow">Request Pro</a></p>
+          <ul>
+            <li>Risk scoring &amp; timelines</li>
+            <li>Redaction pipelines</li>
+            <li>SAML/SSO &amp; log exports</li>
+          </ul>
+          <p><strong>from £1,950/mo</strong> + <span class="kbd">£0.09/min</span> audio</p>
+          <p><a class="btn" href="/contact.html#contact-form">Request Pro</a></p>
         </article>
-        <article class="card">
-          <h2>Regulated</h2>
+        <article class="card" aria-labelledby="regulated">
+          <h3 id="regulated">Regulated</h3>
           <p class="muted">High-assurance • retention controls</p>
-          <ul class="list"><li>Region-pinned (UK/EU)</li><li>Retention & attestations</li><li>Hashes & signed exports</li></ul>
-          <p><strong>custom £</strong></p>
-          <p><a class="btn primary" href="https://formspree.io/f/meolvrdy" rel="nofollow">Request Regulated</a></p>
+          <ul>
+            <li>Region-pinned (UK/EU)</li>
+            <li>Retention &amp; attestations</li>
+            <li>Hashes &amp; signed exports</li>
+          </ul>
+          <p><strong>Custom</strong> (banded by org size &amp; assurance)</p>
+          <p><a class="btn" href="/contact.html#contact-form">Request Regulated</a></p>
         </article>
       </div>
+      <p class="muted">For full SKU matrix see <a href="/saas-licensing.html">SaaS Licensing & Pricing</a>.</p>
     </section>
 
-    <!-- FAQ -->
-    <section id="faq" aria-labelledby="faq-h">
-      <div class="container card">
-        <h2 id="faq-h">FAQ</h2>
-        <details><summary>Does RBIS AI replace human judgement?</summary><p>No. RBIS AI augments analysts. Material conclusions require human review with reviewer attestations.</p></details>
-        <details><summary>Where is data processed?</summary><p>UK/EU region-pinned options are available. The brochure site never stores evidence.</p></details>
-        <details><summary>Is NextusOne CRM available?</summary><p>NextusOne CRM is on a waitlist. We integrate with existing CRMs today.</p></details>
-        <details><summary>What about consent and recordings?</summary><p>Auto Call Answering includes explicit consent prompts, purpose statements, and opt-outs. Consent logs are exportable.</p></details>
-      </div>
+    <section aria-labelledby="faq">
+      <h2 id="faq">FAQ</h2>
+      <p><strong>Does RBIS AI replace human judgement?</strong><br/>No — RBIS AI augments analysts. Material conclusions require human review with reviewer attestations.</p>
+      <p><strong>Where is data processed?</strong><br/>UK/EU region-pinned options are available. The brochure site never stores evidence.</p>
+      <p><strong>Consent &amp; recordings?</strong><br/>Auto Call Answering includes explicit consent prompts, purpose statements, and opt-outs. Consent logs are exportable.</p>
     </section>
 
-    <!-- CTA -->
-    <section aria-labelledby="cta-h">
-      <div class="container card">
-        <h2 id="cta-h">Ready to see RBIS AI on your data?</h2>
-        <p>Send your constraints; we’ll propose a fixed plan where possible.</p>
-        <p><a class="btn primary" href="https://formspree.io/f/meolvrdy" rel="nofollow">Download Sample Pack</a> <a class="btn ghost" href="https://formspree.io/f/meolvrdy" rel="nofollow">Request Access</a></p>
-        <p class="muted"><span class="badge">All rights reserved</span> <span class="badge">© <span id="cpy"></span> RBIS UK Ltd</span> <span class="badge">Terms include IP protections</span> <span class="badge">Watermarking / code obfuscation where appropriate</span></p>
-      </div>
+    <section>
+      <h2>Ready to see RBIS AI on your data?</h2>
+      <p><a class="btn primary" href="/contact.html#contact-form">Download Sample Pack</a> <a class="btn" href="/contact.html#contact-form">Request Access</a></p>
     </section>
+
+    <p class="legal">© 2025 RBIS UK Ltd. All rights reserved. Terms of use include IP protections. Watermarking / code obfuscation where appropriate.</p>
   </main>
 
-  <footer role="contentinfo">
-    <div class="container foot">
-      <div>© <span id="yr"></span> RBIS UK Ltd. All rights reserved. · RBIS © | Designed &amp; Created by Ryan Roberts</div>
-      <nav aria-label="Footer">
-        <a href="/terms.html">Terms of Use</a> · <a href="/privacy.html">Privacy</a> · <a href="/legal.html">Legal Notice</a> · <a href="/cookies.html">Cookies</a> · <a href="/accessibility.html">Accessibility</a> · <a href="/trust.html">Trust</a>
-      </nav>
-    </div>
+  <footer>
+    © 2025 RBIS UK Ltd. All rights reserved. · RBIS © | Designed &amp; Created by Ryan Roberts ·
+    <a href="/terms.html">Terms of Use</a> · <a href="/privacy.html">Privacy</a> ·
+    <a href="/legal.html">Legal Notice</a> · <a href="/cookies.html">Cookies</a> ·
+    <a href="/accessibility.html">Accessibility</a> · <a href="/trust.html">Trust</a>
   </footer>
-
-  <script>
-    (function(){var b=document.getElementById('menu'),m=document.getElementById('mobile');if(b&&m){b.addEventListener('click',function(){var o=m.classList.toggle('open');b.setAttribute('aria-expanded',String(o));});}})();
-    (function(){var y=new Date().getFullYear();var yr=document.getElementById('yr'),c=document.getElementById('cpy');if(yr)yr.textContent=y;if(c)c.textContent=y;})();
-  </script>
 </body>
 </html>

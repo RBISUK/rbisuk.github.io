@@ -1,0 +1,6 @@
+:root{--notice-bg:#0b2a5a;--notice-fg:#fff}
+.notice{position:sticky;top:0;z-index:60;display:flex;align-items:center;gap:.5rem;padding:.4rem .6rem;background:var(--notice-bg);color:var(--notice-fg);font-size:clamp(12px,2.8vw,13px);line-height:1.2}
+.notice .tag{font-weight:700}
+.notice .text{flex:1 1 auto;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.notice a{color:var(--notice-fg);text-decoration:underline dotted 1px}
+@media (min-width:900px){.notice{font-size:14px;padding:.5rem .9rem}}
