@@ -1,106 +1,335 @@
-<!DOCTYPE html><html lang="en"><head>
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta charset="utf-8"/>
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self'; base-uri 'none'; frame-ancestors 'none'">
-<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
-<title>Contact — RBIS</title>
-<link rel="canonical" href="https://rbisuk.github.io/contact.html">
-<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
-<link rel="icon" type="image/png" href="assets/favicon.png">
-<link rel="apple-touch-icon" href="assets/favicon.png">
-<meta name="theme-color" content="#4f46e5">
-<link rel="stylesheet" href="assets/theme.css?v=22">
-<style>
-.formgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:.8rem}
-input,select,textarea{background:#fff;border:1px solid var(--line);border-radius:12px;padding:.6rem}
-label{display:block}
-</style>
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>Contact RBIS — Independent Intelligence & Evidence | RBIS UK Ltd</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Contact RBIS UK Ltd for behavioural intelligence, evidence packs, dashboards, and RBIS AI. We respond with next steps and, where possible, a fixed scope.">
+  <link rel="canonical" href="https://www.rbisintelligence.com/contact.html">
+  <meta name="theme-color" content="#0A3D91">
+  <!-- Open Graph -->
+  <meta property="og:title" content="Contact RBIS — Independent Intelligence & Evidence">
+  <meta property="og:description" content="Tell us the decision or dispute. We’ll reply with next steps and a fixed scope where possible.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.rbisintelligence.com/contact.html">
+  <meta property="og:image" content="https://www.rbisintelligence.com/assets/social-share.jpg">
+  <link rel="icon" href="/assets/favicon.ico">
+
+  <style>
+    :root{
+      --blue:#0A3D91; --navy:#071F49; --bg:#fff; --text:#0B1221; --grey:#E8ECF3; --muted:#6A7280;
+      --green:#109867; --amber:#D9822B; --red:#C4383E;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font:16px/1.58 system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;color:var(--text);background:var(--bg)}
+    a{color:var(--blue);text-decoration:none}
+    a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid rgba(10,61,145,.6);outline-offset:2px}
+    .container{max-width:980px;margin:0 auto;padding:0 16px}
+    .skip{position:absolute;left:-9999px}
+    .skip:focus{left:16px;top:12px;background:#fff;padding:.5rem .75rem;border-radius:.5rem;box-shadow:0 8px 24px rgba(0,0,0,.12)}
+
+    /* Legal notice */
+    .notice{background:var(--navy);color:#fff}
+    .notice .container{display:flex;gap:.75rem;align-items:center;padding:.55rem 16px}
+    .notice a{color:#AECBFF}
+
+    /* Header */
+    header{position:sticky;top:0;z-index:1000;background:rgba(255,255,255,.92);backdrop-filter:saturate(180%) blur(8px);border-bottom:1px solid var(--grey)}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:.7rem 0}
+    .brand{display:flex;align-items:center;gap:.5rem;color:var(--navy);font-weight:800}
+    .dot{width:10px;height:10px;border-radius:999px;background:var(--blue)}
+    nav ul{display:flex;gap:16px;list-style:none;margin:0;padding:0}
+    nav a{color:#1b2946;font-weight:600}
+    .menu{display:none;border:1px solid var(--grey);padding:.45rem .6rem;border-radius:.5rem;background:#fff}
+    @media (max-width:900px){
+      nav{display:none}.menu{display:inline-block}
+      .mobile{display:none;border-top:1px solid var(--grey)}
+      .mobile.open{display:block}
+      .mobile a{display:block;padding:.9rem 16px;border-bottom:1px solid var(--grey);color:#1b2946}
+    }
+
+    /* Hero */
+    .hero{background:linear-gradient(180deg, rgba(10,61,145,.06), transparent 60%);padding:40px 0 18px}
+    h1{font-size:clamp(28px,4vw,42px);line-height:1.1;margin:.25rem 0 .5rem;color:var(--blue)}
+    .sub{color:#22304d;font-size:1.05rem;max-width:72ch}
+    .muted{color:var(--muted)}
+
+    /* Form */
+    section{padding:20px 0}
+    form{border:1px solid var(--grey);border-radius:12px;padding:16px;background:#fff;box-shadow:0 8px 24px rgba(7,31,73,.05)}
+    .row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    @media (max-width:900px){.row{grid-template-columns:1fr}}
+    label{display:block;font-weight:700;margin:.4rem 0 .25rem}
+    input,select,textarea{width:100%;padding:.65rem .7rem;border:1px solid #ccd4e0;border-radius:.6rem;background:#fff}
+    textarea{min-height:140px;resize:vertical}
+    .hint{font-size:.92rem;color:var(--muted);margin:.25rem 0 0}
+    .req{color:var(--red);margin-left:.2rem}
+    .actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px;align-items:center}
+    .btn{display:inline-block;padding:.7rem 1rem;border-radius:.7rem;font-weight:800;border:1px solid var(--blue);background:var(--blue);color:#fff}
+    .btn[aria-disabled="true"]{opacity:.5;pointer-events:none}
+    .ghost{background:#fff;color:var(--blue)}
+    .stack{display:grid;gap:12px}
+    .kv{display:grid;grid-template-columns:1fr 2fr;gap:10px}
+    @media(max-width:900px){.kv{grid-template-columns:1fr}}
+    .badge{display:inline-block;padding:.35rem .6rem;border:1px solid var(--grey);border-radius:999px;background:#fbfcff;margin:0 6px 6px 0}
+
+    /* Footer */
+    footer{border-top:1px solid var(--grey);margin-top:22px}
+    .foot{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:14px 0}
+    .foot a{color:#33405c}
+
+    /* Print */
+    @media print{
+      header,.notice,footer{display:none}
+      a[href]::after{content:" (" attr(href) ")"} body{color:#000}
+    }
+  </style>
+
+  <!-- Schema: ContactPage + Organization -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"ContactPage",
+    "name":"Contact RBIS",
+    "url":"https://www.rbisintelligence.com/contact.html",
+    "about":{"@type":"Organization","name":"RBIS UK Ltd","email":"contact@rbisintelligence.com"}
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Organization",
+    "name":"RBIS UK Ltd",
+    "url":"https://www.rbisintelligence.com",
+    "email":"contact@rbisintelligence.com",
+    "contactPoint":{
+      "@type":"ContactPoint",
+      "contactType":"sales",
+      "email":"contact@rbisintelligence.com",
+      "areaServed":"GB",
+      "availableLanguage":["en"]
+    }
+  }
+  </script>
 </head>
 <body>
-<div class="disclosure"><b>Disclosure:</b> RBIS is not a law firm and does not provide legal advice. We analyse only the evidence in front of our intelligence officers, objectively and without bias.</div>
+  <a class="skip" href="#main">Skip to content</a>
 
-<header class="nav"><nav>
-  <a href="index.html">Home</a>
-  <a href="services.html">Services &amp; Products</a>
-  <a href="reports.html">Reports</a>
-  <a href="webdev.html">Web &amp; Dev</a>
-  <a href="managed.html">Managed</a>
-  <a href="demo.html">Demo</a>
-  <a href="dashboard.html">Dashboard</a>
-  <a href="careers.html">Careers</a>
-  <a href="about.html">About</a>
-  <a href="legal.html">Legal</a>
-  <a href="contact.html">Contact</a>
-</nav></header>
-
-<section class="section">
-  <div class="card" style="padding:1.2rem">
-    <h1>Contact RBIS</h1>
-    <p>Tell us what you need — quotes, walkthroughs, or a quick steer.</p>
-
-    <form action="https://formspree.io/f/meolvrdy" method="POST">
-      <div class="formgrid">
-        <label>Full name
-          <input name="name" type="text" placeholder="Your name" required>
-        </label>
-        <label>Email
-          <input name="_replyto" type="email" placeholder="you@org.co.uk" required>
-        </label>
-        <label>Phone (optional)
-          <input name="phone" type="tel" placeholder="+44...">
-        </label>
-        <label>Organisation
-          <input name="org" type="text" placeholder="Your organisation">
-        </label>
-        <label>Topic
-          <select name="topic">
-            <option>Quote / Pricing</option>
-            <option>Demo / Walkthrough</option>
-            <option>Legal / Data Request</option>
-            <option>Support</option>
-            <option>Other</option>
-          </select>
-        </label>
-      </div>
-
-      <label style="margin-top:.6rem">Message
-        <textarea name="message" placeholder="Describe your context and outcomes…" style="min-height:160px" required></textarea>
-      </label>
-
-      <!-- Optional: pass page context -->
-      <input type="hidden" name="source" value="rbisuk.github.io/contact.html">
-      <!-- Formspree recommended honeypot -->
-      <input type="text" name="_gotcha" style="display:none">
-
-      <div style="display:flex;gap:.6rem;flex-wrap:wrap;margin-top:.6rem">
-        <button class="btn" type="submit">Send</button>
-        <button class="btn" type="reset">Reset</button>
-        <a class="btn" href="demo.html?quote=Request%20a%20walkthrough">Book a walkthrough</a>
-      </div>
-      <p id="c_status" class="foot-links" style="margin-top:.4rem"></p>
-    <div style="position:absolute;left:-9999px;" aria-hidden="true"><input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></div>
-</form>
+  <!-- Legal disclosure -->
+  <div class="notice" role="note" aria-label="Legal disclosure">
+    <div class="container">
+      <strong>Notice:</strong> RBIS UK Ltd (England &amp; Wales) provides independent intelligence analysis and reporting.
+      <strong>We are not a law firm and do not provide legal advice.</strong>
+      Contact: <a href="mailto:contact@rbisintelligence.com">contact@rbisintelligence.com</a>
+    </div>
   </div>
-</section>
 
-<footer>Designed &amp; built by Ryan Roberts | RBIS
-  <div class="foot-links"><a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · <a href="cookies.html">Cookies</a></div>
-</footer>
+  <!-- Header -->
+  <header role="banner">
+    <div class="container nav">
+      <a class="brand" href="/" aria-label="RBIS home"><span class="dot" aria-hidden="true"></span> RBIS</a>
+      <nav aria-label="In-page">
+        <ul>
+          <li><a href="#form">Enquiry</a></li>
+          <li><a href="#alt">Other ways to reach us</a></li>
+          <li><a href="#assurance">Assurance</a></li>
+        </ul>
+      </nav>
+      <button class="menu" id="menu" aria-expanded="false" aria-controls="mobile">Menu</button>
+    </div>
+    <div class="mobile" id="mobile" role="dialog" aria-label="Mobile menu">
+      <a href="#form">Enquiry</a>
+      <a href="#alt">Other ways to reach us</a>
+      <a href="#assurance">Assurance</a>
+    </div>
+  </header>
 
-<script src="assets/active-nav.js"></script>
-<script>
-/* Gentle UX: show a tiny success hint after Formspree redirectless POST */
-(function(){
-  const form=document.getElementById('contactForm'), status=document.getElementById('c_status');
-  form.addEventListener('submit', async function(ev){
-    ev.preventDefault();
-    const data=new FormData(form);
-    try{
-      const res=await fetch(form.action,{method:'POST',body:data,headers:{'Accept':'application/json'}});
-      if(res.ok){ status.textContent='Thanks — we will reply shortly.'; form.reset(); }
-      else{ status.textContent='Something went wrong. Please try again or email Contact@RBISIntelligence.com.'; }
-    }catch(e){ status.textContent='Network issue. Please try again or email Contact@RBISIntelligence.com.'; }
-  });
-})();
-</script>
-</body></html>
+  <main id="main">
+    <!-- Hero -->
+    <section class="hero" aria-label="Contact">
+      <div class="container">
+        <h1>Contact RBIS</h1>
+        <p class="sub">Tell us what you need help with. We’ll respond with next steps and, where possible, a fixed scope and price.</p>
+        <p class="muted">Prefer email? <a href="mailto:contact@rbisintelligence.com">contact@rbisintelligence.com</a></p>
+      </div>
+    </section>
+
+    <!-- Form -->
+    <section id="form" aria-labelledby="form-h">
+      <div class="container">
+        <h2 id="form-h">Enquiry form</h2>
+        <form action="https://formspree.io/f/meolvrdy" method="POST" enctype="multipart/form-data" novalidate aria-describedby="form-hint">
+          <p id="form-hint" class="muted">We minimise data and only use your details to respond. Do not upload sensitive evidence here; we’ll provide a secure link if needed.</p>
+
+          <!-- honeypot -->
+          <div aria-hidden="true" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;">
+            <label for="company_website">Company website</label>
+            <input type="text" id="company_website" name="company_website" tabindex="-1" autocomplete="off">
+          </div>
+
+          <div class="row">
+            <div>
+              <label for="name">Your name<span class="req" aria-hidden="true">*</span></label>
+              <input id="name" name="name" required autocomplete="name" placeholder="Jane Doe" aria-required="true">
+            </div>
+            <div>
+              <label for="email">Email<span class="req" aria-hidden="true">*</span></label>
+              <input id="email" name="email" type="email" required autocomplete="email" placeholder="you@org.gov.uk" aria-required="true">
+            </div>
+          </div>
+
+          <div class="row">
+            <div>
+              <label for="org">Organisation</label>
+              <input id="org" name="organisation" autocomplete="organization" placeholder="Org / Council / Firm">
+            </div>
+            <div>
+              <label for="role">Role</label>
+              <input id="role" name="role" autocomplete="organization-title" placeholder="Repairs lead, DPO, Partner…">
+            </div>
+          </div>
+
+          <div class="row">
+            <div>
+              <label for="category">What do you need?<span class="req" aria-hidden="true">*</span></label>
+              <select id="category" name="category" required aria-required="true">
+                <option value="">Select…</option>
+                <option>Behavioural & Intelligence Report</option>
+                <option>Evidence Pack (Repairs/Complaints/Data/Accessibility)</option>
+                <option>RBIS Dashboard Suite</option>
+                <option>RBIS AI</option>
+                <option>RBIS AI Auto Call Answering</option>
+                <option>Website Package (Starter/Growth/Regulated Pro)</option>
+                <option>Other / Not sure</option>
+              </select>
+            </div>
+            <div>
+              <label for="phone">Phone (optional)</label>
+              <input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="+44 …">
+            </div>
+          </div>
+
+          <div class="stack">
+            <div>
+              <label for="subject">Subject<span class="req" aria-hidden="true">*</span></label>
+              <input id="subject" name="subject" required placeholder="Short summary (e.g., Repairs evidence pack for Q4)">
+            </div>
+            <div>
+              <label for="message">Message<span class="req" aria-hidden="true">*</span></label>
+              <textarea id="message" name="message" required placeholder="Describe the decision/dispute, deadlines, and any constraints."></textarea>
+              <p class="hint">No sensitive files here. If required, we’ll issue a secure upload link.</p>
+            </div>
+            <div>
+              <label for="file">Attachment (optional)</label>
+              <input id="file" name="attachment" type="file" accept=".pdf,.csv,.doc,.docx,.txt,.png,.jpg,.jpeg">
+              <p class="hint">Small, non-sensitive context only (≤ 10MB). Evidence via secure link later.</p>
+            </div>
+          </div>
+
+          <!-- Consent -->
+          <div class="actions">
+            <label style="display:flex;align-items:center;gap:8px;margin:0">
+              <input id="consent" name="consent" type="checkbox" value="yes" required aria-required="true">
+              <span>I consent to RBIS processing my details to respond. See <a href="/privacy.html">Privacy</a>.</span>
+            </label>
+          </div>
+
+          <!-- Hidden helpers -->
+          <input type="hidden" name="_subject" value="New enquiry via RBIS Contact">
+          <input type="hidden" name="_template" value="table">
+          <input type="text" name="_gotcha" style="display:none">
+
+          <div class="actions">
+            <button id="submit" class="btn" type="submit" aria-disabled="true">Send enquiry</button>
+            <a class="btn ghost" href="mailto:contact@rbisintelligence.com">Email instead</a>
+          </div>
+
+          <p class="muted" style="margin-top:8px">
+            By submitting, you agree to our <a href="/terms.html">Terms of Use</a>. We’ll reply from <strong>contact@rbisintelligence.com</strong>.
+          </p>
+        </form>
+      </div>
+    </section>
+
+    <!-- Other channels -->
+    <section id="alt" aria-labelledby="alt-h">
+      <div class="container">
+        <h2 id="alt-h">Other ways to reach us</h2>
+        <div class="kv">
+          <div><strong>Email</strong></div>
+          <div><a href="mailto:contact@rbisintelligence.com">contact@rbisintelligence.com</a></div>
+          <div><strong>Company</strong></div>
+          <div>RBIS UK Ltd — England &amp; Wales</div>
+          <div><strong>Typical response</strong></div>
+          <div>Same business day for enquiries received before 16:00 UK time.</div>
+        </div>
+        <p class="muted" style="margin-top:8px">
+          For sensitive uploads, request a secure link. We never store evidence on the brochure site.
+        </p>
+      </div>
+    </section>
+
+    <!-- Assurance -->
+    <section id="assurance" aria-labelledby="assurance-h">
+      <div class="container">
+        <h2 id="assurance-h">Assurance</h2>
+        <p class="muted">
+          Cloudflare Turnstile and rate limits protect this form from abuse. Headers: HSTS, CSP, Referrer-Policy, and Permissions-Policy (see <a href="/trust.html#headers">Trust</a>).
+          Accessibility: keyboard-first patterns, labels, and high contrast. If you hit a barrier, email
+          <a href="mailto:accessibility@rbisintelligence.com">accessibility@rbisintelligence.com</a>.
+        </p>
+        <p>
+          <span class="badge">All rights reserved</span>
+          <span class="badge">Copyright © <span id="cpy"></span> RBIS UK Ltd</span>
+          <span class="badge">Terms include IP protections</span>
+          <span class="badge">Watermarking & code obfuscation where appropriate</span>
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer role="contentinfo">
+    <div class="container foot">
+      <div>© <span id="yr"></span> RBIS UK Ltd. All rights reserved. · RBIS © | Designed &amp; Created by Ryan Roberts</div>
+      <nav aria-label="Footer">
+        <a href="/terms.html">Terms of Use</a> ·
+        <a href="/privacy.html">Privacy</a> ·
+        <a href="/legal.html">Legal Notice</a> ·
+        <a href="/cookies.html">Cookies</a> ·
+        <a href="/accessibility.html">Accessibility</a> ·
+        <a href="/trust.html">Trust</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu
+    (function(){
+      var btn=document.getElementById('menu'), mob=document.getElementById('mobile');
+      if(btn && mob){
+        btn.addEventListener('click', function(){
+          var open=mob.classList.toggle('open');
+          btn.setAttribute('aria-expanded', String(open));
+        });
+      }
+    })();
+    // Year/copyright
+    (function(){
+      var y=new Date().getFullYear();
+      document.getElementById('yr').textContent=y;
+      document.getElementById('cpy').textContent=y;
+    })();
+    // Require consent before submit
+    (function(){
+      var consent=document.getElementById('consent');
+      var submit=document.getElementById('submit');
+      function sync(){ submit.setAttribute('aria-disabled', String(!consent.checked)); submit.disabled=!consent.checked; }
+      if(consent && submit){ consent.addEventListener('change', sync); sync(); }
+    })();
+  </script>
+
+  <!-- Optional: your site-wide cookie/consent banner snippet here -->
+</body>
+</html>

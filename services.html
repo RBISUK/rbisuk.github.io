@@ -1,77 +1,440 @@
-<!DOCTYPE html><html lang="en"><head>
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<link rel="canonical" href="https://rbisuk.github.io/services.html">
-<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
-<link rel="icon" type="image/png" href="assets/favicon.png">
-<link rel="apple-touch-icon" href="assets/favicon.png">
-<meta name="theme-color" content="#4f46e5">
-<link rel="stylesheet" href="assets/theme.css?v=22">
-<meta charset="utf-8"/>
-<title>Services & Products — RBIS</title>
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>Services — Behavioural & Intelligence Consulting, Evidence Packs, Implementation | RBIS UK Ltd</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Independent behavioural intelligence and forensic services: court-ready evidence packs, dashboard & assurance builds, AI automation (OmniAssist, Auto Call), accessibility audits, training, and 24/7 expert response.">
+  <link rel="canonical" href="https://www.rbisintelligence.com/services.html">
+  <meta name="theme-color" content="#0A3D91">
+  <!-- Open Graph -->
+  <meta property="og:title" content="Services — Behavioural & Intelligence Consulting, Evidence Packs, Implementation">
+  <meta property="og:description" content="Proof-first services for regulated environments. Reports, dashboards, AI intake, accessibility, training, and emergency support.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.rbisintelligence.com/services.html">
+  <meta property="og:image" content="https://www.rbisintelligence.com/assets/social-share.jpg">
+  <link rel="icon" href="/assets/favicon.ico">
+  <style>
+    :root{
+      --blue:#0A3D91; --navy:#071F49; --bg:#fff; --text:#0B1221; --grey:#E8ECF3; --muted:#6A7280;
+      --green:#109867; --amber:#D9822B; --red:#C4383E;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font:16px/1.58 system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;color:var(--text);background:var(--bg)}
+    a{color:var(--blue);text-decoration:none}
+    a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid rgba(10,61,145,.6);outline-offset:2px}
+    .container{max-width:1100px;margin:0 auto;padding:0 16px}
+    .skip{position:absolute;left:-9999px}.skip:focus{left:16px;top:12px;background:#fff;padding:.5rem .75rem;border-radius:.5rem;box-shadow:0 8px 24px rgba(0,0,0,.12)}
+
+    /* Legal notice */
+    .notice{background:var(--navy);color:#fff}
+    .notice .container{display:flex;gap:.75rem;align-items:center;padding:.55rem 16px}
+    .notice a{color:#AECBFF}
+
+    /* Header */
+    header{position:sticky;top:0;z-index:1000;background:rgba(255,255,255,.92);backdrop-filter:saturate(180%) blur(8px);border-bottom:1px solid var(--grey)}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:.7rem 0}
+    .brand{display:flex;align-items:center;gap:.5rem;color:var(--navy);font-weight:800}
+    .dot{width:10px;height:10px;border-radius:999px;background:var(--blue)}
+    nav ul{display:flex;gap:16px;list-style:none;margin:0;padding:0}
+    nav a{color:#1b2946;font-weight:600}
+    .menu{display:none;border:1px solid var(--grey);padding:.45rem .6rem;border-radius:.5rem;background:#fff}
+    @media (max-width:900px){
+      nav{display:none}.menu{display:inline-block}
+      .mobile{display:none;border-top:1px solid var(--grey)}
+      .mobile.open{display:block}
+      .mobile a{display:block;padding:.9rem 16px;border-bottom:1px solid var(--grey);color:#1b2946}
+    }
+
+    /* Hero */
+    .hero{background:linear-gradient(180deg, rgba(10,61,145,.06), transparent 60%);padding:28px 0 8px}
+    h1{font-size:clamp(28px,4vw,42px);line-height:1.1;margin:.25rem 0 .5rem;color:var(--blue)}
+    .sub{color:#22304d;font-size:1.05rem;max-width:74ch}
+    .actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+    .btn{display:inline-block;padding:.7rem 1rem;border-radius:.7rem;font-weight:800;border:1px solid var(--blue)}
+    .btn.primary{background:var(--blue);color:#fff}
+    .btn.ghost{background:#fff;color:var(--blue)}
+    .muted{color:var(--muted)}
+    .badge{display:inline-block;padding:.35rem .6rem;border:1px solid var(--grey);border-radius:999px;background:#fbfcff;margin:0 6px 6px 0}
+
+    /* Sections & cards */
+    section{padding:18px 0}
+    .grid-3{display:grid;gap:14px;grid-template-columns:repeat(3,1fr)}
+    .grid-2{display:grid;gap:14px;grid-template-columns:repeat(2,1fr)}
+    @media (max-width:900px){.grid-3,.grid-2{grid-template-columns:1fr}}
+    .card{border:1px solid var(--grey);border-radius:12px;padding:16px;background:#fff;box-shadow:0 8px 24px rgba(7,31,73,.05)}
+    .list{margin:.2rem 0 .9rem 1.2rem}
+    .kv{display:grid;grid-template-columns:1.05fr .95fr;gap:14px;align-items:stretch}
+    @media(max-width:900px){.kv{grid-template-columns:1fr}}
+    .redacted{border:1px dashed #9bb0d6;border-radius:12px;padding:14px;background:repeating-linear-gradient(135deg,#f3f6ff 0 14px,#eef3ff 14px 28px)}
+    .bar{height:14px;background:#0b1f49;border-radius:6px;margin:8px 0}
+    .blk{height:10px;background:#0b1f49;border-radius:3px;margin:6px 0;width:100%}
+    .blk.s{width:62%}.blk.m{width:80%}.blk.l{width:94%}
+
+    /* Footer */
+    footer{border-top:1px solid var(--grey);margin-top:22px}
+    .foot{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:14px 0}
+    .foot a{color:#33405c}
+
+    /* Print */
+    @media print{
+      header,.notice,footer{display:none}
+      a[href]::after{content:" (" attr(href) ")"} body{color:#000}
+    }
+  </style>
+
+  <!-- Schema: ItemList of Services -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"ItemList",
+    "name":"RBIS Services",
+    "itemListElement":[
+      {"@type":"Service","name":"Forensic Evidence Reports","provider":{"@type":"Organization","name":"RBIS UK Ltd"}},
+      {"@type":"Service","name":"Behavioural Intelligence Consulting","provider":{"@type":"Organization","name":"RBIS UK Ltd"}},
+      {"@type":"Service","name":"Dashboard & Board Assurance Implementation","provider":{"@type":"Organization","name":"RBIS UK Ltd"}},
+      {"@type":"Service","name":"AI Automation (OmniAssist, Auto Call)","provider":{"@type":"Organization","name":"RBIS UK Ltd"}},
+      {"@type":"Service","name":"Accessibility Audits (WCAG 2.2 AA)","provider":{"@type":"Organization","name":"RBIS UK Ltd"}},
+      {"@type":"Service","name":"Training & Workshops","provider":{"@type":"Organization","name":"RBIS UK Ltd"}},
+      {"@type":"Service","name":"Emergency Response (24/7 Panel)","provider":{"@type":"Organization","name":"RBIS UK Ltd"}}
+    ]
+  }
+  </script>
 </head>
 <body>
-<div class="disclosure"><b>Disclosure:</b> RBIS is not a law firm and does not provide legal advice. We analyse only the evidence in front of our intelligence officers, objectively and without bias.</div>
+  <a class="skip" href="#main">Skip to content</a>
 
-<header class="nav"><nav>
-  <a href="index.html">Home</a>
-  <a href="services.html">Services &amp; Products</a>
-  <a href="reports.html">Reports</a>
-  <a href="webdev.html">Web &amp; Dev</a>
-  <a href="managed.html">Managed</a>
-  <a href="demo.html">Demo</a>
-  <a href="dashboard.html">Dashboard</a>
-  <a href="careers.html">Careers</a>
-  <a href="about.html">About</a>
-  <a href="legal.html">Legal</a>
-  <a href="contact.html">Contact</a>
-</nav></header>
-
-<section class="section">
-  <div class="card" style="padding:1.2rem">
-    <h1>Services &amp; Products</h1>
-    <p>Flagship tools for intake, compliance, automation, and audit-ready exports. Bundle them for speed, or start with one and expand.</p>
+  <!-- Legal disclosure -->
+  <div class="notice" role="note" aria-label="Legal disclosure">
+    <div class="container">
+      <strong>Notice:</strong> RBIS UK Ltd (England &amp; Wales) provides independent intelligence analysis and reporting.
+      <strong>We are not a law firm and do not provide legal advice.</strong>
+      Contact: <a href="mailto:contact@rbisintelligence.com">contact@rbisintelligence.com</a>
+    </div>
   </div>
-</section>
 
-<section class="section">
-  <div class="grid">
-    <a class="card" href="claim-fix-ai.html">
-      <h3>Claim-Fix-AI Funnel</h3>
-      <p>Guided intake → timelines, IDs, exhibits. Generates a compliance pack clients can submit or export.</p>
-      <ul class="foot-links"><li>Intake → Chronology</li><li>Receipts/Photos capture</li><li>CSV/PDF export</li></ul>
-      <div class="foot-links">Open →</div>
-    </a>
-    <a class="card" href="copilot.html">
-      <h3>Repairs &amp; Compliance Copilot</h3>
-      <p>Policy-aware SLA timers, nudges, and breach detection with board-ready reporting.</p>
-      <ul class="foot-links"><li>Timers by stage</li><li>Escalation nudges</li><li>Breach logging</li></ul>
-      <div class="foot-links">Open →</div>
-    </a>
-    <a class="card" href="omniassist.html">
-      <h3>OmniAssist</h3>
-      <p>Automation guardrails across email, CRM, and casework. Keeps actions within policy.</p>
-      <ul class="foot-links"><li>Guardrails &amp; templates</li><li>CRM notes</li><li>Audit trail</li></ul>
-      <div class="foot-links">Open →</div>
-    </a>
-    <a class="card" href="pact-ledger.html">
-      <h3>PACT Ledger</h3>
-      <p>Promises &amp; actions tracking with deadlines, nudges, and evidence receipts.</p>
-      <ul class="foot-links"><li>Who/What/By-when</li><li>Timers &amp; nudges</li><li>Export receipts</li></ul>
-      <div class="foot-links">Open →</div>
-    </a>
-  </div>
-</section>
+  <!-- Header -->
+  <header role="banner">
+    <div class="container nav">
+      <a class="brand" href="/" aria-label="RBIS home"><span class="dot" aria-hidden="true"></span> RBIS</a>
+      <nav aria-label="In-page">
+        <ul>
+          <li><a href="#overview">Overview</a></li>
+          <li><a href="#catalogue">Service Catalogue</a></li>
+          <li><a href="#sectors">Sectors</a></li>
+          <li><a href="#packages">Packages</a></li>
+          <li><a href="#process">Process</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#cta">Start</a></li>
+        </ul>
+      </nav>
+      <button class="menu" id="menu" aria-expanded="false" aria-controls="mobile">Menu</button>
+    </div>
+    <div class="mobile" id="mobile" role="dialog" aria-label="Mobile menu">
+      <a href="#overview">Overview</a><a href="#catalogue">Service Catalogue</a><a href="#sectors">Sectors</a><a href="#packages">Packages</a><a href="#process">Process</a><a href="#pricing">Pricing</a><a href="#faq">FAQ</a><a href="#cta">Start</a>
+    </div>
+  </header>
 
-<section class="section">
-  <div class="grid">
-    <a class="card" href="reports.html"><h3>Pro Reports</h3><p>Evidence-based packs across housing, compliance, data, and ops — priced clearly.</p><div class="foot-links">Browse →</div></a>
-    <a class="card" href="webdev.html"><h3>Web &amp; Dev</h3><p>Starter sites, accessibility, SEO-AI bundles — white-label friendly.</p><div class="foot-links">See bundles →</div></a>
-    <a class="card" href="managed.html"><h3>Managed</h3><p>Ongoing oversight: dashboards, monthly exports, SLA audits.</p><div class="foot-links">Learn more →</div></a>
-  </div>
-</section>
+  <main id="main">
+    <!-- Hero / Overview -->
+    <section id="overview" class="hero" aria-labelledby="srv-h">
+      <div class="container kv">
+        <div class="redacted" aria-label="Redacted sample report preview">
+          <div class="bar"></div>
+          <div class="blk l"></div>
+          <div class="blk s"></div>
+          <div class="blk m"></div>
+          <div class="blk l"></div>
+          <div class="blk s"></div>
+          <p class="muted" style="margin-top:8px">Redacted excerpt: chronology, tone analysis, policy mapping, reviewer attestation, signed hashes.</p>
+        </div>
+        <div>
+          <h1 id="srv-h">Services — independent, proof-first delivery</h1>
+          <p class="sub">RBIS blends behavioural science with intelligence method to ship court-ready evidence, regulator-sane systems, and measurable outcomes. We operate with strong defaults: strict headers, consent-mode analytics, WCAG 2.2 AA, and “Voice OFF” for any demo capture without consent.</p>
+          <div class="actions">
+            <a class="btn primary" href="https://formspree.io/f/meolvrdy" rel="nofollow">Request a scoped proposal</a>
+            <a class="btn ghost" href="/reports.html">See sample packs</a>
+          </div>
+          <p class="muted" style="margin-top:8px">
+            <span class="badge">All rights reserved</span>
+            <span class="badge">© <span id="cpy"></span> RBIS UK Ltd</span>
+            <span class="badge">Terms include IP protections</span>
+            <span class="badge">Watermarking / code obfuscation where appropriate</span>
+          </p>
+        </div>
+      </div>
+    </section>
 
-<footer>Designed &amp; built by Ryan Roberts | RBIS
-  <div class="foot-links"><a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · <a href="cookies.html">Cookies</a></div>
-</footer>
-<script src="assets/active-nav.js"></script>
-</body></html>
+    <!-- Service catalogue -->
+    <section id="catalogue" aria-labelledby="cat-h">
+      <div class="container grid-3">
+        <article class="card">
+          <h2 id="cat-h">Forensic Evidence & Reports</h2>
+          <ul class="list">
+            <li>Repairs & SLA, Complaints & Ombudsman, DSR/Breach/Consent, Accessibility (WCAG), Governance & Risk.</li>
+            <li>Watermarked PDF + CSV annexes; reviewer attestation; signed export hashes.</li>
+            <li>Turnkey “Audit & Evidence Readiness” pack before regulator deadlines.</li>
+          </ul>
+          <p><a class="btn ghost" href="/reports.html">Report types</a></p>
+        </article>
+
+        <article class="card">
+          <h2>Behavioural Intelligence Consulting</h2>
+          <ul class="list">
+            <li>Voice/speech/text signal analysis (cadence, pauses, tone shifts, hedging).</li>
+            <li>Negotiation prep, interview review, credibility assessments.</li>
+            <li>Decision briefings with risk flags and recommended actions.</li>
+          </ul>
+          <p><a class="btn ghost" href="/rbis-ai.html">RBIS AI signals</a></p>
+        </article>
+
+        <article class="card">
+          <h2>Dashboard & Board Assurance</h2>
+          <ul class="list">
+            <li>RBIS Dashboard Suite — modular cockpit with Board Assurance Layer.</li>
+            <li>RAG views across Repairs, Complaints, Data, A11y, Risk; drilldowns and exports.</li>
+            <li>Evidence generator with ready vs incomplete status.</li>
+          </ul>
+          <p><a class="btn ghost" href="/dashboard.html">Dashboard Suite</a></p>
+        </article>
+
+        <article class="card">
+          <h2>AI Automation (OmniAssist & Auto Call)</h2>
+          <ul class="list">
+            <li>Intake across phone, SMS/WhatsApp, email, social DMs, web, BSL/video.</li>
+            <li>Identity checks, consent capture, triage; Veridex case creation.</li>
+            <li>Scripted boundaries; escalation to human on uncertainty.</li>
+          </ul>
+          <p><a class="btn ghost" href="/omniassist.html">OmniAssist</a> · <a class="btn ghost" href="/rbis-ai-auto-call.html">Auto Call</a></p>
+        </article>
+
+        <article class="card">
+          <h2>Accessibility Audits (WCAG 2.2 AA)</h2>
+          <ul class="list">
+            <li>Critical vs minor fails; device/browser coverage.</li>
+            <li>Assistive tech testing, captions/transcripts, BSL options guidance.</li>
+            <li>Remediation plan with owners, deadlines, and priority.</li>
+          </ul>
+          <p><a class="btn ghost" href="/trust.html">Trust posture</a></p>
+        </article>
+
+        <article class="card">
+          <h2>Training & Workshops</h2>
+          <ul class="list">
+            <li>Complaint handling under time pressure; DSR handling; a11y bootcamps.</li>
+            <li>Behavioural interviewing; escalation prevention; evidence hygiene.</li>
+            <li>Team dashboards: coaching by KPI and timer design.</li>
+          </ul>
+          <p><a class="btn ghost" href="https://formspree.io/f/meolvrdy" rel="nofollow">Ask for syllabus</a></p>
+        </article>
+
+        <article class="card">
+          <h2>Emergency Response (24/7 Panel)</h2>
+          <ul class="list">
+            <li>Rapid chronology build; comms integrity check; regulator-ready incident pack.</li>
+            <li>Consent posture review; public statement sanity checks.</li>
+            <li>Handover to counsel or internal teams with artefacts.</li>
+          </ul>
+          <p><a class="btn ghost" href="https://formspree.io/f/meolvrdy" rel="nofollow">Enroll contact points</a></p>
+        </article>
+
+        <article class="card">
+          <h2>Website Building & Development</h2>
+          <ul class="list">
+            <li>Static hosting, Lighthouse 95–100 targets, consent-mode analytics.</li>
+            <li>Schema, a11y, CSP/HSTS headers; Cloudflare Turnstile on forms.</li>
+            <li>Starter/Growth/Regulated Pro bundles.</li>
+          </ul>
+          <p><a class="btn ghost" href="/saas-licensing.html">Bundles & pricing</a></p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Sectors -->
+    <section id="sectors" aria-labelledby="sec-h">
+      <div class="container grid-2">
+        <article class="card">
+          <h2 id="sec-h">Sectors we serve</h2>
+          <ul class="list">
+            <li><strong>Councils & Local Authorities</strong> — impartial dispute support; regulator-ready dossiers.</li>
+            <li><strong>Housing Associations</strong> — repairs, damp & mould, fraud/coercion detection.</li>
+            <li><strong>Law Firms</strong> — independent analysis, expert witness support, behavioural profiling.</li>
+            <li><strong>Corporate & HR</strong> — comms integrity reviews, conflict resolution, policy checks.</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h2>Outcomes we target</h2>
+          <ul class="list">
+            <li>Conversion uplift from toolkit fixes (e.g., <strong>6% → 13%</strong> in 14 days).</li>
+            <li>Escalations reduced (e.g., <strong>−28%</strong> in six weeks, anonymised pilot).</li>
+            <li>Evidence export time cut to minutes with attestations and signed hashes.</li>
+          </ul>
+          <p class="muted">Metrics anonymised; replication plan available on request.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Packages -->
+    <section id="packages" aria-labelledby="pkg-h">
+      <div class="container grid-3">
+        <article class="card">
+          <h2 id="pkg-h">Starter</h2>
+          <ul class="list">
+            <li>2 evidence packs/mo (any type)</li>
+            <li>One dashboard module (e.g., Repairs)</li>
+            <li>OmniAssist intake for one channel</li>
+          </ul>
+          <p><strong>£1,950/mo</strong> + usage · email support</p>
+        </article>
+        <article class="card">
+          <h2>Growth</h2>
+          <ul class="list">
+            <li>4 evidence packs/mo</li>
+            <li>Dashboard Suite (up to 4 modules)</li>
+            <li>OmniAssist + Auto Call pilot</li>
+          </ul>
+          <p><strong>£3,450/mo</strong> + usage · priority email</p>
+        </article>
+        <article class="card">
+          <h2>Regulated Pro</h2>
+          <ul class="list">
+            <li>Unlimited internal packs</li>
+            <li>Full Dashboard Suite + Board Assurance</li>
+            <li>Named CSM; quarterly audits; region-pinning options</li>
+          </ul>
+          <p><strong>£6,900/mo</strong> + usage · DPA + DPIA review</p>
+        </article>
+      </div>
+      <div class="container">
+        <p class="muted">Public-sector? See <a href="/saas-licensing.html#public">banded pricing</a>. Commercial bundles align to <a href="/saas-licensing.html#commercial">Starter/Growth/Regulated</a>.</p>
+      </div>
+    </section>
+
+    <!-- Process -->
+    <section id="process" aria-labelledby="pro-h">
+      <div class="container grid-2">
+        <article class="card">
+          <h2 id="pro-h">How we work</h2>
+          <ol class="list">
+            <li><strong>Plan</strong> — scope, constraints, lawful basis, risks.</li>
+            <li><strong>Create</strong> — collect artefacts; configure modules; build drafts.</li>
+            <li><strong>Refine</strong> — human review, redactions, watermarking.</li>
+            <li><strong>Expand</strong> — add channels, dashboards, or packs.</li>
+            <li><strong>Evaluate</strong> — outcomes, lessons, next iteration.</li>
+          </ol>
+        </article>
+        <article class="card">
+          <h2>Guardrails by default</h2>
+          <ul class="list">
+            <li>Strict headers (CSP/HSTS/Referrer/Permissions).</li>
+            <li>Consent-mode analytics; cookieless until opt-in.</li>
+            <li>WCAG-aware components; keyboard-only nav.</li>
+          </ul>
+          <p class="muted">Header snippets on <a href="/trust.html#headers">Trust</a>.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Pricing -->
+    <section id="pricing" aria-labelledby="pri-h2">
+      <div class="container grid-2">
+        <article class="card">
+          <h2 id="pri-h2">Rate card (indicative)</h2>
+          <ul class="list">
+            <li><strong>Evidence Pack (fixed-scope):</strong> from £1,450 per pack</li>
+            <li><strong>Day rate (consulting/training):</strong> £950</li>
+            <li><strong>Onboarding/config:</strong> £3,500–£8,500</li>
+            <li><strong>Integration (per system):</strong> £1,200–£4,800</li>
+            <li><strong>Training (per cohort):</strong> £950</li>
+          </ul>
+          <p class="muted">Ongoing monthly support is custom — aligned to risk and scale.</p>
+        </article>
+        <article class="card">
+          <h2>Metered usage (where applicable)</h2>
+          <ul class="list">
+            <li>AI minutes (RBIS AI / Auto Call)</li>
+            <li>Evidence pack generation beyond bundle</li>
+            <li>Storage beyond baseline</li>
+          </ul>
+          <p class="muted">Burst allowances for incident periods; overages billed monthly with report detail.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" aria-labelledby="faq-h">
+      <div class="container grid-2">
+        <article class="card">
+          <h2 id="faq-h">FAQ</h2>
+          <p><strong>Is this legal advice?</strong><br> No. RBIS provides independent analysis and reporting. We are not a law firm and do not provide legal advice.</p>
+          <p><strong>How do you handle sensitive files?</strong><br> Via signed URLs to secure storage with object-level access logs. No uploads via this brochure site.</p>
+          <p><strong>Can you support public-sector procurement?</strong><br> Yes. Banded pricing, POs, break clauses, and accessibility statements available.</p>
+        </article>
+        <article class="card">
+          <h2>IP & Licensing</h2>
+          <ul class="list">
+            <li>© <span id="cpy2"></span> RBIS UK Ltd. <strong>All rights reserved.</strong></li>
+            <li>Terms of use include IP protections.</li>
+            <li>Watermarking and code obfuscation where appropriate.</li>
+            <li>Open-source components retain their original licenses.</li>
+          </ul>
+          <p class="muted">See <a href="/terms.html">Terms</a>, <a href="/legal.html">Legal</a>, and <a href="/saas-licensing.html">SaaS Licensing</a>.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section id="cta" aria-labelledby="cta-h">
+      <div class="container card">
+        <h2 id="cta-h">Tell us your context — we’ll scope the fastest path to proof</h2>
+        <p>Repairs, complaints, data protection, accessibility, governance, or HR. We’ll reply with a redacted sample and a scoped plan.</p>
+        <p>
+          <a class="btn primary" href="https://formspree.io/f/meolvrdy" rel="nofollow">Request proposal</a>
+          <a class="btn ghost" href="/saas-licensing.html">See licensing & pricing</a>
+        </p>
+        <p class="muted">
+          <span class="badge">All rights reserved</span>
+          <span class="badge">© <span id="cpy3"></span> RBIS UK Ltd</span>
+          <span class="badge">Terms include IP protections</span>
+          <span class="badge">Watermarking / code obfuscation where appropriate</span>
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer role="contentinfo">
+    <div class="container foot">
+      <div>© <span id="yr"></span> RBIS UK Ltd. All rights reserved. · RBIS © | Designed &amp; Created by Ryan Roberts</div>
+      <nav aria-label="Footer">
+        <a href="/terms.html">Terms of Use</a> ·
+        <a href="/privacy.html">Privacy</a> ·
+        <a href="/legal.html">Legal Notice</a> ·
+        <a href="/cookies.html">Cookies</a> ·
+        <a href="/accessibility.html">Accessibility</a> ·
+        <a href="/trust.html">Trust</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu
+    (function(){
+      var btn=document.getElementById('menu'), mob=document.getElementById('mobile');
+      if(btn && mob){
+        btn.addEventListener('click', function(){
+          var open=mob.classList.toggle('open');
+          btn.setAttribute('aria-expanded', String(open));
+        });
+      }
+    })();
+    // Year stamps
+    (function(){
+      var y=new Date().getFullYear();
+      ["yr","cpy","cpy2","cpy3"].forEach(function(id){var el=document.getElementById(id); if(el) el.textContent=y;});
+    })();
+  </script>
+</body>
+</html>

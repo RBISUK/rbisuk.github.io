@@ -1,27 +1,353 @@
-<!DOCTYPE html><html lang="en"><head>
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<link rel="canonical" href="https://rbisuk.github.io/about.html">
-<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
-<link rel="icon" type="image/png" href="assets/favicon.png">
-<link rel="apple-touch-icon" href="assets/favicon.png">
-<meta name="theme-color" content="#4f46e5">
-<link rel="stylesheet" href="assets/theme.css?v=22">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self'; base-uri 'none'; frame-ancestors 'none'">
-<title>About — RBIS</title>
-</head><body>
-<div class="disclosure"><b>Disclosure:</b> RBIS is not a law firm and does not provide legal advice.</div>
-<header class="nav"><nav>
-  <a href="index.html">Home</a><a href="services.html">Services &amp; Products</a><a href="reports.html">Reports</a><a href="webdev.html">Web &amp; Dev</a><a href="managed.html">Managed</a><a href="demo.html">Demo</a><a href="dashboard.html">Dashboard</a><a href="careers.html">Careers</a><a href="about.html">About</a><a href="legal.html">Legal</a><a href="contact.html">Contact</a>
-</nav></header>
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>About RBIS — Ryan Roberts Behavioural & Intelligence Services | RBIS UK Ltd</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="RBIS blends behavioural science and intelligence analysis to produce evidence-first, regulator-ready outputs. Led by Ryan Roberts, a systemic architect who turns complexity into defendable clarity.">
+  <link rel="canonical" href="https://www.rbisintelligence.com/about.html">
+  <meta name="theme-color" content="#0A3D91">
+  <!-- Open Graph -->
+  <meta property="og:title" content="About RBIS — Behavioural & Intelligence Services">
+  <meta property="og:description" content="Evidence over opinion. Behavioural intelligence, forensic methodology, and proof-first reporting led by Ryan Roberts.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.rbisintelligence.com/about.html">
+  <meta property="og:image" content="https://www.rbisintelligence.com/assets/social-share.jpg">
+  <link rel="icon" href="/assets/favicon.ico">
 
-<section class="section">
-  <div class="card" style="padding:1.2rem">
-    <h1>About RBIS</h1>
-    <p>Behavioural &amp; Intelligence Services led by Ryan Roberts. We decode behaviour, standardise evidence, and turn chaos into court-ready clarity.</p>
-    <ul><li>Evidence over opinion</li><li>Timers that escalate</li><li>Exports on demand</li></ul>
+  <style>
+    :root{
+      --blue:#0A3D91; --navy:#071F49; --bg:#fff; --text:#0B1221; --grey:#E8ECF3; --muted:#6A7280;
+      --green:#109867; --amber:#D9822B; --red:#C4383E;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font:16px/1.58 system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;color:var(--text);background:var(--bg)}
+    a{color:var(--blue);text-decoration:none}
+    a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid rgba(10,61,145,.6);outline-offset:2px}
+    .container{max-width:1100px;margin:0 auto;padding:0 16px}
+    .skip{position:absolute;left:-9999px}.skip:focus{left:16px;top:12px;background:#fff;padding:.5rem .75rem;border-radius:.5rem;box-shadow:0 8px 24px rgba(0,0,0,.12)}
+
+    /* Legal notice */
+    .notice{background:var(--navy);color:#fff}
+    .notice .container{display:flex;gap:.75rem;align-items:center;padding:.55rem 16px}
+    .notice a{color:#AECBFF}
+
+    /* Header */
+    header{position:sticky;top:0;z-index:1000;background:rgba(255,255,255,.92);backdrop-filter:saturate(180%) blur(8px);border-bottom:1px solid var(--grey)}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:.7rem 0}
+    .brand{display:flex;align-items:center;gap:.5rem;color:var(--navy);font-weight:800}
+    .dot{width:10px;height:10px;border-radius:999px;background:var(--blue)}
+    nav ul{display:flex;gap:16px;list-style:none;margin:0;padding:0}
+    nav a{color:#1b2946;font-weight:600}
+    .menu{display:none;border:1px solid var(--grey);padding:.45rem .6rem;border-radius:.5rem;background:#fff}
+    @media (max-width:900px){
+      nav{display:none}.menu{display:inline-block}
+      .mobile{display:none;border-top:1px solid var(--grey)}
+      .mobile.open{display:block}
+      .mobile a{display:block;padding:.9rem 16px;border-bottom:1px solid var(--grey);color:#1b2946}
+    }
+
+    /* Hero */
+    .hero{background:linear-gradient(180deg, rgba(10,61,145,.06), transparent 60%);padding:28px 0 8px}
+    h1{font-size:clamp(28px,4vw,42px);line-height:1.1;margin:.25rem 0 .5rem;color:var(--blue)}
+    .sub{color:#22304d;font-size:1.05rem;max-width:74ch}
+    .actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+    .btn{display:inline-block;padding:.7rem 1rem;border-radius:.7rem;font-weight:800;border:1px solid var(--blue)}
+    .btn.primary{background:var(--blue);color:#fff}
+    .btn.ghost{background:#fff;color:var(--blue)}
+    .muted{color:var(--muted)}
+    .badge{display:inline-block;padding:.35rem .6rem;border:1px solid var(--grey);border-radius:999px;background:#fbfcff;margin:0 6px 6px 0}
+
+    /* Sections & cards */
+    section{padding:18px 0}
+    .grid-3{display:grid;gap:14px;grid-template-columns:repeat(3,1fr)}
+    .grid-2{display:grid;gap:14px;grid-template-columns:repeat(2,1fr)}
+    @media (max-width:900px){.grid-3,.grid-2{grid-template-columns:1fr}}
+    .card{border:1px solid var(--grey);border-radius:12px;padding:16px;background:#fff;box-shadow:0 8px 24px rgba(7,31,73,.05)}
+    .list{margin:.2rem 0 .9rem 1.2rem}
+    .kv{display:grid;grid-template-columns:1.05fr .95fr;gap:14px;align-items:stretch}
+    @media(max-width:900px){.kv{grid-template-columns:1fr}}
+    .quote{border-left:4px solid var(--blue);padding:.25rem 0 .25rem .9rem;margin:.4rem 0;color:#203256}
+
+    /* Footer */
+    footer{border-top:1px solid var(--grey);margin-top:22px}
+    .foot{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:14px 0}
+    .foot a{color:#33405c}
+
+    /* Print */
+    @media print{
+      header,.notice,footer{display:none}
+      a[href]::after{content:" (" attr(href) ")"} body{color:#000}
+    }
+  </style>
+
+  <!-- Schema: Organization + Person -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Organization",
+    "name":"Ryan Roberts Behavioural & Intelligence Services",
+    "url":"https://www.rbisintelligence.com",
+    "legalName":"RBIS UK Ltd",
+    "email":"contact@rbisintelligence.com",
+    "logo":"https://www.rbisintelligence.com/assets/logo.png",
+    "sameAs":["https://www.linkedin.com/company/rbisintelligence"]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Person",
+    "name":"Ryan Roberts",
+    "jobTitle":"Founder & Principal, RBIS",
+    "worksFor":{"@type":"Organization","name":"RBIS UK Ltd"},
+    "description":"Entrepreneur and systemic architect who blends behavioural analysis with intelligence-led methodology to produce regulator-ready proof.",
+    "email":"contact@rbisintelligence.com"
+  }
+  </script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <!-- Legal disclosure -->
+  <div class="notice" role="note" aria-label="Legal disclosure">
+    <div class="container">
+      <strong>Notice:</strong> RBIS UK Ltd (England &amp; Wales) provides independent intelligence analysis and reporting.
+      <strong>We are not a law firm and do not provide legal advice.</strong>
+      Contact: <a href="mailto:contact@rbisintelligence.com">contact@rbisintelligence.com</a>
+    </div>
   </div>
-</section>
 
-<footer>Designed &amp; built by Ryan Roberts | RBIS<div class="foot-links"><a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · <a href="cookies.html">Cookies</a></div></footer>
-<script src="assets/active-nav.js"></script>
-</body></html>
+  <!-- Header -->
+  <header role="banner">
+    <div class="container nav">
+      <a class="brand" href="/" aria-label="RBIS home"><span class="dot" aria-hidden="true"></span> RBIS</a>
+      <nav aria-label="In-page">
+        <ul>
+          <li><a href="#story">Story</a></li>
+          <li><a href="#personality">Personality Core</a></li>
+          <li><a href="#method">Method & Standards</a></li>
+          <li><a href="#team">Team & Network</a></li>
+          <li><a href="#cta">Get in touch</a></li>
+        </ul>
+      </nav>
+      <button class="menu" id="menu" aria-expanded="false" aria-controls="mobile">Menu</button>
+    </div>
+    <div class="mobile" id="mobile" role="dialog" aria-label="Mobile menu">
+      <a href="#story">Story</a><a href="#personality">Personality Core</a><a href="#method">Method & Standards</a><a href="#team">Team & Network</a><a href="#cta">Get in touch</a>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- Hero -->
+    <section class="hero" aria-labelledby="about-h">
+      <div class="container kv">
+        <div>
+          <h1 id="about-h">About RBIS — Evidence over opinion</h1>
+          <p class="sub">RBIS (Ryan Roberts Behavioural &amp; Intelligence Services) operates at the intersection of behavioural science, forensic method, and operational design. We convert messy reality into clean, regulator-ready proof so leaders can act with confidence — and defend those actions when challenged.</p>
+          <div class="actions">
+            <a class="btn primary" href="https://formspree.io/f/meolvrdy" rel="nofollow">Talk to RBIS</a>
+            <a class="btn ghost" href="/reports.html">View sample packs</a>
+          </div>
+          <p class="muted" style="margin-top:8px">
+            <span class="badge">All rights reserved</span>
+            <span class="badge">© <span id="cpy"></span> RBIS UK Ltd</span>
+            <span class="badge">Terms of use include IP protections</span>
+            <span class="badge">Watermarking / code obfuscation where appropriate</span>
+          </p>
+        </div>
+        <div class="card">
+          <h2 style="margin-top:0">What we believe</h2>
+          <p class="quote">“Compliance without cracks. Evidence without gaps.”</p>
+          <ul class="list">
+            <li>Proof beats promises — show the pack, don’t sell the dream.</li>
+            <li>Accessibility, privacy, and security are design constraints, not afterthoughts.</li>
+            <li>Every process should survive a regulator’s bad day and a court’s worst question.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Story -->
+    <section id="story" aria-labelledby="story-h">
+      <div class="container grid-2">
+        <article class="card">
+          <h2 id="story-h">Ryan Roberts — systemic architect</h2>
+          <p>Ryan Roberts is an entrepreneur, AI automation specialist, and digital strategist who has built his career on one principle: cut through the noise and see things as they are. From marketing systems to legal-adjacent tooling, he has turned complexity into workable, repeatable workflows.</p>
+          <p>He founded <em>Vanguard AI</em> to streamline workflows and deploy measurable, AI-powered campaigns. He built <em>Digitally Advanced</em> to help solicitors modernise lead generation and client intake. He’s authored accessible AI guides and lighthearted books, reflecting a dual commitment to rigour and creative play.</p>
+          <p>At RBIS, Ryan applies behavioural analysis and intelligence-led method to deliver court-ready clarity. When situations demand it, RBIS taps a panel of psychological, behavioural, and intelligence specialists — available 24/7 for critical events.</p>
+        </article>
+        <article class="card">
+          <h2>The biggest lie in business communication</h2>
+          <p>It’s not “what you say vs how you say it.” It’s the behaviour behind both. Words can be rehearsed; tone can be performed. The interaction between language and delivery is where truth leaks out. RBIS studies that seam — lexical choices, cadence, hesitation, inconsistency — and turns it into defensible insight.</p>
+          <ul class="list">
+            <li>Corporate negotiations — surface hesitation before it becomes obstruction.</li>
+            <li>Risk & compliance — find inconsistencies and undisclosed vulnerabilities.</li>
+            <li>Leadership & hiring — assess confidence, congruence, and control.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- Personality Core (polished) -->
+    <section id="personality" aria-labelledby="personality-h">
+      <div class="container grid-2">
+        <article class="card">
+          <h2 id="personality-h">Personality Core</h2>
+          <ul class="list">
+            <li><strong>Strategic by instinct.</strong> Ideas snap into systems — operationalised, priced, packaged, licensed.</li>
+            <li><strong>Independent-minded.</strong> Automation, compliance, and evidence-readiness reduce dependence and raise standards.</li>
+            <li><strong>Resilient, yet restless.</strong> Hard-won lessons become frameworks; progress seeks the next sharper edge.</li>
+          </ul>
+          <h3>Cognitive Style</h3>
+          <ul class="list">
+            <li><strong>Analytical builder.</strong> Plan → create → refine → expand → evaluate. Structure over fluff.</li>
+            <li><strong>Future-oriented.</strong> Always playing business chess: flagship, scalable, go-to-market.</li>
+            <li><strong>Dual-layered thinking.</strong> Legal-grade rigour meets creative engineering — branding and humour alongside audit trails.</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h2>Traits & Growth Zones</h2>
+          <ul class="list">
+            <li><strong>High standards, low BS.</strong> Precision and clarity or nothing.</li>
+            <li><strong>Control as craft.</strong> Systems tame uncertainty; ownership over processes is a feature, not a flaw.</li>
+            <li><strong>Curiosity with edge.</strong> Don’t ask “how?” — ask “how do we own this?”</li>
+          </ul>
+          <h3>Shadow / Growth</h3>
+          <ul class="list">
+            <li><strong>Perfectionist loops.</strong> Ship on time; iterate with evidence.</li>
+            <li><strong>Restlessness → burnout.</strong> Build deliberate pause points.</li>
+            <li><strong>Trust friction.</strong> Architect the system, then delegate within its guardrails.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- Deeper themes -->
+    <section aria-labelledby="themes-h">
+      <div class="container grid-3">
+        <article class="card">
+          <h2 id="themes-h">Deeper themes</h2>
+          <ul class="list">
+            <li><strong>Identity through systems.</strong> RBIS, OmniAssist, Claim-Fix-AI, PACT Ledger — they are values externalised: order, proof, leverage, independence.</li>
+            <li><strong>Justice-seeking streak.</strong> Arm the “little guy” with audit-proof tools and fair process.</li>
+            <li><strong>Reinvention.</strong> Not found, engineered. Recovery to rebranding to resilient execution.</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h2>Beyond words</h2>
+          <p>Communication is only partly verbal. Acoustic features and timing often reveal state: stress, inconsistency, or confidence. RBIS transforms those signals into actionable intelligence.</p>
+          <ul class="list">
+            <li>Emotional state markers</li>
+            <li>Truth-consistency heuristics</li>
+            <li>Authority & confidence signals</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h2>Why this matters</h2>
+          <p>Disciplinary tribunals and regulators punish concealment more than error. Behavioural cues and timeline integrity can make the difference between escalation and resolution.</p>
+          <p class="muted">RBIS is independent analysis, not legal advice.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Method & Standards -->
+    <section id="method" aria-labelledby="method-h">
+      <div class="container grid-2">
+        <article class="card">
+          <h2 id="method-h">Method & Standards</h2>
+          <ul class="list">
+            <li>Behavioural pattern analysis</li>
+            <li>Document authentication & metadata review</li>
+            <li>Audio forensic examination</li>
+            <li>Financial transaction analysis</li>
+            <li>Cross-reference verification & statistical tests</li>
+            <li>Timeline reconstruction & correlation mapping</li>
+          </ul>
+          <p class="muted">Outputs: watermarked PDF report + CSV annexes with reviewer attestation and signed export hashes.</p>
+        </article>
+        <article class="card">
+          <h2>Security • Privacy • Accessibility</h2>
+          <ul class="list">
+            <li>Strict headers (CSP, HSTS, Referrer, Permissions)</li>
+            <li>Consent logging, pseudonymisation, redactions</li>
+            <li>WCAG-aware components and exports</li>
+          </ul>
+          <p class="muted">See <a href="/trust.html">Trust</a> for copy-paste config and Cloudflare header snippets.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Team & network -->
+    <section id="team" aria-labelledby="team-h">
+      <div class="container grid-2">
+        <article class="card">
+          <h2 id="team-h">RBIS team & expert network</h2>
+          <p>Small core, serious network. RBIS orchestrates a panel of psychological, behavioural, and intelligence specialists available 24/7 for urgent matters. Independence and clarity stay central; specialists plug into the framework, not the other way around.</p>
+        </article>
+        <article class="card">
+          <h2>Proof-first, always</h2>
+          <ul class="list">
+            <li>Show the redacted pack before the pitch.</li>
+            <li>Numbers over adjectives — e.g., conversion <strong>6% → 13%</strong> in two weeks; escalations down <strong>28%</strong> in six.</li>
+            <li>Guardrails in writing; attestations on export.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section id="cta" aria-labelledby="cta-h">
+      <div class="container card">
+        <h2 id="cta-h">See RBIS in practice</h2>
+        <p>Tell us your context (repairs, complaints, compliance, HR, legal). We’ll send a redacted sample and propose a fixed plan where possible.</p>
+        <p>
+          <a class="btn primary" href="https://formspree.io/f/meolvrdy" rel="nofollow">Request a Sample Pack</a>
+          <a class="btn ghost" href="/reports.html">Explore report types</a>
+        </p>
+        <p class="muted">
+          <span class="badge">All rights reserved</span>
+          <span class="badge">© <span id="cpy"></span> RBIS UK Ltd</span>
+          <span class="badge">Terms of use include IP protections</span>
+          <span class="badge">Watermarking / code obfuscation where appropriate</span>
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer role="contentinfo">
+    <div class="container foot">
+      <div>© <span id="yr"></span> RBIS UK Ltd. All rights reserved. · RBIS © | Designed &amp; Created by Ryan Roberts</div>
+      <nav aria-label="Footer">
+        <a href="/terms.html">Terms of Use</a> ·
+        <a href="/privacy.html">Privacy</a> ·
+        <a href="/legal.html">Legal Notice</a> ·
+        <a href="/cookies.html">Cookies</a> ·
+        <a href="/accessibility.html">Accessibility</a> ·
+        <a href="/trust.html">Trust</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu
+    (function(){
+      var btn=document.getElementById('menu'), mob=document.getElementById('mobile');
+      if(btn && mob){
+        btn.addEventListener('click', function(){
+          var open=mob.classList.toggle('open');
+          btn.setAttribute('aria-expanded', String(open));
+        });
+      }
+    })();
+    // Year stamps
+    (function(){
+      var y=new Date().getFullYear();
+      var yr=document.getElementById('yr'), c=document.getElementById('cpy');
+      if(yr) yr.textContent=y; if(c) c.textContent=y;
+    })();
+  </script>
+</body>
+</html>

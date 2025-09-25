@@ -2,17 +2,19 @@
 <html lang="en" dir="ltr">
 <head>
   <meta charset="utf-8">
-  <title>PACT Ledger — Promises & Obligations Tracker | RBIS UK Ltd</title>
+  <title>RBIS AI Auto Call Answering — Compliance-Aware Call Handling | RBIS UK Ltd</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Turn commitments into enforceable, trackable objects. Deadlines, nudges, SLA timers, and court-ready exports. Evidence over opinion.">
-  <link rel="canonical" href="https://www.rbisintelligence.com/pact-ledger.html">
+  <meta name="description" content="Front-line call handling that never drops compliance. Identity checks, consent capture, triage, transcripts, and evidence-ready case creation. Voice OFF by default.">
+  <link rel="canonical" href="https://www.rbisintelligence.com/rbis-ai-auto-call.html">
   <meta name="theme-color" content="#0A3D91">
-  <meta property="og:title" content="PACT Ledger — Promises & Obligations Tracker">
-  <meta property="og:description" content="Every promise tracked. Every deadline enforced. Court-ready exports and signed hashes.">
+  <!-- Open Graph -->
+  <meta property="og:title" content="RBIS AI Auto Call Answering — Compliance-Aware Call Handling">
+  <meta property="og:description" content="Answers, verifies identity, captures consent, triages, schedules callbacks, and creates Veridex cases with audio + transcript. Voice OFF by default.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://www.rbisintelligence.com/pact-ledger.html">
+  <meta property="og:url" content="https://www.rbisintelligence.com/rbis-ai-auto-call.html">
   <meta property="og:image" content="https://www.rbisintelligence.com/assets/social-share.jpg">
   <link rel="icon" href="/assets/favicon.ico">
+
   <style>
     :root{
       --blue:#0A3D91; --navy:#071F49; --bg:#fff; --text:#0B1221; --grey:#E8ECF3; --muted:#6A7280;
@@ -64,14 +66,17 @@
     @media (max-width:900px){.grid-3,.grid-2{grid-template-columns:1fr}}
     .card{border:1px solid var(--grey);border-radius:12px;padding:16px;background:#fff;box-shadow:0 8px 24px rgba(7,31,73,.05)}
     .list{margin:.2rem 0 .9rem 1.2rem}
-
-    /* Redacted preview */
     .kv{display:grid;grid-template-columns:1.05fr .95fr;gap:14px;align-items:stretch}
     @media(max-width:900px){.kv{grid-template-columns:1fr}}
     .redacted{border:1px dashed #9bb0d6;border-radius:12px;padding:14px;background:repeating-linear-gradient(135deg,#f3f6ff 0 14px,#eef3ff 14px 28px)}
     .bar{height:14px;background:#0b1f49;border-radius:6px;margin:8px 0}
     .blk{height:10px;background:#0b1f49;border-radius:3px;margin:6px 0;width:100%}
     .blk.s{width:62%}.blk.m{width:80%}.blk.l{width:94%}
+
+    /* Demo panel */
+    .demo{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin:.5rem 0}
+    .switch{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--grey);border-radius:999px;padding:.35rem .6rem;background:#fff}
+    .lamp{width:10px;height:10px;border-radius:999px;background:var(--red)} /* OFF by default */
 
     /* Footer */
     footer{border-top:1px solid var(--grey);margin-top:22px}
@@ -85,14 +90,14 @@
     }
   </style>
 
-  <!-- Schema: Product (PACT Ledger) -->
+  <!-- Schema: Product (RBIS AI Auto Call Answering) -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
     "@type":"Product",
-    "name":"PACT Ledger — Promises & Obligations Tracker",
+    "name":"RBIS AI Auto Call Answering",
     "brand":{"@type":"Brand","name":"RBIS"},
-    "description":"Track commitments, deadlines, nudges, SLA timers, and court-ready exports with reviewer attestations and signed hashes.",
+    "description":"Compliance-aware call handling: answers, verifies identity, captures consent, triages, schedules callbacks, and creates Veridex cases with audio + transcript. Voice is OFF by default.",
     "offers":{"@type":"Offer","price":"0","priceCurrency":"GBP","availability":"https://schema.org/InStock"}
   }
   </script>
@@ -116,9 +121,11 @@
       <nav aria-label="In-page">
         <ul>
           <li><a href="#proof">Proof</a></li>
-          <li><a href="#why">Why PACT</a></li>
+          <li><a href="#why">Why RBIS AI Auto Call</a></li>
           <li><a href="#features">Features</a></li>
-          <li><a href="#workflows">Workflows</a></li>
+          <li><a href="#guardrails">Guardrails</a></li>
+          <li><a href="#integrations">Integrations</a></li>
+          <li><a href="#kpis">KPIs</a></li>
           <li><a href="#exports">Exports</a></li>
           <li><a href="#cta">Start</a></li>
         </ul>
@@ -126,7 +133,7 @@
       <button class="menu" id="menu" aria-expanded="false" aria-controls="mobile">Menu</button>
     </div>
     <div class="mobile" id="mobile" role="dialog" aria-label="Mobile menu">
-      <a href="#proof">Proof</a><a href="#why">Why PACT</a><a href="#features">Features</a><a href="#workflows">Workflows</a><a href="#exports">Exports</a><a href="#cta">Start</a>
+      <a href="#proof">Proof</a><a href="#why">Why</a><a href="#features">Features</a><a href="#guardrails">Guardrails</a><a href="#integrations">Integrations</a><a href="#kpis">KPIs</a><a href="#exports">Exports</a><a href="#cta">Start</a>
     </div>
   </header>
 
@@ -134,55 +141,59 @@
     <!-- Proof-first hero -->
     <section id="proof" class="hero" aria-labelledby="proof-h">
       <div class="container kv">
-        <div class="redacted" aria-label="Redacted PACT Ledger output">
+        <div class="redacted" aria-label="Redacted call-handling pack preview">
           <div class="bar"></div>
           <div class="blk l"></div>
           <div class="blk s"></div>
           <div class="blk m"></div>
           <div class="blk l"></div>
           <div class="blk s"></div>
-          <p class="muted" style="margin-top:8px">Redacted excerpt: promises ledger with timers, nudges, policy mapping, and signed exports.</p>
+          <p class="muted" style="margin-top:8px">Redacted excerpt: identity checks, consent capture, triage summary, transcript snippet, signed hashes.</p>
         </div>
         <div>
-          <h1>PACT Ledger — Promises &amp; Obligations</h1>
-          <p class="sub">Every promise tracked. Every deadline enforced. PACT turns commitments into durable objects with timers, nudges, and exportable proof — so “we’ll do it” becomes “we did it.”</p>
+          <h1>RBIS AI Auto Call Answering</h1>
+          <p class="sub">Front-line call handling that never drops compliance. It answers, verifies identity, captures consent, triages, and creates a Veridex case with audio and transcript.</p>
           <div class="actions">
-            <a class="btn primary" href="https://formspree.io/f/meolvrdy" rel="nofollow">See a Live Flow</a>
-            <a class="btn ghost" href="/reports.html">View evidence packs</a>
+            <a class="btn primary" href="https://formspree.io/f/meolvrdy" rel="nofollow">See a Live Call Flow</a>
+            <a class="btn ghost" href="/veridex.html">How Veridex stores calls</a>
           </div>
           <div class="grid-2" style="margin-top:12px">
-            <div class="card"><strong>Fulfilment</strong><p class="muted" style="margin:.4rem 0 0">Nudges + timers lifted promise fulfilment rate by <strong>+19 pts</strong> in a 90-day cohort.</p></div>
-            <div class="card"><strong>Disputes</strong><p class="muted" style="margin:.4rem 0 0">Clear ledger entries reduced “who said what” disputes; escalations dropped <strong>−28%</strong> (pilot, anonymised).</p></div>
+            <div class="card"><strong>First-contact resolution</strong><p class="muted" style="margin:.4rem 0 0">Structured intake lifted FCR by <strong>+11 pts</strong> in 60 days (anonymised cohort).</p></div>
+            <div class="card"><strong>Consent capture</strong><p class="muted" style="margin:.4rem 0 0">Explicit channel-level consent capture rate reached <strong>97%</strong> (pilot, regulated).</p></div>
+          </div>
+          <div class="demo" aria-live="polite">
+            <span class="switch" role="status" aria-label="Voice toggle status"><span class="lamp" aria-hidden="true"></span><strong>Voice: OFF</strong></span>
+            <span class="muted">Default posture is silent intake: no outbound speech without consent.</span>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Why PACT -->
+    <!-- Why -->
     <section id="why" aria-labelledby="why-h">
       <div class="container grid-3">
         <article class="card">
-          <h2 id="why-h">Make promises concrete</h2>
+          <h2 id="why-h">One brain, all channels</h2>
           <ul class="list">
-            <li>Each commitment becomes a ledged object</li>
-            <li>Owners, due dates, dependencies, evidence</li>
-            <li>Immutable change log and attestations</li>
+            <li>Telephony/SIP, web, SMS/WhatsApp, email, social DMs</li>
+            <li>Same AI core → consistent, structured outputs</li>
+            <li>BSL/video relay options; captions & transcripts</li>
           </ul>
         </article>
         <article class="card">
-          <h2>Never miss a deadline</h2>
+          <h2>Compliance before convenience</h2>
           <ul class="list">
-            <li>SLA countdowns (green/amber/red)</li>
-            <li>Nudge schedules with escalation paths</li>
-            <li>Working calendars & access windows</li>
+            <li>Identity checks & consent logging first</li>
+            <li>Scripted boundaries & regulator-aware disclaimers</li>
+            <li>Escalate to human on uncertainty</li>
           </ul>
         </article>
         <article class="card">
-          <h2>Defensible by design</h2>
+          <h2>Evidence as a product</h2>
           <ul class="list">
-            <li>Watermarked PDFs + CSV annexes</li>
-            <li>Signed export hashes</li>
-            <li>Policy-aware routing & audit trails</li>
+            <li>Every call → Veridex case object</li>
+            <li>Audio, transcript, and decision trail</li>
+            <li>Exportable, watermarked proof</li>
           </ul>
         </article>
       </div>
@@ -192,57 +203,103 @@
     <section id="features" aria-labelledby="features-h">
       <div class="container grid-3">
         <article class="card">
-          <h2 id="features-h">Timers & Nudges</h2>
+          <h2 id="features-h">Identity & Consent</h2>
           <ul class="list">
-            <li>Countdowns with breach forecasts</li>
-            <li>Multi-channel nudges (email/SMS/DM)</li>
-            <li>Escalate on uncertainty to humans</li>
+            <li>Multi-factor identity flows where needed</li>
+            <li>Consent by purpose/channel; renewal timers</li>
+            <li>Recorded disclosures & region pinning</li>
           </ul>
         </article>
         <article class="card">
-          <h2>Ledger Views</h2>
+          <h2>Triage & Routing</h2>
           <ul class="list">
-            <li>Active, upcoming, overdue, completed</li>
-            <li>Owner, team, and board summaries</li>
-            <li>Filters: category, risk, vulnerability</li>
+            <li>Policy-aware question trees</li>
+            <li>Vulnerability & risk signals</li>
+            <li>Smart routing to teams & calendars</li>
           </ul>
         </article>
         <article class="card">
-          <h2>Assurance Controls</h2>
+          <h2>Case Creation</h2>
           <ul class="list">
-            <li>Consent logging & redactions</li>
-            <li>Least-privilege roles & access logs</li>
-            <li>Immutable evidence references</li>
+            <li>Veridex case with attachments</li>
+            <li>SLA timers & breach forecasting</li>
+            <li>Reviewer attestation prompts</li>
           </ul>
         </article>
       </div>
     </section>
 
-    <!-- Workflows -->
-    <section id="workflows" aria-labelledby="workflows-h">
+    <!-- Guardrails -->
+    <section id="guardrails" aria-labelledby="guardrails-h">
+      <div class="container grid-2">
+        <article class="card">
+          <h2 id="guardrails-h">Non-negotiable guardrails</h2>
+          <ul class="list">
+            <li>Scripted boundaries; no advice outside remit</li>
+            <li>Do-not-answer lists & escalation triggers</li>
+            <li>Fallback to human on low confidence</li>
+          </ul>
+          <p class="muted">Headers & config snippets on <a href="/trust.html">Trust</a>.</p>
+        </article>
+        <article class="card">
+          <h2>Security posture</h2>
+          <ul class="list">
+            <li>Strict headers (CSP, HSTS, Referrer, Permissions)</li>
+            <li>Signed URLs for uploads; access logs</li>
+            <li>Watermarks + code obfuscation where appropriate</li>
+          </ul>
+          <p class="muted">All rights reserved; Terms include IP protections.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Integrations -->
+    <section id="integrations" aria-labelledby="integrations-h">
       <div class="container grid-3">
         <article class="card">
-          <h2 id="workflows-h">Repairs Promises</h2>
+          <h2 id="integrations-h">Telephony</h2>
           <ul class="list">
-            <li>Attendance windows & parts dependencies</li>
-            <li>Safety-critical priority rules</li>
-            <li>Resident comms & consent capture</li>
+            <li>SIP/VoIP trunks; IVR passthrough</li>
+            <li>Call recording & transcripts</li>
+            <li>Number pools & region controls</li>
           </ul>
         </article>
         <article class="card">
-          <h2>Complaints Promises</h2>
+          <h2>CRM & Helpdesk</h2>
           <ul class="list">
-            <li>Response deadlines by stage</li>
-            <li>Template replies with guardrails</li>
-            <li>Escalation paths to ombudsman</li>
+            <li>Veridex, NextusOne (waitlist), common CRMs</li>
+            <li>Webhook & signed-link patterns</li>
+            <li>Downstream consent sync</li>
           </ul>
         </article>
         <article class="card">
-          <h2>Commercial Promises</h2>
+          <h2>Calendars & Tasks</h2>
           <ul class="list">
-            <li>Delivery & payment obligations</li>
-            <li>Milestone acceptance evidence</li>
-            <li>Contractual variance tracking</li>
+            <li>Callback scheduling</li>
+            <li>Owner assignment & nudges</li>
+            <li>Audit-safe rescheduling</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- KPIs -->
+    <section id="kpis" aria-labelledby="kpis-h">
+      <div class="container grid-2">
+        <article class="card">
+          <h2 id="kpis-h">Operational KPIs</h2>
+          <ul class="list">
+            <li>First-contact resolution %</li>
+            <li>Average handling time</li>
+            <li>Escalation % and abandonment rate</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h2>Compliance KPIs</h2>
+          <ul class="list">
+            <li>Consent capture rate</li>
+            <li>QA pass rate & disclosure completeness</li>
+            <li>Identity-verification success</li>
           </ul>
         </article>
       </div>
@@ -254,20 +311,19 @@
         <article class="card">
           <h2 id="exports-h">Exports & Evidence</h2>
           <ul class="list">
-            <li>PDF pack + CSV annexes (watermarked)</li>
-            <li>Attestations & change summaries</li>
-            <li>Court-ready packs in minutes</li>
+            <li>Audio + transcript attached to Veridex case</li>
+            <li>PDF report + CSV annexes (watermarked)</li>
+            <li>Signed hashes & reviewer attestations</li>
           </ul>
           <p class="muted">See <a href="/reports.html">reports</a> for pack formats.</p>
         </article>
         <article class="card">
-          <h2>Security & A11y posture</h2>
+          <h2>Accessibility</h2>
           <ul class="list">
-            <li>Strict headers (CSP, HSTS, Referrer, Permissions)</li>
-            <li>Keyboard-only nav; reduced motion support</li>
-            <li>All rights reserved; IP protections in Terms</li>
+            <li>BSL/video options & captions</li>
+            <li>Keyboard-only navigation</li>
+            <li>Reduced motion support</li>
           </ul>
-          <p class="muted">Copy–paste header snippets on <a href="/trust.html">Trust</a>.</p>
         </article>
       </div>
     </section>
@@ -275,11 +331,11 @@
     <!-- CTA -->
     <section id="cta" aria-labelledby="cta-h">
       <div class="container card">
-        <h2 id="cta-h">Turn promises into proof</h2>
-        <p>Tell us your use case (repairs, complaints, commercial). We’ll configure a PACT flow and send a redacted sample output.</p>
+        <h2 id="cta-h">See a compliant call flow</h2>
+        <p>Tell us your sector, routing rules, and disclosure requirements. We’ll share a live flow and a redacted sample output.</p>
         <p>
-          <a class="btn primary" href="https://formspree.io/f/meolvrdy" rel="nofollow">Request PACT Demo</a>
-          <a class="btn ghost" href="/dashboard.html">See Dashboard Suite</a>
+          <a class="btn primary" href="https://formspree.io/f/meolvrdy" rel="nofollow">Request Live Flow</a>
+          <a class="btn ghost" href="/veridex.html">See Veridex evidence</a>
         </p>
         <p class="muted">
           <span class="badge">All rights reserved</span>

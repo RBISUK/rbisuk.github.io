@@ -1,52 +1,322 @@
-<!DOCTYPE html><html lang="en"><head>
-<meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
-<title>OmniAssist — RBIS</title>
-<link rel="canonical" href="https://rbisuk.github.io/omniassist.html">
-<link rel="icon" type="image/svg+xml" href="assets/favicon.svg"><link rel="icon" type="image/png" href="assets/favicon.png"><link rel="apple-touch-icon" href="assets/favicon.png">
-<meta name="theme-color" content="#4f46e5"><link rel="stylesheet" href="assets/theme.css?v=22">
-</head><body>
-<div class="disclosure"><b>Disclosure:</b> RBIS is not a law firm and does not provide legal advice.</div>
-<header class="nav"><nav>
-  <a href="index.html">Home</a><a href="services.html">Services &amp; Products</a><a href="reports.html">Reports</a><a href="webdev.html">Web &amp; Dev</a><a href="managed.html">Managed</a><a href="demo.html">Demo</a><a href="dashboard.html">Dashboard</a><a href="careers.html">Careers</a><a href="about.html">About</a><a href="legal.html">Legal</a><a href="contact.html">Contact</a>
-</nav></header>
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>RBIS OmniAssist — One AI brain. Every channel.</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Turn calls, texts, DMs, emails and BSL/video into structured, compliant actions — posted to your CRM in minutes, not hours.">
+  <link rel="canonical" href="https://www.rbisintelligence.com/omniassist.html">
+  <meta name="theme-color" content="#0A3D91">
+  <style>
+    :root{
+      --blue:#0A3D91; --navy:#071F49; --bg:#ffffff; --text:#0B1221; --grey:#E8ECF3; --muted:#6A7280;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0; font:16px/1.55 system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif; color:var(--text); background:var(--bg)}
+    a{color:var(--blue); text-decoration:none}
+    a:focus-visible,button:focus-visible{outline:2px solid rgba(10,61,145,.6); outline-offset:2px}
+    .container{max-width:1100px; margin:0 auto; padding:0 16px}
+    .skip{position:absolute; left:-9999px}
+    .skip:focus{left:16px; top:12px; background:#fff; padding:.5rem .75rem; border-radius:.5rem; box-shadow:0 8px 24px rgba(0,0,0,.12)}
+    /* Legal notice */
+    .notice{background:var(--navy); color:#fff}
+    .notice .container{display:flex; gap:.75rem; align-items:center; padding:.5rem 16px}
+    .notice a{color:#AECBFF}
+    /* Header */
+    header{position:sticky; top:0; z-index:1000; background:rgba(255,255,255,.9); backdrop-filter:saturate(180%) blur(8px); border-bottom:1px solid var(--grey)}
+    .nav{display:flex; align-items:center; justify-content:space-between; padding:.7rem 0}
+    .brand{display:flex; align-items:center; gap:.5rem; color:var(--navy); font-weight:800}
+    .dot{width:10px; height:10px; border-radius:999px; background:var(--blue)}
+    nav ul{display:flex; gap:16px; list-style:none; margin:0; padding:0}
+    nav a{color:#1b2946; font-weight:600}
+    .menu{display:none; border:1px solid var(--grey); padding:.45rem .6rem; border-radius:.5rem; background:#fff}
+    @media (max-width:900px){ nav{display:none} .menu{display:inline-block} .mobile{display:none; border-top:1px solid var(--grey)} .mobile.open{display:block} .mobile a{display:block; padding:.9rem 16px; border-bottom:1px solid var(--grey); color:#1b2946} }
+    /* Hero */
+    .hero{background:linear-gradient(180deg, rgba(10,61,145,.06), transparent 60%); padding:40px 0 20px}
+    h1{font-size:clamp(28px,4vw,42px); line-height:1.1; margin:.25rem 0 .5rem; color:var(--blue)}
+    .sub{color:#22304d; font-size:1.05rem; max-width:64ch}
+    .actions{display:flex; gap:10px; flex-wrap:wrap; margin-top:14px}
+    .btn{display:inline-block; padding:.7rem 1rem; border-radius:.7rem; font-weight:800; border:1px solid var(--blue)}
+    .btn.primary{background:var(--blue); color:#fff}
+    .btn.ghost{background:#fff; color:var(--blue)}
+    .note{font-size:.9rem; color:var(--muted); margin-top:6px}
+    .warn{background:#ffe9e9; color:#a33; border:1px solid #a33; padding:.75rem; border-radius:.5rem; margin:16px 0}
+    /* Sections */
+    section{padding:18px 0}
+    .grid{display:grid; gap:16px; grid-template-columns:repeat(3,1fr)}
+    @media (max-width:900px){ .grid{grid-template-columns:1fr} }
+    .card{border:1px solid var(--grey); border-radius:12px; padding:16px; background:#fff; box-shadow:0 8px 24px rgba(7,31,73,.05)}
+    .muted{color:var(--muted)}
+    /* Demo cards */
+    .demos{display:grid; gap:14px; grid-template-columns:repeat(3,1fr)}
+    @media (max-width:900px){ .demos{grid-template-columns:1fr} }
+    .demo-card h3{margin:.3rem 0 .25rem}
+    /* Chat */
+    .voice{font-size:.95rem; color:var(--muted); margin-bottom:.25rem}
+    .chat{border:1px solid #dcdfe6; border-radius:12px; padding:12px; background:#fff}
+    .log{height:220px; overflow:auto; border:1px solid #e3e7ef; background:#fff; padding:.5rem; border-radius:8px; font-size:.92rem}
+    .row{display:flex; gap:.5rem; margin-top:.5rem}
+    .row input[type="text"]{flex:1; padding:.55rem; border:1px solid #cfd6e3; border-radius:.5rem}
+    .consent{display:block; margin-top:.6rem; font-size:.95rem}
+    /* Footer */
+    footer{border-top:1px solid var(--grey); margin-top:22px}
+    .foot{display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; padding:14px 0}
+    .foot a{color:#33405c}
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
 
-<section class="section"><div class="card" style="padding:1.2rem">
-  <h1>OmniAssist</h1>
-  <p>Guardrails for email, CRM, and casework — so automation helps, but never breaks policy.</p>
-  <div class="grid">
-    <div class="board" style="padding:1rem">
-      <h3>Template Guard Demo</h3>
-      <label>Draft reply
-        <textarea id="oa_txt" placeholder="Type a quick reply..." style="min-height:140px"></textarea>
-      </label>
-      <button class="btn" id="oa_check" style="margin-top:.6rem">Check against policy</button>
-      <pre id="oa_out" class="board" style="padding:.8rem;min-height:100px;margin-top:.6rem"></pre>
-      <div style="display:flex;gap:.6rem;margin-top:.6rem;flex-wrap:wrap">
-        <a class="btn" href="services.html">Back to Services</a>
-        <a class="btn" href="contact.html">Talk to us</a>
-      </div>
-    </div>
-    <div class="card">
-      <h3>What you get</h3>
-      <ul><li>Reply templates with required clauses</li><li>CRM note prompts</li><li>Risk wording detection</li><li>Audit stamps</li></ul>
-      <p class="foot-links">Great with <a href="copilot.html">Copilot</a> and <a href="pact-ledger.html">PACT Ledger</a>.</p>
+  <!-- Legal disclosure -->
+  <div class="notice" role="note" aria-label="Legal disclosure">
+    <div class="container">
+      <strong>Notice:</strong> RBIS UK Ltd (England &amp; Wales) provides independent intelligence analysis and reporting.
+      <strong>We are not a law firm and do not provide legal advice.</strong>
+      Contact: <a href="mailto:contact@rbisintelligence.com">contact@rbisintelligence.com</a>
     </div>
   </div>
-</div></section>
 
-<footer>Designed &amp; built by Ryan Roberts | RBIS<div class="foot-links"><a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · <a href="cookies.html">Cookies</a></div></footer>
-<script src="assets/active-nav.js"></script>
-<script>
-(function(){
-  const txt=document.getElementById('oa_txt'), out=document.getElementById('oa_out');
-  document.getElementById('oa_check').addEventListener('click',()=>{
-    const t=(txt.value||'').toLowerCase();
-    const flags=[];
-    if(!/timescale|timeframe|working days/.test(t)) flags.push('Add clear timescale.');
-    if(!/contact|reply|reach/.test(t)) flags.push('Offer a contact route.');
-    if(/guarantee|promise/.test(t)) flags.push('Avoid absolute promises.');
-    out.textContent= flags.length?('Guardrails:\n - '+flags.join('\n - ')) : 'Looks compliant.';
-  });
-})();
-</script>
-</body></html>
+  <!-- Header -->
+  <header role="banner">
+    <div class="container nav">
+      <a class="brand" href="/" aria-label="RBIS home"><span class="dot" aria-hidden="true"></span> RBIS</a>
+      <nav aria-label="In-page">
+        <ul>
+          <li><a href="#why">Why OmniAssist</a></li>
+          <li><a href="#workflows">Workflows</a></li>
+          <li><a href="#channels">Channels &amp; Accessibility</a></li>
+          <li><a href="#live">Live Demo</a></li>
+        </ul>
+      </nav>
+      <button class="menu" id="menu" aria-expanded="false" aria-controls="mobile">Menu</button>
+    </div>
+    <div class="mobile" id="mobile" role="dialog" aria-label="Mobile menu">
+      <a href="#why">Why OmniAssist</a>
+      <a href="#workflows">Workflows</a>
+      <a href="#channels">Channels &amp; Accessibility</a>
+      <a href="#live">Live Demo</a>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- Hero -->
+    <section class="hero" aria-label="RBIS OmniAssist">
+      <div class="container">
+        <h1>RBIS OmniAssist</h1>
+        <p class="sub">One AI brain. Every channel. Zero wasted time.<br>Turn calls, texts, DMs, emails and BSL/video into structured, compliant actions — posted to your CRM in minutes, not hours.</p>
+        <div class="actions">
+          <a class="btn primary" href="#live" aria-label="Try Live">Try Live</a>
+          <a class="btn ghost" href="#workflows" aria-label="Watch a guided demo">Watch a guided demo</a>
+        </div>
+        <p class="note">No sign-up · UK English by default · 100+ languages supported</p>
+        <div class="warn" role="status">Couldn’t reach backend — check <code>apiBase</code> &amp; CORS.</div>
+      </div>
+    </section>
+
+    <!-- Why OmniAssist -->
+    <section id="why" aria-labelledby="why-h">
+      <div class="container">
+        <h2 id="why-h">Why OmniAssist</h2>
+        <div class="grid">
+          <article class="card">
+            <h3>Multi-channel, one brain</h3>
+            <p class="muted">Phone, SMS/WhatsApp, email, social DMs, web, BSL/video — the same AI core powers every touchpoint.</p>
+          </article>
+          <article class="card">
+            <h3>Structured &amp; compliant</h3>
+            <p class="muted">Every conversation outputs a fully structured case/report/lead with audit trail — ready for Safety Culture &amp; CRM.</p>
+          </article>
+          <article class="card">
+            <h3>Builder, not code</h3>
+            <p class="muted">Define workflows (questions, logic, uploads, routing) in config. Add new products without changing code.</p>
+          </article>
+          <article class="card">
+            <h3>Accessibility first</h3>
+            <p class="muted">BSL options, captions, screen readers, keyboard nav, dyslexia mode, and 100+ languages with auto-detect.</p>
+          </article>
+          <article class="card">
+            <h3>Adaptable workflows</h3>
+            <p class="muted">Add gas safety checks, void inspections, legal letters and more — just edit the config.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Workflows + Guided demos -->
+    <section id="workflows" aria-labelledby="wf-h">
+      <div class="container">
+        <h2 id="wf-h">OmniAssist Intake</h2>
+        <p class="muted">Repairs · Safety &amp; Compliance · Sales Intake · Multilingual · Accessible</p>
+        <div class="demos">
+          <article class="card demo-card">
+            <h3>Damp &amp; Mould Repair</h3>
+            <p>Complete a damp/mould audit and create a repair case with secure photo upload link.</p>
+            <ul class="muted" style="margin-top:.4rem">
+              <li>Severity (light/widespread/severe)</li>
+              <li>Health impact / vulnerable persons</li>
+              <li>Rooms affected &amp; duration</li>
+              <li>Suspected cause (leak/condensation/ventilation)</li>
+              <li>Access windows, postcode, phone</li>
+              <li>Destination: Portal/CRM with secure upload</li>
+            </ul>
+            <p><button class="btn" onclick="loadDemo('mould', true)">Play Demo</button></p>
+          </article>
+
+          <article class="card demo-card">
+            <h3>Safety Culture Report</h3>
+            <p>Walk a client through fields and file a Safety Culture report.</p>
+            <ul class="muted" style="margin-top:.4rem">
+              <li>Site name/code &amp; inspection date</li>
+              <li>Responsible person</li>
+              <li>Hazards &amp; corrective actions</li>
+              <li>Deadlines</li>
+              <li>Incidents/near-misses/training updates</li>
+              <li>Destination: Safety Culture</li>
+            </ul>
+            <p><button class="btn" onclick="loadDemo('safety', true)">Play Demo</button></p>
+          </article>
+
+          <article class="card demo-card">
+            <h3>Sales Lead Capture</h3>
+            <p>Collect lead details, qualify needs, and post to CRM.</p>
+            <ul class="muted" style="margin-top:.4rem">
+              <li>Name, email, phone</li>
+              <li>Summary of need</li>
+              <li>Scale/volume</li>
+              <li>Priority (speed, cost, compliance)</li>
+              <li>Next step (call/meeting)</li>
+              <li>Destination: CRM</li>
+            </ul>
+            <p><button class="btn" onclick="loadDemo('sales', true)">Play Demo</button></p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Channels & Accessibility -->
+    <section id="channels" aria-labelledby="ch-h">
+      <div class="container">
+        <h2 id="ch-h">Channels &amp; Accessibility</h2>
+        <div class="grid">
+          <article class="card">
+            <h3>Phone &amp; Voice</h3>
+            <p class="muted">Natural speech over telephony/SIP. Auto-summaries and transcripts routed into your CRM.</p>
+          </article>
+          <article class="card">
+            <h3>Text &amp; Social</h3>
+            <p class="muted">SMS, WhatsApp, email, Messenger, Instagram, X — consistent experience, same structured outputs.</p>
+          </article>
+          <article class="card">
+            <h3>BSL &amp; Languages</h3>
+            <p class="muted">BSL via live relay or avatar; automatic translation for 100+ languages; disability-supportive UI.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Live Demo -->
+    <section id="live" aria-labelledby="live-h">
+      <div class="container">
+        <h2 id="live-h">Live Demo</h2>
+        <div class="voice" aria-live="polite">Voice: <strong>Off</strong></div>
+        <div class="chat" role="region" aria-label="OmniAssist live chat">
+          <div id="chat-log" class="log" aria-live="polite"></div>
+          <div class="row">
+            <input id="chat-input" type="text" placeholder="Ask anything…" aria-label="Your message">
+            <button class="btn primary" type="button" onclick="sendMessage()">Send</button>
+          </div>
+          <label class="consent">
+            <input type="checkbox" id="consent"> I consent to storing my chat for support.
+          </label>
+          <div class="row">
+            <button class="btn" type="button" onclick="resetChat()">Reset</button>
+          </div>
+        </div>
+        <p class="muted" style="margin-top:.6rem">Click a guided demo above to see a complete end-to-end conversation. Press “Reset” to return to live chat.</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer role="contentinfo">
+    <div class="container foot">
+      <div>RBIS © | Designed &amp; Created by Ryan Roberts</div>
+      <nav aria-label="Footer">
+        <a href="/privacy.html">Privacy</a> ·
+        <a href="/terms.html">Terms</a> ·
+        <a href="/cookies.html">Cookies</a> ·
+        <a href="/legal.html">Legal Notice</a> ·
+        <a href="/accessibility.html">Accessibility</a> ·
+        <a href="/sitemap.xml">Sitemap</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu
+    (function(){
+      var btn=document.getElementById('menu'), mob=document.getElementById('mobile');
+      if(!btn||!mob) return;
+      btn.addEventListener('click', function(){
+        var open=mob.classList.toggle('open');
+        btn.setAttribute('aria-expanded', String(open));
+      });
+    })();
+
+    // Chat helpers
+    const logEl=document.getElementById('chat-log');
+    function addMsg(sender,text){
+      const p=document.createElement('p');
+      p.textContent = sender + ': ' + text;
+      logEl.appendChild(p);
+      logEl.scrollTop = logEl.scrollHeight;
+    }
+    function resetChat(){ logEl.innerHTML=''; }
+    function sendMessage(){
+      const input=document.getElementById('chat-input');
+      const val=input.value.trim();
+      if(!val) return;
+      addMsg('You', val);
+      setTimeout(()=>addMsg('OmniAssist','(Demo) Captured. Structured output created with audit trail.'), 500);
+      input.value='';
+      input.focus();
+    }
+
+    // Guided demos (with auto-scroll to Live Demo)
+    function loadDemo(type, scrollToLive){
+      resetChat();
+      if(type==='mould'){
+        addMsg('You','I need to report damp & mould');
+        addMsg('OmniAssist','Severity? (light/widespread/severe)');
+        addMsg('OmniAssist','Any health impacts or vulnerable persons?');
+        addMsg('OmniAssist','Which rooms are affected and for how long?');
+        addMsg('OmniAssist','Suspected cause (leak/condensation/ventilation)?');
+        addMsg('OmniAssist','Access windows, postcode, phone?');
+        addMsg('OmniAssist','Thanks — case created. Secure upload link sent. Destination: Portal/CRM.');
+      }
+      if(type==='safety'){
+        addMsg('You','Submit Safety Culture report');
+        addMsg('OmniAssist','Site name/code & inspection date?');
+        addMsg('OmniAssist','Responsible person?');
+        addMsg('OmniAssist','Hazards & corrective actions?');
+        addMsg('OmniAssist','Deadlines and any incidents/near-misses/training updates?');
+        addMsg('OmniAssist','Recorded and filed. Destination: Safety Culture.');
+      }
+      if(type==='sales'){
+        addMsg('You','Capture a sales lead');
+        addMsg('OmniAssist','Name, email, phone?');
+        addMsg('OmniAssist','Summarise the need and scale/volume.');
+        addMsg('OmniAssist','Priority (speed, cost, compliance) and next step (call/meeting)?');
+        addMsg('OmniAssist','Lead qualified. Routed to CRM with transcript and summary.');
+      }
+      if(scrollToLive){
+        const live=document.getElementById('live');
+        if(live && live.scrollIntoView){ live.scrollIntoView({behavior:'smooth', block:'start'}); }
+        // Focus the input for immediate typing
+        setTimeout(()=>{ const inp=document.getElementById('chat-input'); if(inp) inp.focus(); }, 400);
+      }
+    }
+  </script>
+</body>
+</html>

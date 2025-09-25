@@ -1,0 +1,420 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>SaaS Licensing & Pricing — RBIS Products | RBIS UK Ltd</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Transparent, regulator-friendly licensing for Veridex, OmniAssist, RBIS Dashboard, PACT Ledger, RBIS AI, RBIS AI Auto Call Answering, and NextusOne CRM (waitlist). Public-sector banding, commercial tiers, and custom monthly support.">
+  <link rel="canonical" href="https://www.rbisintelligence.com/saas-licensing.html">
+  <meta name="theme-color" content="#0A3D91">
+  <meta property="og:title" content="SaaS Licensing & Pricing — RBIS Products">
+  <meta property="og:description" content="Public-sector banding aligned to common rate-card practice. Commercial tiers that stay affordable. Ongoing monthly support customised to fit risk and scale.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.rbisintelligence.com/saas-licensing.html">
+  <meta property="og:image" content="https://www.rbisintelligence.com/assets/social-share.jpg">
+  <link rel="icon" href="/assets/favicon.ico">
+  <style>
+    :root{
+      --blue:#0A3D91; --navy:#071F49; --bg:#fff; --text:#0B1221; --grey:#E8ECF3; --muted:#6A7280;
+      --green:#109867; --amber:#D9822B; --red:#C4383E;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font:16px/1.58 system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;color:var(--text);background:var(--bg)}
+    a{color:var(--blue);text-decoration:none}
+    a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid rgba(10,61,145,.6);outline-offset:2px}
+    .container{max-width:1100px;margin:0 auto;padding:0 16px}
+    .skip{position:absolute;left:-9999px}.skip:focus{left:16px;top:12px;background:#fff;padding:.5rem .75rem;border-radius:.5rem;box-shadow:0 8px 24px rgba(0,0,0,.12)}
+
+    /* Legal notice */
+    .notice{background:var(--navy);color:#fff}
+    .notice .container{display:flex;gap:.75rem;align-items:center;padding:.55rem 16px}
+    .notice a{color:#AECBFF}
+
+    /* Header */
+    header{position:sticky;top:0;z-index:1000;background:rgba(255,255,255,.92);backdrop-filter:saturate(180%) blur(8px);border-bottom:1px solid var(--grey)}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:.7rem 0}
+    .brand{display:flex;align-items:center;gap:.5rem;color:var(--navy);font-weight:800}
+    .dot{width:10px;height:10px;border-radius:999px;background:var(--blue)}
+    nav ul{display:flex;gap:16px;list-style:none;margin:0;padding:0}
+    nav a{color:#1b2946;font-weight:600}
+    .menu{display:none;border:1px solid var(--grey);padding:.45rem .6rem;border-radius:.5rem;background:#fff}
+    @media (max-width:900px){
+      nav{display:none}.menu{display:inline-block}
+      .mobile{display:none;border-top:1px solid var(--grey)}
+      .mobile.open{display:block}
+      .mobile a{display:block;padding:.9rem 16px;border-bottom:1px solid var(--grey);color:#1b2946}
+    }
+
+    /* Hero */
+    .hero{background:linear-gradient(180deg, rgba(10,61,145,.06), transparent 60%);padding:28px 0 8px}
+    h1{font-size:clamp(28px,4vw,42px);line-height:1.1;margin:.25rem 0 .5rem;color:var(--blue)}
+    .sub{color:#22304d;font-size:1.05rem;max-width:74ch}
+    .actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+    .btn{display:inline-block;padding:.7rem 1rem;border-radius:.7rem;font-weight:800;border:1px solid var(--blue)}
+    .btn.primary{background:var(--blue);color:#fff}
+    .btn.ghost{background:#fff;color:var(--blue)}
+    .muted{color:var(--muted)}
+    .badge{display:inline-block;padding:.35rem .6rem;border:1px solid var(--grey);border-radius:999px;background:#fbfcff;margin:0 6px 6px 0}
+    .note{font-size:.95rem;color:#33405c}
+
+    /* Sections & cards */
+    section{padding:18px 0}
+    .grid-3{display:grid;gap:14px;grid-template-columns:repeat(3,1fr)}
+    .grid-2{display:grid;gap:14px;grid-template-columns:repeat(2,1fr)}
+    @media (max-width:900px){.grid-3,.grid-2{grid-template-columns:1fr}}
+    .card{border:1px solid var(--grey);border-radius:12px;padding:16px;background:#fff;box-shadow:0 8px 24px rgba(7,31,73,.05)}
+    .list{margin:.2rem 0 .9rem 1.2rem}
+    .price{font-weight:900;font-size:1.25rem;color:#071F49}
+    .unit{font-weight:600;color:#51607b}
+
+    /* Tables */
+    table{width:100%;border-collapse:separate;border-spacing:0;margin:.2rem 0 .9rem;border:1px solid var(--grey);border-radius:12px;overflow:hidden}
+    th,td{padding:10px 12px;text-align:left;border-bottom:1px solid var(--grey)}
+    th{background:#f6f8ff;color:#0b1f49}
+    tr:last-child td{border-bottom:none}
+
+    /* Footer */
+    footer{border-top:1px solid var(--grey);margin-top:22px}
+    .foot{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:14px 0}
+    .foot a{color:#33405c}
+
+    /* Print */
+    @media print{
+      header,.notice,footer{display:none}
+      a[href]::after{content:" (" attr(href) ")"} body{color:#000}
+      table{page-break-inside:avoid}
+    }
+  </style>
+
+  <!-- Schema: OfferCatalog with Offers per product -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"OfferCatalog",
+    "name":"RBIS SaaS Licensing & Pricing",
+    "itemListElement":[
+      {"@type":"Offer","name":"Veridex Starter","priceCurrency":"GBP","price":"1250","availability":"https://schema.org/InStock"},
+      {"@type":"Offer","name":"RBIS Dashboard Suite Standard","priceCurrency":"GBP","price":"900","availability":"https://schema.org/InStock"},
+      {"@type":"Offer","name":"PACT Ledger Core","priceCurrency":"GBP","price":"690","availability":"https://schema.org/InStock"},
+      {"@type":"Offer","name":"RBIS AI Team","priceCurrency":"GBP","price":"990","availability":"https://schema.org/InStock"},
+      {"@type":"Offer","name":"AI Auto Call Platform Fee","priceCurrency":"GBP","price":"390","availability":"https://schema.org/InStock"},
+      {"@type":"Offer","name":"NextusOne CRM (Waitlist)","priceCurrency":"GBP","price":"0","availability":"https://schema.org/PreOrder"}
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <!-- Legal disclosure -->
+  <div class="notice" role="note" aria-label="Legal disclosure">
+    <div class="container">
+      <strong>Notice:</strong> RBIS UK Ltd (England &amp; Wales) provides independent intelligence analysis and reporting.
+      <strong>We are not a law firm and do not provide legal advice.</strong>
+      Contact: <a href="mailto:contact@rbisintelligence.com">contact@rbisintelligence.com</a>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header role="banner">
+    <div class="container nav">
+      <a class="brand" href="/" aria-label="RBIS home"><span class="dot" aria-hidden="true"></span> RBIS</a>
+      <nav aria-label="In-page">
+        <ul>
+          <li><a href="#principles">Principles</a></li>
+          <li><a href="#public">Public-Sector Banding</a></li>
+          <li><a href="#commercial">Commercial Tiers</a></li>
+          <li><a href="#products">Product SKUs</a></li>
+          <li><a href="#support">Support & SLA</a></li>
+          <li><a href="#terms">Key Terms</a></li>
+          <li><a href="#cta">Get a Quote</a></li>
+        </ul>
+      </nav>
+      <button class="menu" id="menu" aria-expanded="false" aria-controls="mobile">Menu</button>
+    </div>
+    <div class="mobile" id="mobile" role="dialog" aria-label="Mobile menu">
+      <a href="#principles">Principles</a><a href="#public">Public-Sector Banding</a><a href="#commercial">Commercial Tiers</a><a href="#products">Product SKUs</a><a href="#support">Support & SLA</a><a href="#terms">Key Terms</a><a href="#cta">Get a Quote</a>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- Hero -->
+    <section class="hero" aria-labelledby="lic-h">
+      <div class="container">
+        <h1 id="lic-h">SaaS Licensing & Pricing</h1>
+        <p class="sub">Transparent pricing designed for regulated environments. Public-sector banding aligns to common UK rate-card practice (banded by size, complexity, and assurance needs). Commercial tiers keep costs predictable and fair. <strong>Ongoing monthly support is custom</strong> to fit your risk profile and scale.</p>
+        <div class="actions">
+          <a class="btn primary" href="https://formspree.io/f/meolvrdy" rel="nofollow">Request a tailored quote</a>
+          <a class="btn ghost" href="/trust.html">Read our Trust posture</a>
+        </div>
+        <p class="note">All prices shown are in GBP and exclude VAT. Quotes formalise scope, data regions, and assurance level.</p>
+      </div>
+    </section>
+
+    <!-- Principles -->
+    <section id="principles" aria-labelledby="pri-h">
+      <div class="container grid-3">
+        <article class="card">
+          <h2 id="pri-h">Licensing principles</h2>
+          <ul class="list">
+            <li>Evidence-first deliverables: watermarked PDFs + CSV annexes with signed hashes.</li>
+            <li>Data portability: export your data at any time in open formats.</li>
+            <li>12-month terms; public sector break-clause options available.</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h2>Fair, predictable costs</h2>
+          <ul class="list">
+            <li>Organisation banding for councils/housing associations.</li>
+            <li>Seat/usage tiers for commercial companies.</li>
+            <li>Discounts for multi-product bundles.</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h2>Compliance built-in</h2>
+          <ul class="list">
+            <li>DPIA support and DPA available on request.</li>
+            <li>Consent-mode analytics; strict headers (CSP/HSTS/etc.).</li>
+            <li>WCAG 2.2 AA accessibility posture.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- Public-sector banding -->
+    <section id="public" aria-labelledby="pub-h">
+      <div class="container">
+        <h2 id="pub-h">Public-Sector Banding (Councils & Housing)</h2>
+        <p class="muted">Aligned to typical UK public-sector costing practice: banding by organisation size and complexity. Final quotes reflect scope, integrations, and assurance level.</p>
+        <table aria-label="Public sector price banding">
+          <thead>
+            <tr><th>Band</th><th>Definition (indicative)</th><th>Platform fee / mo</th><th>Per-user / mo (where applicable)</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Band A</td><td>Small district / < 10k housing stock</td><td class="price">£650–£950</td><td class="unit">£19–£29</td></tr>
+            <tr><td>Band B</td><td>Medium borough / 10–30k stock</td><td class="price">£950–£1,650</td><td class="unit">£17–£27</td></tr>
+            <tr><td>Band C</td><td>Large unitary / 30–60k stock</td><td class="price">£1,650–£2,650</td><td class="unit">£15–£25</td></tr>
+            <tr><td>Band D</td><td>Group / > 60k stock or multi-authority</td><td class="price">£2,650–£4,500</td><td class="unit">£14–£22</td></tr>
+          </tbody>
+        </table>
+        <p class="note">Evidence packs and AI minutes are metered add-ons. Procurement via PO, with standard public-sector terms respected.</p>
+      </div>
+    </section>
+
+    <!-- Commercial tiers -->
+    <section id="commercial" aria-labelledby="com-h">
+      <div class="container grid-3">
+        <article class="card">
+          <h2 id="com-h">Starter (Commercial)</h2>
+          <p><span class="price">£290/mo</span> + <span class="unit">£19/user</span></p>
+          <ul class="list">
+            <li>Small teams, single product</li>
+            <li>Email support, 2 evidence packs/mo</li>
+            <li>Consent-mode analytics</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h2>Growth (Commercial)</h2>
+          <p><span class="price">£690/mo</span> + <span class="unit">£17/user</span></p>
+          <ul class="list">
+            <li>Multi-product bundle (any 2)</li>
+            <li>4 evidence packs/mo + priority email</li>
+            <li>DPIA template & review call</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h2>Regulated Pro (Commercial)</h2>
+          <p><span class="price">£1,490/mo</span> + <span class="unit">£15/user</span></p>
+          <ul class="list">
+            <li>All core products (excl. NextusOne)</li>
+            <li>Unlimited internal packs + quarterly audit</li>
+            <li>Signed DPA; region pinning options</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- Product SKUs -->
+    <section id="products" aria-labelledby="sku-h">
+      <div class="container">
+        <h2 id="sku-h">Product SKUs & Pricing</h2>
+        <div class="grid-3">
+          <article class="card">
+            <h3>Veridex — Intake & Evidence</h3>
+            <p><span class="price">from £1,250/mo</span> org + <span class="unit">£19/user</span></p>
+            <ul class="list">
+              <li>Guided intake, timeline builder, secure uploads</li>
+              <li>Evidence pack generator (PDF + CSV, watermarked)</li>
+              <li>Reviewer attestation and signed export hashes</li>
+            </ul>
+            <p><a class="btn ghost" href="/veridex.html">Details</a></p>
+          </article>
+
+          <article class="card">
+            <h3>RBIS Dashboard Suite</h3>
+            <p><span class="price">from £900/mo</span> org + <span class="unit">£15/user</span></p>
+            <ul class="list">
+              <li>RAG across Repairs, Complaints, Data, A11y, Risk</li>
+              <li>Drilldowns + exports, board assurance view</li>
+              <li>CSV ingestion, scheduled reports</li>
+            </ul>
+            <p><a class="btn ghost" href="/dashboard.html">Details</a></p>
+          </article>
+
+          <article class="card">
+            <h3>PACT Ledger — Promises & Obligations</h3>
+            <p><span class="price">from £690/mo</span> org + <span class="unit">£12/user</span></p>
+            <ul class="list">
+              <li>Timers, nudges, breach forecasts</li>
+              <li>Promise objects with change log & attestations</li>
+              <li>Court-ready exports in minutes</li>
+            </ul>
+            <p><a class="btn ghost" href="/pact-ledger.html">Details</a></p>
+          </article>
+
+          <article class="card">
+            <h3>RBIS AI — Behavioural Intelligence</h3>
+            <p><span class="price">from £990/mo</span> org + <span class="unit">£0.09/min audio</span></p>
+            <ul class="list">
+              <li>Speech/text signals: cadence, pauses, tone shifts</li>
+              <li>Human-in-the-loop review; redaction tools</li>
+              <li>Evidence snippets with timestamps</li>
+            </ul>
+            <p><a class="btn ghost" href="/rbis-ai.html">Details</a></p>
+          </article>
+
+          <article class="card">
+            <h3>RBIS AI Auto Call Answering</h3>
+            <p><span class="price">£390/mo</span> platform + <span class="unit">£0.12/min</span></p>
+            <ul class="list">
+              <li>Identity checks, consent capture, triage</li>
+              <li>Veridex case with audio + transcript</li>
+              <li>Escalation to human on uncertainty</li>
+            </ul>
+            <p><a class="btn ghost" href="/rbis-ai-auto-call.html">Details</a></p>
+          </article>
+
+          <article class="card">
+            <h3>NextusOne CRM (Waitlist)</h3>
+            <p><span class="price">TBA</span> — pre-order</p>
+            <ul class="list">
+              <li>Consent ledger, DSR tooling, retention rules</li>
+              <li>Immutable audit trails, lawful-basis tagging</li>
+              <li>Pricing confirmed at onboarding</li>
+            </ul>
+            <p><a class="btn ghost" href="/nextusone.html">Details</a></p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Support & SLA -->
+    <section id="support" aria-labelledby="sup-h">
+      <div class="container grid-3">
+        <article class="card">
+          <h2 id="sup-h">Support plans</h2>
+          <ul class="list">
+            <li><strong>Standard</strong> — email support, 2-day response, release notes.</li>
+            <li><strong>Priority</strong> — priority email, next-business-day, quarterly review.</li>
+            <li><strong>Regulated</strong> — named CSM, same-day criticals, change-control gates.</li>
+          </ul>
+          <p class="note"><strong>Ongoing monthly support is custom</strong> — scoped to your assurance level and event volume.</p>
+        </article>
+        <article class="card">
+          <h2>SLA targets</h2>
+          <ul class="list">
+            <li>Platform uptime 99.9% (SaaS months)</li>
+            <li>Priority incidents: response 2h, update 4h</li>
+            <li>Backups & integrity checks: daily</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h2>Onboarding & services</h2>
+          <ul class="list">
+            <li>Kickoff & configuration: <strong>£3,500–£8,500</strong></li>
+            <li>Integrations (per): <strong>£1,200–£4,800</strong></li>
+            <li>Training (per cohort): <strong>£950</strong></li>
+          </ul>
+          <p class="muted">Public-sector projects may be phased to match procurement milestones.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Key terms -->
+    <section id="terms" aria-labelledby="ter-h">
+      <div class="container grid-2">
+        <article class="card">
+          <h2 id="ter-h">Key licensing terms</h2>
+          <ul class="list">
+            <li>Annual term; monthly/annual billing options.</li>
+            <li>Public-sector break clause where required.</li>
+            <li>Data residency options (UK/EU) for supported products.</li>
+            <li>DPA available; DPIA templates provided.</li>
+            <li>All rights reserved; IP protections in <a href="/terms.html">Terms</a>.</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h2>Fair use & metering</h2>
+          <ul class="list">
+            <li>AI minutes, evidence pack generation, and storage are metered.</li>
+            <li>Burst allowances for incident periods.</li>
+            <li>Overages billed monthly with report detail.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section id="cta" aria-labelledby="cta-h">
+      <div class="container card">
+        <h2 id="cta-h">Request a public-sector band or commercial bundle</h2>
+        <p>Tell us your size, sector, and product mix. We’ll return a quote aligned to common UK rate-card practice — and a clear breakdown of platform, users, and metered usage.</p>
+        <p>
+          <a class="btn primary" href="https://formspree.io/f/meolvrdy" rel="nofollow">Get my quote</a>
+          <a class="btn ghost" href="/reports.html">See sample evidence packs</a>
+        </p>
+        <p class="muted">
+          <span class="badge">All rights reserved</span>
+          <span class="badge">© <span id="cpy"></span> RBIS UK Ltd</span>
+          <span class="badge">Terms include IP protections</span>
+          <span class="badge">Watermarking / code obfuscation where appropriate</span>
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer role="contentinfo">
+    <div class="container foot">
+      <div>© <span id="yr"></span> RBIS UK Ltd. All rights reserved. · RBIS © | Designed &amp; Created by Ryan Roberts</div>
+      <nav aria-label="Footer">
+        <a href="/terms.html">Terms of Use</a> ·
+        <a href="/privacy.html">Privacy</a> ·
+        <a href="/legal.html">Legal Notice</a> ·
+        <a href="/cookies.html">Cookies</a> ·
+        <a href="/accessibility.html">Accessibility</a> ·
+        <a href="/trust.html">Trust</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu
+    (function(){
+      var btn=document.getElementById('menu'), mob=document.getElementById('mobile');
+      if(btn && mob){
+        btn.addEventListener('click', function(){
+          var open=mob.classList.toggle('open');
+          btn.setAttribute('aria-expanded', String(open));
+        });
+      }
+    })();
+    // Year stamps
+    (function(){
+      var y=new Date().getFullYear();
+      ["yr","cpy"].forEach(function(id){var el=document.getElementById(id); if(el) el.textContent=y;});
+    })();
+  </script>
+</body>
+</html>

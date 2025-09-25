@@ -1,45 +1,293 @@
-<!DOCTYPE html><html lang="en"><head>
-<meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
-<title>Dashboard — RBIS</title>
-<link rel="canonical" href="https://rbisuk.github.io/dashboard.html">
-<link rel="icon" type="image/svg+xml" href="assets/favicon.svg"><link rel="icon" type="image/png" href="assets/favicon.png"><link rel="apple-touch-icon" href="assets/favicon.png">
-<meta name="theme-color" content="#4f46e5"><link rel="stylesheet" href="assets/theme.css?v=22">
-</head><body>
-<div class="disclosure"><b>Disclosure:</b> RBIS is not a law firm and does not provide legal advice.</div>
-<header class="nav"><nav>
-  <a href="index.html">Home</a><a href="services.html">Services &amp; Products</a><a href="reports.html">Reports</a><a href="webdev.html">Web &amp; Dev</a><a href="managed.html">Managed</a><a href="demo.html">Demo</a><a href="dashboard.html">Dashboard</a><a href="careers.html">Careers</a><a href="about.html">About</a><a href="legal.html">Legal</a><a href="contact.html">Contact</a>
-</nav></header>
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>RBIS Dashboard Suite — Proof-First, Board-Ready | RBIS UK Ltd</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Proof first. Download a redacted, board-ready pack that unifies repairs, complaints, data, and risk. RAG views, timers, drill-downs, and court-ready exports.">
+  <link rel="canonical" href="https://www.rbisintelligence.com/dashboard.html">
+  <meta name="theme-color" content="#0A3D91">
+  <meta property="og:title" content="RBIS Dashboard Suite — Proof-First, Board-Ready">
+  <meta property="og:description" content="Redacted sample pack + numbers. Show, then tell. Agents → Managers → Board.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.rbisintelligence.com/dashboard.html">
+  <meta property="og:image" content="https://www.rbisintelligence.com/assets/social-share.jpg">
+  <link rel="icon" href="/assets/favicon.ico">
+  <style>
+    :root{
+      --blue:#0A3D91; --navy:#071F49; --bg:#fff; --text:#0B1221; --grey:#E8ECF3; --muted:#6A7280;
+      --green:#109867; --amber:#D9822B; --red:#C4383E;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font:16px/1.58 system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;color:var(--text);background:var(--bg)}
+    a{color:var(--blue);text-decoration:none}
+    a:focus-visible,button:focus-visible{outline:2px solid rgba(10,61,145,.6);outline-offset:2px}
+    .container{max-width:1100px;margin:0 auto;padding:0 16px}
+    .skip{position:absolute;left:-9999px}
+    .skip:focus{left:16px;top:12px;background:#fff;padding:.5rem .75rem;border-radius:.5rem;box-shadow:0 8px 24px rgba(0,0,0,.12)}
 
-<section class="section">
-  <div class="grid">
-    <div class="card">
-      <h3>Risk Map</h3>
-      <div class="board" style="padding:1rem">
-        <div class="kpi">Open: <b>42</b></div>
-        <div class="kpi">Breaches: <b>6</b></div>
-        <div class="kpi">Due this week: <b>18</b></div>
-      </div>
-      <button class="btn" id="d_export" style="margin-top:.6rem">Export snapshot (CSV)</button>
-      <p id="d_status" class="foot-links" style="margin-top:.4rem"></p>
-    </div>
-    <div class="card">
-      <h3>Nudges</h3>
-      <ul><li>D-2: appointment reminders</li><li>D-1: escalate to supervisor</li><li>Breach: record incident + notify</li></ul>
+    /* Legal notice */
+    .notice{background:var(--navy);color:#fff}
+    .notice .container{display:flex;gap:.75rem;align-items:center;padding:.55rem 16px}
+    .notice a{color:#AECBFF}
+
+    /* Header */
+    header{position:sticky;top:0;z-index:1000;background:rgba(255,255,255,.92);backdrop-filter:saturate(180%) blur(8px);border-bottom:1px solid var(--grey)}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:.7rem 0}
+    .brand{display:flex;align-items:center;gap:.5rem;color:var(--navy);font-weight:800}
+    .dot{width:10px;height:10px;border-radius:999px;background:var(--blue)}
+    nav ul{display:flex;gap:16px;list-style:none;margin:0;padding:0}
+    nav a{color:#1b2946;font-weight:600}
+    .menu{display:none;border:1px solid var(--grey);padding:.45rem .6rem;border-radius:.5rem;background:#fff}
+    @media (max-width:900px){
+      nav{display:none}.menu{display:inline-block}
+      .mobile{display:none;border-top:1px solid var(--grey)}
+      .mobile.open{display:block}
+      .mobile a{display:block;padding:.9rem 16px;border-bottom:1px solid var(--grey);color:#1b2946}
+    }
+
+    /* Proof-first hero (redacted pane) */
+    .hero{background:linear-gradient(180deg, rgba(10,61,145,.06), transparent 60%);padding:28px 0 8px}
+    h1{font-size:clamp(28px,4vw,42px);line-height:1.1;margin:.25rem 0 .5rem;color:var(--blue)}
+    .sub{color:#22304d;font-size:1.05rem;max-width:74ch}
+    .actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+    .btn{display:inline-block;padding:.7rem 1rem;border-radius:.7rem;font-weight:800;border:1px solid var(--blue)}
+    .btn.primary{background:var(--blue);color:#fff}
+    .btn.ghost{background:#fff;color:var(--blue)}
+    .muted{color:var(--muted)}
+    .badge{display:inline-block;padding:.35rem .6rem;border:1px solid var(--grey);border-radius:999px;background:#fbfcff;margin:0 6px 6px 0}
+
+    .case-pane{display:grid;grid-template-columns:1.1fr .9fr;gap:14px;align-items:stretch}
+    @media(max-width:900px){.case-pane{grid-template-columns:1fr}}
+    .redacted{border:1px dashed #9bb0d6;border-radius:12px;padding:14px;background:repeating-linear-gradient(135deg, #f3f6ff 0 14px, #eef3ff 14px 28px)}
+    .bar{height:14px;background:#0b1f49;border-radius:6px;margin:8px 0}
+    .blk{height:10px;background:#0b1f49;border-radius:3px;margin:6px 0;width:100%}
+    .blk.s{width:62%}.blk.m{width:80%}.blk.l{width:94%}
+
+    /* Sections & cards */
+    section{padding:18px 0}
+    .grid-3{display:grid;gap:14px;grid-template-columns:repeat(3,1fr)}
+    .grid-2{display:grid;gap:14px;grid-template-columns:repeat(2,1fr)}
+    @media (max-width:900px){.grid-3,.grid-2{grid-template-columns:1fr}}
+    .card{border:1px solid var(--grey);border-radius:12px;padding:16px;background:#fff;box-shadow:0 8px 24px rgba(7,31,73,.05)}
+    .list{margin:.2rem 0 .9rem 1.2rem}
+
+    /* Footer */
+    footer{border-top:1px solid var(--grey);margin-top:22px}
+    .foot{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:14px 0}
+    .foot a{color:#33405c}
+
+    /* Print */
+    @media print{
+      header,.notice,footer{display:none}
+      a[href]::after{content:" (" attr(href) ")"} body{color:#000}
+    }
+  </style>
+
+  <!-- Schema: SoftwareApplication + two CaseStudy outcomes -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"SoftwareApplication",
+    "name":"RBIS Dashboard Suite",
+    "operatingSystem":"Web",
+    "applicationCategory":"BusinessApplication",
+    "description":"Proof-first, modular cockpit that feeds a Board Assurance Layer with RAG views, timers, drill-downs, and court-ready exports.",
+    "offers":{"@type":"Offer","price":"0","priceCurrency":"GBP"}
+  }
+  </script>
+  <script type="application/ld+json">
+  [
+    {
+      "@context":"https://schema.org",
+      "@type":"CaseStudy",
+      "name":"Meta Ads Conversion Lift",
+      "description":"RBIS analysis flagged friction and applied guardrailed copy/workflow changes. Conversion rose from 6% to 13% in 14 days.",
+      "audience":{"@type":"Audience","audienceType":"Marketing/Acquisition"},
+      "isPartOf":{"@type":"SoftwareApplication","name":"RBIS Dashboard Suite"}
+    },
+    {
+      "@context":"https://schema.org",
+      "@type":"CaseStudy",
+      "name":"Complaints Escalation Reduction",
+      "description":"Tone-shift risk flags + SLA nudges reduced escalations by 28% over 6 weeks in an anonymised housing pilot.",
+      "audience":{"@type":"Audience","audienceType":"Operations/Complaints"},
+      "isPartOf":{"@type":"SoftwareApplication","name":"RBIS Dashboard Suite"}
+    }
+  ]
+  </script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <!-- Legal disclosure -->
+  <div class="notice" role="note" aria-label="Legal disclosure">
+    <div class="container">
+      <strong>Notice:</strong> RBIS UK Ltd (England &amp; Wales) provides independent intelligence analysis and reporting.
+      <strong>We are not a law firm and do not provide legal advice.</strong>
+      Contact: <a href="mailto:contact@rbisintelligence.com">contact@rbisintelligence.com</a>
     </div>
   </div>
-</section>
 
-<footer>Designed &amp; built by Ryan Roberts | RBIS<div class="foot-links"><a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · <a href="cookies.html">Cookies</a></div></footer>
-<script src="assets/active-nav.js"></script>
-<script>
-(function(){
-  function csv(rows){return rows.map(r=>r.map(x=>`"${String(x).replace(/"/g,'""')}"`).join(',')).join('\n')}
-  document.getElementById('d_export').addEventListener('click',()=>{
-    const rows=[['metric','value'],['open',42],['breaches',6],['due_this_week',18]];
-    const blob=new Blob([csv(rows)],{type:'text/csv'}); const url=URL.createObjectURL(blob);
-    const a=document.createElement('a'); a.href=url; a.download='rbis-dashboard-snapshot.csv'; a.click(); URL.revokeObjectURL(url);
-    document.getElementById('d_status').textContent='CSV downloaded.';
-  });
-})();
-</script>
-</body></html>
+  <!-- Header -->
+  <header role="banner">
+    <div class="container nav">
+      <a class="brand" href="/" aria-label="RBIS home"><span class="dot" aria-hidden="true"></span> RBIS</a>
+      <nav aria-label="In-page">
+        <ul>
+          <li><a href="#proof">Proof</a></li>
+          <li><a href="#modules">Modules</a></li>
+          <li><a href="#layers">Layers</a></li>
+          <li><a href="#evidence">Evidence</a></li>
+          <li><a href="#cta">Start</a></li>
+        </ul>
+      </nav>
+      <button class="menu" id="menu" aria-expanded="false" aria-controls="mobile">Menu</button>
+    </div>
+    <div class="mobile" id="mobile" role="dialog" aria-label="Mobile menu">
+      <a href="#proof">Proof</a>
+      <a href="#modules">Modules</a>
+      <a href="#layers">Layers</a>
+      <a href="#evidence">Evidence</a>
+      <a href="#cta">Start</a>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- PROOF-FIRST HERO -->
+    <section id="proof" class="hero" aria-labelledby="proof-h">
+      <div class="container case-pane">
+        <div class="redacted" aria-label="Redacted board pack preview">
+          <div class="bar"></div>
+          <div class="blk l"></div>
+          <div class="blk s"></div>
+          <div class="blk m"></div>
+          <div class="blk l"></div>
+          <div class="blk s"></div>
+          <p class="muted" style="margin-top:8px">Redacted excerpt: RAG, timers, and evidence annexes with reviewer attestations & signed hashes.</p>
+        </div>
+        <div>
+          <h1>Regulated buyers buy proof, not poetry.</h1>
+          <p class="sub">Download a redacted, board-ready pack. See the numbers, then the machinery. Guardrails keep the gains defensible.</p>
+          <div class="actions">
+            <a class="btn primary" href="https://formspree.io/f/meolvrdy" rel="nofollow">Download Sample Pack</a>
+            <a class="btn ghost" href="https://formspree.io/f/meolvrdy" rel="nofollow">See Dashboard Demo</a>
+          </div>
+          <div class="grid-2" style="margin-top:12px">
+            <div class="card">
+              <strong>Meta ads (pilot)</strong>
+              <p class="muted" style="margin:.4rem 0 0">Toolkit flagged friction → guardrailed changes. Conversion <strong>6% → 13%</strong> in <strong>14 days</strong>.</p>
+            </div>
+            <div class="card">
+              <strong>Complaints (housing)</strong>
+              <p class="muted" style="margin:.4rem 0 0">Tone-shift risk flags + SLA nudges. Escalations <strong>−28%</strong> over <strong>6 weeks</strong> (anonymised).</p>
+            </div>
+          </div>
+          <p class="muted" style="margin-top:6px">“Show me, then tell me.” This page does exactly that.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- MODULES (12) -->
+    <section id="modules" aria-labelledby="modules-h">
+      <div class="container grid-3">
+        <article class="card"><h2 id="modules-h">1) Repairs &amp; SLA</h2><ul class="list"><li>Open vs closed</li><li>SLA countdowns (R/A/G)</li><li>Backlog heatmap</li><li>Recurring categories</li></ul></article>
+        <article class="card"><h2>2) Complaints &amp; Ombudsman</h2><ul class="list"><li>Stage counts</li><li>Resolution vs policy</li><li>Breaches</li><li>Post-resolution CSAT</li></ul></article>
+        <article class="card"><h2>3) Data Protection &amp; Breach</h2><ul class="list"><li>DSAR volumes</li><li>Breach alerts</li><li>Consent ratios</li><li>Risk trendlines</li></ul></article>
+        <article class="card"><h2>4) Marketing Compliance</h2><ul class="list"><li>Approved vs flagged</li><li>Regulator notices</li><li>Bounce/spam</li><li>Live vs registered</li></ul></article>
+        <article class="card"><h2>5) Accessibility &amp; Quality</h2><ul class="list"><li>WCAG scorecards</li><li>Critical/minor fails</li><li>Device/browser coverage</li><li>User impact</li></ul></article>
+        <article class="card"><h2>6) Operations &amp; Workforce</h2><ul class="list"><li>Response times</li><li>Backlog by priority</li><li>Resolutions/day</li><li>Utilisation</li></ul></article>
+        <article class="card"><h2>7) Risk &amp; Incident</h2><ul class="list"><li>Active vs resolved</li><li>Root causes</li><li>Severity matrix</li><li>Recurrence patterns</li></ul></article>
+        <article class="card"><h2>8) Governance &amp; Board</h2><ul class="list"><li>Cross-domain RAG</li><li>Audit status</li><li>Escalation log</li><li>Cross-product synthesis</li></ul></article>
+        <article class="card"><h2>9) PACT Ledger</h2><ul class="list"><li>Active promises</li><li>Deadlines</li><li>Nudges sent</li><li>% fulfilled vs broken</li></ul></article>
+        <article class="card"><h2>10) Audit Readiness</h2><ul class="list"><li>Evidence ready vs incomplete</li><li>Checklist mapping</li><li>Export status</li><li>Gap analysis</li></ul></article>
+        <article class="card"><h2>11) Agent (Per-User)</h2><ul class="list"><li>My cases/repairs/complaints</li><li>SLA timers</li><li>Daily targets</li><li>Escalations</li></ul></article>
+        <article class="card"><h2>12) CX KPI (Exec)</h2><ul class="list"><li>NPS trend</li><li>First-contact resolution %</li><li>Wait times</li><li>Churn risk</li></ul></article>
+      </div>
+    </section>
+
+    <!-- LAYERS -->
+    <section id="layers" aria-labelledby="layers-h">
+      <div class="container grid-3">
+        <article class="card"><h2 id="layers-h">Layer 1 — Agents</h2><p class="muted">Actionable micro-dashboards with timers and personal KPIs.</p></article>
+        <article class="card"><h2>Layer 2 — Managers</h2><p class="muted">Workload distribution, backlog trends, and coaching levers.</p></article>
+        <article class="card"><h2>Layer 3 — Board</h2><p class="muted">Unified assurance with RAG posture and exportable proof.</p></article>
+      </div>
+    </section>
+
+    <!-- EVIDENCE -->
+    <section id="evidence" aria-labelledby="evidence-h">
+      <div class="container grid-2">
+        <article class="card">
+          <h2 id="evidence-h">Evidence & Exports</h2>
+          <ul class="list">
+            <li>CSV/PDF exports with signed hashes</li>
+            <li>Audit trails and reviewer attestations</li>
+            <li>Court-ready packs in minutes</li>
+          </ul>
+          <p><a class="btn ghost" href="/reports.html">See evidence pack formats</a></p>
+        </article>
+        <article class="card">
+          <h2>Security, Privacy & A11y</h2>
+          <ul class="list">
+            <li>Strict headers (CSP, HSTS, Referrer, Permissions)</li>
+            <li>WCAG-aware components and focus styles</li>
+            <li>Least-privilege roles and audit logs</li>
+          </ul>
+          <p class="muted">See <a href="/trust.html">Trust</a> for copy-paste header snippets.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section id="cta" aria-labelledby="cta-h">
+      <div class="container card">
+        <h2 id="cta-h">Proof beats promises. Start your dashboard.</h2>
+        <p><a class="btn primary" href="https://formspree.io/f/meolvrdy" rel="nofollow">Download Sample Pack</a>
+           <a class="btn ghost" href="https://formspree.io/f/meolvrdy" rel="nofollow">See Dashboard Demo</a></p>
+        <p class="muted">
+          <span class="badge">All rights reserved</span>
+          <span class="badge">© <span id="cpy"></span> RBIS UK Ltd</span>
+          <span class="badge">Terms include IP protections</span>
+          <span class="badge">Watermarking / code obfuscation where appropriate</span>
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer role="contentinfo">
+    <div class="container foot">
+      <div>© <span id="yr"></span> RBIS UK Ltd. All rights reserved. · RBIS © | Designed &amp; Created by Ryan Roberts</div>
+      <nav aria-label="Footer">
+        <a href="/terms.html">Terms of Use</a> ·
+        <a href="/privacy.html">Privacy</a> ·
+        <a href="/legal.html">Legal Notice</a> ·
+        <a href="/cookies.html">Cookies</a> ·
+        <a href="/accessibility.html">Accessibility</a> ·
+        <a href="/trust.html">Trust</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu
+    (function(){
+      var btn=document.getElementById('menu'), mob=document.getElementById('mobile');
+      if(btn && mob){
+        btn.addEventListener('click', function(){
+          var open=mob.classList.toggle('open');
+          btn.setAttribute('aria-expanded', String(open));
+        });
+      }
+    })();
+    // Year/copyright
+    (function(){
+      var y=new Date().getFullYear();
+      var yr=document.getElementById('yr'), c=document.getElementById('cpy');
+      if(yr) yr.textContent=y; if(c) c.textContent=y;
+    })();
+  </script>
+</body>
+</html>

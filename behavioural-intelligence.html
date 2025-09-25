@@ -1,0 +1,395 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>Behavioural & Intelligence Services — RBIS UK Ltd</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Independent behavioural analysis and intelligence-led reporting that stands up to scrutiny. Decode tone, cadence, and inconsistencies. Court-ready outputs.">
+  <link rel="canonical" href="https://www.rbisintelligence.com/behavioural.html">
+  <meta name="theme-color" content="#0A3D91">
+  <!-- Open Graph -->
+  <meta property="og:title" content="Behavioural & Intelligence Services — RBIS UK Ltd">
+  <meta property="og:description" content="Beyond words. We analyse speech and writing for behavioural signals and deliver independent, court-ready reports.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.rbisintelligence.com/behavioural.html">
+  <meta property="og:image" content="https://www.rbisintelligence.com/assets/social-share.jpg">
+  <link rel="icon" href="/assets/favicon.ico">
+  <style>
+    :root{
+      --blue:#0A3D91; --navy:#071F49; --bg:#fff; --text:#0B1221; --grey:#E8ECF3; --muted:#6A7280;
+      --green:#109867; --amber:#D9822B; --red:#C4383E;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;color:var(--text);background:var(--bg)}
+    a{color:var(--blue);text-decoration:none}
+    a:focus-visible,button:focus-visible{outline:2px solid rgba(10,61,145,.6);outline-offset:2px}
+    .container{max-width:1100px;margin:0 auto;padding:0 16px}
+    .skip{position:absolute;left:-9999px}
+    .skip:focus{left:16px;top:12px;background:#fff;padding:.5rem .75rem;border-radius:.5rem;box-shadow:0 8px 24px rgba(0,0,0,.12)}
+
+    /* Legal notice bar */
+    .notice{background:var(--navy);color:#fff}
+    .notice .container{display:flex;gap:.75rem;align-items:center;padding:.55rem 16px}
+    .notice a{color:#AECBFF}
+
+    /* Header */
+    header{position:sticky;top:0;z-index:1000;background:rgba(255,255,255,.92);backdrop-filter:saturate(180%) blur(8px);border-bottom:1px solid var(--grey)}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:.7rem 0}
+    .brand{display:flex;align-items:center;gap:.5rem;color:var(--navy);font-weight:800}
+    .dot{width:10px;height:10px;border-radius:999px;background:var(--blue)}
+    nav ul{display:flex;gap:16px;list-style:none;margin:0;padding:0}
+    nav a{color:#1b2946;font-weight:600}
+    .menu{display:none;border:1px solid var(--grey);padding:.45rem .6rem;border-radius:.5rem;background:#fff}
+    @media (max-width:900px){
+      nav{display:none}.menu{display:inline-block}
+      .mobile{display:none;border-top:1px solid var(--grey)}
+      .mobile.open{display:block}
+      .mobile a{display:block;padding:.9rem 16px;border-bottom:1px solid var(--grey);color:#1b2946}
+    }
+
+    /* Hero */
+    .hero{background:linear-gradient(180deg, rgba(10,61,145,.06), transparent 60%);padding:40px 0 18px}
+    h1{font-size:clamp(28px,4vw,42px);line-height:1.1;margin:.25rem 0 .5rem;color:var(--blue)}
+    .sub{color:#22304d;font-size:1.05rem;max-width:70ch}
+    .actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+    .btn{display:inline-block;padding:.7rem 1rem;border-radius:.7rem;font-weight:800;border:1px solid var(--blue)}
+    .btn.primary{background:var(--blue);color:#fff}
+    .btn.ghost{background:#fff;color:var(--blue)}
+
+    /* Sections & cards */
+    section{padding:20px 0}
+    .grid-3{display:grid;gap:14px;grid-template-columns:repeat(3,1fr)}
+    .grid-2{display:grid;gap:14px;grid-template-columns:repeat(2,1fr)}
+    @media (max-width:900px){.grid-3,.grid-2{grid-template-columns:1fr}}
+    .card{border:1px solid var(--grey);border-radius:12px;padding:16px;background:#fff;box-shadow:0 8px 24px rgba(7,31,73,.05)}
+    .muted{color:var(--muted)}
+    .list{margin:.2rem 0 .9rem 1.2rem}
+    .badge{display:inline-block;padding:.35rem .6rem;border:1px solid var(--grey);border-radius:999px;background:#fbfcff;margin:0 6px 6px 0}
+    .wm{position:relative}
+    .wm::after{content:"RBIS";position:absolute;inset:0;background:repeating-linear-gradient(45deg,rgba(7,31,73,.06) 0 10px,transparent 10px 20px);pointer-events:none}
+
+    /* Pullquote */
+    .quote{border-left:4px solid var(--blue);padding:.6rem .9rem;background:#f6f9ff;border-radius:8px}
+
+    /* Footer */
+    footer{border-top:1px solid var(--grey);margin-top:22px}
+    .foot{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:14px 0}
+    .foot a{color:#33405c}
+
+    /* Print */
+    @media print{
+      header,.notice,footer{display:none}
+      a[href]::after{content:" (" attr(href) ")"} body{color:#000}
+    }
+  </style>
+
+  <!-- Service Schema (SEO) -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Service",
+    "name":"Behavioural & Intelligence Services",
+    "provider":{"@type":"Organization","name":"RBIS UK Ltd","url":"https://www.rbisintelligence.com"},
+    "description":"Independent behavioural analysis and intelligence-led reporting with court-ready outputs.",
+    "areaServed":"GB",
+    "serviceType":"Behavioural intelligence and forensic communications analysis"
+  }
+  </script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <!-- Legal disclosure -->
+  <div class="notice" role="note" aria-label="Legal disclosure">
+    <div class="container">
+      <strong>Notice:</strong> RBIS UK Ltd (England &amp; Wales) provides independent intelligence analysis and reporting.
+      <strong>We are not a law firm and do not provide legal advice.</strong>
+      Contact: <a href="mailto:contact@rbisintelligence.com">contact@rbisintelligence.com</a>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header role="banner">
+    <div class="container nav">
+      <a class="brand" href="/" aria-label="RBIS home"><span class="dot" aria-hidden="true"></span> RBIS</a>
+      <nav aria-label="In-page">
+        <ul>
+          <li><a href="#lie">The Big Lie</a></li>
+          <li><a href="#beyond">Beyond Words</a></li>
+          <li><a href="#uses">Applications</a></li>
+          <li><a href="#methods">Methodologies</a></li>
+          <li><a href="#sectors">Sectors</a></li>
+          <li><a href="#case">Case Example</a></li>
+          <li><a href="#legalpos">Legal Position</a></li>
+          <li><a href="#cta">Get Started</a></li>
+        </ul>
+      </nav>
+      <button class="menu" id="menu" aria-expanded="false" aria-controls="mobile">Menu</button>
+    </div>
+    <div class="mobile" id="mobile" role="dialog" aria-label="Mobile menu">
+      <a href="#lie">The Big Lie</a>
+      <a href="#beyond">Beyond Words</a>
+      <a href="#uses">Applications</a>
+      <a href="#methods">Methodologies</a>
+      <a href="#sectors">Sectors</a>
+      <a href="#case">Case Example</a>
+      <a href="#legalpos">Legal Position</a>
+      <a href="#cta">Get Started</a>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container">
+        <h1>Behavioural &amp; Intelligence Services</h1>
+        <p class="sub">Beyond words. RBIS decodes the <em>behaviour</em> behind speech and writing—tone, cadence, hesitation, and inconsistency—to reveal risk, strengthen credibility, and deliver independent, court-ready reports.</p>
+        <div class="actions">
+          <a class="btn primary" href="https://formspree.io/f/meolvrdy" rel="nofollow">Request a Behavioural Analysis</a>
+          <a class="btn ghost" href="#methods">See our methods</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- The Biggest Lie -->
+    <section id="lie" aria-labelledby="lie-h">
+      <div class="container grid-2">
+        <article class="card">
+          <h2 id="lie-h">⚡ The Biggest Lie in Business Communication</h2>
+          <div class="quote">
+            <p>“It’s not what you say, it’s how you say it.” That’s only half the story. The truth? It’s <strong>both</strong>—and more. In negotiations and boardrooms, tone can be performed and words rehearsed. The interaction between them is where truth slips out.</p>
+          </div>
+          <p>Most companies train staff to say the right words. Few train leaders to read between them. That’s where behavioural intelligence becomes a strategic weapon.</p>
+        </article>
+        <article class="card">
+          <h3>What we look for</h3>
+          <ul class="list">
+            <li>Hesitations, timing anomalies, and cadence drift</li>
+            <li>Pitch variance and stress markers</li>
+            <li>Lexical hedging, distancing, and tense shifts</li>
+            <li>Format irregularities and inconsistent metadata</li>
+          </ul>
+          <p><span class="badge">Tone–text interaction</span><span class="badge">Consistency heuristics</span><span class="badge">Chain-of-custody</span></p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Beyond Words -->
+    <section id="beyond" aria-labelledby="beyond-h">
+      <div class="container grid-3">
+        <article class="card">
+          <h2 id="beyond-h">Beyond Words</h2>
+          <p class="muted">Language conveys intent, but behavioural signals—tone, pauses, delivery—often reveal the state of mind.</p>
+          <ul class="list">
+            <li><strong>Emotional state:</strong> stress vs calm</li>
+            <li><strong>Truthfulness & consistency:</strong> unusual pauses, irregular pacing</li>
+            <li><strong>Confidence & authority:</strong> stability vs faltering</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h2>Structured Analysis</h2>
+          <p class="muted">We combine AI feature extraction with expert review. Outputs include timestamped clips, transcript highlights, and cross-reference maps.</p>
+          <p><span class="badge">Human-in-the-loop</span><span class="badge">Redaction</span><span class="badge">Immutable audit trail</span></p>
+        </article>
+        <article class="card wm" aria-label="Watermarked preview">
+          <h2>Court-ready Exports</h2>
+          <p class="muted">Watermarked visual exports protect IP; signed bundles defend chain-of-custody.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Strategic Applications -->
+    <section id="uses" aria-labelledby="uses-h">
+      <div class="container grid-3">
+        <article class="card">
+          <h2 id="uses-h">Corporate Negotiations</h2>
+          <p class="muted">Identify hesitation or concealed resistance before it escalates. Prepare counter-moves rooted in evidence, not hunches.</p>
+        </article>
+        <article class="card">
+          <h2>Risk & Compliance</h2>
+          <p class="muted">Detect inconsistencies that may signal undisclosed vulnerabilities. Build regulator-ready dossiers.</p>
+        </article>
+        <article class="card">
+          <h2>Leadership & Recruitment</h2>
+          <p class="muted">Assess candidates and executives beyond rehearsed answers. Calibrate onboarding and oversight.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Methodologies -->
+    <section id="methods" aria-labelledby="methods-h">
+      <div class="container grid-3">
+        <article class="card">
+          <h2 id="methods-h">Proven Methodologies</h2>
+          <ul class="list">
+            <li>Behavioural Pattern Analysis</li>
+            <li>Document Authentication Techniques</li>
+            <li>Audio Forensic Examination</li>
+            <li>Financial Transaction Analysis</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h2>Correlation & Validation</h2>
+          <ul class="list">
+            <li>Cross-Reference Verification</li>
+            <li>Statistical Analysis Methods</li>
+            <li>Timeline Reconstruction</li>
+            <li>Evidence Correlation Mapping</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h2>Deliverables</h2>
+          <ul class="list">
+            <li>Independent, court-ready reports</li>
+            <li>Expert insight & decision briefings</li>
+            <li>Redacted/clean versions on request</li>
+            <li>Signed CSV/PDF bundles</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- Sectors -->
+    <section id="sectors" aria-labelledby="sectors-h">
+      <div class="container grid-2">
+        <article class="card">
+          <h2 id="sectors-h">Who we support</h2>
+          <ul class="list">
+            <li><strong>Councils & Local Authorities:</strong> impartial dispute support; prevent costly escalation.</li>
+            <li><strong>Housing Associations:</strong> detect coercion, fraud, and risky behaviour; protect reputation.</li>
+            <li><strong>Law Firms:</strong> forensic reports and expert witness; evidential clarity.</li>
+            <li><strong>Corporate & HR:</strong> independent comms reviews and behavioural profiling.</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h2>Case in Point</h2>
+          <p class="muted">In a multi-tenant housing dispute, RBIS combined forensic and behavioural analysis to reveal the core issues and enable resolution—before legal escalation.</p>
+          <p><a class="btn ghost" href="/reports.html">View sample report types</a></p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Case Example -->
+    <section id="case" aria-labelledby="case-h">
+      <div class="container grid-2">
+        <article class="card">
+          <h2 id="case-h">Case Example — Email Chronology</h2>
+          <p>On the surface, a tenant’s emails looked consistent. Forensics revealed irregular formatting, unusual timestamps, and tonal shifts—indicators of retrospective edits. Our report helped the court separate genuine communication from reconstructed narrative.</p>
+        </article>
+        <article class="card">
+          <h3>Why this matters</h3>
+          <p class="muted">Tribunals regularly sanction even minor cover-ups. The damage isn’t the mistake; it’s the credibility breach. Behavioural analysis surfaces these risks early.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Legal Position -->
+    <section id="legalpos" aria-labelledby="legalpos-h">
+      <div class="container grid-2">
+        <article class="card">
+          <h2 id="legalpos-h">The Legal Position</h2>
+          <ul class="list">
+            <li>RBIS does not provide legal advice or representation.</li>
+            <li>We deliver independent analysis and expert reporting to support legal proceedings.</li>
+            <li>We act as analysts, not advocates; we support, not replace, a solicitor’s strategy.</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>Assurance & Controls</h3>
+          <ul class="list">
+            <li>Human-in-the-loop reviews and reviewer attestations</li>
+            <li>Pseudonymisation & redaction; minimisation by default</li>
+            <li>Region-pinned hosting (UK/EU); strict retention</li>
+            <li>Watermarked exports; signed audit trails</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- About Ryan / RBIS ethos (compact) -->
+    <section aria-labelledby="about-h">
+      <div class="container grid-2">
+        <article class="card">
+          <h2 id="about-h">About RBIS</h2>
+          <p>Founded by Ryan Roberts, RBIS operates at the intersection of behavioural science, intelligence, and strategy. We combine AI-driven signal analysis with expert human judgement to deliver clarity that stands up to scrutiny.</p>
+        </article>
+        <article class="card">
+          <h3>Values</h3>
+          <p class="muted">Independent insights. Evidence-based decisions. Conflict resolved.</p>
+          <p><span class="badge">Evidence over opinion</span><span class="badge">Accessibility aware</span><span class="badge">Regulator ready</span></p>
+        </article>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section id="cta" aria-labelledby="cta-h">
+      <div class="container grid-2">
+        <article class="card">
+          <h2 id="cta-h">Start with a clean brief</h2>
+          <p>Tell us the dispute or decision, share the material, and we’ll propose a fixed scope where possible.</p>
+          <p><a class="btn primary" href="https://formspree.io/f/meolvrdy" rel="nofollow">Request a Behavioural Analysis</a></p>
+        </article>
+        <article class="card">
+          <h2>Prefer to see a sample?</h2>
+          <p>Explore formats for Repairs, Complaints, Data Protection, Accessibility, Governance, and Risk.</p>
+          <p><a class="btn ghost" href="/reports.html">View Sample Reports</a></p>
+        </article>
+      </div>
+    </section>
+
+    <!-- FAQ (short) -->
+    <section id="faq" class="card" aria-labelledby="faq-h">
+      <div class="container">
+        <h2 id="faq-h">FAQ</h2>
+        <details>
+          <summary>Can RBIS act as expert witness?</summary>
+          <p>Yes—subject to conflict checks and scope. We maintain independence and evidence integrity.</p>
+        </details>
+        <details>
+          <summary>Do you analyse non-English material?</summary>
+          <p>Yes. We can process transcripts and documents in multiple languages, with specialist review where needed.</p>
+        </details>
+        <details>
+          <summary>What about sensitive data?</summary>
+          <p>We apply minimisation, redaction, and retention controls. Sensitive evidence is never stored on the brochure site.</p>
+        </details>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer role="contentinfo">
+    <div class="container foot">
+      <div>© <span id="yr"></span> RBIS UK Ltd. All rights reserved. · RBIS © | Designed &amp; Created by Ryan Roberts</div>
+      <nav aria-label="Footer">
+        <a href="/terms.html">Terms of Use</a> ·
+        <a href="/privacy.html">Privacy</a> ·
+        <a href="/legal.html">Legal Notice</a> ·
+        <a href="/cookies.html">Cookies</a> ·
+        <a href="/accessibility.html">Accessibility</a> ·
+        <a href="/trust.html">Trust</a>
+      </nav>
+    </div>
+    <div class="container" style="font-size:.92rem;color:#445">
+      <p><strong>License & IP:</strong> Unless explicitly licensed otherwise, this page is “All rights reserved.” We may apply watermarking to images/exports and code obfuscation to protect proprietary logic.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu
+    (function(){
+      var btn=document.getElementById('menu'), mob=document.getElementById('mobile');
+      if(!btn||!mob) return;
+      btn.addEventListener('click', function(){
+        var open=mob.classList.toggle('open');
+        btn.setAttribute('aria-expanded', String(open));
+      });
+    })();
+    // Year
+    document.getElementById('yr').textContent = new Date().getFullYear();
+  </script>
+
+  <!-- Optional: include your site-wide consent banner snippet here, just before </body> -->
+</body>
+</html>

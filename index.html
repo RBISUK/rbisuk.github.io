@@ -1,108 +1,424 @@
-<!DOCTYPE html><html lang="en"><head>
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<link rel="canonical" href="https://rbisuk.github.io/index.html">
-<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
-<link rel="icon" type="image/png" href="assets/favicon.png">
-<link rel="apple-touch-icon" href="assets/favicon.png">
-<meta name="theme-color" content="#4f46e5">
-<link rel="stylesheet" href="assets/theme.css?v=22">
-<meta charset="utf-8"/>
-<meta name="referrer" content="strict-origin-when-cross-origin">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self'; base-uri 'none'; frame-ancestors 'none'">
-<title>RBIS — Audit-Ready Intelligence for Housing, Compliance & Ops</title>
-<style>
-/* Premium matte spinner (RBIS wordmark, slow, subtle) */
-.hero-brand{display:inline-flex;gap:.6rem;align-items:center}
-.spinny-rbis{font-weight:900;font-size:2.2rem;letter-spacing:.08em;display:inline-block;
-  background:linear-gradient(135deg,#4f46e5,#06b6d4);-webkit-background-clip:text;background-clip:text;color:transparent;
-  will-change:transform;filter:saturate(.95) contrast(.95)}
-}
-</style>
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>RBIS — Compliance without cracks. Evidence without gaps.</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="RBIS helps regulated organisations manage repairs, complaints, data and obligations — with audit-ready proof built in. Veridex, OmniAssist, RBIS AI, Dashboard Suite, PACT Ledger, and more.">
+  <link rel="canonical" href="https://www.rbisintelligence.com/">
+  <meta name="theme-color" content="#0A3D91">
+  <!-- Open Graph -->
+  <meta property="og:title" content="RBIS — Compliance without cracks. Evidence without gaps.">
+  <meta property="og:description" content="Proof-first. Audit-ready packs, live dashboards, and AI-assisted intake for regulated environments.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.rbisintelligence.com/">
+  <meta property="og:image" content="https://www.rbisintelligence.com/assets/social-share.jpg">
+  <link rel="icon" href="/assets/favicon.ico">
+  <style>
+    :root{
+      --blue:#0A3D91; --navy:#071F49; --bg:#fff; --text:#0B1221; --grey:#E8ECF3; --muted:#6A7280;
+      --green:#109867; --amber:#D9822B; --red:#C4383E;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font:16px/1.58 system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;color:var(--text);background:var(--bg)}
+    a{color:var(--blue);text-decoration:none}
+    a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid rgba(10,61,145,.6);outline-offset:2px}
+    .container{max-width:1100px;margin:0 auto;padding:0 16px}
+    .skip{position:absolute;left:-9999px}.skip:focus{left:16px;top:12px;background:#fff;padding:.5rem .75rem;border-radius:.5rem;box-shadow:0 8px 24px rgba(0,0,0,.12)}
+
+    /* Legal bar */
+    .notice{background:var(--navy);color:#fff}
+    .notice .container{display:flex;gap:.75rem;align-items:center;padding:.55rem 16px}
+    .notice a{color:#AECBFF}
+
+    /* Header (auto-hide) */
+    header#site-header{position:sticky;top:0;z-index:1000;background:rgba(255,255,255,.92);backdrop-filter:saturate(180%) blur(8px);border-bottom:1px solid var(--grey);transition:transform .25s ease}
+    header#site-header.hide{transform:translateY(-100%)}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:.7rem 0}
+    .brand{display:flex;align-items:center;gap:.5rem;color:var(--navy);font-weight:800}
+    .dot{width:10px;height:10px;border-radius:999px;background:var(--blue)}
+    nav ul{display:flex;gap:16px;list-style:none;margin:0;padding:0}
+    nav a{color:#1b2946;font-weight:600}
+    .has-sub{position:relative}
+    .has-sub > a::after{content:"▾";margin-left:.35rem;font-size:.8em;color:#4a5875}
+    .sub{position:absolute;left:0;top:calc(100% + 8px);min-width:240px;background:#fff;border:1px solid var(--grey);border-radius:10px;box-shadow:0 8px 24px rgba(7,31,73,.08);padding:6px;display:none}
+    .has-sub:focus-within .sub,.has-sub:hover .sub{display:block}
+    .sub a{display:block;padding:.6rem .7rem;border-radius:.5rem;color:#1b2946}
+    .sub a:hover,.sub a:focus{background:#f6f8ff}
+    .menu{display:none;border:1px solid var(--grey);padding:.45rem .6rem;border-radius:.5rem;background:#fff}
+    .cta{display:inline-block;padding:.55rem .8rem;border-radius:.6rem;background:var(--blue);color:#fff;font-weight:800;border:1px solid var(--blue)}
+    @media (max-width:960px){
+      nav{display:none}.menu{display:inline-block}
+      .mobile{display:none;border-top:1px solid var(--grey)}
+      .mobile.open{display:block}
+      .mobile a{display:block;padding:.9rem 16px;border-bottom:1px solid var(--grey);color:#1b2946}
+      .mobile .subhead{padding:.6rem 16px;color:#51607b;background:#f7f9ff;font-weight:700}
+    }
+
+    /* Hero */
+    .hero{background:linear-gradient(180deg, rgba(10,61,145,.06), transparent 60%);padding:28px 0 8px}
+    h1{font-size:clamp(28px,4vw,44px);line-height:1.1;margin:.25rem 0 .5rem;color:var(--blue)}
+    .sub{color:#22304d;font-size:1.05rem;max-width:74ch}
+    .actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+    .btn{display:inline-block;padding:.7rem 1rem;border-radius:.7rem;font-weight:800;border:1px solid var(--blue)}
+    .btn.primary{background:var(--blue);color:#fff}
+    .btn.ghost{background:#fff;color:var(--blue)}
+    .muted{color:var(--muted)}
+    .badge{display:inline-block;padding:.35rem .6rem;border:1px solid var(--grey);border-radius:999px;background:#fbfcff;margin:0 6px 6px 0}
+
+    /* Sections & cards */
+    section{padding:18px 0}
+    .grid-3{display:grid;gap:14px;grid-template-columns:repeat(3,1fr)}
+    .grid-4{display:grid;gap:14px;grid-template-columns:repeat(4,1fr)}
+    .grid-2{display:grid;gap:14px;grid-template-columns:repeat(2,1fr)}
+    @media (max-width:960px){.grid-3,.grid-4,.grid-2{grid-template-columns:1fr}}
+    .card{border:1px solid var(--grey);border-radius:12px;padding:16px;background:#fff;box-shadow:0 8px 24px rgba(7,31,73,.05)}
+    .list{margin:.2rem 0 .9rem 1.2rem}
+
+    /* Redacted preview */
+    .kv{display:grid;grid-template-columns:1.05fr .95fr;gap:14px;align-items:stretch}
+    @media(max-width:960px){.kv{grid-template-columns:1fr}}
+    .redacted{border:1px dashed #9bb0d6;border-radius:12px;padding:14px;background:repeating-linear-gradient(135deg,#f3f6ff 0 14px,#eef3ff 14px 28px)}
+    .bar{height:14px;background:#0b1f49;border-radius:6px;margin:8px 0}
+    .blk{height:10px;background:#0b1f49;border-radius:3px;margin:6px 0;width:100%}
+    .blk.s{width:62%}.blk.m{width:80%}.blk.l{width:94%}
+
+    /* Trust strip */
+    .trust{display:flex;flex-wrap:wrap;gap:8px;padding:8px 0}
+    .pill{padding:.35rem .6rem;border:1px solid var(--grey);border-radius:999px;background:#fff;font-weight:700;color:#0b1f49}
+
+    /* Tooltips (micro-glossary) */
+    .hint{position:relative;border-bottom:1px dotted currentColor;cursor:help}
+    .hint:focus::after,.hint:hover::after{content:attr(data-hint);position:absolute;left:0;top:calc(100% + 6px);background:#0b1733;color:#e9efff;border:1px solid #2b3a66;border-radius:8px;padding:.45rem .6rem;white-space:nowrap;z-index:20;box-shadow:0 8px 24px rgba(7,31,73,.2);font-size:.9rem}
+
+    /* Footer */
+    footer{border-top:1px solid var(--grey);margin-top:22px}
+    .foot{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:14px 0}
+    .foot a{color:#33405c}
+
+    /* Print */
+    @media print{
+      header,.notice,footer{display:none}
+      a[href]::after{content:" (" attr(href) ")"} body{color:#000}
+    }
+  </style>
+
+  <!-- Schema: Organization + Website (Sitelinks Search) -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Organization",
+    "name":"Ryan Roberts Behavioural & Intelligence Services",
+    "url":"https://www.rbisintelligence.com",
+    "logo":"https://www.rbisintelligence.com/assets/logo.png",
+    "contactPoint":{"@type":"ContactPoint","contactType":"customer support","email":"contact@rbisintelligence.com","areaServed":"GB"},
+    "sameAs":["https://www.linkedin.com/company/rbisintelligence"]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"WebSite",
+    "name":"RBIS",
+    "url":"https://www.rbisintelligence.com",
+    "potentialAction":{
+      "@type":"SearchAction",
+      "target":"https://www.rbisintelligence.com/?q={search_term_string}",
+      "query-input":"required name=search_term_string"
+    }
+  }
+  </script>
 </head>
 <body>
-<div class="disclosure"><b>Disclosure:</b> RBIS is not a law firm and does not provide legal advice. We analyse only the evidence in front of our intelligence officers, objectively and without bias.</div>
-<header class="nav">
-  <nav>
-    <a class="active" aria-current="page" href="index.html">Home</a>
-    <a href="services.html">Services &amp; Products</a>
-    <a href="reports.html">Reports</a>
-    <a href="webdev.html">Web &amp; Dev</a>
-    <a href="managed.html">Managed</a>
-    <a href="demo.html">Demo</a>
-    <a href="dashboard.html">Dashboard</a>
-    <a href="careers.html">Careers</a>
-    <a href="about.html">About</a>
-    <a href="legal.html">Legal</a>
-    <a href="contact.html">Contact</a>
-  </nav>
-</header>
+  <a class="skip" href="#main">Skip to content</a>
 
-<section class="section" id="hero">
-  <div class="card" style="padding:1.4rem;text-align:center">
-    <div class="hero-brand">
-      <div class="spinny-rbis">RBIS</div>
-      <div style="font-size:1rem;opacity:.75">Behavioural &amp; Intelligence Services</div>
-    </div>
-    <h1 style="margin:.6rem 0 0">Audit-ready AI for housing, compliance &amp; operations</h1>
-    <p>Evidence over opinion. Timers, nudges, and exportable packs — built like an intelligence officer: precision, objectivity, foresight.</p>
-    <div style="display:flex;flex-wrap:wrap;gap:.6rem;justify-content:center">
-      <a class="btn" href="services.html">Explore Services →</a>
-      <a class="btn" href="demo.html">Try the Demo →</a>
-      <a class="btn" href="careers.html">Careers →</a>
-      <a class="btn" href="contact.html">Talk to RBIS →</a>
+  <!-- Legal disclosure -->
+  <div class="notice" role="note" aria-label="Legal disclosure">
+    <div class="container">
+      <strong>Notice:</strong> RBIS UK Ltd (England &amp; Wales) provides independent intelligence analysis and reporting.
+      <strong>We are not a law firm and do not provide legal advice.</strong>
+      Contact: <a href="mailto:contact@rbisintelligence.com">contact@rbisintelligence.com</a>
     </div>
   </div>
-</section>
 
-<section class="section">
-  <div class="grid">
-    <a class="card" href="services.html"><h3>Services &amp; Products</h3><p>Claim-Fix-AI intake, Repairs &amp; Compliance Copilot, OmniAssist + add-ons.</p></a>
-    <a class="card" href="reports.html"><h3>Pro Reports</h3><p>Evidence-based, legally safe packs for Repairs, Data, Accessibility, Ops.</p></a>
-    <a class="card" href="dashboard.html"><h3>Dashboard</h3><p>Risk map, SLA timers, escalation nudges, export to CSV/PDF.</p></a>
-  </div>
-</section>
-
-<section class="section">
-  <div class="card" style="padding:1.2rem">
-    <h2>CPL &amp; ROI Calculator</h2>
-    <p>Estimate your cost-per-lead and ROI with RBIS automation.</p>
-    <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(220px,1fr))">
-      <label>Ad Spend (£)<input id="ad" type="number" value="5000" min="0"></label>
-      <label>Leads Generated<input id="leads" type="number" value="200" min="0"></label>
-      <label>Conversions<input id="conv" type="number" value="20" min="0"></label>
-      <label>Avg Deal Value (£)<input id="val" type="number" value="1500" min="0"></label>
+  <!-- Header -->
+  <header id="site-header" role="banner">
+    <div class="container nav">
+      <a class="brand" href="/" aria-label="RBIS home"><span class="dot" aria-hidden="true"></span> RBIS</a>
+      <nav aria-label="Primary">
+        <ul>
+          <li class="has-sub">
+            <a href="#products">Products</a>
+            <div class="sub" role="menu" aria-label="Products">
+              <a role="menuitem" href="/veridex.html">Veridex — Intake & Evidence</a>
+              <a role="menuitem" href="/omniassist.html">OmniAssist — Multi-channel AI</a>
+              <a role="menuitem" href="/rbis-ai.html">RBIS AI — Behavioural Intelligence</a>
+              <a role="menuitem" href="/rbis-ai-auto-call.html">AI Auto Call Answering</a>
+              <a role="menuitem" href="/pact-ledger.html">PACT Ledger — Promises</a>
+              <a role="menuitem" href="/dashboard.html">RBIS Dashboard Suite</a>
+              <a role="menuitem" href="/nextusone.html">NextusOne CRM (Waitlist)</a>
+            </div>
+          </li>
+          <li><a href="/services.html">Services</a></li>
+          <li><a href="/reports.html">Reports</a></li>
+          <li><a href="/saas-licensing.html">Pricing</a></li>
+          <li><a href="/trust.html">Trust</a></li>
+          <li><a href="/about.html">About</a></li>
+        </ul>
+      </nav>
+      <a class="cta" href="https://formspree.io/f/meolvrdy" rel="nofollow">Request Demo</a>
+      <button class="menu" id="menu" aria-expanded="false" aria-controls="mobile">Menu</button>
     </div>
-    <div id="calcOut" class="kpi" style="margin-top:.8rem">CPL: £25 • ROI: 5.0×</div>
-    <button class="btn" id="toDemo">Use these numbers in Demo →</button>
-  </div>
-</section>
+    <div class="mobile" id="mobile" role="dialog" aria-label="Mobile menu">
+      <div class="subhead">Products</div>
+      <a href="/veridex.html">Veridex — Intake & Evidence</a>
+      <a href="/omniassist.html">OmniAssist — Multi-channel AI</a>
+      <a href="/rbis-ai.html">RBIS AI — Behavioural Intelligence</a>
+      <a href="/rbis-ai-auto-call.html">AI Auto Call Answering</a>
+      <a href="/pact-ledger.html">PACT Ledger — Promises</a>
+      <a href="/dashboard.html">RBIS Dashboard Suite</a>
+      <a href="/nextusone.html">NextusOne CRM (Waitlist)</a>
+      <div class="subhead">Company</div>
+      <a href="/services.html">Services</a>
+      <a href="/reports.html">Reports</a>
+      <a href="/saas-licensing.html">Pricing</a>
+      <a href="/trust.html">Trust</a>
+      <a href="/about.html">About</a>
+      <a href="https://formspree.io/f/meolvrdy" rel="nofollow">Request Demo</a>
+    </div>
+  </header>
 
-<footer>Designed &amp; built by Ryan Roberts | RBIS
-  <div class="foot-links"><a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · <a href="cookies.html">Cookies</a></div>
-</footer>
+  <main id="main">
+    <!-- Hero -->
+    <section class="hero" aria-labelledby="hero-h">
+      <div class="container kv">
+        <div class="redacted" aria-label="Simple dashboard mock with RAG indicators">
+          <div class="bar"></div>
+          <div class="blk l"></div>
+          <div class="blk s"></div>
+          <div class="blk m"></div>
+          <div class="blk l"></div>
+          <div class="blk s"></div>
+          <p class="muted" style="margin-top:8px">Preview: red/amber/green timers, backlog, export status — not real data.</p>
+        </div>
+        <div>
+          <h1 id="hero-h">Compliance without cracks. Evidence without gaps.</h1>
+          <p class="sub">We help regulated organisations manage repairs, complaints, data, and obligations — with audit-ready proof built in.</p>
+          <div class="actions">
+            <a class="btn primary" href="https://formspree.io/f/meolvrdy" rel="nofollow">See a Sample Pack</a>
+            <a class="btn ghost" href="https://formspree.io/f/meolvrdy" rel="nofollow">Talk to Sales</a>
+          </div>
+          <div class="trust" style="margin-top:14px">
+            <span class="pill" aria-label="GDPR">GDPR</span>
+            <span class="pill" aria-label="FCA">FCA</span>
+            <span class="pill" aria-label="SRA">SRA</span>
+            <span class="pill" aria-label="Ombudsman">Ombudsman</span>
+            <span class="pill" aria-label="ICO">ICO</span>
+            <span class="pill" aria-label="WCAG">WCAG</span>
+            <span class="pill" aria-label="Sectors">Housing</span>
+            <span class="pill" aria-label="Sectors">Legal</span>
+            <span class="pill" aria-label="Sectors">Councils</span>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<script src="assets/active-nav.js"></script>
-<script>
-(function(){
-  function calc(){
-    var ad=+document.getElementById('ad').value||0,
-        leads=+document.getElementById('leads').value||0,
-        conv=+document.getElementById('conv').value||0,
-        val=+document.getElementById('val').value||0;
-    var cpl = leads? (ad/leads):0;
-    var rev = conv*val, roi = ad? (rev/ad):0;
-    document.getElementById('calcOut').textContent =
-      "CPL: £"+cpl.toFixed(2)+" • ROI: "+roi.toFixed(2)+"×";
-    return {ad,leads,conv,val,cpl:+cpl.toFixed(2),roi:+roi.toFixed(2)};
-  }
-  ['ad','leads','conv','val'].forEach(id=>document.getElementById(id).addEventListener('input',calc));
-  calc();
-  document.getElementById('toDemo').addEventListener('click',function(){
-    var q=calc();
-    location.href='demo.html?quote='+encodeURIComponent(
-      `RBIS ROI quick calc\nAd £${q.ad}\nLeads ${q.leads}\nConv ${q.conv}\nValue £${q.val}\nCPL £${q.cpl}\nROI ${q.roi}x`
-    );
-  });
-})();
-</script>
-</body></html>
+    <!-- Narrative tiles -->
+    <section aria-labelledby="story-h">
+      <div class="container">
+        <h2 id="story-h" style="margin:.2rem 0 10px;color:#0b1f49">What we fix, in plain view</h2>
+        <div class="grid-3">
+          <article class="card">
+            <h3>Housing Repairs</h3>
+            <p>Every repair logged, timed, evidenced. SLA breaches caught before they escalate.</p>
+          </article>
+          <article class="card">
+            <h3>Complaints</h3>
+            <p>From first contact to ombudsman, every step tracked and documented.</p>
+          </article>
+          <article class="card">
+            <h3>Data &amp; Marketing</h3>
+            <p>GDPR, PECR, ASA — campaigns and comms that prove compliance at every stage.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Core products snapshot with micro-glossary -->
+    <section id="products" aria-labelledby="prod-h">
+      <div class="container">
+        <h2 id="prod-h" style="margin:.2rem 0 10px;color:#0b1f49">Core products</h2>
+        <div class="grid-3">
+          <article class="card">
+            <h3><span class="hint" data-hint="Intake & evidence engine">Veridex</span></h3>
+            <p>Guided intake that captures complete stories and proof from the first touch.</p>
+            <p><a class="btn ghost" href="/veridex.html">Explore Veridex</a></p>
+          </article>
+          <article class="card">
+            <h3><span class="hint" data-hint="Compliance workflow copilot">OmniAssist</span></h3>
+            <p>One AI brain across phone, SMS/WhatsApp, email, social DMs, web, BSL/video.</p>
+            <p><a class="btn ghost" href="/omniassist.html">Explore OmniAssist</a></p>
+          </article>
+          <article class="card">
+            <h3>RBIS Dashboard</h3>
+            <p>Live RAG view across domains with drill-downs, exports, and board assurance.</p>
+            <p><a class="btn ghost" href="/dashboard.html">See Dashboards</a></p>
+          </article>
+          <article class="card">
+            <h3><span class="hint" data-hint="Promise & obligation tracker">PACT Ledger</span></h3>
+            <p>Turn commitments into enforceable, trackable objects with timers and nudges.</p>
+            <p><a class="btn ghost" href="/pact-ledger.html">Explore PACT</a></p>
+          </article>
+          <article class="card">
+            <h3>RBIS AI</h3>
+            <p>Behaviour meets machine judgement — speech/text signals with human review.</p>
+            <p><a class="btn ghost" href="/rbis-ai.html">Explore RBIS AI</a></p>
+          </article>
+          <article class="card">
+            <h3>AI Auto Call Answering</h3>
+            <p>Front-line call handling that never drops compliance; consent and triage built-in.</p>
+            <p><a class="btn ghost" href="/rbis-ai-auto-call.html">Explore Auto Call</a></p>
+          </article>
+        </div>
+        <p class="muted" style="margin-top:6px">NextusOne CRM is on the <a href="/nextusone.html">waitlist</a>.</p>
+      </div>
+    </section>
+
+    <!-- Evidence & reports (proof-first metrics) -->
+    <section aria-labelledby="evid-h">
+      <div class="container kv">
+        <div class="redacted" aria-label="Redacted evidence pack preview">
+          <div class="bar"></div>
+          <div class="blk l"></div>
+          <div class="blk s"></div>
+          <div class="blk m"></div>
+          <div class="blk l"></div>
+          <div class="blk s"></div>
+          <p class="muted" style="margin-top:8px">Watermarked PDF + CSV annexes; reviewer attestation; signed export hashes.</p>
+        </div>
+        <div>
+          <h2 id="evid-h" style="color:#0b1f49;margin-top:0">When regulators ask, you’ll already have the pack</h2>
+          <p class="sub">Repairs, Complaints &amp; Ombudsman, Data Protection (DSR/Breach/Consent), Accessibility (WCAG), Governance &amp; Risk.</p>
+          <div class="grid-2" style="margin-top:12px">
+            <div class="card"><strong>Conversion uplift</strong><p class="muted" style="margin:.4rem 0 0">Toolkit fixes pushed conversion <strong>6% → 13%</strong> in <strong>14 days</strong> (controlled test).</p></div>
+            <div class="card"><strong>Escalations cut</strong><p class="muted" style="margin:.4rem 0 0">Cleaner dossiers reduced escalations by <strong>−28%</strong> (housing pilot, 6 weeks, anonymised).</p></div>
+          </div>
+          <div class="actions" style="margin-top:12px">
+            <a class="btn primary" href="/reports.html">View Sample Reports</a>
+            <a class="btn ghost" href="https://formspree.io/f/meolvrdy" rel="nofollow">Download a Sample Pack</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RBIS Behavioural & Intelligence Services (polished block) -->
+    <section aria-labelledby="behav-h">
+      <div class="container card">
+        <h2 id="behav-h" style="margin-top:0">RBIS Behavioural &amp; Intelligence Services</h2>
+        <p>It’s not words vs tone — it’s the behaviour behind both. We analyse cadence, pauses, tonal shifts, and lexical changes alongside documents, timelines, and system logs. The interaction between language and delivery is where truth slips out.</p>
+        <ul class="list">
+          <li><strong>Applications:</strong> negotiations, risk & compliance, leadership/recruitment.</li>
+          <li><strong>Methods:</strong> behavioural pattern analysis, document authentication, audio forensics, cross-reference verification, statistical tests, timeline reconstruction.</li>
+          <li><strong>Deliverables:</strong> independent, court-ready reports and decision briefings. RBIS is not a law firm.</li>
+        </ul>
+        <p><a class="btn ghost" href="/services.html">See Services</a> <a class="btn ghost" href="/rbis-ai.html">How RBIS AI helps</a></p>
+      </div>
+    </section>
+
+    <!-- Layered Views -->
+    <section aria-labelledby="layers-h">
+      <div class="container grid-2">
+        <article class="card">
+          <h3 id="layers-h">For Agents</h3>
+          <p>Micro-dashboards for frontline workers: my cases, SLA timers, today’s KPIs.</p>
+        </article>
+        <article class="card">
+          <h3>For Executives</h3>
+          <p>Board Assurance Dashboard: red/amber/green risk view with audit & escalation logs.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Website & Development bundles (teaser) -->
+    <section aria-labelledby="web-h">
+      <div class="container grid-3">
+        <article class="card">
+          <h3 id="web-h">Starter</h3>
+          <p>5 pages, Lighthouse 95+, privacy policy, basic schema, Turnstile form.</p>
+        </article>
+        <article class="card">
+          <h3>Growth</h3>
+          <p>12 pages, blog/insights, advanced schema, performance budget, uptime monitor.</p>
+        </article>
+        <article class="card">
+          <h3>Regulated Pro</h3>
+          <p>20+ pages, a11y audits, DPA/PECR overlays, consent manager, CSP/HSTS headers.</p>
+        </article>
+        <p class="muted">See full pricing and licensing on <a href="/saas-licensing.html">SaaS Licensing</a>.</p>
+      </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section aria-labelledby="cta-h">
+      <div class="container card">
+        <h2 id="cta-h">Proof beats promises. Start building yours today.</h2>
+        <p>
+          <a class="btn primary" href="https://formspree.io/f/meolvrdy" rel="nofollow">Download a Sample Pack</a>
+          <a class="btn ghost" href="/reports.html">View Sample Reports</a>
+        </p>
+        <p class="muted">
+          <span class="badge">All rights reserved</span>
+          <span class="badge">© <span id="cpy"></span> RBIS UK Ltd</span>
+          <span class="badge">Terms include IP protections</span>
+          <span class="badge">Watermarking / code obfuscation where appropriate</span>
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer role="contentinfo">
+    <div class="container foot">
+      <div>© <span id="yr"></span> RBIS UK Ltd. All rights reserved. · RBIS © | Designed &amp; Created by Ryan Roberts</div>
+      <nav aria-label="Footer">
+        <a href="/terms.html">Terms of Use</a> ·
+        <a href="/privacy.html">Privacy</a> ·
+        <a href="/legal.html">Legal Notice</a> ·
+        <a href="/cookies.html">Cookies</a> ·
+        <a href="/trust.html">Trust</a> ·
+        <a href="/services.html">Services</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script>
+    // Auto-hide header on scroll down; show on scroll up
+    (function(){
+      var lastY = window.scrollY, header = document.getElementById('site-header');
+      addEventListener('scroll', function(){
+        var y = scrollY;
+        if(y>80 && y>lastY){ header.classList.add('hide'); } else { header.classList.remove('hide'); }
+        lastY = y;
+      }, {passive:true});
+    })();
+
+    // Mobile menu toggle
+    (function(){
+      var btn=document.getElementById('menu'), mob=document.getElementById('mobile');
+      if(btn && mob){
+        btn.addEventListener('click', function(){
+          var open=mob.classList.toggle('open');
+          btn.setAttribute('aria-expanded', String(open));
+        });
+      }
+    })();
+
+    // Year stamps
+    (function(){
+      var y=new Date().getFullYear();
+      ['yr','cpy'].forEach(function(id){var el=document.getElementById(id); if(el) el.textContent=y;});
+    })();
+  </script>
+</body>
+</html>
