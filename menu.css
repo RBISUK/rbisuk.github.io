@@ -2,3 +2,7 @@
 .header.hide,#site-header.hide{transform:translateY(-100
 .header.hide,#site-header.hide{transform:translateY(-100.header.hide,#site-header.hide{transform:translateY(-100%)}
 body.nav-open{overflow:hidden}
+.nav-drawer{background:#fff;height:calc(100vh - var(--hdr-h));max-height:calc(100svh - var(--hdr-h));overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;touch-action:pan-y;box-shadow:0 12px 32px rgba(7,17,36,.12)}
+.nav-drawer nav{display:block;padding:8px 12px}
+.nav-drawer a{display:block;padding:14px 12px;border-radius:10px}
+.nav-drawer a:focus,.nav-drawer a:hover{background:#f1f6ff;outline:2px solid transparent}
