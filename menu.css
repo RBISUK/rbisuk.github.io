@@ -7,3 +7,4 @@ body.nav-open{overflow:hidden}
 .nav-drawer a{display:block;padding:14px 12px;border-radius:10px}
 .nav-drawer a:focus,.nav-drawer a:hover{background:#f1f6ff;outline:2px solid transparent}
 .header nav h1,.header nav h2,.header nav h3,.header nav p,.header nav strong,.nav-drawer nav h1,.nav-drawer nav h2,.nav-drawer nav h3,.nav-drawer nav p,.nav-drawer nav strong{display:none!important}
+body.nav-open #site-header,body.nav-open .header{transform:none!important}
